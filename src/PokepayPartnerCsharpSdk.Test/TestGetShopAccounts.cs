@@ -42,7 +42,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
                     "066f3f17-d0e7-432b-b946-ce13b9cc687c"
                 ) {
-                    IsSuspended = true
+                    IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -60,7 +60,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "066f3f17-d0e7-432b-b946-ce13b9cc687c"
                 ) {
                     CreatedAtTo = "2021-09-20T21:35:53.000000+09:00",
-                    IsSuspended = false
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -79,7 +79,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     CreatedAtFrom = "2021-11-08T14:28:08.000000+09:00",
                     CreatedAtTo = "2018-01-01T15:34:21.000000+09:00",
-                    IsSuspended = false
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -99,7 +99,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     PerPage = 9476,
                     CreatedAtFrom = "2022-03-18T22:11:23.000000+09:00",
                     CreatedAtTo = "2017-04-25T17:30:35.000000+09:00",
-                    IsSuspended = false
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -120,7 +120,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     PerPage = 2794,
                     CreatedAtFrom = "2015-11-03T10:35:15.000000+09:00",
                     CreatedAtTo = "2025-06-13T12:56:13.000000+09:00",
-                    IsSuspended = true
+                    IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

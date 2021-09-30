@@ -42,7 +42,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.UpdateBill request = new Request.UpdateBill(
                     "055d0e44-ef4d-4fec-a0d0-a33e65e06da0"
                 ) {
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.Bill response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -60,7 +60,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "055d0e44-ef4d-4fec-a0d0-a33e65e06da0"
                 ) {
                     Description = "Agx6J2",
-                    IsDisabled = false
+                    IsDisabled = false,
                 };
                 Response.Bill response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -79,7 +79,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     Amount = 6707,
                     Description = "S5a4KJH2dJnXOeAy8xYgmSSWd6nFdHza9f0TF30iljDxgSp",
-                    IsDisabled = false
+                    IsDisabled = false,
                 };
                 Response.Bill response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

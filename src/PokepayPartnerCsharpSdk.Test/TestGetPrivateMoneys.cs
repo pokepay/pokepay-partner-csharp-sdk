@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneys request = new Request.GetPrivateMoneys() {
-                    PerPage = 3053
+                    PerPage = 3053,
                 };
                 Response.PaginatedPrivateMoneys response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -54,7 +54,7 @@ namespace PokepayPartnerCsharpSdk.Test
             try {
                 Request.GetPrivateMoneys request = new Request.GetPrivateMoneys() {
                     Page = 5940,
-                    PerPage = 7785
+                    PerPage = 7785,
                 };
                 Response.PaginatedPrivateMoneys response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -71,7 +71,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.GetPrivateMoneys request = new Request.GetPrivateMoneys() {
                     OrganizationCode = "q44iuQiM1dG---24-3A0jY--cj31--",
                     Page = 6061,
-                    PerPage = 250
+                    PerPage = 250,
                 };
                 Response.PaginatedPrivateMoneys response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

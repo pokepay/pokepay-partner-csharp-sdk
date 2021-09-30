@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    Description = "2oGAhylpmFOwCdKPABZdrgh98RslDBuoJSIFUrTRne91u8KmONYXCce6NgXmM6SU8mT9N7YdoyhvIOK96oQgvpt3OE4bGWfPwqWxwC3DU0ZYNIFrYHkTuOzrywGRNkAeSHinr7X7r9y8K62vZdczxzKDF7OzztIRdIBCYTSHrtKwDRbFJx9qY"
+                    Description = "2oGAhylpmFOwCdKPABZdrgh98RslDBuoJSIFUrTRne91u8KmONYXCce6NgXmM6SU8mT9N7YdoyhvIOK96oQgvpt3OE4bGWfPwqWxwC3DU0ZYNIFrYHkTuOzrywGRNkAeSHinr7X7r9y8K62vZdczxzKDF7OzztIRdIBCYTSHrtKwDRbFJx9qY",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -54,7 +54,7 @@ namespace PokepayPartnerCsharpSdk.Test
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
                     TransferTypes = new string[]{"payment", "topup", "campaign"},
-                    Description = "qJMjy6rf4CluMJ3q8UHdGY9c6av2inoQmoszzzj7gjncZRjG49ZyE9dB8fCGfTM2Oyolj4kfEe2uvMtiKxUivt9MIJ97msI3tBe6ti0SO07EXHC5hQ61pWDcVyEH0QvPCR5IiYZhX71qxxCDFjWtGssb86D9XZfo8j2fPJCGzVYdohDRxcepsSsdecspEcH6zAIM8"
+                    Description = "qJMjy6rf4CluMJ3q8UHdGY9c6av2inoQmoszzzj7gjncZRjG49ZyE9dB8fCGfTM2Oyolj4kfEe2uvMtiKxUivt9MIJ97msI3tBe6ti0SO07EXHC5hQ61pWDcVyEH0QvPCR5IiYZhX71qxxCDFjWtGssb86D9XZfo8j2fPJCGzVYdohDRxcepsSsdecspEcH6zAIM8",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -71,7 +71,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.ListTransfers request = new Request.ListTransfers() {
                     TransactionTypes = new string[]{"transfer"},
                     TransferTypes = new string[]{"coupon", "payment", "exchange", "campaign", "transfer", "topup"},
-                    Description = "eDqYA5vYg7TRPpd99WNI7yrXSKnnTIb76zTEtm8AaIiuGx9L9HalOMU5vigXX7Icn5jXA5QxJPbbGkUILhTXtRtmknLVk7hQOvzRC9zFhAU2LnJOGL09rrRBaBOdWWGJsxArgIuumMVdl31leH5Dl7ZUHzS51rJLdw2n2tQfnXr078yWrpzK"
+                    Description = "eDqYA5vYg7TRPpd99WNI7yrXSKnnTIb76zTEtm8AaIiuGx9L9HalOMU5vigXX7Icn5jXA5QxJPbbGkUILhTXtRtmknLVk7hQOvzRC9zFhAU2LnJOGL09rrRBaBOdWWGJsxArgIuumMVdl31leH5Dl7ZUHzS51rJLdw2n2tQfnXr078yWrpzK",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -89,7 +89,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = true,
                     TransactionTypes = new string[]{"payment", "topup", "transfer"},
                     TransferTypes = new string[]{"payment", "transfer", "coupon", "campaign"},
-                    Description = "D7CpKjeG53Xpalhw5eupOSaoLetupiLJGKA08kULtDXm7mGq20CccqYOFtqhMLy1fSrOZfnZ2mwTeB7HbtOFrcDL7mosyloW0gLyNig5qU771SYwG9bLFfHIbs98VpOgmc8pS7WZiumuB2TNJcJGvSmksA1MuW1A79SIV4QucaCTIuwp4PaSBE"
+                    Description = "D7CpKjeG53Xpalhw5eupOSaoLetupiLJGKA08kULtDXm7mGq20CccqYOFtqhMLy1fSrOZfnZ2mwTeB7HbtOFrcDL7mosyloW0gLyNig5qU771SYwG9bLFfHIbs98VpOgmc8pS7WZiumuB2TNJcJGvSmksA1MuW1A79SIV4QucaCTIuwp4PaSBE",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -108,7 +108,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = true,
                     TransactionTypes = new string[]{"exchange", "topup"},
                     TransferTypes = new string[]{"exchange", "payment", "transfer"},
-                    Description = "P0Ve0rN3Em7q1SjNjatjjDZX7RIKgDX3b9oA142xLkpis0qy5MfISyoLqEQKhMnAGBrL3KeptreugpuZPDhn3kvKQdinTisU7JGahMN0p"
+                    Description = "P0Ve0rN3Em7q1SjNjatjjDZX7RIKgDX3b9oA142xLkpis0qy5MfISyoLqEQKhMnAGBrL3KeptreugpuZPDhn3kvKQdinTisU7JGahMN0p",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -128,7 +128,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = true,
                     TransactionTypes = new string[]{"topup", "exchange", "payment"},
                     TransferTypes = new string[]{"topup", "payment", "exchange", "coupon"},
-                    Description = "OlTb5uox"
+                    Description = "OlTb5uox",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -149,7 +149,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = false,
                     TransactionTypes = new string[]{"topup", "transfer"},
                     TransferTypes = new string[]{"coupon", "payment", "campaign"},
-                    Description = "8TcT02JvhzyAvEGRwH1gqt79bzapcrIrLur4lrAgRY4qmYCDpX8Ny7Ex4zLyYmVuuwRZjnfSOf90ILh1FnEv5pCv1ztILSktq1cNxb1w0fAXCRcSE6z5QHSLVITcWyXkWwNeThLpK"
+                    Description = "8TcT02JvhzyAvEGRwH1gqt79bzapcrIrLur4lrAgRY4qmYCDpX8Ny7Ex4zLyYmVuuwRZjnfSOf90ILh1FnEv5pCv1ztILSktq1cNxb1w0fAXCRcSE6z5QHSLVITcWyXkWwNeThLpK",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -171,7 +171,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = true,
                     TransactionTypes = new string[]{"topup", "transfer", "payment", "exchange"},
                     TransferTypes = new string[]{"campaign", "topup"},
-                    Description = "KXyywxfAsvQQw8eNXwtPfKAW4UwDxtqXzHNdytk1inQrWiktMK0FHLyLnv"
+                    Description = "KXyywxfAsvQQw8eNXwtPfKAW4UwDxtqXzHNdytk1inQrWiktMK0FHLyLnv",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -194,7 +194,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = false,
                     TransactionTypes = new string[]{"topup", "exchange", "payment"},
                     TransferTypes = new string[]{"exchange", "coupon", "campaign", "topup", "transfer", "payment"},
-                    Description = "ruRc9c27Gpu7iWb08UbIXfazIWogjdxJNEfM7ZphEzx62f8FNzaDel7ro4JT6XY3Y33ek4ahxmsrZ"
+                    Description = "ruRc9c27Gpu7iWb08UbIXfazIWogjdxJNEfM7ZphEzx62f8FNzaDel7ro4JT6XY3Y33ek4ahxmsrZ",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -218,7 +218,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = false,
                     TransactionTypes = new string[]{"transfer", "payment", "exchange"},
                     TransferTypes = new string[]{},
-                    Description = "FJVl2NE9OohrFLhvABt92YjeNGkeRyZCxDwnyuzPdWfYw482S6oHFsZh9ksnqTSKQYaLtgBF21Mao0iMx72McbAtuQfbwPK5Ol2Udeu5ClBnNsqGtwvAjO8SQrjpTlUKU7ix6vD3BTnNcaIv4Cy2qiGNeSDJueWNAF2i"
+                    Description = "FJVl2NE9OohrFLhvABt92YjeNGkeRyZCxDwnyuzPdWfYw482S6oHFsZh9ksnqTSKQYaLtgBF21Mao0iMx72McbAtuQfbwPK5Ol2Udeu5ClBnNsqGtwvAjO8SQrjpTlUKU7ix6vD3BTnNcaIv4Cy2qiGNeSDJueWNAF2i",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -243,7 +243,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = false,
                     TransactionTypes = new string[]{"topup", "exchange", "transfer"},
                     TransferTypes = new string[]{},
-                    Description = "CLUxGLtrgoghS3pPHE574eeX1ksH4R2MgyW6z149JBRZmQUgzecqWdDVSstoEtPVoykbtA6l7WDayqQLAKXyhWYdlIHfSBBKI1KQl4cK6HLesoN7AsxjaX4bkzoW5SSzFCKjOEE829PJZq44v95w5O"
+                    Description = "CLUxGLtrgoghS3pPHE574eeX1ksH4R2MgyW6z149JBRZmQUgzecqWdDVSstoEtPVoykbtA6l7WDayqQLAKXyhWYdlIHfSBBKI1KQl4cK6HLesoN7AsxjaX4bkzoW5SSzFCKjOEE829PJZq44v95w5O",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -269,7 +269,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = false,
                     TransactionTypes = new string[]{},
                     TransferTypes = new string[]{"campaign", "topup", "transfer", "exchange", "coupon", "payment"},
-                    Description = "TL9sXbFiutZ4wFjGxBLsRpox6uXLc6he8Kxv6FPaZ8I6AxiybIUdjn2JlMSQ6V8dRYSFDiggsas4Nm4Pbqn0MLycuAIyd8Tc91YrDumA0BEPaxu5hz8quH88gYqQC45YQseyms9QyHVorEq6zL"
+                    Description = "TL9sXbFiutZ4wFjGxBLsRpox6uXLc6he8Kxv6FPaZ8I6AxiybIUdjn2JlMSQ6V8dRYSFDiggsas4Nm4Pbqn0MLycuAIyd8Tc91YrDumA0BEPaxu5hz8quH88gYqQC45YQseyms9QyHVorEq6zL",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -296,7 +296,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = false,
                     TransactionTypes = new string[]{},
                     TransferTypes = new string[]{"topup", "payment", "transfer", "campaign", "coupon"},
-                    Description = "juzeNINZktFZU0JpHpSrpNbF8O3WzYFSGY9bWV5jbNBEz14f9BIpTXI2l"
+                    Description = "juzeNINZktFZU0JpHpSrpNbF8O3WzYFSGY9bWV5jbNBEz14f9BIpTXI2l",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -324,7 +324,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     IsModified = false,
                     TransactionTypes = new string[]{"exchange", "transfer", "topup"},
                     TransferTypes = new string[]{"transfer", "campaign", "coupon", "payment"},
-                    Description = "oJnH6hOfBgmDSuxOmphkziTG6p4HsLeIcNrFvlQBIX1JBgnrD1yLFl"
+                    Description = "oJnH6hOfBgmDSuxOmphkziTG6p4HsLeIcNrFvlQBIX1JBgnrD1yLFl",
                 };
                 Response.PaginatedTransfers response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

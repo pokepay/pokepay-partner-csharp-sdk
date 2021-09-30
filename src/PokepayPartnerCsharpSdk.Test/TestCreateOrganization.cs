@@ -50,7 +50,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "uC0QTfx8l2@ZZBj.com",
                     "yQqeO19KhF@rkxi.com"
                 ) {
-                    ContactName = "RAQ6FFjz1wnjIRjO9MofqJJncHBCR1qP1zId4mLJCzHpOgkhaasWI8ELqJwRA62Ghe0ne6pcNR1V7JprfFD47gNL9WM6cSeojzOZZrLxO3x6r1ViuOnspa8l8OxqMpLrB8ZQmhXHGSVgVcs3OQMdHqZLlv01wGqOn2jIsFsWbo7bpQq9anT6PszkN335U1t4DYsuiE88p3Hog0k8dxuKgCF"
+                    ContactName = "RAQ6FFjz1wnjIRjO9MofqJJncHBCR1qP1zId4mLJCzHpOgkhaasWI8ELqJwRA62Ghe0ne6pcNR1V7JprfFD47gNL9WM6cSeojzOZZrLxO3x6r1ViuOnspa8l8OxqMpLrB8ZQmhXHGSVgVcs3OQMdHqZLlv01wGqOn2jIsFsWbo7bpQq9anT6PszkN335U1t4DYsuiE88p3Hog0k8dxuKgCF",
                 };
                 Response.Organization response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -72,7 +72,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "yQqeO19KhF@rkxi.com"
                 ) {
                     BankAccountHolderName = " ",
-                    ContactName = "0Qv1brn8ATMTNMMEyVApkaDeYuOtBoCZgc4gwc8RSE7B5wsqfAkho5yO5EQGpb"
+                    ContactName = "0Qv1brn8ATMTNMMEyVApkaDeYuOtBoCZgc4gwc8RSE7B5wsqfAkho5yO5EQGpb",
                 };
                 Response.Organization response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -95,7 +95,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     BankAccount = "63561",
                     BankAccountHolderName = "(",
-                    ContactName = "Uyw97H5Wi0UlM5hWRopq8fm3QjwrUJDS6QIEgbGEOQG1PZp7fjd91zgh1RHHtL55R7YEprCJ0U4QnLZWmGvTqLQwaZ9vOnv67spoRoPKUgWvYVa3Gv9xbfzvgScohGvfvszFZKZ0fsirdyb8N5N4uLXeppDXZ9aq2pYugtiiL7qWoYElTKmZkEzCv7OKUa8NeEnF41oUMWRj1sxtSyQgT1Gk"
+                    ContactName = "Uyw97H5Wi0UlM5hWRopq8fm3QjwrUJDS6QIEgbGEOQG1PZp7fjd91zgh1RHHtL55R7YEprCJ0U4QnLZWmGvTqLQwaZ9vOnv67spoRoPKUgWvYVa3Gv9xbfzvgScohGvfvszFZKZ0fsirdyb8N5N4uLXeppDXZ9aq2pYugtiiL7qWoYElTKmZkEzCv7OKUa8NeEnF41oUMWRj1sxtSyQgT1Gk",
                 };
                 Response.Organization response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -119,7 +119,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     BankAccountType = "other",
                     BankAccount = "",
                     BankAccountHolderName = "｢",
-                    ContactName = "39x3Xs6KbKOjUQYLsphxNcJXceDU70KRGU02ETtMe3p5BruF5QOJx8zwWTQtwhgEUQrpqVtFI20RqU84wWVej7KjR7"
+                    ContactName = "39x3Xs6KbKOjUQYLsphxNcJXceDU70KRGU02ETtMe3p5BruF5QOJx8zwWTQtwhgEUQrpqVtFI20RqU84wWVej7KjR7",
                 };
                 Response.Organization response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -144,7 +144,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     BankAccountType = "current",
                     BankAccount = "58",
                     BankAccountHolderName = "ﾔ",
-                    ContactName = "2btzI2HvKaIy1dRKuzOlLMmdBSZr220xtZpZdQ9ssluYJHAlylPpV6xWxt7f2oLFlgp2lLhVbHghg4lZSVxXqYiDQPFv2"
+                    ContactName = "2btzI2HvKaIy1dRKuzOlLMmdBSZr220xtZpZdQ9ssluYJHAlylPpV6xWxt7f2oLFlgp2lLhVbHghg4lZSVxXqYiDQPFv2",
                 };
                 Response.Organization response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -170,7 +170,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     BankAccountType = "saving",
                     BankAccount = "94472",
                     BankAccountHolderName = "ｺ",
-                    ContactName = "qmlJpzKOYIsRtFF9xx8GHcZXN3Xa70o7nFXURkjCcagg1x0DCy4shXKR7nTWCyIt3Gr6ubUQRiycmsaOa8T2aG0PP6tnqHnuoUILOizvfJbTrh0kbVP56HQVtzlq6MKoBezSZGJZ1h8km"
+                    ContactName = "qmlJpzKOYIsRtFF9xx8GHcZXN3Xa70o7nFXURkjCcagg1x0DCy4shXKR7nTWCyIt3Gr6ubUQRiycmsaOa8T2aG0PP6tnqHnuoUILOizvfJbTrh0kbVP56HQVtzlq6MKoBezSZGJZ1h8km",
                 };
                 Response.Organization response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -197,7 +197,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     BankAccountType = "other",
                     BankAccount = "7959",
                     BankAccountHolderName = " ",
-                    ContactName = "Ilt759XkPd0Pd9Lm5F7XmpoqfPmIraGVhsLJiqbQ3MQR9CltXlG6ahNcft22PrlsKWxGtQj4OhVmQAfFvVtR4Fr5En7ms3KrOq6LmEP7tafjyhKgvwh227cUJMuQ1t83oitBAmKCKeNp7Z6KeHafoOKYuUs7zf9dIsiva1vYlz4sIXfB3ep9eHnNy54z9YZjsWtY1WGlubcf8poH65gFI1eD4xOb3KkBBLy"
+                    ContactName = "Ilt759XkPd0Pd9Lm5F7XmpoqfPmIraGVhsLJiqbQ3MQR9CltXlG6ahNcft22PrlsKWxGtQj4OhVmQAfFvVtR4Fr5En7ms3KrOq6LmEP7tafjyhKgvwh227cUJMuQ1t83oitBAmKCKeNp7Z6KeHafoOKYuUs7zf9dIsiva1vYlz4sIXfB3ep9eHnNy54z9YZjsWtY1WGlubcf8poH65gFI1eD4xOb3KkBBLy",
                 };
                 Response.Organization response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -225,7 +225,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     BankAccountType = "saving",
                     BankAccount = "",
                     BankAccountHolderName = "\\",
-                    ContactName = "1Ud9jBS9CQqv6T7eIQXHJd8SnpNPnO39WNWvjXlHUhCIHkbLQ7KL6y3Sdoxdn1tpYM1z5XMrmRY7bQCW9sPYWAKIaPAnlgG8mho7qKjeP1Vs1el3tVDmtz0qcHqLIsXtLIzc5kRp"
+                    ContactName = "1Ud9jBS9CQqv6T7eIQXHJd8SnpNPnO39WNWvjXlHUhCIHkbLQ7KL6y3Sdoxdn1tpYM1z5XMrmRY7bQCW9sPYWAKIaPAnlgG8mho7qKjeP1Vs1el3tVDmtz0qcHqLIsXtLIzc5kRp",
                 };
                 Response.Organization response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

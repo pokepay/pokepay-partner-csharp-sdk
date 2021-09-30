@@ -42,7 +42,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.UpdateCashtray request = new Request.UpdateCashtray(
                     "078a6209-978f-4e61-87e4-28b418f2b26b"
                 ) {
-                    ExpiresIn = 5888
+                    ExpiresIn = 5888,
                 };
                 Response.Cashtray response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -60,7 +60,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "078a6209-978f-4e61-87e4-28b418f2b26b"
                 ) {
                     Description = "ySUJYrKI48UyLa",
-                    ExpiresIn = 2951
+                    ExpiresIn = 2951,
                 };
                 Response.Cashtray response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -79,7 +79,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     Amount = 9213,
                     Description = "aqg9M9b56VUQzIG7Yr7fsBnFuG56tOVY8vi9Z9lrbTGfh4QbdPS2DfLew9jsvLcXjFRqAsdyU0EjzFGdoCEVoN09yrlyTlHcxkp2h",
-                    ExpiresIn = 4965
+                    ExpiresIn = 4965,
                 };
                 Response.Cashtray response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

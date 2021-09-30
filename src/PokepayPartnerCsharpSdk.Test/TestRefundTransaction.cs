@@ -42,7 +42,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.RefundTransaction request = new Request.RefundTransaction(
                     "d2fb73c8-5ec3-41c3-9b75-62cb9e97eeff"
                 ) {
-                    Description = "nfNVTWFTkh4YZxFDhr8QjYlB"
+                    Description = "nfNVTWFTkh4YZxFDhr8QjYlB",
                 };
                 Response.Transaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

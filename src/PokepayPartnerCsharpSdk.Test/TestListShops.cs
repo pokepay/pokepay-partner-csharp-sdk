@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    PerPage = 1932
+                    PerPage = 1932,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -54,7 +54,7 @@ namespace PokepayPartnerCsharpSdk.Test
             try {
                 Request.ListShops request = new Request.ListShops() {
                     Page = 7616,
-                    PerPage = 1536
+                    PerPage = 1536,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -71,7 +71,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.ListShops request = new Request.ListShops() {
                     ExternalId = "nRoU2x23XKfAMBShU6I6qbRR",
                     Page = 8688,
-                    PerPage = 1560
+                    PerPage = 1560,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -89,7 +89,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     Email = "0KsKQjbIFp@DLYb.com",
                     ExternalId = "Mvlh9JCT1xGcQL",
                     Page = 8741,
-                    PerPage = 9088
+                    PerPage = 9088,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -108,7 +108,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     Email = "zi1Z89pSvP@CqCp.com",
                     ExternalId = "yZq50fssjoNHB",
                     Page = 706,
-                    PerPage = 5184
+                    PerPage = 5184,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -128,7 +128,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     Email = "l2cQL9XINJ@3Yd9.com",
                     ExternalId = "s5R5vReMbbVX8HS4JwKvfQBXbwG5FfOb",
                     Page = 9955,
-                    PerPage = 3660
+                    PerPage = 3660,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -149,7 +149,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     Email = "5bTvMyHpd2@S0WD.com",
                     ExternalId = "3FaqRKAgoYEGpNOGzwWmNqL0QHxylFW",
                     Page = 6715,
-                    PerPage = 4995
+                    PerPage = 4995,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -171,7 +171,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     Email = "BCUmbexHlO@YPdR.com",
                     ExternalId = "D",
                     Page = 6227,
-                    PerPage = 9853
+                    PerPage = 9853,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -194,7 +194,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     Email = "OqOmjPQjCJ@Iqdu.com",
                     ExternalId = "yEzfF4ihEMnqIdNLL8T5msTmgqj81RXJ3",
                     Page = 6492,
-                    PerPage = 8200
+                    PerPage = 8200,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -218,7 +218,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     Email = "jsUzeefEvU@98BI.com",
                     ExternalId = "4BdtnYVFOF5IXA6lNw66Yqs62ry4EX0H",
                     Page = 4790,
-                    PerPage = 124
+                    PerPage = 124,
                 };
                 Response.PaginatedShops response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -44,7 +44,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "1b598fcb-2662-4b91-bcb1-62ded4d691b1",
                     "817a81d1-44d4-4615-89c8-56cd3c83db30"
                 ) {
-                    Description = "x5oJQ4O2Nwel4rHJTDGFvqXggC9Tcy7ogKmUw0VnsFyzfyt6Bg95FB1a7IFTBkW9tPubyeqITUoc54HWI6lY3NxA2Qq6LVyn2dOGJj5BoyL1MgjctfisLuYo4aorOwFrhmbs26EDkzDLnAr7NHvMDZLOk3Kn6N9IKA2DQ0UDl0RkGXqQRpkGArTGUPug"
+                    Description = "x5oJQ4O2Nwel4rHJTDGFvqXggC9Tcy7ogKmUw0VnsFyzfyt6Bg95FB1a7IFTBkW9tPubyeqITUoc54HWI6lY3NxA2Qq6LVyn2dOGJj5BoyL1MgjctfisLuYo4aorOwFrhmbs26EDkzDLnAr7NHvMDZLOk3Kn6N9IKA2DQ0UDl0RkGXqQRpkGArTGUPug",
                 };
                 Response.Bill response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -63,7 +63,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "817a81d1-44d4-4615-89c8-56cd3c83db30"
                 ) {
                     Amount = 4581,
-                    Description = "JLdESdgB4"
+                    Description = "JLdESdgB4",
                 };
                 Response.Bill response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

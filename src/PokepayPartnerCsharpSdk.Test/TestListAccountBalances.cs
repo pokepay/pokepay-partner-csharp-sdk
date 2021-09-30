@@ -42,7 +42,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.ListAccountBalances request = new Request.ListAccountBalances(
                     "3640ac4c-2e6d-4426-9b46-41c2bd9b0ecd"
                 ) {
-                    Direction = "asc"
+                    Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -60,7 +60,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "3640ac4c-2e6d-4426-9b46-41c2bd9b0ecd"
                 ) {
                     ExpiresAtTo = "2023-01-15T03:20:22.000000+09:00",
-                    Direction = "asc"
+                    Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -79,7 +79,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     ExpiresAtFrom = "2018-03-03T20:21:53.000000+09:00",
                     ExpiresAtTo = "2025-01-10T04:46:02.000000+09:00",
-                    Direction = "asc"
+                    Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -99,7 +99,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     PerPage = 9061,
                     ExpiresAtFrom = "2017-05-31T01:36:36.000000+09:00",
                     ExpiresAtTo = "2022-03-09T11:53:53.000000+09:00",
-                    Direction = "desc"
+                    Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -120,7 +120,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     PerPage = 130,
                     ExpiresAtFrom = "2025-05-20T02:28:44.000000+09:00",
                     ExpiresAtTo = "2020-07-10T22:07:30.000000+09:00",
-                    Direction = "desc"
+                    Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

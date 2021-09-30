@@ -46,7 +46,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "5984830b-8532-4cd6-ad67-3e1d9ac795a0",
                     "147b9c7e-3233-47e5-a8f0-f0a7e67cbf8d"
                 ) {
-                    Description = "OU7ktZcHWsZTpEtZX9770nlSO8H2DCl6imPJgn2XjYsZUpQvLebh65Hdtxmvs4SwxRthVVayjO1th3s3e6fayZ2E32vm3RMvvWttu1PJb3d04IfskzbRh2KXDkJqy1UyPaGHVkyMSdmemZcovbEUc9TiM3DTSa7pJlo8JS6mIVfCl8"
+                    Description = "OU7ktZcHWsZTpEtZX9770nlSO8H2DCl6imPJgn2XjYsZUpQvLebh65Hdtxmvs4SwxRthVVayjO1th3s3e6fayZ2E32vm3RMvvWttu1PJb3d04IfskzbRh2KXDkJqy1UyPaGHVkyMSdmemZcovbEUc9TiM3DTSa7pJlo8JS6mIVfCl8",
                 };
                 Response.Transaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -66,7 +66,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "147b9c7e-3233-47e5-a8f0-f0a7e67cbf8d"
                 ) {
                     PointExpiresAt = "2025-04-06T01:27:47.000000+09:00",
-                    Description = "6XTpGUPEJOaNnRanlNyuKHWuXq7zEzVgAAIhzrVmMQ7zQf4j1Xlnx61iQEXBdwXQXBx9CjvSgZke3VuP"
+                    Description = "6XTpGUPEJOaNnRanlNyuKHWuXq7zEzVgAAIhzrVmMQ7zQf4j1Xlnx61iQEXBdwXQXBx9CjvSgZke3VuP",
                 };
                 Response.Transaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -87,7 +87,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     PointAmount = 391,
                     PointExpiresAt = "2016-10-10T04:01:55.000000+09:00",
-                    Description = "xLQqoj9SXP9EgD"
+                    Description = "xLQqoj9SXP9EgD",
                 };
                 Response.Transaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -109,7 +109,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     MoneyAmount = 4265,
                     PointAmount = 3786,
                     PointExpiresAt = "2020-04-05T05:43:41.000000+09:00",
-                    Description = "agTJNb42JvVKNsj3zA7Dw0uibv6O0nFaLFwVLIZnC6rDyYuuG1XnlSIVaCTCoBzc3PolsdbrxUTbpTkQr9CA458OFUiC0xNjD1g6ausYOsWjmgSV"
+                    Description = "agTJNb42JvVKNsj3zA7Dw0uibv6O0nFaLFwVLIZnC6rDyYuuG1XnlSIVaCTCoBzc3PolsdbrxUTbpTkQr9CA458OFUiC0xNjD1g6ausYOsWjmgSV",
                 };
                 Response.Transaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -46,7 +46,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "fxpiSD0",
                     "ualUMr1aiXbRr0Yt6Ont0eqhymEV4KDx3FmD"
                 ) {
-                    Description = "9kbbli1vOnH69EFivIjA6"
+                    Description = "9kbbli1vOnH69EFivIjA6",
                 };
                 Response.BulkTransaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

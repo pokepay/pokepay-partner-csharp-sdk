@@ -48,7 +48,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "c4f40703-65c0-430b-9360-738eee27f57d",
                     1438
                 ) {
-                    RequestId = "7340ffff-189a-4ad6-9c61-e0591e976d00"
+                    RequestId = "7340ffff-189a-4ad6-9c61-e0591e976d00",
                 };
                 Response.Transaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -69,7 +69,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     1438
                 ) {
                     Description = "ua2WPHw1UTjf1quigD2l2JnK33Y2PKkmhgdj1RbwEdGAkTKdkwDZEgx5wET5OvQdZofRUOUAciXVcpzKCMcrOD6Emk2wkp2iXzqZDQWG9JIPYO9QhKjYAAaWngq9PQfQxKRvEszf3mWAEHwNafuFel",
-                    RequestId = "dca73902-114f-44d5-bc27-9e37e6a00d27"
+                    RequestId = "dca73902-114f-44d5-bc27-9e37e6a00d27",
                 };
                 Response.Transaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -27,7 +27,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.CreateCheck request = new Request.CreateCheck(
                     "f62f8d25-0ae6-426f-a57b-5e6b2d39ab22"
                 ) {
-                    MoneyAmount = 2329
+                    MoneyAmount = 2329,
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -45,7 +45,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "f62f8d25-0ae6-426f-a57b-5e6b2d39ab22"
                 ) {
                     MoneyAmount = 8025,
-                    Description = "XnQ6dyRqDXbojqilSXXfgL13rI1kMYSkzLYWcqyBEPqq6jXoMPoI5dYhtAEAC"
+                    Description = "XnQ6dyRqDXbojqilSXXfgL13rI1kMYSkzLYWcqyBEPqq6jXoMPoI5dYhtAEAC",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -64,7 +64,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     MoneyAmount = 7608,
                     IsOnetime = false,
-                    Description = "N1MIRbysguh0xXqdkQK8VGfHRzulBqoP"
+                    Description = "N1MIRbysguh0xXqdkQK8VGfHRzulBqoP",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -84,7 +84,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     MoneyAmount = 4673,
                     UsageLimit = 1704,
                     IsOnetime = false,
-                    Description = "VuBC2EUluqb81O3ZagKE8LcCa8bz2nHShe5EoHVudmx1iMacSt3whWHQ5cbR62EyfrAyRxoXmZ8au8D4esSHy55WYfHfvN0QEBe9OUmuQoNyAxdhT65YfaNVM2xjqlPxxy8RqwFWTQ1hvVt9bN2zIxNZx4eE9mHPjq6XCvYjxbcuNA5AOQHru6gAXocPu"
+                    Description = "VuBC2EUluqb81O3ZagKE8LcCa8bz2nHShe5EoHVudmx1iMacSt3whWHQ5cbR62EyfrAyRxoXmZ8au8D4esSHy55WYfHfvN0QEBe9OUmuQoNyAxdhT65YfaNVM2xjqlPxxy8RqwFWTQ1hvVt9bN2zIxNZx4eE9mHPjq6XCvYjxbcuNA5AOQHru6gAXocPu",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -105,7 +105,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2016-11-17T11:17:07.000000+09:00",
                     UsageLimit = 939,
                     IsOnetime = true,
-                    Description = "UbFxl1xg8SX1voG8Gydqo4fQ7D47J36mgyKf2pLnur36TYPgxIzfeirgwWnuJKugM3OQh2JHBnxbiEM0"
+                    Description = "UbFxl1xg8SX1voG8Gydqo4fQ7D47J36mgyKf2pLnur36TYPgxIzfeirgwWnuJKugM3OQh2JHBnxbiEM0",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -127,7 +127,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2021-06-21T16:14:06.000000+09:00",
                     UsageLimit = 4498,
                     IsOnetime = false,
-                    Description = "nvKX9mW4mLerHweV6yDqMFurm2HyY5rxBRsFTyEvnewbYd4rNZJsCq7m7arw2NKYH12xHXaAOFqIwxrvxkxwVYBDQiRCyVTR3czNdwQ9LziqjK5"
+                    Description = "nvKX9mW4mLerHweV6yDqMFurm2HyY5rxBRsFTyEvnewbYd4rNZJsCq7m7arw2NKYH12xHXaAOFqIwxrvxkxwVYBDQiRCyVTR3czNdwQ9LziqjK5",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -150,7 +150,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2017-06-13T23:16:26.000000+09:00",
                     UsageLimit = 4603,
                     IsOnetime = false,
-                    Description = "XVB9A32E"
+                    Description = "XVB9A32E",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -174,7 +174,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2017-08-12T22:28:08.000000+09:00",
                     UsageLimit = 9362,
                     IsOnetime = false,
-                    Description = "9JqLEvyRdA5j20ws4Z1pnjZ8xWKeN3WKGyHXCKDfS0S9olxtCG8sS34enFyHhIbteE1tQOMttUhD0Oi"
+                    Description = "9JqLEvyRdA5j20ws4Z1pnjZ8xWKeN3WKGyHXCKDfS0S9olxtCG8sS34enFyHhIbteE1tQOMttUhD0Oi",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -192,7 +192,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "f62f8d25-0ae6-426f-a57b-5e6b2d39ab22"
                 ) {
                     MoneyAmount = 2807,
-                    PointAmount = 786
+                    PointAmount = 786,
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -211,7 +211,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     MoneyAmount = 9122,
                     PointAmount = 453,
-                    Description = "L7L6kZ3KaNub1zwaCdHgj8ik3dmsSURUNaSg6OcHEmOeQFO3Ox8qDzSQ0YVNC6SfrLsEgbwDrafzykU4qQWwEl9RBh7JkqQ2DDr8e6Qf8fK7SBxethCuCr4dB"
+                    Description = "L7L6kZ3KaNub1zwaCdHgj8ik3dmsSURUNaSg6OcHEmOeQFO3Ox8qDzSQ0YVNC6SfrLsEgbwDrafzykU4qQWwEl9RBh7JkqQ2DDr8e6Qf8fK7SBxethCuCr4dB",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -231,7 +231,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     MoneyAmount = 7635,
                     PointAmount = 5668,
                     IsOnetime = false,
-                    Description = "zD3agMTAvZtCmtviHLHOBHoLHZ5Hyso5u9Osjia9h3ovwp1QqOYhJfTJv94bnDyHKg7jf7TRBDusrb62imeaN035"
+                    Description = "zD3agMTAvZtCmtviHLHOBHoLHZ5Hyso5u9Osjia9h3ovwp1QqOYhJfTJv94bnDyHKg7jf7TRBDusrb62imeaN035",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -252,7 +252,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     PointAmount = 1896,
                     UsageLimit = 7813,
                     IsOnetime = false,
-                    Description = "YVT6897JBIT98Ea3vOiHnJbC3RzxMsGYTRQVbb"
+                    Description = "YVT6897JBIT98Ea3vOiHnJbC3RzxMsGYTRQVbb",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -274,7 +274,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2021-10-24T06:50:10.000000+09:00",
                     UsageLimit = 2662,
                     IsOnetime = true,
-                    Description = "wcTIqfZGa8VmM7LxaafZsEiZ4h1kUtLESZUqCMHUv6WI9WlLqAjFFVto"
+                    Description = "wcTIqfZGa8VmM7LxaafZsEiZ4h1kUtLESZUqCMHUv6WI9WlLqAjFFVto",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -297,7 +297,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2024-02-04T14:42:54.000000+09:00",
                     UsageLimit = 1543,
                     IsOnetime = false,
-                    Description = "ZJ6xmZ8N4p4uCNZaugRp11iMcrfILoN8ZP7287JaoYb8spv1FcaYx8c7c37K2BoQEomxqdvzxKVxdoit0nsRdkY0a6T9IRy95uKnYj6aDVb3qDkr"
+                    Description = "ZJ6xmZ8N4p4uCNZaugRp11iMcrfILoN8ZP7287JaoYb8spv1FcaYx8c7c37K2BoQEomxqdvzxKVxdoit0nsRdkY0a6T9IRy95uKnYj6aDVb3qDkr",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -321,7 +321,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2022-01-09T16:38:53.000000+09:00",
                     UsageLimit = 2484,
                     IsOnetime = true,
-                    Description = "9wkdOXwioDpfXuz"
+                    Description = "9wkdOXwioDpfXuz",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -346,7 +346,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2017-08-21T16:10:15.000000+09:00",
                     UsageLimit = 2160,
                     IsOnetime = false,
-                    Description = "uKefj9znX2XonFzQcO5QEOmdgUm73I2kFchNQksZB6ByT3lVRQ7O823WFeXCsADfveWv5SetJLuZcB6tdcwibyPvTHbjOW"
+                    Description = "uKefj9znX2XonFzQcO5QEOmdgUm73I2kFchNQksZB6ByT3lVRQ7O823WFeXCsADfveWv5SetJLuZcB6tdcwibyPvTHbjOW",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -363,7 +363,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.CreateCheck request = new Request.CreateCheck(
                     "f62f8d25-0ae6-426f-a57b-5e6b2d39ab22"
                 ) {
-                    PointAmount = 5361
+                    PointAmount = 5361,
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -381,7 +381,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "f62f8d25-0ae6-426f-a57b-5e6b2d39ab22"
                 ) {
                     PointAmount = 4778,
-                    Description = "qVGNOP2f7Fmc6XSXXM3Y5XPxnjFhfkfYgvABx"
+                    Description = "qVGNOP2f7Fmc6XSXXM3Y5XPxnjFhfkfYgvABx",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -400,7 +400,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     PointAmount = 6866,
                     IsOnetime = true,
-                    Description = "hjV7rXm6F6onhtgkbe1I3fnSrAjiMpnuQgQNZWqLAFAWqZBqyjs43AAjNChMERBnJER6lOBQBwAgsTow2Z3Uka1wds9T"
+                    Description = "hjV7rXm6F6onhtgkbe1I3fnSrAjiMpnuQgQNZWqLAFAWqZBqyjs43AAjNChMERBnJER6lOBQBwAgsTow2Z3Uka1wds9T",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -420,7 +420,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     PointAmount = 2745,
                     UsageLimit = 1986,
                     IsOnetime = true,
-                    Description = "5VDJiBPB1XeTNJcIKtWyeNc1zzlxW2hgOK8NI225RAsUHuuLFS4058hKDGnyjbxrF6zxkmTZedVWeLbSdWlORFkWxf1fgII7vrhxHZrOEIH6HNdDlfIrfFFwUdXhpSi4j72IcAxs47X"
+                    Description = "5VDJiBPB1XeTNJcIKtWyeNc1zzlxW2hgOK8NI225RAsUHuuLFS4058hKDGnyjbxrF6zxkmTZedVWeLbSdWlORFkWxf1fgII7vrhxHZrOEIH6HNdDlfIrfFFwUdXhpSi4j72IcAxs47X",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -441,7 +441,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2018-06-18T00:21:29.000000+09:00",
                     UsageLimit = 1113,
                     IsOnetime = false,
-                    Description = "aQGyn4Age91Y1cWNDBnv9RrzZK5kL8kuH9QZjAoA9Wjz3xWF4fJVtnG3Avmta20vIgud6F1UgGMHbk2IRflsvwuZxk0nQmXMvg0FcWUrBHOSV7LC2s46hfsRF0YKxTClCMK7WZ9OzNLNkjfoAuPSksHUuefNAm0yTlB8Y7jnh"
+                    Description = "aQGyn4Age91Y1cWNDBnv9RrzZK5kL8kuH9QZjAoA9Wjz3xWF4fJVtnG3Avmta20vIgud6F1UgGMHbk2IRflsvwuZxk0nQmXMvg0FcWUrBHOSV7LC2s46hfsRF0YKxTClCMK7WZ9OzNLNkjfoAuPSksHUuefNAm0yTlB8Y7jnh",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -463,7 +463,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2019-06-27T20:45:12.000000+09:00",
                     UsageLimit = 4198,
                     IsOnetime = true,
-                    Description = "ZpB32LWZF"
+                    Description = "ZpB32LWZF",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -486,7 +486,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2019-08-10T12:36:57.000000+09:00",
                     UsageLimit = 394,
                     IsOnetime = true,
-                    Description = "77hNnDgeQkP6BrHNLW2TjgwJkClYsxYjLV6mNckmXWb6cDTOBEvT1fZYocBrtgwRLixenA1GWqf2JPqamqpbbuSj1PURjYRas"
+                    Description = "77hNnDgeQkP6BrHNLW2TjgwJkClYsxYjLV6mNckmXWb6cDTOBEvT1fZYocBrtgwRLixenA1GWqf2JPqamqpbbuSj1PURjYRas",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -510,7 +510,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ExpiresAt = "2023-10-10T07:52:39.000000+09:00",
                     UsageLimit = 678,
                     IsOnetime = true,
-                    Description = "K9f1O2csoG3F55uy56fVMl4ovKtbbNMLWzz4xf72tklHyikvXSu1xVqKMzKtPMLBX6YLvmDqPAbWtHJHRtQBqCHsxk71kIOiSHcZ37iojnk7j2j33qMA4N2evwLBNS7QyCEhtgNDuAnxydB9u3o7ZMeTosoRh4S0mExQI1uCwHXvSS9xqXNJMeqv2rRxx8SeYgA5R"
+                    Description = "K9f1O2csoG3F55uy56fVMl4ovKtbbNMLWzz4xf72tklHyikvXSu1xVqKMzKtPMLBX6YLvmDqPAbWtHJHRtQBqCHsxk71kIOiSHcZ37iojnk7j2j33qMA4N2evwLBNS7QyCEhtgNDuAnxydB9u3o7ZMeTosoRh4S0mExQI1uCwHXvSS9xqXNJMeqv2rRxx8SeYgA5R",
                 };
                 Response.Check response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

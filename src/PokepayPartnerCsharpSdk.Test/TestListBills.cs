@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    IsDisabled = false
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -54,7 +54,7 @@ namespace PokepayPartnerCsharpSdk.Test
             try {
                 Request.ListBills request = new Request.ListBills() {
                     UpperLimitAmount = 1985,
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -71,7 +71,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.ListBills request = new Request.ListBills() {
                     LowerLimitAmount = 6042,
                     UpperLimitAmount = 7538,
-                    IsDisabled = false
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -89,7 +89,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "ccf1697a-436c-4c5e-9755-86ec62205cec",
                     LowerLimitAmount = 314,
                     UpperLimitAmount = 776,
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -108,7 +108,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "8c9f7be6-9b01-4458-9f19-9ba75c52ada5",
                     LowerLimitAmount = 7184,
                     UpperLimitAmount = 9818,
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -128,7 +128,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "734cfe61-59be-4158-b2e5-712ac338ce50",
                     LowerLimitAmount = 4344,
                     UpperLimitAmount = 8041,
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -149,7 +149,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "dbfc6c3b-a58b-46b0-9288-42c9ff319347",
                     LowerLimitAmount = 197,
                     UpperLimitAmount = 9860,
-                    IsDisabled = false
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -171,7 +171,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "82ebb227-2b66-4610-ac0f-35fd8e7a7012",
                     LowerLimitAmount = 9084,
                     UpperLimitAmount = 8550,
-                    IsDisabled = false
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -194,7 +194,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "c81ef931-e456-4ddc-92be-bab842b83bd8",
                     LowerLimitAmount = 1688,
                     UpperLimitAmount = 3365,
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -218,7 +218,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "5f193154-2c28-4c3a-a976-c5833cb5eef5",
                     LowerLimitAmount = 7342,
                     UpperLimitAmount = 3083,
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -243,7 +243,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "f599f724-1dd6-4f25-8e9a-8231f2b0485f",
                     LowerLimitAmount = 3970,
                     UpperLimitAmount = 9367,
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -269,7 +269,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "33ca5463-139e-485d-9e37-1258919fa401",
                     LowerLimitAmount = 3086,
                     UpperLimitAmount = 7563,
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -296,7 +296,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     ShopId = "f4174cfa-052d-4cad-9257-bf8028718ed2",
                     LowerLimitAmount = 6529,
                     UpperLimitAmount = 3201,
-                    IsDisabled = true
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
