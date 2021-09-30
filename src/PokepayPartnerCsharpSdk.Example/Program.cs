@@ -3,14 +3,16 @@ using System;
 using System.Threading.Tasks;
 using System.Text.Json;
 
-namespace pokepay_partner_csharp_sdk
+using PokepayPartnerCsharpSdk;
+
+namespace PokepayPartnerCsharpSdk.Example
 {
-    class Program
+    public class MainProgram
     {
         static async Task Main(string[] args)
         {
             var client = new Client("config.ini");
-            var sendEchoRequest = new SendEcho("message1");
+            var sendEchoRequest = new Request.SendEcho("message1");
 
             var echo = await sendEchoRequest.Send(client);
 

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>PokepayPartnerCsharpSdk</RootNamespace>
+    <AssemblyName>PokepayPartnerCsharpSdk</AssemblyName>
+    <Description>Pokepay Partner SDK for C#</Description>
+    <Authors>Pokepay developer team (dev@pokepay.jp)</Authors>
+    <PackageProjectUrl>https://github.com/pokepay/pokepay-partner-csharp-sdk</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIconUrl>https://avatars.githubusercontent.com/u/40480424</PackageIconUrl>
+    <Version>1.0.0</Version>
+    <!-- <SignAssembly>True</SignAssembly>
+         <AssemblyOriginatorKeyFile>Properties\publickey.snk</AssemblyOriginatorKeyFile> -->
+    <OutputType>Library</OutputType>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);1591</NoWarn><!-- Ignore: Undocumented Public Members -->
+    <PackageTags>sdk, pokepay, partner</PackageTags>
+    <PackageId>pokepay-partner-csharp-sdk</PackageId>
+    <Product>Pokepay Partner SDK for C#</Product>
+    <ReleaseVersion></ReleaseVersion>
+  </PropertyGroup>
+
+  <!-- Auto-select supported target frameworks based on MSBuild version -->
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RepositoryUrl>https://github.com/pokepay/pokepay-partner-csharp-sdk</RepositoryUrl>
+    <Copyright>PocketChange.inc 2021-</Copyright>
+  </PropertyGroup>
+
+  <!-- Only generate NuGet package for full builds -->
+  <PropertyGroup Condition="'$(MSBuildRuntimeType)'=='Full'">
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
