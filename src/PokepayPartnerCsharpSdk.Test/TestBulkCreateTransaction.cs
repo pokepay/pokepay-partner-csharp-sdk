@@ -25,9 +25,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "CAyi0eUz4xXH5OLhVoB1lIuiO",
-                    "fxpiSD0",
-                    "ualUMr1aiXbRr0Yt6Ont0eqhymEV4KDx3FmD"
+                    "gtc1eHQx",
+                    "a3",
+                    "8fcy9G2ru7CIugZBUKc64A8KJDFHDE0sPhVL"
                 );
                 Response.BulkTransaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -42,11 +42,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "CAyi0eUz4xXH5OLhVoB1lIuiO",
-                    "fxpiSD0",
-                    "ualUMr1aiXbRr0Yt6Ont0eqhymEV4KDx3FmD"
+                    "gtc1eHQx",
+                    "a3",
+                    "8fcy9G2ru7CIugZBUKc64A8KJDFHDE0sPhVL"
                 ) {
-                    Description = "9kbbli1vOnH69EFivIjA6",
+                    Description = "mxr0FU3DnW6KqsDEeelMkJvsg1mQveiZolVhKjCQVZwzstz19XaUt7HUg2vBtQ3icUlEOMImvGy37aG3VpRl",
                 };
                 Response.BulkTransaction response = await request.Send(client!);
                 Assert.NotNull(response, "Shouldn't be null at least");

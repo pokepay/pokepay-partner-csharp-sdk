@@ -6,10 +6,10 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Pong
     {
-        [JsonPropertyName("pong")]public string _Pong { get; }
+        public string pong { get; }
 
         [JsonConstructor]
         public Pong(string pong) =>
-            (_Pong) = (pong);
+            (this.pong) = (pong);
     }
 }
