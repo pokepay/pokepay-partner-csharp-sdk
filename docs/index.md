@@ -3,7 +3,7 @@
 
 プロジェクトにて、以下のようにインポートします。
 
-```cs
+```csharp
 using PokepayPartnerCsharpSdk;
 // もしくは
 using PokepayPartnerCsharpSdk;
