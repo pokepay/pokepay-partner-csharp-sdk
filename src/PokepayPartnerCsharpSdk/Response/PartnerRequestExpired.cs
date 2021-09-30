@@ -4,13 +4,13 @@ using System.Text.Json.Serialization;
 
 namespace PokepayPartnerCsharpSdk.Response
 {
-    public class Echo
+    public class PartnerRequestExpired
     {
-        public string Status { get; }
+        public string Type { get; }
         public string Message { get; }
 
         [JsonConstructor]
-        public Echo(string status, string message) =>
-            (Status, Message) = (status, message);
+        public PartnerRequestExpired(string type, string message) =>
+            (Type, Message) = (type, message);
     }
 }

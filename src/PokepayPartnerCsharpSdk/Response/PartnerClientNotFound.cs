@@ -4,13 +4,13 @@ using System.Text.Json.Serialization;
 
 namespace PokepayPartnerCsharpSdk.Response
 {
-    public class Echo
+    public class PartnerClientNotFound
     {
-        public string Status { get; }
+        public string Type { get; }
         public string Message { get; }
 
         [JsonConstructor]
-        public Echo(string status, string message) =>
-            (Status, Message) = (status, message);
+        public PartnerClientNotFound(string type, string message) =>
+            (Type, Message) = (type, message);
     }
 }

@@ -105,10 +105,9 @@ namespace PokepayPartnerCsharpSdk
         public async Task<string> Send(string path, HttpMethod method, object data)
         {
             RequestBodyData requestBodyData = new RequestBodyData(
-                data, // new RequestParams { message = "echoechofuck" }
+                data,
                 DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
-                Guid.NewGuid().ToString()
-                );
+                Guid.NewGuid().ToString());
 
             string requestBodyString = JsonSerializer.Serialize(requestBodyData, JsonOptions);
             string requestBodyEnc = Encrypter.EncryptData(requestBodyString, ClientSecret);
@@ -132,7 +131,7 @@ namespace PokepayPartnerCsharpSdk
 
             if (receiveBodyData.ResponseData == null) {
                 // "response_data" was not found in response? it maybe Ping?
-                // FIXME
+                // FIXME: deserialize
                 Console.WriteLine("{0}", responseString);
                 return "";
             }
