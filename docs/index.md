@@ -3,12 +3,12 @@
 
 プロジェクトにて、以下のようにインポートします。
 
-```csharp
-using PokepayPartnerCsharpSdk
+```cs
+using PokepayPartnerCsharpSdk;
 // もしくは
-using PokepayPartnerCsharpSdk
-using PokepayPartnerCsharpSdk.Request
-using PokepayPartnerCsharpSdk.Response
+using PokepayPartnerCsharpSdk;
+using PokepayPartnerCsharpSdk.Request;
+using PokepayPartnerCsharpSdk.Response;
 ```
 
 ## Getting started
@@ -23,8 +23,8 @@ using PokepayPartnerCsharpSdk.Response
 典型的には以下のようなコードになります。
 
 ```csharp
-using PokepayPartnerCsharpSdk
-...
+using PokepayPartnerCsharpSdk;
+// ...
 Client client = new Client("/path/to/config.ini");
 Request.SendEcho request = new Request.SendEcho("hello");
 Response.Echo response = await request.Send(client);
@@ -33,7 +33,7 @@ Response.Echo response = await request.Send(client);
 リクエストオブジェクトは、必須のパラメータはコンストラクタの引数に与える必要があります。
 オプショナルなパラメーターは、 オブジェクト初期化子 `object initializer` (`{ }`)で与えることができます。
 
-```
+```csharp
 // (例) 必須パラメーターとオプショナルパラメータの指定
 Request.CreateBill request = new Request.CreateBill(
     "1b598fcb-2662-4b91-bcb1-62ded4d691b1",
@@ -142,10 +142,10 @@ if (response.Pagination.HasNext) {
 API呼び出し時のエラーの場合は `HttpRequestException` が `throw` されます。
 参考: https://docs.microsoft.com/ja-jp/dotnet/api/system.net.http.httprequestexception?view=net-5.0
 
-* err.Message に内容
-* err.StatusCode にHttpステータスコード
-* err.Data["Type"] にエラータイプ
-* err.Data["Message"] に詳細理由
+* e.Message に内容
+* e.StatusCode にHttpステータスコード
+* e.Data["Type"] にエラータイプ
+* e.Data["Message"] に詳細理由
 
 がそれぞれ設定されています。
 
