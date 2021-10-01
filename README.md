@@ -2,7 +2,7 @@
 
 ### Setup
 
-* Install dotnet 5.0 - [Site](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install)
+* Install .NET 5.0 or Later from the [Download site](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install)
 
 ### Build
 ```
