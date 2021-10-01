@@ -1,3 +1,9 @@
+// This file is based on this article
+// -- https://note.dokeep.jp/post/csharp-inifile-read/#inifilecs-%E7%A7%81%E7%9A%84%E3%83%A1%E3%83%A2
+//
+// Deeply thanks to the writer!
+//
+
 #nullable enable
 using System;
 using System.Collections.Generic;
