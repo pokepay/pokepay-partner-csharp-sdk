@@ -4,7 +4,7 @@
 nuget.orgからインストールすることができます。[パッケージはこちら](https://www.nuget.org/packages/pokepay-partner-csharp-sdk/)
 
 ```
-PM> Install-Package pokepay-partner-csharp-sdk -Version 1.0.0
+PM> Install-Package pokepay-partner-csharp-sdk
 ```
 or
 ```
