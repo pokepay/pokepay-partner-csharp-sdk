@@ -1,5 +1,15 @@
 # Partner API SDK for C#
-## Import
+## Installation
+
+nuget.orgからインストールすることができます。[パッケージはこちら](https://www.nuget.org/packages/pokepay-partner-csharp-sdk/)
+
+```
+PM> Install-Package pokepay-partner-csharp-sdk -Version 1.0.0
+```
+or
+```
+$ dotnet add package pokepay-partner-csharp-sdk
+```
 
 プロジェクトにて、以下のようにインポートします。
 
