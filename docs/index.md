@@ -213,8 +213,8 @@ try {
 取引一覧を返します。
 ```csharp
 Request.ListTransactions request = new Request.ListTransactions() {
-    From = "2022-08-01T05:09:05.000000+09:00",  // 開始日時
-    To = "2020-05-01T22:39:58.000000+09:00",  // 終了日時
+    From = "2017-05-10T09:01:07.000000+09:00",  // 開始日時
+    To = "2017-02-12T17:02:56.000000+09:00",  // 終了日時
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
@@ -423,10 +423,10 @@ Request.CreateTransaction request = new Request.CreateTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ) {
-    MoneyAmount = 627,
-    PointAmount = 824,
-    PointExpiresAt = "2018-07-04T21:50:02.000000+09:00",  // ポイント有効期限
-    Description = "eoAqvgg01zZW75gRDgWRTNwobRsB1baR1aePdc9",
+    MoneyAmount = 5545,
+    PointAmount = 6708,
+    PointExpiresAt = "2024-02-06T11:02:52.000000+09:00",  // ポイント有効期限
+    Description = "CafuN856J50SdiADG37eydGENMPuSUGCPNHip0",
 };
 Response.Transaction response = await request.Send(client!);
 ```
@@ -454,9 +454,9 @@ Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
     BearPointShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント支払時の負担店舗ID
-    MoneyAmount = 5785,  // マネー額
-    PointAmount = 2181,  // ポイント額
-    PointExpiresAt = "2024-02-14T20:30:38.000000+09:00",  // ポイント有効期限
+    MoneyAmount = 7001.0,  // マネー額
+    PointAmount = 650.0,  // ポイント額
+    PointExpiresAt = "2018-05-18T16:46:21.000000+09:00",  // ポイント有効期限
     Description = "初夏のチャージキャンペーン",  // 取引履歴に表示する説明文
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
@@ -584,7 +584,7 @@ Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // エンドユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    6274 // 支払い額
+    6244.0 // 支払い額
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
@@ -678,7 +678,7 @@ Request.CreateTransferTransaction request = new Request.CreateTransferTransactio
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 送金元ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 受取ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    6911 // 送金額
+    2754.0 // 送金額
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
@@ -769,9 +769,9 @@ Request.CreateExchangeTransaction request = new Request.CreateExchangeTransactio
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    6720
+    7140.0
 ) {
-    Description = "GHLcwyelAg5Jr7zEeO7n",
+    Description = "Xe1sIjLSVztCspdpKcDGU85LATApzQ2dQG1XtK0UfX1fzmKZw4jAX5TdVMZA3FsBWHTaR7q8iHovbTWoPNbCUX3WmvU0lnYW7MWulxJqejEoXiemEzy22TP2wtSY9IoDSrJUA2sSTBsOwjVmr0",
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
 Response.Transaction response = await request.Send(client!);
@@ -832,19 +832,19 @@ Response.Transaction response = await request.Send(client!);
 #### 
 ```csharp
 Request.ListTransfers request = new Request.ListTransfers() {
-    From = "2022-01-25T11:34:53.000000+09:00",
-    To = "2019-09-17T10:26:50.000000+09:00",
-    Page = 1962,
-    PerPage = 6233,
+    From = "2020-12-08T12:26:18.000000+09:00",
+    To = "2017-11-24T07:36:36.000000+09:00",
+    Page = 4740,
+    PerPage = 1712,
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    ShopName = "74j643AIOVakyq8QHWKNric3MBQYWsKtvnxoQJLloM94TQVFchkaVLnKXq1JcpZfZUH2UsKCxnRcuSoLNAly4QR5kzfucn7LZFZwhy5RIJGwbFSZ2qU3L9frpqlrETgz3O9wlyQ0TWfR4Gx21zM7WIQGDsPsJyAShBlCJPjtVj6RA58jW2j8noWbhryHKQAP2bBeZkmIh2UeN7Z047tEp9MnaMKkPTTOh4KlFXKgtix",
+    ShopName = "79fqhITnnz7WaCAiQd9B8sle88sl7rSWKN9oQjHsNX48VkSyiuzE1L2wv36YuE4jwp0IiR44I5KLiOrRKq3qxtTGifN6KrraD5uojwDmQdLNOKHIlDiaOh78QfhNbZ3YfGhlbqaOElvScjtjkG1",
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    CustomerName = "qVTYrrSHZ1a0tz4EzkuhUCHWp85qyAYWUJWst1yIlHOt0XiM6Qkur8SbZd3wcuCesxkTgeUlIAlQvL5t780R8L5VrLxzRQlVu0ZdkmHWdPUiVDqeHPcQVtlOjSB31Mxq8SXpxSHJRZi52y7KvoeklIR5ig74Fkbtbb0SlK2KbT8BQ8WxGHxi6f0cuW1ZhxLtCHCm7yUfJm7Fg98YgjSKRGLQpNx8ciNrKweGJtnGqdSp90ci6D0i",
+    CustomerName = "WEjltqaYkhp7caXjUtBcNe9XyY4wthFo0glXBErIUB1p7aPMzXnAdDrY96Gn0OAQ9xSN0zfKx7ivixiVqjgvBNcsQLQxAtJm",
     TransactionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    IsModified = false,
-    TransactionTypes = new string[]{"topup", "payment"},
-    TransferTypes = new string[]{"coupon", "campaign", "topup", "exchange", "transfer"},  // 取引明細の種類でフィルターします。
+    IsModified = true,
+    TransactionTypes = new string[]{"transfer", "payment", "topup", "exchange"},
+    TransferTypes = new string[]{"exchange", "payment", "campaign", "transfer"},  // 取引明細の種類でフィルターします。
     Description = "店頭QRコードによる支払い",  // 取引詳細説明文
 };
 Response.PaginatedTransfers response = await request.Send(client!);
@@ -954,18 +954,18 @@ QRコード生成時に送金元店舗のウォレット情報や、送金額な
 支払いQRコード一覧を表示します。
 ```csharp
 Request.ListBills request = new Request.ListBills() {
-    Page = 5303,  // ページ番号
-    PerPage = 5877,  // 1ページの表示数
-    BillId = "rwJLurByrA",  // 支払いQRコードのID
+    Page = 5974,  // ページ番号
+    PerPage = 4994,  // 1ページの表示数
+    BillId = "kNd3",  // 支払いQRコードのID
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    OrganizationCode = "iVx54T44-Z-93S1Fdw0V",  // 組織コード
+    OrganizationCode = "jUp3-N--X92Fbs--D0fn--Hx6Q-zy1",  // 組織コード
     Description = "test bill",  // 取引説明文
-    CreatedFrom = "2024-08-31T12:14:15.000000+09:00",  // 作成日時(起点)
-    CreatedTo = "2023-02-23T08:44:20.000000+09:00",  // 作成日時(終点)
+    CreatedFrom = "2017-04-21T18:37:28.000000+09:00",  // 作成日時(起点)
+    CreatedTo = "2021-05-08T05:36:00.000000+09:00",  // 作成日時(終点)
     ShopName = "bill test shop1",  // 店舗名
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
-    LowerLimitAmount = 1529,  // 金額の範囲によるフィルタ(下限)
-    UpperLimitAmount = 2507,  // 金額の範囲によるフィルタ(上限)
+    LowerLimitAmount = 6767,  // 金額の範囲によるフィルタ(下限)
+    UpperLimitAmount = 2585,  // 金額の範囲によるフィルタ(上限)
     IsDisabled = false,  // 支払いQRコードが無効化されているかどうか
 };
 Response.PaginatedBills response = await request.Send(client!);
@@ -1112,7 +1112,7 @@ Request.CreateBill request = new Request.CreateBill(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 支払いマネーのマネーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 支払い先(受け取り人)の店舗ID
 ) {
-    Amount = 95,  // 支払い額
+    Amount = 8458.0,  // 支払い額
     Description = "test bill",  // 説明文(アプリ上で取引の説明文として表示される)
 };
 Response.Bill response = await request.Send(client!);
@@ -1138,9 +1138,9 @@ Response.Bill response = await request.Send(client!);
 Request.UpdateBill request = new Request.UpdateBill(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 支払いQRコードのID
 ) {
-    Amount = 4221,  // 支払い額
+    Amount = 45.0,  // 支払い額
     Description = "test bill",  // 説明文
-    IsDisabled = true,  // 無効化されているかどうか
+    IsDisabled = false,  // 無効化されているかどうか
 };
 Response.Bill response = await request.Send(client!);
 ```
@@ -1204,10 +1204,10 @@ Cashtrayを作成します。
 Request.CreateCashtray request = new Request.CreateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ユーザーID
-    5573 // 金額
+    6575.0 // 金額
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 9284,  // 失効時間(秒)
+    ExpiresIn = 1228,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client!);
 ```
@@ -1372,9 +1372,9 @@ Cashtrayの内容を更新します。bodyパラメーターは全て省略可�
 Request.UpdateCashtray request = new Request.UpdateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // CashtrayのID
 ) {
-    Amount = 3058,  // 金額
+    Amount = 7001.0,  // 金額
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 9385,  // 失効時間(秒)
+    ExpiresIn = 6822,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client!);
 ```
@@ -1452,7 +1452,7 @@ Response.AccountDetail response = await request.Send(client!);
 Request.UpdateAccount request = new Request.UpdateAccount(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    IsSuspended = true,  // ウォレットが凍結されているかどうか
+    IsSuspended = false,  // ウォレットが凍結されているかどうか
 };
 Response.AccountDetail response = await request.Send(client!);
 ```
@@ -1485,11 +1485,11 @@ Response.AccountDetail response = await request.Send(client!);
 Request.ListAccountBalances request = new Request.ListAccountBalances(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    Page = 4129,  // ページ番号
-    PerPage = 6148,  // 1ページ分の取引数
-    ExpiresAtFrom = "2022-12-19T05:30:00.000000+09:00",  // 有効期限の期間によるフィルター(開始時点)
-    ExpiresAtTo = "2022-05-06T06:59:39.000000+09:00",  // 有効期限の期間によるフィルター(終了時点)
-    Direction = "desc",  // 有効期限によるソート順序
+    Page = 2373,  // ページ番号
+    PerPage = 451,  // 1ページ分の取引数
+    ExpiresAtFrom = "2023-01-18T09:59:31.000000+09:00",  // 有効期限の期間によるフィルター(開始時点)
+    ExpiresAtTo = "2016-09-25T04:41:30.000000+09:00",  // 有効期限の期間によるフィルター(終了時点)
+    Direction = "asc",  // 有効期限によるソート順序
 };
 Response.PaginatedAccountBalance response = await request.Send(client!);
 ```
@@ -1565,11 +1565,11 @@ Response.PaginatedAccountBalance response = await request.Send(client!);
 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    Page = 9609,  // ページ番号
-    PerPage = 642,  // 1ページ分の取引数
-    ExpiresAtFrom = "2018-04-23T11:50:36.000000+09:00",  // 有効期限の期間によるフィルター(開始時点)
-    ExpiresAtTo = "2020-11-03T13:39:08.000000+09:00",  // 有効期限の期間によるフィルター(終了時点)
-    Direction = "desc",  // 有効期限によるソート順序
+    Page = 1228,  // ページ番号
+    PerPage = 7032,  // 1ページ分の取引数
+    ExpiresAtFrom = "2023-02-16T15:27:38.000000+09:00",  // 有効期限の期間によるフィルター(開始時点)
+    ExpiresAtTo = "2025-04-18T14:51:29.000000+09:00",  // 有効期限の期間によるフィルター(終了時点)
+    Direction = "asc",  // 有効期限によるソート順序
 };
 Response.PaginatedAccountBalance response = await request.Send(client!);
 ```
@@ -1645,14 +1645,14 @@ Response.PaginatedAccountBalance response = await request.Send(client!);
 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    Page = 7094,  // ページ番号
-    PerPage = 2744,  // 1ページ分のウォレット数
-    CreatedAtFrom = "2021-03-12T04:05:38.000000+09:00",  // ウォレット作成日によるフィルター(開始時点)
-    CreatedAtTo = "2018-05-15T22:02:55.000000+09:00",  // ウォレット作成日によるフィルター(終了時点)
+    Page = 4539,  // ページ番号
+    PerPage = 2772,  // 1ページ分のウォレット数
+    CreatedAtFrom = "2023-12-25T19:33:57.000000+09:00",  // ウォレット作成日によるフィルター(開始時点)
+    CreatedAtTo = "2020-11-16T21:21:47.000000+09:00",  // ウォレット作成日によるフィルター(終了時点)
     IsSuspended = true,  // ウォレットが凍結状態かどうかでフィルターする
-    ExternalId = "pO4lT",  // 外部ID
-    Tel = "09048167-5003",  // エンドユーザーの電話番号
-    Email = "HIJ7mbc5qb@OnYC.com",  // エンドユーザーのメールアドレス
+    ExternalId = "vjsqVkcSInvOjFPIL9qlVM",  // 外部ID
+    Tel = "07018335-9579",  // エンドユーザーの電話番号
+    Email = "805Swtsg2N@kJBD.com",  // エンドユーザーのメールアドレス
 };
 Response.PaginatedAccountWithUsers response = await request.Send(client!);
 ```
@@ -1757,7 +1757,7 @@ Request.CreateCustomerAccount request = new Request.CreateCustomerAccount(
 ) {
     UserName = "ポケペイ太郎",  // ユーザー名
     AccountName = "ポケペイ太郎のアカウント",  // アカウント名
-    ExternalId = "xA4AjI47p6qtIsaCpt80GzH1FR",  // 外部ID
+    ExternalId = "WoqdLq3QmHRbZpwbP",  // 外部ID
 };
 Response.AccountWithUser response = await request.Send(client!);
 ```
@@ -1813,11 +1813,11 @@ PAPIクライアントシステムから利用するPokepayユーザーのIDで�
 Request.GetShopAccounts request = new Request.GetShopAccounts(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    Page = 7768,  // ページ番号
-    PerPage = 2206,  // 1ページ分のウォレット数
-    CreatedAtFrom = "2017-09-13T23:45:00.000000+09:00",  // ウォレット作成日によるフィルター(開始時点)
-    CreatedAtTo = "2024-11-16T14:58:53.000000+09:00",  // ウォレット作成日によるフィルター(終了時点)
-    IsSuspended = true,  // ウォレットが凍結状態かどうかでフィルターする
+    Page = 83,  // ページ番号
+    PerPage = 5866,  // 1ページ分のウォレット数
+    CreatedAtFrom = "2021-03-18T09:33:18.000000+09:00",  // ウォレット作成日によるフィルター(開始時点)
+    CreatedAtTo = "2019-10-15T23:24:49.000000+09:00",  // ウォレット作成日によるフィルター(終了時点)
+    IsSuspended = false,  // ウォレットが凍結状態かどうかでフィルターする
 };
 Response.PaginatedAccountWithUsers response = await request.Send(client!);
 ```
@@ -1892,10 +1892,10 @@ Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
 ) {
     SenderCustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 送金エンドユーザーID
     ReceiverCustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 受取エンドユーザーID
-    Type = "wMHa",  // 取引種別、チャージ=topup、支払い=payment、個人間送金=transfer
+    Type = "B6hajGJrCJ",  // 取引種別、チャージ=topup、支払い=payment、個人間送金=transfer
     IsModified = true,  // キャンセル済みかどうか
-    From = "2022-01-20T02:43:57.000000+09:00",  // 開始日時
-    To = "2016-01-29T08:16:01.000000+09:00",  // 終了日時
+    From = "2019-02-13T12:10:46.000000+09:00",  // 開始日時
+    To = "2017-02-20T06:05:40.000000+09:00",  // 終了日時
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
 };
@@ -2021,11 +2021,11 @@ Request.ListShops request = new Request.ListShops() {
     OrganizationCode = "pocketchange",  // 組織コード
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
     Name = "oxスーパー三田店",  // 店舗名
-    PostalCode = "6631087",  // 店舗の郵便番号
+    PostalCode = "800-9576",  // 店舗の郵便番号
     Address = "東京都港区芝...",  // 店舗の住所
-    Tel = "075-44-6146",  // 店舗の電話番号
-    Email = "SAh41fZii8@4vyb.com",  // 店舗のメールアドレス
-    ExternalId = "d1Jsf0jR3rzbwtxyn2",  // 店舗の外部ID
+    Tel = "089682-5023",  // 店舗の電話番号
+    Email = "jlaztijN3v@ebjT.com",  // 店舗のメールアドレス
+    ExternalId = "69RjYRPCqvnZ1YzdrhGH7XKNoGDpqqjY",  // 店舗の外部ID
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
 };
@@ -2152,11 +2152,11 @@ Response.PaginatedShops response = await request.Send(client!);
 Request.CreateShop request = new Request.CreateShop(
     "oxスーパー三田店" // 店舗名
 ) {
-    ShopPostalCode = "666-8106",  // 店舗の郵便番号
+    ShopPostalCode = "5142087",  // 店舗の郵便番号
     ShopAddress = "東京都港区芝...",  // 店舗の住所
-    ShopTel = "0115565064",  // 店舗の電話番号
-    ShopEmail = "rZH4AytTHx@VvHV.com",  // 店舗のメールアドレス
-    ShopExternalId = "PvTnTR",  // 店舗の外部ID
+    ShopTel = "0074-18354932",  // 店舗の電話番号
+    ShopEmail = "YdhYyR9ZtW@hMAK.com",  // 店舗のメールアドレス
+    ShopExternalId = "ZHQ2Tjahc0hASAcEibjk",  // 店舗の外部ID
     OrganizationCode = "ox-supermarket",  // 組織コード
 };
 Response.User response = await request.Send(client!);
@@ -2168,14 +2168,14 @@ Response.User response = await request.Send(client!);
 Request.CreateShopV2 request = new Request.CreateShopV2(
     "oxスーパー三田店" // 店舗名
 ) {
-    PostalCode = "231-7852",  // 店舗の郵便番号
+    PostalCode = "5184159",  // 店舗の郵便番号
     Address = "東京都港区芝...",  // 店舗の住所
-    Tel = "00963274594",  // 店舗の電話番号
-    Email = "rH7Ml90Eeu@ZgaP.com",  // 店舗のメールアドレス
-    ExternalId = "20pyyEjfyZnRCBHpzVqBZqNRFUo9BhqQxq",  // 店舗の外部ID
+    Tel = "07-97912",  // 店舗の電話番号
+    Email = "FrkXVihIdQ@Wu7J.com",  // 店舗のメールアドレス
+    ExternalId = "4NYirXryPP6taqbm6hsnA9hELka",  // 店舗の外部ID
     OrganizationCode = "ox-supermarket",  // 組織コード
-    PrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗で有効にするマネーIDの配列
-    CanTopupPrivateMoneyIds = new string[]{},  // 店舗でチャージ可能にするマネーIDの配列
+    PrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗で有効にするマネーIDの配列
+    CanTopupPrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗でチャージ可能にするマネーIDの配列
 };
 Response.ShopWithAccounts response = await request.Send(client!);
 ```
@@ -2249,13 +2249,13 @@ Request.UpdateShop request = new Request.UpdateShop(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 店舗ユーザーID
 ) {
     Name = "oxスーパー三田店",  // 店舗名
-    PostalCode = "6285676",  // 店舗の郵便番号
+    PostalCode = "376-2080",  // 店舗の郵便番号
     Address = "東京都港区芝...",  // 店舗の住所
-    Tel = "0787-649-3999",  // 店舗の電話番号
-    Email = "8jmBN0T80a@LvrK.com",  // 店舗のメールアドレス
-    ExternalId = "oRyTXgPVT4AzeoZEOYuu1RyqlWwyC",  // 店舗の外部ID
+    Tel = "041115489",  // 店舗の電話番号
+    Email = "VIgVP7fIz1@xemn.com",  // 店舗のメールアドレス
+    ExternalId = "x9P7H",  // 店舗の外部ID
     PrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗で有効にするマネーIDの配列
-    CanTopupPrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗でチャージ可能にするマネーIDの配列
+    CanTopupPrivateMoneyIds = new string[]{},  // 店舗でチャージ可能にするマネーIDの配列
 };
 Response.ShopWithAccounts response = await request.Send(client!);
 ```
@@ -2409,8 +2409,8 @@ Response.PaginatedPrivateMoneys response = await request.Send(client!);
 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    From = "2020-12-24T18:11:34.000000+09:00",  // 開始日時(toと同時に指定する必要有)
-    To = "2017-06-21T06:56:58.000000+09:00",  // 終了日時(fromと同時に指定する必要有)
+    From = "2016-05-21T23:00:33.000000+09:00",  // 開始日時(toと同時に指定する必要有)
+    To = "2021-05-24T13:34:12.000000+09:00",  // 終了日時(fromと同時に指定する必要有)
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
 };
@@ -2425,11 +2425,11 @@ Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Sen
 CSVファイルから一括取引をします。
 ```csharp
 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-    "00F2Vhn3Xq", // 一括取引タスク名
-    "CSMD", // 取引する情報のCSV
-    "zeEDKcNHBIUBy90lbfxByyLgJllatyS0exoV" // リクエストID
+    "lwWZKuWWf4n5wNPq2rjN28", // 一括取引タスク名
+    "QfQLnQ9Qr", // 取引する情報のCSV
+    "2gs4rAyEVt2ws7WkJzpgGUX4mtxobZ9ZCpNJ" // リクエストID
 ) {
-    Description = "wnX2Y3MjJVkSKFu78PD8Nsi0ghqRiHIikuwLQAi0YorDHLBFs4pFpuxUcIrb43g0nK7tb3btHVGJJQejQb3sdWfi2Z2",  // 一括取引の説明
+    Description = "ZG6LzTWIbd8ZNVrafdiivNn4NbNLXIdoiqtrelImUNmLeKEfXUc2dQExu22E4bXnTsrAuXzc",  // 一括取引の説明
 };
 Response.BulkTransaction response = await request.Send(client!);
 ```
