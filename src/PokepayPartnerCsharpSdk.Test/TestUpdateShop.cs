@@ -11,7 +11,7 @@ namespace PokepayPartnerCsharpSdk.Test
 {
     public class TestUpdateShop
     {
-        private Client? client;
+        private Client client;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -24,13 +24,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "3728d47f-c5f5-496a-a6ef-556538da78bc"
+                    "031a3d03-2402-433f-84ec-df97a37fd9e1"
                 );
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -39,15 +39,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "3728d47f-c5f5-496a-a6ef-556538da78bc"
+                    "031a3d03-2402-433f-84ec-df97a37fd9e1"
                 ) {
-                    CanTopupPrivateMoneyIds = new string[]{"d3301f2d-71ff-4eae-9349-40a6609bfaf9", "5f505541-8736-4941-bdfd-4c89bbe6d96f", "08b73f2b-782b-4ab8-9c3f-df7bbb8a1c3a", "04d8339c-0632-40b1-98c5-f23ec65ce703", "7ffd962d-3bdd-4a04-b535-970adf92c283", "1e2ee80a-7be8-4ce3-b239-7d8b4abd38fc", "6fd09e5d-b870-467f-a776-71aea637d91d", "b90a0efe-5d88-4b34-a0f3-2f5acac61bc2"},
+                    CanTopupPrivateMoneyIds = new string[]{"d4734111-1374-4fa4-a96a-194eab3f7421", "58aa49b3-3076-4993-a562-6bea13b6eca2", "b4fb6454-66b8-461f-a21a-2336b41bb011", "9fb0ea39-5f52-456a-bf59-5fd24025c450", "0ff143c3-5871-471d-9b76-346ed5e8f2be", "a7c3edda-6731-48d9-877a-2264d089fa21", "5198101f-4a13-46f2-a89b-9e5f98b71047", "9f37701e-cfa9-4e48-b70f-38a9956bb258", "97aba8cb-7703-477e-8e17-176fd8d3a52e", "76c77fc7-9e7e-4c44-ac7c-5f7b58f7ca70"},
                 };
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -56,16 +56,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "3728d47f-c5f5-496a-a6ef-556538da78bc"
+                    "031a3d03-2402-433f-84ec-df97a37fd9e1"
                 ) {
-                    PrivateMoneyIds = new string[]{"c745440d-0d8a-4793-99b5-28778d9bb58e", "35f3aca2-243d-4d41-9e34-d74f78d1e5e7", "6aff83b2-72ff-4698-83eb-fd9f9bb962e4", "32e616dc-7712-47c1-99cc-f9dbc403b1d6", "d8a16754-a81d-4003-b8bb-06882133c31a", "4fd5670f-b153-464f-b3e1-ef3df748833d", "bec4b37c-a98d-4c53-b31e-add5c5c62e6d", "65886f64-2c16-4b5e-99fb-6b8d8458ed96", "b76dc0b0-76a5-4743-8c9f-cae315705c66", "abbc3d97-d63f-4f1c-af21-3a5f8ddef3d5"},
-                    CanTopupPrivateMoneyIds = new string[]{"1dd9a7a2-f40b-4b53-892f-eae4d85eecad", "4b14cac5-8c4a-41cd-87fb-409953f2c323", "fcfd5891-195c-4ba9-b908-b42a9840ef80", "1f67e313-96b8-48fa-9402-f0dfb5decf1b", "a9ab9843-2b8d-4a40-b604-e82317f692ef", "2fd9a974-b893-4697-8c86-d67098605753"},
+                    PrivateMoneyIds = new string[]{"f84f3771-6518-43ea-99ba-7b55df077ce1"},
+                    CanTopupPrivateMoneyIds = new string[]{"202928b2-ccce-4592-a03b-05ceaf8e9598", "bb026337-2f1f-4bea-a03f-271088ee38d7", "b41b802b-2894-4617-a2d4-438c32bd755b", "b68c13c1-60aa-41db-b8f3-6385c172cc28"},
                 };
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -74,17 +74,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "3728d47f-c5f5-496a-a6ef-556538da78bc"
+                    "031a3d03-2402-433f-84ec-df97a37fd9e1"
                 ) {
-                    ExternalId = "w3LnpbrPkZnN",
-                    PrivateMoneyIds = new string[]{"b8ec109f-d0a5-4250-ac9b-3916e4c32796", "0ae15cac-29d7-47cf-8ce0-7cb523097e7b", "a1fa08b5-a711-4a55-b77e-47a1a2066044", "a9d0b953-cabd-4c66-85d9-71331aa2a04c", "204f8012-d1e7-4a3f-bed7-59b58514e04d", "1baab15e-26a6-4bb2-8920-4040dcdf26f6", "fe592ea4-eb52-47b5-9d3a-1e32d6b54e2d", "fa768c88-177b-49c3-a7c9-d3936996bcc2", "057f9ca7-2894-4cf9-a5b3-4b88829f8faf", "48df5765-4323-467b-87cc-9695b7f804a1"},
-                    CanTopupPrivateMoneyIds = new string[]{"e6b165f9-2a73-4ba9-b1b2-6a9c01fc4302", "7f829dc8-a02d-478b-8f2a-00fd0e92bb2b", "dea1b9ba-d3c8-4590-8483-ab8f3bdadd46", "9fd33d1b-9519-4646-a5f1-1a01de1d3c4c"},
+                    ExternalId = "T9CjYdhYyR9ZtW",
+                    PrivateMoneyIds = new string[]{"5f12dd14-be3d-43bc-8d41-cdcb900eb4a8", "eba9e053-175a-4c48-91a2-0911f6b07015", "90428f32-08df-4508-9454-726a51d12161", "c761d8ad-f7e8-440b-a32a-99b0ed650e68", "a6306f41-eb53-4c41-8063-70840d846145", "e006ed69-749e-409d-a214-3b7d96243dad", "3ecc919d-6be0-47ea-855f-98bca7ff706b", "8cc70b75-0f9e-473b-b198-94e6542d1ae4"},
+                    CanTopupPrivateMoneyIds = new string[]{"25fe47e5-ba99-4f74-a20b-28879b3ea51d"},
                 };
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -93,18 +93,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "3728d47f-c5f5-496a-a6ef-556538da78bc"
+                    "031a3d03-2402-433f-84ec-df97a37fd9e1"
                 ) {
-                    Email = "oUtYmfM0XL@YceQ.com",
-                    ExternalId = "bY3jVYhbh4RW4SjcPHu2gI",
-                    PrivateMoneyIds = new string[]{},
-                    CanTopupPrivateMoneyIds = new string[]{"f92ffa0f-4c48-4890-8490-636cb33c8493", "e8565392-e39f-4943-a7f8-80bcda9efed9", "ecd8ee6c-9196-4346-9a5a-251a00f8aa7a", "52f0a0c2-ca24-4575-a4c8-e21e57cf88da", "672f7509-2838-46f4-9e7e-b0eacdd5fcba", "29722373-da68-4600-be36-f93881d5edd3", "de2f5663-aadd-43fc-9a84-63aaaa05ebba"},
+                    Email = "gL0O7DlAFr@kXVi.com",
+                    ExternalId = "hIdQWu7J4NYirXryPP6taqbm6hsnA9",
+                    PrivateMoneyIds = new string[]{"6359daa7-32c5-434c-9d02-746b3d9dc3e1", "ac377f10-22a7-461d-a30c-d03b67720d17", "291144d6-999f-4342-a0be-c1ab94a8ff88", "9d0d587d-c9e0-4634-803b-c5e4c6bdfffa", "7b17f392-79c4-4071-acd1-800f6987d531", "57c5ff4c-51a5-4902-a254-5988b7eb2e79", "e0991056-3b14-4b90-89e7-2d09b188aed6", "b0c5e350-d337-4113-a649-4a7ac1b1ce2a"},
+                    CanTopupPrivateMoneyIds = new string[]{"03828b78-d95f-4665-adee-eb72e3717e44"},
                 };
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -113,19 +113,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "3728d47f-c5f5-496a-a6ef-556538da78bc"
+                    "031a3d03-2402-433f-84ec-df97a37fd9e1"
                 ) {
-                    Tel = "049-05361",
-                    Email = "9o0TcGJkIJ@gRMa.com",
-                    ExternalId = "hTjY4B83KCbssdnciBK2yKUyBpazsFHLyP",
-                    PrivateMoneyIds = new string[]{"3691a03d-81ef-4243-b12a-6cbfb7121957", "e7b8f193-1657-4af2-ba1d-e0e96c3d0912", "f0e284eb-73c8-4bb0-bf44-54f2dd789ea7", "d33a6b54-21a3-4be8-9f7c-88c95c430fa1", "4d759039-09ee-4664-8b09-78c3a33f61ff", "365cc841-a9d2-4158-87b9-67e907a125da", "7afd2ae8-1a80-458d-9549-3a776cc20ad5", "03c6943d-ba72-4973-9189-f0e0edffb40e"},
-                    CanTopupPrivateMoneyIds = new string[]{"fc8ecf55-c222-44e9-aa1f-7c0560e5390f", "483a3693-4126-495e-afb5-2d8f21d5b121", "37b9c735-fd91-4b3a-aee4-ddf97342d528", "4d9b993b-5709-4a3e-a9a0-3a8adc6a53c2", "cdbe40f8-8a58-46e2-8bd7-4859defd9e0d", "a227ea06-f8fd-433a-a8ac-e2f115b0c7c9", "d521ccd1-5163-4841-8426-de416244912e", "e649e923-9aca-421a-bce8-95d72ef834c6"},
+                    Tel = "0589-393816",
+                    Email = "7HPwLX5lwW@ZKuW.com",
+                    ExternalId = "f4n5wNPq2rjN28QfQLnQ9Qr2",
+                    PrivateMoneyIds = new string[]{"a2cc6573-b7b4-4e5f-b2c1-91823ba84b3c", "af043029-2cf9-4a29-85d6-fe92f2af9e12", "3ce66922-5af4-460b-b2f7-522f9c7d26f3", "5635a137-1581-4ba6-97eb-695ba2fdfe8d", "4c790029-7d4a-437a-99a5-eff0d7efcfe7", "2deb9b47-edd5-4b58-b4ed-b713e147b274", "4542fe12-89a0-459f-b86f-3ee04c67b8e2"},
+                    CanTopupPrivateMoneyIds = new string[]{"fa64a739-c725-4bda-833f-fdf0c0c4ac4e", "1d8581ca-3a47-4c5a-9ca4-eb8cd6665b09", "29db2901-705b-4a97-af0b-b0226871ecc0", "e2323947-6e10-4aab-a236-744ccf8b639e", "484b6dfa-6054-4457-83be-8e49681b8a5d", "52cb2ee2-6293-4c64-b817-bb5a47dc634e", "8cde91a6-c288-427b-962e-64aa42c0e891", "2ee0a172-8a61-41db-a6ad-f9e407fa762d", "e0ad74e9-1a89-4769-b63d-dc4e727c8fee", "ec2b83b4-e0ce-4705-a2ce-8acc53c8461a"},
                 };
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -134,20 +134,20 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "3728d47f-c5f5-496a-a6ef-556538da78bc"
+                    "031a3d03-2402-433f-84ec-df97a37fd9e1"
                 ) {
-                    Address = "wASll2hGkEzja1NmQHCUATGGz590dtBhucZ4e0BzAWy80f2MmxJUnd92RrjDmsbpR1t9xme9U0GR2pRvNpULEoTr6H5p2Y5YBaOZdS1seolNILNbVpFGvZ3N4x3uv",
-                    Tel = "04571208",
-                    Email = "Ii4C82SzJJ@G4lO.com",
-                    ExternalId = "DNS2Ij7U5b72UTWbjXGfzCm",
-                    PrivateMoneyIds = new string[]{},
-                    CanTopupPrivateMoneyIds = new string[]{"f00f597d-de32-4c3f-9c0b-191ebc78a176", "64ec1ceb-f259-472b-ad86-b925c20f2b72", "55c31543-87f2-429b-977f-707e2e8182f7", "b0eff541-03b7-47c9-a2eb-e55c4be2b644", "fcbc166d-0cdf-40eb-bf27-5517899fa02d", "591f66b9-bf87-4ce1-9bbb-d2638e9443f2", "38929b0f-5afd-46fd-b874-20fdde07b2d8", "e08ed103-cb39-42fb-8a51-e614fa5782d3", "8325ccc8-e2f9-4169-862b-4f22fde3c66f", "bdcf9ef3-8ebd-42dc-8765-dea5d682c415"},
+                    Address = "XIdoiqtrelImUNmLeKEfXUc2dQExu22E4bXnTsrAuXzcUztcjpDcIzv8TjKb1dIcQKtgPEpt9Ynsu0LI4T70lQwB453YpOK96",
+                    Tel = "066-04450",
+                    Email = "RlFM4Xw2Yn@eFRt.com",
+                    ExternalId = "au24yc1kusN7qW2yhhP",
+                    PrivateMoneyIds = new string[]{"f26e6e8b-1a85-4e62-847e-f8bfd4a7b448", "f1e5fa9f-2dce-4ad0-a852-503f3dd9ea16", "b77353be-9319-4efd-8311-8ee75cd46c6e", "d203ee85-a1f1-49d9-ae15-b055d4ee5687", "0017e719-bd6c-44e8-be89-c7b4e55bd5ca", "93be7be0-f162-4f3f-8bcf-c4f2b82cd4cd"},
+                    CanTopupPrivateMoneyIds = new string[]{"e6ea17ab-d7bd-4735-aac6-bdf7d254c172", "fd813804-6589-4241-a48f-440befecf122", "25e5e90f-a8e3-4fc0-bab5-c3377050ce26", "f1feaeda-dfac-4d4f-9729-8073cc800afc", "fc596d2c-b4c4-4772-b0ad-33c4d4e508ad", "73a59e99-c5a2-4fea-b403-14399d81094d", "615d1616-b6b1-4211-bfb2-ff109526df00", "9cee2842-58dc-40cf-aeef-f431a39e4a41", "ca96a187-a997-4ee3-ad98-e6ea0efd3522", "cfbdb7bb-7585-4c4d-b9b6-493be1d4c1ef"},
                 };
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -156,21 +156,21 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "3728d47f-c5f5-496a-a6ef-556538da78bc"
+                    "031a3d03-2402-433f-84ec-df97a37fd9e1"
                 ) {
-                    PostalCode = "880-9595",
-                    Address = "K8GIOW0PGU45uzPdd0dJeNNvUC0bqs1h",
-                    Tel = "0846-4950-984",
-                    Email = "evbrAQGpnY@omE2.com",
-                    ExternalId = "pD4cThkIOO2LW0e3G1sTmjjHcN57ZbAikJ2o",
-                    PrivateMoneyIds = new string[]{},
-                    CanTopupPrivateMoneyIds = new string[]{"07b75d79-57e0-451b-8972-7031b8ea0f6a", "04bd31e1-acb3-479e-baf5-6b83d541de81", "35ee8012-226d-4e8a-b69e-fc1755f1f0e5", "5b13e937-8237-40bb-b11d-d96b06bc832e", "e11522d1-a837-489e-ada2-017c8d771777", "f0426010-b25a-4bee-8a66-79c7f926b4cd", "f9c2a0d1-ec61-43f3-8331-24fff9f37179"},
+                    PostalCode = "964-8378",
+                    Address = "hiSDgXKvVy5paxKD2XcOfy",
+                    Tel = "022-9011890",
+                    Email = "j1t4n3lpno@ezOx.com",
+                    ExternalId = "Ov6eGwjQCqxdtQnDY4S9N4HhJ5",
+                    PrivateMoneyIds = new string[]{"d8b4ff27-2690-4819-8719-1ac3b00606f3", "dbbd63a7-8158-4a27-92db-a388942a5090"},
+                    CanTopupPrivateMoneyIds = new string[]{"e781493c-9f14-449b-a355-5981bd1c9d28", "e4be215a-5359-4eb4-92a1-1ddc21780b37", "275f6e63-f2a8-4b3f-90f0-d8c92ac3be91", "c5390fdf-25ac-4a91-a85e-a2301cec3dba", "5fb2a2b3-cc9b-433a-82f6-d1f17c529d42", "727204b7-7d43-467a-8c8c-a06a96580059", "aa5e1648-debc-453c-af4f-c13287b2989e"},
                 };
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -179,22 +179,22 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "3728d47f-c5f5-496a-a6ef-556538da78bc"
+                    "031a3d03-2402-433f-84ec-df97a37fd9e1"
                 ) {
-                    Name = "b1Dq2UL9Kx0jYk7sZRicOTg23f5GXrX6ozTzm0HG0TosxKz4jitwHtujKhwCFGwiyv4vlRBRxfHZeKBVf4jVtecQNubIdHetIBPUrvpeN86f46tWgyM43AJZ0KTwWOYBSX4EzfsIiIDCSxoowqwobMRj4K8plKu",
-                    PostalCode = "1646363",
-                    Address = "KCXAkk07Q9YuV27x2ZZwJNPJ0aXH1uRWCYsw6VRBfXAF7xeoT0y6lNlDnKEOyMV89HUL5OwvTmfkSpdcLQvsJQRiuvWpRkphzntqbTr2vHF1iF0Y7dBxe8hiTzwkLtzBfAa7kaQm6vULSy1FKdTtu83N0tnRGbdpbMjOs6Ns",
-                    Tel = "0521-29103",
-                    Email = "IK7BQ6Amsw@dAM3.com",
-                    ExternalId = "JrwVbs9pMx",
-                    PrivateMoneyIds = new string[]{"ad6d4501-57cd-48c3-b4bf-ea6857fa1c8c", "6d131169-d3fd-4bf6-bbb1-8f24d91c78e1", "020de332-0745-4e16-85c8-cb469e4cd36d", "60840aae-a29b-4add-9177-b1345a296e4f", "8fa8a9ed-544a-47f3-9c58-76dcdf310baf", "1c8a9886-9e72-4f61-815e-cda7dcdf0fa7"},
-                    CanTopupPrivateMoneyIds = new string[]{"20394f08-06ec-4e69-a292-ffc5ce8c1aff", "61f66ac2-fc05-4b19-96bb-3fd07c1f73ed", "6b2148c8-827f-4572-88b7-a2b6ca4e4640", "942fa36f-d2fe-4501-971c-7c0f59c9ff88", "840dd463-4891-4073-b293-e10edbaab9a9", "68454c37-8cf9-47bf-9af0-1c884d4025bc", "72e1d49f-2574-4d77-94cf-66c92ac534a6"},
+                    Name = "zEE65UlKtMCe12MUV2dxrA2428zEWnFZLX87qtedPzV8NdiYCurcmVOPZ",
+                    PostalCode = "067-7871",
+                    Address = "0VESfspW9b9NBdczTSynCfTiWLEN2pEbq7ZeB8PVJkE9NzaeTptZ5kX9rLpagdWQnEnTlLyubwibc5uG9Y4cn6ApRZ5NX6gFb5nuODlmm9rpn022H3wQmNFzbLFmfFSz1uperYHhU5vbLxW8Yq15XpRuu89q3NykiRPYO2oQiAYMcKkXBWEu4RSjxgCW3",
+                    Tel = "007127-6924",
+                    Email = "gqdqFleVhp@Cebd.com",
+                    ExternalId = "mmx3jJLFYo72YjP5pod5QaLCZTmFLxum",
+                    PrivateMoneyIds = new string[]{"0651b704-7d8d-4bee-9876-583fe7c1a372", "8f2b8375-34f0-48f8-a1b1-487b1ac76d36", "36af6aab-c9ba-41a2-92c5-d658e4d0232b", "0d4fa2c3-5594-4f55-98f9-b887a1a6f750", "1f1ee5bb-97e6-490b-833c-32fd4d739261", "3b82b6e2-c914-4d85-aac5-a17474585c4d", "4bc813ec-c8e9-4c3f-8966-550eeef0e8be", "433a4037-0d77-464b-843d-25efd80d9450", "6d8b81dc-d385-44bc-a4ab-b29f65a607dc", "2654b3ed-a92c-46a7-974e-230f44b30c3d"},
+                    CanTopupPrivateMoneyIds = new string[]{"0b10fe57-f30b-4bd5-8eb6-5efa8e72ca15"},
                 };
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 

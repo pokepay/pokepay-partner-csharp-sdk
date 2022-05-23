@@ -11,7 +11,7 @@ namespace PokepayPartnerCsharpSdk.Test
 {
     public class TestCreateCashtray
     {
-        private Client? client;
+        private Client client;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -24,15 +24,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCashtray request = new Request.CreateCashtray(
-                    "dfc5a242-9910-4e02-8acf-8107b715e8eb",
-                    "852fd018-fd23-481b-9cc4-a333ad15e046",
-                    8463.0
+                    "77d96c5d-600d-464b-bcde-866ba6ffecbc",
+                    "cfb41b93-baa6-4c7a-b686-1ad2fe59ce7b",
+                    1695.0
                 );
-                Response.Cashtray response = await request.Send(client!);
+                Response.Cashtray response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -41,17 +41,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCashtray request = new Request.CreateCashtray(
-                    "dfc5a242-9910-4e02-8acf-8107b715e8eb",
-                    "852fd018-fd23-481b-9cc4-a333ad15e046",
-                    8463.0
+                    "77d96c5d-600d-464b-bcde-866ba6ffecbc",
+                    "cfb41b93-baa6-4c7a-b686-1ad2fe59ce7b",
+                    1695.0
                 ) {
-                    ExpiresIn = 1911,
+                    ExpiresIn = 6918,
                 };
-                Response.Cashtray response = await request.Send(client!);
+                Response.Cashtray response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -60,18 +60,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCashtray request = new Request.CreateCashtray(
-                    "dfc5a242-9910-4e02-8acf-8107b715e8eb",
-                    "852fd018-fd23-481b-9cc4-a333ad15e046",
-                    8463.0
+                    "77d96c5d-600d-464b-bcde-866ba6ffecbc",
+                    "cfb41b93-baa6-4c7a-b686-1ad2fe59ce7b",
+                    1695.0
                 ) {
-                    Description = "naI0WeOGlWmmegc1KGhe3TxnuKac7CS1DK4Gnrr3oBLGMXHrz9mqfRhRmUp8pN9pjtBKEK15Dd3XxCT0Zmu6u7tOxquneNatGolCf6SjeF7SeZXyMS6WkNJ2",
-                    ExpiresIn = 2760,
+                    Description = "zoI7cZYW4c0GyNh6EpQVqX4KE4B5KRDxSSppVORQLy6PO73cHGKqjz0v27dHE8reh9b3v7zqeYS2n0EGsPPbvQvYkAPBJ7wmgCWNKDP1enxAKZBD2FhNoFZKIbAgSoRCKxxDEWQZO9yz4Mc4BWxPS7UaVHpVi4pZYZOGKLSewvJuaN97ObUNQZ0A0Rwk2Z2omGatDj",
+                    ExpiresIn = 3602,
                 };
-                Response.Cashtray response = await request.Send(client!);
+                Response.Cashtray response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 

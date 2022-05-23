@@ -11,7 +11,7 @@ namespace PokepayPartnerCsharpSdk.Test
 {
     public class TestBulkCreateTransaction
     {
-        private Client? client;
+        private Client client;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -24,15 +24,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "gtc1eHQx",
-                    "a3",
-                    "8fcy9G2ru7CIugZBUKc64A8KJDFHDE0sPhVL"
+                    "CAyi0eUz4xXH5OLhVoB1lIuiO",
+                    "fxpiSD0",
+                    "ualUMr1aiXbRr0Yt6Ont0eqhymEV4KDx3FmD"
                 );
-                Response.BulkTransaction response = await request.Send(client!);
+                Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -41,17 +41,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "gtc1eHQx",
-                    "a3",
-                    "8fcy9G2ru7CIugZBUKc64A8KJDFHDE0sPhVL"
+                    "CAyi0eUz4xXH5OLhVoB1lIuiO",
+                    "fxpiSD0",
+                    "ualUMr1aiXbRr0Yt6Ont0eqhymEV4KDx3FmD"
                 ) {
-                    Description = "mxr0FU3DnW6KqsDEeelMkJvsg1mQveiZolVhKjCQVZwzstz19XaUt7HUg2vBtQ3icUlEOMImvGy37aG3VpRl",
+                    Description = "9kbbli1vOnH69EFivIjA6",
                 };
-                Response.BulkTransaction response = await request.Send(client!);
+                Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 

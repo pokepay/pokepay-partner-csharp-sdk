@@ -11,7 +11,7 @@ namespace PokepayPartnerCsharpSdk.Test
 {
     public class TestGetShop
     {
-        private Client? client;
+        private Client client;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -24,13 +24,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShop request = new Request.GetShop(
-                    "6eb30c0f-4395-4d20-960e-651246ed2ccc"
+                    "50aef622-5e5d-4a3f-836a-87ae3aacb18e"
                 );
-                Response.ShopWithAccounts response = await request.Send(client!);
+                Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 

@@ -11,7 +11,7 @@ namespace PokepayPartnerCsharpSdk.Test
 {
     public class TestGetShopAccounts
     {
-        private Client? client;
+        private Client client;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -24,13 +24,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "cefac7bd-7c9f-4b80-8497-6f58374d0405"
+                    "066f3f17-d0e7-432b-b946-ce13b9cc687c"
                 );
-                Response.PaginatedAccountWithUsers response = await request.Send(client!);
+                Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -39,15 +39,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "cefac7bd-7c9f-4b80-8497-6f58374d0405"
+                    "066f3f17-d0e7-432b-b946-ce13b9cc687c"
                 ) {
-                    IsSuspended = false,
+                    IsSuspended = true,
                 };
-                Response.PaginatedAccountWithUsers response = await request.Send(client!);
+                Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -56,16 +56,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "cefac7bd-7c9f-4b80-8497-6f58374d0405"
+                    "066f3f17-d0e7-432b-b946-ce13b9cc687c"
                 ) {
-                    CreatedAtTo = "2022-04-20T13:19:07.000000+09:00",
+                    CreatedAtTo = "2021-09-20T21:35:53.000000+09:00",
                     IsSuspended = false,
                 };
-                Response.PaginatedAccountWithUsers response = await request.Send(client!);
+                Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -74,17 +74,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "cefac7bd-7c9f-4b80-8497-6f58374d0405"
+                    "066f3f17-d0e7-432b-b946-ce13b9cc687c"
                 ) {
-                    CreatedAtFrom = "2023-06-22T06:11:54.000000+09:00",
-                    CreatedAtTo = "2020-12-13T09:02:00.000000+09:00",
+                    CreatedAtFrom = "2021-11-08T14:28:08.000000+09:00",
+                    CreatedAtTo = "2018-01-01T15:34:21.000000+09:00",
                     IsSuspended = false,
                 };
-                Response.PaginatedAccountWithUsers response = await request.Send(client!);
+                Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -93,18 +93,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "cefac7bd-7c9f-4b80-8497-6f58374d0405"
+                    "066f3f17-d0e7-432b-b946-ce13b9cc687c"
                 ) {
-                    PerPage = 2964,
-                    CreatedAtFrom = "2018-02-16T12:42:28.000000+09:00",
-                    CreatedAtTo = "2020-07-10T19:56:26.000000+09:00",
-                    IsSuspended = true,
+                    PerPage = 9476,
+                    CreatedAtFrom = "2022-03-18T22:11:23.000000+09:00",
+                    CreatedAtTo = "2017-04-25T17:30:35.000000+09:00",
+                    IsSuspended = false,
                 };
-                Response.PaginatedAccountWithUsers response = await request.Send(client!);
+                Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
@@ -113,19 +113,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "cefac7bd-7c9f-4b80-8497-6f58374d0405"
+                    "066f3f17-d0e7-432b-b946-ce13b9cc687c"
                 ) {
-                    Page = 743,
-                    PerPage = 5060,
-                    CreatedAtFrom = "2022-08-28T18:33:16.000000+09:00",
-                    CreatedAtTo = "2019-06-07T10:01:10.000000+09:00",
-                    IsSuspended = false,
+                    Page = 3344,
+                    PerPage = 2794,
+                    CreatedAtFrom = "2015-11-03T10:35:15.000000+09:00",
+                    CreatedAtTo = "2025-06-13T12:56:13.000000+09:00",
+                    IsSuspended = true,
                 };
-                Response.PaginatedAccountWithUsers response = await request.Send(client!);
+                Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
-                Assert.AreNotEqual((int) e.StatusCode, (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
-                Assert.True((int) e.StatusCode >= 300, "Should be larger than 300");
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
             }
         }
 
