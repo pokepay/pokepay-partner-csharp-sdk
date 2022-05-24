@@ -83,11 +83,11 @@ namespace PokepayPartnerCsharpSdk
         public readonly JsonSerializerOptions JsonOptions;
 
         private static HttpClient GetHttpClient(string certPem, string rsaKeyPem) {
-            /*
-            X509Certificate2 cert = X509Certificate2.CreateFromPemFile(certPem, rsaKeyPem);
-            X509Certificate2 cert_pfx = new X509Certificate2(certRsaKeyPfx);
-             */
+#if NETFRAMEWORK
             X509Certificate2 cert = X509FromPemFile.CreateFromPemFile(certPem, rsaKeyPem);
+#else
+            X509Certificate2 cert = X509Certificate2.CreateFromPemFile(certPem, rsaKeyPem);
+#endif
 
             HttpClientHandler handler = new HttpClientHandler();
             handler.ClientCertificates.Clear();
