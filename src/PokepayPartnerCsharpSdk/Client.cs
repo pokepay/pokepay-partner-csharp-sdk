@@ -1,4 +1,3 @@
-#nullable enable
 using System;
 using System.IO;
 using System.Web;
@@ -36,7 +35,7 @@ namespace PokepayPartnerCsharpSdk
 
     public class ReceiveBodyData
     {
-        public string? ResponseData { get; set; }
+        public string ResponseData { get; set; }
         public string Timestamp { get; set; }
         public string PartnerClientId { get; set; }
 
@@ -47,8 +46,8 @@ namespace PokepayPartnerCsharpSdk
 
     public class ErrorResponse
     {
-        public string? Type { get; set; }
-        public string? Message { get; set; }
+        public string Type { get; set; }
+        public string Message { get; set; }
     }
 
     public static class ExtensionMethods {
@@ -84,7 +83,12 @@ namespace PokepayPartnerCsharpSdk
         public readonly JsonSerializerOptions JsonOptions;
 
         private static HttpClient GetHttpClient(string certPem, string rsaKeyPem) {
+#if NETFRAMEWORK
+            X509Certificate2 cert = X509FromPemFile.CreateFromPemFile(certPem, rsaKeyPem);
+#else
             X509Certificate2 cert = X509Certificate2.CreateFromPemFile(certPem, rsaKeyPem);
+#endif
+
             HttpClientHandler handler = new HttpClientHandler();
             handler.ClientCertificates.Clear();
             handler.ClientCertificates.Add(cert);
@@ -144,14 +148,14 @@ namespace PokepayPartnerCsharpSdk
             // Console.WriteLine("*** Status: {0}", response.StatusCode);
             // Console.WriteLine("*** RawResp: {0}", responseString);
 
-            ReceiveBodyData receiveBodyData = JsonSerializer.Deserialize<ReceiveBodyData>(responseString, JsonOptions)!;
+            ReceiveBodyData receiveBodyData = JsonSerializer.Deserialize<ReceiveBodyData>(responseString, JsonOptions);
 
             if (receiveBodyData.ResponseData == null) {
                 // "response_data" was not found in response? it maybe Ping?
                 if (200 <= (int) response.StatusCode && (int) response.StatusCode < 300) {
                     return responseString;
                 }
-                throw new HttpRequestException(responseString, null, response.StatusCode);
+                throw new HttpRequestException(responseString, null);
             }
 
             string responseDataString = Encrypter.DecryptData(receiveBodyData.ResponseData, ClientSecret);
@@ -162,7 +166,7 @@ namespace PokepayPartnerCsharpSdk
                 return responseDataString;
             }
 
-            ErrorResponse errorResponse = JsonSerializer.Deserialize<ErrorResponse>(responseDataString, JsonOptions)!;
+            ErrorResponse errorResponse = JsonSerializer.Deserialize<ErrorResponse>(responseDataString, JsonOptions);
 
             if (errorResponse.Type == null || errorResponse.Message == null) {
                 return responseDataString;
@@ -170,8 +174,7 @@ namespace PokepayPartnerCsharpSdk
 
             HttpRequestException err = new HttpRequestException(
                 errorResponse.Type + ": " + errorResponse.Message,
-                null,
-                response.StatusCode);
+                null);
 
             err.Data.Add("StatusCode", (int) response.StatusCode);
             err.Data.Add("Body", responseDataString);

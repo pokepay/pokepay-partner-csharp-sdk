@@ -4,7 +4,6 @@
 // Deeply thanks to the writer!
 //
 
-#nullable enable
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,7 +19,7 @@ namespace PokepayPartnerCsharpSdk
 
         private readonly Dictionary<string, Dictionary<string, string>> _ini = new Dictionary<string, Dictionary<string, string>>(Comparer);
 
-        public IniFile(string file, Encoding? encoding = null)
+        public IniFile(string file, Encoding encoding = null)
         {
             var lines = File.ReadLines(file, encoding ?? Encoding.GetEncoding("utf-8"))
                 .Where(x => !string.IsNullOrWhiteSpace(x))
@@ -103,9 +102,9 @@ namespace PokepayPartnerCsharpSdk
             }
         }
 
-        public string GetValueRoot(string key, string? @default = null) => GetValue("", key, @default);
+        public string GetValueRoot(string key, string @default = null) => GetValue("", key, @default);
 
-        public string GetValue(string section, string key = "", string? @default = null)
+        public string GetValue(string section, string key = "", string @default = null)
         {
             return _ini.TryGetValue(section, out var iniSection) &&
                 iniSection.TryGetValue(key, out var value)
