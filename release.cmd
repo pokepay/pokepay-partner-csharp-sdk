@@ -3,7 +3,7 @@ if not defined RELEASE_VERSION (
   echo environment RELEASE_VERSION is required.
   exit /b
 )
-if not defined API_KEY(
+if not defined API_KEY (
   echo environment API_KEY is required.
   exit /b
 )
