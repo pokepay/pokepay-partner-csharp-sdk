@@ -1,11 +1,11 @@
 run:
-	dotnet run --project src/PokepayPartnerCsharpSdk.Example/PokepayPartnerCsharpSdk.Example.csproj
+	dotnet run --project src/PokepayPartnerCsharpSdk.Example/PokepayPartnerCsharpSdk.Example.csproj --framework net5.0
 
 build:
-	dotnet build src/PokepayPartnerCsharpSdk/PokepayPartnerCsharpSdk.csproj --configuration Release
+	dotnet build src/PokepayPartnerCsharpSdk/PokepayPartnerCsharpSdk.csproj --configuration Release --framework net5.0
 
 test:
-	dotnet test -v normal src/PokepayPartnerCsharpSdk.Test/PokepayPartnerCsharpSdk.Test.csproj
+	dotnet test -v normal src/PokepayPartnerCsharpSdk.Test/PokepayPartnerCsharpSdk.Test.csproj --framework net5.0
 
 check-publish-env:
 ifndef RELEASE_VERSION
