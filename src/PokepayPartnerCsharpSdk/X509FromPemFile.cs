@@ -18,10 +18,8 @@ namespace PokepayPartnerCsharpSdk
             RSACryptoServiceProvider prov = new RSACryptoServiceProvider();
             byte[] keyBuffer = GetBytesFromPEM(File.ReadAllText(rsaKeyPem), "-----BEGIN RSA PRIVATE KEY-----", "-----END RSA PRIVATE KEY-----");
             prov.ImportParameters(CreateParameter(keyBuffer));
-            cert.PrivateKey = prov;
-            cert.GetRSAPrivateKey(); // important!
 
-            return cert;
+            return cert.CopyWithPrivateKey(prov);
         }
 
         private static byte[] GetBytesFromPEM(string pemString, string header, string footer)
