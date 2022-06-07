@@ -84,11 +84,12 @@ namespace PokepayPartnerCsharpSdk
 
         private static HttpClient GetHttpClient(string certPem, string rsaKeyPem) {
 #if NETFRAMEWORK
-            X509Certificate2 cert = X509FromPemFile.CreateFromPemFile(certPem, rsaKeyPem);
+            byte[] pfx = (new X509Certificate2Collection(X509FromPemFile.CreateFromPemFile(certPem, rsaKeyPem))).Export(X509ContentType.Pfx);
 #else
             // see https://www.daimto.com/how-to-use-x509certificate2-with-pem-file/
-            X509Certificate2 cert = new X509Certificate2((X509Certificate2.CreateFromPemFile(certPem, rsaKeyPem)).Export(X509ContentType.Pfx));
+            byte[] pfx = X509Certificate2.CreateFromPemFile(certPem, rsaKeyPem).Export(X509ContentType.Pfx);
 #endif
+            X509Certificate2 cert = new X509Certificate2(pfx);
             HttpClientHandler handler = new HttpClientHandler();
             handler.ClientCertificates.Clear();
             handler.ClientCertificates.Add(cert);
