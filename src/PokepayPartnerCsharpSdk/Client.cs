@@ -25,12 +25,13 @@ namespace PokepayPartnerCsharpSdk
 
     public class SendBodyData
     {
+        public string RequestMethod { get; }
         public string Data { get; }
         public string PartnerClientId { get; }
 
         [JsonConstructor]
-        public SendBodyData(string data, string partnerClientId) =>
-            (Data, PartnerClientId) = (data, partnerClientId);
+        public SendBodyData(string requestMethod, string data, string partnerClientId) =>
+            (RequestMethod, Data, PartnerClientId) = (requestMethod, data, partnerClientId);
     }
 
     public class ReceiveBodyData
@@ -132,13 +133,14 @@ namespace PokepayPartnerCsharpSdk
             string requestBodyEnc = Encrypter.EncryptData(requestBodyString, ClientSecret);
 
             SendBodyData sendBodyData = new SendBodyData(
+                method.ToString(),
                 requestBodyEnc,
                 ClientId);
 
             string sendBodyString = JsonSerializer.Serialize(sendBodyData, JsonOptions);
 
             HttpRequestMessage request = new HttpRequestMessage {
-                Method = method,
+                Method = HttpMethod.Post,
                 RequestUri = new Uri(BaseUrl + path),
                 Content = new StringContent(sendBodyString, System.Text.Encoding.UTF8, "application/json"),
             };
