@@ -24,7 +24,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "e0e0d4ad-4bab-4988-8cba-668f5c7dc380"
+                    "1cca797a-a4ae-4807-a9ad-4bab80f00988"
                 );
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -39,9 +39,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "e0e0d4ad-4bab-4988-8cba-668f5c7dc380"
+                    "1cca797a-a4ae-4807-a9ad-4bab80f00988"
                 ) {
-                    IsSuspended = false,
+                    IsSuspended = true,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -24,7 +24,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListUserAccounts request = new Request.ListUserAccounts(
-                    "fb2a0137-e4aa-4652-9859-2e5c4c0a1f3b"
+                    "f7badafa-54a1-4511-b337-e4aa1c1fe652"
                 );
                 Response.PaginatedAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -12,7 +12,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string CreatedAt { get; }
 
         [JsonConstructor]
-        public CashtrayAttempt(double statusCode, string errorType, string errorMessage, string createdAt) =>
-            (StatusCode, ErrorType, ErrorMessage, CreatedAt) = (statusCode, errorType, errorMessage, createdAt);
+        public CashtrayAttempt(AccountWithUser account, double statusCode, string errorType, string errorMessage, string createdAt) =>
+            (Account, StatusCode, ErrorType, ErrorMessage, CreatedAt) = (account, statusCode, errorType, errorMessage, createdAt);
     }
 }

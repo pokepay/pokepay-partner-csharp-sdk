@@ -8,7 +8,7 @@
     <Company>PocketChange.inc</Company>
     <PackageProjectUrl>https://github.com/pokepay/pokepay-partner-csharp-sdk</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.1.2</Version>
+    <Version>1.1.3</Version>
     <OutputType>Library</OutputType>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
