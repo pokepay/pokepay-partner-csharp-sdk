@@ -24,7 +24,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "d2fb73c8-5ec3-41c3-9b75-62cb9e97eeff"
+                    "0eb2777e-c829-4aa6-a0d6-13621cb88acc"
                 );
                 Response.Transaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -39,9 +39,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "d2fb73c8-5ec3-41c3-9b75-62cb9e97eeff"
+                    "0eb2777e-c829-4aa6-a0d6-13621cb88acc"
                 ) {
-                    Description = "nfNVTWFTkh4YZxFDhr8QjYlB",
+                    Description = "VJ59qzi8HFxZtC5ypm8TU2Y6m10oazOnSDRVBADkHpYoJtK8deELoxPb8vCqW8ZrqfNGAkbzmAIScfq8JbwsUjFhr3NwoEyag2SfuJiolnAr0O5BazmKqHUlvI3TLRDU2wR06BrqE",
                 };
                 Response.Transaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

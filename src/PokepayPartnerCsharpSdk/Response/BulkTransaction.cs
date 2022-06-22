@@ -16,7 +16,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string UpdatedAt { get; }
 
         [JsonConstructor]
-        public BulkTransaction(string id, string requestId, string name, string description, string status, string submittedAt, string updatedAt) =>
-            (Id, RequestId, Name, Description, Status, SubmittedAt, UpdatedAt) = (id, requestId, name, description, status, submittedAt, updatedAt);
+        public BulkTransaction(string id, string requestId, string name, string description, string status, string error, int errorLineno, string submittedAt, string updatedAt) =>
+            (Id, RequestId, Name, Description, Status, Error, ErrorLineno, SubmittedAt, UpdatedAt) = (id, requestId, name, description, status, error, errorLineno, submittedAt, updatedAt);
     }
 }

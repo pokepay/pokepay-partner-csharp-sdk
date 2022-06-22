@@ -13,7 +13,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string ExternalId { get; }
 
         [JsonConstructor]
-        public AccountWithUser(string id, string name, bool isSuspended, PrivateMoney privateMoney, User user) =>
-            (Id, Name, IsSuspended, PrivateMoney, User) = (id, name, isSuspended, privateMoney, user);
+        public AccountWithUser(string id, string name, bool isSuspended, PrivateMoney privateMoney, User user, string externalId) =>
+            (Id, Name, IsSuspended, PrivateMoney, User, ExternalId) = (id, name, isSuspended, privateMoney, user, externalId);
     }
 }

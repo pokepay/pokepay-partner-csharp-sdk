@@ -14,7 +14,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string Token { get; }
 
         [JsonConstructor]
-        public Cashtray(string id, double amount, string description, AccountWithUser account, string expiresAt, string token) =>
-            (Id, Amount, Description, Account, ExpiresAt, Token) = (id, amount, description, account, expiresAt, token);
+        public Cashtray(string id, double amount, string description, AccountWithUser account, string expiresAt, string canceledAt, string token) =>
+            (Id, Amount, Description, Account, ExpiresAt, CanceledAt, Token) = (id, amount, description, account, expiresAt, canceledAt, token);
     }
 }
