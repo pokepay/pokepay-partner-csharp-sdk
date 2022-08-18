@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using NUnit.Framework;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using PokepayPartnerCsharpSdk;
 
@@ -24,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "c3851eee-c081-4e48-9428-8ce6203ac303"
+                    "1395c3b0-3227-4847-b485-d25fcda949fd"
                 );
                 Response.PaginatedAccountBalance response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -39,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "c3851eee-c081-4e48-9428-8ce6203ac303"
+                    "1395c3b0-3227-4847-b485-d25fcda949fd"
                 ) {
-                    Direction = "desc",
+                    Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -56,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "c3851eee-c081-4e48-9428-8ce6203ac303"
+                    "1395c3b0-3227-4847-b485-d25fcda949fd"
                 ) {
-                    ExpiresAtTo = "2023-10-14T15:41:08.000000+09:00",
-                    Direction = "desc",
+                    ExpiresAtTo = "2016-12-05T14:11:55.000000+09:00",
+                    Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -74,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "c3851eee-c081-4e48-9428-8ce6203ac303"
+                    "1395c3b0-3227-4847-b485-d25fcda949fd"
                 ) {
-                    ExpiresAtFrom = "2016-02-07T23:51:43.000000+09:00",
-                    ExpiresAtTo = "2023-06-26T07:13:08.000000+09:00",
+                    ExpiresAtFrom = "2024-05-08T18:48:53.000000+09:00",
+                    ExpiresAtTo = "2025-01-11T13:02:08.000000+09:00",
                     Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -93,11 +94,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "c3851eee-c081-4e48-9428-8ce6203ac303"
+                    "1395c3b0-3227-4847-b485-d25fcda949fd"
                 ) {
-                    PerPage = 1280,
-                    ExpiresAtFrom = "2017-09-19T20:56:50.000000+09:00",
-                    ExpiresAtTo = "2021-05-01T18:07:44.000000+09:00",
+                    PerPage = 6193,
+                    ExpiresAtFrom = "2019-01-16T17:00:54.000000+09:00",
+                    ExpiresAtTo = "2022-10-20T15:33:42.000000+09:00",
                     Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -113,12 +114,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "c3851eee-c081-4e48-9428-8ce6203ac303"
+                    "1395c3b0-3227-4847-b485-d25fcda949fd"
                 ) {
-                    Page = 7954,
-                    PerPage = 183,
-                    ExpiresAtFrom = "2017-07-15T07:24:12.000000+09:00",
-                    ExpiresAtTo = "2018-02-11T05:24:08.000000+09:00",
+                    Page = 3229,
+                    PerPage = 3545,
+                    ExpiresAtFrom = "2019-04-01T22:27:42.000000+09:00",
+                    ExpiresAtTo = "2018-06-03T18:12:31.000000+09:00",
                     Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);

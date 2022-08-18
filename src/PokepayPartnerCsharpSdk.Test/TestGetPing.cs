@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using NUnit.Framework;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using PokepayPartnerCsharpSdk;
 

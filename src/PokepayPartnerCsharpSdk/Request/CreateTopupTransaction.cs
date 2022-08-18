@@ -14,10 +14,11 @@ namespace PokepayPartnerCsharpSdk.Request
         public string CustomerId { get; set; }
         public string PrivateMoneyId { get; set; }
         public string BearPointShopId { get; set; }
-        public double MoneyAmount { get; set; }
-        public double PointAmount { get; set; }
+        public int MoneyAmount { get; set; }
+        public int PointAmount { get; set; }
         public string PointExpiresAt { get; set; }
         public string Description { get; set; }
+        public string Metadata { get; set; }
         public string RequestId { get; set; }
 
         public CreateTopupTransaction(string shopId, string customerId, string privateMoneyId) =>
@@ -27,9 +28,9 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<Transaction> Send(Client client) {
+        public async Task<TransactionDetail> Send(Client client) {
             string res = await client.Send(path, CreateTopupTransaction.method, this);
-            return JsonSerializer.Deserialize<Transaction>(res, client.JsonOptions);
+            return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }
     }
 }

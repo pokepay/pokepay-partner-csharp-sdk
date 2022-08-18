@@ -8,12 +8,12 @@ namespace PokepayPartnerCsharpSdk.Response
         public string Id { get; }
         public string Name { get; }
         public bool IsSuspended { get; }
+        public string Status { get; }
         public PrivateMoney PrivateMoney { get; }
         public User User { get; }
-        public string ExternalId { get; }
 
         [JsonConstructor]
-        public AccountWithUser(string id, string name, bool isSuspended, PrivateMoney privateMoney, User user, string externalId) =>
-            (Id, Name, IsSuspended, PrivateMoney, User, ExternalId) = (id, name, isSuspended, privateMoney, user, externalId);
+        public AccountWithUser(string id, string name, bool isSuspended, string status, PrivateMoney privateMoney, User user) =>
+            (Id, Name, IsSuspended, Status, PrivateMoney, User) = (id, name, isSuspended, status, privateMoney, user);
     }
 }

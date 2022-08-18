@@ -15,7 +15,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string ExternalId { get; }
 
         [JsonConstructor]
-        public ShopWithMetadata(string id, string name, string organizationCode, string postalCode, string address, string tel, string email, string externalId) =>
-            (Id, Name, OrganizationCode, PostalCode, Address, Tel, Email, ExternalId) = (id, name, organizationCode, postalCode, address, tel, email, externalId);
+        public ShopWithMetadata(string id, string name, string organizationCode) =>
+            (Id, Name, OrganizationCode) = (id, name, organizationCode);
     }
 }

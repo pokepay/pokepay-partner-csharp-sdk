@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using NUnit.Framework;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using PokepayPartnerCsharpSdk;
 
@@ -26,7 +27,42 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.ListUserAccounts request = new Request.ListUserAccounts(
                     "f7badafa-54a1-4511-b337-e4aa1c1fe652"
                 );
-                Response.PaginatedAccounts response = await request.Send(client);
+                Response.PaginatedAccountDetails response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task ListUserAccounts1()
+        {
+            try {
+                Request.ListUserAccounts request = new Request.ListUserAccounts(
+                    "f7badafa-54a1-4511-b337-e4aa1c1fe652"
+                ) {
+                    PerPage = 5145,
+                };
+                Response.PaginatedAccountDetails response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task ListUserAccounts2()
+        {
+            try {
+                Request.ListUserAccounts request = new Request.ListUserAccounts(
+                    "f7badafa-54a1-4511-b337-e4aa1c1fe652"
+                ) {
+                    Page = 7996,
+                    PerPage = 3122,
+                };
+                Response.PaginatedAccountDetails response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");

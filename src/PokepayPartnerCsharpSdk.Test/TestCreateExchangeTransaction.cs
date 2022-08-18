@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using NUnit.Framework;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using PokepayPartnerCsharpSdk;
 
@@ -24,12 +25,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateExchangeTransaction request = new Request.CreateExchangeTransaction(
-                    "06a5d2f3-24ff-4667-bc8c-65ce1140d986",
-                    "da109100-e2fa-4783-9783-8f2f87ea64e6",
-                    "f970404d-f9bd-4e3e-8b56-45d980d67ece",
-                    6534.0
+                    "34eb72b8-1450-4f7f-a0bc-b0df266a8a91",
+                    "5a96ff88-52e5-4ead-9094-60a96e58e86f",
+                    "10083b2b-1dcd-4421-9c7d-1991ae9a8080",
+                    4059.0
                 );
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -42,14 +43,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateExchangeTransaction request = new Request.CreateExchangeTransaction(
-                    "06a5d2f3-24ff-4667-bc8c-65ce1140d986",
-                    "da109100-e2fa-4783-9783-8f2f87ea64e6",
-                    "f970404d-f9bd-4e3e-8b56-45d980d67ece",
-                    6534.0
+                    "34eb72b8-1450-4f7f-a0bc-b0df266a8a91",
+                    "5a96ff88-52e5-4ead-9094-60a96e58e86f",
+                    "10083b2b-1dcd-4421-9c7d-1991ae9a8080",
+                    4059.0
                 ) {
-                    RequestId = "367806f4-330f-45a5-9195-2ba133f57846",
+                    RequestId = "1ed94b77-b96e-4da7-8a41-03a71ec2d0c5",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -62,15 +63,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateExchangeTransaction request = new Request.CreateExchangeTransaction(
-                    "06a5d2f3-24ff-4667-bc8c-65ce1140d986",
-                    "da109100-e2fa-4783-9783-8f2f87ea64e6",
-                    "f970404d-f9bd-4e3e-8b56-45d980d67ece",
-                    6534.0
+                    "34eb72b8-1450-4f7f-a0bc-b0df266a8a91",
+                    "5a96ff88-52e5-4ead-9094-60a96e58e86f",
+                    "10083b2b-1dcd-4421-9c7d-1991ae9a8080",
+                    4059.0
                 ) {
-                    Description = "ORiCKaN1GSBkTmsnETZgON7wI25X",
-                    RequestId = "87cb461b-ae44-4a7e-b4cc-0117b77b58c4",
+                    Description = "muUL6pb761IWS7zT3jmF3XMzgKDKO5o6UqQsbMF41dYUnemzRdROKbGph7rDrumGN6tQ3vZwFKRF7w7plclcWB9bNRwQ0LABzLS5AginlSJbgCOpN21EzYv53e8C68gL6nh3hboA1VaXQqYz47H8v5OYX2Bb7kgjpYtpWxkJ",
+                    RequestId = "b90e2715-4a1c-4932-9d36-3e10f6991b1f",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
