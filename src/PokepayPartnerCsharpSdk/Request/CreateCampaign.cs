@@ -31,8 +31,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public int MinimumNumberForCombinationPurchase { get; set; }
         public string DestPrivateMoneyId { get; set; }
 
-        public CreateCampaign(string name, string privateMoneyId, string startsAt, string endsAt, int priority, string event) =>
-            (Name, PrivateMoneyId, StartsAt, EndsAt, Priority, Event) = (name, privateMoneyId, startsAt, endsAt, priority, event);
+        public CreateCampaign(string name, string privateMoneyId, string startsAt, string endsAt, int priority, string eventType) =>
+            (Name, PrivateMoneyId, StartsAt, EndsAt, Priority, Event) = (name, privateMoneyId, startsAt, endsAt, priority, eventType);
 
         private string path { get { return "/campaigns"; } }
 
