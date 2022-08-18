@@ -16,7 +16,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public ShopAccount[] Accounts { get; }
 
         [JsonConstructor]
-        public ShopWithAccounts(string id, string name, string organizationCode, string postalCode, string address, string tel, string email, string externalId, ShopAccount[] accounts) =>
-            (Id, Name, OrganizationCode, PostalCode, Address, Tel, Email, ExternalId, Accounts) = (id, name, organizationCode, postalCode, address, tel, email, externalId, accounts);
+        public ShopWithAccounts(string id, string name, string organizationCode, ShopAccount[] accounts) =>
+            (Id, Name, OrganizationCode, Accounts) = (id, name, organizationCode, accounts);
     }
 }

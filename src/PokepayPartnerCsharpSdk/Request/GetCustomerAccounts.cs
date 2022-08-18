@@ -16,6 +16,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string CreatedAtFrom { get; set; }
         public string CreatedAtTo { get; set; }
         public bool IsSuspended { get; set; }
+        public string Status { get; set; }
         public string ExternalId { get; set; }
         public string Tel { get; set; }
         public string Email { get; set; }

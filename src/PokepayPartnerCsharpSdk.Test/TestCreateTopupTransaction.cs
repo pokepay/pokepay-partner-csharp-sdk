@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using NUnit.Framework;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using PokepayPartnerCsharpSdk;
 
@@ -24,11 +25,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
-                    "714ae247-b68c-4542-93db-005699bd57cc",
-                    "b23cdd26-76f0-468a-8b32-ccd657594e6d",
-                    "d7c06467-3e1d-45a0-be33-87e5f9b30da8"
+                    "8e3a5553-8579-4c24-9eef-d74c712447dd",
+                    "d55893f1-9c88-4394-85d1-1bab6d1e9afe",
+                    "ef85eede-82cb-4468-9582-2ccddf764208"
                 );
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -41,13 +42,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
-                    "714ae247-b68c-4542-93db-005699bd57cc",
-                    "b23cdd26-76f0-468a-8b32-ccd657594e6d",
-                    "d7c06467-3e1d-45a0-be33-87e5f9b30da8"
+                    "8e3a5553-8579-4c24-9eef-d74c712447dd",
+                    "d55893f1-9c88-4394-85d1-1bab6d1e9afe",
+                    "ef85eede-82cb-4468-9582-2ccddf764208"
                 ) {
-                    RequestId = "12873ff0-f0a7-4f8d-b2ad-25cf642cb155",
+                    RequestId = "6924d76e-d35e-4341-9347-ad42f73d2590",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -60,14 +61,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
-                    "714ae247-b68c-4542-93db-005699bd57cc",
-                    "b23cdd26-76f0-468a-8b32-ccd657594e6d",
-                    "d7c06467-3e1d-45a0-be33-87e5f9b30da8"
+                    "8e3a5553-8579-4c24-9eef-d74c712447dd",
+                    "d55893f1-9c88-4394-85d1-1bab6d1e9afe",
+                    "ef85eede-82cb-4468-9582-2ccddf764208"
                 ) {
-                    Description = "7ktZcH",
-                    RequestId = "cc474057-b105-4273-8bda-3c8a04992c7f",
+                    Metadata = "{\"key\":\"value\"}",
+                    RequestId = "78112281-97f2-444c-8284-68336975e905",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -80,15 +81,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
-                    "714ae247-b68c-4542-93db-005699bd57cc",
-                    "b23cdd26-76f0-468a-8b32-ccd657594e6d",
-                    "d7c06467-3e1d-45a0-be33-87e5f9b30da8"
+                    "8e3a5553-8579-4c24-9eef-d74c712447dd",
+                    "d55893f1-9c88-4394-85d1-1bab6d1e9afe",
+                    "ef85eede-82cb-4468-9582-2ccddf764208"
                 ) {
-                    PointExpiresAt = "2024-10-27T05:25:48.000000+09:00",
-                    Description = "EtZX9770nlSO8H2DCl6imPJgn2XjYsZUpQvLebh65Hdtxmvs4SwxRthVVayjO1th3s3e6fayZ2E32vm3RMvvWttu1PJb3d04IfskzbRh2KXDkJqy1",
-                    RequestId = "7508f855-4d79-48d0-9202-02e1456064c7",
+                    Description = "eptreugpuZPDhn3kvKQdinTisU7JGahMN0pspm5VBpWaMfH3OlTb5uoxVylmhf3ESdF0EHZGgpE19g89rUgV81h6fR4XX",
+                    Metadata = "{\"key\":\"value\"}",
+                    RequestId = "a152d341-467e-4752-be06-08e5e80c9901",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -101,16 +102,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
-                    "714ae247-b68c-4542-93db-005699bd57cc",
-                    "b23cdd26-76f0-468a-8b32-ccd657594e6d",
-                    "d7c06467-3e1d-45a0-be33-87e5f9b30da8"
+                    "8e3a5553-8579-4c24-9eef-d74c712447dd",
+                    "d55893f1-9c88-4394-85d1-1bab6d1e9afe",
+                    "ef85eede-82cb-4468-9582-2ccddf764208"
                 ) {
-                    PointAmount = 3784.0,
-                    PointExpiresAt = "2021-01-16T15:18:32.000000+09:00",
-                    Description = "kyMSdmemZcovbEUc9TiM3DTSa7pJlo8JS6mIVfCl8O6XTpGUPEJOaNnRanlNyuKHWuXq7zEzVgAAIhzrVmMQ7zQf4j1Xl",
-                    RequestId = "4f57728f-a26e-4378-b631-80dc19de3382",
+                    PointExpiresAt = "2018-08-02T19:22:22.000000+09:00",
+                    Description = "SL8MjPf2nDJncUb7prKqWXHoSFTkZLdy8B9WWqNrXVXI1wRTqwqzVsahBGWwps3iARDJTRZkOOEQFC19Wtss23YjQBhHozeYJjV02y90GWowMI3ASCsApxBJptaJJRDQ6YTYkiFEIISprQ3cmpI6bh8YrVsWGSghD",
+                    Metadata = "{\"key\":\"value\"}",
+                    RequestId = "996f202b-5d28-4094-835f-0b771d340d31",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -123,17 +124,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
-                    "714ae247-b68c-4542-93db-005699bd57cc",
-                    "b23cdd26-76f0-468a-8b32-ccd657594e6d",
-                    "d7c06467-3e1d-45a0-be33-87e5f9b30da8"
+                    "8e3a5553-8579-4c24-9eef-d74c712447dd",
+                    "d55893f1-9c88-4394-85d1-1bab6d1e9afe",
+                    "ef85eede-82cb-4468-9582-2ccddf764208"
                 ) {
-                    MoneyAmount = 6761.0,
-                    PointAmount = 1028.0,
-                    PointExpiresAt = "2025-04-10T20:20:59.000000+09:00",
-                    Description = "BdwXQXBx9CjvSgZke3VuPIIBeUSxLQqoj9SXP9EgDJcoagTJNb42JvVKNsj3zA7Dw0uibv6O0nFaLFwVLIZnC6rDyYuuG1XnlSIVaCTCoBzc3PolsdbrxUTbpTkQr9CA458OFUiC0xNjD1g6ausYOsWjmgSVes0LvRpIOKLgAa2m76DTKceEBbKe1QbzWrTYv",
-                    RequestId = "686f83c8-1ae9-4867-a4c2-0116c175ee8a",
+                    PointAmount = 6692,
+                    PointExpiresAt = "2016-08-28T09:38:09.000000+09:00",
+                    Description = "nnaTSFczRArCskatgTSAk3a8TcT02JvhzyAvEGRwH1gqt79bzapcrIrLur4lrAgRY4qmYCDpX8Ny7Ex4zLyYmVuuwRZjnfSOf90ILh1FnEv5pCv1ztILSktq1cNxb1w0fAXCRcSE6z5QHSLVITcWyXkWwNeThLpKI1N6RIMY7t0u9TuR54ZsbCHG",
+                    Metadata = "{\"key\":\"value\"}",
+                    RequestId = "2ab7fa7f-a3c4-41c9-ad1c-f49b83998eea",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -146,18 +147,43 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
-                    "714ae247-b68c-4542-93db-005699bd57cc",
-                    "b23cdd26-76f0-468a-8b32-ccd657594e6d",
-                    "d7c06467-3e1d-45a0-be33-87e5f9b30da8"
+                    "8e3a5553-8579-4c24-9eef-d74c712447dd",
+                    "d55893f1-9c88-4394-85d1-1bab6d1e9afe",
+                    "ef85eede-82cb-4468-9582-2ccddf764208"
                 ) {
-                    BearPointShopId = "ccd1df59-d82b-4776-914b-b45b160fddd6",
-                    MoneyAmount = 137.0,
-                    PointAmount = 1422.0,
-                    PointExpiresAt = "2020-02-19T21:22:44.000000+09:00",
-                    Description = "VdsHD1HarFGRZ0Q28LywVGUz2sIRxtNbAYMzH",
-                    RequestId = "0d5219fc-8b40-4265-901f-51ecc6802c77",
+                    MoneyAmount = 4889,
+                    PointAmount = 1707,
+                    PointExpiresAt = "2019-03-26T12:09:25.000000+09:00",
+                    Description = "34z4jE8W9hhkpYWEzZLn5uyvbNkf",
+                    Metadata = "{\"key\":\"value\"}",
+                    RequestId = "b2e2a821-102f-457d-932c-10baa2a7246b",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task CreateTopupTransaction7()
+        {
+            try {
+                Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
+                    "8e3a5553-8579-4c24-9eef-d74c712447dd",
+                    "d55893f1-9c88-4394-85d1-1bab6d1e9afe",
+                    "ef85eede-82cb-4468-9582-2ccddf764208"
+                ) {
+                    BearPointShopId = "48447b71-0d64-4da2-877c-2ea2ffa8a760",
+                    MoneyAmount = 975,
+                    PointAmount = 5906,
+                    PointExpiresAt = "2018-01-17T05:41:58.000000+09:00",
+                    Description = "2tK1ETZVrimXQx2toEzw7Z1gM6fgx4uEjyIUvTVKqmlOa23scUcry",
+                    Metadata = "{\"key\":\"value\"}",
+                    RequestId = "047edf6a-2b34-402f-9647-397dde9f75ab",
+                };
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");

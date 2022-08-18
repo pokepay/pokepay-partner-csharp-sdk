@@ -12,6 +12,8 @@ namespace PokepayPartnerCsharpSdk.Request
     {
         private string AccountId { get; set; }
         public bool IsSuspended { get; set; }
+        public string Status { get; set; }
+        public bool CanTransferTopup { get; set; }
 
         public UpdateAccount(string accountId) =>
             (AccountId) = (accountId);

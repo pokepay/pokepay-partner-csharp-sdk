@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using NUnit.Framework;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using PokepayPartnerCsharpSdk;
 
@@ -24,12 +25,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "5d743523-864b-4d1f-a9b4-f5b1e4b3804d",
-                    "555e5ecb-47f2-4f4a-9d38-1e758febb733",
-                    "6b57a04a-4623-48f4-800b-5d07452a8a19",
-                    4040.0
+                    "72ba548b-61df-47cb-b046-ae9c95c9b5c8",
+                    "a5024acc-06f9-4e4c-996e-2d1e5e5dd8f6",
+                    "deb457dc-5dfa-4054-a4df-60464dea9de6",
+                    94.0
                 );
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -42,14 +43,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "5d743523-864b-4d1f-a9b4-f5b1e4b3804d",
-                    "555e5ecb-47f2-4f4a-9d38-1e758febb733",
-                    "6b57a04a-4623-48f4-800b-5d07452a8a19",
-                    4040.0
+                    "72ba548b-61df-47cb-b046-ae9c95c9b5c8",
+                    "a5024acc-06f9-4e4c-996e-2d1e5e5dd8f6",
+                    "deb457dc-5dfa-4054-a4df-60464dea9de6",
+                    94.0
                 ) {
-                    RequestId = "e52b4877-2ab1-4533-820a-294a04452a4c",
+                    RequestId = "95f56e59-fb8a-4731-9bca-2b167cad46cf",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -62,15 +63,37 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "5d743523-864b-4d1f-a9b4-f5b1e4b3804d",
-                    "555e5ecb-47f2-4f4a-9d38-1e758febb733",
-                    "6b57a04a-4623-48f4-800b-5d07452a8a19",
-                    4040.0
+                    "72ba548b-61df-47cb-b046-ae9c95c9b5c8",
+                    "a5024acc-06f9-4e4c-996e-2d1e5e5dd8f6",
+                    "deb457dc-5dfa-4054-a4df-60464dea9de6",
+                    94.0
                 ) {
-                    Description = "qURa9CDG8z1r52NxmvSo3IMgKOG9RqgqLtsxscDVj4qDxwlI",
-                    RequestId = "a9001573-4cdb-4a6a-a359-51644f40ebc4",
+                    Description = "DoBhEEJFs7RURiJHf6mnglgKA3t551AWYy2EKxgIvudVQK",
+                    RequestId = "68909fcd-5a85-40a6-b3e9-4b1b2aa48499",
                 };
-                Response.Transaction response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task CreateTransferTransaction3()
+        {
+            try {
+                Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
+                    "72ba548b-61df-47cb-b046-ae9c95c9b5c8",
+                    "a5024acc-06f9-4e4c-996e-2d1e5e5dd8f6",
+                    "deb457dc-5dfa-4054-a4df-60464dea9de6",
+                    94.0
+                ) {
+                    Metadata = "{\"key\":\"value\"}",
+                    Description = "lyVYA6fe68jtm2G7nC3SW8MPeFKTYT7eEYLwvHQFKDImV0W8uMWRziTXMumFe",
+                    RequestId = "a6716e61-64c5-4648-a40a-41163b9005e8",
+                };
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");

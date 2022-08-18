@@ -13,20 +13,22 @@ namespace PokepayPartnerCsharpSdk.Request
         public string ShopId { get; set; }
         public string CustomerId { get; set; }
         public string PrivateMoneyId { get; set; }
-        public double Amount { get; set; }
+        public int Amount { get; set; }
         public string Description { get; set; }
+        public string Metadata { get; set; }
+        public object[] Products { get; set; }
         public string RequestId { get; set; }
 
-        public CreatePaymentTransaction(string shopId, string customerId, string privateMoneyId, double amount) =>
+        public CreatePaymentTransaction(string shopId, string customerId, string privateMoneyId, int amount) =>
             (ShopId, CustomerId, PrivateMoneyId, Amount) = (shopId, customerId, privateMoneyId, amount);
 
         private string path { get { return "/transactions" + "/payment"; } }
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<Transaction> Send(Client client) {
+        public async Task<TransactionDetail> Send(Client client) {
             string res = await client.Send(path, CreatePaymentTransaction.method, this);
-            return JsonSerializer.Deserialize<Transaction>(res, client.JsonOptions);
+            return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }
     }
 }
