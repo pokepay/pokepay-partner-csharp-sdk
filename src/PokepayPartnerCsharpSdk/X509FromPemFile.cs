@@ -24,9 +24,21 @@ namespace PokepayPartnerCsharpSdk
 
         private static byte[] GetBytesFromPEM(string pemString, string header, string footer)
         {
-            int start = pemString.IndexOf(header) + header.Length;
-            int end = pemString.IndexOf(footer, start) - start;
-            string str = pemString.Substring(start, end);
+            if(pemString.Length == 0)
+            {
+                throw new ArgumentException("pemString is empty");
+            }
+            int start = pemString.IndexOf(header);
+            if (start < 0)
+            {
+                throw new ArgumentException("missing begin marker: " + header);
+            }
+            int end = pemString.IndexOf(footer, start + header.Length);
+            if (end < 0)
+            {
+                throw new ArgumentException("missing end marker: " + footer);
+            }
+            string str = pemString.Substring(start + header.Length, end - start - header.Length);
             return Convert.FromBase64String(str);
         }
 

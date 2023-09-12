@@ -106,12 +106,25 @@ namespace PokepayPartnerCsharpSdk
             }
             Config = new IniFile(configFilePath);
             ClientId = Config.GetValue("", "CLIENT_ID");
-            ClientSecret = Encrypter.DecodeBase64Url(Config.GetValue("", "CLIENT_SECRET"));
+            try
+            {
+                ClientSecret = Encrypter.DecodeBase64Url(Config.GetValue("", "CLIENT_SECRET"));
+            }
+            catch (FormatException)
+            {
+                throw new FormatException("invalid CLIENT_SECRET format");
+            }
             BaseUrl = Config.GetValue("", "API_BASE_URL");
-            HttpClient = Client.GetHttpClient(
-                Config.GetValue("", "SSL_CERT_FILE"),
-                Config.GetValue("", "SSL_KEY_FILE")
-                );
+            var cert = Config.GetValue("", "SSL_CERT_FILE");
+            var key = Config.GetValue("", "SSL_KEY_FILE");
+            try
+            {
+                HttpClient = Client.GetHttpClient(cert, key);
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException("Invalid client certification configuration", e);
+            }
             Rng = new RNGCryptoServiceProvider();
             JsonOptions = new JsonSerializerOptions {
                 PropertyNamingPolicy = new SnakeCaseNamingPolicy(),
