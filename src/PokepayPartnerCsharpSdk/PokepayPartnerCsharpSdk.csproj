@@ -7,6 +7,7 @@
     <Authors>Pokepay developer team (dev@pokepay.jp)</Authors>
     <Company>PocketChange.inc</Company>
     <PackageProjectUrl>https://github.com/pokepay/pokepay-partner-csharp-sdk</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Version>1.2.1</Version>
     <OutputType>Library</OutputType>
@@ -39,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
   </ItemGroup>
 </Project>
