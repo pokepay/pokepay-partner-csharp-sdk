@@ -1,4 +1,3 @@
-[CONFIG]
 CLIENT_ID        = xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 CLIENT_SECRET    = yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 API_BASE_URL     = https://partnerapi-sandbox.pokepay.jp
