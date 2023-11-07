@@ -8,6 +8,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string Id { get; }
         public string Name { get; }
         public string OrganizationCode { get; }
+        public string Status { get; }
         public string PostalCode { get; }
         public string Address { get; }
         public string Tel { get; }
@@ -16,7 +17,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public ShopAccount[] Accounts { get; }
 
         [JsonConstructor]
-        public ShopWithAccounts(string id, string name, string organizationCode, ShopAccount[] accounts) =>
-            (Id, Name, OrganizationCode, Accounts) = (id, name, organizationCode, accounts);
+        public ShopWithAccounts(string id, string name, string organizationCode, string status, ShopAccount[] accounts) =>
+            (Id, Name, OrganizationCode, Status, Accounts) = (id, name, organizationCode, status, accounts);
     }
 }

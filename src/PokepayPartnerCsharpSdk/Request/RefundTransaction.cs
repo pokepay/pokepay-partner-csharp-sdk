@@ -11,7 +11,10 @@ namespace PokepayPartnerCsharpSdk.Request
     public class RefundTransaction
     {
         private string TransactionId { get; set; }
-        public string Description { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
+        #nullable enable
+        public string? ReturningPointExpiresAt { get; set; }
 
         public RefundTransaction(string transactionId) =>
             (TransactionId) = (transactionId);
@@ -20,7 +23,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<TransactionDetail> Send(Client client) {
+        #nullable enable
+        public async Task<TransactionDetail?> Send(Client client) {
             string res = await client.Send(path, RefundTransaction.method, this);
             return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }

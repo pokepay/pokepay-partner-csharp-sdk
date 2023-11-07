@@ -11,14 +11,22 @@ namespace PokepayPartnerCsharpSdk.Request
     public class ListCustomerTransactions
     {
         public string PrivateMoneyId { get; set; }
-        public string SenderCustomerId { get; set; }
-        public string ReceiverCustomerId { get; set; }
-        public string Type { get; set; }
-        public bool IsModified { get; set; }
-        public string From { get; set; }
-        public string To { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        #nullable enable
+        public string? SenderCustomerId { get; set; }
+        #nullable enable
+        public string? ReceiverCustomerId { get; set; }
+        #nullable enable
+        public string? Type { get; set; }
+        #nullable enable
+        public bool? IsModified { get; set; }
+        #nullable enable
+        public string? From { get; set; }
+        #nullable enable
+        public string? To { get; set; }
+        #nullable enable
+        public int? Page { get; set; }
+        #nullable enable
+        public int? PerPage { get; set; }
 
         public ListCustomerTransactions(string privateMoneyId) =>
             (PrivateMoneyId) = (privateMoneyId);
@@ -27,7 +35,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<PaginatedTransaction> Send(Client client) {
+        #nullable enable
+        public async Task<PaginatedTransaction?> Send(Client client) {
             string res = await client.Send(path, ListCustomerTransactions.method, this);
             return JsonSerializer.Deserialize<PaginatedTransaction>(res, client.JsonOptions);
         }

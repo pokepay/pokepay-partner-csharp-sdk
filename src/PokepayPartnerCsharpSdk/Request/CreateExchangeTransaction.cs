@@ -14,8 +14,10 @@ namespace PokepayPartnerCsharpSdk.Request
         public string SenderPrivateMoneyId { get; set; }
         public string ReceiverPrivateMoneyId { get; set; }
         public double Amount { get; set; }
-        public string Description { get; set; }
-        public string RequestId { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
+        #nullable enable
+        public string? RequestId { get; set; }
 
         public CreateExchangeTransaction(string userId, string senderPrivateMoneyId, string receiverPrivateMoneyId, double amount) =>
             (UserId, SenderPrivateMoneyId, ReceiverPrivateMoneyId, Amount) = (userId, senderPrivateMoneyId, receiverPrivateMoneyId, amount);
@@ -24,7 +26,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<TransactionDetail> Send(Client client) {
+        #nullable enable
+        public async Task<TransactionDetail?> Send(Client client) {
             string res = await client.Send(path, CreateExchangeTransaction.method, this);
             return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }

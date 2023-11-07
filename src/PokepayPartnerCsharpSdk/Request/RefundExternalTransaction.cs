@@ -11,7 +11,8 @@ namespace PokepayPartnerCsharpSdk.Request
     public class RefundExternalTransaction
     {
         private string EventId { get; set; }
-        public string Description { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
 
         public RefundExternalTransaction(string eventId) =>
             (EventId) = (eventId);
@@ -20,7 +21,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<ExternalTransaction> Send(Client client) {
+        #nullable enable
+        public async Task<ExternalTransaction?> Send(Client client) {
             string res = await client.Send(path, RefundExternalTransaction.method, this);
             return JsonSerializer.Deserialize<ExternalTransaction>(res, client.JsonOptions);
         }

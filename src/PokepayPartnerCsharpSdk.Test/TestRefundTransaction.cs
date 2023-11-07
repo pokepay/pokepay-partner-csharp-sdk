@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "62c64955-3ee2-428f-8918-7958e6f8ede6"
+                    "3217a956-c527-46d2-b3ea-c9d115581169"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,27 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "62c64955-3ee2-428f-8918-7958e6f8ede6"
+                    "3217a956-c527-46d2-b3ea-c9d115581169"
                 ) {
-                    Description = "zIWogjdxJNEfM7ZphEzx62f8FNzaDel7ro4JT6XY3Y33ek4ahxmsrZJPb5B1K9ZLJjlQzrcG4cFx990D5go4dBLdUCSZVd4cTq",
+                    ReturningPointExpiresAt = "2018-08-02T21:41:00.000000+09:00",
+                };
+                Response.TransactionDetail response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task RefundTransaction2()
+        {
+            try {
+                Request.RefundTransaction request = new Request.RefundTransaction(
+                    "3217a956-c527-46d2-b3ea-c9d115581169"
+                ) {
+                    Description = "IRX4Fyi3sbEEtdRClE1HgAAnKetmaIWCv9O0KPhB5nyQ19dG2Bix0u",
+                    ReturningPointExpiresAt = "2017-09-23T04:07:31.000000+09:00",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

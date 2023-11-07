@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "011b504d-9950-476f-89b5-74640faf5c82"
+                    "36ad2c93-0068-4ea4-b1ae-4b9b432b11f3"
                 );
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "011b504d-9950-476f-89b5-74640faf5c82"
+                    "36ad2c93-0068-4ea4-b1ae-4b9b432b11f3"
                 ) {
-                    IsDisabled = false,
+                    IsDisabled = true,
                 };
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "011b504d-9950-476f-89b5-74640faf5c82"
+                    "36ad2c93-0068-4ea4-b1ae-4b9b432b11f3"
                 ) {
-                    Description = "tAEAC8MN1MIRbysguh0xXqdkQK8VGfHRzulBqoPAVuBC2EUluqb81O3ZagKE8LcCa8bz2nHShe5EoHVudmx1iMacSt3whWHQ5cbR62Eyf",
+                    Description = "sLEbEWPKl9WkWniNMe57GaUoeFKUhuzR92flJna3o8lSubVHDQKnCMFBUToCMNtZ6d7oqX5HAjEgFXSsN9r5fYqwBwIeFwCdwWTHBvTSeC4v5viv0SuTrdZ8q3Q4Tuionr4icEoYIZ8TnBORlevStTp",
                     IsDisabled = true,
                 };
                 Response.Bill response = await request.Send(client);
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "011b504d-9950-476f-89b5-74640faf5c82"
+                    "36ad2c93-0068-4ea4-b1ae-4b9b432b11f3"
                 ) {
-                    Amount = 2605.0,
-                    Description = "yRxoXmZ8au8D4esSHy55WYfHfvN0QEBe9OUmuQoNyAxdhT65YfaNVM2xjqlPxxy8RqwFWTQ1hvVt9bN2zIxNZx4eE9mHPjq6XCvYjxbcuNA5AOQHru6gAXocPu4UpOUbFxl1xg8SX1voG8Gydqo4fQ7D47J36mgyKf2pL",
+                    Amount = 1910.0,
+                    Description = "kwGTx4XeaHsbnASQL7dNbIjKdxZ4qw5diKtbXpwhzV4pZWBByF0VHHSTDwDvpGuPijQkiZTa2NELJfD",
                     IsDisabled = true,
                 };
                 Response.Bill response = await request.Send(client);

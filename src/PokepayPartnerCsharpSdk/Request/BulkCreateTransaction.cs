@@ -11,9 +11,12 @@ namespace PokepayPartnerCsharpSdk.Request
     public class BulkCreateTransaction
     {
         public string Name { get; set; }
-        public string Description { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
         public string Content { get; set; }
         public string RequestId { get; set; }
+        #nullable enable
+        public string? PrivateMoneyId { get; set; }
 
         public BulkCreateTransaction(string name, string content, string requestId) =>
             (Name, Content, RequestId) = (name, content, requestId);
@@ -22,7 +25,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<BulkTransaction> Send(Client client) {
+        #nullable enable
+        public async Task<BulkTransaction?> Send(Client client) {
             string res = await client.Send(path, BulkCreateTransaction.method, this);
             return JsonSerializer.Deserialize<BulkTransaction>(res, client.JsonOptions);
         }

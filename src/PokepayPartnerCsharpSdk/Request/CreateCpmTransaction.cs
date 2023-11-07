@@ -13,10 +13,14 @@ namespace PokepayPartnerCsharpSdk.Request
         public string CpmToken { get; set; }
         public string ShopId { get; set; }
         public double Amount { get; set; }
-        public string Description { get; set; }
-        public string Metadata { get; set; }
-        public object[] Products { get; set; }
-        public string RequestId { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
+        #nullable enable
+        public string? Metadata { get; set; }
+        #nullable enable
+        public object[]? Products { get; set; }
+        #nullable enable
+        public string? RequestId { get; set; }
 
         public CreateCpmTransaction(string cpmToken, string shopId, double amount) =>
             (CpmToken, ShopId, Amount) = (cpmToken, shopId, amount);
@@ -25,7 +29,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<TransactionDetail> Send(Client client) {
+        #nullable enable
+        public async Task<TransactionDetail?> Send(Client client) {
             string res = await client.Send(path, CreateCpmTransaction.method, this);
             return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }

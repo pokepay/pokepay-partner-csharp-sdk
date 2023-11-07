@@ -18,6 +18,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public User BearPointShop { get; }
         public PrivateMoney PrivateMoney { get; }
         public PrivateMoney DestPrivateMoney { get; }
+        public int MaxTotalPointAmount { get; }
         public string PointCalculationRule { get; }
         public string PointCalculationRuleObject { get; }
         public string Status { get; }

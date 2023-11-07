@@ -11,9 +11,12 @@ namespace PokepayPartnerCsharpSdk.Request
     public class UpdateBill
     {
         private string BillId { get; set; }
-        public double Amount { get; set; }
-        public string Description { get; set; }
-        public bool IsDisabled { get; set; }
+        #nullable enable
+        public double? Amount { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
+        #nullable enable
+        public bool? IsDisabled { get; set; }
 
         public UpdateBill(string billId) =>
             (BillId) = (billId);
@@ -22,7 +25,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("PATCH");
 
-        public async Task<Bill> Send(Client client) {
+        #nullable enable
+        public async Task<Bill?> Send(Client client) {
             string res = await client.Send(path, UpdateBill.method, this);
             return JsonSerializer.Deserialize<Bill>(res, client.JsonOptions);
         }

@@ -11,7 +11,8 @@ namespace PokepayPartnerCsharpSdk.Request
     public class DeleteAccount
     {
         private string AccountId { get; set; }
-        public bool Cashback { get; set; }
+        #nullable enable
+        public bool? Cashback { get; set; }
 
         public DeleteAccount(string accountId) =>
             (AccountId) = (accountId);
@@ -20,7 +21,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("DELETE");
 
-        public async Task<AccountDeleted> Send(Client client) {
+        #nullable enable
+        public async Task<AccountDeleted?> Send(Client client) {
             string res = await client.Send(path, DeleteAccount.method, this);
             return JsonSerializer.Deserialize<AccountDeleted>(res, client.JsonOptions);
         }

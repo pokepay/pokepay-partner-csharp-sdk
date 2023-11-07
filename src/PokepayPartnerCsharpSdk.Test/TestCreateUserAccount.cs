@@ -25,8 +25,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateUserAccount request = new Request.CreateUserAccount(
-                    "1cca797a-a4ae-4807-a9ad-4bab80f00988",
-                    "a7de9f4c-0cba-468f-80c5-ac4cef1a2e6d"
+                    "e0501581-d738-4b21-a66a-ba25c277dca2",
+                    "698bd0ee-972d-4e1f-9cf3-4811140db7f9"
                 );
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -41,10 +41,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateUserAccount request = new Request.CreateUserAccount(
-                    "1cca797a-a4ae-4807-a9ad-4bab80f00988",
-                    "a7de9f4c-0cba-468f-80c5-ac4cef1a2e6d"
+                    "e0501581-d738-4b21-a66a-ba25c277dca2",
+                    "698bd0ee-972d-4e1f-9cf3-4811140db7f9"
                 ) {
-                    ExternalId = "FBMnn24Y00BddIYIaGsnHTfyj3vGhpYs6lE3PVx",
+                    Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -59,11 +59,31 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateUserAccount request = new Request.CreateUserAccount(
-                    "1cca797a-a4ae-4807-a9ad-4bab80f00988",
-                    "a7de9f4c-0cba-468f-80c5-ac4cef1a2e6d"
+                    "e0501581-d738-4b21-a66a-ba25c277dca2",
+                    "698bd0ee-972d-4e1f-9cf3-4811140db7f9"
                 ) {
-                    Name = "hCRcEAVa4JmfjoJZ9ajsO39BqxPDSP5BpfA0dYcuMmHpa4aDHWm32hBFhI0DxRhz83lKq4Wp1hKlNvpHM0s7Dd9Uu6qWqC0qUtLag9adxARTcCtKjz1M2kusM3cVDMOGMtpxWNvKR6Gcp6PWCiNymBaUIu6lQIyVNDYRttS46oTXBYnbHbMuAdnXANiixumuncg7egxc7L05i8jkZ1Waa",
-                    ExternalId = "h6AAgB9jXehhbgs",
+                    ExternalId = "4FHwJoyq0ZZ3LqXWxjbEnE",
+                    Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
+                };
+                Response.AccountDetail response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task CreateUserAccount3()
+        {
+            try {
+                Request.CreateUserAccount request = new Request.CreateUserAccount(
+                    "e0501581-d738-4b21-a66a-ba25c277dca2",
+                    "698bd0ee-972d-4e1f-9cf3-4811140db7f9"
+                ) {
+                    Name = "SIQFT8gVsfPuQVaowDYu3d5Sm9zyIcRdxyPhvN5IwiETAQgPekgAKwMH174rbfDViH42QTSZs6yFu8FkF480FKwQqxq6r9xFthPMxqp8GIIinccp",
+                    ExternalId = "41v2FiNpGDXTz",
+                    Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

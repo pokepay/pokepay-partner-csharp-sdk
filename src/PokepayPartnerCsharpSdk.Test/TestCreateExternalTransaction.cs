@@ -25,10 +25,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateExternalTransaction request = new Request.CreateExternalTransaction(
-                    "4d70948e-0eee-4106-8e8d-bc6649c47b53",
-                    "0cbf603e-3c5e-4002-9269-f7d8605c8206",
-                    "48adf095-84cc-4077-9a20-feb60d59bc49",
-                    6744
+                    "37513705-8192-4b6c-960d-c7e937c1f0f8",
+                    "612b2f5c-ce10-4723-9f73-f88219cda53d",
+                    "8601a7f6-61d7-4894-82fc-d262aace8d16",
+                    4848
                 );
                 Response.ExternalTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -43,12 +43,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateExternalTransaction request = new Request.CreateExternalTransaction(
-                    "4d70948e-0eee-4106-8e8d-bc6649c47b53",
-                    "0cbf603e-3c5e-4002-9269-f7d8605c8206",
-                    "48adf095-84cc-4077-9a20-feb60d59bc49",
-                    6744
+                    "37513705-8192-4b6c-960d-c7e937c1f0f8",
+                    "612b2f5c-ce10-4723-9f73-f88219cda53d",
+                    "8601a7f6-61d7-4894-82fc-d262aace8d16",
+                    4848
                 ) {
-                    RequestId = "6fe4a33d-aa7d-4a78-8d85-8defb10311e0",
+                    RequestId = "0bdd42ef-7225-4a65-9c50-7108cc4fee74",
                 };
                 Response.ExternalTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -63,13 +63,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateExternalTransaction request = new Request.CreateExternalTransaction(
-                    "4d70948e-0eee-4106-8e8d-bc6649c47b53",
-                    "0cbf603e-3c5e-4002-9269-f7d8605c8206",
-                    "48adf095-84cc-4077-9a20-feb60d59bc49",
-                    6744
+                    "37513705-8192-4b6c-960d-c7e937c1f0f8",
+                    "612b2f5c-ce10-4723-9f73-f88219cda53d",
+                    "8601a7f6-61d7-4894-82fc-d262aace8d16",
+                    4848
                 ) {
                     Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}},
-                    RequestId = "1dad4734-4d0f-4d4e-b3e0-47624d602158",
+                    RequestId = "05f8796d-73b9-4344-a3bd-623c9d3f6ba2",
                 };
                 Response.ExternalTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -84,14 +84,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateExternalTransaction request = new Request.CreateExternalTransaction(
-                    "4d70948e-0eee-4106-8e8d-bc6649c47b53",
-                    "0cbf603e-3c5e-4002-9269-f7d8605c8206",
-                    "48adf095-84cc-4077-9a20-feb60d59bc49",
-                    6744
+                    "37513705-8192-4b6c-960d-c7e937c1f0f8",
+                    "612b2f5c-ce10-4723-9f73-f88219cda53d",
+                    "8601a7f6-61d7-4894-82fc-d262aace8d16",
+                    4848
                 ) {
                     Metadata = "{\"key\":\"value\"}",
                     Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}},
-                    RequestId = "b7a43332-2479-4345-a5f2-26cc71bca74e",
+                    RequestId = "9b23aece-9a7a-48bd-83a6-12aaf8081b23",
                 };
                 Response.ExternalTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -106,15 +106,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateExternalTransaction request = new Request.CreateExternalTransaction(
-                    "4d70948e-0eee-4106-8e8d-bc6649c47b53",
-                    "0cbf603e-3c5e-4002-9269-f7d8605c8206",
-                    "48adf095-84cc-4077-9a20-feb60d59bc49",
-                    6744
+                    "37513705-8192-4b6c-960d-c7e937c1f0f8",
+                    "612b2f5c-ce10-4723-9f73-f88219cda53d",
+                    "8601a7f6-61d7-4894-82fc-d262aace8d16",
+                    4848
                 ) {
-                    Description = "EKMYsRf9vriYiP8HndtLKgFWIeB413C8zcpa0a0i",
+                    Description = "qOfQehkGDa9",
                     Metadata = "{\"key\":\"value\"}",
-                    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}},
-                    RequestId = "911b5ebc-fbf0-4ef5-adcc-29f4f57497b3",
+                    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}},
+                    RequestId = "3fac354e-24df-4506-a960-e463d60039a8",
                 };
                 Response.ExternalTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

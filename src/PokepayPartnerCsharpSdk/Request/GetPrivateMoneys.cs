@@ -10,14 +10,18 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class GetPrivateMoneys
     {
-        public string OrganizationCode { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        #nullable enable
+        public string? OrganizationCode { get; set; }
+        #nullable enable
+        public int? Page { get; set; }
+        #nullable enable
+        public int? PerPage { get; set; }
         private string path { get { return "/private-moneys"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<PaginatedPrivateMoneys> Send(Client client) {
+        #nullable enable
+        public async Task<PaginatedPrivateMoneys?> Send(Client client) {
             string res = await client.Send(path, GetPrivateMoneys.method, this);
             return JsonSerializer.Deserialize<PaginatedPrivateMoneys>(res, client.JsonOptions);
         }

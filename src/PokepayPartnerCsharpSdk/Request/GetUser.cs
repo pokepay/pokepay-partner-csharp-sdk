@@ -14,7 +14,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<AdminUserWithShopsAndPrivateMoneys> Send(Client client) {
+        #nullable enable
+        public async Task<AdminUserWithShopsAndPrivateMoneys?> Send(Client client) {
             string res = await client.Send(path, GetUser.method, this);
             return JsonSerializer.Deserialize<AdminUserWithShopsAndPrivateMoneys>(res, client.JsonOptions);
         }

@@ -10,25 +10,40 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListTransfers
     {
-        public string From { get; set; }
-        public string To { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
-        public string ShopId { get; set; }
-        public string ShopName { get; set; }
-        public string CustomerId { get; set; }
-        public string CustomerName { get; set; }
-        public string TransactionId { get; set; }
-        public string PrivateMoneyId { get; set; }
-        public bool IsModified { get; set; }
-        public string[] TransactionTypes { get; set; }
-        public string[] TransferTypes { get; set; }
-        public string Description { get; set; }
+        #nullable enable
+        public string? From { get; set; }
+        #nullable enable
+        public string? To { get; set; }
+        #nullable enable
+        public int? Page { get; set; }
+        #nullable enable
+        public int? PerPage { get; set; }
+        #nullable enable
+        public string? ShopId { get; set; }
+        #nullable enable
+        public string? ShopName { get; set; }
+        #nullable enable
+        public string? CustomerId { get; set; }
+        #nullable enable
+        public string? CustomerName { get; set; }
+        #nullable enable
+        public string? TransactionId { get; set; }
+        #nullable enable
+        public string? PrivateMoneyId { get; set; }
+        #nullable enable
+        public bool? IsModified { get; set; }
+        #nullable enable
+        public string[]? TransactionTypes { get; set; }
+        #nullable enable
+        public string[]? TransferTypes { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
         private string path { get { return "/transfers"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<PaginatedTransfers> Send(Client client) {
+        #nullable enable
+        public async Task<PaginatedTransfers?> Send(Client client) {
             string res = await client.Send(path, ListTransfers.method, this);
             return JsonSerializer.Deserialize<PaginatedTransfers>(res, client.JsonOptions);
         }

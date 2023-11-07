@@ -11,8 +11,10 @@ namespace PokepayPartnerCsharpSdk.Request
     public class ListUserAccounts
     {
         private string UserId { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        #nullable enable
+        public int? Page { get; set; }
+        #nullable enable
+        public int? PerPage { get; set; }
 
         public ListUserAccounts(string userId) =>
             (UserId) = (userId);
@@ -21,7 +23,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<PaginatedAccountDetails> Send(Client client) {
+        #nullable enable
+        public async Task<PaginatedAccountDetails?> Send(Client client) {
             string res = await client.Send(path, ListUserAccounts.method, this);
             return JsonSerializer.Deserialize<PaginatedAccountDetails>(res, client.JsonOptions);
         }

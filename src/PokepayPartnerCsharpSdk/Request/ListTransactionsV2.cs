@@ -10,30 +10,42 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListTransactionsV2
     {
-        public string PrivateMoneyId { get; set; }
-        public string OrganizationCode { get; set; }
-        public string ShopId { get; set; }
-        public string TerminalId { get; set; }
-        public string CustomerId { get; set; }
-        public string CustomerName { get; set; }
-        public string Description { get; set; }
-        public string TransactionId { get; set; }
-        public bool IsModified { get; set; }
-        public string[] Types { get; set; }
-        public string From { get; set; }
-        public string To { get; set; }
-        public string NextPageCursorId { get; set; }
-        public string PrevPageCursorId { get; set; }
-        public int PerPage { get; set; }
-
-        public ListTransactionsV2(string privateMoneyId) =>
-            (PrivateMoneyId) = (privateMoneyId);
-
+        #nullable enable
+        public string? PrivateMoneyId { get; set; }
+        #nullable enable
+        public string? OrganizationCode { get; set; }
+        #nullable enable
+        public string? ShopId { get; set; }
+        #nullable enable
+        public string? TerminalId { get; set; }
+        #nullable enable
+        public string? CustomerId { get; set; }
+        #nullable enable
+        public string? CustomerName { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
+        #nullable enable
+        public string? TransactionId { get; set; }
+        #nullable enable
+        public bool? IsModified { get; set; }
+        #nullable enable
+        public string[]? Types { get; set; }
+        #nullable enable
+        public string? From { get; set; }
+        #nullable enable
+        public string? To { get; set; }
+        #nullable enable
+        public string? NextPageCursorId { get; set; }
+        #nullable enable
+        public string? PrevPageCursorId { get; set; }
+        #nullable enable
+        public int? PerPage { get; set; }
         private string path { get { return "/transactions-v2"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<PaginatedTransactionV2> Send(Client client) {
+        #nullable enable
+        public async Task<PaginatedTransactionV2?> Send(Client client) {
             string res = await client.Send(path, ListTransactionsV2.method, this);
             return JsonSerializer.Deserialize<PaginatedTransactionV2>(res, client.JsonOptions);
         }

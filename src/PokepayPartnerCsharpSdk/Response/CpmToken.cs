@@ -5,7 +5,8 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class CpmToken
     {
-        public string cpm_token { get; }
+        [JsonPropertyName("Token")]
+        public string Token { get; }
         public AccountDetail Account { get; }
         public Transaction Transaction { get; }
         public ExternalTransaction Event { get; }
@@ -15,6 +16,6 @@ namespace PokepayPartnerCsharpSdk.Response
 
         [JsonConstructor]
         public CpmToken(string cpmToken, AccountDetail account, string[] scopes, string expiresAt, string metadata) =>
-            (this.cpm_token, Account, Scopes, ExpiresAt, Metadata) = (cpmToken, account, scopes, expiresAt, metadata);
+            (Token, Account, Scopes, ExpiresAt, Metadata) = (cpmToken, account, scopes, expiresAt, metadata);
     }
 }
