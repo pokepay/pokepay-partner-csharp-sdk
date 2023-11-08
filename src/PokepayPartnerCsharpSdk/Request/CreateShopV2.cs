@@ -11,14 +11,22 @@ namespace PokepayPartnerCsharpSdk.Request
     public class CreateShopV2
     {
         public string Name { get; set; }
-        public string PostalCode { get; set; }
-        public string Address { get; set; }
-        public string Tel { get; set; }
-        public string Email { get; set; }
-        public string ExternalId { get; set; }
-        public string OrganizationCode { get; set; }
-        public string[] PrivateMoneyIds { get; set; }
-        public string[] CanTopupPrivateMoneyIds { get; set; }
+        #nullable enable
+        public string? PostalCode { get; set; }
+        #nullable enable
+        public string? Address { get; set; }
+        #nullable enable
+        public string? Tel { get; set; }
+        #nullable enable
+        public string? Email { get; set; }
+        #nullable enable
+        public string? ExternalId { get; set; }
+        #nullable enable
+        public string? OrganizationCode { get; set; }
+        #nullable enable
+        public string[]? PrivateMoneyIds { get; set; }
+        #nullable enable
+        public string[]? CanTopupPrivateMoneyIds { get; set; }
 
         public CreateShopV2(string name) =>
             (Name) = (name);
@@ -27,7 +35,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<ShopWithAccounts> Send(Client client) {
+        #nullable enable
+        public async Task<ShopWithAccounts?> Send(Client client) {
             string res = await client.Send(path, CreateShopV2.method, this);
             return JsonSerializer.Deserialize<ShopWithAccounts>(res, client.JsonOptions);
         }

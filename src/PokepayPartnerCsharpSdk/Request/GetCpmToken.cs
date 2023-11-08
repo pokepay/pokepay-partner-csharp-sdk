@@ -19,7 +19,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<CpmToken> Send(Client client) {
+        #nullable enable
+        public async Task<CpmToken?> Send(Client client) {
             string res = await client.Send(path, GetCpmToken.method, this);
             return JsonSerializer.Deserialize<CpmToken>(res, client.JsonOptions);
         }

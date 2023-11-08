@@ -14,13 +14,14 @@ namespace PokepayPartnerCsharpSdk.Response
         public Organization Organization { get; }
         public double MaxBalance { get; }
         public double TransferLimit { get; }
+        public double MoneyTopupTransferLimit { get; }
         public string Type { get; }
         public string ExpirationType { get; }
         public bool EnableTopupByMember { get; }
         public string DisplayMoneyAndPoint { get; }
 
         [JsonConstructor]
-        public PrivateMoney(string id, string name, string unit, bool isExclusive, string description, string onelineMessage, Organization organization, double maxBalance, double transferLimit, string type, string expirationType, string displayMoneyAndPoint) =>
-            (Id, Name, Unit, IsExclusive, Description, OnelineMessage, Organization, MaxBalance, TransferLimit, Type, ExpirationType, DisplayMoneyAndPoint) = (id, name, unit, isExclusive, description, onelineMessage, organization, maxBalance, transferLimit, type, expirationType, displayMoneyAndPoint);
+        public PrivateMoney(string id, string name, string unit, bool isExclusive, string description, string onelineMessage, Organization organization, double maxBalance, double transferLimit, double moneyTopupTransferLimit, string type, string expirationType, string displayMoneyAndPoint) =>
+            (Id, Name, Unit, IsExclusive, Description, OnelineMessage, Organization, MaxBalance, TransferLimit, MoneyTopupTransferLimit, Type, ExpirationType, DisplayMoneyAndPoint) = (id, name, unit, isExclusive, description, onelineMessage, organization, maxBalance, transferLimit, moneyTopupTransferLimit, type, expirationType, displayMoneyAndPoint);
     }
 }

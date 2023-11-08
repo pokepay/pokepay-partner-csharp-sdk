@@ -11,8 +11,10 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetPrivateMoneySummary
     {
         private string PrivateMoneyId { get; set; }
-        public string From { get; set; }
-        public string To { get; set; }
+        #nullable enable
+        public string? From { get; set; }
+        #nullable enable
+        public string? To { get; set; }
 
         public GetPrivateMoneySummary(string privateMoneyId) =>
             (PrivateMoneyId) = (privateMoneyId);
@@ -21,7 +23,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<PrivateMoneySummary> Send(Client client) {
+        #nullable enable
+        public async Task<PrivateMoneySummary?> Send(Client client) {
             string res = await client.Send(path, GetPrivateMoneySummary.method, this);
             return JsonSerializer.Deserialize<PrivateMoneySummary>(res, client.JsonOptions);
         }

@@ -14,7 +14,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<Pong> Send(Client client) {
+        #nullable enable
+        public async Task<Pong?> Send(Client client) {
             string res = await client.Send(path, GetPing.method, this);
             return JsonSerializer.Deserialize<Pong>(res, client.JsonOptions);
         }

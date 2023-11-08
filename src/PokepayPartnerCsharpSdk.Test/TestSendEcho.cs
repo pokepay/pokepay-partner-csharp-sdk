@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.SendEcho request = new Request.SendEcho(
-                    "acDgdY"
+                    "0"
                 );
                 Response.Echo response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

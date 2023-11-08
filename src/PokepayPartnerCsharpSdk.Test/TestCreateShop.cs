@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateShop request = new Request.CreateShop(
-                    "5cCw5ExNqh41OXXFwVmaHYw6oEFbK8qER1LlAIi5qYTqeIN9jftsBTkZDKCnQigIBcgyeHE0t"
+                    "3luXr4C13lSRQ7cPQSNxWc9fx1XXlBW6k9ePgUJFUyrDZOTP2dr1VXZUFZiKwTCHNY3Xh6M8fpZbZOoHcWc2sQ1aV0ZjjZX"
                 );
                 Response.User response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateShop request = new Request.CreateShop(
-                    "5cCw5ExNqh41OXXFwVmaHYw6oEFbK8qER1LlAIi5qYTqeIN9jftsBTkZDKCnQigIBcgyeHE0t"
+                    "3luXr4C13lSRQ7cPQSNxWc9fx1XXlBW6k9ePgUJFUyrDZOTP2dr1VXZUFZiKwTCHNY3Xh6M8fpZbZOoHcWc2sQ1aV0ZjjZX"
                 ) {
-                    OrganizationCode = "y4-RP2-WA67-4397-5",
+                    OrganizationCode = "K-Ti---m1V2r--tU-2W85-4cWkYbq",
                 };
                 Response.User response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateShop request = new Request.CreateShop(
-                    "5cCw5ExNqh41OXXFwVmaHYw6oEFbK8qER1LlAIi5qYTqeIN9jftsBTkZDKCnQigIBcgyeHE0t"
+                    "3luXr4C13lSRQ7cPQSNxWc9fx1XXlBW6k9ePgUJFUyrDZOTP2dr1VXZUFZiKwTCHNY3Xh6M8fpZbZOoHcWc2sQ1aV0ZjjZX"
                 ) {
-                    ShopExternalId = "Ogp1VTNstKsbk2wvZcZ",
-                    OrganizationCode = "Jk0-n1o-al",
+                    ShopExternalId = "GA35wLoGSQd2G",
+                    OrganizationCode = "92-mB8y-i1o5ME4vbqT66-4c-Y--5mT",
                 };
                 Response.User response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateShop request = new Request.CreateShop(
-                    "5cCw5ExNqh41OXXFwVmaHYw6oEFbK8qER1LlAIi5qYTqeIN9jftsBTkZDKCnQigIBcgyeHE0t"
+                    "3luXr4C13lSRQ7cPQSNxWc9fx1XXlBW6k9ePgUJFUyrDZOTP2dr1VXZUFZiKwTCHNY3Xh6M8fpZbZOoHcWc2sQ1aV0ZjjZX"
                 ) {
-                    ShopEmail = "d5uwOg53j3@Qic0.com",
-                    ShopExternalId = "yKLnZxaZi9",
-                    OrganizationCode = "GG-",
+                    ShopEmail = "OnNxTHfNS7@K8uM.com",
+                    ShopExternalId = "TKNP2rlkc2NA70O1BWaafU",
+                    OrganizationCode = "uo2c-5Q3Uq-3dk7--",
                 };
                 Response.User response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateShop request = new Request.CreateShop(
-                    "5cCw5ExNqh41OXXFwVmaHYw6oEFbK8qER1LlAIi5qYTqeIN9jftsBTkZDKCnQigIBcgyeHE0t"
+                    "3luXr4C13lSRQ7cPQSNxWc9fx1XXlBW6k9ePgUJFUyrDZOTP2dr1VXZUFZiKwTCHNY3Xh6M8fpZbZOoHcWc2sQ1aV0ZjjZX"
                 ) {
-                    ShopTel = "008767500",
-                    ShopEmail = "SdiADG37ey@dGEN.com",
-                    ShopExternalId = "PuSUGCPNHip0Y3",
-                    OrganizationCode = "tq-o-ae-Y2-D-mBbpS3eFh1jdy-8u-v",
+                    ShopTel = "0032076561",
+                    ShopEmail = "JhYivIrllz@Iktp.com",
+                    ShopExternalId = "STMas6PuWluQRPey8TrLElH",
+                    OrganizationCode = "699F-R3D",
                 };
                 Response.User response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,13 +114,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateShop request = new Request.CreateShop(
-                    "5cCw5ExNqh41OXXFwVmaHYw6oEFbK8qER1LlAIi5qYTqeIN9jftsBTkZDKCnQigIBcgyeHE0t"
+                    "3luXr4C13lSRQ7cPQSNxWc9fx1XXlBW6k9ePgUJFUyrDZOTP2dr1VXZUFZiKwTCHNY3Xh6M8fpZbZOoHcWc2sQ1aV0ZjjZX"
                 ) {
-                    ShopAddress = "fX1fzmKZw4jAX5TdVMZA3FsBWHTaR7q8iHovbTWoPNbCUX3WmvU0lnYW7MWulxJqejEoXiemEzy22TP2wtSY9IoDSrJUA2sSTBsOwjVmr0bTbO79fqhITnnz7WaCAiQd9B8sle88sl7rSWKN9oQjHsNX48VkSyiuzE1L2wv36YuE4jwp0IiR44I5KLiO",
-                    ShopTel = "020263-131",
-                    ShopEmail = "xtTGifN6Kr@raD5.com",
-                    ShopExternalId = "ojwDmQdLNOKHIlDiaOh78QfhNbZ3YfGh",
-                    OrganizationCode = "uE1",
+                    ShopAddress = "sRzsWK4DsoRRyD4v2755wMN6gJzbHpR9rk2EHi8QEcnZQJ4jfCfJzqFCrrb0oXvUzZWFTMeGWBwXBo2o4oiuSSVutyjKdcDsakezMumRECWZUvsqQ7dagggNog20kSqESnIMKeEOY8oIJNbcnQ9nlHa1pHLZDPzXifgmbCSiekv0sCCiPAmcxA3MInPmk7aBXL7xpiVE2Bm",
+                    ShopTel = "02620251945",
+                    ShopEmail = "nLLPlu3kub@TBiX.com",
+                    ShopExternalId = "XLaduep8yfuZjIRcId6PWvqbZmH785iKj8",
+                    OrganizationCode = "-038g1--D----xJa0N-r11i-XJ1d1",
                 };
                 Response.User response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -135,14 +135,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateShop request = new Request.CreateShop(
-                    "5cCw5ExNqh41OXXFwVmaHYw6oEFbK8qER1LlAIi5qYTqeIN9jftsBTkZDKCnQigIBcgyeHE0t"
+                    "3luXr4C13lSRQ7cPQSNxWc9fx1XXlBW6k9ePgUJFUyrDZOTP2dr1VXZUFZiKwTCHNY3Xh6M8fpZbZOoHcWc2sQ1aV0ZjjZX"
                 ) {
-                    ShopPostalCode = "9801535",
-                    ShopAddress = "caXjUtBcNe9XyY4wthFo0glXBErIUB1p7aPMzXnAdDrY96Gn0OAQ9xSN0zfKx7ivixiVqjgvBNcsQLQxAtJmVTcXWtKUzkNd35gyuBKlwozbM8BIp6WWFtoNM3mKKWyblmmAHRSYCV0EDw10SY48ZoA8oj9alrEKYDjBWPKCwbirzvScUvjsqVkc",
-                    ShopTel = "006-0992-667",
-                    ShopEmail = "g0ANEHCj5e@M805.com",
-                    ShopExternalId = "wtsg2NkJBDvuxWoqdLq3",
-                    OrganizationCode = "9-3k68lq0O9X6D-pI",
+                    ShopPostalCode = "9878607",
+                    ShopAddress = "qtoFO2iyh5SPOaBiQ1jwXSyk7QsdtS9XAzWfFrhl9ynI9I7JSjh0NMpaVIOIBT7peQXVV2XXErS17ETRxeBMJEeirUeY9BdS0tOkRQ7Lc3F0NN",
+                    ShopTel = "067766396",
+                    ShopEmail = "0O9d9zuvdv@74F2.com",
+                    ShopExternalId = "Gt",
+                    OrganizationCode = "",
                 };
                 Response.User response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

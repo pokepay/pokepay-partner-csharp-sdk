@@ -19,7 +19,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("DELETE");
 
-        public async Task<Cashtray> Send(Client client) {
+        #nullable enable
+        public async Task<Cashtray?> Send(Client client) {
             string res = await client.Send(path, CancelCashtray.method, this);
             return JsonSerializer.Deserialize<Cashtray>(res, client.JsonOptions);
         }

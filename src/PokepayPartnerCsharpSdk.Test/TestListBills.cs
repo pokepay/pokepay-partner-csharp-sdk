@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    IsDisabled = false,
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -53,8 +53,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    UpperLimitAmount = 7359,
-                    IsDisabled = false,
+                    UpperLimitAmount = 8423,
+                    IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -69,9 +69,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    LowerLimitAmount = 4602,
-                    UpperLimitAmount = 4086,
-                    IsDisabled = true,
+                    LowerLimitAmount = 6563,
+                    UpperLimitAmount = 2635,
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -86,9 +86,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    ShopId = "2e5af513-ed9a-4083-b833-b54d02d47b19",
-                    LowerLimitAmount = 8071,
-                    UpperLimitAmount = 9515,
+                    ShopId = "15d86b91-30ee-45af-91a3-b67f1fdd4a65",
+                    LowerLimitAmount = 4574,
+                    UpperLimitAmount = 9732,
                     IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
@@ -104,10 +104,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    ShopName = "oePO7gkONNAjBCYm4KWEpCDEdkn0OKxjITuRCVadPy2BbYSAUfNgtCT3aJmzxxuQUVBryDZD3LHlYNS3c0MUvvhZyFdpqg4zFLwpBAFUZ73GCZjYfwcSTcjOL0y0KRT0zFenF09DVyQoaELlrJk6MRPKi62IzWH9",
-                    ShopId = "0c7a21e5-557f-4a6d-955b-517b3dd30ee8",
-                    LowerLimitAmount = 209,
-                    UpperLimitAmount = 816,
+                    ShopName = "jIgxNyfmbEhGmJJMzYucWYrm4KgzKAz4l9QicZCCJ0A05jBfSeBTBvHCxU1NvY",
+                    ShopId = "17d7537b-5ae6-40d6-9cc5-96c07055f653",
+                    LowerLimitAmount = 4537,
+                    UpperLimitAmount = 7723,
                     IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
@@ -123,12 +123,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    CreatedTo = "2016-09-22T06:07:05.000000+09:00",
-                    ShopName = "qvNNBrhyRg9xxzNXJhnMZrEqyRqPCGzbSmOoYCMUQNjvF4AYLzd022rwQVNfYYCfZZWpAcyBWwWi1DgvTt4hTTZowFPycMflfcbIeOIKes05558vbabHcGuqU0Zpo5LBba7yo5q8iSiTBSZQPeDSY9S36TscHpgaN0j8ZeP1HDPDTHzzRIdWxHjKy82N74miDUcO",
-                    ShopId = "948773a6-ae75-4949-97d6-b2718a61833c",
-                    LowerLimitAmount = 3549,
-                    UpperLimitAmount = 2078,
-                    IsDisabled = true,
+                    CreatedTo = "2024-10-12T18:34:39.000000+09:00",
+                    ShopName = "R1FDoaYRXkvCXPPl24Azknf4IW4knrGHl0TR1xxEjRkzP55FkN9KaqhLJYNFjdQdDPcKYswz1KGIIQxemmG",
+                    ShopId = "9722d7d3-ad06-4edf-a742-de9dcbf4897d",
+                    LowerLimitAmount = 1958,
+                    UpperLimitAmount = 3655,
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -143,13 +143,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    CreatedFrom = "2017-04-21T06:11:13.000000+09:00",
-                    CreatedTo = "2022-12-18T16:25:01.000000+09:00",
-                    ShopName = "93kljq1Q8TjukgNdosrcsbqXkWqVhxkWkSbCcQV2KWKaXCJgJ38wW32AKvILX828FihWZQyqSbK0FMXzQI3K0upT8cYYAuEa7VHyo1Pr6ZXG8JSWzel5X6ggilnbIikjMsDtvgyHs8kXaVldBOvstCOu5vNtx3bBib1BS1I",
-                    ShopId = "6272f9c9-0408-48a5-9d98-2915c1561fc7",
-                    LowerLimitAmount = 5847,
-                    UpperLimitAmount = 708,
-                    IsDisabled = true,
+                    CreatedFrom = "2024-05-18T18:38:37.000000+09:00",
+                    CreatedTo = "2019-06-09T22:51:07.000000+09:00",
+                    ShopName = "1x9",
+                    ShopId = "c61ff0e5-0b36-4735-9f2d-5b994e6dedad",
+                    LowerLimitAmount = 1131,
+                    UpperLimitAmount = 6342,
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -164,13 +164,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    Description = "mpTYqNNFPcbcfJ8JMK49acleVRspcldtQ5tmURvImdniels4ZrQj5",
-                    CreatedFrom = "2022-08-09T13:54:34.000000+09:00",
-                    CreatedTo = "2017-05-06T05:18:03.000000+09:00",
-                    ShopName = "fJFTwwcn9WP3m8VyuReCXx5WTYs7Yv5KDLwBcz7zjgazophuiC1VR8XiXW8JGdOuAk94khcXRAwlFr4tlYuwMI02c6YHU8uGe8qGNvTmA6H2tH06f3cpkGDNNhHR4jcwCrCw",
-                    ShopId = "ae4a9f70-fa3e-4f8f-96ec-d3709e06d89b",
-                    LowerLimitAmount = 8058,
-                    UpperLimitAmount = 2251,
+                    Description = "SZdnC8Nbd0GAMDtpExjAOL9txxvBDq74Zcv4lxbZkZAsxqjGZZnD30rTzVwJllk7AmnUWAZFPyOt3pktOJBQNvyxNd81mETXBAwcDbgRS83ISSTE08jfX2Omd3NMjFlR",
+                    CreatedFrom = "2018-07-04T22:38:50.000000+09:00",
+                    CreatedTo = "2023-12-13T07:43:01.000000+09:00",
+                    ShopName = "LJvC6KKEtPK2Yi",
+                    ShopId = "a3916a84-b7d7-4049-a691-d2ee1b6d6eb9",
+                    LowerLimitAmount = 6254,
+                    UpperLimitAmount = 5803,
                     IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
@@ -186,15 +186,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    OrganizationCode = "404Hb--O42M",
-                    Description = "uvrmGGKjRYVWTh4n3trK0bvzHyQJ1u0mKrSXl5b4zkBhHXIiOwN14umNbs9HzTMzg2AFGgoFwChMKyFjnp6NWuVTvukHEJJxjvwAaSkrlPscgFZA7kgmnQGh0g7xEy0gjIfqsy3qqeO2uL3gmJXocI00jDfhi",
-                    CreatedFrom = "2023-06-15T17:06:17.000000+09:00",
-                    CreatedTo = "2023-05-29T14:48:38.000000+09:00",
-                    ShopName = "YKzlD45lOs5FqPThDPFGAn6g717B9KAWVHYRkMJaQT0YWfQtgxVhq9RVZQG6j5A2pjVon4uuDqic8AnsoXtmv8LerXQe8LjF8Q6qvpD5ZbBwXFvQ1skGDixXFJczCMVyjlRecAjobCopZKVFLb9UiV0XEmtc9iB2syyuELfawMoOZtkTktpas3rTKhS7CSUreJUtTC5W6xtdNcZmGzg6LOAwdB03Wi69g5bppku3R9lJ",
-                    ShopId = "a4e25bd6-be64-40c4-a1be-1ed5eaa685a2",
-                    LowerLimitAmount = 9117,
-                    UpperLimitAmount = 8053,
-                    IsDisabled = true,
+                    OrganizationCode = "71113--zTgJU2-",
+                    Description = "1sBGXi6YlkUDHHbRk8fI6wbpNh1friFqDo6JGjFLLOGZO0oAllJiZr4re6LWLgSkk2ZDUPdz1BhJvWNhb1UlY8gVa2hXfzW4DNhu8v9wZu0fWkZyfAZKnUDFE99Mnwnu5OtOf4ilY3NpmdcwanlDlu0IrmsH8EsDe",
+                    CreatedFrom = "2015-11-12T17:19:10.000000+09:00",
+                    CreatedTo = "2021-04-19T04:48:32.000000+09:00",
+                    ShopName = "YkSH918X0jGAYz0AuaoOoyLPqw51DmjCWv1MDES09bsjDJFkIb5xAqDpTjFMPKMQ13CORng41h3amcuul1yByCRpmXDgHNBQaoIMR9zPGyY",
+                    ShopId = "5799b7ed-2592-40fc-a788-a0369f9be0fe",
+                    LowerLimitAmount = 5683,
+                    UpperLimitAmount = 479,
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -209,16 +209,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    PrivateMoneyId = "716cc767-18cb-4049-b7f5-b82c3175b4f8",
-                    OrganizationCode = "-ysR--VE0l4w7-6-Wyr-iTkm9kUT0GB",
-                    Description = "Z8O9N2SLzG35Urh2rbZx2aArvrKFEW0caD1nqOzKQjZCyx1E",
-                    CreatedFrom = "2021-09-15T09:27:20.000000+09:00",
-                    CreatedTo = "2019-06-27T17:44:43.000000+09:00",
-                    ShopName = "AmGgvgI7YgVKC9RfQiSpTWZrd0hVSBtTuiSKN3fmfJoVUvvyWz4acD4YN59s59xIWGujcTxFFrrXyLyMOsteVH8YLvoUoraY",
-                    ShopId = "28ed2a08-e8f9-4ed6-9ffe-24291ea30b55",
-                    LowerLimitAmount = 6511,
-                    UpperLimitAmount = 4296,
-                    IsDisabled = true,
+                    PrivateMoneyId = "f47177be-84a1-4e79-a360-bef99833112a",
+                    OrganizationCode = "TfEXvFv",
+                    Description = "boo5hpfF1Hpb0RbR7D8yvhSwIzpaQ4KzL2meWNVVwDgpJqef1CpLupibRMoXLp8MHMfUv2FJ",
+                    CreatedFrom = "2019-05-09T23:24:47.000000+09:00",
+                    CreatedTo = "2023-07-28T19:04:08.000000+09:00",
+                    ShopName = "Mo734XdeCG7BhDwLeeL5nECXsF8aQJM1W9qqWFcIV1r4RUzmB5Y2djRhGfa0yLPBNXYOJzOncitmbWDPrz6dz37AZYeiF76ZwhFQ3FAy9yso4lFSwRswxdTAQ9WC0cvkqgX",
+                    ShopId = "384454eb-1152-4265-b172-f95d29f4e8d3",
+                    LowerLimitAmount = 178,
+                    UpperLimitAmount = 5631,
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -233,16 +233,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    BillId = "Sd144X",
-                    PrivateMoneyId = "e78721b7-4691-46da-8571-73a2a1c7c8b8",
-                    OrganizationCode = "31-Uf7-6-z-zknx92q-1x",
-                    Description = "sz1ogogHitDMic7XGDhIwoiIw8buBfBCDG7j4DoWkp",
-                    CreatedFrom = "2024-05-07T23:27:04.000000+09:00",
-                    CreatedTo = "2025-03-31T00:14:26.000000+09:00",
-                    ShopName = "bqBi9TROGFtlR9rLj2Y1ER9gKdUSrcKHlFd3Ur1MCMIUROIYftW7QMsIbzCAj1GsSvfXjxUW5P",
-                    ShopId = "42dc7102-d24d-40e4-96c4-a4f5a3dbec42",
-                    LowerLimitAmount = 2291,
-                    UpperLimitAmount = 3021,
+                    BillId = "ixBY",
+                    PrivateMoneyId = "fb9118a4-4bb4-48ad-ba18-6a717f3c2989",
+                    OrganizationCode = "3-4L17-n2SP-DD--G7qP",
+                    Description = "esKnaA2925CICFc9YiF",
+                    CreatedFrom = "2023-04-17T09:42:08.000000+09:00",
+                    CreatedTo = "2018-01-26T02:00:32.000000+09:00",
+                    ShopName = "xZx0kErjYhFF8L0s3HmTbCv0vs46AUUu2p",
+                    ShopId = "7f38bba1-ba80-4429-a66d-b55302e2bb28",
+                    LowerLimitAmount = 6543,
+                    UpperLimitAmount = 4633,
                     IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
@@ -258,17 +258,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    PerPage = 7335,
-                    BillId = "4",
-                    PrivateMoneyId = "676cfe50-fbd4-45e6-9ddd-57bbebbd2038",
-                    OrganizationCode = "-1J46-L17Hqg--PKp90",
-                    Description = "eqlmfnAfu7erS3gFr3FTdQ8rwckpkfwdxwxZ95sfTG55oAI4VCG4sTwcYeFwcP7ZmLygXYRtjxN2aIco6xNkWo0aYr1y1KHCmQGL0IM3EaCDd87kJG01a7",
-                    CreatedFrom = "2019-03-10T19:56:29.000000+09:00",
-                    CreatedTo = "2024-05-06T13:46:18.000000+09:00",
-                    ShopName = "GOWj7LV4",
-                    ShopId = "4755ab3c-64f6-4635-bdaa-a7a57e89da79",
-                    LowerLimitAmount = 6767,
-                    UpperLimitAmount = 9588,
+                    PerPage = 9820,
+                    BillId = "rWkeGY78T",
+                    PrivateMoneyId = "b37439ed-2fcc-4bdf-aff0-db4a8092a8eb",
+                    OrganizationCode = "-4-3b3k---v--d2B-iA6ifYw-E7TL-",
+                    Description = "gUY2AjilRovHayz8YyL84tSBRirOjWywMKpR0ZNHTQzlWhqAUDLyUjiL5h79b8Mq1iCGeBaSpQPD6dBfbbaTLCXXwtnmblF81hLyHqrkno1IRdYm",
+                    CreatedFrom = "2022-03-14T06:11:03.000000+09:00",
+                    CreatedTo = "2021-05-05T15:00:32.000000+09:00",
+                    ShopName = "WqYy5cWhC8K9hq9NVk78eiqBVcclwSkXzM6GujXAvYOrdjeYiaUNpzopQa6AXRwrFPi8ZnQow3jmOnSTVflnP2oKp",
+                    ShopId = "bc9fc241-1eeb-4094-a870-1e38e4965ad0",
+                    LowerLimitAmount = 425,
+                    UpperLimitAmount = 1865,
                     IsDisabled = true,
                 };
                 Response.PaginatedBills response = await request.Send(client);
@@ -284,19 +284,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBills request = new Request.ListBills() {
-                    Page = 9150,
-                    PerPage = 5993,
-                    BillId = "j2v",
-                    PrivateMoneyId = "2a50f1eb-066a-4d69-ab5c-a493546c70a6",
-                    OrganizationCode = "81m-q--4s8Omc8L08V3--9",
-                    Description = "4Wo0L4evFZLjpsodOQD43fZ5T5bk20dIuBp2e25agSXyEGickpeze5Yn7vyzhltNB5edjt157B8n6abEccTMUOFUG9Fme9wlEEj2gZC8ckmFOzWRdKb11QTIHM0x5oJQ4O2Nwel4rHJTDGFvqXggC9Tcy7ogKmUw0VnsFyzfyt6Bg95FB1a7IFTBkW9tPubyeqITUoc5",
-                    CreatedFrom = "2023-07-02T11:25:11.000000+09:00",
-                    CreatedTo = "2015-11-08T17:04:41.000000+09:00",
-                    ShopName = "HWI6lY3NxA2Qq6LVyn2dOGJj5BoyL1MgjctfisLuYo4aorOwFrhmbs26EDkzDLnAr7NHvMDZLOk3Kn6N9IKA2DQ0UDl0RkGXqQRpkGArTGUPugetKJLdESdgB4DMlPhuAgx6J23S5a4KJH2dJnXO",
-                    ShopId = "6abb6696-1d0c-4d3e-a5c1-3ca99e0575ac",
-                    LowerLimitAmount = 8697,
-                    UpperLimitAmount = 5048,
-                    IsDisabled = true,
+                    Page = 5310,
+                    PerPage = 4179,
+                    BillId = "1sKy",
+                    PrivateMoneyId = "56611b0f-4796-4cd9-a67f-f58ce1a37222",
+                    OrganizationCode = "",
+                    Description = "GOHFEzapKvNXPC1CkiwHqFmPHg1nDo4oueFOj023vS0mewatHnea0dCU94sWp47O7C5wT4wYrVN1K9mYldOQjsir5CqIfO5L8Zq3bTMBqwr9Z5qKSziS34atNThxJhMGQiNXxPc9X24Y9K063jeiC0sEMTifXwPUAwxE0",
+                    CreatedFrom = "2023-03-21T14:35:39.000000+09:00",
+                    CreatedTo = "2019-03-05T09:39:46.000000+09:00",
+                    ShopName = "ioYGgiTWexQGgsWhjEbcteNrFFjyWUeOcoTl6khkqH4OC72gKDbHJYxfd9c8VQaX76eUjZSlzlz06kFlTp3fMR0xZZbBlf7T31FgYL8AmsRrLUI6eSrCAHV3kHGscOhgsN9D6p9JGwN67nitnvEXl7HTtWDnKgmYJWOFJqIru7u3eDlXpCUVae0iDE64cm6yBc",
+                    ShopId = "dce1d6e6-dbc0-4b1b-a4e3-66139904740c",
+                    LowerLimitAmount = 9674,
+                    UpperLimitAmount = 6545,
+                    IsDisabled = false,
                 };
                 Response.PaginatedBills response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

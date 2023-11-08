@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "122f7c99-ba73-409e-bcaf-ca2e6fa9d12e"
+                    "309eb2df-1095-4f5f-97d0-e1a9d89071d1"
                 );
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "122f7c99-ba73-409e-bcaf-ca2e6fa9d12e"
+                    "309eb2df-1095-4f5f-97d0-e1a9d89071d1"
                 ) {
                     IsSuspended = true,
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "122f7c99-ba73-409e-bcaf-ca2e6fa9d12e"
+                    "309eb2df-1095-4f5f-97d0-e1a9d89071d1"
                 ) {
-                    CreatedAtTo = "2022-08-14T03:51:44.000000+09:00",
+                    CreatedAtTo = "2025-01-30T14:33:34.000000+09:00",
                     IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "122f7c99-ba73-409e-bcaf-ca2e6fa9d12e"
+                    "309eb2df-1095-4f5f-97d0-e1a9d89071d1"
                 ) {
-                    CreatedAtFrom = "2019-11-10T12:31:26.000000+09:00",
-                    CreatedAtTo = "2019-03-02T06:47:02.000000+09:00",
+                    CreatedAtFrom = "2022-08-09T17:46:21.000000+09:00",
+                    CreatedAtTo = "2021-01-28T22:59:33.000000+09:00",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "122f7c99-ba73-409e-bcaf-ca2e6fa9d12e"
+                    "309eb2df-1095-4f5f-97d0-e1a9d89071d1"
                 ) {
-                    PerPage = 5016,
-                    CreatedAtFrom = "2021-02-21T01:26:31.000000+09:00",
-                    CreatedAtTo = "2021-11-11T09:43:58.000000+09:00",
-                    IsSuspended = false,
+                    PerPage = 1382,
+                    CreatedAtFrom = "2022-01-30T20:19:08.000000+09:00",
+                    CreatedAtTo = "2025-02-11T20:11:55.000000+09:00",
+                    IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,13 +114,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "122f7c99-ba73-409e-bcaf-ca2e6fa9d12e"
+                    "309eb2df-1095-4f5f-97d0-e1a9d89071d1"
                 ) {
-                    Page = 878,
-                    PerPage = 4128,
-                    CreatedAtFrom = "2016-03-21T11:12:51.000000+09:00",
-                    CreatedAtTo = "2023-10-10T08:53:50.000000+09:00",
-                    IsSuspended = true,
+                    Page = 1328,
+                    PerPage = 2917,
+                    CreatedAtFrom = "2023-09-12T06:06:38.000000+09:00",
+                    CreatedAtTo = "2023-06-17T12:06:52.000000+09:00",
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

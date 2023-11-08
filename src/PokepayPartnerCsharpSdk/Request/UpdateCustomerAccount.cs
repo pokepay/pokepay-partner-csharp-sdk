@@ -11,9 +11,14 @@ namespace PokepayPartnerCsharpSdk.Request
     public class UpdateCustomerAccount
     {
         private string AccountId { get; set; }
-        public string Status { get; set; }
-        public string AccountName { get; set; }
-        public string ExternalId { get; set; }
+        #nullable enable
+        public string? Status { get; set; }
+        #nullable enable
+        public string? AccountName { get; set; }
+        #nullable enable
+        public string? ExternalId { get; set; }
+        #nullable enable
+        public string? Metadata { get; set; }
 
         public UpdateCustomerAccount(string accountId) =>
             (AccountId) = (accountId);
@@ -22,7 +27,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("PATCH");
 
-        public async Task<AccountWithUser> Send(Client client) {
+        #nullable enable
+        public async Task<AccountWithUser?> Send(Client client) {
             string res = await client.Send(path, UpdateCustomerAccount.method, this);
             return JsonSerializer.Deserialize<AccountWithUser>(res, client.JsonOptions);
         }

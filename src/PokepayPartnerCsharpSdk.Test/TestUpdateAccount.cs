@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "553fd4da-7231-4218-aeb3-2d714f66622b"
+                    "d267a167-07d5-4312-94c0-25c243a9a232"
                 );
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "553fd4da-7231-4218-aeb3-2d714f66622b"
+                    "d267a167-07d5-4312-94c0-25c243a9a232"
                 ) {
-                    CanTransferTopup = false,
+                    CanTransferTopup = true,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "553fd4da-7231-4218-aeb3-2d714f66622b"
+                    "d267a167-07d5-4312-94c0-25c243a9a232"
                 ) {
-                    Status = "pre-closed",
-                    CanTransferTopup = true,
+                    Status = "suspended",
+                    CanTransferTopup = false,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "553fd4da-7231-4218-aeb3-2d714f66622b"
+                    "d267a167-07d5-4312-94c0-25c243a9a232"
                 ) {
                     IsSuspended = false,
-                    Status = "active",
+                    Status = "pre-closed",
                     CanTransferTopup = false,
                 };
                 Response.AccountDetail response = await request.Send(client);

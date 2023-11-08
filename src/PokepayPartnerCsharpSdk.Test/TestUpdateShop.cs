@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "319a0c01-8a60-4ee2-80b0-4ec9c89f47d9"
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
                 );
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "319a0c01-8a60-4ee2-80b0-4ec9c89f47d9"
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
                 ) {
-                    CanTopupPrivateMoneyIds = new string[]{"7ce7811e-1db8-458b-a320-4d026aa53e84", "062d3c3a-1429-4602-b36a-93a18ee414d3", "bd82a17f-57ac-40f9-ada9-4b1b54747b1a", "d74d7080-e539-478a-9080-d943136b2406", "13e8c54c-849e-44ea-ab71-5238cedf3179", "514f338c-0b6a-4c5f-aa5e-c97f00d22d78", "208ccdc9-9c24-486e-bf7d-af6ff9c3c6af", "c5682613-ccc2-416e-8a4c-c6563cea22f7", "7a805705-bfb5-498a-8a4e-269e46026078", "97a55001-a49c-42c8-90a2-a3b7f0ec90c3"},
+                    Status = "disabled",
                 };
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "319a0c01-8a60-4ee2-80b0-4ec9c89f47d9"
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
                 ) {
-                    PrivateMoneyIds = new string[]{"5a27a1c9-5a39-4dd9-a221-48b541d65790", "2ce967f4-eccf-4551-9a2a-b4b2f2f34471"},
-                    CanTopupPrivateMoneyIds = new string[]{"a64ae791-5f70-4db6-a58b-78425dda8190", "a5ea67ec-9421-42ef-829e-f570f3e68bf5", "22cb80ea-642b-4cce-ad99-874a8fa44713"},
+                    CanTopupPrivateMoneyIds = new string[]{"0250d8ff-96fe-461a-944a-9da297295645", "72732cd8-09b3-43e1-85f5-31d8a0cb5296", "a5fd05a9-1790-45a4-aa2b-6e8e8cae45df", "1d8f9933-4e59-404c-a849-6a5b6043ba7b", "af3a900b-ed1f-4f61-8469-b5b12e797f41", "26535e24-c940-4986-affd-11112bf2ab4d", "12ef0055-6b6e-4017-9097-2de81da3b424", "632eb04d-c77a-463e-9140-2a991c9c48e1"},
+                    Status = "disabled",
                 };
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "319a0c01-8a60-4ee2-80b0-4ec9c89f47d9"
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
                 ) {
-                    ExternalId = "uVKWvjUjC0",
-                    PrivateMoneyIds = new string[]{"c64458af-0ab3-465d-9b86-90664eff11b2", "61154127-fe01-47cc-bdef-933913db0fce", "c898b0f1-236c-48d6-b6ae-0575cf9ae458", "ce5e100c-9da6-4abe-aaa0-abcd5c833634", "d3440c3e-a879-4645-b96b-2d6403e72a5b"},
-                    CanTopupPrivateMoneyIds = new string[]{"f924df37-7cec-4dd6-b65f-130165b1fd90", "1a190817-d11f-4151-8d5d-600d7d36c64b", "0a46d77c-4dde-466b-bc93-baa610954c7a", "0b38e436-5686-4ad2-bb9f-1b054eb4a1fb", "b3a403c5-f387-4b7a-af80-15490e3dccb7", "d72cc81f-c2e3-4eda-993d-ddfda395863a", "1097e857-3540-4b34-bfa9-cbe3c86e9ba7", "6049838d-0d97-4e0d-9b30-9499f0fed147"},
+                    PrivateMoneyIds = new string[]{"375803db-a99d-4d37-88ac-925d42263237", "7a0be8a9-4ed9-4797-8641-c70978edf548"},
+                    CanTopupPrivateMoneyIds = new string[]{"7628f552-5ab6-4341-8ca4-188056401a7b", "aa002f50-d95e-440f-9751-98e24c115ee1", "7df7b154-5a78-4cec-b332-4d1f5c86ac52", "30c962ff-a60e-4e11-9a2d-51acf0ac9bdb", "5b66af1c-9ca7-49f7-9bec-a88680da51d2", "85a20ab2-5920-486a-ab3a-5051bb4625af", "88f70970-9bf2-4249-aa7b-e636a249746c"},
+                    Status = "disabled",
                 };
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "319a0c01-8a60-4ee2-80b0-4ec9c89f47d9"
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
                 ) {
-                    Email = "yNh6EpQVqX@4KE4.com",
-                    ExternalId = "5KR",
-                    PrivateMoneyIds = new string[]{"92d773a5-54dc-463c-8478-0f0206ce2dbd", "1e073b53-d053-422d-bd70-cf8f465a56f0", "ed67b71c-8c56-4988-8f52-5799cb86822b"},
-                    CanTopupPrivateMoneyIds = new string[]{"dbf2f57b-6f4c-4a79-b650-325f782fdbcf"},
+                    ExternalId = "OWBtkKIjxfMvYigRS3aMB3leXfamXP",
+                    PrivateMoneyIds = new string[]{"9e657341-d7a7-477c-bc13-9d8050c633e3", "ff92fabf-58e3-47f4-b6e1-cf9e7ffdbaef", "f46eebdd-1291-4f13-9a0a-785ed22e0e72", "6718a3c4-a5d2-4629-a972-443a4fabf804"},
+                    CanTopupPrivateMoneyIds = new string[]{"7073f073-2632-4ad8-b3f3-dacae8db6b07", "afd61394-7355-4b9f-88c7-cb69e2ee5699"},
+                    Status = "active",
                 };
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,13 +114,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "319a0c01-8a60-4ee2-80b0-4ec9c89f47d9"
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
                 ) {
-                    Tel = "038-87-5062",
-                    Email = "7dHE8reh9b@3v7z.com",
-                    ExternalId = "YS2",
-                    PrivateMoneyIds = new string[]{"4d62e930-4525-40c5-870a-11f340449dbf", "3734f6a0-e7d0-4ed0-a207-a276f90d83a3", "2b1cd3d1-e2ba-4a76-83bb-ae2fb1519e18", "cd1f8e7c-84d9-4e6b-8150-5ac2f344eea9", "70b576ca-3c37-4a1a-b7a0-a8ed43d150e7", "8a00ce14-0d13-4c43-9e0e-203b19378957", "2f603e4e-67cb-429a-8450-e8a7b32cb4b1"},
-                    CanTopupPrivateMoneyIds = new string[]{},
+                    Email = "yGnuCOsFM1@lMgW.com",
+                    ExternalId = "E9FE2t8MTQvBS",
+                    PrivateMoneyIds = new string[]{"2a48d64d-a29f-45a2-894d-9cc848855871", "bc0544bb-414e-4b17-a62b-a2a3515baea8", "b3bd1887-ecc2-4bce-90f0-6805b6a14d83", "5277450a-1303-4c07-959b-150ab3fdcc89", "44b3a7b8-716f-48ce-9257-c6c39e2b5562", "8bc6a28e-7add-4181-ae06-0a7e25d87473"},
+                    CanTopupPrivateMoneyIds = new string[]{"3c8ad9dc-1427-4d64-96b2-e3951d49ad58", "588cbe39-bc45-4f2d-9059-5ce608218e3a", "b33be2b5-0f44-4de4-8679-4156ce951da8", "4069df03-13c8-4bb2-b1e2-38e206831240", "abee663c-cf01-4498-be39-ea6df9e3e9eb", "2f7bf925-1a00-4728-ad39-fe7378615fb6"},
+                    Status = "disabled",
                 };
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -135,14 +135,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "319a0c01-8a60-4ee2-80b0-4ec9c89f47d9"
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
                 ) {
-                    Address = "enxAKZBD2FhNoFZKIbAgSoRCKxxDEWQZO9yz4Mc4BWxPS7UaVHpVi4pZYZOGKLSewvJuaN97ObUNQZ0A0Rwk2Z2omGatDjCcJfOMaGd4kHySUJYrKI48UyLazcdaqg9M9b56VUQzIG7Yr7fsBnFuG56tOVY8vi9Z9lrb",
-                    Tel = "07-8431-6229",
-                    Email = "dPS2DfLew9@jsvL.com",
-                    ExternalId = "XjFRqAsdyU0EjzFGdoCEVoN09yrlyTlHcxkp",
-                    PrivateMoneyIds = new string[]{"1e253ae8-b900-4364-8d69-ae1220adce4a", "c990d3af-79d7-482f-b35e-278ab6e04338"},
-                    CanTopupPrivateMoneyIds = new string[]{"f6294826-30a5-4b2d-9fa7-548ac8c250e5", "c1197029-5aef-4b41-b1f6-79678d085486", "0febff67-1e30-4488-b17a-305ac560f915"},
+                    Tel = "08-4311109",
+                    Email = "36RryOCTzN@zu95.com",
+                    ExternalId = "ewHOKtgDGT7aTW",
+                    PrivateMoneyIds = new string[]{"0f8535b6-cd85-4fce-bf08-e7026b2ccbe9"},
+                    CanTopupPrivateMoneyIds = new string[]{"8bac0d51-a221-4ac5-810e-9f376e54c677", "ac00fa38-e284-4e94-ad28-1ae1c1d92c17", "7e00f566-ad37-43c4-9e81-0f25af8f8490"},
+                    Status = "disabled",
                 };
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -157,15 +157,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "319a0c01-8a60-4ee2-80b0-4ec9c89f47d9"
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
                 ) {
-                    PostalCode = "777-7247",
-                    Address = "gWRTNwobRsB1baR1aePdc9fGH",
-                    Tel = "03-452-017",
-                    Email = "5Jr7zEeO7n@UDqx.com",
-                    ExternalId = "j74j643AIOVakyq8QHWKNric3",
-                    PrivateMoneyIds = new string[]{"98829d42-795e-4d7f-9fd1-afd942de89a8", "9aba5da3-35bb-4657-b34b-bd5bf85d005f", "b8cf7af4-4f8b-4276-ae78-f76f201e3428", "1ffb49fb-8f51-4dca-af1d-d905313401cc"},
-                    CanTopupPrivateMoneyIds = new string[]{},
+                    Address = "t68CTAb2iAFu8YOPbaFAD5X4OUxwJsIbAA9EJZbGlGDK0BLKhm0BCDKClY7ksx4AFmeglsa7kcQ3U5nYdRUHAHY34N5D5bKVcsdSpGqSwnjqBCplYqFGCSydJBdGQIRCoUGKXQLvpmISysqAvSge0ksdZjMeixjk4Xr2U2mAhXvL3RhDJrSIafRbJT8SF8wUW22cHM6quzFhV6av10cPpYvh8M4",
+                    Tel = "01-50889",
+                    Email = "Npnsfp3Yo3@2Eox.com",
+                    ExternalId = "rm5h7gERxts6Ahc1mLgxHrG9yPSd",
+                    PrivateMoneyIds = new string[]{"2b671ecd-8a83-416e-b2b0-28cdca915809", "eddecab1-9b17-45ad-846d-1841bb2c3e74", "7f065976-0596-4174-8ee4-c8eda39be7a8", "e170b42f-013b-4cbf-b900-e435fc714a83", "46c6d01a-b5d1-44b6-8052-c481473a3644", "21f41538-10ab-4468-92f6-163153ed6db1", "4d1379d2-2226-47f4-8ead-9d4b2c1ce540"},
+                    CanTopupPrivateMoneyIds = new string[]{"0b90c67f-0d90-45e2-b7e5-eee8455cbef9", "a4e08b37-e521-4bc5-a65b-6c38b50da971", "ca8e57a1-ad0c-43e7-8a7e-dc75c0a5be79", "32fe5a2b-88fb-448e-b439-72856041eec0", "d635e94d-8e53-464b-8a78-585ab32a064d"},
+                    Status = "disabled",
                 };
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -180,16 +180,41 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateShop request = new Request.UpdateShop(
-                    "319a0c01-8a60-4ee2-80b0-4ec9c89f47d9"
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
                 ) {
-                    Name = "loM94TQVFchkaVLnKXq1JcpZfZUH2UsKCxnRcuSoLNAly4QR5kzfucn7LZFZw",
-                    PostalCode = "8958602",
-                    Address = "JGwbFSZ2qU3L9frpqlrETgz3O9wlyQ0TWfR4Gx21zM7WIQGDsPsJyAShBlCJPjtVj6RA58jW2j8noWbhryHKQAP2bBeZkmIh2UeN7Z047tEp9MnaMKkPTTOh4KlFXKgtixsqVTYrrSHZ1a0tz4EzkuhUCHWp85qyAYWUJWst1yIlHOt0XiM6Qkur8SbZd3wcuCesxkTgeU",
-                    Tel = "06419716",
-                    Email = "L5t780R8L5@VrLx.com",
-                    ExternalId = "zR",
-                    PrivateMoneyIds = new string[]{"e0ab3283-3c51-4612-bc6c-7756cbf66c75", "ab66f78a-4d24-442f-b0dc-beac75d52dda", "f4e91560-95e4-44eb-adc8-9481ec8c27d7", "d0d0f59b-e927-4764-90dd-b5d5d648ee98", "0c428be9-6d00-408a-ba56-47acec9262bd", "60427415-8ac4-4daa-b1e5-8748ed87ee5e", "bf947585-3450-4006-a3d1-88d6bace351b", "7f990cfc-5274-4799-919d-702360279503", "e535e5ec-c34f-41ea-ba53-c51c3cf57fa9"},
-                    CanTopupPrivateMoneyIds = new string[]{"231178b3-8731-4c05-8d7f-01f8af007490", "321f9f15-5706-4b71-9bb8-1fd3fe26f421"},
+                    PostalCode = "653-3046",
+                    Address = "yUlLZYpsOEbPGle7PnhARQQb12XVIGZX29Dyx5lvvN3RvdFrJB03Awjgyx1LKjKra0Iw3VSgbY44nqluiZNrww3",
+                    Tel = "090305-340",
+                    Email = "j4770t9xMt@k2wu.com",
+                    ExternalId = "UGbgJkQO",
+                    PrivateMoneyIds = new string[]{"f9a3210f-1873-4e14-abd0-25c163b39a57", "56a8cc6a-073f-4918-b9fa-a1e329119b87", "708206f5-0195-4448-b87b-90eb47407716", "8643e383-6011-4b99-8bd1-cb28e4d31629", "b22c43cd-eb4c-4dda-9ffc-9c36cecf7416", "e978a4cc-3d19-4277-af5e-9a94ba6f4247", "18d0d4f1-17ed-4b8a-b6da-0f325095fd85", "f4c47948-357a-46fc-b2f6-851b1c5b904c"},
+                    CanTopupPrivateMoneyIds = new string[]{"8285d6bc-b615-4c19-a2f0-7e1322bce306", "44ad9651-7189-4984-bb57-4d0568cbad5a", "ae5c5877-0a84-4236-9df1-0095d97d76c2", "397558e6-fd83-4c1d-b2e5-ac888b4b0a5a", "933a46a4-a5c2-4785-af30-e9a5cf56b28f", "28537cee-e36c-468a-a190-292b2a78ea16", "e790195d-0cf5-4dc2-8694-af38610880a7", "bad9388e-e4c2-40b4-9b63-5e16e2b0c90e", "05e5e99d-a0da-46e3-b588-f7449fd2542d"},
+                    Status = "active",
+                };
+                Response.ShopWithAccounts response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task UpdateShop9()
+        {
+            try {
+                Request.UpdateShop request = new Request.UpdateShop(
+                    "30ea7b93-df5e-458c-8c15-840b3e08fcf3"
+                ) {
+                    Name = "vnOFyRoEsaMnoCbZG4lkQ3FrjJ9RAEzEMsUk2ifFvvUsuDqBNQG9tR535ExtPASVXxC2HvyFNSNXIlPlVVnLwBZ665AQI4VRr0wSpNoBjGGosaVXkExOG0311Q9mfMxrQRKkEbQcdqPYIQDvwSeY8tonzD87PL0ayzkfiyYZxzf4OnlyTBskLXpmOglUU3Jrz3z4mI0xe8",
+                    PostalCode = "5665715",
+                    Address = "MylmVonQFbH22rnQ8SQE3u2Ni30dsC587BM9rV1YmjYrtqFmLPwQL4re",
+                    Tel = "0634-6845",
+                    Email = "LG7URczRdV@jngk.com",
+                    ExternalId = "C6jpMOGn4yOZCY",
+                    PrivateMoneyIds = new string[]{"b6035a67-89c6-465d-be81-2e787deeb56b", "47228e98-93a6-490c-92d0-a5b7871a31fa", "7daeb8a3-4ebb-4d4d-8d9d-9c3a4b042e31", "14b85678-3c75-484c-b397-3edab7c15ceb"},
+                    CanTopupPrivateMoneyIds = new string[]{"b0000f40-c68f-407e-a945-1f7da3bec256", "81aeedbc-d42f-4df1-9dc8-0aec1200c8ae", "a417d99f-f419-4c09-baec-50c704034ef9", "bf4e9aba-ec5e-44f8-a974-388fe680ed49", "784e5cf8-1d7d-4a79-94df-5496a196cc71"},
+                    Status = "disabled",
                 };
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

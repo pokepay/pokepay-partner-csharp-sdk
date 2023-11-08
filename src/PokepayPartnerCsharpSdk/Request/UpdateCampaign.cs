@@ -11,23 +11,48 @@ namespace PokepayPartnerCsharpSdk.Request
     public class UpdateCampaign
     {
         private string CampaignId { get; set; }
-        public string Name { get; set; }
-        public string StartsAt { get; set; }
-        public string EndsAt { get; set; }
-        public int Priority { get; set; }
-        public string Event { get; set; }
-        public string Description { get; set; }
-        public string Status { get; set; }
-        public string PointExpiresAt { get; set; }
-        public int PointExpiresInDays { get; set; }
-        public bool IsExclusive { get; set; }
-        public string Subject { get; set; }
-        public object[] AmountBasedPointRules { get; set; }
-        public object[] ProductBasedPointRules { get; set; }
-        public int[] ApplicableDaysOfWeek { get; set; }
-        public object[] ApplicableTimeRanges { get; set; }
-        public string[] ApplicableShopIds { get; set; }
-        public int MinimumNumberForCombinationPurchase { get; set; }
+        #nullable enable
+        public string? Name { get; set; }
+        #nullable enable
+        public string? StartsAt { get; set; }
+        #nullable enable
+        public string? EndsAt { get; set; }
+        #nullable enable
+        public int? Priority { get; set; }
+        #nullable enable
+        public string? Event { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
+        #nullable enable
+        public string? Status { get; set; }
+        #nullable enable
+        public string? PointExpiresAt { get; set; }
+        #nullable enable
+        public int? PointExpiresInDays { get; set; }
+        #nullable enable
+        public bool? IsExclusive { get; set; }
+        #nullable enable
+        public string? Subject { get; set; }
+        #nullable enable
+        public object[]? AmountBasedPointRules { get; set; }
+        #nullable enable
+        public object[]? ProductBasedPointRules { get; set; }
+        #nullable enable
+        public int[]? ApplicableDaysOfWeek { get; set; }
+        #nullable enable
+        public object[]? ApplicableTimeRanges { get; set; }
+        #nullable enable
+        public string[]? ApplicableShopIds { get; set; }
+        #nullable enable
+        public int? MinimumNumberForCombinationPurchase { get; set; }
+        #nullable enable
+        public bool? ExistInEachProductGroups { get; set; }
+        #nullable enable
+        public int? MaxPointAmount { get; set; }
+        #nullable enable
+        public int? MaxTotalPointAmount { get; set; }
+        #nullable enable
+        public object? ApplicableAccountMetadata { get; set; }
 
         public UpdateCampaign(string campaignId) =>
             (CampaignId) = (campaignId);
@@ -36,7 +61,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("PATCH");
 
-        public async Task<Campaign> Send(Client client) {
+        #nullable enable
+        public async Task<Campaign?> Send(Client client) {
             string res = await client.Send(path, UpdateCampaign.method, this);
             return JsonSerializer.Deserialize<Campaign>(res, client.JsonOptions);
         }

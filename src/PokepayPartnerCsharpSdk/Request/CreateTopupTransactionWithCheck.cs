@@ -12,6 +12,8 @@ namespace PokepayPartnerCsharpSdk.Request
     {
         public string CheckId { get; set; }
         public string CustomerId { get; set; }
+        #nullable enable
+        public string? RequestId { get; set; }
 
         public CreateTopupTransactionWithCheck(string checkId, string customerId) =>
             (CheckId, CustomerId) = (checkId, customerId);
@@ -20,7 +22,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<TransactionDetail> Send(Client client) {
+        #nullable enable
+        public async Task<TransactionDetail?> Send(Client client) {
             string res = await client.Send(path, CreateTopupTransactionWithCheck.method, this);
             return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }

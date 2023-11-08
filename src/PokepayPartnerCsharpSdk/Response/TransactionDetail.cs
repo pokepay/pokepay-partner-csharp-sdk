@@ -15,12 +15,14 @@ namespace PokepayPartnerCsharpSdk.Response
         public double Amount { get; }
         public double MoneyAmount { get; }
         public double PointAmount { get; }
+        public double RawPointAmount { get; }
+        public double CampaignPointAmount { get; }
         public string DoneAt { get; }
         public string Description { get; }
         public Transfer[] Transfers { get; }
 
         [JsonConstructor]
-        public TransactionDetail(string id, string type, bool isModified, User sender, Account senderAccount, User receiver, Account receiverAccount, double amount, double moneyAmount, double pointAmount, string doneAt, string description, Transfer[] transfers) =>
-            (Id, Type, IsModified, Sender, SenderAccount, Receiver, ReceiverAccount, Amount, MoneyAmount, PointAmount, DoneAt, Description, Transfers) = (id, type, isModified, sender, senderAccount, receiver, receiverAccount, amount, moneyAmount, pointAmount, doneAt, description, transfers);
+        public TransactionDetail(string id, string type, bool isModified, User sender, Account senderAccount, User receiver, Account receiverAccount, double amount, double moneyAmount, double pointAmount, double rawPointAmount, double campaignPointAmount, string doneAt, string description, Transfer[] transfers) =>
+            (Id, Type, IsModified, Sender, SenderAccount, Receiver, ReceiverAccount, Amount, MoneyAmount, PointAmount, RawPointAmount, CampaignPointAmount, DoneAt, Description, Transfers) = (id, type, isModified, sender, senderAccount, receiver, receiverAccount, amount, moneyAmount, pointAmount, rawPointAmount, campaignPointAmount, doneAt, description, transfers);
     }
 }

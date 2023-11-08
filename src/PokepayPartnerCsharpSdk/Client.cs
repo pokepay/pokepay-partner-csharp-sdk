@@ -153,7 +153,7 @@ namespace PokepayPartnerCsharpSdk
             string sendBodyString = JsonSerializer.Serialize(sendBodyData, JsonOptions);
 
             HttpRequestMessage request = new HttpRequestMessage {
-                Method = HttpMethod.Post,
+                Method = path.Equals("/ping") ? HttpMethod.Get : HttpMethod.Post, // pingの場合はサーバー側でbodyのrequest_methodを無視するのでGETを指定する必要がある
                 RequestUri = new Uri(BaseUrl + path),
                 Content = new StringContent(sendBodyString, System.Text.Encoding.UTF8, "application/json"),
             };

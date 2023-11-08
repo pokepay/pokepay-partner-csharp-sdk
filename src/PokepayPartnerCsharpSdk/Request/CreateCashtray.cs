@@ -13,8 +13,10 @@ namespace PokepayPartnerCsharpSdk.Request
         public string PrivateMoneyId { get; set; }
         public string ShopId { get; set; }
         public double Amount { get; set; }
-        public string Description { get; set; }
-        public int ExpiresIn { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
+        #nullable enable
+        public int? ExpiresIn { get; set; }
 
         public CreateCashtray(string privateMoneyId, string shopId, double amount) =>
             (PrivateMoneyId, ShopId, Amount) = (privateMoneyId, shopId, amount);
@@ -23,7 +25,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<Cashtray> Send(Client client) {
+        #nullable enable
+        public async Task<Cashtray?> Send(Client client) {
             string res = await client.Send(path, CreateCashtray.method, this);
             return JsonSerializer.Deserialize<Cashtray>(res, client.JsonOptions);
         }

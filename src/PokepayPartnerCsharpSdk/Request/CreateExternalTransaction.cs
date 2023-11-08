@@ -14,10 +14,14 @@ namespace PokepayPartnerCsharpSdk.Request
         public string CustomerId { get; set; }
         public string PrivateMoneyId { get; set; }
         public int Amount { get; set; }
-        public string Description { get; set; }
-        public string Metadata { get; set; }
-        public object[] Products { get; set; }
-        public string RequestId { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
+        #nullable enable
+        public string? Metadata { get; set; }
+        #nullable enable
+        public object[]? Products { get; set; }
+        #nullable enable
+        public string? RequestId { get; set; }
 
         public CreateExternalTransaction(string shopId, string customerId, string privateMoneyId, int amount) =>
             (ShopId, CustomerId, PrivateMoneyId, Amount) = (shopId, customerId, privateMoneyId, amount);
@@ -26,7 +30,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        public async Task<ExternalTransaction> Send(Client client) {
+        #nullable enable
+        public async Task<ExternalTransaction?> Send(Client client) {
             string res = await client.Send(path, CreateExternalTransaction.method, this);
             return JsonSerializer.Deserialize<ExternalTransaction>(res, client.JsonOptions);
         }

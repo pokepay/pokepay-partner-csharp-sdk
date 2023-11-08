@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
-                    "f39e0dc7-ebbf-4161-a34e-e312bce444b9"
+                    "4176344d-49e1-46ee-88e2-726e5bf63cd3"
                 );
                 Response.AccountWithUser response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
-                    "f39e0dc7-ebbf-4161-a34e-e312bce444b9"
+                    "4176344d-49e1-46ee-88e2-726e5bf63cd3"
                 ) {
-                    ExternalId = "eZjSIQORsTn19Lt83IRfp6apsZzw",
+                    Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountWithUser response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
-                    "f39e0dc7-ebbf-4161-a34e-e312bce444b9"
+                    "4176344d-49e1-46ee-88e2-726e5bf63cd3"
                 ) {
-                    AccountName = "Ugb2qqrLtRpMZnFJMuPuuYDxHZdnikAchiJbVP3ZTnJxIJTqpbj9hQa29LtqbzIUCtrgI5GH6",
-                    ExternalId = "i2f3OojTDEk0fitYgK",
+                    ExternalId = "E1",
+                    Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountWithUser response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,31 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
-                    "f39e0dc7-ebbf-4161-a34e-e312bce444b9"
+                    "4176344d-49e1-46ee-88e2-726e5bf63cd3"
                 ) {
-                    Status = "suspended",
-                    AccountName = "zfXu0N7ZPQ6Ey6Tu3B",
-                    ExternalId = "U56A0DovC2AWlgsj8AO1bqHH9NHpqZwH1tkpyND",
+                    AccountName = "pzUuFBC2YALiRTgbjqcdmQliCKHEztMZDqTjx0Z9ZM5oxU05AkAGxB5ouzK8aqMU7zGD122Aj56qUCV9VGKc43X7JKrtbIUCcgwokeLuTHz6NCcviY6xe6LHkTuVpPamsVnk7glHM1Flzv8oSwAI8Snh56Ml",
+                    ExternalId = "lDgmospIl0Doyz44FHfPsl5i1gbErX1kM",
+                    Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
+                };
+                Response.AccountWithUser response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task UpdateCustomerAccount4()
+        {
+            try {
+                Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
+                    "4176344d-49e1-46ee-88e2-726e5bf63cd3"
+                ) {
+                    Status = "pre-closed",
+                    AccountName = "tFXM1RYY4pjdoWw5b96EWEwNqZJdf9FIZ2GbAJNHYdnpF6I7N5OVFdlqLks3vK4gyDw63j57hluiANfQMUDbLQGQ3AH5PfXPROBLS6BFHGi2R3NUuFka5Q2GIeyen5asc93XiVCpg4GiayQa6xtNGNsGPc2gyTFR5rJpyllXQXmgJ7aLaawHuJGI4D641liiyTgcBrDJuTbu",
+                    ExternalId = "ZfYO",
+                    Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountWithUser response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

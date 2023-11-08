@@ -10,21 +10,34 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListShops
     {
-        public string OrganizationCode { get; set; }
-        public string PrivateMoneyId { get; set; }
-        public string Name { get; set; }
-        public string PostalCode { get; set; }
-        public string Address { get; set; }
-        public string Tel { get; set; }
-        public string Email { get; set; }
-        public string ExternalId { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        #nullable enable
+        public string? OrganizationCode { get; set; }
+        #nullable enable
+        public string? PrivateMoneyId { get; set; }
+        #nullable enable
+        public string? Name { get; set; }
+        #nullable enable
+        public string? PostalCode { get; set; }
+        #nullable enable
+        public string? Address { get; set; }
+        #nullable enable
+        public string? Tel { get; set; }
+        #nullable enable
+        public string? Email { get; set; }
+        #nullable enable
+        public string? ExternalId { get; set; }
+        #nullable enable
+        public bool? WithDisabled { get; set; }
+        #nullable enable
+        public int? Page { get; set; }
+        #nullable enable
+        public int? PerPage { get; set; }
         private string path { get { return "/shops"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<PaginatedShops> Send(Client client) {
+        #nullable enable
+        public async Task<PaginatedShops?> Send(Client client) {
             string res = await client.Send(path, ListShops.method, this);
             return JsonSerializer.Deserialize<PaginatedShops>(res, client.JsonOptions);
         }

@@ -11,9 +11,12 @@ namespace PokepayPartnerCsharpSdk.Request
     public class UpdateCashtray
     {
         private string CashtrayId { get; set; }
-        public double Amount { get; set; }
-        public string Description { get; set; }
-        public int ExpiresIn { get; set; }
+        #nullable enable
+        public double? Amount { get; set; }
+        #nullable enable
+        public string? Description { get; set; }
+        #nullable enable
+        public int? ExpiresIn { get; set; }
 
         public UpdateCashtray(string cashtrayId) =>
             (CashtrayId) = (cashtrayId);
@@ -22,7 +25,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("PATCH");
 
-        public async Task<Cashtray> Send(Client client) {
+        #nullable enable
+        public async Task<Cashtray?> Send(Client client) {
             string res = await client.Send(path, UpdateCashtray.method, this);
             return JsonSerializer.Deserialize<Cashtray>(res, client.JsonOptions);
         }

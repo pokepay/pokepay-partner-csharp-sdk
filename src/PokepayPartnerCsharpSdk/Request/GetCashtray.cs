@@ -19,7 +19,8 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        public async Task<CashtrayWithResult> Send(Client client) {
+        #nullable enable
+        public async Task<CashtrayWithResult?> Send(Client client) {
             string res = await client.Send(path, GetCashtray.method, this);
             return JsonSerializer.Deserialize<CashtrayWithResult>(res, client.JsonOptions);
         }

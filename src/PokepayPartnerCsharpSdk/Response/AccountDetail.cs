@@ -12,12 +12,13 @@ namespace PokepayPartnerCsharpSdk.Response
         public double Balance { get; }
         public double MoneyBalance { get; }
         public double PointBalance { get; }
+        public double PointDebt { get; }
         public PrivateMoney PrivateMoney { get; }
         public User User { get; }
         public string ExternalId { get; }
 
         [JsonConstructor]
-        public AccountDetail(string id, string name, bool isSuspended, string status, double balance, double moneyBalance, double pointBalance, PrivateMoney privateMoney, User user) =>
-            (Id, Name, IsSuspended, Status, Balance, MoneyBalance, PointBalance, PrivateMoney, User) = (id, name, isSuspended, status, balance, moneyBalance, pointBalance, privateMoney, user);
+        public AccountDetail(string id, string name, bool isSuspended, string status, double balance, double moneyBalance, double pointBalance, double pointDebt, PrivateMoney privateMoney, User user) =>
+            (Id, Name, IsSuspended, Status, Balance, MoneyBalance, PointBalance, PointDebt, PrivateMoney, User) = (id, name, isSuspended, status, balance, moneyBalance, pointBalance, pointDebt, privateMoney, user);
     }
 }
