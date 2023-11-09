@@ -10,12 +10,19 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class CreateBill
     {
+#if NETFRAMEWORK
+        public double Amount { get; set; }
+        public string PrivateMoneyId { get; set; }
+        public string ShopId { get; set; }
+        public string Description { get; set; }
+#else
         #nullable enable
         public double? Amount { get; set; }
         public string PrivateMoneyId { get; set; }
         public string ShopId { get; set; }
         #nullable enable
         public string? Description { get; set; }
+#endif
 
         public CreateBill(string privateMoneyId, string shopId) =>
             (PrivateMoneyId, ShopId) = (privateMoneyId, shopId);
@@ -24,10 +31,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<Bill?> Send(Client client) {
-            string res = await client.Send(path, CreateBill.method, this);
-            return JsonSerializer.Deserialize<Bill>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<Bill> Send(Client client) {
+                string res = await client.Send(path, CreateBill.method, this);
+                return JsonSerializer.Deserialize<Bill>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<Bill?> Send(Client client) {
+                string res = await client.Send(path, CreateBill.method, this);
+                return JsonSerializer.Deserialize<Bill>(res, client.JsonOptions);
+        }
+#endif
     }
 }

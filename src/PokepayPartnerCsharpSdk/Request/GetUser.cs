@@ -10,14 +10,24 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class GetUser
     {
+#if NETFRAMEWORK
+#else
+#endif
         private string path { get { return "/user"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<AdminUserWithShopsAndPrivateMoneys?> Send(Client client) {
-            string res = await client.Send(path, GetUser.method, this);
-            return JsonSerializer.Deserialize<AdminUserWithShopsAndPrivateMoneys>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<AdminUserWithShopsAndPrivateMoneys> Send(Client client) {
+                string res = await client.Send(path, GetUser.method, this);
+                return JsonSerializer.Deserialize<AdminUserWithShopsAndPrivateMoneys>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<AdminUserWithShopsAndPrivateMoneys?> Send(Client client) {
+                string res = await client.Send(path, GetUser.method, this);
+                return JsonSerializer.Deserialize<AdminUserWithShopsAndPrivateMoneys>(res, client.JsonOptions);
+        }
+#endif
     }
 }

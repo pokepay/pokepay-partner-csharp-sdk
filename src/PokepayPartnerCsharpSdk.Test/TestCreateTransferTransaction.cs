@@ -25,10 +25,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "d7200076-3f39-4bb5-a2ba-68113a0ddbd6",
-                    "23d408db-b828-4269-a260-cba4269e40bf",
-                    "aca16d62-18ed-410f-b807-085542ea2509",
-                    7019.0
+                    "5be20f19-e104-4499-a06d-0f738773e519",
+                    "012f2764-d495-4cfa-a340-e2a59c5f16f6",
+                    "2ba5af7d-73e8-499d-9599-b858b08eea04",
+                    7533.0
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -43,12 +43,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "d7200076-3f39-4bb5-a2ba-68113a0ddbd6",
-                    "23d408db-b828-4269-a260-cba4269e40bf",
-                    "aca16d62-18ed-410f-b807-085542ea2509",
-                    7019.0
+                    "5be20f19-e104-4499-a06d-0f738773e519",
+                    "012f2764-d495-4cfa-a340-e2a59c5f16f6",
+                    "2ba5af7d-73e8-499d-9599-b858b08eea04",
+                    7533.0
                 ) {
-                    RequestId = "70b1ec56-05b6-4eb7-a536-deb96b1da456",
+                    RequestId = "e42f5f72-3a63-49b2-9f9f-e831144d69b0",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -63,13 +63,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "d7200076-3f39-4bb5-a2ba-68113a0ddbd6",
-                    "23d408db-b828-4269-a260-cba4269e40bf",
-                    "aca16d62-18ed-410f-b807-085542ea2509",
-                    7019.0
+                    "5be20f19-e104-4499-a06d-0f738773e519",
+                    "012f2764-d495-4cfa-a340-e2a59c5f16f6",
+                    "2ba5af7d-73e8-499d-9599-b858b08eea04",
+                    7533.0
                 ) {
-                    Description = "rcn6WYQOYGK6nEhANhe5dQfWgC9GKfeP640jaEKcf9PJeJFJS69TvTKIlXBZaAJUxe89IwxoCgw",
-                    RequestId = "1705aee9-10c7-4417-940d-5a6934cc62de",
+                    Description = "VozYCz4wR9Gfv1ooHMcqzJF0zVNZ8zHF5mnetJol0g7uhhZVwBBSB9NQuG198o4cE8ye8xiCptr8X3OQSs9cvMVMzYpfEHHq4AVCPhpFJVl2NE9OohrFLhvABt92YjeNGk",
+                    RequestId = "6ee31d5d-9105-4e65-bc9f-3ad2c51d1979",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -84,14 +84,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "d7200076-3f39-4bb5-a2ba-68113a0ddbd6",
-                    "23d408db-b828-4269-a260-cba4269e40bf",
-                    "aca16d62-18ed-410f-b807-085542ea2509",
-                    7019.0
+                    "5be20f19-e104-4499-a06d-0f738773e519",
+                    "012f2764-d495-4cfa-a340-e2a59c5f16f6",
+                    "2ba5af7d-73e8-499d-9599-b858b08eea04",
+                    7533.0
                 ) {
                     Metadata = "{\"key\":\"value\"}",
-                    Description = "Gvp3HXlUa6DLAgBACxYB5gF4kL2ftnYpO5FpGPuPe8tuo1zJdYRR4QA3MbD1TGsXejECn7IiPTNN6HRht7dhrUnAinRqspG7NfsdQbGy0",
-                    RequestId = "58d4a373-127c-470c-adfa-c693bd4397cf",
+                    Description = "CxDwnyuzPdWfYw482S6oHFsZh9ksnqTSKQYaLtgBF21Mao0iMx72McbAtuQfbwPK5Ol2Udeu5ClBnNsqGtwvAjO8SQr",
+                    RequestId = "1f683f6a-2970-42a6-9420-b56c4a51fbd5",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

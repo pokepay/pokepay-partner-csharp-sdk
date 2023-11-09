@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetCpmToken
     {
         private string CpmToken { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public GetCpmToken(string cpmToken) =>
             (CpmToken) = (cpmToken);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<CpmToken?> Send(Client client) {
-            string res = await client.Send(path, GetCpmToken.method, this);
-            return JsonSerializer.Deserialize<CpmToken>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<CpmToken> Send(Client client) {
+                string res = await client.Send(path, GetCpmToken.method, this);
+                return JsonSerializer.Deserialize<CpmToken>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<CpmToken?> Send(Client client) {
+                string res = await client.Send(path, GetCpmToken.method, this);
+                return JsonSerializer.Deserialize<CpmToken>(res, client.JsonOptions);
+        }
+#endif
     }
 }

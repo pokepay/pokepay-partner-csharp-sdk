@@ -10,6 +10,14 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class CreateExchangeTransaction
     {
+#if NETFRAMEWORK
+        public string UserId { get; set; }
+        public string SenderPrivateMoneyId { get; set; }
+        public string ReceiverPrivateMoneyId { get; set; }
+        public double Amount { get; set; }
+        public string Description { get; set; }
+        public string RequestId { get; set; }
+#else
         public string UserId { get; set; }
         public string SenderPrivateMoneyId { get; set; }
         public string ReceiverPrivateMoneyId { get; set; }
@@ -18,6 +26,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? Description { get; set; }
         #nullable enable
         public string? RequestId { get; set; }
+#endif
 
         public CreateExchangeTransaction(string userId, string senderPrivateMoneyId, string receiverPrivateMoneyId, double amount) =>
             (UserId, SenderPrivateMoneyId, ReceiverPrivateMoneyId, Amount) = (userId, senderPrivateMoneyId, receiverPrivateMoneyId, amount);
@@ -26,10 +35,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<TransactionDetail?> Send(Client client) {
-            string res = await client.Send(path, CreateExchangeTransaction.method, this);
-            return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<TransactionDetail> Send(Client client) {
+                string res = await client.Send(path, CreateExchangeTransaction.method, this);
+                return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<TransactionDetail?> Send(Client client) {
+                string res = await client.Send(path, CreateExchangeTransaction.method, this);
+                return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
+        }
+#endif
     }
 }

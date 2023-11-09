@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 );
                 Response.Campaign response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    MaxTotalPointAmount = 4258,
+                    MaxTotalPointAmount = 4591,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    MaxPointAmount = 3367,
-                    MaxTotalPointAmount = 9785,
+                    MaxPointAmount = 2323,
+                    MaxTotalPointAmount = 2693,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -94,11 +94,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    ExistInEachProductGroups = false,
-                    MaxPointAmount = 3555,
-                    MaxTotalPointAmount = 9611,
+                    ExistInEachProductGroups = true,
+                    MaxPointAmount = 8524,
+                    MaxTotalPointAmount = 5703,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -114,12 +114,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    MinimumNumberForCombinationPurchase = 3070,
-                    ExistInEachProductGroups = true,
-                    MaxPointAmount = 3082,
-                    MaxTotalPointAmount = 333,
+                    MinimumNumberForCombinationPurchase = 7280,
+                    ExistInEachProductGroups = false,
+                    MaxPointAmount = 9572,
+                    MaxTotalPointAmount = 3588,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -135,13 +135,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    ApplicableShopIds = new string[]{"ce116873-6dd5-47fd-9036-c63d3cac8ed4", "029c55b1-e357-43ef-91a6-2376820b9345"},
-                    MinimumNumberForCombinationPurchase = 2826,
-                    ExistInEachProductGroups = true,
-                    MaxPointAmount = 2149,
-                    MaxTotalPointAmount = 5619,
+                    ApplicableShopIds = new string[]{},
+                    MinimumNumberForCombinationPurchase = 118,
+                    ExistInEachProductGroups = false,
+                    MaxPointAmount = 1214,
+                    MaxTotalPointAmount = 8054,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -157,14 +157,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"784fe88e-49cc-4030-9d28-2200ee0fd461", "9bafc690-7671-4bc8-97e0-7858fe1be74b", "5f2a66ea-b86e-4b8b-9cb4-9508ae76b85a"},
-                    MinimumNumberForCombinationPurchase = 7981,
-                    ExistInEachProductGroups = false,
-                    MaxPointAmount = 2774,
-                    MaxTotalPointAmount = 4526,
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"1a76abda-85e1-44fe-85e1-8e0f181c4ed0", "d1d01335-4e96-40a4-897a-8256f79d17f5"},
+                    MinimumNumberForCombinationPurchase = 1770,
+                    ExistInEachProductGroups = true,
+                    MaxPointAmount = 3160,
+                    MaxTotalPointAmount = 9539,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -180,15 +180,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    ApplicableDaysOfWeek = new int[]{0, 1, 6, 0},
-                    ApplicableTimeRanges = new object[]{},
-                    ApplicableShopIds = new string[]{"599a24e3-c381-4bb1-b882-1f309887cd86", "ec647bd0-e4da-4fad-b58a-0e73066cea48", "9793df49-174f-47ed-b6e3-8fa2bf57558c", "777493a3-4202-47fe-9bb1-7929d3385b52", "4172dc1c-5abd-4a60-b117-00134151dec2"},
-                    MinimumNumberForCombinationPurchase = 8573,
-                    ExistInEachProductGroups = false,
-                    MaxPointAmount = 8707,
-                    MaxTotalPointAmount = 2124,
+                    ApplicableDaysOfWeek = new int[]{1, 0, 3, 1},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"0a8f03d1-ac4c-4d62-98b4-4a0aa937e186"},
+                    MinimumNumberForCombinationPurchase = 135,
+                    ExistInEachProductGroups = true,
+                    MaxPointAmount = 2376,
+                    MaxTotalPointAmount = 1380,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -204,16 +204,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{3, 3, 0, 1, 6, 3, 6, 4, 5},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"4c3c468b-3f83-4fb7-a547-55ead08fa8c3", "fb05fc1d-264f-4607-88f4-151e13e9242f", "2e076ade-ca73-4859-b328-9f74bb6af06a"},
-                    MinimumNumberForCombinationPurchase = 3714,
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    ApplicableDaysOfWeek = new int[]{3, 4, 0, 4, 4, 4, 6},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"c74ccdac-7499-46f5-ac17-1ec0998a408b", "c5a6a98c-7d88-4a5e-9321-801d058b87c5", "40654e59-0862-44f5-98e1-677e8f29eeba"},
+                    MinimumNumberForCombinationPurchase = 9296,
                     ExistInEachProductGroups = true,
-                    MaxPointAmount = 9119,
-                    MaxTotalPointAmount = 5681,
+                    MaxPointAmount = 8186,
+                    MaxTotalPointAmount = 5810,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -229,17 +229,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{3, 2, 3, 0, 1, 4, 6, 0, 1},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"3915b77f-fc0a-4213-aee9-061c299d0625", "4fd70274-6fb8-458f-aa59-cc3205c8bd45", "c69f50e7-24e4-46d3-b287-4d7a22855952", "a023407a-ce15-4ac7-b48e-d7cffc4e5d8a", "e979afb3-82fa-4c8c-80c0-67b6e3de2b67", "b58993ed-0050-47e1-8e0f-046cf7509c89", "3b23b548-6bb1-4ed4-9ab8-69633280f669", "671a6c34-832e-4457-bcf6-f409f46a625f"},
-                    MinimumNumberForCombinationPurchase = 644,
-                    ExistInEachProductGroups = false,
-                    MaxPointAmount = 6450,
-                    MaxTotalPointAmount = 3614,
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    ApplicableDaysOfWeek = new int[]{2, 1, 4, 2},
+                    ApplicableTimeRanges = new object[]{},
+                    ApplicableShopIds = new string[]{"b9c14ea6-c410-4c7b-9ae0-088c402e9999", "113a20dc-bac6-40f6-8558-178c93ece634"},
+                    MinimumNumberForCombinationPurchase = 8261,
+                    ExistInEachProductGroups = true,
+                    MaxPointAmount = 7893,
+                    MaxTotalPointAmount = 1523,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -255,18 +255,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    Subject = "money",
-                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{2, 3, 4, 6, 6, 4},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"8cc4cad8-7588-48e2-a98a-3b93ab20ce34", "88095954-2d21-4d09-b303-0b9b0da82c4c", "53ea9340-85c1-431f-b9b1-df9c4b48939d", "d2e7332a-6878-4b54-8303-ac175dc97706"},
-                    MinimumNumberForCombinationPurchase = 4872,
-                    ExistInEachProductGroups = true,
-                    MaxPointAmount = 1925,
-                    MaxTotalPointAmount = 1599,
+                    Subject = "all",
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{},
+                    ApplicableDaysOfWeek = new int[]{4, 4, 2, 3, 2, 0, 6, 3, 2},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"7219d4e0-5348-4e75-9e93-f32b3ebca7d7", "0d099c3f-b1c7-41ed-ac35-eb07a4f82afb", "9cde2a16-9409-45dc-8e1f-b6a40cfbe978", "8800a504-99a5-4da0-ad7f-6618359a6e7b", "b25b030b-dd91-42a8-895d-03c23f6ff6c5", "84836250-ef84-489a-9645-aa72aaffc559", "22723fa5-3cea-44d6-b234-9c9b5eb7157c", "7bc70c26-03f8-48cb-939c-0c6214610ee6", "28daf9da-620f-4de9-965b-6dbaa8c56ca2"},
+                    MinimumNumberForCombinationPurchase = 9542,
+                    ExistInEachProductGroups = false,
+                    MaxPointAmount = 8558,
+                    MaxTotalPointAmount = 4876,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -282,19 +282,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
                     IsExclusive = true,
                     Subject = "money",
-                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{5, 3, 2, 3, 0, 3, 5, 3, 6, 3},
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    ApplicableDaysOfWeek = new int[]{6, 3, 3, 4, 4, 1, 0, 2, 0, 0},
                     ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"6e5058e3-736a-4b61-891c-c2bbe127072d", "3da71285-1fc1-4729-a2ba-5f1eb7ea71eb", "adb774d4-cf05-4b53-ae50-c529602ab12d", "6d3bec25-bdd1-4590-a9ae-f8881bd0e495", "65753538-803a-42c1-994e-cccd66ac3680", "0067b68f-3a2c-47f8-abe0-5feaca97fa12", "f11d7c9c-c7fa-40d2-a0c4-89b12226e69a", "689b7a20-21ea-4133-bb62-4bb81f7b756e", "d160d9a2-d867-4687-a4fe-20de8ceb4799", "5bbab30c-8da0-4ae9-980f-ff54a48c6413"},
-                    MinimumNumberForCombinationPurchase = 8936,
+                    ApplicableShopIds = new string[]{"a2630904-a4dc-432d-95e6-0e25795732ff", "2a1f0bf4-958b-4b3b-891c-025d6dc71621", "102b939e-0d33-4fb0-864a-4626ba1f9479", "5ff1fa3b-b242-4f49-9085-9d71f75a9164", "ef214e8b-83c3-43be-a9c4-c07618859557", "31f14c3d-4189-4827-aed4-0d5293051b76"},
+                    MinimumNumberForCombinationPurchase = 3212,
                     ExistInEachProductGroups = false,
-                    MaxPointAmount = 3454,
-                    MaxTotalPointAmount = 1479,
+                    MaxPointAmount = 3519,
+                    MaxTotalPointAmount = 2721,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -310,20 +310,20 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    PointExpiresInDays = 3504,
-                    IsExclusive = true,
-                    Subject = "money",
-                    AmountBasedPointRules = new object[]{},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"16eab1ca-db2c-43ee-ae0d-9d02c98de442", "d97fbd76-634b-4049-bfba-b15a013da602"},
-                    MinimumNumberForCombinationPurchase = 7072,
-                    ExistInEachProductGroups = true,
-                    MaxPointAmount = 5809,
-                    MaxTotalPointAmount = 380,
+                    PointExpiresInDays = 1701,
+                    IsExclusive = false,
+                    Subject = "all",
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    ApplicableDaysOfWeek = new int[]{4},
+                    ApplicableTimeRanges = new object[]{},
+                    ApplicableShopIds = new string[]{"3a25789f-23fd-47b8-98a2-a5d995d83017"},
+                    MinimumNumberForCombinationPurchase = 4915,
+                    ExistInEachProductGroups = false,
+                    MaxPointAmount = 9248,
+                    MaxTotalPointAmount = 8273,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -339,21 +339,21 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    PointExpiresAt = "2019-06-30T12:05:17.000000+09:00",
-                    PointExpiresInDays = 9267,
-                    IsExclusive = true,
-                    Subject = "money",
-                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"c22545fc-abfc-412d-85c6-0db2ce6f0637", "970faccd-0a82-4611-96c2-6f103dbdab8c", "0c00d343-1a74-4e06-829c-6673d7065aaa", "3718889a-1c04-4b07-8708-e27bc9a720ee", "6f632225-9259-4925-8398-4f71be0771e4", "32c6a5a2-a0df-4b6a-8864-847608f5708b", "d1d67c33-604d-4f01-a90f-244a915a9ce1", "edcd8e57-ccb0-481f-b6b9-6682b4e43b63", "c6efa7ab-4ca4-479f-b41d-4708b68bb72c"},
-                    MinimumNumberForCombinationPurchase = 4767,
-                    ExistInEachProductGroups = true,
-                    MaxPointAmount = 7305,
-                    MaxTotalPointAmount = 7273,
+                    PointExpiresAt = "2022-12-02T06:33:02.000000+09:00",
+                    PointExpiresInDays = 8353,
+                    IsExclusive = false,
+                    Subject = "all",
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{},
+                    ApplicableDaysOfWeek = new int[]{2, 5, 3, 3, 5, 2, 1, 4},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"43d4ff8e-b6b0-4d94-a59a-d67ab71cd480"},
+                    MinimumNumberForCombinationPurchase = 3060,
+                    ExistInEachProductGroups = false,
+                    MaxPointAmount = 5750,
+                    MaxTotalPointAmount = 8466,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -369,22 +369,22 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
                     Status = "disabled",
-                    PointExpiresAt = "2024-03-14T10:38:08.000000+09:00",
-                    PointExpiresInDays = 8799,
+                    PointExpiresAt = "2024-04-04T06:53:08.000000+09:00",
+                    PointExpiresInDays = 1282,
                     IsExclusive = true,
-                    Subject = "money",
-                    AmountBasedPointRules = new object[]{},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{2, 0, 1, 0, 6, 5, 0, 3, 4},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"32b79212-2d98-4a22-8b54-96887110f05e", "8e5badca-6757-47e3-ac58-9622df4e1a86", "7005706f-4138-4195-9859-3943d9df47a4", "be6d1c5f-2b3b-4899-8b47-d34312d01ff7"},
-                    MinimumNumberForCombinationPurchase = 3958,
+                    Subject = "all",
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    ApplicableDaysOfWeek = new int[]{},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"e8adce23-9b68-4379-bd9b-462b3d1d8306"},
+                    MinimumNumberForCombinationPurchase = 9603,
                     ExistInEachProductGroups = true,
-                    MaxPointAmount = 7924,
-                    MaxTotalPointAmount = 488,
+                    MaxPointAmount = 2689,
+                    MaxTotalPointAmount = 2391,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -400,23 +400,23 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    Description = "63saETPweNv2wFPBo4FspTecaoEBfvLxSrIzhZGQoAP2QqZDUbtQ2IUzuLCGxMYmUOhqoNpD5HigsSpyYz8K8SInJT0IN2tHYNT8v6cvHilZibVwkPX6gmgVxmyOVtTy6znyYlT0Jvv",
+                    Description = "t5yQNjVn35rDh040vhQYw5VlT5PtGoiFuhhxPNxJedAo6IB1JwI4HtHPlHFEuPGo3GkdygOOVSyzQqeTxBrSdGB4t2pP3KohbOZsA8epkaCTJpPbbkDn1ZrOBafUzNTBXIV1wGp1Rn3U4KQsAmdVQrUihNu2f4",
                     Status = "disabled",
-                    PointExpiresAt = "2019-10-07T07:30:01.000000+09:00",
-                    PointExpiresInDays = 772,
+                    PointExpiresAt = "2024-03-11T14:49:55.000000+09:00",
+                    PointExpiresInDays = 8253,
                     IsExclusive = true,
                     Subject = "money",
-                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{},
-                    ApplicableTimeRanges = new object[]{},
-                    ApplicableShopIds = new string[]{"4d4fd73b-c5a6-4f46-a45b-a101fbd29a1e", "d2608838-ef22-49c3-8168-3c59a6e1e03f", "db0f3f50-4e7e-401a-b10a-a14f6f820e47", "ff40d325-e664-4785-b26c-7a436262fa6a", "f40db6e7-f3f0-4a46-8d3c-02448fff9d89", "858e2597-6e6d-42a9-a5ce-30b7fe869c18", "a83347d2-5507-404a-93d4-070cd5ed8822", "c1bca37c-4611-45f5-a286-102341370b0b"},
-                    MinimumNumberForCombinationPurchase = 4222,
-                    ExistInEachProductGroups = false,
-                    MaxPointAmount = 6206,
-                    MaxTotalPointAmount = 6813,
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    ApplicableDaysOfWeek = new int[]{2, 5, 3, 0, 4, 3, 6, 2, 6, 1},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"51789ebd-b2cc-4bba-b1d1-cfe93ae0af82", "b5f5b82b-89a3-4aa3-9271-60e1cba37647", "1eddce3b-56aa-492f-b270-3c3911fdb581", "436cf4e9-b080-4772-960e-bece304392fe", "57a4e8a2-947e-472b-a7a3-1ea240ab8529", "95b4fb10-8f8d-4ebd-8d24-32cffe0c234f", "b766c4cd-478b-4792-ba86-6dde05025e8b", "50b087c5-4ff9-4e05-b0e6-7f02cf7805a8", "3cf2db81-e6b2-41a5-b39d-4b9fd729c162"},
+                    MinimumNumberForCombinationPurchase = 5966,
+                    ExistInEachProductGroups = true,
+                    MaxPointAmount = 2567,
+                    MaxTotalPointAmount = 5942,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -432,24 +432,24 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    Event = "payment",
-                    Description = "naaWDY82DLGt2QNvLCj9zyQDhDEmf15rTxSUGv2vqBNnrQgb4d6W78dsUzuBqcBsYaHzK6ADKyWDUY67Iv",
-                    Status = "disabled",
-                    PointExpiresAt = "2024-03-09T07:23:55.000000+09:00",
-                    PointExpiresInDays = 1986,
-                    IsExclusive = false,
+                    Event = "topup",
+                    Description = "G1GgyrO7oaIPGJ7JGBC1o5Rc96wfmVrWrKd",
+                    Status = "enabled",
+                    PointExpiresAt = "2021-03-04T02:50:16.000000+09:00",
+                    PointExpiresInDays = 7832,
+                    IsExclusive = true,
                     Subject = "money",
-                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{5, 0, 6, 0, 4, 6, 0, 5, 6},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"5c83b7df-b2bc-42fb-b586-b10486ff8092", "a39ecb7c-df03-4e71-b462-d14f3c90dd57", "1fed2c31-c31d-420e-ada3-b87a64206337", "c7559c38-4db2-437d-9e10-1b7f171bae6a", "e1a61326-2782-4632-b033-9333b42c8397", "dc98c083-deb2-4ae0-a2fb-a813b7939af9", "fc853b92-197a-4326-a4fe-72599002a085", "beb47083-0727-40ea-a9bc-9ebf4bfd56f3", "28ec9966-fe76-4384-8452-ddafcb25d0ad"},
-                    MinimumNumberForCombinationPurchase = 7820,
+                    AmountBasedPointRules = new object[]{},
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    ApplicableDaysOfWeek = new int[]{5, 2, 2, 3, 3, 1, 4, 4},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"099843e5-94af-4002-ace5-e48ef262e4b3"},
+                    MinimumNumberForCombinationPurchase = 4465,
                     ExistInEachProductGroups = false,
-                    MaxPointAmount = 5401,
-                    MaxTotalPointAmount = 7509,
+                    MaxPointAmount = 3241,
+                    MaxTotalPointAmount = 4131,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -465,25 +465,25 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    Priority = 9353,
-                    Event = "external-transaction",
-                    Description = "OSPgmJDW5zZMQlNd4VerRTOSeYtmPNru6zpNkYcHMOvdhjjVNNae9c40wbVZBM5KaK8FBMfNEG0T3uZp2mPS9iQc3dphgCmMjHHwDu70yNct74wXkc",
+                    Priority = 7295,
+                    Event = "payment",
+                    Description = "LeCaVZzJ21Wkjwh096vY0YkfqArkVOxtHaQbqrekxj6",
                     Status = "enabled",
-                    PointExpiresAt = "2021-06-27T06:36:56.000000+09:00",
-                    PointExpiresInDays = 6575,
-                    IsExclusive = false,
-                    Subject = "all",
-                    AmountBasedPointRules = new object[]{},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{2, 0, 4, 4, 1},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"435da2dd-95ec-43de-a3a0-72ef181cb1d7"},
-                    MinimumNumberForCombinationPurchase = 4905,
-                    ExistInEachProductGroups = false,
-                    MaxPointAmount = 1079,
-                    MaxTotalPointAmount = 6922,
+                    PointExpiresAt = "2023-07-10T06:44:35.000000+09:00",
+                    PointExpiresInDays = 599,
+                    IsExclusive = true,
+                    Subject = "money",
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    ApplicableDaysOfWeek = new int[]{4, 5, 6, 1, 1, 2, 4, 3, 1},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"3f6ece25-8858-49d3-a949-b0470f13d08f", "e6f307a5-9ca0-45fe-b6b3-429227846dcf", "01f374f6-c81c-4b6e-b353-f42521eb4c7e", "657a77c8-1ab7-4216-8b6c-85ea25687620", "93b1c829-410c-4771-87c5-af643fddc470", "64ccf4ba-2107-40aa-aa71-a743856c2297", "94b8e2e3-89d0-422c-8fbd-c0053d03cf70", "cdb65b57-2c26-4225-aa2c-d12fa8985f69"},
+                    MinimumNumberForCombinationPurchase = 503,
+                    ExistInEachProductGroups = true,
+                    MaxPointAmount = 2730,
+                    MaxTotalPointAmount = 6896,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -499,26 +499,26 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    EndsAt = "2019-07-18T04:52:39.000000+09:00",
-                    Priority = 6345,
-                    Event = "topup",
-                    Description = "WRlkmKBCGXu7ec6UNShkdnxuwZ9wj91gfobjaiBzkv9pnHMb7dmNBdjHCm8S08VI9tiJE71JBnmn6xAOlzXIfGMLCyosXWe5AY9pPuv96mm",
+                    EndsAt = "2022-09-15T12:45:11.000000+09:00",
+                    Priority = 8747,
+                    Event = "payment",
+                    Description = "vdw0Yvld3IeJyhTlRgTT2NxSiphZRlLoLjMmLSHQhe4tHPdlvKxC8QojNKN0zqICt7BPEIsHw9iaxaPzoaDv6U6SXLkHad9cOSRej1Twb2rvpiwJLSyhoqY6ZnwMWmZEdo3T",
                     Status = "disabled",
-                    PointExpiresAt = "2022-03-16T19:08:12.000000+09:00",
-                    PointExpiresInDays = 6693,
+                    PointExpiresAt = "2015-10-11T22:13:40.000000+09:00",
+                    PointExpiresInDays = 7077,
                     IsExclusive = true,
                     Subject = "money",
-                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
                     ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{0, 3},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"eed1b296-482f-4fb2-8283-fc861c3a2ba0", "8856ad72-a639-4634-a7ae-9f543fd9d500", "518e9199-2695-4450-beb3-3dfb44f51f0f", "ff850880-d166-40ef-b2d8-3b9f311226dc", "6fdc7d9f-95aa-456a-a50d-560e10232733", "bb0cdb5c-2f6e-42cc-8cb3-f936c0f1a800"},
-                    MinimumNumberForCombinationPurchase = 1993,
+                    ApplicableDaysOfWeek = new int[]{4, 6, 6, 2, 1, 6, 1, 4, 2, 6},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"ad6199b2-0248-44a3-8d59-0078c96071e1", "0a4c64d3-7012-41f5-aabb-964602d17783"},
+                    MinimumNumberForCombinationPurchase = 1126,
                     ExistInEachProductGroups = false,
-                    MaxPointAmount = 5042,
-                    MaxTotalPointAmount = 3038,
+                    MaxPointAmount = 7304,
+                    MaxTotalPointAmount = 4580,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -534,27 +534,27 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    StartsAt = "2018-01-16T04:43:31.000000+09:00",
-                    EndsAt = "2022-06-29T13:45:17.000000+09:00",
-                    Priority = 4704,
-                    Event = "payment",
-                    Description = "xiYVVXXIqsXuro4aJdfNLuwY9XIWnLlc9OS9Cp3Bp3iUUL4HxL6YkrEACtuYV4mHXnLoyUBGF8EdCsJzcoKCSwgPZSJgBf94jJkHyU0vE019ix5A52SogPyssqfxgvmiNKWek0Rozw3NT31KkJAjObupyZqOJIGX1OhTtt4d5DomF7S1EvPGJSKgKJjfprpubnciLKV",
-                    Status = "enabled",
-                    PointExpiresAt = "2016-12-17T19:17:12.000000+09:00",
-                    PointExpiresInDays = 9806,
+                    StartsAt = "2023-04-11T17:29:40.000000+09:00",
+                    EndsAt = "2017-02-06T19:46:29.000000+09:00",
+                    Priority = 43,
+                    Event = "topup",
+                    Description = "U2Qn83gWH7hF0T8Nh7eoO6asjOox0RRzWzgJ8qllmxnkMgshIHzbucfDhID3qemlo7JMNmGUe8JtqofMq1TyFcW0Uuc5ug2SpDoeGryI5OQQ9GoRehaS9O2M3fskqX8WbkxbWTp66iGj1lRR9XuMVcs2zeQQbQwb51zUDjfyGpNkIiUD",
+                    Status = "disabled",
+                    PointExpiresAt = "2023-06-16T09:19:50.000000+09:00",
+                    PointExpiresInDays = 9204,
                     IsExclusive = false,
-                    Subject = "all",
-                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    Subject = "money",
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
                     ApplicableDaysOfWeek = new int[]{},
-                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
-                    ApplicableShopIds = new string[]{"931d1dc8-7c1b-44d9-aa2f-90b0e7fe1fe0", "7d5c05db-9ab9-486e-8d1a-5ad2eda0d3d3", "72d7a4c2-a2c3-49f0-be9f-77e1e2b3f351", "951a3f51-8668-4183-8a94-7cb646a1d9a5", "7f6e508f-ab95-4238-9117-08759c139cbe"},
-                    MinimumNumberForCombinationPurchase = 5764,
-                    ExistInEachProductGroups = false,
-                    MaxPointAmount = 7404,
-                    MaxTotalPointAmount = 3111,
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"61975b82-fb33-4dc7-b9bc-bc992baf89ad", "4f181a86-371e-4492-a212-914532d85de4", "0a36cb74-3723-4fb6-8747-b2815639014a", "800c3331-f2c7-43a2-986f-a535fed953e0", "3c81bd2e-0088-41ba-8fd5-9e50f857f684", "3e6f4da2-c72d-45ab-9f00-f606e6296a10", "5d819c26-09e9-41c6-adca-13aa72f645f5", "b025251a-4ebe-4e53-a372-e145caab20c7", "c74dc1e3-bf59-4cb5-89b6-599d5fe21176"},
+                    MinimumNumberForCombinationPurchase = 2340,
+                    ExistInEachProductGroups = true,
+                    MaxPointAmount = 5820,
+                    MaxTotalPointAmount = 9291,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);
@@ -570,28 +570,28 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCampaign request = new Request.UpdateCampaign(
-                    "a5ee6225-8d2f-4364-91c6-2980882fee75"
+                    "1f5caca8-8abd-4773-a4ed-40d35993b5a9"
                 ) {
-                    Name = "GHmY8Vf3rb8AVoxdTPcWwQ1HJz5ooWvbmx0vwn4scwbv0w9ySU8gLnOoDIfUtJuMq4pLbZEffiz32Y9NGIucCMpeByQxt5h9kVo15tgEb7HZtKAal0GNhgP8B5N2jlzqOF9DEXqATfLhLjC3E4knaVMtRMxYHhXpsvVGll4pZLSJI7Y3",
-                    StartsAt = "2023-03-17T23:25:01.000000+09:00",
-                    EndsAt = "2021-01-26T17:43:16.000000+09:00",
-                    Priority = 585,
+                    Name = "qEcansSsP2ceIvKP9bgYanQbVQM9Z6RG0kCsPdzwEr5mXGzuLW3FkWi9ZhIojVZoApe0VcAXVJNN81LI44xL3mfrFPuEOVKpPzDCyUBg3VaVg5lQKirhrBQImBbFTGr24vRn0V1KmKqNhpuD1AS4IxvpFPGaTF6gXtd3nJyyNe7",
+                    StartsAt = "2022-09-30T12:09:11.000000+09:00",
+                    EndsAt = "2023-08-28T06:46:49.000000+09:00",
+                    Priority = 1447,
                     Event = "payment",
-                    Description = "tDF4CnOlnAZqkOks7",
+                    Description = "2bvFtDokudzPS7PJ09whlF6CVlMKFHkTHEGRWUBVUZa1rmAxzFUF6ihvlI4uoOEnKraNjpsN9SjDxtxrgs7e0dkiAAa8jwX6FLCB1XlvzBazSCE1hEG2EkkP2VIPy7HW7Ee7skB9BB1YNClE0n87A30l6vspNWH9u8x4Yq2mxjIub5W9d4fa79SnOHSfjKkp3",
                     Status = "enabled",
-                    PointExpiresAt = "2018-01-10T23:06:47.000000+09:00",
-                    PointExpiresInDays = 1882,
-                    IsExclusive = true,
+                    PointExpiresAt = "2016-11-29T18:34:31.000000+09:00",
+                    PointExpiresInDays = 4204,
+                    IsExclusive = false,
                     Subject = "all",
-                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
-                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
-                    ApplicableDaysOfWeek = new int[]{6},
-                    ApplicableTimeRanges = new object[]{},
-                    ApplicableShopIds = new string[]{"9fe09755-15ff-42db-86fb-3bf209faa2be", "a00170ca-7b8a-43da-ba7d-7a9e90877284", "bdd492e2-47b4-4ead-8e35-7f7253dee2c2", "3821461b-2096-442c-a949-ed136b257e35", "56747ec6-f3da-437e-a652-eb8fefd31924", "0eef4f6c-2572-46c6-92af-a71e25f58928", "dbe312d0-c145-41fb-91a6-f13ca9ccd8c1", "c15dae16-5178-4699-aefa-cd3dd71f5dc5"},
-                    MinimumNumberForCombinationPurchase = 4993,
-                    ExistInEachProductGroups = false,
-                    MaxPointAmount = 9022,
-                    MaxTotalPointAmount = 4372,
+                    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},
+                    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},
+                    ApplicableDaysOfWeek = new int[]{3, 0, 5, 3, 2, 2, 1},
+                    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},
+                    ApplicableShopIds = new string[]{"53a0d49e-7dcf-4ec3-83a0-36a6456e7009", "b68a9639-b5d8-42be-923c-7460a3d67d9b", "602b3e58-dfd3-4a06-8f60-d6ebbf04e0bd", "0d36dcfd-ad8b-499b-9bd7-f284721f8614", "d9a7709f-86ab-4810-8da2-0f0bb30c8576", "8933d367-45f7-424d-a4fd-7f43eff5a336", "6b5fd159-daf3-441a-a585-941b989bba51", "90841a56-382a-4506-8206-964dff036406", "6f11e2b6-6a82-4331-85b5-b842aa70dd53", "35a63682-cacc-4e52-9442-2fb41a57449c"},
+                    MinimumNumberForCombinationPurchase = 7921,
+                    ExistInEachProductGroups = true,
+                    MaxPointAmount = 7153,
+                    MaxTotalPointAmount = 875,
                     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},
                 };
                 Response.Campaign response = await request.Send(client);

@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCpmToken request = new Request.GetCpmToken(
-                    "Swi7sBOg5iCuJ7VMHWo9Qj"
+                    "MQEbIhSKLSxcJDAAH0jwIP"
                 );
                 Response.CpmToken response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    PerPage = 1226,
+                    PerPage = 9395,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -53,8 +53,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    Page = 6609,
-                    PerPage = 3417,
+                    Page = 7258,
+                    PerPage = 1647,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -69,9 +69,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    WithDisabled = true,
-                    Page = 133,
-                    PerPage = 3618,
+                    WithDisabled = false,
+                    Page = 1126,
+                    PerPage = 7367,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -86,10 +86,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    ExternalId = "HbwzqWvCOPwgzbB",
+                    ExternalId = "Rtau24yc1kusN7qW2yhhPFbHNPhR",
                     WithDisabled = false,
-                    Page = 5604,
-                    PerPage = 7981,
+                    Page = 5055,
+                    PerPage = 4890,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -104,11 +104,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    Email = "4waQtEJJ6c@H0Zg.com",
-                    ExternalId = "Ds6733rG0f6wwaCQfp2yrqFI1zO45",
-                    WithDisabled = true,
-                    Page = 6974,
-                    PerPage = 2701,
+                    Email = "gnqYnUlh4J@bOrM.com",
+                    ExternalId = "wrAdcz5",
+                    WithDisabled = false,
+                    Page = 3623,
+                    PerPage = 8109,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -123,12 +123,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    Tel = "062457893",
-                    Email = "6Y3JnoXnfh@I5Mg.com",
-                    ExternalId = "TOjH7LQeWc71VZqe0TiiPcPUF0mWR",
+                    Tel = "042924-6112",
+                    Email = "BOno1AcjM9@6oft.com",
+                    ExternalId = "C7mHhiSDgXKvVy5p",
                     WithDisabled = false,
-                    Page = 8874,
-                    PerPage = 7065,
+                    Page = 7828,
+                    PerPage = 9095,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -143,13 +143,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    Address = "nVPGX3t9DSdv",
-                    Tel = "008-21512132",
-                    Email = "yWpt5sh4oz@7j2z.com",
-                    ExternalId = "wSPcSo0",
-                    WithDisabled = false,
-                    Page = 5210,
-                    PerPage = 990,
+                    Address = "xKD2XcOfyMo26iqol80j1t4n3lpnoezOx6Ov6eGwjQCqxdtQnDY4S9N4HhJ5rCsXRcUZY47cpIh03BvqB7CzLjYHoO28zEE65UlKtMCe12MUV2dxrA2428zEWnFZLX87qtedPzV8NdiYCurcmVOPZzwMWHgQ0VESfspW9b9",
+                    Tel = "046343-4463",
+                    Email = "fTiWLEN2pE@bq7Z.com",
+                    ExternalId = "8PV",
+                    WithDisabled = true,
+                    Page = 2476,
+                    PerPage = 6366,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -164,14 +164,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    PostalCode = "569-7007",
-                    Address = "RMoVrIBYTVKLlkjt5dVQSfgKXB4v7TZyzO1xxxuZkmHJXBUjMMoA38T1u6H0XhfAySLLl3fi7KvBN268m7tID4z5OLiwk9GozyxVyGuWU1vBC3zEsNcJB2yCHHDEDyu4hhRZd4iVulN40SsH7wTVii6lQvMPgvXlL8N89BmZTrN64xjlRahBbAV7T9JjgJd",
-                    Tel = "035-930354",
-                    Email = "ylxYOhjM3m@FaXb.com",
-                    ExternalId = "vZI6iiT0AEYTJZ22nyV4",
-                    WithDisabled = true,
-                    Page = 917,
-                    PerPage = 1125,
+                    PostalCode = "590-4518",
+                    Address = "eTptZ5kX9rLpagdWQnEnTlLyubwibc5uG9Y4cn6ApRZ5NX6gFb5nuODlmm9rpn022H3wQmNFzbLFmfFSz1uperYHhU5vbLxW8Yq15XpRuu89q3NykiRPYO2oQiAYMcKkXBWEu4RS",
+                    Tel = "087173067",
+                    Email = "ob7yobgqdq@FleV.com",
+                    ExternalId = "hpCebdmmx3jJLFYo72YjP5p",
+                    WithDisabled = false,
+                    Page = 3755,
+                    PerPage = 9573,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -186,15 +186,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    Name = "lUib7PRkE7tSgSNlXVRVvxj6xH1yyIVkS9hU0ECIKFsgh4O8WmhV3r52ICXGIBQTaygxm3ISvPMDTzvLf9zX523a9c5JqBj2SYXlZEYSr7scYVHOTQOc8rnVrquLm8B0c8PpqSnkO9u0FKnuRq3e3KKoq6q3PDRan",
-                    PostalCode = "8319605",
-                    Address = "mmV0eLbs1I60AS6MQgynUcNdlweVZDRyvmejhYSnIT0zCyRu4wgV4QaQVRkK5vRRrNwbRWoJ5YGW6CeYYNo01kxeiAgoaKUNXLGSooJBtv9s6np8w69i6FSBwpAOj0GRb8xx8lObg0vv5OtF6M",
-                    Tel = "06785750",
-                    Email = "gtZ5Fa9mUS@cogZ.com",
-                    ExternalId = "iygE4BQ7z3A7ibP9CLTB2VDA3tD",
-                    WithDisabled = false,
-                    Page = 2273,
-                    PerPage = 4157,
+                    Name = "QaLCZTmFLxumOnvrupx16EXCUXyPfCabjEtMliIf7wKoPmNQWU6zl3",
+                    PostalCode = "807-0037",
+                    Address = "5IIfEbaRlpdhTTQpQoSRT6b0IY83jSy9CLjq8yjjxInoBnLVw5NxHP7CI9Yb5tOQ2qp6BlopujNmJIuVKWvjUjC0u3f2Lo9NqlV6uXM4yE9kd7lV6QKkz6REzoI7cZYW4c0GyNh6EpQVqX4KE4B5KRDxSSppVORQLy6PO73cHGKqjz0v27dHE8reh9b3v7zqeYS2n0EGsPPbvQvYkAPBJ7wmgCWNKDP1enxAKZ",
+                    Tel = "05646396-717",
+                    Email = "SoRCKxxDEW@QZO9.com",
+                    ExternalId = "c4BWxPS7UaVHpV",
+                    WithDisabled = true,
+                    Page = 4161,
+                    PerPage = 2557,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -209,16 +209,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    PrivateMoneyId = "4db1768b-23c6-4f4c-b090-39d88729ca6e",
-                    Name = "uLvpsNQHN4VxDT7hK65KlzVJB4pNBSkzWxfuxnyDXGIXMTUbdupc0D6yEDHiWA1xCGr47KOTYzViv4K7dYiXKMxgm5qcSYFbmx8vCUWJwIJdJtBFcc3Y",
-                    PostalCode = "411-1841",
-                    Address = "djDnrY9c9dwoiyLrl7ry0IPpTz4QEtbQNqSf5WyWDVMWJ6WVr3jHZaUySRc29pNhEQOV3R0Rdlk3DOyB5rnSCDo5ScoCoVlWrniPflU",
-                    Tel = "02-86-2928",
-                    Email = "6PuZCDM9zf@XAMc.com",
-                    ExternalId = "FmDCsGT8z2wowFZD9T5W8jJeubVOUIy",
+                    PrivateMoneyId = "2d794b5a-af7d-43e0-99da-fccf7deb6ec7",
+                    Name = "LSewvJuaN97ObUNQZ0A0Rwk2Z2omGatDjCcJfOMaGd4kHySUJYrKI48UyLazcdaqg9M9b56VUQzIG7Yr7fsBnFuG56tOVY8vi9Z9lrbTGfh4QbdPS2DfLew9jsvLcXjFRqAsdyU0EjzFGdoCEVoN09yrlyTlHcxkp2hdiJWs83eoAqvgg01zZW75gRDgWRTNwobRsB1baR1a",
+                    PostalCode = "5020389",
+                    Address = "fGHLcwyelAg5Jr7zEeO7nUDqxXj74j643AIOVakyq8QHWKNric3MBQYWsKtvnxoQJLloM94TQVFchkaVLnKXq1JcpZfZUH2UsKCxnRcuSoLNAly4QR5kzfucn7LZFZwhy5",
+                    Tel = "0694-7263",
+                    Email = "Z2qU3L9frp@qlrE.com",
+                    ExternalId = "gz3O9wlyQ0TWfR4Gx21zM",
                     WithDisabled = false,
-                    Page = 6463,
-                    PerPage = 7020,
+                    Page = 2334,
+                    PerPage = 600,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -233,17 +233,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListShops request = new Request.ListShops() {
-                    OrganizationCode = "-k-OKdJ1mj0-U",
-                    PrivateMoneyId = "04c24241-cb14-4e3f-9fd9-ad2d68553409",
-                    Name = "kcCxkTI9d7Jsn9QccjND7bGvda7aNMhJEC5G4oBiTstX0WiRjOhsNgtqOeIyyxRYP301J1FCXpsK10BIkXMaiCohSzDm3NK5TzpqbYPKW4gVWnyPJ2FmQP8BFdj782lCRzxTLYRU4iYcxZKxkyxykYpcFxdBc",
-                    PostalCode = "106-2017",
-                    Address = "YZAL7B1szB0NLLAN7US0RVDqOghPUWHnpEsjkFgzfdU9gvFrHt83zBZld6EzDqzY6baUbs5TYyZAtZdk44KUIK7OJf8hlavU1V24un8fV9LG7IXdfAKHdiM8w9hkL2WBX1YB0LIzhvPAAOUrWB3H5VdX3Ik3XYaumbjOKpriSHoFIQPi3iu61FZ7wj9Ku71rdIt6zagBtLwu",
-                    Tel = "043708866",
-                    Email = "xVu0zRL6m3@oTHw.com",
-                    ExternalId = "Gwox4oIfOwcS2MBjikud277ceaXmS1",
+                    OrganizationCode = "CYk-2oM-W-0g8qIL1-Gq232G9Z8",
+                    PrivateMoneyId = "381347a9-2498-4b07-973a-67322b286055",
+                    Name = "N7Z047tEp9MnaMKkPTTOh4KlFXKgtixsqVTYrrSHZ1a0tz4EzkuhUCHWp85qyAYWUJWst1yIlHOt0XiM6Qkur8SbZd3wcuCesxkTge",
+                    PostalCode = "5469419",
+                    Address = "lQvL5t780R8L5VrLxzRQlVu0ZdkmHWdPUiVDqeHPcQVtlOjSB31Mxq8SXpxSHJRZi52y7KvoeklIR5ig74Fkbtbb0SlK2KbT8BQ8WxGHxi6f0cuW1ZhxLtCHCm7yUfJm7Fg98YgjSKRGLQpNx8ciNrKweGJtnGqdSp90ci6D0iGddOVzLT6tirwJLurByrAGwszVwlQAuTXTWtKg2YB5YxVquVYsbDyys",
+                    Tel = "02399534015",
+                    Email = "oj4yKOsEPC@rpQP.com",
+                    ExternalId = "jUDltH57ysDpO4lTbJ9d",
                     WithDisabled = true,
-                    Page = 2064,
-                    PerPage = 6624,
+                    Page = 7724,
+                    PerPage = 2969,
                 };
                 Response.PaginatedShops response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

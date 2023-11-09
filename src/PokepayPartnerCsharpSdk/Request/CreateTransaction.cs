@@ -10,6 +10,15 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class CreateTransaction
     {
+#if NETFRAMEWORK
+        public string ShopId { get; set; }
+        public string CustomerId { get; set; }
+        public string PrivateMoneyId { get; set; }
+        public int MoneyAmount { get; set; }
+        public int PointAmount { get; set; }
+        public string PointExpiresAt { get; set; }
+        public string Description { get; set; }
+#else
         public string ShopId { get; set; }
         public string CustomerId { get; set; }
         public string PrivateMoneyId { get; set; }
@@ -21,6 +30,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? PointExpiresAt { get; set; }
         #nullable enable
         public string? Description { get; set; }
+#endif
 
         public CreateTransaction(string shopId, string customerId, string privateMoneyId) =>
             (ShopId, CustomerId, PrivateMoneyId) = (shopId, customerId, privateMoneyId);
@@ -29,10 +39,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<TransactionDetail?> Send(Client client) {
-            string res = await client.Send(path, CreateTransaction.method, this);
-            return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<TransactionDetail> Send(Client client) {
+                string res = await client.Send(path, CreateTransaction.method, this);
+                return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<TransactionDetail?> Send(Client client) {
+                string res = await client.Send(path, CreateTransaction.method, this);
+                return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
+        }
+#endif
     }
 }

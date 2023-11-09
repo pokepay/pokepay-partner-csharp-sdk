@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetCheck
     {
         private string CheckId { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public GetCheck(string checkId) =>
             (CheckId) = (checkId);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<Check?> Send(Client client) {
-            string res = await client.Send(path, GetCheck.method, this);
-            return JsonSerializer.Deserialize<Check>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<Check> Send(Client client) {
+                string res = await client.Send(path, GetCheck.method, this);
+                return JsonSerializer.Deserialize<Check>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<Check?> Send(Client client) {
+                string res = await client.Send(path, GetCheck.method, this);
+                return JsonSerializer.Deserialize<Check>(res, client.JsonOptions);
+        }
+#endif
     }
 }

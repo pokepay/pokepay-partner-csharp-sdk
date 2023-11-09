@@ -25,11 +25,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateOrganization request = new Request.CreateOrganization(
-                    "RTn7KvwTWIA8nNdWGu",
-                    "LIlwIdreJxE3kI78zf4UhlPEYSyPJMRXzAv9dFtk0GaNZbxFuTsdqxMc4YsFXTQ0SPAYxMOI2buzdfVX76tCzsAYxC6putLLeYUVSfjCdmiJAkOZjrUlpDDvT3OxvKMlKLswUne1OVkp",
-                    new string[]{"b90f6355-cd4e-40b0-9d1c-b003b56693ae", "83224063-4c88-49f4-8f2a-f3c6f8c9671a", "f7929802-1abf-402f-bd34-fed26da1cb3a", "86b78336-215f-4e22-b2c6-5fe6d4cab25f"},
-                    "eW58HbZPAe@YVef.com",
-                    "tf5HOOK27a@cBxM.com"
+                    "jUaiDroY6Q3IK7BQ6Ams",
+                    "wdAM3IJrwVbs9pMxfMCthiv1a2EEHFmQw4OmJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l7",
+                    new string[]{"3966e75a-48bf-4d73-8708-e0f988dbed50"},
+                    "lyZYRURgUM@f0P5.com",
+                    "ozHDn0iOeo@WIRR.com"
                 );
                 Response.Organization response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -44,13 +44,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateOrganization request = new Request.CreateOrganization(
-                    "RTn7KvwTWIA8nNdWGu",
-                    "LIlwIdreJxE3kI78zf4UhlPEYSyPJMRXzAv9dFtk0GaNZbxFuTsdqxMc4YsFXTQ0SPAYxMOI2buzdfVX76tCzsAYxC6putLLeYUVSfjCdmiJAkOZjrUlpDDvT3OxvKMlKLswUne1OVkp",
-                    new string[]{"b90f6355-cd4e-40b0-9d1c-b003b56693ae", "83224063-4c88-49f4-8f2a-f3c6f8c9671a", "f7929802-1abf-402f-bd34-fed26da1cb3a", "86b78336-215f-4e22-b2c6-5fe6d4cab25f"},
-                    "eW58HbZPAe@YVef.com",
-                    "tf5HOOK27a@cBxM.com"
+                    "jUaiDroY6Q3IK7BQ6Ams",
+                    "wdAM3IJrwVbs9pMxfMCthiv1a2EEHFmQw4OmJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l7",
+                    new string[]{"3966e75a-48bf-4d73-8708-e0f988dbed50"},
+                    "lyZYRURgUM@f0P5.com",
+                    "ozHDn0iOeo@WIRR.com"
                 ) {
-                    ContactName = "x5l6MC8rwOgrKcswRJRUPeXbGjKqucKeGWZpcvQqzUHDPrPjMWdHf7B6NeiOkJO667GIicPCTDBCiy71y2hP4un48H6oDUEUMYmpOLQtJ5X8TqOee4isCfSnhfqrYMsPZ2GLFGWkvVE8SP3xCh0uLUr3Sy9M7HXM6fTqlfdHgjyOg2mNxi20RBpU3Vx3obeYOq",
+                    ContactName = "yR0nQkh8Zz7eaFGoiOPKR0rUW9UTcnGDBsZuPfABdiNvfS9Anufij6THnocikBJOkD3FvwnaI0WeOG",
                 };
                 Response.Organization response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -65,14 +65,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateOrganization request = new Request.CreateOrganization(
-                    "RTn7KvwTWIA8nNdWGu",
-                    "LIlwIdreJxE3kI78zf4UhlPEYSyPJMRXzAv9dFtk0GaNZbxFuTsdqxMc4YsFXTQ0SPAYxMOI2buzdfVX76tCzsAYxC6putLLeYUVSfjCdmiJAkOZjrUlpDDvT3OxvKMlKLswUne1OVkp",
-                    new string[]{"b90f6355-cd4e-40b0-9d1c-b003b56693ae", "83224063-4c88-49f4-8f2a-f3c6f8c9671a", "f7929802-1abf-402f-bd34-fed26da1cb3a", "86b78336-215f-4e22-b2c6-5fe6d4cab25f"},
-                    "eW58HbZPAe@YVef.com",
-                    "tf5HOOK27a@cBxM.com"
+                    "jUaiDroY6Q3IK7BQ6Ams",
+                    "wdAM3IJrwVbs9pMxfMCthiv1a2EEHFmQw4OmJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l7",
+                    new string[]{"3966e75a-48bf-4d73-8708-e0f988dbed50"},
+                    "lyZYRURgUM@f0P5.com",
+                    "ozHDn0iOeo@WIRR.com"
                 ) {
-                    BankAccountHolderName = "(",
-                    ContactName = "jIcsBO1eyRWFIns0G3tnaglivGb4eoIPJeu2XqpzMzkC5dNhQ1CQo4WezJ2px7Z0i1ldcgpBuoeB2TNHxD3pgr7c6InAwOXf08MBi",
+                    BankAccountHolderName = " ",
+                    ContactName = "Wmmegc1KGhe3TxnuKac7CS1DK4Gnrr3oBLGMXHrz9mqfRhRmUp8pN9pjtBKEK15Dd3XxCT0Zmu6u7tOxquneNatGolCf6SjeF7SeZXyMS6WkNJ2GvSwQUcruYP4H5cCw5ExNqh41OXXFwVmaH",
                 };
                 Response.Organization response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -87,15 +87,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateOrganization request = new Request.CreateOrganization(
-                    "RTn7KvwTWIA8nNdWGu",
-                    "LIlwIdreJxE3kI78zf4UhlPEYSyPJMRXzAv9dFtk0GaNZbxFuTsdqxMc4YsFXTQ0SPAYxMOI2buzdfVX76tCzsAYxC6putLLeYUVSfjCdmiJAkOZjrUlpDDvT3OxvKMlKLswUne1OVkp",
-                    new string[]{"b90f6355-cd4e-40b0-9d1c-b003b56693ae", "83224063-4c88-49f4-8f2a-f3c6f8c9671a", "f7929802-1abf-402f-bd34-fed26da1cb3a", "86b78336-215f-4e22-b2c6-5fe6d4cab25f"},
-                    "eW58HbZPAe@YVef.com",
-                    "tf5HOOK27a@cBxM.com"
+                    "jUaiDroY6Q3IK7BQ6Ams",
+                    "wdAM3IJrwVbs9pMxfMCthiv1a2EEHFmQw4OmJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l7",
+                    new string[]{"3966e75a-48bf-4d73-8708-e0f988dbed50"},
+                    "lyZYRURgUM@f0P5.com",
+                    "ozHDn0iOeo@WIRR.com"
                 ) {
-                    BankAccount = "97",
-                    BankAccountHolderName = "ｾ",
-                    ContactName = "3L5iaCDoiCqaBSkGkaxZIcAYECHek6yFHN0vG12039gjAaGqsNZhNtMA019vqyA3LQmGzwGLqJlmETBOgr5EOqEp0P9ToXWvyAsPWammRvI6QtZCx",
+                    BankAccount = "005356",
+                    BankAccountHolderName = "ｦ",
+                    ContactName = "8qER1LlAIi5qYTqeIN9jftsBTkZDKCnQigIBcgyeHE0tecRrYBgXoYNaRDH3xa5ZXl3L94kmDiQZ",
                 };
                 Response.Organization response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -110,16 +110,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateOrganization request = new Request.CreateOrganization(
-                    "RTn7KvwTWIA8nNdWGu",
-                    "LIlwIdreJxE3kI78zf4UhlPEYSyPJMRXzAv9dFtk0GaNZbxFuTsdqxMc4YsFXTQ0SPAYxMOI2buzdfVX76tCzsAYxC6putLLeYUVSfjCdmiJAkOZjrUlpDDvT3OxvKMlKLswUne1OVkp",
-                    new string[]{"b90f6355-cd4e-40b0-9d1c-b003b56693ae", "83224063-4c88-49f4-8f2a-f3c6f8c9671a", "f7929802-1abf-402f-bd34-fed26da1cb3a", "86b78336-215f-4e22-b2c6-5fe6d4cab25f"},
-                    "eW58HbZPAe@YVef.com",
-                    "tf5HOOK27a@cBxM.com"
+                    "jUaiDroY6Q3IK7BQ6Ams",
+                    "wdAM3IJrwVbs9pMxfMCthiv1a2EEHFmQw4OmJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l7",
+                    new string[]{"3966e75a-48bf-4d73-8708-e0f988dbed50"},
+                    "lyZYRURgUM@f0P5.com",
+                    "ozHDn0iOeo@WIRR.com"
                 ) {
                     BankAccountType = "other",
-                    BankAccount = "4358",
-                    BankAccountHolderName = "ｦ",
-                    ContactName = "dXJOMTSTE",
+                    BankAccount = "7724369",
+                    BankAccountHolderName = "/",
+                    ContactName = "JUROgp1VTNstKsbk2wvZcZmJCZwuee4w9Rkvag9C19xRl1IlJpGXqlhd5uwOg53j3Qic0iyKLnZxaZi9iCa2kj9IDD4FLU53H4cTCafuN856J50SdiADG37eydGENMPuSUGCPNHip0Y3dBWcNdXe1sIjLSVztCspdpKcDGU85LATApzQ2dQG1XtK0UfX1fzmKZw4jAX5",
                 };
                 Response.Organization response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -134,17 +134,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateOrganization request = new Request.CreateOrganization(
-                    "RTn7KvwTWIA8nNdWGu",
-                    "LIlwIdreJxE3kI78zf4UhlPEYSyPJMRXzAv9dFtk0GaNZbxFuTsdqxMc4YsFXTQ0SPAYxMOI2buzdfVX76tCzsAYxC6putLLeYUVSfjCdmiJAkOZjrUlpDDvT3OxvKMlKLswUne1OVkp",
-                    new string[]{"b90f6355-cd4e-40b0-9d1c-b003b56693ae", "83224063-4c88-49f4-8f2a-f3c6f8c9671a", "f7929802-1abf-402f-bd34-fed26da1cb3a", "86b78336-215f-4e22-b2c6-5fe6d4cab25f"},
-                    "eW58HbZPAe@YVef.com",
-                    "tf5HOOK27a@cBxM.com"
+                    "jUaiDroY6Q3IK7BQ6Ams",
+                    "wdAM3IJrwVbs9pMxfMCthiv1a2EEHFmQw4OmJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l7",
+                    new string[]{"3966e75a-48bf-4d73-8708-e0f988dbed50"},
+                    "lyZYRURgUM@f0P5.com",
+                    "ozHDn0iOeo@WIRR.com"
                 ) {
-                    BankBranchCode = "750",
-                    BankAccountType = "current",
-                    BankAccount = "5870053",
+                    BankBranchCode = "",
+                    BankAccountType = "saving",
+                    BankAccount = "363712",
                     BankAccountHolderName = "\\",
-                    ContactName = "ueMAKmGaBViSnsTq14PVGrEklqsNNrpSe7jHgezVnEas35VcXSmiU1kzoGTiaWiAtEcdoLPVjXmMD0EbHEeT21rGH9Ms9fMlg87ac8wiRJIwgWMdUy8uG6C5PRZQB5Hg7dunrtLyV63Hr0oPGWJ9UvhTk2FX5rmzwjGJx7OiIFoiugm0kx6dvh48qgPB",
+                    ContactName = "WHTaR7q8iHovbTWoPNbCUX3WmvU0lnYW7MWulxJqejEoXiemEzy22TP2wtSY9IoDSrJUA2sSTBsOwjVmr0bTbO79fqhITnnz7WaCAiQd9B8sle88sl7rSWKN9oQjHsNX48VkSyiuzE1L2wv36YuE4jwp0IiR44I5KLiOrRKq3qxtTGifN6KrraD5uojwDmQdLNOKHIlDiaOh78QfhNbZ3YfGhlbqaOElvScjtjkG1WEjltqaYkhp7caXjUtB",
                 };
                 Response.Organization response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -159,18 +159,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateOrganization request = new Request.CreateOrganization(
-                    "RTn7KvwTWIA8nNdWGu",
-                    "LIlwIdreJxE3kI78zf4UhlPEYSyPJMRXzAv9dFtk0GaNZbxFuTsdqxMc4YsFXTQ0SPAYxMOI2buzdfVX76tCzsAYxC6putLLeYUVSfjCdmiJAkOZjrUlpDDvT3OxvKMlKLswUne1OVkp",
-                    new string[]{"b90f6355-cd4e-40b0-9d1c-b003b56693ae", "83224063-4c88-49f4-8f2a-f3c6f8c9671a", "f7929802-1abf-402f-bd34-fed26da1cb3a", "86b78336-215f-4e22-b2c6-5fe6d4cab25f"},
-                    "eW58HbZPAe@YVef.com",
-                    "tf5HOOK27a@cBxM.com"
+                    "jUaiDroY6Q3IK7BQ6Ams",
+                    "wdAM3IJrwVbs9pMxfMCthiv1a2EEHFmQw4OmJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l7",
+                    new string[]{"3966e75a-48bf-4d73-8708-e0f988dbed50"},
+                    "lyZYRURgUM@f0P5.com",
+                    "ozHDn0iOeo@WIRR.com"
                 ) {
-                    BankBranchName = "ByD8IlG2gmJRvrdijgXuePFfsGNYOY7VoKB557BsicNDcWX1",
-                    BankBranchCode = "",
+                    BankBranchName = "Ne9XyY4wthFo0glXBErIUB1p7aPMzXnAdDrY",
+                    BankBranchCode = "267",
                     BankAccountType = "other",
-                    BankAccount = "471",
-                    BankAccountHolderName = "\\",
-                    ContactName = "ciWSgMd3emOlxvG8bvesviiOlmpc36LGpcI4joTo9DY8OKb5KLBQMTg5jFHzudC4JqPAfHBKyxnv5Irkq59yDNJ9eSLCjd2o20rKPkFRTOO4Fu3RxsDuJa7HSdcP732DW3vxY9WNC5",
+                    BankAccount = "98638",
+                    BankAccountHolderName = "8",
+                    ContactName = "Kx7ivixiVqjgvBNcsQLQxAtJmVTcXWtKUzkNd35gyuBKlwozbM8BIp6WWFtoNM3mKKWyblmmAHRSYCV0EDw10SY48ZoA8oj9alrEKYDjBWPKCwbirzvScUvjsqVkcSInvOjFPIL9qlVMwg0ANEHCj5eM805Swtsg2NkJBDvuxWoqdLq3QmHRbZpwbPRidVG7B6hajGJrCJBxTKH0YUW8iwJJuJPCjlaztijN3ve",
                 };
                 Response.Organization response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -185,19 +185,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateOrganization request = new Request.CreateOrganization(
-                    "RTn7KvwTWIA8nNdWGu",
-                    "LIlwIdreJxE3kI78zf4UhlPEYSyPJMRXzAv9dFtk0GaNZbxFuTsdqxMc4YsFXTQ0SPAYxMOI2buzdfVX76tCzsAYxC6putLLeYUVSfjCdmiJAkOZjrUlpDDvT3OxvKMlKLswUne1OVkp",
-                    new string[]{"b90f6355-cd4e-40b0-9d1c-b003b56693ae", "83224063-4c88-49f4-8f2a-f3c6f8c9671a", "f7929802-1abf-402f-bd34-fed26da1cb3a", "86b78336-215f-4e22-b2c6-5fe6d4cab25f"},
-                    "eW58HbZPAe@YVef.com",
-                    "tf5HOOK27a@cBxM.com"
+                    "jUaiDroY6Q3IK7BQ6Ams",
+                    "wdAM3IJrwVbs9pMxfMCthiv1a2EEHFmQw4OmJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l7",
+                    new string[]{"3966e75a-48bf-4d73-8708-e0f988dbed50"},
+                    "lyZYRURgUM@f0P5.com",
+                    "ozHDn0iOeo@WIRR.com"
                 ) {
-                    BankCode = "1817",
-                    BankBranchName = "3TvbM",
-                    BankBranchCode = "",
-                    BankAccountType = "other",
-                    BankAccount = "30397",
-                    BankAccountHolderName = "N",
-                    ContactName = "BzDBMwBwQpNbfUHoTKocCQmofKVn6CcNEIeKSjhiIUOJ3CmcBKKfxpYKN6jg83EUJCBhXaNFnjANjgTB05sjgkKA1BIwB1TOzfI2AZTghnUgvnaJ7g1WoRKZfQiw2Zb1OlFiT7B4dPW",
+                    BankCode = "",
+                    BankBranchName = "T869RjYRPCqvnZ1YzdrhGH7XKNoGDpqqjYUa42NN7jW",
+                    BankBranchCode = "472",
+                    BankAccountType = "saving",
+                    BankAccount = "5849",
+                    BankAccountHolderName = "ﾍ",
+                    ContactName = "YdhYyR9ZtWhMAKSZHQ2Tjahc0hASAcEibjku1fdQetgL0O7DlAFrkXVihIdQWu7J4NYirXryPP6taqbm6hsnA9hELkacVB4dzDqQ1LbTyVIgVP7fIz1xemnrDx9P7HPwLX5lwWZKuWWf4n5wNPq2rjN28QfQLnQ9Qr2gs4rAyEVt2ws7WkJzpgGUX4mtxobZ9ZCpNJGZG6LzTWIbd8ZNVrafdiivNn4NbNLXIdoiqtr",
                 };
                 Response.Organization response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -212,20 +212,20 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateOrganization request = new Request.CreateOrganization(
-                    "RTn7KvwTWIA8nNdWGu",
-                    "LIlwIdreJxE3kI78zf4UhlPEYSyPJMRXzAv9dFtk0GaNZbxFuTsdqxMc4YsFXTQ0SPAYxMOI2buzdfVX76tCzsAYxC6putLLeYUVSfjCdmiJAkOZjrUlpDDvT3OxvKMlKLswUne1OVkp",
-                    new string[]{"b90f6355-cd4e-40b0-9d1c-b003b56693ae", "83224063-4c88-49f4-8f2a-f3c6f8c9671a", "f7929802-1abf-402f-bd34-fed26da1cb3a", "86b78336-215f-4e22-b2c6-5fe6d4cab25f"},
-                    "eW58HbZPAe@YVef.com",
-                    "tf5HOOK27a@cBxM.com"
+                    "jUaiDroY6Q3IK7BQ6Ams",
+                    "wdAM3IJrwVbs9pMxfMCthiv1a2EEHFmQw4OmJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l7",
+                    new string[]{"3966e75a-48bf-4d73-8708-e0f988dbed50"},
+                    "lyZYRURgUM@f0P5.com",
+                    "ozHDn0iOeo@WIRR.com"
                 ) {
-                    BankName = "Xf1pe4oHU0bQmlngSt",
+                    BankName = "lImUNmLeKEfXUc2dQExu22E4bXnTsrAuXzcUzt",
                     BankCode = "",
-                    BankBranchName = "7yMrH2XyR1X8TAkxrNKhWhgRUkINW2id8qVUAVPgzscVwHe4",
-                    BankBranchCode = "919",
-                    BankAccountType = "other",
+                    BankBranchName = "c",
+                    BankBranchCode = "",
+                    BankAccountType = "current",
                     BankAccount = "",
-                    BankAccountHolderName = "ｦ",
-                    ContactName = "wnAgPgKFr1nwsNvsY9e3I0oEupIT3HyA",
+                    BankAccountHolderName = "ｵ",
+                    ContactName = "TjKb1dIcQKtgPEpt9Ynsu0LI4T70lQwB453YpOK96EoFGxVJNTeRlFM4X",
                 };
                 Response.Organization response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

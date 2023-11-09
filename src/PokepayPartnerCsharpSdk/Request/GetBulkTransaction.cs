@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetBulkTransaction
     {
         private string BulkTransactionId { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public GetBulkTransaction(string bulkTransactionId) =>
             (BulkTransactionId) = (bulkTransactionId);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<BulkTransaction?> Send(Client client) {
-            string res = await client.Send(path, GetBulkTransaction.method, this);
-            return JsonSerializer.Deserialize<BulkTransaction>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<BulkTransaction> Send(Client client) {
+                string res = await client.Send(path, GetBulkTransaction.method, this);
+                return JsonSerializer.Deserialize<BulkTransaction>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<BulkTransaction?> Send(Client client) {
+                string res = await client.Send(path, GetBulkTransaction.method, this);
+                return JsonSerializer.Deserialize<BulkTransaction>(res, client.JsonOptions);
+        }
+#endif
     }
 }

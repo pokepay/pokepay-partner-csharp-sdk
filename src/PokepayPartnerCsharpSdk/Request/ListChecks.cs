@@ -10,6 +10,20 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListChecks
     {
+#if NETFRAMEWORK
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+        public string PrivateMoneyId { get; set; }
+        public string OrganizationCode { get; set; }
+        public string ExpiresFrom { get; set; }
+        public string ExpiresTo { get; set; }
+        public string CreatedFrom { get; set; }
+        public string CreatedTo { get; set; }
+        public string IssuerShopId { get; set; }
+        public string Description { get; set; }
+        public bool IsOnetime { get; set; }
+        public bool IsDisabled { get; set; }
+#else
         #nullable enable
         public int? Page { get; set; }
         #nullable enable
@@ -34,14 +48,22 @@ namespace PokepayPartnerCsharpSdk.Request
         public bool? IsOnetime { get; set; }
         #nullable enable
         public bool? IsDisabled { get; set; }
+#endif
         private string path { get { return "/checks"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedChecks?> Send(Client client) {
-            string res = await client.Send(path, ListChecks.method, this);
-            return JsonSerializer.Deserialize<PaginatedChecks>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedChecks> Send(Client client) {
+                string res = await client.Send(path, ListChecks.method, this);
+                return JsonSerializer.Deserialize<PaginatedChecks>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedChecks?> Send(Client client) {
+                string res = await client.Send(path, ListChecks.method, this);
+                return JsonSerializer.Deserialize<PaginatedChecks>(res, client.JsonOptions);
+        }
+#endif
     }
 }

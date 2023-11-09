@@ -10,6 +10,15 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class CreateShop
     {
+#if NETFRAMEWORK
+        public string ShopName { get; set; }
+        public string ShopPostalCode { get; set; }
+        public string ShopAddress { get; set; }
+        public string ShopTel { get; set; }
+        public string ShopEmail { get; set; }
+        public string ShopExternalId { get; set; }
+        public string OrganizationCode { get; set; }
+#else
         public string ShopName { get; set; }
         #nullable enable
         public string? ShopPostalCode { get; set; }
@@ -23,6 +32,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? ShopExternalId { get; set; }
         #nullable enable
         public string? OrganizationCode { get; set; }
+#endif
 
         public CreateShop(string shopName) =>
             (ShopName) = (shopName);
@@ -31,10 +41,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<User?> Send(Client client) {
-            string res = await client.Send(path, CreateShop.method, this);
-            return JsonSerializer.Deserialize<User>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<User> Send(Client client) {
+                string res = await client.Send(path, CreateShop.method, this);
+                return JsonSerializer.Deserialize<User>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<User?> Send(Client client) {
+                string res = await client.Send(path, CreateShop.method, this);
+                return JsonSerializer.Deserialize<User>(res, client.JsonOptions);
+        }
+#endif
     }
 }

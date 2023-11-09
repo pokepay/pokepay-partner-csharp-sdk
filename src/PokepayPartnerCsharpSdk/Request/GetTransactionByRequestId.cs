@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetTransactionByRequestId
     {
         private string RequestId { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public GetTransactionByRequestId(string requestId) =>
             (RequestId) = (requestId);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<TransactionDetail?> Send(Client client) {
-            string res = await client.Send(path, GetTransactionByRequestId.method, this);
-            return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<TransactionDetail> Send(Client client) {
+                string res = await client.Send(path, GetTransactionByRequestId.method, this);
+                return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<TransactionDetail?> Send(Client client) {
+                string res = await client.Send(path, GetTransactionByRequestId.method, this);
+                return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
+        }
+#endif
     }
 }

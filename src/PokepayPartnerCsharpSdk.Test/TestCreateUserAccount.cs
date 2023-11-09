@@ -25,8 +25,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateUserAccount request = new Request.CreateUserAccount(
-                    "e0501581-d738-4b21-a66a-ba25c277dca2",
-                    "698bd0ee-972d-4e1f-9cf3-4811140db7f9"
+                    "35d0430c-e892-4509-8ebf-e20868a29af9",
+                    "7d61330b-c6fc-4fea-b398-eef6ebbe7347"
                 );
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -41,8 +41,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateUserAccount request = new Request.CreateUserAccount(
-                    "e0501581-d738-4b21-a66a-ba25c277dca2",
-                    "698bd0ee-972d-4e1f-9cf3-4811140db7f9"
+                    "35d0430c-e892-4509-8ebf-e20868a29af9",
+                    "7d61330b-c6fc-4fea-b398-eef6ebbe7347"
                 ) {
                     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
@@ -59,10 +59,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateUserAccount request = new Request.CreateUserAccount(
-                    "e0501581-d738-4b21-a66a-ba25c277dca2",
-                    "698bd0ee-972d-4e1f-9cf3-4811140db7f9"
+                    "35d0430c-e892-4509-8ebf-e20868a29af9",
+                    "7d61330b-c6fc-4fea-b398-eef6ebbe7347"
                 ) {
-                    ExternalId = "4FHwJoyq0ZZ3LqXWxjbEnE",
+                    ExternalId = "pYs6lE3PVxThCRcEAVa4JmfjoJZ9ajsO39BqxPDSP",
                     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountDetail response = await request.Send(client);
@@ -78,11 +78,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateUserAccount request = new Request.CreateUserAccount(
-                    "e0501581-d738-4b21-a66a-ba25c277dca2",
-                    "698bd0ee-972d-4e1f-9cf3-4811140db7f9"
+                    "35d0430c-e892-4509-8ebf-e20868a29af9",
+                    "7d61330b-c6fc-4fea-b398-eef6ebbe7347"
                 ) {
-                    Name = "SIQFT8gVsfPuQVaowDYu3d5Sm9zyIcRdxyPhvN5IwiETAQgPekgAKwMH174rbfDViH42QTSZs6yFu8FkF480FKwQqxq6r9xFthPMxqp8GIIinccp",
-                    ExternalId = "41v2FiNpGDXTz",
+                    Name = "5BpfA0dYcuMmHpa4aDHWm32hBFhI0Dx",
+                    ExternalId = "Rhz83lKq4Wp1hKlNvpHM0s7Dd9Uu6qWqC",
                     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountDetail response = await request.Send(client);

@@ -10,6 +10,15 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class CreateTransferTransaction
     {
+#if NETFRAMEWORK
+        public string SenderId { get; set; }
+        public string ReceiverId { get; set; }
+        public string PrivateMoneyId { get; set; }
+        public double Amount { get; set; }
+        public string Metadata { get; set; }
+        public string Description { get; set; }
+        public string RequestId { get; set; }
+#else
         public string SenderId { get; set; }
         public string ReceiverId { get; set; }
         public string PrivateMoneyId { get; set; }
@@ -20,6 +29,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? Description { get; set; }
         #nullable enable
         public string? RequestId { get; set; }
+#endif
 
         public CreateTransferTransaction(string senderId, string receiverId, string privateMoneyId, double amount) =>
             (SenderId, ReceiverId, PrivateMoneyId, Amount) = (senderId, receiverId, privateMoneyId, amount);
@@ -28,10 +38,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<TransactionDetail?> Send(Client client) {
-            string res = await client.Send(path, CreateTransferTransaction.method, this);
-            return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<TransactionDetail> Send(Client client) {
+                string res = await client.Send(path, CreateTransferTransaction.method, this);
+                return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<TransactionDetail?> Send(Client client) {
+                string res = await client.Send(path, CreateTransferTransaction.method, this);
+                return JsonSerializer.Deserialize<TransactionDetail>(res, client.JsonOptions);
+        }
+#endif
     }
 }

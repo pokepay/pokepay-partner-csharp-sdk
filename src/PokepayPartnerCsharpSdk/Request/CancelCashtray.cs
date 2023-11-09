@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class CancelCashtray
     {
         private string CashtrayId { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public CancelCashtray(string cashtrayId) =>
             (CashtrayId) = (cashtrayId);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("DELETE");
 
-        #nullable enable
-        public async Task<Cashtray?> Send(Client client) {
-            string res = await client.Send(path, CancelCashtray.method, this);
-            return JsonSerializer.Deserialize<Cashtray>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<Cashtray> Send(Client client) {
+                string res = await client.Send(path, CancelCashtray.method, this);
+                return JsonSerializer.Deserialize<Cashtray>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<Cashtray?> Send(Client client) {
+                string res = await client.Send(path, CancelCashtray.method, this);
+                return JsonSerializer.Deserialize<Cashtray>(res, client.JsonOptions);
+        }
+#endif
     }
 }

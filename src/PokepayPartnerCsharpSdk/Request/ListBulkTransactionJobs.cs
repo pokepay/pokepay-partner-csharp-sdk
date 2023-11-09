@@ -11,10 +11,15 @@ namespace PokepayPartnerCsharpSdk.Request
     public class ListBulkTransactionJobs
     {
         private string BulkTransactionId { get; set; }
+#if NETFRAMEWORK
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+#else
         #nullable enable
         public int? Page { get; set; }
         #nullable enable
         public int? PerPage { get; set; }
+#endif
 
         public ListBulkTransactionJobs(string bulkTransactionId) =>
             (BulkTransactionId) = (bulkTransactionId);
@@ -23,10 +28,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedBulkTransactionJob?> Send(Client client) {
-            string res = await client.Send(path, ListBulkTransactionJobs.method, this);
-            return JsonSerializer.Deserialize<PaginatedBulkTransactionJob>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedBulkTransactionJob> Send(Client client) {
+                string res = await client.Send(path, ListBulkTransactionJobs.method, this);
+                return JsonSerializer.Deserialize<PaginatedBulkTransactionJob>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedBulkTransactionJob?> Send(Client client) {
+                string res = await client.Send(path, ListBulkTransactionJobs.method, this);
+                return JsonSerializer.Deserialize<PaginatedBulkTransactionJob>(res, client.JsonOptions);
+        }
+#endif
     }
 }

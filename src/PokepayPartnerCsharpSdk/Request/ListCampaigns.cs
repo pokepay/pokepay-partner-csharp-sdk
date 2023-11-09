@@ -10,6 +10,14 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListCampaigns
     {
+#if NETFRAMEWORK
+        public string PrivateMoneyId { get; set; }
+        public bool IsOngoing { get; set; }
+        public string AvailableFrom { get; set; }
+        public string AvailableTo { get; set; }
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+#else
         public string PrivateMoneyId { get; set; }
         #nullable enable
         public bool? IsOngoing { get; set; }
@@ -21,6 +29,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public int? Page { get; set; }
         #nullable enable
         public int? PerPage { get; set; }
+#endif
 
         public ListCampaigns(string privateMoneyId) =>
             (PrivateMoneyId) = (privateMoneyId);
@@ -29,10 +38,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedCampaigns?> Send(Client client) {
-            string res = await client.Send(path, ListCampaigns.method, this);
-            return JsonSerializer.Deserialize<PaginatedCampaigns>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedCampaigns> Send(Client client) {
+                string res = await client.Send(path, ListCampaigns.method, this);
+                return JsonSerializer.Deserialize<PaginatedCampaigns>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedCampaigns?> Send(Client client) {
+                string res = await client.Send(path, ListCampaigns.method, this);
+                return JsonSerializer.Deserialize<PaginatedCampaigns>(res, client.JsonOptions);
+        }
+#endif
     }
 }

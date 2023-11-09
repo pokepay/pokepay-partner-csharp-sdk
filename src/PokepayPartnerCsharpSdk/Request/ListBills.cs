@@ -10,6 +10,21 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListBills
     {
+#if NETFRAMEWORK
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+        public string BillId { get; set; }
+        public string PrivateMoneyId { get; set; }
+        public string OrganizationCode { get; set; }
+        public string Description { get; set; }
+        public string CreatedFrom { get; set; }
+        public string CreatedTo { get; set; }
+        public string ShopName { get; set; }
+        public string ShopId { get; set; }
+        public int LowerLimitAmount { get; set; }
+        public int UpperLimitAmount { get; set; }
+        public bool IsDisabled { get; set; }
+#else
         #nullable enable
         public int? Page { get; set; }
         #nullable enable
@@ -36,14 +51,22 @@ namespace PokepayPartnerCsharpSdk.Request
         public int? UpperLimitAmount { get; set; }
         #nullable enable
         public bool? IsDisabled { get; set; }
+#endif
         private string path { get { return "/bills"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedBills?> Send(Client client) {
-            string res = await client.Send(path, ListBills.method, this);
-            return JsonSerializer.Deserialize<PaginatedBills>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedBills> Send(Client client) {
+                string res = await client.Send(path, ListBills.method, this);
+                return JsonSerializer.Deserialize<PaginatedBills>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedBills?> Send(Client client) {
+                string res = await client.Send(path, ListBills.method, this);
+                return JsonSerializer.Deserialize<PaginatedBills>(res, client.JsonOptions);
+        }
+#endif
     }
 }

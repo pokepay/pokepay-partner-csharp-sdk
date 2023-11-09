@@ -10,8 +10,13 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class CreateWebhook
     {
+#if NETFRAMEWORK
         public string Task { get; set; }
         public string Url { get; set; }
+#else
+        public string Task { get; set; }
+        public string Url { get; set; }
+#endif
 
         public CreateWebhook(string task, string url) =>
             (Task, Url) = (task, url);
@@ -20,10 +25,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<OrganizationWorkerTaskWebhook?> Send(Client client) {
-            string res = await client.Send(path, CreateWebhook.method, this);
-            return JsonSerializer.Deserialize<OrganizationWorkerTaskWebhook>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<OrganizationWorkerTaskWebhook> Send(Client client) {
+                string res = await client.Send(path, CreateWebhook.method, this);
+                return JsonSerializer.Deserialize<OrganizationWorkerTaskWebhook>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<OrganizationWorkerTaskWebhook?> Send(Client client) {
+                string res = await client.Send(path, CreateWebhook.method, this);
+                return JsonSerializer.Deserialize<OrganizationWorkerTaskWebhook>(res, client.JsonOptions);
+        }
+#endif
     }
 }

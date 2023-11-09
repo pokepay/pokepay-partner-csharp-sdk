@@ -10,7 +10,11 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class SendEcho
     {
+#if NETFRAMEWORK
         public string Message { get; set; }
+#else
+        public string Message { get; set; }
+#endif
 
         public SendEcho(string message) =>
             (Message) = (message);
@@ -19,10 +23,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<Echo?> Send(Client client) {
-            string res = await client.Send(path, SendEcho.method, this);
-            return JsonSerializer.Deserialize<Echo>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<Echo> Send(Client client) {
+                string res = await client.Send(path, SendEcho.method, this);
+                return JsonSerializer.Deserialize<Echo>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<Echo?> Send(Client client) {
+                string res = await client.Send(path, SendEcho.method, this);
+                return JsonSerializer.Deserialize<Echo>(res, client.JsonOptions);
+        }
+#endif
     }
 }

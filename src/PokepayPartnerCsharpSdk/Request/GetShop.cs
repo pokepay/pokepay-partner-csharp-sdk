@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetShop
     {
         private string ShopId { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public GetShop(string shopId) =>
             (ShopId) = (shopId);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<ShopWithAccounts?> Send(Client client) {
-            string res = await client.Send(path, GetShop.method, this);
-            return JsonSerializer.Deserialize<ShopWithAccounts>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<ShopWithAccounts> Send(Client client) {
+                string res = await client.Send(path, GetShop.method, this);
+                return JsonSerializer.Deserialize<ShopWithAccounts>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<ShopWithAccounts?> Send(Client client) {
+                string res = await client.Send(path, GetShop.method, this);
+                return JsonSerializer.Deserialize<ShopWithAccounts>(res, client.JsonOptions);
+        }
+#endif
     }
 }

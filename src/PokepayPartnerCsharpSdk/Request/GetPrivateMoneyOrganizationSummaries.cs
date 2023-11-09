@@ -11,6 +11,12 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetPrivateMoneyOrganizationSummaries
     {
         private string PrivateMoneyId { get; set; }
+#if NETFRAMEWORK
+        public string From { get; set; }
+        public string To { get; set; }
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+#else
         #nullable enable
         public string? From { get; set; }
         #nullable enable
@@ -19,6 +25,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public int? Page { get; set; }
         #nullable enable
         public int? PerPage { get; set; }
+#endif
 
         public GetPrivateMoneyOrganizationSummaries(string privateMoneyId) =>
             (PrivateMoneyId) = (privateMoneyId);
@@ -27,10 +34,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedPrivateMoneyOrganizationSummaries?> Send(Client client) {
-            string res = await client.Send(path, GetPrivateMoneyOrganizationSummaries.method, this);
-            return JsonSerializer.Deserialize<PaginatedPrivateMoneyOrganizationSummaries>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedPrivateMoneyOrganizationSummaries> Send(Client client) {
+                string res = await client.Send(path, GetPrivateMoneyOrganizationSummaries.method, this);
+                return JsonSerializer.Deserialize<PaginatedPrivateMoneyOrganizationSummaries>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedPrivateMoneyOrganizationSummaries?> Send(Client client) {
+                string res = await client.Send(path, GetPrivateMoneyOrganizationSummaries.method, this);
+                return JsonSerializer.Deserialize<PaginatedPrivateMoneyOrganizationSummaries>(res, client.JsonOptions);
+        }
+#endif
     }
 }

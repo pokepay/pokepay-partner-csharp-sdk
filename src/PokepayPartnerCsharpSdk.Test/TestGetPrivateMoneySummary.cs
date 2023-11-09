@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneySummary request = new Request.GetPrivateMoneySummary(
-                    "1caca30a-4c6e-4e6b-9d85-1d5b9a7b565d"
+                    "5c64db39-4ca8-4540-b5aa-5497df32ea32"
                 );
                 Response.PrivateMoneySummary response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneySummary request = new Request.GetPrivateMoneySummary(
-                    "1caca30a-4c6e-4e6b-9d85-1d5b9a7b565d"
+                    "5c64db39-4ca8-4540-b5aa-5497df32ea32"
                 ) {
-                    To = "2023-11-02T15:24:19.000000+09:00",
+                    To = "2019-06-19T01:47:30.000000+09:00",
                 };
                 Response.PrivateMoneySummary response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneySummary request = new Request.GetPrivateMoneySummary(
-                    "1caca30a-4c6e-4e6b-9d85-1d5b9a7b565d"
+                    "5c64db39-4ca8-4540-b5aa-5497df32ea32"
                 ) {
-                    From = "2024-07-26T16:31:37.000000+09:00",
-                    To = "2020-08-31T22:52:18.000000+09:00",
+                    From = "2016-09-29T12:29:24.000000+09:00",
+                    To = "2019-03-03T13:32:05.000000+09:00",
                 };
                 Response.PrivateMoneySummary response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

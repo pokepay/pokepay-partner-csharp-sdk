@@ -10,6 +10,22 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListTransfers
     {
+#if NETFRAMEWORK
+        public string From { get; set; }
+        public string To { get; set; }
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+        public string ShopId { get; set; }
+        public string ShopName { get; set; }
+        public string CustomerId { get; set; }
+        public string CustomerName { get; set; }
+        public string TransactionId { get; set; }
+        public string PrivateMoneyId { get; set; }
+        public bool IsModified { get; set; }
+        public string[] TransactionTypes { get; set; }
+        public string[] TransferTypes { get; set; }
+        public string Description { get; set; }
+#else
         #nullable enable
         public string? From { get; set; }
         #nullable enable
@@ -38,14 +54,22 @@ namespace PokepayPartnerCsharpSdk.Request
         public string[]? TransferTypes { get; set; }
         #nullable enable
         public string? Description { get; set; }
+#endif
         private string path { get { return "/transfers"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedTransfers?> Send(Client client) {
-            string res = await client.Send(path, ListTransfers.method, this);
-            return JsonSerializer.Deserialize<PaginatedTransfers>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedTransfers> Send(Client client) {
+                string res = await client.Send(path, ListTransfers.method, this);
+                return JsonSerializer.Deserialize<PaginatedTransfers>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedTransfers?> Send(Client client) {
+                string res = await client.Send(path, ListTransfers.method, this);
+                return JsonSerializer.Deserialize<PaginatedTransfers>(res, client.JsonOptions);
+        }
+#endif
     }
 }

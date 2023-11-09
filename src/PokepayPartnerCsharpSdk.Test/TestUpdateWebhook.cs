@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "b2fb054a-99cc-4aff-b7a7-6057d0bfd116"
+                    "b3ee081f-6bc5-4fe7-a68a-836029533db3"
                 );
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "b2fb054a-99cc-4aff-b7a7-6057d0bfd116"
+                    "b3ee081f-6bc5-4fe7-a68a-836029533db3"
                 ) {
                     Task = "process_user_stats_operation",
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "b2fb054a-99cc-4aff-b7a7-6057d0bfd116"
+                    "b3ee081f-6bc5-4fe7-a68a-836029533db3"
                 ) {
-                    IsActive = true,
+                    IsActive = false,
                     Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
@@ -75,9 +75,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "b2fb054a-99cc-4aff-b7a7-6057d0bfd116"
+                    "b3ee081f-6bc5-4fe7-a68a-836029533db3"
                 ) {
-                    Url = "7pjqYULQmh",
+                    Url = "GlsZaVSpj",
                     IsActive = false,
                     Task = "process_user_stats_operation",
                 };

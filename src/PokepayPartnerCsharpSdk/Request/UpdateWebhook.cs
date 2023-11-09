@@ -11,12 +11,18 @@ namespace PokepayPartnerCsharpSdk.Request
     public class UpdateWebhook
     {
         private string WebhookId { get; set; }
+#if NETFRAMEWORK
+        public string Url { get; set; }
+        public bool IsActive { get; set; }
+        public string Task { get; set; }
+#else
         #nullable enable
         public string? Url { get; set; }
         #nullable enable
         public bool? IsActive { get; set; }
         #nullable enable
         public string? Task { get; set; }
+#endif
 
         public UpdateWebhook(string webhookId) =>
             (WebhookId) = (webhookId);
@@ -25,10 +31,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("PATCH");
 
-        #nullable enable
-        public async Task<OrganizationWorkerTaskWebhook?> Send(Client client) {
-            string res = await client.Send(path, UpdateWebhook.method, this);
-            return JsonSerializer.Deserialize<OrganizationWorkerTaskWebhook>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<OrganizationWorkerTaskWebhook> Send(Client client) {
+                string res = await client.Send(path, UpdateWebhook.method, this);
+                return JsonSerializer.Deserialize<OrganizationWorkerTaskWebhook>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<OrganizationWorkerTaskWebhook?> Send(Client client) {
+                string res = await client.Send(path, UpdateWebhook.method, this);
+                return JsonSerializer.Deserialize<OrganizationWorkerTaskWebhook>(res, client.JsonOptions);
+        }
+#endif
     }
 }

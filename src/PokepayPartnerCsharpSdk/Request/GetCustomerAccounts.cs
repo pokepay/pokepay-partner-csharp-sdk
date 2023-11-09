@@ -10,6 +10,18 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class GetCustomerAccounts
     {
+#if NETFRAMEWORK
+        public string PrivateMoneyId { get; set; }
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+        public string CreatedAtFrom { get; set; }
+        public string CreatedAtTo { get; set; }
+        public bool IsSuspended { get; set; }
+        public string Status { get; set; }
+        public string ExternalId { get; set; }
+        public string Tel { get; set; }
+        public string Email { get; set; }
+#else
         public string PrivateMoneyId { get; set; }
         #nullable enable
         public int? Page { get; set; }
@@ -29,6 +41,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? Tel { get; set; }
         #nullable enable
         public string? Email { get; set; }
+#endif
 
         public GetCustomerAccounts(string privateMoneyId) =>
             (PrivateMoneyId) = (privateMoneyId);
@@ -37,10 +50,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedAccountWithUsers?> Send(Client client) {
-            string res = await client.Send(path, GetCustomerAccounts.method, this);
-            return JsonSerializer.Deserialize<PaginatedAccountWithUsers>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedAccountWithUsers> Send(Client client) {
+                string res = await client.Send(path, GetCustomerAccounts.method, this);
+                return JsonSerializer.Deserialize<PaginatedAccountWithUsers>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedAccountWithUsers?> Send(Client client) {
+                string res = await client.Send(path, GetCustomerAccounts.method, this);
+                return JsonSerializer.Deserialize<PaginatedAccountWithUsers>(res, client.JsonOptions);
+        }
+#endif
     }
 }

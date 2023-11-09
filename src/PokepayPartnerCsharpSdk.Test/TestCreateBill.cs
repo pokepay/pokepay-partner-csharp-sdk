@@ -25,8 +25,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBill request = new Request.CreateBill(
-                    "48d12ee9-31d8-4413-94f1-1b001f010e57",
-                    "19d36848-bd87-4b89-a33c-61d0a3c9568d"
+                    "1ed99f9c-85f2-4383-a32d-8b4b05bce6aa",
+                    "c66f3660-e78b-4caf-a30b-bb9025ebf13a"
                 );
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -41,10 +41,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBill request = new Request.CreateBill(
-                    "48d12ee9-31d8-4413-94f1-1b001f010e57",
-                    "19d36848-bd87-4b89-a33c-61d0a3c9568d"
+                    "1ed99f9c-85f2-4383-a32d-8b4b05bce6aa",
+                    "c66f3660-e78b-4caf-a30b-bb9025ebf13a"
                 ) {
-                    Description = "ya4deZm0fSDTtTOJ1ul4n4rd80SnO9JMQZQOi46n24N1Vd6UWqHbjbEB2k2UV3XLhESUPHX6",
+                    Description = "lFd3Ur1MCMIUROIYftW7QMsIbzCAj1GsSvfXjxUW5PMdDuBsMe04PTf8vSsZQwwHu7ykbtkzG",
                 };
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -59,11 +59,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBill request = new Request.CreateBill(
-                    "48d12ee9-31d8-4413-94f1-1b001f010e57",
-                    "19d36848-bd87-4b89-a33c-61d0a3c9568d"
+                    "1ed99f9c-85f2-4383-a32d-8b4b05bce6aa",
+                    "c66f3660-e78b-4caf-a30b-bb9025ebf13a"
                 ) {
-                    Amount = 4215.0,
-                    Description = "vpRKl2rU5wN9oKicMImC5FkW3NN6",
+                    Amount = 4384.0,
+                    Description = "ROeLpMaUZfjz7mGpF3omDB92rueqlmfnAfu7erS3gFr3FTdQ8rwckpkfwdxwxZ95sfTG55oAI4VCG4sTwcYeFwcP7ZmLygXYRtjxN2aIco6xNkWo0aYr1y1KHCm",
                 };
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
