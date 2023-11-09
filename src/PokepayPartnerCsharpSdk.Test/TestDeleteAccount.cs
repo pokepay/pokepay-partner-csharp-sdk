@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.DeleteAccount request = new Request.DeleteAccount(
-                    "dae34162-5449-448e-bcee-840d94a3539b"
+                    "7d84661c-3a21-4b41-ab3b-ded2c1ebc21f"
                 );
                 Response.AccountDeleted response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.DeleteAccount request = new Request.DeleteAccount(
-                    "dae34162-5449-448e-bcee-840d94a3539b"
+                    "7d84661c-3a21-4b41-ab3b-ded2c1ebc21f"
                 ) {
                     Cashback = true,
                 };

@@ -11,6 +11,17 @@ namespace PokepayPartnerCsharpSdk.Request
     public class UpdateShop
     {
         private string ShopId { get; set; }
+#if NETFRAMEWORK
+        public string Name { get; set; }
+        public string PostalCode { get; set; }
+        public string Address { get; set; }
+        public string Tel { get; set; }
+        public string Email { get; set; }
+        public string ExternalId { get; set; }
+        public string[] PrivateMoneyIds { get; set; }
+        public string[] CanTopupPrivateMoneyIds { get; set; }
+        public string Status { get; set; }
+#else
         #nullable enable
         public string? Name { get; set; }
         #nullable enable
@@ -29,6 +40,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string[]? CanTopupPrivateMoneyIds { get; set; }
         #nullable enable
         public string? Status { get; set; }
+#endif
 
         public UpdateShop(string shopId) =>
             (ShopId) = (shopId);
@@ -37,10 +49,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("PATCH");
 
-        #nullable enable
-        public async Task<ShopWithAccounts?> Send(Client client) {
-            string res = await client.Send(path, UpdateShop.method, this);
-            return JsonSerializer.Deserialize<ShopWithAccounts>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<ShopWithAccounts> Send(Client client) {
+                string res = await client.Send(path, UpdateShop.method, this);
+                return JsonSerializer.Deserialize<ShopWithAccounts>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<ShopWithAccounts?> Send(Client client) {
+                string res = await client.Send(path, UpdateShop.method, this);
+                return JsonSerializer.Deserialize<ShopWithAccounts>(res, client.JsonOptions);
+        }
+#endif
     }
 }

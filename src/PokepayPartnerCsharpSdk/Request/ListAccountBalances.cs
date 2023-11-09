@@ -11,6 +11,13 @@ namespace PokepayPartnerCsharpSdk.Request
     public class ListAccountBalances
     {
         private string AccountId { get; set; }
+#if NETFRAMEWORK
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+        public string ExpiresAtFrom { get; set; }
+        public string ExpiresAtTo { get; set; }
+        public string Direction { get; set; }
+#else
         #nullable enable
         public int? Page { get; set; }
         #nullable enable
@@ -21,6 +28,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? ExpiresAtTo { get; set; }
         #nullable enable
         public string? Direction { get; set; }
+#endif
 
         public ListAccountBalances(string accountId) =>
             (AccountId) = (accountId);
@@ -29,10 +37,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedAccountBalance?> Send(Client client) {
-            string res = await client.Send(path, ListAccountBalances.method, this);
-            return JsonSerializer.Deserialize<PaginatedAccountBalance>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedAccountBalance> Send(Client client) {
+                string res = await client.Send(path, ListAccountBalances.method, this);
+                return JsonSerializer.Deserialize<PaginatedAccountBalance>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedAccountBalance?> Send(Client client) {
+                string res = await client.Send(path, ListAccountBalances.method, this);
+                return JsonSerializer.Deserialize<PaginatedAccountBalance>(res, client.JsonOptions);
+        }
+#endif
     }
 }

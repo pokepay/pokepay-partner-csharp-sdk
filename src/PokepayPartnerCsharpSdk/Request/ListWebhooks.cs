@@ -10,18 +10,30 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListWebhooks
     {
+#if NETFRAMEWORK
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+#else
         #nullable enable
         public int? Page { get; set; }
         #nullable enable
         public int? PerPage { get; set; }
+#endif
         private string path { get { return "/webhooks"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedOrganizationWorkerTaskWebhook?> Send(Client client) {
-            string res = await client.Send(path, ListWebhooks.method, this);
-            return JsonSerializer.Deserialize<PaginatedOrganizationWorkerTaskWebhook>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedOrganizationWorkerTaskWebhook> Send(Client client) {
+                string res = await client.Send(path, ListWebhooks.method, this);
+                return JsonSerializer.Deserialize<PaginatedOrganizationWorkerTaskWebhook>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedOrganizationWorkerTaskWebhook?> Send(Client client) {
+                string res = await client.Send(path, ListWebhooks.method, this);
+                return JsonSerializer.Deserialize<PaginatedOrganizationWorkerTaskWebhook>(res, client.JsonOptions);
+        }
+#endif
     }
 }

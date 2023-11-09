@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetCoupon
     {
         private string CouponId { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public GetCoupon(string couponId) =>
             (CouponId) = (couponId);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<CouponDetail?> Send(Client client) {
-            string res = await client.Send(path, GetCoupon.method, this);
-            return JsonSerializer.Deserialize<CouponDetail>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<CouponDetail> Send(Client client) {
+                string res = await client.Send(path, GetCoupon.method, this);
+                return JsonSerializer.Deserialize<CouponDetail>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<CouponDetail?> Send(Client client) {
+                string res = await client.Send(path, GetCoupon.method, this);
+                return JsonSerializer.Deserialize<CouponDetail>(res, client.JsonOptions);
+        }
+#endif
     }
 }

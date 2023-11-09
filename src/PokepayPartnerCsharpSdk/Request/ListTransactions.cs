@@ -10,6 +10,22 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListTransactions
     {
+#if NETFRAMEWORK
+        public string From { get; set; }
+        public string To { get; set; }
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+        public string ShopId { get; set; }
+        public string CustomerId { get; set; }
+        public string CustomerName { get; set; }
+        public string TerminalId { get; set; }
+        public string TransactionId { get; set; }
+        public string OrganizationCode { get; set; }
+        public string PrivateMoneyId { get; set; }
+        public bool IsModified { get; set; }
+        public string[] Types { get; set; }
+        public string Description { get; set; }
+#else
         #nullable enable
         public string? From { get; set; }
         #nullable enable
@@ -38,14 +54,22 @@ namespace PokepayPartnerCsharpSdk.Request
         public string[]? Types { get; set; }
         #nullable enable
         public string? Description { get; set; }
+#endif
         private string path { get { return "/transactions"; } }
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedTransaction?> Send(Client client) {
-            string res = await client.Send(path, ListTransactions.method, this);
-            return JsonSerializer.Deserialize<PaginatedTransaction>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedTransaction> Send(Client client) {
+                string res = await client.Send(path, ListTransactions.method, this);
+                return JsonSerializer.Deserialize<PaginatedTransaction>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedTransaction?> Send(Client client) {
+                string res = await client.Send(path, ListTransactions.method, this);
+                return JsonSerializer.Deserialize<PaginatedTransaction>(res, client.JsonOptions);
+        }
+#endif
     }
 }

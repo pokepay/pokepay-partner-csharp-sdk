@@ -11,12 +11,18 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetAccountTransferSummary
     {
         private string AccountId { get; set; }
+#if NETFRAMEWORK
+        public string From { get; set; }
+        public string To { get; set; }
+        public string[] TransferTypes { get; set; }
+#else
         #nullable enable
         public string? From { get; set; }
         #nullable enable
         public string? To { get; set; }
         #nullable enable
         public string[]? TransferTypes { get; set; }
+#endif
 
         public GetAccountTransferSummary(string accountId) =>
             (AccountId) = (accountId);
@@ -25,10 +31,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<AccountTransferSummary?> Send(Client client) {
-            string res = await client.Send(path, GetAccountTransferSummary.method, this);
-            return JsonSerializer.Deserialize<AccountTransferSummary>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<AccountTransferSummary> Send(Client client) {
+                string res = await client.Send(path, GetAccountTransferSummary.method, this);
+                return JsonSerializer.Deserialize<AccountTransferSummary>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<AccountTransferSummary?> Send(Client client) {
+                string res = await client.Send(path, GetAccountTransferSummary.method, this);
+                return JsonSerializer.Deserialize<AccountTransferSummary>(res, client.JsonOptions);
+        }
+#endif
     }
 }

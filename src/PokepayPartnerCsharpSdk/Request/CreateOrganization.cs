@@ -10,6 +10,21 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class CreateOrganization
     {
+#if NETFRAMEWORK
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public string[] PrivateMoneyIds { get; set; }
+        public string IssuerAdminUserEmail { get; set; }
+        public string MemberAdminUserEmail { get; set; }
+        public string BankName { get; set; }
+        public string BankCode { get; set; }
+        public string BankBranchName { get; set; }
+        public string BankBranchCode { get; set; }
+        public string BankAccountType { get; set; }
+        public string BankAccount { get; set; }
+        public string BankAccountHolderName { get; set; }
+        public string ContactName { get; set; }
+#else
         public string Code { get; set; }
         public string Name { get; set; }
         public string[] PrivateMoneyIds { get; set; }
@@ -31,6 +46,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? BankAccountHolderName { get; set; }
         #nullable enable
         public string? ContactName { get; set; }
+#endif
 
         public CreateOrganization(string code, string name, string[] privateMoneyIds, string issuerAdminUserEmail, string memberAdminUserEmail) =>
             (Code, Name, PrivateMoneyIds, IssuerAdminUserEmail, MemberAdminUserEmail) = (code, name, privateMoneyIds, issuerAdminUserEmail, memberAdminUserEmail);
@@ -39,10 +55,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<Organization?> Send(Client client) {
-            string res = await client.Send(path, CreateOrganization.method, this);
-            return JsonSerializer.Deserialize<Organization>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<Organization> Send(Client client) {
+                string res = await client.Send(path, CreateOrganization.method, this);
+                return JsonSerializer.Deserialize<Organization>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<Organization?> Send(Client client) {
+                string res = await client.Send(path, CreateOrganization.method, this);
+                return JsonSerializer.Deserialize<Organization>(res, client.JsonOptions);
+        }
+#endif
     }
 }

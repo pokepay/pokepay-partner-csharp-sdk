@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class DeleteWebhook
     {
         private string WebhookId { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public DeleteWebhook(string webhookId) =>
             (WebhookId) = (webhookId);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("DELETE");
 
-        #nullable enable
-        public async Task<OrganizationWorkerTaskWebhook?> Send(Client client) {
-            string res = await client.Send(path, DeleteWebhook.method, this);
-            return JsonSerializer.Deserialize<OrganizationWorkerTaskWebhook>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<OrganizationWorkerTaskWebhook> Send(Client client) {
+                string res = await client.Send(path, DeleteWebhook.method, this);
+                return JsonSerializer.Deserialize<OrganizationWorkerTaskWebhook>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<OrganizationWorkerTaskWebhook?> Send(Client client) {
+                string res = await client.Send(path, DeleteWebhook.method, this);
+                return JsonSerializer.Deserialize<OrganizationWorkerTaskWebhook>(res, client.JsonOptions);
+        }
+#endif
     }
 }

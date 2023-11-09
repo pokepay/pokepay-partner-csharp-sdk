@@ -10,6 +10,13 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class CreateCashtray
     {
+#if NETFRAMEWORK
+        public string PrivateMoneyId { get; set; }
+        public string ShopId { get; set; }
+        public double Amount { get; set; }
+        public string Description { get; set; }
+        public int ExpiresIn { get; set; }
+#else
         public string PrivateMoneyId { get; set; }
         public string ShopId { get; set; }
         public double Amount { get; set; }
@@ -17,6 +24,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? Description { get; set; }
         #nullable enable
         public int? ExpiresIn { get; set; }
+#endif
 
         public CreateCashtray(string privateMoneyId, string shopId, double amount) =>
             (PrivateMoneyId, ShopId, Amount) = (privateMoneyId, shopId, amount);
@@ -25,10 +33,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<Cashtray?> Send(Client client) {
-            string res = await client.Send(path, CreateCashtray.method, this);
-            return JsonSerializer.Deserialize<Cashtray>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<Cashtray> Send(Client client) {
+                string res = await client.Send(path, CreateCashtray.method, this);
+                return JsonSerializer.Deserialize<Cashtray>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<Cashtray?> Send(Client client) {
+                string res = await client.Send(path, CreateCashtray.method, this);
+                return JsonSerializer.Deserialize<Cashtray>(res, client.JsonOptions);
+        }
+#endif
     }
 }

@@ -10,6 +10,17 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class ListCoupons
     {
+#if NETFRAMEWORK
+        public string PrivateMoneyId { get; set; }
+        public string CouponId { get; set; }
+        public string CouponName { get; set; }
+        public string IssuedShopName { get; set; }
+        public string AvailableShopName { get; set; }
+        public string AvailableFrom { get; set; }
+        public string AvailableTo { get; set; }
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+#else
         public string PrivateMoneyId { get; set; }
         #nullable enable
         public string? CouponId { get; set; }
@@ -27,6 +38,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public int? Page { get; set; }
         #nullable enable
         public int? PerPage { get; set; }
+#endif
 
         public ListCoupons(string privateMoneyId) =>
             (PrivateMoneyId) = (privateMoneyId);
@@ -35,10 +47,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedCoupons?> Send(Client client) {
-            string res = await client.Send(path, ListCoupons.method, this);
-            return JsonSerializer.Deserialize<PaginatedCoupons>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedCoupons> Send(Client client) {
+                string res = await client.Send(path, ListCoupons.method, this);
+                return JsonSerializer.Deserialize<PaginatedCoupons>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedCoupons?> Send(Client client) {
+                string res = await client.Send(path, ListCoupons.method, this);
+                return JsonSerializer.Deserialize<PaginatedCoupons>(res, client.JsonOptions);
+        }
+#endif
     }
 }

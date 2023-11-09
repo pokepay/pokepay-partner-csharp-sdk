@@ -11,6 +11,26 @@ namespace PokepayPartnerCsharpSdk.Request
     public class UpdateCoupon
     {
         private string CouponId { get; set; }
+#if NETFRAMEWORK
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int DiscountAmount { get; set; }
+        public double DiscountPercentage { get; set; }
+        public int DiscountUpperLimit { get; set; }
+        public string StartsAt { get; set; }
+        public string EndsAt { get; set; }
+        public string DisplayStartsAt { get; set; }
+        public string DisplayEndsAt { get; set; }
+        public bool IsDisabled { get; set; }
+        public bool IsHidden { get; set; }
+        public bool IsPublic { get; set; }
+        public string Code { get; set; }
+        public int UsageLimit { get; set; }
+        public int MinAmount { get; set; }
+        public bool IsShopSpecified { get; set; }
+        public string[] AvailableShopIds { get; set; }
+        public string StorageId { get; set; }
+#else
         #nullable enable
         public string? Name { get; set; }
         #nullable enable
@@ -47,6 +67,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string[]? AvailableShopIds { get; set; }
         #nullable enable
         public string? StorageId { get; set; }
+#endif
 
         public UpdateCoupon(string couponId) =>
             (CouponId) = (couponId);
@@ -55,10 +76,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("PATCH");
 
-        #nullable enable
-        public async Task<CouponDetail?> Send(Client client) {
-            string res = await client.Send(path, UpdateCoupon.method, this);
-            return JsonSerializer.Deserialize<CouponDetail>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<CouponDetail> Send(Client client) {
+                string res = await client.Send(path, UpdateCoupon.method, this);
+                return JsonSerializer.Deserialize<CouponDetail>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<CouponDetail?> Send(Client client) {
+                string res = await client.Send(path, UpdateCoupon.method, this);
+                return JsonSerializer.Deserialize<CouponDetail>(res, client.JsonOptions);
+        }
+#endif
     }
 }

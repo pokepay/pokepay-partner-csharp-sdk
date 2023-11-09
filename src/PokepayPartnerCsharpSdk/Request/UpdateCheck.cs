@@ -11,6 +11,18 @@ namespace PokepayPartnerCsharpSdk.Request
     public class UpdateCheck
     {
         private string CheckId { get; set; }
+#if NETFRAMEWORK
+        public double MoneyAmount { get; set; }
+        public double PointAmount { get; set; }
+        public string Description { get; set; }
+        public bool IsOnetime { get; set; }
+        public int UsageLimit { get; set; }
+        public string ExpiresAt { get; set; }
+        public string PointExpiresAt { get; set; }
+        public int PointExpiresInDays { get; set; }
+        public string BearPointAccount { get; set; }
+        public bool IsDisabled { get; set; }
+#else
         #nullable enable
         public double? MoneyAmount { get; set; }
         #nullable enable
@@ -31,6 +43,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? BearPointAccount { get; set; }
         #nullable enable
         public bool? IsDisabled { get; set; }
+#endif
 
         public UpdateCheck(string checkId) =>
             (CheckId) = (checkId);
@@ -39,10 +52,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("PATCH");
 
-        #nullable enable
-        public async Task<Check?> Send(Client client) {
-            string res = await client.Send(path, UpdateCheck.method, this);
-            return JsonSerializer.Deserialize<Check>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<Check> Send(Client client) {
+                string res = await client.Send(path, UpdateCheck.method, this);
+                return JsonSerializer.Deserialize<Check>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<Check?> Send(Client client) {
+                string res = await client.Send(path, UpdateCheck.method, this);
+                return JsonSerializer.Deserialize<Check>(res, client.JsonOptions);
+        }
+#endif
     }
 }

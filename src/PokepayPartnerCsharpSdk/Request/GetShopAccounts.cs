@@ -10,6 +10,14 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class GetShopAccounts
     {
+#if NETFRAMEWORK
+        public string PrivateMoneyId { get; set; }
+        public int Page { get; set; }
+        public int PerPage { get; set; }
+        public string CreatedAtFrom { get; set; }
+        public string CreatedAtTo { get; set; }
+        public bool IsSuspended { get; set; }
+#else
         public string PrivateMoneyId { get; set; }
         #nullable enable
         public int? Page { get; set; }
@@ -21,6 +29,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? CreatedAtTo { get; set; }
         #nullable enable
         public bool? IsSuspended { get; set; }
+#endif
 
         public GetShopAccounts(string privateMoneyId) =>
             (PrivateMoneyId) = (privateMoneyId);
@@ -29,10 +38,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<PaginatedAccountWithUsers?> Send(Client client) {
-            string res = await client.Send(path, GetShopAccounts.method, this);
-            return JsonSerializer.Deserialize<PaginatedAccountWithUsers>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<PaginatedAccountWithUsers> Send(Client client) {
+                string res = await client.Send(path, GetShopAccounts.method, this);
+                return JsonSerializer.Deserialize<PaginatedAccountWithUsers>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<PaginatedAccountWithUsers?> Send(Client client) {
+                string res = await client.Send(path, GetShopAccounts.method, this);
+                return JsonSerializer.Deserialize<PaginatedAccountWithUsers>(res, client.JsonOptions);
+        }
+#endif
     }
 }

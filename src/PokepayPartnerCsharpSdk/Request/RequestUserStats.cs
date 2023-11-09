@@ -10,8 +10,13 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class RequestUserStats
     {
+#if NETFRAMEWORK
         public string From { get; set; }
         public string To { get; set; }
+#else
+        public string From { get; set; }
+        public string To { get; set; }
+#endif
 
         public RequestUserStats(string from, string to) =>
             (From, To) = (from, to);
@@ -20,10 +25,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<UserStatsOperation?> Send(Client client) {
-            string res = await client.Send(path, RequestUserStats.method, this);
-            return JsonSerializer.Deserialize<UserStatsOperation>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<UserStatsOperation> Send(Client client) {
+                string res = await client.Send(path, RequestUserStats.method, this);
+                return JsonSerializer.Deserialize<UserStatsOperation>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<UserStatsOperation?> Send(Client client) {
+                string res = await client.Send(path, RequestUserStats.method, this);
+                return JsonSerializer.Deserialize<UserStatsOperation>(res, client.JsonOptions);
+        }
+#endif
     }
 }

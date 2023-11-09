@@ -9,7 +9,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string Value { get; }
 
         [JsonConstructor]
-        public Pong(string pong) =>
-            (Value) = (pong);
+        public Pong(string value) =>
+            (Value) = (value);
     }
 }

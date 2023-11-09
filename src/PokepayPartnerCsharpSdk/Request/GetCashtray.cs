@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetCashtray
     {
         private string CashtrayId { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public GetCashtray(string cashtrayId) =>
             (CashtrayId) = (cashtrayId);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<CashtrayWithResult?> Send(Client client) {
-            string res = await client.Send(path, GetCashtray.method, this);
-            return JsonSerializer.Deserialize<CashtrayWithResult>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<CashtrayWithResult> Send(Client client) {
+                string res = await client.Send(path, GetCashtray.method, this);
+                return JsonSerializer.Deserialize<CashtrayWithResult>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<CashtrayWithResult?> Send(Client client) {
+                string res = await client.Send(path, GetCashtray.method, this);
+                return JsonSerializer.Deserialize<CashtrayWithResult>(res, client.JsonOptions);
+        }
+#endif
     }
 }

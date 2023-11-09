@@ -10,6 +10,12 @@ namespace PokepayPartnerCsharpSdk.Request
 {
     public class CreateCustomerAccount
     {
+#if NETFRAMEWORK
+        public string PrivateMoneyId { get; set; }
+        public string UserName { get; set; }
+        public string AccountName { get; set; }
+        public string ExternalId { get; set; }
+#else
         public string PrivateMoneyId { get; set; }
         #nullable enable
         public string? UserName { get; set; }
@@ -17,6 +23,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? AccountName { get; set; }
         #nullable enable
         public string? ExternalId { get; set; }
+#endif
 
         public CreateCustomerAccount(string privateMoneyId) =>
             (PrivateMoneyId) = (privateMoneyId);
@@ -25,10 +32,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("POST");
 
-        #nullable enable
-        public async Task<AccountWithUser?> Send(Client client) {
-            string res = await client.Send(path, CreateCustomerAccount.method, this);
-            return JsonSerializer.Deserialize<AccountWithUser>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<AccountWithUser> Send(Client client) {
+                string res = await client.Send(path, CreateCustomerAccount.method, this);
+                return JsonSerializer.Deserialize<AccountWithUser>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<AccountWithUser?> Send(Client client) {
+                string res = await client.Send(path, CreateCustomerAccount.method, this);
+                return JsonSerializer.Deserialize<AccountWithUser>(res, client.JsonOptions);
+        }
+#endif
     }
 }

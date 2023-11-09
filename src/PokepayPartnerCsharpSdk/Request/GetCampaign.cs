@@ -11,6 +11,9 @@ namespace PokepayPartnerCsharpSdk.Request
     public class GetCampaign
     {
         private string CampaignId { get; set; }
+#if NETFRAMEWORK
+#else
+#endif
 
         public GetCampaign(string campaignId) =>
             (CampaignId) = (campaignId);
@@ -19,10 +22,17 @@ namespace PokepayPartnerCsharpSdk.Request
 
         private static readonly HttpMethod method = new HttpMethod("GET");
 
-        #nullable enable
-        public async Task<Campaign?> Send(Client client) {
-            string res = await client.Send(path, GetCampaign.method, this);
-            return JsonSerializer.Deserialize<Campaign>(res, client.JsonOptions);
+#if NETFRAMEWORK
+        public async Task<Campaign> Send(Client client) {
+                string res = await client.Send(path, GetCampaign.method, this);
+                return JsonSerializer.Deserialize<Campaign>(res, client.JsonOptions);
         }
+#else
+#nullable enable
+        public async Task<Campaign?> Send(Client client) {
+                string res = await client.Send(path, GetCampaign.method, this);
+                return JsonSerializer.Deserialize<Campaign>(res, client.JsonOptions);
+        }
+#endif
     }
 }
