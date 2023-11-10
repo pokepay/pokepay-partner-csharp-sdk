@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "b3ee081f-6bc5-4fe7-a68a-836029533db3"
+                    "104f5f27-c420-4652-a69d-1c4b80fbe607"
                 );
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "b3ee081f-6bc5-4fe7-a68a-836029533db3"
+                    "104f5f27-c420-4652-a69d-1c4b80fbe607"
                 ) {
-                    Task = "process_user_stats_operation",
+                    Task = "bulk_shops",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "b3ee081f-6bc5-4fe7-a68a-836029533db3"
+                    "104f5f27-c420-4652-a69d-1c4b80fbe607"
                 ) {
-                    IsActive = false,
+                    IsActive = true,
                     Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "b3ee081f-6bc5-4fe7-a68a-836029533db3"
+                    "104f5f27-c420-4652-a69d-1c4b80fbe607"
                 ) {
-                    Url = "GlsZaVSpj",
-                    IsActive = false,
+                    Url = "XjTLwIIt8",
+                    IsActive = true,
                     Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);

@@ -5,7 +5,7 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class CpmToken
     {
-        [JsonPropertyName("Token")]
+        [JsonPropertyName("cpm_token")]
         public string Token { get; }
         public AccountDetail Account { get; }
         public Transaction Transaction { get; }
