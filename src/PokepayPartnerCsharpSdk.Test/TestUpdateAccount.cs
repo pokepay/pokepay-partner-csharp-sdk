@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "088449f4-c8a0-4ccc-a1e7-ecb935d657e1"
+                    "f8c1e24d-a650-4890-8f03-8221ff533a92"
                 );
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "088449f4-c8a0-4ccc-a1e7-ecb935d657e1"
+                    "f8c1e24d-a650-4890-8f03-8221ff533a92"
                 ) {
                     CanTransferTopup = true,
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "088449f4-c8a0-4ccc-a1e7-ecb935d657e1"
+                    "f8c1e24d-a650-4890-8f03-8221ff533a92"
                 ) {
-                    Status = "active",
+                    Status = "suspended",
                     CanTransferTopup = true,
                 };
                 Response.AccountDetail response = await request.Send(client);
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "088449f4-c8a0-4ccc-a1e7-ecb935d657e1"
+                    "f8c1e24d-a650-4890-8f03-8221ff533a92"
                 ) {
-                    IsSuspended = true,
+                    IsSuspended = false,
                     Status = "pre-closed",
-                    CanTransferTopup = true,
+                    CanTransferTopup = false,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

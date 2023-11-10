@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "0725cbd1-4ffc-4b88-874c-fd90cfa80b30"
+                    "737a50e4-8fc4-4db7-b152-6641053507ca"
                 );
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "0725cbd1-4ffc-4b88-874c-fd90cfa80b30"
+                    "737a50e4-8fc4-4db7-b152-6641053507ca"
                 ) {
-                    IsDisabled = false,
+                    IsDisabled = true,
                 };
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "0725cbd1-4ffc-4b88-874c-fd90cfa80b30"
+                    "737a50e4-8fc4-4db7-b152-6641053507ca"
                 ) {
-                    Description = "M3EaCDd87kJG01a7GOWj7LV4v5yotPxhlRj2vkjikjfOo5Zy9zD8cfycxdjXF6cmwiKvevzAx7",
+                    Description = "W9q153vudYi4m2syPgLfFKjEuU2w5croiWKi8dIDhi22xX20xTj7qtTESJJBCduLchuQgBaflsDDsUqSL5uLbrLD0SRvy6EASalP1b80euyUwMoKB7L3S5BjMd4",
                     IsDisabled = false,
                 };
                 Response.Bill response = await request.Send(client);
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "0725cbd1-4ffc-4b88-874c-fd90cfa80b30"
+                    "737a50e4-8fc4-4db7-b152-6641053507ca"
                 ) {
-                    Amount = 7102.0,
-                    Description = "rHin0MHYFpvhqZUg2yG4Wo0L4evFZLjpsodOQD43fZ5T5bk20dIuBp2e25agSXyEGickpeze5Yn7vyzhltNB5edjt157",
+                    Amount = 9932.0,
+                    Description = "hu7MAitjVnoyOix3yWfnOEZQbs4Gf0yYu3n7",
                     IsDisabled = false,
                 };
                 Response.Bill response = await request.Send(client);

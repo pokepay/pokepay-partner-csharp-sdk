@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 );
                 Response.Check response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
                     IsDisabled = true,
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
-                    BearPointAccount = "a23c33a8-1969-48df-85ca-b906e5710bb9",
+                    BearPointAccount = "951ffc41-4ec2-45ed-bed2-803aa127b989",
                     IsDisabled = false,
                 };
                 Response.Check response = await request.Send(client);
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
-                    PointExpiresInDays = 4295,
-                    BearPointAccount = "eb6b6d37-9497-4220-8696-2ef3afc82730",
+                    PointExpiresInDays = 9659,
+                    BearPointAccount = "888a8ed3-1739-4bde-8d51-006abb997ef8",
                     IsDisabled = false,
                 };
                 Response.Check response = await request.Send(client);
@@ -94,11 +94,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
-                    PointExpiresAt = "2018-01-01T07:31:27.000000+09:00",
-                    PointExpiresInDays = 6021,
-                    BearPointAccount = "dcabfcb2-3d44-4298-9bb0-0937d70b1e5a",
+                    PointExpiresAt = "2020-03-24T13:25:31.000000+09:00",
+                    PointExpiresInDays = 8643,
+                    BearPointAccount = "a91b2670-3b25-48fe-ac86-6904a43eea5a",
                     IsDisabled = true,
                 };
                 Response.Check response = await request.Send(client);
@@ -114,12 +114,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
-                    ExpiresAt = "2024-07-04T13:55:14.000000+09:00",
-                    PointExpiresAt = "2016-08-13T08:47:22.000000+09:00",
-                    PointExpiresInDays = 2048,
-                    BearPointAccount = "9d87f50d-c6ca-4c79-ba13-a3b6555a6a35",
+                    ExpiresAt = "2021-01-01T06:27:23.000000+09:00",
+                    PointExpiresAt = "2023-06-21T08:19:01.000000+09:00",
+                    PointExpiresInDays = 1275,
+                    BearPointAccount = "9602ab92-2722-4b1b-b852-d67b227808f0",
                     IsDisabled = true,
                 };
                 Response.Check response = await request.Send(client);
@@ -135,14 +135,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
-                    UsageLimit = 3496,
-                    ExpiresAt = "2025-07-27T03:24:19.000000+09:00",
-                    PointExpiresAt = "2025-01-11T00:21:10.000000+09:00",
-                    PointExpiresInDays = 8069,
-                    BearPointAccount = "f46a5cac-4faa-4055-aa40-fdb0b9ef55ea",
-                    IsDisabled = false,
+                    UsageLimit = 2561,
+                    ExpiresAt = "2017-01-20T18:42:14.000000+09:00",
+                    PointExpiresAt = "2016-12-04T08:41:38.000000+09:00",
+                    PointExpiresInDays = 6390,
+                    BearPointAccount = "a2fa3c99-c70a-49fe-b2e1-33a6e885c09f",
+                    IsDisabled = true,
                 };
                 Response.Check response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -157,14 +157,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
                     IsOnetime = false,
-                    UsageLimit = 3699,
-                    ExpiresAt = "2016-09-14T07:20:31.000000+09:00",
-                    PointExpiresAt = "2021-02-04T00:11:30.000000+09:00",
-                    PointExpiresInDays = 3479,
-                    BearPointAccount = "020671da-6f5c-4134-810e-7be3bb7c5257",
+                    UsageLimit = 5787,
+                    ExpiresAt = "2019-11-19T02:03:04.000000+09:00",
+                    PointExpiresAt = "2022-11-25T12:27:20.000000+09:00",
+                    PointExpiresInDays = 9470,
+                    BearPointAccount = "b0264efd-cbed-496b-97bf-bcf56837a24e",
                     IsDisabled = false,
                 };
                 Response.Check response = await request.Send(client);
@@ -180,15 +180,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
-                    Description = "R3UtPkG2eq1I6SZr9Xo8DUROCVDxPSk72x92MmliF75MFhbZKuKGU7dTPisUgKnCVzFujd5tp1lylHobnm6HycWppeOG5c4bSqVBGp3Ank6BTTvgxHzzgdLIxgPMdYrCUsTg7mFBD5JyTl3OSbQF6o9LFFmkiVCdqahnfY1HR9DfMzD3LCASqee9bY3sHOGNF3Mai4",
+                    Description = "aLwUUyVVbHq8AhuwfVKk7iEMjcWL7yQs1nJU1PyewdGPGGLQkETfnOPRFPmw2DY5YYX5vItwXJknvX9ztDit7rqSMOF1Xi",
                     IsOnetime = true,
-                    UsageLimit = 9325,
-                    ExpiresAt = "2016-12-15T14:45:46.000000+09:00",
-                    PointExpiresAt = "2016-04-24T22:40:17.000000+09:00",
-                    PointExpiresInDays = 8619,
-                    BearPointAccount = "d720cd8a-debd-4b9b-a6a6-0852691f704e",
+                    UsageLimit = 8531,
+                    ExpiresAt = "2024-02-19T22:18:23.000000+09:00",
+                    PointExpiresAt = "2021-12-23T14:57:20.000000+09:00",
+                    PointExpiresInDays = 3407,
+                    BearPointAccount = "4cdb3069-92f6-469e-9b78-7c12622fb70d",
                     IsDisabled = true,
                 };
                 Response.Check response = await request.Send(client);
@@ -204,16 +204,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
-                    PointAmount = 6849.0,
-                    Description = "CH56gnyuHFpFsNPJmzuH1GHYOOmiUvKwyiQYSSoPK3N5ZGrmU0unMptspEioBBqGcJLaXcepDTPRHElLNQrvWUnk17KWAioiFIGH7shpxz5S2r82nr4C",
-                    IsOnetime = true,
-                    UsageLimit = 8254,
-                    ExpiresAt = "2020-05-26T15:27:23.000000+09:00",
-                    PointExpiresAt = "2017-12-30T02:59:21.000000+09:00",
-                    PointExpiresInDays = 3236,
-                    BearPointAccount = "bff26f3d-deb2-4444-b33c-f6c3d2a78b36",
+                    PointAmount = 7515.0,
+                    Description = "KHrpQVXimNDBgfumK7PX05fO2lhyaleThkb3qWNVbyAdEQQZ2y2SQFb80Wa8l6dKHoSXGb8oeVBRmkOhsaxxZ11J2",
+                    IsOnetime = false,
+                    UsageLimit = 837,
+                    ExpiresAt = "2020-09-23T09:20:01.000000+09:00",
+                    PointExpiresAt = "2024-10-08T06:44:02.000000+09:00",
+                    PointExpiresInDays = 5304,
+                    BearPointAccount = "c9a8918a-c182-43a6-b920-0993fd72d88f",
                     IsDisabled = true,
                 };
                 Response.Check response = await request.Send(client);
@@ -229,18 +229,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCheck request = new Request.UpdateCheck(
-                    "3eb07d80-6eeb-4950-808a-86c537318415"
+                    "0db5caf8-a7fe-4987-baab-57d2837cc99b"
                 ) {
-                    MoneyAmount = 5307.0,
-                    PointAmount = 3663.0,
-                    Description = "lQ3ZCa8lZmMT5mAFAIeN7EOzXnRCcbLOsMiN4tjoxBAROpiRc0j39oPNkDTFwGmGihFz2z0gAPfWDnSv3peMsqUtDBVf5JNWPBpzSQtetKx5V0IU1H2quyHwM52367FRSK6ZN3dPGJYhssMJ1c81K9V4uw",
-                    IsOnetime = false,
-                    UsageLimit = 4046,
-                    ExpiresAt = "2022-10-05T06:58:18.000000+09:00",
-                    PointExpiresAt = "2021-09-24T06:10:22.000000+09:00",
-                    PointExpiresInDays = 1562,
-                    BearPointAccount = "5bb7b48d-24ac-495c-b14b-15c7051443f5",
-                    IsDisabled = false,
+                    MoneyAmount = 1143.0,
+                    PointAmount = 672.0,
+                    Description = "W7l6btTcZqmDcnViM8U6XiZYec69U57HBUdqx801Fr",
+                    IsOnetime = true,
+                    UsageLimit = 3022,
+                    ExpiresAt = "2018-10-09T12:27:15.000000+09:00",
+                    PointExpiresAt = "2019-08-09T13:31:16.000000+09:00",
+                    PointExpiresInDays = 2686,
+                    BearPointAccount = "c82bd34e-909d-42e8-920a-929a9b8fc9cd",
+                    IsDisabled = true,
                 };
                 Response.Check response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
