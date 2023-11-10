@@ -1,9 +1,10 @@
 FRAMEWORK ?= net5.0
+CONFIGURATION ?= Debug
 run:
 	dotnet run --project src/PokepayPartnerCsharpSdk.Example/PokepayPartnerCsharpSdk.Example.csproj --framework ${FRAMEWORK}
 
 build:
-	dotnet build src/PokepayPartnerCsharpSdk/PokepayPartnerCsharpSdk.csproj --configuration Release --framework ${FRAMEWORK}
+	dotnet build src/PokepayPartnerCsharpSdk/PokepayPartnerCsharpSdk.csproj --configuration ${CONFIGURATION} --framework ${FRAMEWORK}
 
 test:
 	dotnet test -v normal src/PokepayPartnerCsharpSdk.Test/PokepayPartnerCsharpSdk.Test.csproj --framework ${FRAMEWORK}
