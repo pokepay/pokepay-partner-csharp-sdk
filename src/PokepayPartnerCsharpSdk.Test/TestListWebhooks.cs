@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListWebhooks request = new Request.ListWebhooks() {
-                    PerPage = 2449,
+                    PerPage = 9727,
                 };
                 Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -53,8 +53,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListWebhooks request = new Request.ListWebhooks() {
-                    Page = 905,
-                    PerPage = 1457,
+                    Page = 51,
+                    PerPage = 1133,
                 };
                 Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

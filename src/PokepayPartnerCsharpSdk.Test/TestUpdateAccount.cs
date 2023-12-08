@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "f8c1e24d-a650-4890-8f03-8221ff533a92"
+                    "7258f572-09ca-4705-87c3-65929d895a30"
                 );
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "f8c1e24d-a650-4890-8f03-8221ff533a92"
+                    "7258f572-09ca-4705-87c3-65929d895a30"
                 ) {
                     CanTransferTopup = true,
                 };
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "f8c1e24d-a650-4890-8f03-8221ff533a92"
+                    "7258f572-09ca-4705-87c3-65929d895a30"
                 ) {
-                    Status = "suspended",
-                    CanTransferTopup = true,
+                    Status = "active",
+                    CanTransferTopup = false,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "f8c1e24d-a650-4890-8f03-8221ff533a92"
+                    "7258f572-09ca-4705-87c3-65929d895a30"
                 ) {
-                    IsSuspended = false,
+                    IsSuspended = true,
                     Status = "pre-closed",
-                    CanTransferTopup = false,
+                    CanTransferTopup = true,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

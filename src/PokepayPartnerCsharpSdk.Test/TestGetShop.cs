@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShop request = new Request.GetShop(
-                    "a6944f83-0461-44e8-9dfa-876a57bab2d4"
+                    "e12ecc60-1b85-4244-b725-ea9be0d099e0"
                 );
                 Response.ShopWithAccounts response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

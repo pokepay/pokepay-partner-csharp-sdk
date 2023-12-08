@@ -25,9 +25,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundExternalTransaction request = new Request.RefundExternalTransaction(
-                    "925e4770-568f-4ba6-8231-c0c6f3af3590"
+                    "10291337-f3f0-49f2-b464-2005f27706b2"
                 );
-                Response.ExternalTransaction response = await request.Send(client);
+                Response.ExternalTransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -40,11 +40,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundExternalTransaction request = new Request.RefundExternalTransaction(
-                    "925e4770-568f-4ba6-8231-c0c6f3af3590"
+                    "10291337-f3f0-49f2-b464-2005f27706b2"
                 ) {
-                    Description = "LFtnsTc3vli1GB5rLE3Bic9suCUWAhnp4CmhfGQoenWgWf1MCZJEJ0jGTfTSRxWXBAVSUyGigbXagmw7poj9D1sWAaZ9C2TAtu0viCAzapfgMQ5a2vLByCd94qftb0KHobduu6e2eR4hOGTZQNcspNsGI4n5nynNSGPHa",
+                    Description = "jpaf36YY6mrG9Y2ztoKUUUx5B1bSO8xEgnoe60dnWTCVmm3x115QsBZT6dCGgqZsePkl6iY0bdXM6Nza2rTctUJQmh0gNd3qkWY4lVW5zCUF3zWzIdrHm6OsiyHBxsWBtx4G7cLV",
                 };
-                Response.ExternalTransaction response = await request.Send(client);
+                Response.ExternalTransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
