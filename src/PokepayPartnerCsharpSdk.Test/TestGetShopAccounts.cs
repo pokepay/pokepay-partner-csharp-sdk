@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "607d3694-14de-437d-ae06-44aa2525fc2d"
+                    "d69cd625-3627-410f-b180-c02c0149ea34"
                 );
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "607d3694-14de-437d-ae06-44aa2525fc2d"
+                    "d69cd625-3627-410f-b180-c02c0149ea34"
                 ) {
                     IsSuspended = false,
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "607d3694-14de-437d-ae06-44aa2525fc2d"
+                    "d69cd625-3627-410f-b180-c02c0149ea34"
                 ) {
-                    CreatedAtTo = "2018-12-03T03:58:01.000000+09:00",
+                    CreatedAtTo = "2019-02-16T09:15:16.000000+09:00",
                     IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "607d3694-14de-437d-ae06-44aa2525fc2d"
+                    "d69cd625-3627-410f-b180-c02c0149ea34"
                 ) {
-                    CreatedAtFrom = "2022-06-16T19:31:41.000000+09:00",
-                    CreatedAtTo = "2022-03-08T07:15:25.000000+09:00",
-                    IsSuspended = true,
+                    CreatedAtFrom = "2016-09-07T15:07:29.000000+09:00",
+                    CreatedAtTo = "2024-06-09T09:09:34.000000+09:00",
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "607d3694-14de-437d-ae06-44aa2525fc2d"
+                    "d69cd625-3627-410f-b180-c02c0149ea34"
                 ) {
-                    PerPage = 542,
-                    CreatedAtFrom = "2024-06-14T10:20:34.000000+09:00",
-                    CreatedAtTo = "2017-06-01T23:31:52.000000+09:00",
-                    IsSuspended = true,
+                    PerPage = 2470,
+                    CreatedAtFrom = "2023-09-03T21:40:52.000000+09:00",
+                    CreatedAtTo = "2018-02-26T14:34:24.000000+09:00",
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,12 +114,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "607d3694-14de-437d-ae06-44aa2525fc2d"
+                    "d69cd625-3627-410f-b180-c02c0149ea34"
                 ) {
-                    Page = 8338,
-                    PerPage = 3628,
-                    CreatedAtFrom = "2025-02-24T23:27:25.000000+09:00",
-                    CreatedAtTo = "2024-08-30T05:12:40.000000+09:00",
+                    Page = 469,
+                    PerPage = 9926,
+                    CreatedAtFrom = "2017-05-09T22:16:31.000000+09:00",
+                    CreatedAtTo = "2019-06-21T03:04:39.000000+09:00",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);

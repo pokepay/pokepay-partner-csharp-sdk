@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "104f5f27-c420-4652-a69d-1c4b80fbe607"
+                    "7ae9614c-8c80-47d2-a7bc-e3a39130aeb5"
                 );
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "104f5f27-c420-4652-a69d-1c4b80fbe607"
+                    "7ae9614c-8c80-47d2-a7bc-e3a39130aeb5"
                 ) {
                     Task = "bulk_shops",
                 };
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "104f5f27-c420-4652-a69d-1c4b80fbe607"
+                    "7ae9614c-8c80-47d2-a7bc-e3a39130aeb5"
                 ) {
                     IsActive = true,
-                    Task = "process_user_stats_operation",
+                    Task = "bulk_shops",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "104f5f27-c420-4652-a69d-1c4b80fbe607"
+                    "7ae9614c-8c80-47d2-a7bc-e3a39130aeb5"
                 ) {
-                    Url = "XjTLwIIt8",
-                    IsActive = true,
+                    Url = "sTWRshd",
+                    IsActive = false,
                     Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);

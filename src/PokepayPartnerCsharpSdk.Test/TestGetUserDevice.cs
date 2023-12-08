@@ -10,7 +10,7 @@ using PokepayPartnerCsharpSdk;
 
 namespace PokepayPartnerCsharpSdk.Test
 {
-    public class TestDeleteWebhook
+    public class TestGetUserDevice
     {
         private Client client;
 
@@ -21,13 +21,13 @@ namespace PokepayPartnerCsharpSdk.Test
         }
 
         [Test]
-        public async Task DeleteWebhook0()
+        public async Task GetUserDevice0()
         {
             try {
-                Request.DeleteWebhook request = new Request.DeleteWebhook(
-                    "8667a5bc-0e64-4cbe-acf7-db89e2f093d2"
+                Request.GetUserDevice request = new Request.GetUserDevice(
+                    "699615db-243d-4ea1-a8bd-fa1ecea74574"
                 );
-                Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
+                Response.UserDevice response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");

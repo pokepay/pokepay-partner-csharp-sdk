@@ -26,15 +26,15 @@ namespace PokepayPartnerCsharpSdk.Request
         private static readonly HttpMethod method = new HttpMethod("POST");
 
 #if NETFRAMEWORK
-        public async Task<ExternalTransaction> Send(Client client) {
+        public async Task<ExternalTransactionDetail> Send(Client client) {
                 string res = await client.Send(path, RefundExternalTransaction.method, this);
-                return JsonSerializer.Deserialize<ExternalTransaction>(res, client.JsonOptions);
+                return JsonSerializer.Deserialize<ExternalTransactionDetail>(res, client.JsonOptions);
         }
 #else
 #nullable enable
-        public async Task<ExternalTransaction?> Send(Client client) {
+        public async Task<ExternalTransactionDetail?> Send(Client client) {
                 string res = await client.Send(path, RefundExternalTransaction.method, this);
-                return JsonSerializer.Deserialize<ExternalTransaction>(res, client.JsonOptions);
+                return JsonSerializer.Deserialize<ExternalTransactionDetail>(res, client.JsonOptions);
         }
 #endif
     }

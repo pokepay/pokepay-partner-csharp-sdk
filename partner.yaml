@@ -48,6 +48,11 @@ tags:
     description: |
       Couponは支払い時に指定し、支払い処理の前にCouponに指定の方法で値引き処理を行います。
       Couponは特定店舗で利用できるものや利用可能期間、配信条件などを設定できます。
+  - name: UserDevice
+    description: |
+      UserDeviceはユーザー毎のデバイスを管理します。
+      あるユーザーが使っている端末を区別する必要がある場合に用いられます。
+      これが必要な理由はBank Payを用いたチャージを行う場合は端末を区別できることが要件としてあるためです。
 
 components:
   schemas:
@@ -965,6 +970,47 @@ components:
         description:
           type: string
           title: 取引説明文
+    ExternalTransactionDetail:
+      x-pokepay-schema-type: "response"
+      properties:
+        id:
+          type: string
+          format: uuid
+          title: ポケペイ外部取引ID
+        is_modified:
+          type: boolean
+          title: 返金された取引かどうか
+        sender:
+          $ref: '#/components/schemas/User'
+          title: 送金者情報
+        sender_account:
+          $ref: '#/components/schemas/Account'
+          title: 送金ウォレット情報
+        receiver:
+          $ref: '#/components/schemas/User'
+          title: 受取者情報
+        receiver_account:
+          $ref: '#/components/schemas/Account'
+          title: 受取ウォレット情報
+        amount:
+          type: number
+          title: 決済額
+        done_at:
+          type: string
+          format: date-time
+          title: 取引日時
+        description:
+          type: string
+          title: 取引説明文
+        transaction:
+          $ref: '#/components/schemas/TransactionDetail'
+          nullable: true
+          title: 関連ポケペイ取引詳細
+          description: |
+            ポケペイ外取引と連動して作られたポケペイ取引の取引詳細です。
+            例えば、キャンペーンによるポイント付与取引やキャンセル状況などの情報が含まれます。
+            ポケペイ取引が存在しない場合はnullが設定されます。
+
     Product:
       x-pokepay-schema-type: "response"
       properties:
@@ -1094,6 +1140,21 @@ components:
           title: '集計リクエストを行った時刻'
           type: string
           format: date-time
+
+    UserDevice:
+      x-pokepay-schema-type: "response"
+      properties:
+        id:
+          type: string
+          format: uuid
+          title: 'デバイスID'
+        user:
+          $ref: '#/components/schemas/User'
+          title: 'デバイスを使用するユーザ'
+        metadata:
+          type: string
+          format: json
+          title: 'デバイスのメタデータ'
 
     PaginatedTransaction:
       x-pokepay-schema-type: "response"
@@ -4465,7 +4526,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ExternalTransaction'
+                $ref: '#/components/schemas/ExternalTransactionDetail'
         '400':
           $ref: '#/components/responses/BadRequest'
         '403':
@@ -4511,7 +4572,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ExternalTransaction'
+                $ref: '#/components/schemas/ExternalTransactionDetail'
         '403':
           $ref: '#/components/responses/Forbidden'
         '422':
@@ -7346,6 +7407,7 @@ paths:
           application/json:
             schema:
               required: ["from", "to"]
+              x-pokepay-conditional-parameters: {<: [from, to]}
               properties:
                 from:
                   title: '集計期間の開始時刻'
@@ -7537,6 +7599,78 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+  /user-devices:
+    post:
+      x-pokepay-operator-name: "CreateUserDevice"
+      x-pokepay-allow-server-side: true
+      tags:
+        - UserDevice
+      summary: ユーザーのデバイス登録
+      description: ユーザーのデバイスを新規に登録します
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required: [user_id]
+              properties:
+                user_id:
+                  type: string
+                  format: uuid
+                  title: 'ユーザーID'
+                metadata:
+                  type: string
+                  format: json
+                  title: ユーザーデバイスのメタデータ
+                  description: |
+                    ユーザーのデバイス用の情報をメタデータを保持するために用います。
+                    例: 端末の固有情報やブラウザのUser-Agent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDevice'
+        '403':
+          $ref: '#/components/responses/UnpermittedAdminUser'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+
+  /user-devices/{user_device_id}:
+    get:
+      x-pokepay-operator-name: "GetUserDevice"
+      x-pokepay-allow-server-side: true
+      tags:
+        - UserDevice
+      summary: ユーザーのデバイスを取得
+      description: ユーザーのデバイスの情報を取得します
+      parameters:
+        - in: path
+          name: user_device_id
+          required: true
+          schema:
+            type: string
+            format: uuid
+            title: ユーザーデバイスID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDevice'
+        '400':
+          $ref: '#/components/responses/InvalidParameters'
+        '403':
+          $ref: '#/components/responses/UnpermittedAdminUser'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+
   /coupons:
     get:
       x-pokepay-operator-name: "ListCoupons"
@@ -7632,7 +7766,9 @@ paths:
           application/json:
             schema:
               required: ["private_money_id", "name", "starts_at", "ends_at", "issued_shop_id"]
-              x-pokepay-conditional-parameters: {or: [discount_amount, discount_percentage]}
+              x-pokepay-conditional-parameters:
+                xor: [discount_amount, discount_percentage]
+                xnor: [is_shop_specified, available_shop_ids]
               properties:
                 private_money_id:
                   type: string

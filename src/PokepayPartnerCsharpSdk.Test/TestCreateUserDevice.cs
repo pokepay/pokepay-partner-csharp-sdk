@@ -10,7 +10,7 @@ using PokepayPartnerCsharpSdk;
 
 namespace PokepayPartnerCsharpSdk.Test
 {
-    public class TestDeleteAccount
+    public class TestCreateUserDevice
     {
         private Client client;
 
@@ -21,13 +21,13 @@ namespace PokepayPartnerCsharpSdk.Test
         }
 
         [Test]
-        public async Task DeleteAccount0()
+        public async Task CreateUserDevice0()
         {
             try {
-                Request.DeleteAccount request = new Request.DeleteAccount(
-                    "37e2e7ea-fab8-4154-a81c-afd3740b2a42"
+                Request.CreateUserDevice request = new Request.CreateUserDevice(
+                    "cc87dd35-c107-49bf-8998-988ab03d913e"
                 );
-                Response.AccountDeleted response = await request.Send(client);
+                Response.UserDevice response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -36,15 +36,15 @@ namespace PokepayPartnerCsharpSdk.Test
         }
 
         [Test]
-        public async Task DeleteAccount1()
+        public async Task CreateUserDevice1()
         {
             try {
-                Request.DeleteAccount request = new Request.DeleteAccount(
-                    "37e2e7ea-fab8-4154-a81c-afd3740b2a42"
+                Request.CreateUserDevice request = new Request.CreateUserDevice(
+                    "cc87dd35-c107-49bf-8998-988ab03d913e"
                 ) {
-                    Cashback = true,
+                    Metadata = "zLVIyr3tV",
                 };
-                Response.AccountDeleted response = await request.Send(client);
+                Response.UserDevice response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");

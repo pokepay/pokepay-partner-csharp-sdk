@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "f7cd9220-e7fc-4b2b-9e1c-c370596ec833"
+                    "9100076f-67d0-4dc9-87b5-a5ced7d6c5bf"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "f7cd9220-e7fc-4b2b-9e1c-c370596ec833"
+                    "9100076f-67d0-4dc9-87b5-a5ced7d6c5bf"
                 ) {
-                    ReturningPointExpiresAt = "2016-03-20T20:29:17.000000+09:00",
+                    ReturningPointExpiresAt = "2018-09-05T19:46:12.000000+09:00",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "f7cd9220-e7fc-4b2b-9e1c-c370596ec833"
+                    "9100076f-67d0-4dc9-87b5-a5ced7d6c5bf"
                 ) {
-                    Description = "0EwmiwnDqaTm7Ttair2CeybDHw",
-                    ReturningPointExpiresAt = "2021-01-02T00:35:56.000000+09:00",
+                    Description = "MU7rfLf6FhpORYw57l88LjJn33RIRSOmlXSQfzzTwn3Dxt4Xew7YzDaZ1J9OdsQM2IVUV93tsgTE0JEew3ek7732woVpaWAn4e207OnXy1NWRJfp7ZK3WimQaowti0F0S2aIOKkN5iwpVUwFU1amkd1FBZBysFgH8TiyAaF4dUSAbqyi68iyJ302sQl233vCfto",
+                    ReturningPointExpiresAt = "2024-06-12T00:56:29.000000+09:00",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
