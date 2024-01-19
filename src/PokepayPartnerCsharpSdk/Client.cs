@@ -155,7 +155,7 @@ namespace PokepayPartnerCsharpSdk
             HttpRequestMessage request = new HttpRequestMessage {
                 Method = path.Equals("/ping") ? HttpMethod.Get : HttpMethod.Post, // pingの場合はサーバー側でbodyのrequest_methodを無視するのでGETを指定する必要がある
                 RequestUri = new Uri(BaseUrl + path),
-                Content = new StringContent(sendBodyString, System.Text.Encoding.UTF8, "application/json"),
+                Content = path.Equals("/ping") ? null : new StringContent(sendBodyString, System.Text.Encoding.UTF8, "application/json"),
             };
 
             HttpResponseMessage response = await HttpClient.SendAsync(request);
