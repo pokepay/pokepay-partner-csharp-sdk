@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetTransactionByRequestId request = new Request.GetTransactionByRequestId(
-                    "1a9e5f17-2af4-4322-b9a8-a36d20dbb401"
+                    "3d1365c2-450a-467c-97f4-64de221ba929"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

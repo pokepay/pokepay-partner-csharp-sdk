@@ -15,6 +15,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public bool IsOnetime { get; }
         public bool IsDisabled { get; }
         public string ExpiresAt { get; }
+        public string LastUsedAt { get; }
         public PrivateMoney PrivateMoney { get; }
         public int UsageLimit { get; }
         public double UsageCount { get; }

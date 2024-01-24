@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCustomerAccount request = new Request.CreateCustomerAccount(
-                    "a7f9e724-20b6-40ff-adde-4d0d9569213a"
+                    "9ea63d41-5b13-47b0-a670-866a6022989d"
                 );
                 Response.AccountWithUser response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCustomerAccount request = new Request.CreateCustomerAccount(
-                    "a7f9e724-20b6-40ff-adde-4d0d9569213a"
+                    "9ea63d41-5b13-47b0-a670-866a6022989d"
                 ) {
-                    ExternalId = "50n0RmhPNf1QdSFaslICN4xIeeSgc",
+                    ExternalId = "P8brtod3YnAiCIkSypj1vjJ0K",
                 };
                 Response.AccountWithUser response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCustomerAccount request = new Request.CreateCustomerAccount(
-                    "a7f9e724-20b6-40ff-adde-4d0d9569213a"
+                    "9ea63d41-5b13-47b0-a670-866a6022989d"
                 ) {
-                    AccountName = "GsS3PA5BMU547lNJdN573CatnkU3QijXWL36Ne9BIyD0VsxUMLq2pynj2i9JShHMs7dpHbhmzmDvsuxdQFF1b9FFVSxNRhY3CeG383Fyff0GWufJQM5UqG40T5H1YOyXeD7lp3hQ7iTUdtYXMwyZtYN7NcCeDXI01ioT6d",
-                    ExternalId = "59eFWe",
+                    AccountName = "aM1Fy5VoqcXXfO61KLAAfGemN8l0TLvRpH3xmXE3ArrhHwEEGbfOLKuzG2Jl4w6l1W4GblgDCw8b6zT4wcqPzys6tY38zEuu2paKTEel6f4TyPVz53GAmtaTg1dbQ90mbhRVlZX96bVjoMs9WiaW1lPQyW5DFViJE3eIa9oheZxjBXO5G8Dpfs0SnzhG6Hasusaguw",
+                    ExternalId = "eQGWL0TMIblxqDPVjZvUS",
                 };
                 Response.AccountWithUser response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCustomerAccount request = new Request.CreateCustomerAccount(
-                    "a7f9e724-20b6-40ff-adde-4d0d9569213a"
+                    "9ea63d41-5b13-47b0-a670-866a6022989d"
                 ) {
-                    UserName = "4PxHJhHM6PRObQxj3f4w",
-                    AccountName = "8El4HGgfInUuZUZacdXJKlldoDuv9TA2XHRXocL0a",
-                    ExternalId = "ENj",
+                    UserName = "gIFGA6aguVLD3txMfkxPE6SOoBQlKuVG5QrNTP0vlfxUDX6Wl0oVNzn1It5oOVkl3qQmpZL",
+                    AccountName = "cDQLvQzbNGgD4B6lj3el9pTxgxpjAYYkPXPNKCjT8YJve5Ihkxari1xQlLbZl9rorPOqw18nxUWPKI3Z6Z1SZNM5Ulbf7eFWQnn35P7G2tmZDkPKUpuuvMpP",
+                    ExternalId = "dnPWPzk0qNZPlMi8Xnz8Lo1oaP",
                 };
                 Response.AccountWithUser response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -11,7 +11,7 @@ namespace PokepayPartnerCsharpSdk.Request
     public class CreateBill
     {
 #if NETFRAMEWORK
-        public double Amount { get; set; }
+        public System.Nullable<double> Amount { get; set; }
         public string PrivateMoneyId { get; set; }
         public string ShopId { get; set; }
         public string Description { get; set; }

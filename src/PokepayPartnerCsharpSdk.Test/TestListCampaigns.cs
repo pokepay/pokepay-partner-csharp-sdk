@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "a32debf6-81d0-4e5e-a810-5d022933cf02"
+                    "96724240-1f03-413b-9ccf-d227f2a17673"
                 );
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "a32debf6-81d0-4e5e-a810-5d022933cf02"
+                    "96724240-1f03-413b-9ccf-d227f2a17673"
                 ) {
-                    PerPage = 30,
+                    PerPage = 27,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "a32debf6-81d0-4e5e-a810-5d022933cf02"
+                    "96724240-1f03-413b-9ccf-d227f2a17673"
                 ) {
-                    Page = 3919,
-                    PerPage = 28,
+                    Page = 2038,
+                    PerPage = 15,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "a32debf6-81d0-4e5e-a810-5d022933cf02"
+                    "96724240-1f03-413b-9ccf-d227f2a17673"
                 ) {
-                    AvailableTo = "2022-07-16T17:31:27.000000+09:00",
-                    Page = 8006,
-                    PerPage = 38,
+                    AvailableTo = "2023-03-13T08:00:14.000000+09:00",
+                    Page = 5958,
+                    PerPage = 41,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "a32debf6-81d0-4e5e-a810-5d022933cf02"
+                    "96724240-1f03-413b-9ccf-d227f2a17673"
                 ) {
-                    AvailableFrom = "2021-12-01T14:45:16.000000+09:00",
-                    AvailableTo = "2019-04-24T13:05:14.000000+09:00",
-                    Page = 3671,
-                    PerPage = 48,
+                    AvailableFrom = "2022-08-17T07:29:08.000000+09:00",
+                    AvailableTo = "2023-05-09T11:59:36.000000+09:00",
+                    Page = 2140,
+                    PerPage = 33,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,13 +114,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "a32debf6-81d0-4e5e-a810-5d022933cf02"
+                    "96724240-1f03-413b-9ccf-d227f2a17673"
                 ) {
-                    IsOngoing = false,
-                    AvailableFrom = "2016-02-23T16:49:52.000000+09:00",
-                    AvailableTo = "2023-02-11T03:49:02.000000+09:00",
-                    Page = 3035,
-                    PerPage = 35,
+                    IsOngoing = true,
+                    AvailableFrom = "2021-09-24T12:18:35.000000+09:00",
+                    AvailableTo = "2022-10-27T10:07:51.000000+09:00",
+                    Page = 7193,
+                    PerPage = 20,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

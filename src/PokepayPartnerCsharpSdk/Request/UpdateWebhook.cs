@@ -13,7 +13,7 @@ namespace PokepayPartnerCsharpSdk.Request
         private string WebhookId { get; set; }
 #if NETFRAMEWORK
         public string Url { get; set; }
-        public bool IsActive { get; set; }
+        public System.Nullable<bool> IsActive { get; set; }
         public string Task { get; set; }
 #else
         #nullable enable

@@ -11,8 +11,8 @@ namespace PokepayPartnerCsharpSdk.Request
     public class ListChecks
     {
 #if NETFRAMEWORK
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        public System.Nullable<int> Page { get; set; }
+        public System.Nullable<int> PerPage { get; set; }
         public string PrivateMoneyId { get; set; }
         public string OrganizationCode { get; set; }
         public string ExpiresFrom { get; set; }
@@ -21,8 +21,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string CreatedTo { get; set; }
         public string IssuerShopId { get; set; }
         public string Description { get; set; }
-        public bool IsOnetime { get; set; }
-        public bool IsDisabled { get; set; }
+        public System.Nullable<bool> IsOnetime { get; set; }
+        public System.Nullable<bool> IsDisabled { get; set; }
 #else
         #nullable enable
         public int? Page { get; set; }

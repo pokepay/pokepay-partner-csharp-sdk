@@ -21,7 +21,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string Description { get; }
 
         [JsonConstructor]
-        public Transaction(string id, string type, bool isModified, User sender, Account senderAccount, User receiver, Account receiverAccount, double amount, double moneyAmount, double pointAmount, double rawPointAmount, double campaignPointAmount, string doneAt, string description) =>
-            (Id, Type, IsModified, Sender, SenderAccount, Receiver, ReceiverAccount, Amount, MoneyAmount, PointAmount, RawPointAmount, CampaignPointAmount, DoneAt, Description) = (id, type, isModified, sender, senderAccount, receiver, receiverAccount, amount, moneyAmount, pointAmount, rawPointAmount, campaignPointAmount, doneAt, description);
+        public Transaction(string id, string type, bool isModified, User sender, Account senderAccount, User receiver, Account receiverAccount, double amount, double moneyAmount, double pointAmount, string doneAt, string description) =>
+            (Id, Type, IsModified, Sender, SenderAccount, Receiver, ReceiverAccount, Amount, MoneyAmount, PointAmount, DoneAt, Description) = (id, type, isModified, sender, senderAccount, receiver, receiverAccount, amount, moneyAmount, pointAmount, doneAt, description);
     }
 }

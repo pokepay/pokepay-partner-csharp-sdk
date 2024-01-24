@@ -12,9 +12,9 @@ namespace PokepayPartnerCsharpSdk.Request
     {
         private string AccountId { get; set; }
 #if NETFRAMEWORK
-        public bool IsSuspended { get; set; }
+        public System.Nullable<bool> IsSuspended { get; set; }
         public string Status { get; set; }
-        public bool CanTransferTopup { get; set; }
+        public System.Nullable<bool> CanTransferTopup { get; set; }
 #else
         #nullable enable
         public bool? IsSuspended { get; set; }
