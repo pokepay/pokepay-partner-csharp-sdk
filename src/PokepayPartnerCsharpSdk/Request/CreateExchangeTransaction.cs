@@ -14,21 +14,21 @@ namespace PokepayPartnerCsharpSdk.Request
         public string UserId { get; set; }
         public string SenderPrivateMoneyId { get; set; }
         public string ReceiverPrivateMoneyId { get; set; }
-        public double Amount { get; set; }
+        public int Amount { get; set; }
         public string Description { get; set; }
         public string RequestId { get; set; }
 #else
         public string UserId { get; set; }
         public string SenderPrivateMoneyId { get; set; }
         public string ReceiverPrivateMoneyId { get; set; }
-        public double Amount { get; set; }
+        public int Amount { get; set; }
         #nullable enable
         public string? Description { get; set; }
         #nullable enable
         public string? RequestId { get; set; }
 #endif
 
-        public CreateExchangeTransaction(string userId, string senderPrivateMoneyId, string receiverPrivateMoneyId, double amount) =>
+        public CreateExchangeTransaction(string userId, string senderPrivateMoneyId, string receiverPrivateMoneyId, int amount) =>
             (UserId, SenderPrivateMoneyId, ReceiverPrivateMoneyId, Amount) = (userId, senderPrivateMoneyId, receiverPrivateMoneyId, amount);
 
         private string path { get { return "/transactions" + "/exchange"; } }

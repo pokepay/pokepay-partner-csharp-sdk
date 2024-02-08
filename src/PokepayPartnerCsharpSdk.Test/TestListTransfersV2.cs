@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    To = "2018-05-11T05:19:09.000000+09:00",
+                    To = "2021-08-19T09:40:54.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -53,8 +53,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    From = "2017-07-31T16:13:57.000000+09:00",
-                    To = "2016-03-19T16:27:03.000000+09:00",
+                    From = "2021-06-29T12:37:03.000000Z",
+                    To = "2021-12-08T00:35:28.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -69,9 +69,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    Description = "M3xNEFCgQheyCbSnP7P0SqnjQ",
-                    From = "2023-11-29T02:11:22.000000+09:00",
-                    To = "2025-07-27T19:27:02.000000+09:00",
+                    Description = "yGfjAlvbOwBRftL3mTfJhTjDs9c8QNUGvnht1Uy",
+                    From = "2023-05-04T18:11:47.000000Z",
+                    To = "2021-03-13T04:02:07.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -86,10 +86,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    TransferTypes = new string[]{},
-                    Description = "aBHzjlAdXU9fbl4BElEfYJcTmiRof0lbldCRsSSTgoxqh3aCnDQum7xlHp8mSoN73gaH3XPjunt8NgffostplBJ13qPcXVXQ9E7OqefuC0zsB8aQbgel1VX",
-                    From = "2025-01-18T15:07:34.000000+09:00",
-                    To = "2021-03-22T14:00:02.000000+09:00",
+                    TransferTypes = new string[]{"exchange"},
+                    Description = "e7Rve16qe5BUa3mrtCxkktMbdZ0Ff5nebRZC0vDYNEWMfxXSVHRY4YZdsEswklf9tWgAr9KxjsUzeefEvU98BI4BdtnYVFOF5IXA6lNw66Yqs62ry4",
+                    From = "2020-06-04T08:56:37.000000Z",
+                    To = "2020-09-02T23:21:56.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -104,11 +104,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    PerPage = 37,
-                    TransferTypes = new string[]{"topup", "transfer", "exchange", "payment", "campaign", "cashback", "expire"},
-                    Description = "CGfzH0EqAidHGV4baZPNRUSJ9iQNhB3KMhlAuhO2DrrEN6v7h6DIeIXBVaS0Zi07XrJykFEWCqS7fIGsgSUetvz",
-                    From = "2020-09-09T02:03:39.000000+09:00",
-                    To = "2016-04-05T23:50:38.000000+09:00",
+                    PerPage = 297,
+                    TransferTypes = new string[]{"payment", "topup", "transfer", "exchange"},
+                    Description = "jBGi2vt3IVLujfoeXIyA6Ao821XE55hc29pv4sZBooZY5wA4Og2kdAYLVTxSOsaSs",
+                    From = "2022-06-21T00:34:38.000000Z",
+                    To = "2023-01-26T05:28:13.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -123,12 +123,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    PrevPageCursorId = "0cc5caad-c5df-42ff-a39a-abf9f061bb59",
-                    PerPage = 778,
-                    TransferTypes = new string[]{"exchange", "payment", "expire", "cashback", "campaign", "transfer"},
-                    Description = "aW8dVGclxW2nJI1LDT3BhMLUADblZz6ydgd6gveWK49xDzlQxtC3xLL1ERUl6NhqKkDSvghab5bsImY7PcHPZH7mHIXsOqC2xcKBYhL1xCfnaEpDLcNgoBzsuiKajpcQf4nuECfdVUoATZ0pZ1FEusk3svdOIWNVHFftM1EZPsd7jOCTvYgQY",
-                    From = "2017-10-20T17:12:18.000000+09:00",
-                    To = "2025-08-04T05:32:07.000000+09:00",
+                    PrevPageCursorId = "65886f64-2c16-4b5e-99fb-6b8d8458ed96",
+                    PerPage = 177,
+                    TransferTypes = new string[]{"campaign", "coupon"},
+                    Description = "UMFSIdEJMG98zC6otpSw3LnpbrPkZnNjPWO55U7DSfY3LgW5M2IvR52CgIBy3eLTys12HHDFFeqLoUtYmfM0XLYceQxhubY3",
+                    From = "2022-01-05T07:30:06.000000Z",
+                    To = "2022-09-20T11:11:38.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -143,13 +143,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    NextPageCursorId = "ffcc2619-eace-4b54-9800-845bed88840a",
-                    PrevPageCursorId = "72dca3b3-3afb-4159-9533-0a06b76c73f1",
-                    PerPage = 550,
-                    TransferTypes = new string[]{"expire", "exchange", "coupon", "campaign", "payment", "transfer"},
-                    Description = "b1wlkuiN7kKWKF",
-                    From = "2024-02-23T19:10:44.000000+09:00",
-                    To = "2017-10-30T02:54:59.000000+09:00",
+                    NextPageCursorId = "672d3cd6-b0a8-4d1c-99e8-a6e2786c5ce8",
+                    PrevPageCursorId = "d2e01834-8f52-4a8d-ac00-450c88ec6fd7",
+                    PerPage = 677,
+                    TransferTypes = new string[]{"coupon", "topup", "payment", "campaign"},
+                    Description = "Hu2gIp7HlCgxYlFZzBuHZ8tjsh68ScZg3aAMErPcV9o0TcGJkIJgRMahTjY4B83KCbssdnciBK2yKUyBp",
+                    From = "2021-12-11T01:14:52.000000Z",
+                    To = "2023-07-19T13:57:18.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -164,14 +164,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    TransactionTypes = new string[]{"payment", "expire", "exchange", "transfer", "topup"},
-                    NextPageCursorId = "cc5793a9-9740-4acc-b5cc-d7c83fb2979c",
-                    PrevPageCursorId = "1fa89fb4-6c04-4825-8548-5503cb38f593",
-                    PerPage = 666,
-                    TransferTypes = new string[]{"topup", "cashback", "expire", "campaign", "exchange", "payment", "coupon", "transfer"},
-                    Description = "ZSoJ1krFHQyhzGXerHPOPDvrwRgeSOaGF6stofVWAQmmxPEjbZK4rVxAUW7FWHk",
-                    From = "2019-11-12T16:18:05.000000+09:00",
-                    To = "2024-08-22T15:04:57.000000+09:00",
+                    TransactionTypes = new string[]{"cashback", "transfer", "topup"},
+                    NextPageCursorId = "71a10e9c-187a-4707-b33a-b446ff587ac8",
+                    PrevPageCursorId = "627187ae-eb4c-4e7b-b9d0-62683691a03d",
+                    PerPage = 496,
+                    TransferTypes = new string[]{"transfer", "exchange", "coupon", "cashback", "expire", "payment"},
+                    Description = "kH0DrThI9ndCARX9iZh",
+                    From = "2023-04-15T01:18:56.000000Z",
+                    To = "2020-06-27T04:09:49.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -186,15 +186,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    IsModified = true,
-                    TransactionTypes = new string[]{"cashback", "expire", "topup", "transfer"},
-                    NextPageCursorId = "421fe718-1a23-43bd-b946-4ea756a0a87f",
-                    PrevPageCursorId = "7df66bce-4fba-4261-99a4-e72c7eb00710",
-                    PerPage = 597,
-                    TransferTypes = new string[]{"campaign", "cashback", "transfer", "exchange", "coupon", "expire"},
-                    Description = "xMPy8uYVQrlAwBlTLDHylYVoU0Lud9b5MHdM8UnuwQ7jNoaulXZjgrVDfW2ufNp0gAs9phyFh2aSmdruAKFNN9YCEWSULZdpylXeF6qvGwUl7ATMaf3NqLOcKmTPNREiEdfOxleM",
-                    From = "2019-02-19T07:53:50.000000+09:00",
-                    To = "2020-12-07T15:19:29.000000+09:00",
+                    IsModified = false,
+                    TransactionTypes = new string[]{"payment"},
+                    NextPageCursorId = "edffb40e-1a9b-43bb-9db8-cf55d7d5c222",
+                    PrevPageCursorId = "c89b84e9-ec6a-4f1f-850f-3693c4fe4126",
+                    PerPage = 351,
+                    TransferTypes = new string[]{"expire", "cashback"},
+                    Description = "iBxXbKWYhqIQcADAJhWFwASll2hGkEzja1NmQHCUA",
+                    From = "2022-06-10T13:23:32.000000Z",
+                    To = "2022-04-23T08:03:19.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -209,16 +209,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    PrivateMoneyId = "a7ab0171-ace2-4c31-bc3a-2385a67c8119",
-                    IsModified = true,
-                    TransactionTypes = new string[]{"exchange", "expire", "cashback", "transfer", "topup", "payment"},
-                    NextPageCursorId = "a3779551-4e6f-4159-b267-b9338c890ba2",
-                    PrevPageCursorId = "cd9a9f7e-4a90-4557-8b2d-b7081e607630",
-                    PerPage = 29,
-                    TransferTypes = new string[]{"expire", "campaign", "exchange", "topup", "transfer", "payment", "cashback"},
-                    Description = "D8anN0lX3R6Ngh2OAi1BcnwfTRLJa4uoIhpR40nORwuCknsFuOeDw3ETEoYbDEhr0AwKkiQOHCQCIIRDiJ5EWSp",
-                    From = "2016-08-07T15:07:23.000000+09:00",
-                    To = "2017-04-07T08:10:39.000000+09:00",
+                    PrivateMoneyId = "e56cdcc7-1bfc-447a-bb2c-7e9111b2eb35",
+                    IsModified = false,
+                    TransactionTypes = new string[]{"topup", "expire", "transfer", "exchange", "cashback"},
+                    NextPageCursorId = "5d38423f-2fe8-46a4-b5e3-6fa2e3178dbd",
+                    PrevPageCursorId = "cc78835a-29a4-4328-a4b4-2aa7de9c2765",
+                    PerPage = 957,
+                    TransferTypes = new string[]{"topup", "expire"},
+                    Description = "0f2MmxJUnd92RrjDmsbpR1t9xme9U0GR2pRvNpULEoTr6H5p2Y5YBaOZdS1seolNILNbVpFGvZ3N4x3uvaLnbw12Ii4C82SzJJG4lODNS2Ij7U5b72UTWbjXGfzCmZ2vkYmrCrWwA7IkDmk9acr8tX9JQSHyiFoseHqYyK8GIOW0PGU45uzPdd0dJ",
+                    From = "2023-02-21T18:00:02.000000Z",
+                    To = "2020-05-02T07:51:01.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -233,17 +233,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    TransactionId = "3e79df5b-2543-493c-a3d0-166d6f2a2534",
-                    PrivateMoneyId = "df043dae-95c3-42f5-bc82-052e3f1e4bea",
-                    IsModified = true,
-                    TransactionTypes = new string[]{"expire"},
-                    NextPageCursorId = "47390fe9-c2be-4279-a1d2-fa888658b8ff",
-                    PrevPageCursorId = "1bc74e0f-49d0-4190-9f8e-9b3c23b4deba",
-                    PerPage = 867,
-                    TransferTypes = new string[]{},
-                    Description = "2CSzS35RxVGrM7sDhsRor5EZrBgBnWdBpXW3vXZAsIGmxl3OdV3odlFFoKvu4lobeulXI7c3F9nyrjjRiAP0nDGe4yWdLtrR0H47hbbDvB2dkQWYC4RWqJwsq2yT7AWpCDkyLBkYzAxe",
-                    From = "2022-06-02T20:11:33.000000+09:00",
-                    To = "2024-03-06T17:07:18.000000+09:00",
+                    TransactionId = "9c7e72ce-9e99-46ce-8094-8676f95241d5",
+                    PrivateMoneyId = "7e366dc3-7d1e-4b30-a271-44099d6dc000",
+                    IsModified = false,
+                    TransactionTypes = new string[]{"exchange"},
+                    NextPageCursorId = "16cc8c94-13f6-42df-9219-346dde3ce47e",
+                    PrevPageCursorId = "0f6eaf64-0989-4e35-80c9-d304590cdca9",
+                    PerPage = 185,
+                    TransferTypes = new string[]{"coupon", "cashback"},
+                    Description = "GpnYomE2cpD4cThkIOO2LW0e3G1sTmjjHcN57ZbAikJ2opGyr1ja3zumve771kQ7mwZnfGMQasC1yb1Dq2UL9Kx0jYk7sZRicOTg23f5GXrX6ozTzm0HG0TosxKz4jitwHtujKhwCFGwi",
+                    From = "2021-12-13T09:20:57.000000Z",
+                    To = "2022-07-11T16:53:15.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -258,18 +258,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    CustomerName = "aKowuUfekyaJIsuHhxZpopNYyv6dLAyty2EMgPVlahlWYdbEevpLkzdUFCwG4QGOnpUXmwhMFkO9ufFPOzF9Lvv7JJIkMwpNGlwPY7w3AePumXzLvyF75pQlwzsKLA3j0RsOTGgnfI7tlICoQDpnLAiZiYSVIBpBUCCSgk4gnk7sP6E17lkMgQrA88yuG2X4KRlpHewo2CgFQkdXPF4V9XHbL6z",
-                    TransactionId = "ac8402d9-d4be-42a2-9836-36fda0e2681f",
-                    PrivateMoneyId = "ae9c68f6-ac88-4403-b177-a00ea980a824",
-                    IsModified = false,
-                    TransactionTypes = new string[]{},
-                    NextPageCursorId = "54095ac5-2b5b-4850-885c-80674df51347",
-                    PrevPageCursorId = "0cf9d1ee-3d7c-4c45-a4dc-58818680db7a",
-                    PerPage = 873,
-                    TransferTypes = new string[]{"expire", "exchange", "topup"},
-                    Description = "vJwcetItJxO93cN0lVNG0lwTGLR8ci2cIIE66fhj2n6iiZ64HpvFGkJr1uo4NLstnS7EAbDgQaYkUrDsQyk3kwOisNW9XsMHBVPsrs",
-                    From = "2020-04-28T07:40:36.000000+09:00",
-                    To = "2021-05-10T11:39:15.000000+09:00",
+                    CustomerName = "v4vlRBRxfHZeKBVf4jVtecQNubIdHetIBPUrvpeN86f46tWgyM43AJZ0KTwWOYBSX4EzfsIiIDCSxoowqwobMRj4K8plKuk4zON6lsKCXAkk07Q9YuV27x2ZZwJNPJ0aXH1uRW",
+                    TransactionId = "bc1e782c-abc3-4059-ad73-53f73a4ea6df",
+                    PrivateMoneyId = "da553f85-d736-4a56-92c2-0f95e9bc6266",
+                    IsModified = true,
+                    TransactionTypes = new string[]{"topup"},
+                    NextPageCursorId = "28058465-86ae-48ef-a0d4-aca810e6a992",
+                    PrevPageCursorId = "75d6bb30-4079-4e2f-ad0f-4bb6f0b251ae",
+                    PerPage = 109,
+                    TransferTypes = new string[]{"cashback", "topup", "payment", "expire", "exchange", "campaign"},
+                    Description = "yMV89HUL5OwvTmfkSpdcLQvsJQRiuvWpRkphzntqbTr2vHF1iF0Y7dBxe8hiTzwkLtzBfAa7kaQm6vUL",
+                    From = "2020-04-15T05:25:39.000000Z",
+                    To = "2023-08-01T18:44:38.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -284,19 +284,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    CustomerId = "94842fa3-bd3d-4cee-8cc7-f3bac2e3b387",
-                    CustomerName = "RYzu4noxPXNWpdUvBBp2JsuVIINCRpxja7me48LNXqpqJtjZwJILsuUBm8J0tu2v6zDKp9iO7Ari3UHmo6XPE5Oqy1DljVh9nsqgzongKg5SFSpcaiWqMVEyXiabD2fPkrS1NvYbmwucdTPjBOMyHVeFGY5vB7gjE0J3rzoZQgeuXW4rw3Ob3VUIWbzDljJ6klDtciJUcw1wir4yYsQVBNqeX",
-                    TransactionId = "b90ba9ec-b9ef-4b44-9d40-f22925676de2",
-                    PrivateMoneyId = "e391a7fa-c31f-4ca8-8912-f47a98f537c7",
-                    IsModified = true,
-                    TransactionTypes = new string[]{"cashback", "transfer", "expire", "exchange", "topup", "payment"},
-                    NextPageCursorId = "de09912b-d2c4-4501-ab4f-8366da047e2c",
-                    PrevPageCursorId = "493c338e-9a8a-4b4d-a2bc-18c1aef25ecb",
-                    PerPage = 64,
-                    TransferTypes = new string[]{"campaign"},
-                    Description = "aiYXr4rnNnjCoeQHMuXiGNUysmU86lvAOTbcLzXO1sbMRuBNUlL6K0ReLv75kg6qcs3cEpI1m3wABqtL3bdaVTKdkTjUxGpAh3awQssfAXqJYYr4ARYbJcmLujs894lRg4qB30GRMkbzDn742v8m6fDAksXCcjSnMwkyUVD7C",
-                    From = "2023-03-19T11:45:26.000000+09:00",
-                    To = "2016-01-31T10:08:28.000000+09:00",
+                    CustomerId = "f9e3f1bf-b679-4331-8689-01cb37ded2e4",
+                    CustomerName = "Ttu83N0tnRGbdpbMjOs6NsjUaiDroY6Q3IK7BQ6Amswd",
+                    TransactionId = "7c9090c0-2b41-4ecd-a81c-611f42162e33",
+                    PrivateMoneyId = "8d8c83c9-134a-42f2-af77-70d6ac0fd2e2",
+                    IsModified = false,
+                    TransactionTypes = new string[]{"payment", "topup"},
+                    NextPageCursorId = "886f57cd-b8c3-4574-bf68-1c8c6d131169",
+                    PrevPageCursorId = "b3d7d3fd-6bf6-44bb-b124-78e1020de332",
+                    PerPage = 838,
+                    TransferTypes = new string[]{"cashback", "topup", "exchange", "payment", "campaign"},
+                    Description = "mJsXraAGliEBPmHrH76ocsr7yZptwOIMGRxZLktLdV7uiWarFr5GP0wp4l70ZsGyPlyZYRURgUMf0P5o",
+                    From = "2023-02-06T21:30:34.000000Z",
+                    To = "2021-07-10T19:40:56.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -311,20 +311,20 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    ShopName = "SrG8bUcu2404OwW2YlKo3D8R7F9uqtTYDUe0c6WMBb0vMyrrNo2CtAij6bFWlBc9nMouBhD3xaVyDbF9dQAdVbIjdKodnIqsg2hwfCC3ynrJLnPSb5d8avvWNGGZpHcQub7jyKGPEze4eDg0kaj205Q9Vfs0xg",
-                    CustomerId = "729bdee4-7557-499a-a36c-2245e0eaa60c",
-                    CustomerName = "jRqPOb8BVVabHLEG4agkq2G8IRGQBS0nchLLndRaY2NqmWOdlkOhTjC67yWAbgIrPt858HfVRa8DX5UPvkC2RO0Ka4",
-                    TransactionId = "a322c46c-e859-4f0e-9819-b202f428fdd8",
-                    PrivateMoneyId = "acb9f39f-4c79-4a5e-b68d-aef6fe24aaa4",
+                    ShopName = "n0iOeoWIRRMyR0nQkh8Zz7eaFGoiOPKR0rUW9UTcnGDBsZuPfABdiNvfS9Anufij6THno",
+                    CustomerId = "e39440a4-a963-49e9-baeb-a2423dd79910",
+                    CustomerName = "JOk",
+                    TransactionId = "852fd018-fd23-481b-9cc4-a333ad15e046",
+                    PrivateMoneyId = "1589b225-610f-4e5b-b677-e4abeeaa079e",
                     IsModified = true,
-                    TransactionTypes = new string[]{"expire", "transfer", "exchange", "cashback"},
-                    NextPageCursorId = "1aa9fcaa-f274-4dec-9c33-8bf9bba73084",
-                    PrevPageCursorId = "e60a1778-d12d-48e3-8c6c-d9d714a99e92",
-                    PerPage = 468,
-                    TransferTypes = new string[]{"payment", "transfer", "exchange"},
-                    Description = "oZ5q4f3l3OfQm9YtxuJKrDFgfnOa5xAhF9FsFDzTIAFGDPhpBgKNmzEARJ1rvmqI1bSsRkkjQVB7WPQBN4OQef6",
-                    From = "2020-12-03T00:53:05.000000+09:00",
-                    To = "2021-01-12T06:05:52.000000+09:00",
+                    TransactionTypes = new string[]{"payment", "transfer", "topup", "cashback", "expire"},
+                    NextPageCursorId = "39868594-5690-4157-a312-0714d16fcf5b",
+                    PrevPageCursorId = "523ae08d-4892-443c-8a10-e7edffe29c6d",
+                    PerPage = 681,
+                    TransferTypes = new string[]{"coupon", "cashback"},
+                    Description = "he3TxnuKac7CS1DK4Gnrr3oBLGMXHrz9mqfRhRmUp8pN9pjtBKEK15Dd3XxCT0Zmu6u7tOxquneNatGolCf6SjeF7SeZXyMS6WkNJ2GvSwQUcruYP4H5cCw5ExNqh41OXXFwVmaHYw6oEFbK8qER1LlAIi5qYTqeIN9jftsBTkZDKCnQigIBcgyeHE0tecRrYBgXoYNa",
+                    From = "2021-09-22T02:26:26.000000Z",
+                    To = "2023-06-20T15:39:02.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -339,21 +339,21 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
-                    ShopId = "b36f0050-1d9d-4c84-8b4a-aa2c6e02eb9a",
-                    ShopName = "eX4akuWpKD9afhWN8gpYbk1UQRVGeT6q9QlLL4St0RhV6KdSsO2fKUxMoBriyYb61zvPjBcIHUY8RekKTAhSuM7Lo0VuZ1eCkX9fHokIFlVQAOjB0XTIEf02Fg3NvwAf7hOlSBfFEUcOQMXEYHzF8m9cIjwUyTMaVMoVAP5OP1CjryzsDN5Z0UkOPXKep1jFsPNeua1jB7iZEF7xhaxWIxTjjuPniB6yr4Okg2Udv9iXSqMQb8J",
-                    CustomerId = "da2527b3-0369-451c-91d3-264ab7f167a2",
-                    CustomerName = "eJic2mGuJKmsKLeWViwh5Xh0Ohe1EHst26OluNAixs6BC1rh1DjTMJERyJtkUyg63OuNEg3mOoFwMhlx1RPa6KYFReAbXhU3xeAmdgIIk86pUwNP4PXVypEGcP3yMzT6mxM4uuK6GdmBVGY71PucWuEB8iBjiFIbSubHrvAi7K4jy",
-                    TransactionId = "f2b91d0b-d0e6-48bf-93b9-5c649e892ee7",
-                    PrivateMoneyId = "e8344131-4f9d-47fc-b57e-6c5342a14181",
-                    IsModified = false,
-                    TransactionTypes = new string[]{"payment", "cashback", "topup", "transfer", "expire", "exchange"},
-                    NextPageCursorId = "8c0f7836-23a0-46af-aabc-9e1f54a4f048",
-                    PrevPageCursorId = "156e173b-31b3-4d0d-b48d-b5d508ccab2d",
-                    PerPage = 607,
-                    TransferTypes = new string[]{"cashback", "topup", "payment", "expire", "exchange", "coupon", "transfer"},
-                    Description = "iuk2Hs0mRi4FH4wAH9Jfj7o054MsL4b1CJFFK6iXZLbDkWhxmVZQrN7vHF2MDKVtEIQupvmKHRwHKhrE1cew1CNfgi7sglFQ4wI7YctoKArmPX6ICAqae4Gsnk7CCks4Hk5SfM8qCg753Xc8s",
-                    From = "2025-01-05T20:39:41.000000+09:00",
-                    To = "2020-12-02T18:50:37.000000+09:00",
+                    ShopId = "9e72d8c4-4848-4989-b378-16e1c362db35",
+                    ShopName = "ZXl3L94kmDiQZVmfdCV9wGJUROgp1VTNstKsbk2wvZcZmJCZwuee4w9Rkvag9C19xRl1IlJpGXqlhd5uwOg53j3Qic0iyK",
+                    CustomerId = "03721c8e-3199-4ccc-9e08-7f5b43c17edf",
+                    CustomerName = "nZxaZi9iCa2kj9IDD4FLU53H4cTCafuN856J50SdiADG37eydGENMPuSUGCPNHip0Y3dBWcNdXe1sIjLSVztCspdpKcDGU85LATApzQ2dQG1XtK0UfX1fzmKZw4jAX5TdVMZA3FsBWHTaR7q8iHovbTWoPNbCUX3WmvU",
+                    TransactionId = "1adae630-42ec-4a6e-8a93-fabd82af7659",
+                    PrivateMoneyId = "5b332c25-6f7f-43d7-b7db-2bcd67e65e57",
+                    IsModified = true,
+                    TransactionTypes = new string[]{"expire", "topup"},
+                    NextPageCursorId = "8b5b9e65-d196-4f6a-bc45-6407db70a31d",
+                    PrevPageCursorId = "f7242d6f-92ad-43ac-98e9-548625533f65",
+                    PerPage = 921,
+                    TransferTypes = new string[]{"campaign", "cashback", "coupon"},
+                    Description = "TP2wtSY9IoDSrJUA2sSTBsOwjVmr0bTbO79fqhITnnz7WaCAiQd9B8sle88sl7rSWKN9oQjHsNX48VkSyiuzE1L2wv36YuE4jwp0IiR44I5KLiOrRKq3qxtTGifN6K",
+                    From = "2023-04-01T18:42:52.000000Z",
+                    To = "2022-12-31T00:33:54.000000Z",
                 };
                 Response.PaginatedTransfersV2 response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

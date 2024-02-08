@@ -9,10 +9,12 @@ namespace PokepayPartnerCsharpSdk.Response
         public double MoneyAmount { get; }
         public int MoneyCount { get; }
         public double PointAmount { get; }
+        public double RawPointAmount { get; }
+        public double CampaignPointAmount { get; }
         public int PointCount { get; }
 
         [JsonConstructor]
-        public OrganizationSummary(int count, double moneyAmount, int moneyCount, double pointAmount, int pointCount) =>
-            (Count, MoneyAmount, MoneyCount, PointAmount, PointCount) = (count, moneyAmount, moneyCount, pointAmount, pointCount);
+        public OrganizationSummary(int count, double moneyAmount, int moneyCount, double pointAmount, double rawPointAmount, double campaignPointAmount, int pointCount) =>
+            (Count, MoneyAmount, MoneyCount, PointAmount, RawPointAmount, CampaignPointAmount, PointCount) = (count, moneyAmount, moneyCount, pointAmount, rawPointAmount, campaignPointAmount, pointCount);
     }
 }

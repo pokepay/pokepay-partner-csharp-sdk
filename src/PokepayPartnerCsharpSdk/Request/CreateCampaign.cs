@@ -21,20 +21,21 @@ namespace PokepayPartnerCsharpSdk.Request
         public string Description { get; set; }
         public string Status { get; set; }
         public string PointExpiresAt { get; set; }
-        public int PointExpiresInDays { get; set; }
-        public bool IsExclusive { get; set; }
+        public System.Nullable<int> PointExpiresInDays { get; set; }
+        public System.Nullable<bool> IsExclusive { get; set; }
         public string Subject { get; set; }
         public object[] AmountBasedPointRules { get; set; }
         public object[] ProductBasedPointRules { get; set; }
         public int[] ApplicableDaysOfWeek { get; set; }
         public object[] ApplicableTimeRanges { get; set; }
         public string[] ApplicableShopIds { get; set; }
-        public int MinimumNumberForCombinationPurchase { get; set; }
-        public bool ExistInEachProductGroups { get; set; }
-        public int MaxPointAmount { get; set; }
-        public int MaxTotalPointAmount { get; set; }
+        public System.Nullable<int> MinimumNumberForCombinationPurchase { get; set; }
+        public System.Nullable<bool> ExistInEachProductGroups { get; set; }
+        public System.Nullable<int> MaxPointAmount { get; set; }
+        public System.Nullable<int> MaxTotalPointAmount { get; set; }
         public string DestPrivateMoneyId { get; set; }
         public object ApplicableAccountMetadata { get; set; }
+        public System.Nullable<int> BudgetCapsAmount { get; set; }
 #else
         public string Name { get; set; }
         public string PrivateMoneyId { get; set; }
@@ -78,6 +79,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? DestPrivateMoneyId { get; set; }
         #nullable enable
         public object? ApplicableAccountMetadata { get; set; }
+        #nullable enable
+        public int? BudgetCapsAmount { get; set; }
 #endif
 
         public CreateCampaign(string name, string privateMoneyId, string startsAt, string endsAt, int priority, string eventType) =>

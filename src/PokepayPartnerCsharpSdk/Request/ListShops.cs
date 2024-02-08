@@ -19,9 +19,9 @@ namespace PokepayPartnerCsharpSdk.Request
         public string Tel { get; set; }
         public string Email { get; set; }
         public string ExternalId { get; set; }
-        public bool WithDisabled { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        public System.Nullable<bool> WithDisabled { get; set; }
+        public System.Nullable<int> Page { get; set; }
+        public System.Nullable<int> PerPage { get; set; }
 #else
         #nullable enable
         public string? OrganizationCode { get; set; }

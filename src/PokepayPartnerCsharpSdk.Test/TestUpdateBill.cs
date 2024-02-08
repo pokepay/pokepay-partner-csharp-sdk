@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "7e557ab1-b846-48de-961d-a85370af08e4"
+                    "7b13563f-52a4-4ad9-a683-55c84cee1a90"
                 );
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "7e557ab1-b846-48de-961d-a85370af08e4"
+                    "7b13563f-52a4-4ad9-a683-55c84cee1a90"
                 ) {
                     IsDisabled = true,
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "7e557ab1-b846-48de-961d-a85370af08e4"
+                    "7b13563f-52a4-4ad9-a683-55c84cee1a90"
                 ) {
-                    Description = "DE8cTf3i5qFGBCHYpL8ODBvwgaMAc0JPVvhl1tkrYQ",
+                    Description = "vN0QEBe9OUmuQoNyAxdhT65YfaNVM2xjqlPxxy8RqwFW",
                     IsDisabled = true,
                 };
                 Response.Bill response = await request.Send(client);
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "7e557ab1-b846-48de-961d-a85370af08e4"
+                    "7b13563f-52a4-4ad9-a683-55c84cee1a90"
                 ) {
-                    Amount = 2320.0,
-                    Description = "hRs2PIaofbMQ1Wyxx6iPX8wNVpCNUyiEzApKM66ZkEOto1oTpzcZyDOIWVwoFQcmGYbDKlivyrCrMwSNsOLmKdqXCCeTbwp9jzAmkVeyb",
+                    Amount = 4820.0,
+                    Description = "1hvVt9bN2zIxNZx4eE9mHPjq6XCvYjxbcuNA5AOQHru6gAXocPu4UpOUbFxl1xg8SX1voG8Gydqo4fQ7D47J36mgyKf2p",
                     IsDisabled = true,
                 };
                 Response.Bill response = await request.Send(client);

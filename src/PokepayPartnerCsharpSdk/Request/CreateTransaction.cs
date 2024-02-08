@@ -14,8 +14,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string ShopId { get; set; }
         public string CustomerId { get; set; }
         public string PrivateMoneyId { get; set; }
-        public int MoneyAmount { get; set; }
-        public int PointAmount { get; set; }
+        public System.Nullable<int> MoneyAmount { get; set; }
+        public System.Nullable<int> PointAmount { get; set; }
         public string PointExpiresAt { get; set; }
         public string Description { get; set; }
 #else

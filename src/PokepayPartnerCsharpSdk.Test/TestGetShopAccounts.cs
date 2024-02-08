@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "d69cd625-3627-410f-b180-c02c0149ea34"
+                    "ca2616e9-5ed4-477c-bcc2-cc53b62f225a"
                 );
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "d69cd625-3627-410f-b180-c02c0149ea34"
+                    "ca2616e9-5ed4-477c-bcc2-cc53b62f225a"
                 ) {
                     IsSuspended = false,
                 };
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "d69cd625-3627-410f-b180-c02c0149ea34"
+                    "ca2616e9-5ed4-477c-bcc2-cc53b62f225a"
                 ) {
-                    CreatedAtTo = "2019-02-16T09:15:16.000000+09:00",
-                    IsSuspended = true,
+                    CreatedAtTo = "2023-10-10T07:01:36.000000Z",
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "d69cd625-3627-410f-b180-c02c0149ea34"
+                    "ca2616e9-5ed4-477c-bcc2-cc53b62f225a"
                 ) {
-                    CreatedAtFrom = "2016-09-07T15:07:29.000000+09:00",
-                    CreatedAtTo = "2024-06-09T09:09:34.000000+09:00",
+                    CreatedAtFrom = "2022-03-15T18:57:12.000000Z",
+                    CreatedAtTo = "2022-11-02T09:39:16.000000Z",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -94,11 +94,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "d69cd625-3627-410f-b180-c02c0149ea34"
+                    "ca2616e9-5ed4-477c-bcc2-cc53b62f225a"
                 ) {
-                    PerPage = 2470,
-                    CreatedAtFrom = "2023-09-03T21:40:52.000000+09:00",
-                    CreatedAtTo = "2018-02-26T14:34:24.000000+09:00",
+                    PerPage = 2047,
+                    CreatedAtFrom = "2020-10-29T13:03:08.000000Z",
+                    CreatedAtTo = "2022-09-06T09:13:55.000000Z",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -114,12 +114,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "d69cd625-3627-410f-b180-c02c0149ea34"
+                    "ca2616e9-5ed4-477c-bcc2-cc53b62f225a"
                 ) {
-                    Page = 469,
-                    PerPage = 9926,
-                    CreatedAtFrom = "2017-05-09T22:16:31.000000+09:00",
-                    CreatedAtTo = "2019-06-21T03:04:39.000000+09:00",
+                    Page = 9914,
+                    PerPage = 9044,
+                    CreatedAtFrom = "2023-03-04T08:24:04.000000Z",
+                    CreatedAtTo = "2021-01-14T14:41:40.000000Z",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
