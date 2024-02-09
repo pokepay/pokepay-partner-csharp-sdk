@@ -15,4 +15,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr create -B master -t ${{ github.ref }} -b ''
+          echo ${{ github.ref }}
+          gh pr create -B main -t ${{ github.ref }} -b ''
