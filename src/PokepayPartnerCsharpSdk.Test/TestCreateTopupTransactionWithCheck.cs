@@ -25,8 +25,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTopupTransactionWithCheck request = new Request.CreateTopupTransactionWithCheck(
-                    "b3e7f346-b1b7-4462-8649-ec5b8a5ecbd1",
-                    "572bbee0-76b9-48a8-9d9b-b32139586c37"
+                    "868e5c11-4cc4-49bc-85fa-63810b85da65",
+                    "3918ac9a-e7ee-40b9-9e25-c17d02968c56"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -41,10 +41,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTopupTransactionWithCheck request = new Request.CreateTopupTransactionWithCheck(
-                    "b3e7f346-b1b7-4462-8649-ec5b8a5ecbd1",
-                    "572bbee0-76b9-48a8-9d9b-b32139586c37"
+                    "868e5c11-4cc4-49bc-85fa-63810b85da65",
+                    "3918ac9a-e7ee-40b9-9e25-c17d02968c56"
                 ) {
-                    RequestId = "c476b96c-8a26-4984-8e9c-8fbe679b90ef",
+                    RequestId = "d58acfa1-dd8e-4945-8d68-d739993bb8bc",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -12,11 +12,11 @@ namespace PokepayPartnerCsharpSdk.Request
     {
 #if NETFRAMEWORK
         public string PrivateMoneyId { get; set; }
-        public bool IsOngoing { get; set; }
+        public System.Nullable<bool> IsOngoing { get; set; }
         public string AvailableFrom { get; set; }
         public string AvailableTo { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        public System.Nullable<int> Page { get; set; }
+        public System.Nullable<int> PerPage { get; set; }
 #else
         public string PrivateMoneyId { get; set; }
         #nullable enable

@@ -18,8 +18,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string AvailableShopName { get; set; }
         public string AvailableFrom { get; set; }
         public string AvailableTo { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        public System.Nullable<int> Page { get; set; }
+        public System.Nullable<int> PerPage { get; set; }
 #else
         public string PrivateMoneyId { get; set; }
         #nullable enable

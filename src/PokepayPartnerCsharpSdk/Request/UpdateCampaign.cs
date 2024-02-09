@@ -15,24 +15,25 @@ namespace PokepayPartnerCsharpSdk.Request
         public string Name { get; set; }
         public string StartsAt { get; set; }
         public string EndsAt { get; set; }
-        public int Priority { get; set; }
+        public System.Nullable<int> Priority { get; set; }
         public string Event { get; set; }
         public string Description { get; set; }
         public string Status { get; set; }
         public string PointExpiresAt { get; set; }
-        public int PointExpiresInDays { get; set; }
-        public bool IsExclusive { get; set; }
+        public System.Nullable<int> PointExpiresInDays { get; set; }
+        public System.Nullable<bool> IsExclusive { get; set; }
         public string Subject { get; set; }
         public object[] AmountBasedPointRules { get; set; }
         public object[] ProductBasedPointRules { get; set; }
         public int[] ApplicableDaysOfWeek { get; set; }
         public object[] ApplicableTimeRanges { get; set; }
         public string[] ApplicableShopIds { get; set; }
-        public int MinimumNumberForCombinationPurchase { get; set; }
-        public bool ExistInEachProductGroups { get; set; }
-        public int MaxPointAmount { get; set; }
-        public int MaxTotalPointAmount { get; set; }
+        public System.Nullable<int> MinimumNumberForCombinationPurchase { get; set; }
+        public System.Nullable<bool> ExistInEachProductGroups { get; set; }
+        public System.Nullable<int> MaxPointAmount { get; set; }
+        public System.Nullable<int> MaxTotalPointAmount { get; set; }
         public object ApplicableAccountMetadata { get; set; }
+        public System.Nullable<int> BudgetCapsAmount { get; set; }
 #else
         #nullable enable
         public string? Name { get; set; }
@@ -76,6 +77,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public int? MaxTotalPointAmount { get; set; }
         #nullable enable
         public object? ApplicableAccountMetadata { get; set; }
+        #nullable enable
+        public int? BudgetCapsAmount { get; set; }
 #endif
 
         public UpdateCampaign(string campaignId) =>

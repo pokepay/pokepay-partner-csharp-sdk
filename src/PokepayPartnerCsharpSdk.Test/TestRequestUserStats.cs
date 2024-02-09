@@ -25,8 +25,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RequestUserStats request = new Request.RequestUserStats(
-                    "2016-01-19T17:34:09.000000+09:00",
-                    "2016-11-27T20:09:42.000000+09:00"
+                    "2023-11-17T15:01:05.000000Z",
+                    "2024-01-10T09:29:09.000000Z"
                 );
                 Response.UserStatsOperation response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

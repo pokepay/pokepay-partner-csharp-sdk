@@ -10,13 +10,15 @@ namespace PokepayPartnerCsharpSdk.Response
         public double PaymentAmount { get; }
         public double RefundedPaymentAmount { get; }
         public double AddedPointAmount { get; }
+        public double TopupPointAmount { get; }
+        public double CampaignPointAmount { get; }
         public double RefundedAddedPointAmount { get; }
         public double ExchangeInflowAmount { get; }
         public double ExchangeOutflowAmount { get; }
         public int TransactionCount { get; }
 
         [JsonConstructor]
-        public PrivateMoneySummary(double topupAmount, double refundedTopupAmount, double paymentAmount, double refundedPaymentAmount, double addedPointAmount, double refundedAddedPointAmount, double exchangeInflowAmount, double exchangeOutflowAmount, int transactionCount) =>
-            (TopupAmount, RefundedTopupAmount, PaymentAmount, RefundedPaymentAmount, AddedPointAmount, RefundedAddedPointAmount, ExchangeInflowAmount, ExchangeOutflowAmount, TransactionCount) = (topupAmount, refundedTopupAmount, paymentAmount, refundedPaymentAmount, addedPointAmount, refundedAddedPointAmount, exchangeInflowAmount, exchangeOutflowAmount, transactionCount);
+        public PrivateMoneySummary(double topupAmount, double refundedTopupAmount, double paymentAmount, double refundedPaymentAmount, double addedPointAmount, double topupPointAmount, double campaignPointAmount, double refundedAddedPointAmount, double exchangeInflowAmount, double exchangeOutflowAmount, int transactionCount) =>
+            (TopupAmount, RefundedTopupAmount, PaymentAmount, RefundedPaymentAmount, AddedPointAmount, TopupPointAmount, CampaignPointAmount, RefundedAddedPointAmount, ExchangeInflowAmount, ExchangeOutflowAmount, TransactionCount) = (topupAmount, refundedTopupAmount, paymentAmount, refundedPaymentAmount, addedPointAmount, topupPointAmount, campaignPointAmount, refundedAddedPointAmount, exchangeInflowAmount, exchangeOutflowAmount, transactionCount);
     }
 }

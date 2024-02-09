@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundExternalTransaction request = new Request.RefundExternalTransaction(
-                    "10291337-f3f0-49f2-b464-2005f27706b2"
+                    "7141b1d2-93ce-4ba0-8ec1-1cf697f2e9b7"
                 );
                 Response.ExternalTransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundExternalTransaction request = new Request.RefundExternalTransaction(
-                    "10291337-f3f0-49f2-b464-2005f27706b2"
+                    "7141b1d2-93ce-4ba0-8ec1-1cf697f2e9b7"
                 ) {
-                    Description = "jpaf36YY6mrG9Y2ztoKUUUx5B1bSO8xEgnoe60dnWTCVmm3x115QsBZT6dCGgqZsePkl6iY0bdXM6Nza2rTctUJQmh0gNd3qkWY4lVW5zCUF3zWzIdrHm6OsiyHBxsWBtx4G7cLV",
+                    Description = "oeQjUez1G0bwCFurxmaLHHuXDOcuycPW2WYY40yWZt9ZjHKqLir6qmCF3zfoEN4h",
                 };
                 Response.ExternalTransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

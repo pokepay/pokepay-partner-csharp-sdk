@@ -14,20 +14,20 @@ namespace PokepayPartnerCsharpSdk.Request
 #if NETFRAMEWORK
         public string Name { get; set; }
         public string Description { get; set; }
-        public int DiscountAmount { get; set; }
-        public double DiscountPercentage { get; set; }
-        public int DiscountUpperLimit { get; set; }
+        public System.Nullable<int> DiscountAmount { get; set; }
+        public System.Nullable<double> DiscountPercentage { get; set; }
+        public System.Nullable<int> DiscountUpperLimit { get; set; }
         public string StartsAt { get; set; }
         public string EndsAt { get; set; }
         public string DisplayStartsAt { get; set; }
         public string DisplayEndsAt { get; set; }
-        public bool IsDisabled { get; set; }
-        public bool IsHidden { get; set; }
-        public bool IsPublic { get; set; }
+        public System.Nullable<bool> IsDisabled { get; set; }
+        public System.Nullable<bool> IsHidden { get; set; }
+        public System.Nullable<bool> IsPublic { get; set; }
         public string Code { get; set; }
-        public int UsageLimit { get; set; }
-        public int MinAmount { get; set; }
-        public bool IsShopSpecified { get; set; }
+        public System.Nullable<int> UsageLimit { get; set; }
+        public System.Nullable<int> MinAmount { get; set; }
+        public System.Nullable<bool> IsShopSpecified { get; set; }
         public string[] AvailableShopIds { get; set; }
         public string StorageId { get; set; }
 #else
