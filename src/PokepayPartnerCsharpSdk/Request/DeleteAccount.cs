@@ -12,7 +12,7 @@ namespace PokepayPartnerCsharpSdk.Request
     {
         private string AccountId { get; set; }
 #if NETFRAMEWORK
-        public bool Cashback { get; set; }
+        public System.Nullable<bool> Cashback { get; set; }
 #else
         #nullable enable
         public bool? Cashback { get; set; }

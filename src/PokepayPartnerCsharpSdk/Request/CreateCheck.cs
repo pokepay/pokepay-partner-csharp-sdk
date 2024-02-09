@@ -11,15 +11,15 @@ namespace PokepayPartnerCsharpSdk.Request
     public class CreateCheck
     {
 #if NETFRAMEWORK
-        public double MoneyAmount { get; set; }
-        public double PointAmount { get; set; }
+        public System.Nullable<double> MoneyAmount { get; set; }
+        public System.Nullable<double> PointAmount { get; set; }
         public string AccountId { get; set; }
         public string Description { get; set; }
-        public bool IsOnetime { get; set; }
-        public int UsageLimit { get; set; }
+        public System.Nullable<bool> IsOnetime { get; set; }
+        public System.Nullable<int> UsageLimit { get; set; }
         public string ExpiresAt { get; set; }
         public string PointExpiresAt { get; set; }
-        public int PointExpiresInDays { get; set; }
+        public System.Nullable<int> PointExpiresInDays { get; set; }
         public string BearPointAccount { get; set; }
 #else
         #nullable enable

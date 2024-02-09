@@ -15,11 +15,11 @@ namespace PokepayPartnerCsharpSdk.Request
         public string SenderCustomerId { get; set; }
         public string ReceiverCustomerId { get; set; }
         public string Type { get; set; }
-        public bool IsModified { get; set; }
+        public System.Nullable<bool> IsModified { get; set; }
         public string From { get; set; }
         public string To { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        public System.Nullable<int> Page { get; set; }
+        public System.Nullable<int> PerPage { get; set; }
 #else
         public string PrivateMoneyId { get; set; }
         #nullable enable

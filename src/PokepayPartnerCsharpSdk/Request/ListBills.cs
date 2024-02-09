@@ -11,8 +11,8 @@ namespace PokepayPartnerCsharpSdk.Request
     public class ListBills
     {
 #if NETFRAMEWORK
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        public System.Nullable<int> Page { get; set; }
+        public System.Nullable<int> PerPage { get; set; }
         public string BillId { get; set; }
         public string PrivateMoneyId { get; set; }
         public string OrganizationCode { get; set; }
@@ -21,9 +21,9 @@ namespace PokepayPartnerCsharpSdk.Request
         public string CreatedTo { get; set; }
         public string ShopName { get; set; }
         public string ShopId { get; set; }
-        public int LowerLimitAmount { get; set; }
-        public int UpperLimitAmount { get; set; }
-        public bool IsDisabled { get; set; }
+        public System.Nullable<int> LowerLimitAmount { get; set; }
+        public System.Nullable<int> UpperLimitAmount { get; set; }
+        public System.Nullable<bool> IsDisabled { get; set; }
 #else
         #nullable enable
         public int? Page { get; set; }

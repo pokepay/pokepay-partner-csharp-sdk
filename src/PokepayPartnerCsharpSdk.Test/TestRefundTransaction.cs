@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "9100076f-67d0-4dc9-87b5-a5ced7d6c5bf"
+                    "2af43fc3-7bfd-4ed1-a6ec-b0d747bdc8f1"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "9100076f-67d0-4dc9-87b5-a5ced7d6c5bf"
+                    "2af43fc3-7bfd-4ed1-a6ec-b0d747bdc8f1"
                 ) {
-                    ReturningPointExpiresAt = "2018-09-05T19:46:12.000000+09:00",
+                    ReturningPointExpiresAt = "2021-05-18T00:32:02.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "9100076f-67d0-4dc9-87b5-a5ced7d6c5bf"
+                    "2af43fc3-7bfd-4ed1-a6ec-b0d747bdc8f1"
                 ) {
-                    Description = "MU7rfLf6FhpORYw57l88LjJn33RIRSOmlXSQfzzTwn3Dxt4Xew7YzDaZ1J9OdsQM2IVUV93tsgTE0JEew3ek7732woVpaWAn4e207OnXy1NWRJfp7ZK3WimQaowti0F0S2aIOKkN5iwpVUwFU1amkd1FBZBysFgH8TiyAaF4dUSAbqyi68iyJ302sQl233vCfto",
-                    ReturningPointExpiresAt = "2024-06-12T00:56:29.000000+09:00",
+                    Description = "4VgtaT7nx9nCCSGOYqsqY3PQB7j8S1LcJM99jV6h5DQ4TL9sXbFiutZ4wFjGxBLsRpox6uXLc6he8Kxv6FPaZ8I6AxiybIUdjn2Jl",
+                    ReturningPointExpiresAt = "2021-08-12T02:32:59.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

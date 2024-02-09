@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "7258f572-09ca-4705-87c3-65929d895a30"
+                    "553fd4da-7231-4218-aeb3-2d714f66622b"
                 );
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "7258f572-09ca-4705-87c3-65929d895a30"
+                    "553fd4da-7231-4218-aeb3-2d714f66622b"
                 ) {
-                    CanTransferTopup = true,
+                    CanTransferTopup = false,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "7258f572-09ca-4705-87c3-65929d895a30"
+                    "553fd4da-7231-4218-aeb3-2d714f66622b"
                 ) {
-                    Status = "active",
-                    CanTransferTopup = false,
+                    Status = "pre-closed",
+                    CanTransferTopup = true,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "7258f572-09ca-4705-87c3-65929d895a30"
+                    "553fd4da-7231-4218-aeb3-2d714f66622b"
                 ) {
-                    IsSuspended = true,
-                    Status = "pre-closed",
-                    CanTransferTopup = true,
+                    IsSuspended = false,
+                    Status = "active",
+                    CanTransferTopup = false,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -12,9 +12,9 @@ namespace PokepayPartnerCsharpSdk.Request
     {
         private string CashtrayId { get; set; }
 #if NETFRAMEWORK
-        public double Amount { get; set; }
+        public System.Nullable<double> Amount { get; set; }
         public string Description { get; set; }
-        public int ExpiresIn { get; set; }
+        public System.Nullable<int> ExpiresIn { get; set; }
 #else
         #nullable enable
         public double? Amount { get; set; }
