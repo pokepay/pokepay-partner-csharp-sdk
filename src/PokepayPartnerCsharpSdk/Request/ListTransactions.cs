@@ -13,8 +13,8 @@ namespace PokepayPartnerCsharpSdk.Request
 #if NETFRAMEWORK
         public string From { get; set; }
         public string To { get; set; }
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        public System.Nullable<int> Page { get; set; }
+        public System.Nullable<int> PerPage { get; set; }
         public string ShopId { get; set; }
         public string CustomerId { get; set; }
         public string CustomerName { get; set; }
@@ -22,7 +22,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string TransactionId { get; set; }
         public string OrganizationCode { get; set; }
         public string PrivateMoneyId { get; set; }
-        public bool IsModified { get; set; }
+        public System.Nullable<bool> IsModified { get; set; }
         public string[] Types { get; set; }
         public string Description { get; set; }
 #else

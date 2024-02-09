@@ -22,6 +22,9 @@ namespace PokepayPartnerCsharpSdk.Response
         public string PointCalculationRule { get; }
         public string PointCalculationRuleObject { get; }
         public string Status { get; }
+        public int BudgetCapsAmount { get; }
+        public int BudgetCurrentAmount { get; }
+        public string BudgetCurrentTime { get; }
 
         [JsonConstructor]
         public Campaign(string id, string name, bool isExclusive, string startsAt, string endsAt, int priority, string description, User bearPointShop, PrivateMoney privateMoney, PrivateMoney destPrivateMoney, string pointCalculationRule, string pointCalculationRuleObject, string status) =>

@@ -7,10 +7,11 @@ namespace PokepayPartnerCsharpSdk.Response
     {
         public string Id { get; }
         public User User { get; }
+        public bool IsActive { get; }
         public string Metadata { get; }
 
         [JsonConstructor]
-        public UserDevice(string id, User user, string metadata) =>
-            (Id, User, Metadata) = (id, user, metadata);
+        public UserDevice(string id, User user, bool isActive, string metadata) =>
+            (Id, User, IsActive, Metadata) = (id, user, isActive, metadata);
     }
 }

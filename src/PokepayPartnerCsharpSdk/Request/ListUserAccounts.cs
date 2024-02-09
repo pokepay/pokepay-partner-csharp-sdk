@@ -12,8 +12,8 @@ namespace PokepayPartnerCsharpSdk.Request
     {
         private string UserId { get; set; }
 #if NETFRAMEWORK
-        public int Page { get; set; }
-        public int PerPage { get; set; }
+        public System.Nullable<int> Page { get; set; }
+        public System.Nullable<int> PerPage { get; set; }
 #else
         #nullable enable
         public int? Page { get; set; }
