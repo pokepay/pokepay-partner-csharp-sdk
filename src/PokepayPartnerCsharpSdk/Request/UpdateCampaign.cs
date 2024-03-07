@@ -25,9 +25,12 @@ namespace PokepayPartnerCsharpSdk.Request
         public string Subject { get; set; }
         public object[] AmountBasedPointRules { get; set; }
         public object[] ProductBasedPointRules { get; set; }
+        public object[] BlacklistedProductRules { get; set; }
         public int[] ApplicableDaysOfWeek { get; set; }
         public object[] ApplicableTimeRanges { get; set; }
         public string[] ApplicableShopIds { get; set; }
+        public System.Nullable<int> MinimumNumberOfProducts { get; set; }
+        public System.Nullable<int> MinimumNumberOfAmount { get; set; }
         public System.Nullable<int> MinimumNumberForCombinationPurchase { get; set; }
         public System.Nullable<bool> ExistInEachProductGroups { get; set; }
         public System.Nullable<int> MaxPointAmount { get; set; }
@@ -62,11 +65,17 @@ namespace PokepayPartnerCsharpSdk.Request
         #nullable enable
         public object[]? ProductBasedPointRules { get; set; }
         #nullable enable
+        public object[]? BlacklistedProductRules { get; set; }
+        #nullable enable
         public int[]? ApplicableDaysOfWeek { get; set; }
         #nullable enable
         public object[]? ApplicableTimeRanges { get; set; }
         #nullable enable
         public string[]? ApplicableShopIds { get; set; }
+        #nullable enable
+        public int? MinimumNumberOfProducts { get; set; }
+        #nullable enable
+        public int? MinimumNumberOfAmount { get; set; }
         #nullable enable
         public int? MinimumNumberForCombinationPurchase { get; set; }
         #nullable enable

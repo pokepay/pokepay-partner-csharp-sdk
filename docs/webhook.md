@@ -1,0 +1,221 @@
+# Webhook
+Webhookは特定のワーカータスクでの処理が完了した事を通知します。
+WebHookにはURLとタスク名、有効化されているかを設定することが出来ます。
+通知はタスク完了時、事前に設定したURLにPOSTリクエストを行います。
+
+
+<a name="create-webhook"></a>
+## CreateWebhook: webhookの作成
+ワーカータスクの処理が終了したことを通知するためのWebhookを登録します
+このAPIにより指定したタスクの終了時に、指定したURLにPOSTリクエストを送信します。
+このとき、リクエストボディは `{"task": <タスク名>}` という値になります。
+
+```csharp
+Request.CreateWebhook request = new Request.CreateWebhook(
+    "bulk_shops", // タスク名
+    "Bgm1" // URL
+);
+Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
+```
+
+
+
+### Parameters
+**`task`** 
+  
+
+ワーカータスク名を指定します
+
+```json
+{
+  "type": "string",
+  "enum": [
+    "bulk_shops",
+    "process_user_stats_operation"
+  ]
+}
+```
+
+**`url`** 
+  
+
+通知先のURLを指定します
+
+```json
+{
+  "type": "string"
+}
+```
+
+
+
+成功したときは
+[OrganizationWorkerTaskWebhook](./responses.md#organization-worker-task-webhook)
+を返します
+
+
+---
+
+
+<a name="list-webhooks"></a>
+## ListWebhooks: 作成したWebhookの一覧を返す
+
+```csharp
+Request.ListWebhooks request = new Request.ListWebhooks() {
+    Page = 1,  // ページ番号
+    PerPage = 50,  // 1ページ分の取得数
+};
+Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(client);
+```
+
+
+
+### Parameters
+**`page`** 
+  
+
+取得したいページ番号です。
+
+```json
+{
+  "type": "integer",
+  "minimum": 1
+}
+```
+
+**`per_page`** 
+  
+
+1ページ分の取得数です。デフォルトでは 50 になっています。
+
+```json
+{
+  "type": "integer",
+  "minimum": 1
+}
+```
+
+
+
+成功したときは
+[PaginatedOrganizationWorkerTaskWebhook](./responses.md#paginated-organization-worker-task-webhook)
+を返します
+
+
+---
+
+
+<a name="update-webhook"></a>
+## UpdateWebhook: Webhookの更新
+指定したWebhookの内容を更新します
+
+```csharp
+Request.UpdateWebhook request = new Request.UpdateWebhook(
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // Webhook ID
+) {
+    Url = "b",  // URL
+    IsActive = false,  // 有効/無効
+    Task = "bulk_shops",  // タスク名
+};
+Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
+```
+
+
+
+### Parameters
+**`webhook_id`** 
+  
+
+更新するWebhookのIDです。
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+**`url`** 
+  
+
+変更するURLを指定します
+
+```json
+{
+  "type": "string"
+}
+```
+
+**`is_active`** 
+  
+
+trueならWebhookによる通知が有効になり、falseなら無効になります
+
+```json
+{
+  "type": "boolean"
+}
+```
+
+**`task`** 
+  
+
+指定したタスクが終了したときにWebhookによる通知がされます
+
+```json
+{
+  "type": "string",
+  "enum": [
+    "bulk_shops",
+    "process_user_stats_operation"
+  ]
+}
+```
+
+
+
+成功したときは
+[OrganizationWorkerTaskWebhook](./responses.md#organization-worker-task-webhook)
+を返します
+
+
+---
+
+
+<a name="delete-webhook"></a>
+## DeleteWebhook: Webhookの削除
+指定したWebhookを削除します
+
+```csharp
+Request.DeleteWebhook request = new Request.DeleteWebhook(
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // Webhook ID
+);
+Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
+```
+
+
+
+### Parameters
+**`webhook_id`** 
+  
+
+削除するWebhookのIDです。
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+
+
+成功したときは
+[OrganizationWorkerTaskWebhook](./responses.md#organization-worker-task-webhook)
+を返します
+
+
+---
+
+
+
