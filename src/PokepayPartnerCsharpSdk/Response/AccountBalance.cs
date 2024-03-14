@@ -5,9 +5,9 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class AccountBalance
     {
-        public string ExpiresAt { get; }
-        public double MoneyAmount { get; }
-        public double PointAmount { get; }
+        public string ExpiresAt { get; set; }
+        public double MoneyAmount { get; set; }
+        public double PointAmount { get; set; }
 
         [JsonConstructor]
         public AccountBalance(string expiresAt, double moneyAmount, double pointAmount) =>

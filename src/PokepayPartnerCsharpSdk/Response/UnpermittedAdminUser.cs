@@ -5,8 +5,8 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class UnpermittedAdminUser
     {
-        public string Type { get; }
-        public string Message { get; }
+        public string Type { get; set; }
+        public string Message { get; set; }
 
         [JsonConstructor]
         public UnpermittedAdminUser(string type, string message) =>

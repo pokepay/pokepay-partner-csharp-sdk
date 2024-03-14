@@ -5,20 +5,20 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class PrivateMoney
     {
-        public string Id { get; }
-        public string Name { get; }
-        public string Unit { get; }
-        public bool IsExclusive { get; }
-        public string Description { get; }
-        public string OnelineMessage { get; }
-        public Organization Organization { get; }
-        public double MaxBalance { get; }
-        public double TransferLimit { get; }
-        public double MoneyTopupTransferLimit { get; }
-        public string Type { get; }
-        public string ExpirationType { get; }
-        public bool EnableTopupByMember { get; }
-        public string DisplayMoneyAndPoint { get; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Unit { get; set; }
+        public bool IsExclusive { get; set; }
+        public string Description { get; set; }
+        public string OnelineMessage { get; set; }
+        public Organization Organization { get; set; }
+        public double MaxBalance { get; set; }
+        public double TransferLimit { get; set; }
+        public double MoneyTopupTransferLimit { get; set; }
+        public string Type { get; set; }
+        public string ExpirationType { get; set; }
+        public bool EnableTopupByMember { get; set; }
+        public string DisplayMoneyAndPoint { get; set; }
 
         [JsonConstructor]
         public PrivateMoney(string id, string name, string unit, bool isExclusive, string description, string onelineMessage, Organization organization, double maxBalance, double transferLimit, double moneyTopupTransferLimit, string type, string expirationType, string displayMoneyAndPoint) =>

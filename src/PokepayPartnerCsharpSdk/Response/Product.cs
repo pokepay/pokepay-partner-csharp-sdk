@@ -5,12 +5,12 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Product
     {
-        public string JanCode { get; }
-        public string Name { get; }
-        public double UnitPrice { get; }
-        public double Price { get; }
-        public bool IsDiscounted { get; }
-        public string Other { get; }
+        public string JanCode { get; set; }
+        public string Name { get; set; }
+        public double UnitPrice { get; set; }
+        public double Price { get; set; }
+        public bool IsDiscounted { get; set; }
+        public string Other { get; set; }
 
         [JsonConstructor]
         public Product(string janCode, string name, double unitPrice, double price, bool isDiscounted, string other) =>

@@ -19,10 +19,10 @@ Cashtrayを作成します。
 Request.CreateCashtray request = new Request.CreateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ユーザーID
-    1704.0 // 金額
+    1381.0 // 金額
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 9821,  // 失効時間(秒)
+    ExpiresIn = 6443,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client);
 ```
@@ -241,9 +241,9 @@ Cashtrayの内容を更新します。bodyパラメーターは全て省略可�
 Request.UpdateCashtray request = new Request.UpdateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // CashtrayのID
 ) {
-    Amount = 3126.0,  // 金額
+    Amount = 5934.0,  // 金額
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 5432,  // 失効時間(秒)
+    ExpiresIn = 7614,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client);
 ```

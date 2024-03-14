@@ -5,11 +5,11 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class ShopAccount
     {
-        public string Id { get; }
-        public string Name { get; }
-        public bool IsSuspended { get; }
-        public bool CanTransferTopup { get; }
-        public PrivateMoney PrivateMoney { get; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public bool IsSuspended { get; set; }
+        public bool CanTransferTopup { get; set; }
+        public PrivateMoney PrivateMoney { get; set; }
 
         [JsonConstructor]
         public ShopAccount(string id, string name, bool isSuspended, bool canTransferTopup, PrivateMoney privateMoney) =>

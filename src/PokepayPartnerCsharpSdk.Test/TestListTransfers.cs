@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    Description = "G6jzrPFiN4YTSJ9o4hVc0u6tzaZ3sbYKCNybmAlkaNJiOvuRswwQSmiJco3KwhjqpMqyENnnotJKNM2DvQSu06FE8juzeNINZktFZU0JpHpSrpNbF8O3WzYFSGY9bWV",
+                    Description = "Ek0mDRGqd8jGihF2zo2GN3QYDG6CZS1PVe5L",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -53,8 +53,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    TransferTypes = new string[]{"campaign", "transfer", "coupon", "cashback", "payment"},
-                    Description = "z14f9BIpTXI2luGWaGy1CoCYoYmaLr1BLYdgsrsB7nf3z7z76OYqLZhd2VmnwZ1YQAtf2GPfHYeeJWiJLn1TOWVNqKCYgaN6maSZWJn127yVjYZzSkjksojB4PnV9sBfF1BkHf1A8",
+                    TransferTypes = new string[]{"campaign", "topup", "cashback"},
+                    Description = "zi2NmWBluHrzflOytNd3ROmH9nMfAHnX3LOs6P",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -69,9 +69,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    TransactionTypes = new string[]{"cashback", "transfer", "expire", "topup"},
-                    TransferTypes = new string[]{"payment", "campaign", "exchange", "topup", "expire", "coupon", "cashback", "transfer"},
-                    Description = "I5ck8HRSP5FHw4UX4tGWi4N1WpwhPzDe8V1DYdcKn6nAl4cEX71br7jv7EDkwXN76HyKk1SGbd2fzw9nBiKXYeHN7C",
+                    TransactionTypes = new string[]{"payment"},
+                    TransferTypes = new string[]{"coupon", "payment", "cashback"},
+                    Description = "4CFESWJnPCLUxGLtrgoghS3pPHE574eeX1",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -87,9 +87,9 @@ namespace PokepayPartnerCsharpSdk.Test
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
                     IsModified = true,
-                    TransactionTypes = new string[]{"cashback", "transfer", "payment", "topup"},
-                    TransferTypes = new string[]{"topup", "payment", "cashback"},
-                    Description = "hZku2OJwUM0ktk1yse4CdNhZgpKbkXWC5tLFNUhqVPCyC44juCu9OYkti8QhcNElbkx4K7ompotaJBLyz8KN17fLxPU1GvU5",
+                    TransactionTypes = new string[]{"exchange", "cashback", "transfer"},
+                    TransferTypes = new string[]{"campaign", "exchange", "payment", "coupon", "expire", "topup", "transfer"},
+                    Description = "49JBRZmQUgzecqWdDVSstoEtPVoykbtA6l7WDayqQLAKXyhWYd",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -104,11 +104,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    PrivateMoneyId = "756e8b6f-d54a-4a6e-8836-7b9aa432b39e",
+                    PrivateMoneyId = "6732aa93-ebac-406c-9c01-990663f870c9",
                     IsModified = true,
-                    TransactionTypes = new string[]{"cashback", "payment"},
-                    TransferTypes = new string[]{"expire", "topup", "exchange", "coupon", "cashback", "payment", "campaign", "transfer"},
-                    Description = "mDSuxOmphkziTG6p4H",
+                    TransactionTypes = new string[]{"cashback", "transfer", "exchange", "payment"},
+                    TransferTypes = new string[]{"cashback"},
+                    Description = "4cK6HLesoN7AsxjaX4bkzoW5SSzFCKjOEE829PJZq44v95w5OTBAsM3ixdWcd35lzGg9k8zX5Zx6rdzZ6Kiw60EKpO7FL05ARSiRG2UPRPUxc",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -123,12 +123,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    TransactionId = "6c924988-2fac-4d73-be4c-ba65f1e586c9",
-                    PrivateMoneyId = "f563105d-0b63-433c-8e19-9089b8670c72",
+                    TransactionId = "bc5813ab-de0c-4777-b972-e52efcfbe88f",
+                    PrivateMoneyId = "ef2fe8ba-7bf6-49fd-be74-307f582a830b",
                     IsModified = true,
-                    TransactionTypes = new string[]{"topup", "cashback"},
-                    TransferTypes = new string[]{"exchange", "expire"},
-                    Description = "JBgnrD1yLFlL5kbgs6xUgxf5sOofYseOtl3ilNOPpyIVjtUkLTSkOKux630Id9Yu",
+                    TransactionTypes = new string[]{"transfer"},
+                    TransferTypes = new string[]{"expire", "cashback"},
+                    Description = "E2Nlz5V1CO5TSF",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -143,13 +143,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    CustomerName = "KsTGECVvJsAnqjel2la3rWWdK2ybDtXJiikZzBktm983ksDdKfbC96DBMvuC0QTfx8l2ZZBjyQqeO19KhFrkxiVRAQ6FFjz1wnjIRjO9MofqJJncHBCR1qP1zId4mLJCzHpOgkhaasWI8ELqJwRA62Ghe0ne6pcNR1V7JprfFD47gNL9WM6cSeojzOZZrLxO3x6r1ViuOnspa8l8OxqMpLrB8ZQmhXH",
-                    TransactionId = "fcbcc1a5-4a92-4a8d-870a-23d365c8b97d",
-                    PrivateMoneyId = "1b07a123-ec2d-4656-9767-ecd67903e927",
+                    CustomerName = "yNtopqI6bCrDgQTiBz8hopleWuv10dzqDmxXKufPIjjJpzSXKPSRMVYMVxniANdM0yy6srRZNC9bYJUFWp4SJDd9Vw0ghvUwHY4GPMgqa4p3NBV6jnDEmNinmBAkCQlWqd4VgtaT7nx",
+                    TransactionId = "0f9fca39-628f-4b18-a4ee-5fc35929c428",
+                    PrivateMoneyId = "0977728e-e043-4d9e-8353-c73fa4fa5fc7",
                     IsModified = false,
-                    TransactionTypes = new string[]{"exchange", "expire", "payment", "cashback", "transfer"},
-                    TransferTypes = new string[]{"topup", "exchange", "coupon", "expire", "cashback", "campaign", "payment"},
-                    Description = "1wGqOn2jIsFsWbo7bpQq9anT6PszkN335U1t4DYsuiE88p3Ho",
+                    TransactionTypes = new string[]{"exchange"},
+                    TransferTypes = new string[]{"payment", "coupon", "campaign"},
+                    Description = "PQB7j8S1LcJM99jV6h5DQ4TL9sXbFiutZ4wFjGxBLsRpox6uXLc6he8Kxv6FPaZ8I6AxiybIUdjn2JlMSQ6V8dRYSFDiggsas4Nm4Pbqn0MLycuAIyd8Tc91YrDumA0BEPaxu5hz8quH88gYqQC45YQseyms9QyHVorEq6",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -164,14 +164,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    CustomerId = "78bb4967-bd05-4214-a6b0-e86b4f1fab38",
-                    CustomerName = "xuKgCFI0Qv1brn8ATMTNMMEyVApkaDeYuOtBoCZgc4gwc8RSE7B5wsqfAkho5yO5EQGpb9AHk6UF1UjWUyw97H5Wi0UlM5hWRopq8",
-                    TransactionId = "9e59eb11-cf66-4d10-9b6d-c40f4e141921",
-                    PrivateMoneyId = "a7d8b2b3-88bd-41e0-8651-e9feedc2402f",
+                    CustomerId = "0dfe05ac-9e7b-44fa-ad98-1d4c01acf0a7",
+                    CustomerName = "Zyg3cEPs9bN7e1DJRmWCvXV5f7NFxRTTWOKh4cp2t8rtdj0F82hhuu2d72PSRBNNGTP71wcJLJGkIvTZnRNAv7oeQjUez1G0bwCFurxmaLHHuXDOcuycPW2WYY40yWZt9ZjHKqLir6qmCF3zfoEN4hG6jzrPFiN4YTSJ9o4hVc",
+                    TransactionId = "114e8fb0-c375-41a2-99b6-c78085b74174",
+                    PrivateMoneyId = "b709518b-9d7a-4861-bdda-72331ca088f3",
                     IsModified = true,
-                    TransactionTypes = new string[]{"transfer", "expire", "cashback", "exchange"},
-                    TransferTypes = new string[]{"expire", "exchange", "transfer", "payment", "topup"},
-                    Description = "bGEOQG1PZp7fjd91zgh1RHHtL55R7YEprCJ0U4QnLZWmGvTqLQwaZ9vOnv67spoRoPKUgWvYVa3Gv9xbfzvgScohGvfvszFZKZ0fsird",
+                    TransactionTypes = new string[]{"transfer"},
+                    TransferTypes = new string[]{"expire", "payment", "topup", "cashback", "transfer", "coupon"},
+                    Description = "AlkaNJiOvuRswwQSm",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -186,15 +186,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    ShopName = "b8N5N4uLXeppDXZ9aq2pYugtiiL7qWoYElTKmZkEzCv7OKUa8NeEnF41oUMWRj1sxtSyQgT1GkRhboXHY39x3Xs6KbKOjUQYLsphxNcJXceDU70KRGU02ETtMe",
-                    CustomerId = "293c3c2c-1733-429b-b035-fcc211734ff2",
-                    CustomerName = "uF5QOJx8zwWTQtwhgEUQrpqVtFI20RqU84wWVej7KjR7PO79YOuc2btzI2HvKaIy1dRKuzOlLMmdBSZr220xtZpZdQ9ssluYJHAlylPpV6xWxt7f2oLFlgp2lLhVbHghg4lZSVxXqYiDQPFv2xIXmI4PlPvyiodipyOhBLv",
-                    TransactionId = "a76fc7ae-3bca-4b02-8064-e3b10a1d36b8",
-                    PrivateMoneyId = "d3fa4246-66b7-4ced-a773-de567fb84543",
+                    ShopName = "Jco3KwhjqpMqyENnnotJKNM2DvQSu06FE8juzeNINZktFZU0JpHpSrpNbF8O3WzYFSGY9bWV5jbNBEz14f9BIpTXI2luGWaGy1CoCYoYma",
+                    CustomerId = "59d67028-8094-47cc-b231-0cc213777c07",
+                    CustomerName = "LYdgsrsB7nf3z7z76OYqLZhd2VmnwZ1YQAtf2GPfHYeeJWiJLn1TOWVNqKCYgaN6maSZWJn127yVjYZzSkjksojB4PnV9sBf",
+                    TransactionId = "5219a392-442e-473f-8626-c1838d6c5eac",
+                    PrivateMoneyId = "bebf2731-9899-4042-9ca9-a6eb1d08fbc8",
                     IsModified = true,
-                    TransactionTypes = new string[]{"payment", "transfer"},
-                    TransferTypes = new string[]{"exchange", "topup", "cashback", "campaign"},
-                    Description = "3pAwidsKM1ZphpLhv7NIoqmlJpzKOYIsRtFF9xx8GHcZXN3Xa70o7nFXURkjCcagg1x0DCy4shXKR7nTWCyIt3Gr6ubUQRiycmsaOa8T2aG0PP6tnqHnuoUILOizvfJbTrh0kbVP56HQVtzlq6MKoBezSZGJZ1h8km3mkAPAZ0UMnnwlo100h7",
+                    TransactionTypes = new string[]{"expire", "topup"},
+                    TransferTypes = new string[]{"transfer", "payment", "cashback", "coupon", "expire", "exchange", "campaign"},
+                    Description = "IRS2WYI5ck8HRSP5FHw4UX4tGWi4N1WpwhPzDe8V1DYdcKn6nAl4cEX71br7jv7EDkwXN76HyKk1SGbd",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -209,16 +209,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    ShopId = "96063097-7148-4834-bcc2-2b542745e7b2",
-                    ShopName = "dLeJZDTCEki4ZW2q7YUbIlt759XkPd0Pd9Lm5F7XmpoqfPmIraGVhsLJiqbQ3MQR9CltXlG6ahNcft22PrlsKWxGtQj4OhVmQAfFvVtR4Fr5En7ms3KrOq6LmEP7tafjyhKgvwh227cUJMuQ1t83oitBAmKCKeNp7Z6KeHafoOKYuUs7zf9dIsiva1vYlz4sIXfB3ep9eH",
-                    CustomerId = "98d160ee-3bce-4079-9cb5-1a0601a109b4",
-                    CustomerName = "9YZjsWtY1WGlubcf8poH65gFI1eD4xOb3KkBBLymzX1iKABzsalQh9et3sJPwGPZVdfeHb6D60qrRKjcydAgQf1kjgylUDTK4jhJH0jAjNW1ZH6MoDDkoySCPKncEWYebt4RUGRqT3wcuceySCabxrgTXSxZbg1Ud9jBS9CQqv6T7eIQXHJd8SnpNPnO39WNWvjXlHUhCIHkbLQ7KL6y3Sdoxdn1tpYM1z5XMrmRY7bQCW9sPYWAKIaPAnl",
-                    TransactionId = "0834f167-d21f-4e27-8704-a0188cb3bb01",
-                    PrivateMoneyId = "e5797c89-913d-4d0e-a2b8-40a6168f505d",
+                    ShopId = "ecaf1409-8eb2-4c66-ba77-beb964ec2bee",
+                    ShopName = "iKXYeHN7C4dOhcXyEVzhZku2OJwUM0ktk1yse4CdNhZgpKbkXWC5tLFNUhqVPCyC44juCu9OYkti8QhcNElbkx4K7ompotaJBLyz8KN17fLxPU1GvU5oJnH6hOfBgmDSuxOmphkziTG6p4HsLeIcNrFvlQBIX1JBgnrD1yLFlL5kbgs6xUgxf5sOofYseOtl3il",
+                    CustomerId = "5dea47be-18ce-4d90-8f2f-04a6a8ff59d0",
+                    CustomerName = "pyIVjtUkLTSkOKux630Id9YuKsTGECVvJsAnqjel2la3rWWdK2ybDtXJiikZzBktm983ksDdKfbC96DBMvuC0QTfx8l2ZZBjyQqeO19KhFrkxiVRAQ6FFjz1wnjIRjO9MofqJJncHBCR1qP1zId4mLJCzHpOgk",
+                    TransactionId = "59a03de8-d8e1-4a9a-a188-1df34b42afbc",
+                    PrivateMoneyId = "39f8bd08-13bf-42ad-9706-f98f3b1df25e",
                     IsModified = false,
-                    TransactionTypes = new string[]{"topup", "payment", "exchange", "expire", "transfer", "cashback"},
-                    TransferTypes = new string[]{"exchange", "topup", "coupon", "cashback"},
-                    Description = "eP1Vs1el3tVDmtz0qcHqLIsXtLIzc5kRp3WnRoU2x23XKfAMBShU6I6qbRRo0KsKQjbIFpDLYbMMvlh9JCT1xGcQLRIyKzcfWhCzi1Z89pSvPCqCpyLyZq50fssjoNH",
+                    TransactionTypes = new string[]{"payment", "topup", "exchange", "transfer", "cashback", "expire"},
+                    TransferTypes = new string[]{"transfer", "campaign"},
+                    Description = "62Ghe0ne6pcNR1V7JprfFD47gNL9WM6cSeojzOZZrLxO3x6r1ViuOnspa8l8OxqMpLrB8ZQmhXHGSVgVcs3OQMdHqZLlv01wGqOn2jIsFsWbo7bpQq9anT6PszkN335U1t4DYsuiE88p3Hog0k8dxuKgCFI0Qv1brn8ATMTNMM",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -233,17 +233,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    PerPage = 9411,
-                    ShopId = "e38a02c1-943f-4a12-956e-343d0dab3e81",
-                    ShopName = "qZzCUWIZlu3nVCPUHg3HpQOkzK7LlGZ5l2cQL9XINJ3Yd9vs5R5vReMbbVX8HS4JwKvfQBXbwG5FfObbKUS2wO8JUS6TcMNwfudd0OcDN26kEZNJtfvLzUTMMVxGv3INa5f54YI1Ph3OUBAsVaG6TxK3slQw2Vv1qEnKcaw1pz9vX015U",
-                    CustomerId = "4ee9c33e-9bc4-4039-b171-0fe0c2f5e900",
-                    CustomerName = "TdX",
-                    TransactionId = "b90d6aa9-883e-4480-84ee-d9ebc868e291",
-                    PrivateMoneyId = "d5469691-3f11-44c0-8c1e-e05bc3c7b948",
+                    PerPage = 4746,
+                    ShopId = "04b2be3b-7ec5-4f79-8cd6-fa9f9fa3e284",
+                    ShopName = "ApkaDeYuOtBoCZgc4gwc8RSE7B5wsqfAkho5yO5EQGpb",
+                    CustomerId = "eb3c098d-498e-492e-afb9-a67e73338cff",
+                    CustomerName = "AHk6UF1UjWUyw97H5Wi0UlM5hWRopq8fm3QjwrUJDS6QIEgbGEOQG1PZp7fjd91zgh1RHHtL55R7YEprCJ0U4QnLZWmGvTqLQwaZ9vOnv67spoRoPKUgWvYVa3Gv9xbfzvgSco",
+                    TransactionId = "2d6e2ae8-741a-46c7-83a0-48297856d1f6",
+                    PrivateMoneyId = "05e2b9e6-8226-4288-87de-ef3bc4a62d24",
                     IsModified = true,
-                    TransactionTypes = new string[]{"expire", "payment", "exchange", "transfer", "topup"},
-                    TransferTypes = new string[]{"payment", "cashback", "coupon", "transfer", "expire", "campaign", "topup", "exchange"},
-                    Description = "28vDsYr2EOFyjAKpCpIzZXmsoGSwaJTi7OUK0vKQ13gfO1QSAIUcA7AjSSLuHYzu2Ra1BMEr62gevnEoyfpAANnkoel9aDgdNSfmE5De5bTvMyHpd2S0WD3FaqRKAgoYEGpNOGzwWmNqL0QHxylFWlu94S",
+                    TransactionTypes = new string[]{"exchange", "cashback", "payment", "transfer", "topup"},
+                    TransferTypes = new string[]{"cashback", "expire", "transfer", "campaign", "coupon", "payment", "topup"},
+                    Description = "irdy",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -258,18 +258,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    Page = 3297,
-                    PerPage = 441,
-                    ShopId = "955006fc-2f46-4207-9653-5e4434697ccd",
-                    ShopName = "5BU7ZXRTfnNFoNra90XKkUB3tuq1X9Hm0SHBKCUruJxi1ST1WXtfeKSzrq1Zc5Ju53UYOCwl5C8rEq5yNfh8NoRe5r",
-                    CustomerId = "7eb27e58-03c0-4fb0-9b72-e8561aec20a1",
-                    CustomerName = "mpqdlLHNNlbdnW1ooZFRDSiyltrhPzNi7jenj4X3xdXKxR7POl5XLEB6rdcoyFq3Dy2RXyPUAe3PgOIxNaz33MDlMm45c417ClVPZadCz21oTLg0Zh082rSUmgTJgltXUvopMAE6nKVgCC79b4Ei190OQ71CLczodkHUHlo8UiDVjyL8K2mxNxSNDBAB21jRDnDf",
-                    TransactionId = "1f3e21d5-f316-4cf4-807d-2fb459bdb925",
-                    PrivateMoneyId = "982f1d5e-d2d9-4167-8979-01da54ab9d00",
-                    IsModified = false,
-                    TransactionTypes = new string[]{"cashback", "payment", "expire", "topup", "transfer"},
-                    TransferTypes = new string[]{"exchange", "payment", "expire", "campaign"},
-                    Description = "ShoExxXDz",
+                    Page = 7267,
+                    PerPage = 5945,
+                    ShopId = "331d8e4e-e2b5-4320-8eb4-5675fa4b493e",
+                    ShopName = "LXeppDXZ9aq2pYugtiiL7qWoYElTKmZkEzC",
+                    CustomerId = "536a4760-6599-4a3d-9b76-3e09f77b1237",
+                    CustomerName = "KUa8NeEnF41oUMWRj1sxtSyQgT1GkRhboXHY39x3Xs6KbKOjUQYLsphxNcJXceDU70KRGU02ETtMe3p5",
+                    TransactionId = "7392fcc2-4ff2-4aa6-b58a-65072e88a45d",
+                    PrivateMoneyId = "223e67c6-6f8c-4135-a316-0dd1ed3a88cf",
+                    IsModified = true,
+                    TransactionTypes = new string[]{"topup", "expire", "payment"},
+                    TransferTypes = new string[]{"expire", "topup", "cashback"},
+                    Description = "w",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -284,19 +284,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    To = "2022-04-04T13:09:11.000000Z",
-                    Page = 622,
-                    PerPage = 5213,
-                    ShopId = "84ad7475-84bd-4aaa-9f30-bd4020d89d8a",
-                    ShopName = "mtxroKVUk7sDu4lw8ZxL5ooBCUmbexHlOYPdRDRXfcFEKebPAHiatKRmL7K8IMJIBW1vB1RC8WQ75Zq",
-                    CustomerId = "b20ca7b2-a03e-49c3-90a5-b390f50ba945",
-                    CustomerName = "ph5LyiHrKKZ",
-                    TransactionId = "3fedc792-2f3a-46c8-8090-5459edb3ce95",
-                    PrivateMoneyId = "46ffd7a7-b5e5-4add-acc1-a3090d5b7b9d",
+                    To = "2020-01-10T15:51:04.000000+09:00",
+                    Page = 4072,
+                    PerPage = 1688,
+                    ShopId = "e43b3fa0-675b-4788-9fc5-63ad61e42d98",
+                    ShopName = "UQr",
+                    CustomerId = "46b5b8af-342d-48f0-9da3-39db84adb392",
+                    CustomerName = "qVtFI20RqU84wWVej7KjR7PO79YOuc2btzI2HvKaIy1dRKuzOlLMmdBSZr220xtZpZdQ9ssluYJHAlylPpV6xWxt7f2oLFlgp2lLhVbHghg4lZSVxXqYiDQPFv2xIXmI4P",
+                    TransactionId = "7e22bd27-81ec-413a-90f6-97a3f91efc79",
+                    PrivateMoneyId = "32d821e9-d395-4bff-af3f-d5641a164869",
                     IsModified = true,
-                    TransactionTypes = new string[]{"cashback", "topup", "transfer", "payment"},
-                    TransferTypes = new string[]{"exchange", "coupon", "payment"},
-                    Description = "fNhFwjSSUkqouGV2ULftf3KLiOm0u6Od",
+                    TransactionTypes = new string[]{"exchange"},
+                    TransferTypes = new string[]{"expire", "coupon", "exchange", "topup", "cashback", "campaign", "payment"},
+                    Description = "d18",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -311,20 +311,20 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransfers request = new Request.ListTransfers() {
-                    From = "2021-06-05T17:48:04.000000Z",
-                    To = "2024-02-27T08:22:21.000000Z",
-                    Page = 532,
-                    PerPage = 218,
-                    ShopId = "51a32931-1a88-4419-978c-b74df4025183",
-                    ShopName = "a6BMdHbor9Bi8VjYjeAF8N8XvRYyNjj6LzPNoFY0NPc7gW3tdaerbfAUj6MGuDCQRgbbh69IfOOqdFvcvTYHWhMSc2JtDSCuxpXIBKjX0wbEINtuhWyJmxhctiEpL1KlL20SY28CEIpXvCz2lX0WFgkUTJYH",
-                    CustomerId = "97e5ea88-c68d-491f-bca8-f848de508515",
-                    CustomerName = "Or63hjnglJCcSZdRjCOwy",
-                    TransactionId = "1e9be219-1b86-4e61-be70-00be2900f515",
-                    PrivateMoneyId = "8a7d7a30-269c-476c-8ef3-9ae2daaeea9e",
-                    IsModified = false,
-                    TransactionTypes = new string[]{"topup", "expire", "transfer", "exchange", "cashback"},
-                    TransferTypes = new string[]{"transfer", "exchange", "coupon"},
-                    Description = "U1TN0yX6wxY6IPoPyEr8klncfGkEwHBWOqOmjPQjCJIqduyEzfF4ihEMnqI",
+                    From = "2022-02-11T08:50:14.000000+09:00",
+                    To = "2022-02-12T05:37:59.000000+09:00",
+                    Page = 8820,
+                    PerPage = 7767,
+                    ShopId = "7fb84543-b9ec-4e59-9149-b55a4a7f4db6",
+                    ShopName = "Bq4ZCm153pAwidsKM1",
+                    CustomerId = "e5beb83a-f718-45be-bba6-b70bfefea7da",
+                    CustomerName = "phpLhv7NIoqmlJpzKOYIsRtFF9xx8GHcZXN3Xa70o7nFXURkjCcagg1x0DCy4shXKR7nTWCyIt3Gr6ubUQRiycmsaOa8T2aG0PP6tnqHnuoUILOizvfJbTrh0kbVP56HQVtzlq6MKoBezSZGJZ1h8km3mkAPAZ0UMnnwlo10",
+                    TransactionId = "426c949c-b387-4130-8da4-8206ad242ae8",
+                    PrivateMoneyId = "1bafb37f-67b7-4097-8834-b7bcb19570c2",
+                    IsModified = true,
+                    TransactionTypes = new string[]{"transfer", "topup", "payment", "exchange", "expire", "cashback"},
+                    TransferTypes = new string[]{"transfer"},
+                    Description = "CEki4ZW2q7YUbIlt759X",
                 };
                 Response.PaginatedTransfers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

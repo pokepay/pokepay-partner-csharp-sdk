@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetBulkTransaction request = new Request.GetBulkTransaction(
-                    "9ad02669-f2ce-43aa-878d-0615fd1d73ab"
+                    "fbeff4d7-bade-42f9-8292-022b56bcd10d"
                 );
                 Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

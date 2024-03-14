@@ -5,11 +5,11 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class CashtrayAttempt
     {
-        public AccountWithUser Account { get; }
-        public double StatusCode { get; }
-        public string ErrorType { get; }
-        public string ErrorMessage { get; }
-        public string CreatedAt { get; }
+        public AccountWithUser Account { get; set; }
+        public double StatusCode { get; set; }
+        public string ErrorType { get; set; }
+        public string ErrorMessage { get; set; }
+        public string CreatedAt { get; set; }
 
         [JsonConstructor]
         public CashtrayAttempt(double statusCode, string errorType, string errorMessage, string createdAt) =>

@@ -5,13 +5,13 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class OrganizationSummary
     {
-        public int Count { get; }
-        public double MoneyAmount { get; }
-        public int MoneyCount { get; }
-        public double PointAmount { get; }
-        public double RawPointAmount { get; }
-        public double CampaignPointAmount { get; }
-        public int PointCount { get; }
+        public int Count { get; set; }
+        public double MoneyAmount { get; set; }
+        public int MoneyCount { get; set; }
+        public double PointAmount { get; set; }
+        public double RawPointAmount { get; set; }
+        public double CampaignPointAmount { get; set; }
+        public int PointCount { get; set; }
 
         [JsonConstructor]
         public OrganizationSummary(int count, double moneyAmount, int moneyCount, double pointAmount, double rawPointAmount, double campaignPointAmount, int pointCount) =>

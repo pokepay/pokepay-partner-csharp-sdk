@@ -5,8 +5,8 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Banks
     {
-        public Bank[] Rows { get; }
-        public int Count { get; }
+        public Bank[] Rows { get; set; }
+        public int Count { get; set; }
 
         [JsonConstructor]
         public Banks(Bank[] rows, int count) =>

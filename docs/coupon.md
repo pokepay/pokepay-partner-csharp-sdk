@@ -11,12 +11,12 @@ Couponは特定店舗で利用できるものや利用可能期間、配信条�
 Request.ListCoupons request = new Request.ListCoupons(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 対象クーポンのマネーID
 ) {
-    CouponId = "bkQVRY8Muh",  // クーポンID
-    CouponName = "wDy",  // クーポン名
-    IssuedShopName = "lFo5mD",  // 発行店舗名
-    AvailableShopName = "Jw8V3XaTOk",  // 利用可能店舗名
-    AvailableFrom = "2022-05-02T17:52:06.000000Z",  // 利用可能期間 (開始日時)
-    AvailableTo = "2023-06-21T19:23:15.000000Z",  // 利用可能期間 (終了日時)
+    CouponId = "R5ZNIi",  // クーポンID
+    CouponName = "ikdp8w",  // クーポン名
+    IssuedShopName = "9",  // 発行店舗名
+    AvailableShopName = "Wl",  // 利用可能店舗名
+    AvailableFrom = "2021-09-27T15:32:49.000000+09:00",  // 利用可能期間 (開始日時)
+    AvailableTo = "2023-02-15T11:18:54.000000+09:00",  // 利用可能期間 (終了日時)
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取得数
 };
@@ -156,25 +156,25 @@ Response.PaginatedCoupons response = await request.Send(client);
 ```csharp
 Request.CreateCoupon request = new Request.CreateCoupon(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "DFDXkJRYuzmNrD0IPFMYcPpoEq",
-    "2023-02-03T19:51:10.000000Z",
-    "2021-11-27T11:49:55.000000Z",
+    "krqUcz43dBm26",
+    "2021-05-07T16:08:38.000000+09:00",
+    "2021-03-24T06:30:38.000000+09:00",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 発行元の店舗ID
 ) {
-    Description = "qYNWKYupHW3vkZPbupwOmpLyfcnvR24ekndSEuijqLz34cJjz9WzSXV2waIpnDEjnPuGDOLqsy43AtWyT6hyzJkPIxd",
-    DiscountAmount = 8182,
-    DiscountPercentage = 1010.0,
-    DiscountUpperLimit = 4673,
-    DisplayStartsAt = "2022-12-25T05:08:47.000000Z",  // クーポンの掲載期間(開始日時)
-    DisplayEndsAt = "2021-10-02T17:22:12.000000Z",  // クーポンの掲載期間(終了日時)
+    Description = "r7FE7oxXwqyeP95WFsrDTZsTHaLMAx4xhJmPNb2Vt3kMgTzAxm3nuCtm4tM4rQ7TMWwQQegAiqW5Gh3E",
+    DiscountAmount = 1694,
+    DiscountPercentage = 3744.0,
+    DiscountUpperLimit = 1253,
+    DisplayStartsAt = "2021-03-24T15:38:39.000000+09:00",  // クーポンの掲載期間(開始日時)
+    DisplayEndsAt = "2020-11-23T22:17:08.000000+09:00",  // クーポンの掲載期間(終了日時)
     IsDisabled = false,  // 無効化フラグ
     IsHidden = true,  // クーポン一覧に掲載されるかどうか
-    IsPublic = true,  // アプリ配信なしで受け取れるかどうか
-    Code = "n",  // クーポン受け取りコード
-    UsageLimit = 1090,  // ユーザごとの利用可能回数(NULLの場合は無制限)
-    MinAmount = 3250,  // クーポン適用可能な最小取引額
-    IsShopSpecified = true,  // 特定店舗限定のクーポンかどうか
-    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
+    IsPublic = false,  // アプリ配信なしで受け取れるかどうか
+    Code = "N4",  // クーポン受け取りコード
+    UsageLimit = 3497,  // ユーザごとの利用可能回数(NULLの場合は無制限)
+    MinAmount = 6454,  // クーポン適用可能な最小取引額
+    IsShopSpecified = false,  // 特定店舗限定のクーポンかどうか
+    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
     StorageId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ストレージID
 };
 Response.CouponDetail response = await request.Send(client);
@@ -460,23 +460,23 @@ UUIDv4フォーマットである必要があり、フォーマットが異な�
 Request.UpdateCoupon request = new Request.UpdateCoupon(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // クーポンID
 ) {
-    Name = "JrtrRhEmEhncAz9T8Jn6tKv842hmKtJWGe0W2JoBVxOBG6QSEaMM6DcJjfAtdrmKAg3KBKDu0vlbYdVC6n9nVLo43cE33CQPF6kxIlI0u",
-    Description = "guDnziraNYM7VX5YLnlD8HOOCDlP4GZ7jbmXMO5zVMwfk3fyCehTHNb57OPgysrQCIrNbKg5EGtS1CRG8HTOfVnvp3qGXZFBsOSpPHbliv7UIdhUMzObVJcG5btiH5rur7GsubMGTjIcOXKD9o8Kba3zToGBURahT5P",
-    DiscountAmount = 1159,
-    DiscountPercentage = 1312.0,
-    DiscountUpperLimit = 1476,
-    StartsAt = "2023-04-10T09:31:34.000000Z",
-    EndsAt = "2023-02-12T20:04:21.000000Z",
-    DisplayStartsAt = "2024-01-04T08:26:32.000000Z",  // クーポンの掲載期間(開始日時)
-    DisplayEndsAt = "2023-07-30T04:28:05.000000Z",  // クーポンの掲載期間(終了日時)
-    IsDisabled = true,  // 無効化フラグ
+    Name = "Bgm1bgbkQVRY8MuhwDykulFo5mDyJw8V3XaTOkFDFDXkJRYuzmNrD0IPFMYcPpoEqcZqYNWKYupHW3vkZPbupwOmpLyfc",
+    Description = "nvR24ekndSEuijqLz34cJjz9WzSXV2waIpnDEjnPuGDOLqsy43AtWyT6hyzJkPIxdv4Vr2ADhNnBQ2AhJrtrRhEmEhncAz9T8Jn6tKv842hmKtJWGe0W2JoBVxOBG6QSEaMM6DcJjfAtdrmKAg3KBKDu0vlbYdVC6n9nVLo43cE33CQPF6kxIlI0uguDnziraNYM7VX5YLnlD8HOOCDlP4GZ7jbmXM",
+    DiscountAmount = 4761,
+    DiscountPercentage = 1845.0,
+    DiscountUpperLimit = 4360,
+    StartsAt = "2023-03-19T19:18:18.000000+09:00",
+    EndsAt = "2022-04-02T23:56:43.000000+09:00",
+    DisplayStartsAt = "2022-08-15T11:01:42.000000+09:00",  // クーポンの掲載期間(開始日時)
+    DisplayEndsAt = "2020-10-06T06:10:06.000000+09:00",  // クーポンの掲載期間(終了日時)
+    IsDisabled = false,  // 無効化フラグ
     IsHidden = true,  // クーポン一覧に掲載されるかどうか
     IsPublic = false,  // アプリ配信なしで受け取れるかどうか
-    Code = "j",  // クーポン受け取りコード
-    UsageLimit = 9892,  // ユーザごとの利用可能回数(NULLの場合は無制限)
-    MinAmount = 8114,  // クーポン適用可能な最小取引額
+    Code = "fk3fyCeh",  // クーポン受け取りコード
+    UsageLimit = 1955,  // ユーザごとの利用可能回数(NULLの場合は無制限)
+    MinAmount = 2132,  // クーポン適用可能な最小取引額
     IsShopSpecified = true,  // 特定店舗限定のクーポンかどうか
-    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
+    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
     StorageId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ストレージID
 };
 Response.CouponDetail response = await request.Send(client);

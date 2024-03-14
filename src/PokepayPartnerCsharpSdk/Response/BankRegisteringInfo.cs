@@ -5,8 +5,8 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class BankRegisteringInfo
     {
-        public string RedirectUrl { get; }
-        public string PaytreeCustomerNumber { get; }
+        public string RedirectUrl { get; set; }
+        public string PaytreeCustomerNumber { get; set; }
 
         [JsonConstructor]
         public BankRegisteringInfo(string redirectUrl) =>

@@ -6,13 +6,13 @@ namespace PokepayPartnerCsharpSdk.Response
     public class CpmToken
     {
         [JsonPropertyName("cpm_token")]
-        public string Token { get; }
-        public AccountDetail Account { get; }
-        public Transaction Transaction { get; }
-        public ExternalTransaction Event { get; }
-        public string[] Scopes { get; }
-        public string ExpiresAt { get; }
-        public string Metadata { get; }
+        public string Token { get; set; }
+        public AccountDetail Account { get; set; }
+        public Transaction Transaction { get; set; }
+        public ExternalTransaction Event { get; set; }
+        public string[] Scopes { get; set; }
+        public string ExpiresAt { get; set; }
+        public string Metadata { get; set; }
 
         [JsonConstructor]
         public CpmToken(string token, AccountDetail account, string[] scopes, string expiresAt, string metadata) =>

@@ -5,9 +5,9 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class PrivateMoneyOrganizationSummary
     {
-        public string OrganizationCode { get; }
-        public OrganizationSummary Topup { get; }
-        public OrganizationSummary Payment { get; }
+        public string OrganizationCode { get; set; }
+        public OrganizationSummary Topup { get; set; }
+        public OrganizationSummary Payment { get; set; }
 
         [JsonConstructor]
         public PrivateMoneyOrganizationSummary(string organizationCode, OrganizationSummary topup, OrganizationSummary payment) =>

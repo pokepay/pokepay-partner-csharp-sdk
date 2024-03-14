@@ -5,16 +5,16 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Transfer
     {
-        public string Id { get; }
-        public AccountWithoutPrivateMoneyDetail SenderAccount { get; }
-        public AccountWithoutPrivateMoneyDetail ReceiverAccount { get; }
-        public double Amount { get; }
-        public double MoneyAmount { get; }
-        public double PointAmount { get; }
-        public string DoneAt { get; }
-        public string Type { get; }
-        public string Description { get; }
-        public string TransactionId { get; }
+        public string Id { get; set; }
+        public AccountWithoutPrivateMoneyDetail SenderAccount { get; set; }
+        public AccountWithoutPrivateMoneyDetail ReceiverAccount { get; set; }
+        public double Amount { get; set; }
+        public double MoneyAmount { get; set; }
+        public double PointAmount { get; set; }
+        public string DoneAt { get; set; }
+        public string Type { get; set; }
+        public string Description { get; set; }
+        public string TransactionId { get; set; }
 
         [JsonConstructor]
         public Transfer(string id, AccountWithoutPrivateMoneyDetail senderAccount, AccountWithoutPrivateMoneyDetail receiverAccount, double amount, double moneyAmount, double pointAmount, string doneAt, string type, string description, string transactionId) =>

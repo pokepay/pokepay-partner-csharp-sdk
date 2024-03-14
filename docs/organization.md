@@ -9,8 +9,8 @@ Request.ListOrganizations request = new Request.ListOrganizations(
 ) {
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
-    Name = "GERnFdcW",  // 組織名
-    Code = "SdaJfJ60D",  // 組織コード
+    Name = "AtEksQW",  // 組織名
+    Code = "l6Am",  // 組織コード
 };
 Response.PaginatedOrganizations response = await request.Send(client);
 ```
@@ -93,8 +93,8 @@ Request.CreateOrganization request = new Request.CreateOrganization(
     "ox-supermarket", // 新規組織コード
     "oxスーパー", // 新規組織名
     new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}, // 加盟店組織で有効にするマネーIDの配列
-    "H2T0aKhnL3@FlnA.com", // 発行体担当者メールアドレス
-    "D82QrpYaKu@slNr.com" // 新規組織担当者メールアドレス
+    "3gCBrhM35E@fmrt.com", // 発行体担当者メールアドレス
+    "OFWMml5EKR@iDsW.com" // 新規組織担当者メールアドレス
 ) {
     BankName = "XYZ銀行",  // 銀行名
     BankCode = "1234",  // 銀行金融機関コード

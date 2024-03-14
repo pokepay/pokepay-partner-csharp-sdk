@@ -5,14 +5,14 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class AdminUserWithShopsAndPrivateMoneys
     {
-        public string Id { get; }
-        public string Role { get; }
-        public string Email { get; }
-        public string Name { get; }
-        public bool IsActive { get; }
-        public Organization Organization { get; }
-        public User[] Shops { get; }
-        public PrivateMoney[] PrivateMoneys { get; }
+        public string Id { get; set; }
+        public string Role { get; set; }
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public bool IsActive { get; set; }
+        public Organization Organization { get; set; }
+        public User[] Shops { get; set; }
+        public PrivateMoney[] PrivateMoneys { get; set; }
 
         [JsonConstructor]
         public AdminUserWithShopsAndPrivateMoneys(string id, string role, string email, string name, bool isActive, Organization organization, User[] shops, PrivateMoney[] privateMoneys) =>

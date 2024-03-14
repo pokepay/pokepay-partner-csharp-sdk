@@ -6,11 +6,11 @@ CSVファイルから一括取引をします。
 
 ```csharp
 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-    "skU0m8hSr1melepO9LnwIsUc", // 一括取引タスク名
-    "mvb4", // 取引する情報のCSV
-    "GOUqCz9cGDIhlPt52zP7YS2DWusWLcKpd2P3" // リクエストID
+    "pXocQ5N98CAVKuKRC5FLAIR", // 一括取引タスク名
+    "iGKuI", // 取引する情報のCSV
+    "8CNBTqLCZ99AjVbK3l31NeAICSoLJdEVZoJB" // リクエストID
 ) {
-    Description = "35Nv6jpCTg7cI",  // 一括取引の説明
+    Description = "0H",  // 一括取引の説明
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
 };
 Response.BulkTransaction response = await request.Send(client);

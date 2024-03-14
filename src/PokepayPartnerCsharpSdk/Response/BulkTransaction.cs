@@ -5,15 +5,15 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class BulkTransaction
     {
-        public string Id { get; }
-        public string RequestId { get; }
-        public string Name { get; }
-        public string Description { get; }
-        public string Status { get; }
-        public string Error { get; }
-        public int ErrorLineno { get; }
-        public string SubmittedAt { get; }
-        public string UpdatedAt { get; }
+        public string Id { get; set; }
+        public string RequestId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Status { get; set; }
+        public string Error { get; set; }
+        public int ErrorLineno { get; set; }
+        public string SubmittedAt { get; set; }
+        public string UpdatedAt { get; set; }
 
         [JsonConstructor]
         public BulkTransaction(string id, string requestId, string name, string description, string status, string submittedAt, string updatedAt) =>

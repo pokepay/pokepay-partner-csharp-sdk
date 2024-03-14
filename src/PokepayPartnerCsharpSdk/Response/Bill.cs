@@ -5,14 +5,14 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Bill
     {
-        public string Id { get; }
-        public double Amount { get; }
-        public double MaxAmount { get; }
-        public double MinAmount { get; }
-        public string Description { get; }
-        public AccountWithUser Account { get; }
-        public bool IsDisabled { get; }
-        public string Token { get; }
+        public string Id { get; set; }
+        public double Amount { get; set; }
+        public double MaxAmount { get; set; }
+        public double MinAmount { get; set; }
+        public string Description { get; set; }
+        public AccountWithUser Account { get; set; }
+        public bool IsDisabled { get; set; }
+        public string Token { get; set; }
 
         [JsonConstructor]
         public Bill(string id, string description, AccountWithUser account, bool isDisabled, string token) =>
