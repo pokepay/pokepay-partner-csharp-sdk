@@ -5,9 +5,9 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class InvalidParameters
     {
-        public string Type { get; }
-        public string Message { get; }
-        public object Errors { get; }
+        public string Type { get; set; }
+        public string Message { get; set; }
+        public object Errors { get; set; }
 
         [JsonConstructor]
         public InvalidParameters(string type, string message, object errors) =>

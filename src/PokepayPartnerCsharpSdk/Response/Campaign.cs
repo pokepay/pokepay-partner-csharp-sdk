@@ -5,26 +5,26 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Campaign
     {
-        public string Id { get; }
-        public string Name { get; }
-        public User[] ApplicableShops { get; }
-        public bool IsExclusive { get; }
-        public string StartsAt { get; }
-        public string EndsAt { get; }
-        public string PointExpiresAt { get; }
-        public int PointExpiresInDays { get; }
-        public int Priority { get; }
-        public string Description { get; }
-        public User BearPointShop { get; }
-        public PrivateMoney PrivateMoney { get; }
-        public PrivateMoney DestPrivateMoney { get; }
-        public int MaxTotalPointAmount { get; }
-        public string PointCalculationRule { get; }
-        public string PointCalculationRuleObject { get; }
-        public string Status { get; }
-        public int BudgetCapsAmount { get; }
-        public int BudgetCurrentAmount { get; }
-        public string BudgetCurrentTime { get; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public User[] ApplicableShops { get; set; }
+        public bool IsExclusive { get; set; }
+        public string StartsAt { get; set; }
+        public string EndsAt { get; set; }
+        public string PointExpiresAt { get; set; }
+        public int PointExpiresInDays { get; set; }
+        public int Priority { get; set; }
+        public string Description { get; set; }
+        public User BearPointShop { get; set; }
+        public PrivateMoney PrivateMoney { get; set; }
+        public PrivateMoney DestPrivateMoney { get; set; }
+        public int MaxTotalPointAmount { get; set; }
+        public string PointCalculationRule { get; set; }
+        public string PointCalculationRuleObject { get; set; }
+        public string Status { get; set; }
+        public int BudgetCapsAmount { get; set; }
+        public int BudgetCurrentAmount { get; set; }
+        public string BudgetCurrentTime { get; set; }
 
         [JsonConstructor]
         public Campaign(string id, string name, bool isExclusive, string startsAt, string endsAt, int priority, string description, User bearPointShop, PrivateMoney privateMoney, PrivateMoney destPrivateMoney, string pointCalculationRule, string pointCalculationRuleObject, string status) =>

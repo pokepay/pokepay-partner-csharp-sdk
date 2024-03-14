@@ -5,11 +5,11 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Pagination
     {
-        public int Current { get; }
-        public int PerPage { get; }
-        public int MaxPage { get; }
-        public bool HasPrev { get; }
-        public bool HasNext { get; }
+        public int Current { get; set; }
+        public int PerPage { get; set; }
+        public int MaxPage { get; set; }
+        public bool HasPrev { get; set; }
+        public bool HasNext { get; set; }
 
         [JsonConstructor]
         public Pagination(int current, int perPage, int maxPage, bool hasPrev, bool hasNext) =>

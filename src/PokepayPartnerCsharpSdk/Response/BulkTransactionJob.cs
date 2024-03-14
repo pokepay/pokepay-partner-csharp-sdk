@@ -5,22 +5,22 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class BulkTransactionJob
     {
-        public int Id { get; }
-        public BulkTransaction BulkTransaction { get; }
-        public string Type { get; }
-        public string SenderAccountId { get; }
-        public string ReceiverAccountId { get; }
-        public double MoneyAmount { get; }
-        public double PointAmount { get; }
-        public string Description { get; }
-        public string BearPointAccountId { get; }
-        public string PointExpiresAt { get; }
-        public string Status { get; }
-        public string Error { get; }
-        public int Lineno { get; }
-        public string TransactionId { get; }
-        public string CreatedAt { get; }
-        public string UpdatedAt { get; }
+        public int Id { get; set; }
+        public BulkTransaction BulkTransaction { get; set; }
+        public string Type { get; set; }
+        public string SenderAccountId { get; set; }
+        public string ReceiverAccountId { get; set; }
+        public double MoneyAmount { get; set; }
+        public double PointAmount { get; set; }
+        public string Description { get; set; }
+        public string BearPointAccountId { get; set; }
+        public string PointExpiresAt { get; set; }
+        public string Status { get; set; }
+        public string Error { get; set; }
+        public int Lineno { get; set; }
+        public string TransactionId { get; set; }
+        public string CreatedAt { get; set; }
+        public string UpdatedAt { get; set; }
 
         [JsonConstructor]
         public BulkTransactionJob(int id, BulkTransaction bulkTransaction, string type, string senderAccountId, string receiverAccountId, double moneyAmount, double pointAmount, string description, string bearPointAccountId, string status, string createdAt, string updatedAt) =>

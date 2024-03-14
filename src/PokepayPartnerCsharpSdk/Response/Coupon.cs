@@ -5,25 +5,25 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Coupon
     {
-        public string Id { get; }
-        public string Name { get; }
-        public User IssuedShop { get; }
-        public string Description { get; }
-        public int DiscountAmount { get; }
-        public double DiscountPercentage { get; }
-        public int DiscountUpperLimit { get; }
-        public string StartsAt { get; }
-        public string EndsAt { get; }
-        public string DisplayStartsAt { get; }
-        public string DisplayEndsAt { get; }
-        public int UsageLimit { get; }
-        public int MinAmount { get; }
-        public bool IsShopSpecified { get; }
-        public bool IsHidden { get; }
-        public bool IsPublic { get; }
-        public string Code { get; }
-        public bool IsDisabled { get; }
-        public string Token { get; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public User IssuedShop { get; set; }
+        public string Description { get; set; }
+        public int DiscountAmount { get; set; }
+        public double DiscountPercentage { get; set; }
+        public int DiscountUpperLimit { get; set; }
+        public string StartsAt { get; set; }
+        public string EndsAt { get; set; }
+        public string DisplayStartsAt { get; set; }
+        public string DisplayEndsAt { get; set; }
+        public int UsageLimit { get; set; }
+        public int MinAmount { get; set; }
+        public bool IsShopSpecified { get; set; }
+        public bool IsHidden { get; set; }
+        public bool IsPublic { get; set; }
+        public string Code { get; set; }
+        public bool IsDisabled { get; set; }
+        public string Token { get; set; }
 
         [JsonConstructor]
         public Coupon(string id, string name, User issuedShop, string description, string startsAt, string endsAt, string displayStartsAt, string displayEndsAt, bool isShopSpecified, bool isHidden, bool isPublic, bool isDisabled, string token) =>

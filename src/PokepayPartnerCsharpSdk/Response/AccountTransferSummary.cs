@@ -5,7 +5,7 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class AccountTransferSummary
     {
-        public AccountTransferSummaryElement[] Summaries { get; }
+        public AccountTransferSummaryElement[] Summaries { get; set; }
 
         [JsonConstructor]
         public AccountTransferSummary(AccountTransferSummaryElement[] summaries) =>

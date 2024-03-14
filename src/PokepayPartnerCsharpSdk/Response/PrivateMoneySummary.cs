@@ -5,17 +5,17 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class PrivateMoneySummary
     {
-        public double TopupAmount { get; }
-        public double RefundedTopupAmount { get; }
-        public double PaymentAmount { get; }
-        public double RefundedPaymentAmount { get; }
-        public double AddedPointAmount { get; }
-        public double TopupPointAmount { get; }
-        public double CampaignPointAmount { get; }
-        public double RefundedAddedPointAmount { get; }
-        public double ExchangeInflowAmount { get; }
-        public double ExchangeOutflowAmount { get; }
-        public int TransactionCount { get; }
+        public double TopupAmount { get; set; }
+        public double RefundedTopupAmount { get; set; }
+        public double PaymentAmount { get; set; }
+        public double RefundedPaymentAmount { get; set; }
+        public double AddedPointAmount { get; set; }
+        public double TopupPointAmount { get; set; }
+        public double CampaignPointAmount { get; set; }
+        public double RefundedAddedPointAmount { get; set; }
+        public double ExchangeInflowAmount { get; set; }
+        public double ExchangeOutflowAmount { get; set; }
+        public int TransactionCount { get; set; }
 
         [JsonConstructor]
         public PrivateMoneySummary(double topupAmount, double refundedTopupAmount, double paymentAmount, double refundedPaymentAmount, double addedPointAmount, double topupPointAmount, double campaignPointAmount, double refundedAddedPointAmount, double exchangeInflowAmount, double exchangeOutflowAmount, int transactionCount) =>

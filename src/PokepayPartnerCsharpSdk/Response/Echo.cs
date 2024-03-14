@@ -5,8 +5,8 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Echo
     {
-        public string Status { get; }
-        public string Message { get; }
+        public string Status { get; set; }
+        public string Message { get; set; }
 
         [JsonConstructor]
         public Echo(string status, string message) =>

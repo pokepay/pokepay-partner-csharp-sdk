@@ -5,12 +5,12 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class OrganizationWorkerTaskWebhook
     {
-        public string Id { get; }
-        public string OrganizationCode { get; }
-        public string Task { get; }
-        public string Url { get; }
-        public string ContentType { get; }
-        public bool IsActive { get; }
+        public string Id { get; set; }
+        public string OrganizationCode { get; set; }
+        public string Task { get; set; }
+        public string Url { get; set; }
+        public string ContentType { get; set; }
+        public bool IsActive { get; set; }
 
         [JsonConstructor]
         public OrganizationWorkerTaskWebhook(string id, string organizationCode, string task, string url, string contentType, bool isActive) =>

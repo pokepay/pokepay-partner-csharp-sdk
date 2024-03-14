@@ -5,8 +5,8 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class PartnerClientNotFound
     {
-        public string Type { get; }
-        public string Message { get; }
+        public string Type { get; set; }
+        public string Message { get; set; }
 
         [JsonConstructor]
         public PartnerClientNotFound(string type, string message) =>

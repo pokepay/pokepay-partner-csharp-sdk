@@ -5,9 +5,9 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class PaginatedTransfers
     {
-        public Transfer[] Rows { get; }
-        public int Count { get; }
-        public Pagination Pagination { get; }
+        public Transfer[] Rows { get; set; }
+        public int Count { get; set; }
+        public Pagination Pagination { get; set; }
 
         [JsonConstructor]
         public PaginatedTransfers(Transfer[] rows, int count, Pagination pagination) =>

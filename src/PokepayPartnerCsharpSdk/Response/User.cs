@@ -5,9 +5,9 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class User
     {
-        public string Id { get; }
-        public string Name { get; }
-        public bool IsMerchant { get; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public bool IsMerchant { get; set; }
 
         [JsonConstructor]
         public User(string id, string name, bool isMerchant) =>

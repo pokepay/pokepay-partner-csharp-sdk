@@ -5,15 +5,15 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Bank
     {
-        public string Id { get; }
-        public PrivateMoney PrivateMoney { get; }
-        public string BankName { get; }
-        public string BankCode { get; }
-        public string BranchNumber { get; }
-        public string BranchName { get; }
-        public string DepositType { get; }
-        public string MaskedAccountNumber { get; }
-        public string AccountName { get; }
+        public string Id { get; set; }
+        public PrivateMoney PrivateMoney { get; set; }
+        public string BankName { get; set; }
+        public string BankCode { get; set; }
+        public string BranchNumber { get; set; }
+        public string BranchName { get; set; }
+        public string DepositType { get; set; }
+        public string MaskedAccountNumber { get; set; }
+        public string AccountName { get; set; }
 
         [JsonConstructor]
         public Bank(string id, PrivateMoney privateMoney, string bankName, string bankCode, string branchNumber, string branchName, string depositType, string maskedAccountNumber, string accountName) =>

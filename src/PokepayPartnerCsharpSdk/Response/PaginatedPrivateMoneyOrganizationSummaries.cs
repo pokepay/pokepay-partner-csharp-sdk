@@ -5,9 +5,9 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class PaginatedPrivateMoneyOrganizationSummaries
     {
-        public PrivateMoneyOrganizationSummary[] Rows { get; }
-        public int Count { get; }
-        public Pagination Pagination { get; }
+        public PrivateMoneyOrganizationSummary[] Rows { get; set; }
+        public int Count { get; set; }
+        public Pagination Pagination { get; set; }
 
         [JsonConstructor]
         public PaginatedPrivateMoneyOrganizationSummaries(PrivateMoneyOrganizationSummary[] rows, int count, Pagination pagination) =>

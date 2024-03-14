@@ -12,8 +12,8 @@ WebHookにはURLとタスク名、有効化されているかを設定するこ�
 
 ```csharp
 Request.CreateWebhook request = new Request.CreateWebhook(
-    "bulk_shops", // タスク名
-    "Bgm1" // URL
+    "process_user_stats_operation", // タスク名
+    "tBu" // URL
 );
 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 ```
@@ -113,7 +113,7 @@ Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(cl
 Request.UpdateWebhook request = new Request.UpdateWebhook(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // Webhook ID
 ) {
-    Url = "b",  // URL
+    Url = "ImxNnX4",  // URL
     IsActive = false,  // 有効/無効
     Task = "bulk_shops",  // タスク名
 };

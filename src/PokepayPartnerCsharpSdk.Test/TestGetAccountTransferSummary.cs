@@ -59,7 +59,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.GetAccountTransferSummary request = new Request.GetAccountTransferSummary(
                     "d79ada44-2554-41d3-a753-5725590e9c63"
                 ) {
-                    To = "2022-08-23T05:52:55.000000Z",
+                    To = "2022-08-23T05:52:55.000000+09:00",
                     TransferTypes = new string[]{"exchange-outflow", "use-coupon", "refund-payment", "topup", "payment", "exchange-inflow", "refund-exchange-outflow"},
                 };
                 Response.AccountTransferSummary response = await request.Send(client);
@@ -77,8 +77,8 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.GetAccountTransferSummary request = new Request.GetAccountTransferSummary(
                     "d79ada44-2554-41d3-a753-5725590e9c63"
                 ) {
-                    From = "2022-12-23T00:17:08.000000Z",
-                    To = "2023-06-07T07:45:11.000000Z",
+                    From = "2022-12-23T00:17:08.000000+09:00",
+                    To = "2023-06-07T07:45:11.000000+09:00",
                     TransferTypes = new string[]{"exchange-outflow", "refund-campaign", "exchange-inflow", "topup", "refund-topup", "refund-payment", "refund-exchange-inflow", "refund-coupon", "refund-exchange-outflow", "use-coupon"},
                 };
                 Response.AccountTransferSummary response = await request.Send(client);

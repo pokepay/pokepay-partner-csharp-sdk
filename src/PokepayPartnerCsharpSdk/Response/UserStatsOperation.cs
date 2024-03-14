@@ -5,14 +5,14 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class UserStatsOperation
     {
-        public string Id { get; }
-        public string From { get; }
-        public string To { get; }
-        public string Status { get; }
-        public string ErrorReason { get; }
-        public string DoneAt { get; }
-        public string FileUrl { get; }
-        public string RequestedAt { get; }
+        public string Id { get; set; }
+        public string From { get; set; }
+        public string To { get; set; }
+        public string Status { get; set; }
+        public string ErrorReason { get; set; }
+        public string DoneAt { get; set; }
+        public string FileUrl { get; set; }
+        public string RequestedAt { get; set; }
 
         [JsonConstructor]
         public UserStatsOperation(string id, string from, string to, string status, string requestedAt) =>

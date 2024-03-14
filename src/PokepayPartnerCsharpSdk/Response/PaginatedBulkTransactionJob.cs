@@ -5,9 +5,9 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class PaginatedBulkTransactionJob
     {
-        public BulkTransactionJob[] Rows { get; }
-        public int Count { get; }
-        public Pagination Pagination { get; }
+        public BulkTransactionJob[] Rows { get; set; }
+        public int Count { get; set; }
+        public Pagination Pagination { get; set; }
 
         [JsonConstructor]
         public PaginatedBulkTransactionJob(BulkTransactionJob[] rows, int count, Pagination pagination) =>

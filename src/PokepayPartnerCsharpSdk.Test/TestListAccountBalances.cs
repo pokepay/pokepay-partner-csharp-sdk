@@ -59,7 +59,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.ListAccountBalances request = new Request.ListAccountBalances(
                     "124a3fe8-1e88-4803-9195-15bbd1722f1a"
                 ) {
-                    ExpiresAtTo = "2020-09-07T21:25:03.000000Z",
+                    ExpiresAtTo = "2020-09-07T21:25:03.000000+09:00",
                     Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -77,8 +77,8 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.ListAccountBalances request = new Request.ListAccountBalances(
                     "124a3fe8-1e88-4803-9195-15bbd1722f1a"
                 ) {
-                    ExpiresAtFrom = "2020-07-02T09:51:09.000000Z",
-                    ExpiresAtTo = "2022-05-06T04:41:55.000000Z",
+                    ExpiresAtFrom = "2020-07-02T09:51:09.000000+09:00",
+                    ExpiresAtTo = "2022-05-06T04:41:55.000000+09:00",
                     Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -97,8 +97,8 @@ namespace PokepayPartnerCsharpSdk.Test
                     "124a3fe8-1e88-4803-9195-15bbd1722f1a"
                 ) {
                     PerPage = 3844,
-                    ExpiresAtFrom = "2020-06-15T18:58:37.000000Z",
-                    ExpiresAtTo = "2022-03-04T19:01:47.000000Z",
+                    ExpiresAtFrom = "2020-06-15T18:58:37.000000+09:00",
+                    ExpiresAtTo = "2022-03-04T19:01:47.000000+09:00",
                     Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -118,8 +118,8 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     Page = 3584,
                     PerPage = 7257,
-                    ExpiresAtFrom = "2022-05-05T20:55:29.000000Z",
-                    ExpiresAtTo = "2023-04-07T14:57:44.000000Z",
+                    ExpiresAtFrom = "2022-05-05T20:55:29.000000+09:00",
+                    ExpiresAtTo = "2023-04-07T14:57:44.000000+09:00",
                     Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);

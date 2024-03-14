@@ -5,10 +5,10 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class AccountTransferSummaryElement
     {
-        public string TransferType { get; }
-        public double MoneyAmount { get; }
-        public double PointAmount { get; }
-        public double Count { get; }
+        public string TransferType { get; set; }
+        public double MoneyAmount { get; set; }
+        public double PointAmount { get; set; }
+        public double Count { get; set; }
 
         [JsonConstructor]
         public AccountTransferSummaryElement(string transferType, double moneyAmount, double pointAmount, double count) =>

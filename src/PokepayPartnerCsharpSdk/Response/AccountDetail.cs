@@ -5,17 +5,17 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class AccountDetail
     {
-        public string Id { get; }
-        public string Name { get; }
-        public bool IsSuspended { get; }
-        public string Status { get; }
-        public double Balance { get; }
-        public double MoneyBalance { get; }
-        public double PointBalance { get; }
-        public double PointDebt { get; }
-        public PrivateMoney PrivateMoney { get; }
-        public User User { get; }
-        public string ExternalId { get; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public bool IsSuspended { get; set; }
+        public string Status { get; set; }
+        public double Balance { get; set; }
+        public double MoneyBalance { get; set; }
+        public double PointBalance { get; set; }
+        public double PointDebt { get; set; }
+        public PrivateMoney PrivateMoney { get; set; }
+        public User User { get; set; }
+        public string ExternalId { get; set; }
 
         [JsonConstructor]
         public AccountDetail(string id, string name, bool isSuspended, string status, double balance, double moneyBalance, double pointBalance, double pointDebt, PrivateMoney privateMoney, User user) =>

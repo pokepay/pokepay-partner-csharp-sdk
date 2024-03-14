@@ -5,15 +5,15 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class CashtrayWithResult
     {
-        public string Id { get; }
-        public double Amount { get; }
-        public string Description { get; }
-        public AccountWithUser Account { get; }
-        public string ExpiresAt { get; }
-        public string CanceledAt { get; }
-        public string Token { get; }
-        public CashtrayAttempt Attempt { get; }
-        public Transaction Transaction { get; }
+        public string Id { get; set; }
+        public double Amount { get; set; }
+        public string Description { get; set; }
+        public AccountWithUser Account { get; set; }
+        public string ExpiresAt { get; set; }
+        public string CanceledAt { get; set; }
+        public string Token { get; set; }
+        public CashtrayAttempt Attempt { get; set; }
+        public Transaction Transaction { get; set; }
 
         [JsonConstructor]
         public CashtrayWithResult(string id, double amount, string description, AccountWithUser account, string expiresAt, string token) =>

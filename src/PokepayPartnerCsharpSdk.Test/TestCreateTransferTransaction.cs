@@ -25,10 +25,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "3a769fe5-ee23-42bf-947c-a065feae4e58",
-                    "25fadf3a-fb31-4d02-ab0e-d173863896c8",
-                    "01bf5cb4-a152-4eb2-8d09-9367e182b608",
-                    9687.0
+                    "5d46b0e9-6e35-44ce-a749-829ba63c5ff3",
+                    "9db57a62-6fec-4355-a2aa-3ae59cababac",
+                    "f5671a2f-b644-42f1-be24-bcf51949d3e9",
+                    6160.0
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -43,12 +43,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "3a769fe5-ee23-42bf-947c-a065feae4e58",
-                    "25fadf3a-fb31-4d02-ab0e-d173863896c8",
-                    "01bf5cb4-a152-4eb2-8d09-9367e182b608",
-                    9687.0
+                    "5d46b0e9-6e35-44ce-a749-829ba63c5ff3",
+                    "9db57a62-6fec-4355-a2aa-3ae59cababac",
+                    "f5671a2f-b644-42f1-be24-bcf51949d3e9",
+                    6160.0
                 ) {
-                    RequestId = "37d4c4a4-dabf-4ab6-ba31-5fb48e82ab0b",
+                    RequestId = "7bad9951-84ab-43dd-8a0f-c84c2183bc38",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -63,13 +63,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "3a769fe5-ee23-42bf-947c-a065feae4e58",
-                    "25fadf3a-fb31-4d02-ab0e-d173863896c8",
-                    "01bf5cb4-a152-4eb2-8d09-9367e182b608",
-                    9687.0
+                    "5d46b0e9-6e35-44ce-a749-829ba63c5ff3",
+                    "9db57a62-6fec-4355-a2aa-3ae59cababac",
+                    "f5671a2f-b644-42f1-be24-bcf51949d3e9",
+                    6160.0
                 ) {
-                    Description = "JBRZmQUgzecqWdDVSstoEtPVoykbtA6l7WDayqQLAKXyhWYdlIHfSBBKI1",
-                    RequestId = "832b55cb-dc90-46d1-ac8d-0fb44328a863",
+                    Description = "RreNoLAWMJdywYSICtYcbHl2ktF16gpa54attROZcBbejZS9wdnnNKINI7vj8qEDPsdJ8JkL6K4fbUtzmymsdzvhUX",
+                    RequestId = "b08eea04-dd6d-4f72-a3b2-bedf1700c79f",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -84,14 +84,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
-                    "3a769fe5-ee23-42bf-947c-a065feae4e58",
-                    "25fadf3a-fb31-4d02-ab0e-d173863896c8",
-                    "01bf5cb4-a152-4eb2-8d09-9367e182b608",
-                    9687.0
+                    "5d46b0e9-6e35-44ce-a749-829ba63c5ff3",
+                    "9db57a62-6fec-4355-a2aa-3ae59cababac",
+                    "f5671a2f-b644-42f1-be24-bcf51949d3e9",
+                    6160.0
                 ) {
                     Metadata = "{\"key\":\"value\"}",
-                    Description = "6HLesoN7AsxjaX4bkzoW5SSzFCKjOEE829PJZq44v95w5OTBAsM3ixdWcd35lzGg9k8zX5Zx6rdz",
-                    RequestId = "d7a5de29-8fda-47c0-ba8e-5e36d9e5fbff",
+                    Description = "0VozYCz4wR9Gfv1ooHMcqzJF0zVNZ8zHF5mnetJol0g7uhhZVw",
+                    RequestId = "9a8c6942-c0c2-4753-aec2-2bb9dba4b5ce",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

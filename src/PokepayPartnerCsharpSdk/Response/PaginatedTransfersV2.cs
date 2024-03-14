@@ -5,11 +5,11 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class PaginatedTransfersV2
     {
-        public Transfer[] Rows { get; }
-        public int PerPage { get; }
-        public int Count { get; }
-        public string NextPageCursorId { get; }
-        public string PrevPageCursorId { get; }
+        public Transfer[] Rows { get; set; }
+        public int PerPage { get; set; }
+        public int Count { get; set; }
+        public string NextPageCursorId { get; set; }
+        public string PrevPageCursorId { get; set; }
 
         [JsonConstructor]
         public PaginatedTransfersV2(Transfer[] rows, int perPage, int count) =>

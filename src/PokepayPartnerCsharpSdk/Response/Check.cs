@@ -5,23 +5,23 @@ namespace PokepayPartnerCsharpSdk.Response
 {
     public class Check
     {
-        public string Id { get; }
-        public string CreatedAt { get; }
-        public double Amount { get; }
-        public double MoneyAmount { get; }
-        public double PointAmount { get; }
-        public string Description { get; }
-        public User User { get; }
-        public bool IsOnetime { get; }
-        public bool IsDisabled { get; }
-        public string ExpiresAt { get; }
-        public string LastUsedAt { get; }
-        public PrivateMoney PrivateMoney { get; }
-        public int UsageLimit { get; }
-        public double UsageCount { get; }
-        public string PointExpiresAt { get; }
-        public int PointExpiresInDays { get; }
-        public string Token { get; }
+        public string Id { get; set; }
+        public string CreatedAt { get; set; }
+        public double Amount { get; set; }
+        public double MoneyAmount { get; set; }
+        public double PointAmount { get; set; }
+        public string Description { get; set; }
+        public User User { get; set; }
+        public bool IsOnetime { get; set; }
+        public bool IsDisabled { get; set; }
+        public string ExpiresAt { get; set; }
+        public string LastUsedAt { get; set; }
+        public PrivateMoney PrivateMoney { get; set; }
+        public int UsageLimit { get; set; }
+        public double UsageCount { get; set; }
+        public string PointExpiresAt { get; set; }
+        public int PointExpiresInDays { get; set; }
+        public string Token { get; set; }
 
         [JsonConstructor]
         public Check(string id, string createdAt, double amount, double moneyAmount, double pointAmount, string description, User user, bool isOnetime, bool isDisabled, string expiresAt, PrivateMoney privateMoney, string token) =>
