@@ -51,6 +51,13 @@ Response.UserDevice response = await request.Send(client);
 [UserDevice](./responses.md#user-device)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+|422|user_not_found||The user is not found|
+
+
 
 ---
 
@@ -87,6 +94,7 @@ Response.UserDevice response = await request.Send(client);
 を返します
 
 
+
 ---
 
 
@@ -121,6 +129,7 @@ Response.UserDevice response = await request.Send(client);
 成功したときは
 [UserDevice](./responses.md#user-device)
 を返します
+
 
 
 ---

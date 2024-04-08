@@ -38,7 +38,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    Description = "KwyiQYSSoPK3N5ZGr",
+                    Description = "W1v6Ot04JjRtKJ3Y50yRgOZb7LyYKRMPV8lVcOO1",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -53,8 +53,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    Types = new string[]{"expire"},
-                    Description = "ptspEioBBqGcJLaXcepDTPRHElLNQrvWUnk17KWAioiFIGH7shpxz5S2r82nr4Char2DsC6IOlQ3ZC",
+                    Types = new string[]{"exchange_outflow", "cashback"},
+                    Description = "P1XNaA4tMwkt9CEIs7P52Qn8Ps6rGg4gxhQEPHlDMgzo7RyqyjDQCvIVLohtP7YX7LIJvkHIDHAM5JdvPW8u4K9jehE0FIX2d1fsIJRaq4cseT3Jr8x9EZ1qV",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -69,9 +69,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    IsModified = false,
-                    Types = new string[]{"topup", "expire", "payment", "exchange_outflow", "exchange_inflow", "cashback"},
-                    Description = "MT5mAFAIeN7EOzXnRCcbLOsMiN4tjoxBAROpiRc0j39oPNkDTFwGmGihFz2z0gAPfWDnSv3peMsqUtDBVf5JNWPBpzSQtetKx5V0IU1H2quyHwM52367FRSK6ZN3dPGJYhssMJ1c8",
+                    IsModified = true,
+                    Types = new string[]{"payment", "exchange_inflow", "cashback"},
+                    Description = "a8eDKBhpNX1jWPk8Z43B0y0B9mfs2NjGqIbT9OwqnkaPpwID0eLyZpFNZ79bus52pNLLPoSL84SGwACEhVooVmB4cFvbTIGcXWAqG4BSfipEZMFGhk16I7iXigWOnUAkBWGfv1h3SdKWf7Mk6qxlTgasH11ZahWwt0KCw4FDQO05q",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -86,10 +86,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    PrivateMoneyId = "827833bc-adb1-4bbf-8b86-f8b954a6b99f",
+                    PrivateMoneyId = "7cdea4cc-02d4-45f1-bec7-1ec424873215",
                     IsModified = true,
-                    Types = new string[]{"exchange_outflow", "expire"},
-                    Description = "6FqKGuMQEbIhSKLSxcJDAAH0jwIPbMhYlMMXruKsOetb8P3w3wpAlq46MRFhBa1KSFCImukjAtQPb0UOTifX7KrzTtAdseC51TTzGU05VTqLiAQDTT40IDYkIvu0sCcHMaD",
+                    Types = new string[]{"payment", "exchange_inflow", "expire", "cashback", "topup"},
+                    Description = "aFv4VsaDUMga8HPHLfj8VAxLQCn6DppPY7uZKs5wMf3MBYDCuFCMBOgtd28MFakoJp4sttlPyu0hLTf3LV1FvqM27O2bqybT3XFSWXNEvBDebROkI568yn",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -104,11 +104,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    OrganizationCode = "-A061KZ-VlI-0i-18e--60ot",
-                    PrivateMoneyId = "81f34672-e1b0-4559-902e-bce54af6e23b",
-                    IsModified = true,
-                    Types = new string[]{"exchange_outflow", "topup", "payment", "cashback"},
-                    Description = "k4Q5ZEYWHc6DIDKem3xaXPio5o0q9x0iUy",
+                    OrganizationCode = "8",
+                    PrivateMoneyId = "51efbe83-e424-4e59-adbf-731bc32e71e4",
+                    IsModified = false,
+                    Types = new string[]{"payment", "exchange_outflow"},
+                    Description = "GtyZiVBFtaHsVEu5jHLt1IIKsQ450xUM6O5hfI4vi32RsgmtpDzruBR2bpCJbWCsF1XOMwOMfbCbRi8MeoObjQBbD5vivOmPF0WWyAe43BTjYiVtdGDmgs4Vk2VUx2tI5N4bIOpNtWwRJ7taFGOOZNR9womkOYYXss1h0acoAUmABE9DWtANH45sfx8Sg9q1O",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -123,12 +123,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    TransactionId = "rfJ",
-                    OrganizationCode = "i124eJ23IQZ2-G-4-2-LzD--2Q1m7-m",
-                    PrivateMoneyId = "72cd2d3c-d463-4580-8f4f-0e319771b1f7",
+                    TransactionId = "2IQSAJ6",
+                    OrganizationCode = "-YolA58m-Vc-996y5l-456i9u3-B--Y-",
+                    PrivateMoneyId = "8d7c5ca2-1c5b-49b4-a9fd-e6608c86a76e",
                     IsModified = true,
-                    Types = new string[]{"exchange_inflow", "payment"},
-                    Description = "P1XNaA4tMwkt9CEIs7P52Qn8Ps6rGg4gxhQEPHlDMgzo7RyqyjDQCvIVLohtP7YX7LIJvkHIDHAM5JdvPW8u4K9jehE0FIX2d1fsIJRaq4cseT3Jr8x9EZ1qV",
+                    Types = new string[]{"exchange_outflow", "expire", "payment"},
+                    Description = "JwtxMbsrynFzleqVzZvPQrwaZ5xfzumz05DAlrcpN",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -143,13 +143,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    TerminalId = "32e8c434-e7bf-4b19-9522-4306a2b9c7e6",
-                    TransactionId = "a8eD",
-                    OrganizationCode = "z",
-                    PrivateMoneyId = "6ef959ed-7d66-4023-8bac-6673d1c6ea12",
+                    TerminalId = "127e7540-96e5-4f7a-b8dc-87d48d84ec94",
+                    TransactionId = "usjLCX",
+                    OrganizationCode = "49qc-l--BI-H6-GT9-L",
+                    PrivateMoneyId = "250f2664-b994-46e1-9663-b4a682ae5034",
                     IsModified = true,
-                    Types = new string[]{"exchange_outflow", "payment", "cashback", "expire", "topup", "exchange_inflow"},
-                    Description = "qIbT9OwqnkaPpwID0eLyZpFNZ79bus52pNLLPoSL84SGwACEhVooVmB4cFvbTIGcXWAqG4BSfipEZMFGhk16I7iXigWOnUAkBWGfv1h3SdKWf7Mk6qxlTgasH11ZahWwt0KCw4FDQO05qLTqGDbzQDuaFv4VsaDUMga8HPHLfj8VAxLQCn6DppPY7uZKs5wMf3MBYDCu",
+                    Types = new string[]{"topup", "payment", "exchange_outflow"},
+                    Description = "wC2bbOKrqEv",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -164,14 +164,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    CustomerName = "CMBOgtd28MFakoJp4sttlPyu0hLTf3LV1FvqM27O2bqybT3XFSWXNEvBDebROkI568yn3vAdg2WzE6cQfJbdKVhYmdIeaGtyZiVBFtaHsVEu5jHLt1IIKsQ450xUM6O5hfI4vi32RsgmtpDzruBR2bpCJbWCsF1XOMwOMfbCbRi8MeoObjQBbD5vivOmPF0WWyAe43B",
-                    TerminalId = "5c46065d-d3a9-4195-a73c-4ad4d4f41d2f",
-                    TransactionId = "iVtdGDmgs4",
-                    OrganizationCode = "8-sG---7KiosX3L-FY--",
-                    PrivateMoneyId = "c32ad231-9f8e-443a-a830-60e1b89f3de3",
+                    CustomerName = "HSmLf6gZqSXb2Lr55RtyiRtGJ1HUxolj1KPz6vAaVd6Sg4zOt2LPb0nLBvCfu5QWsdUnRrH9KHVuXFGKt4lw9lRVMCAhIxweHf4mhVFw56RKDemCYdfHK",
+                    TerminalId = "554841a2-5c5d-40f9-9cb6-edbb11405deb",
+                    TransactionId = "RZ",
+                    OrganizationCode = "-S",
+                    PrivateMoneyId = "a189e694-0fe7-4bca-82be-412da43728cc",
                     IsModified = false,
-                    Types = new string[]{"payment", "cashback", "expire", "exchange_inflow", "exchange_outflow"},
-                    Description = "mABE9DWtANH45sfx8Sg9q1O62IQSAJ63xgs",
+                    Types = new string[]{"exchange_inflow", "cashback", "exchange_outflow", "expire", "payment"},
+                    Description = "iVmOaSDg31Umvi1k0xZepHVlU5UCBk1mC260SZIPf7lUxpBEwOCUnBV1wl8i3xQfqNGTjhBSpAIG2GVjRLCF7S26",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -186,15 +186,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    CustomerId = "b1986202-c78c-4226-a424-9e95792a0aeb",
-                    CustomerName = "w6yfFQPcXHRn98CcSXK5Zlq5PBZ9vRV0xbdBDEvdzHS5KI84n4B4JwtxMbsrynFzleqVzZvPQrwaZ5xfzumz05DAlrcpNez8TuusjLCXuqGq9aXt2RyxOmHZB8Yd9TYL0bkCAVqSRIdac4Bt",
-                    TerminalId = "0570b904-7960-41c2-8a8d-7277775085a2",
-                    TransactionId = "2bbO",
-                    OrganizationCode = "v4Nj4-1bvpA",
-                    PrivateMoneyId = "97a3c33f-3aec-4a6a-9e1f-ba828f9813b1",
+                    CustomerId = "740986f9-9270-4fd4-ba4d-1f3b7366d47d",
+                    CustomerName = "xe5LQXN3tfMMeaiTEdRlgPRLO6iu4xB9p9hHVjuFskSUixLpvflY8MFYZJvlfPZ9XRs2Dj",
+                    TerminalId = "33d7d9bc-ca3c-4085-9565-c396835f9116",
+                    TransactionId = "8FZcru468",
+                    OrganizationCode = "436qXf",
+                    PrivateMoneyId = "b827d131-f8e8-44ac-977f-3ab363c948a2",
                     IsModified = true,
-                    Types = new string[]{"topup"},
-                    Description = "6vAaVd6Sg4zOt2",
+                    Types = new string[]{"exchange_inflow", "exchange_outflow", "payment", "cashback"},
+                    Description = "pn04JUSx27eVHz2wOx9gOffBCzdPD5lY5ruzs73QnlHzwGBVLp2Vmg3eprOU7ktZcHWsZTpEtZX9770nlSO8H2DCl6imPJgn2XjYsZUpQvLebh65Hdtxmvs4SwxRthVVayjO1th3s3e6fayZ2E32vm3RMvvWttu1PJb3d04IfskzbRh2KXD",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -209,16 +209,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    ShopId = "07af234c-7118-47d0-9662-cca964d19f8c",
-                    CustomerId = "6a148ab0-436e-414c-8276-63c3dba78ce6",
-                    CustomerName = "5QWsdUnRrH9KHVuXFGKt4lw9lRVMCAhIxweHf4mhVFw56RKDemCYdfHKy6kNARZB0e7gSo7Ck5GjWL9QXL9sfwRokQiO2gJLOs7NWiVmOaSDg31Umvi1k0xZepHVlU5UCBk1mC260SZIPf7lUxpBEwOCUnBV1wl8i3xQfqNGTjhBSpAIG2GVjRLCF7S26ypTzMExe5LQXN3tfMMeaiTEdRlgPRLO6iu4xB9p9hHVjuFskSUixLpvfl",
-                    TerminalId = "bfac9759-613e-4097-b8cd-b4c6fafb2cd9",
-                    TransactionId = "vlfPZ9XR",
-                    OrganizationCode = "s8O1--2",
-                    PrivateMoneyId = "4585037e-a5c5-4ea4-839c-7f89ad6e7555",
-                    IsModified = false,
-                    Types = new string[]{"cashback", "expire", "exchange_outflow", "payment"},
-                    Description = "Uv3nTPZ701h3V5Qywi2pn04JUSx27eVHz2wOx9gOffBCzdPD5lY5ruzs73QnlHzwGBVLp2Vmg3eprOU7ktZcHWsZTpEtZX9770nlSO8H2DCl6imPJgn2XjYsZUpQvLebh65Hdtxmvs4SwxRthVVayjO1th3s3e6fayZ2E32vm3RMvvWttu1PJb3d04Ifsk",
+                    ShopId = "14db71eb-d419-4c4a-87f1-7879db1dae31",
+                    CustomerId = "7508f855-4d79-48d0-9202-02e1456064c7",
+                    CustomerName = "VkyMSdmemZcovbEUc9TiM3DTSa7pJlo8JS6mIVfCl8O6XTpGUPEJOaNnRanlNyuKHWuXq7zEzVgAAIhzrVmMQ7zQf4j1Xlnx61iQEXBdwXQXBx9CjvSgZke3VuPIIBeUSxLQqoj9SXP9EgDJcoagTJNb42JvVKNsj3zA7Dw0uibv6O0nFaLFwVLIZnC6rDyYuuG1XnlSI",
+                    TerminalId = "947dcad6-b494-4d8e-a186-59bba1e99598",
+                    TransactionId = "CTCoBzc3Po",
+                    OrganizationCode = "4--",
+                    PrivateMoneyId = "f12b7a31-7c67-44b6-8061-dfdb0ed7789e",
+                    IsModified = true,
+                    Types = new string[]{"exchange_inflow", "cashback", "topup", "expire", "payment", "exchange_outflow"},
+                    Description = "SVes0LvRpIOKLgAa2m76DTKceEBbKe1QbzWrTYvHigdBYvKVDdotVdsHD1HarFGRZ0Q28LywVGUz2sIRxtNbAYMzHePlwRHJLPebYCA3",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -233,17 +233,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    PerPage = 6395,
-                    ShopId = "807cd5e2-fb00-479c-92df-2a6814206e32",
-                    CustomerId = "f52d39cb-6a2d-48aa-9358-6123c140ac44",
-                    CustomerName = "Jqy1UyPaGHVkyMSdmemZcovbEUc9TiM3DTSa7pJlo8JS6mIVfCl8O6XTpGUPEJOaNnRanlNyuKHWuXq7zEzVgAAIhzrVmMQ7zQf4j1Xlnx61iQEXBdwXQXBx9CjvSgZke3VuPIIBeUSxLQqoj9SXP9EgDJcoagTJNb42JvVKNsj3zA7Dw0uibv6O0nFaLFwVLIZnC6rDyYuuG1XnlSIVaCTCoBzc3PolsdbrxUTbpTkQ",
-                    TerminalId = "7c3f9b72-c2b9-4c3f-ab43-dcc184c0e434",
-                    TransactionId = "58OFUi",
-                    OrganizationCode = "--5",
-                    PrivateMoneyId = "a8cc409c-eaf3-4427-b089-e260a004110c",
+                    PerPage = 5618,
+                    ShopId = "93cc8961-0be2-42f0-a8fc-6d79e7879700",
+                    CustomerId = "a0cd1f40-75ea-47d8-9033-dca08d56be14",
+                    CustomerName = "xuhhy9uGRsNNOdzmZ5nbPQzPRirLmp7HiQajpl09d6QIiaL",
+                    TerminalId = "2d0db3db-49b5-44e3-b49e-6b3a1ad5452b",
+                    TransactionId = "G",
+                    OrganizationCode = "6-JN0rZ1",
+                    PrivateMoneyId = "159e73eb-0f0e-4777-9f43-0fe93746b7a8",
                     IsModified = true,
-                    Types = new string[]{"cashback", "payment", "topup", "expire", "exchange_outflow"},
-                    Description = "IOKLgAa2m76DTKceEBbKe1QbzWrTYvHigdBYvKVDdotVdsHD1HarFGRZ0Q28LywVGUz2sIRxtNbAYMzHePlwRHJLPebYCA3qabphyjXP3xuhhy9uGRsNNOdzmZ5nbP",
+                    Types = new string[]{"cashback", "topup"},
+                    Description = "KrJ8u3JtJHw13BJLqURa9CDG8z1r52NxmvSo3IMgKOG9RqgqLtsxscDVj4qDxwlIsjYdDsgNzWfMVY",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -258,18 +258,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    Page = 466,
-                    PerPage = 1531,
-                    ShopId = "d29d9b0c-58dc-45db-909d-2ed262638e2b",
-                    CustomerId = "d0e575e9-f9a4-43f2-984c-9e8665f8af6d",
-                    CustomerName = "7HiQajpl09d6QIiaL5c40GPi4ivBi3eJhDgAiQ5RhXwEfmyakwCi2K41MKrJ8u3JtJHw13BJLqURa9CDG8z1r52NxmvSo3IMgKOG9RqgqLtsxscDV",
-                    TerminalId = "1021641b-a8ea-4934-b1be-98444a9991a7",
-                    TransactionId = "wlIsjYdDs",
-                    OrganizationCode = "4T02U-7P7-Gx",
-                    PrivateMoneyId = "a4abcf5d-773d-463a-895b-66ae8dab2bb2",
+                    Page = 6534,
+                    PerPage = 1781,
+                    ShopId = "19e2330f-35a5-4b11-95a1-7846a4aa801b",
+                    CustomerId = "8ef4fe9c-f14f-409f-bed2-e3692e979fa1",
+                    CustomerName = "KaN1GSBkTmsnETZgON7wI25XD4LDGgtc1eHQx1a38fcy9G2ru7CIugZBUKc64A8KJDFHDE0sPhVLSmxr0FU3DnW6KqsDEeelMkJvsg1mQveiZolVhKjCQVZwzstz19XaUt7HUg2vBtQ3icUlEOMImvGy37aG3VpRlqKVbLVJ59qzi8HFxZtC5ypm8TU2Y6m10oaz",
+                    TerminalId = "edc2ff9c-ab4f-4860-a9ee-af5313107cc4",
+                    TransactionId = "VBA",
+                    OrganizationCode = "-i2w",
+                    PrivateMoneyId = "2a08cf43-9371-4f9d-9738-2e20581ed95d",
                     IsModified = false,
-                    Types = new string[]{"topup", "cashback", "exchange_outflow", "expire", "payment"},
-                    Description = "DGgtc1eHQx1a38fcy9G2ru7C",
+                    Types = new string[]{"exchange_outflow", "expire", "topup", "payment"},
+                    Description = "qfNGAkbzmAIScfq8JbwsUjFhr3NwoEyag2SfuJiolnAr0O5BazmKqHUlvI3TLRDU2wR06BrqE4xR4GA8B6QEvmEtQTqfIDfhF08aWAgYKgMRg4eijui0x4AzukqXii06wz9NdLnaFp0d8NnYZXWwwP",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -284,19 +284,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    To = "2021-09-01T10:00:41.000000+09:00",
-                    Page = 1142,
-                    PerPage = 744,
-                    ShopId = "6d606a10-179f-4eda-94c2-4bdd4584e055",
-                    CustomerId = "82ab4d4b-13e3-4b36-b414-d47bbe503641",
-                    CustomerName = "KJDFHDE0sPhVLSmxr0FU3DnW6KqsDEeelMkJvsg1mQveiZolVhKjCQVZwzstz19XaUt7HUg2vBtQ3icUlEOMImvGy37aG3VpRlqKVbLVJ59qzi8HFxZtC5ypm8TU2Y6m10oazOnSDRVBADkHpYoJtK8deELoxPb8vCqW8ZrqfNGAkbzmAIScfq8Jb",
-                    TerminalId = "79f64777-f273-46a2-97a9-78d5e6e1826a",
-                    TransactionId = "F",
-                    OrganizationCode = "p1N-1AlVm-9-m5w55X0-w-37pr15y46",
-                    PrivateMoneyId = "613086c7-b741-4bb8-ba03-0a8076b11c42",
+                    To = "2021-07-02T12:39:43.000000Z",
+                    Page = 3516,
+                    PerPage = 7278,
+                    ShopId = "af783fd9-07c7-4624-95c5-4b56bf820e7e",
+                    CustomerId = "b29580f2-dd5b-474f-8d34-162f5f1e7464",
+                    CustomerName = "j0diMGxwkBMFBNKhTrrGkGVnz7dW1L5JRcqWGZoB7J2SLBuVTFPFKYeglUQAESlFenRvUgW2C0Pk55puUaBmR66mDvQf3SzEAz6sFhOXUyleHUBygYLLJFfbbjnOxn1Ii4QyBabDj1sJ7k6dP6L13ja9VovumOjMgFfs83kBzSot4H9G2QRAYPymeRfFOHsPVjb9UCbPcYx5YXiYOW0oa5SUOR88F7Ubd6EIlmfbIWBj",
+                    TerminalId = "a54a3b85-64bf-4571-b1be-520303da5e2c",
+                    TransactionId = "3aM3MFSn6",
+                    OrganizationCode = "X-3---5adV-8-5EhX-5G6e0W--",
+                    PrivateMoneyId = "48a17295-3b32-420e-9846-9687732fbdd3",
                     IsModified = true,
-                    Types = new string[]{"payment", "cashback", "topup"},
-                    Description = "TqfIDfhF08aWAgYKgM",
+                    Types = new string[]{"payment"},
+                    Description = "c6v3uyZaCEMZ2Ju8UbXHSU9E0Qlg3gebvAwjzG8UYapgA4DXNtjsg9PgQkXqYPn4dGIxCAVXu8wP",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -311,20 +311,20 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    From = "2020-06-25T00:37:16.000000+09:00",
-                    To = "2022-04-14T10:41:22.000000+09:00",
-                    Page = 8168,
-                    PerPage = 6061,
-                    ShopId = "e6a21b5c-4be5-4b69-aaf5-8d1903dc1b7b",
-                    CustomerId = "4a972ce9-7fb0-4e27-b89d-13073153c786",
-                    CustomerName = "AzukqXii06wz9NdLnaFp0d8NnYZXWwwPUfmYGEVrOM4dkj0diMGxw",
-                    TerminalId = "0b095700-289a-466b-bec2-60cdbd241c46",
-                    TransactionId = "NKh",
-                    OrganizationCode = "27w20o-Mj0h-Pwgc9HmV",
-                    PrivateMoneyId = "9c8fd951-f541-482c-8bc5-97d3e1fe81a8",
-                    IsModified = true,
-                    Types = new string[]{"cashback", "expire", "topup", "exchange_outflow", "payment"},
-                    Description = "RvUgW2C0Pk55puUaBmR66mDvQf3SzEAz6sFhOXUyleHUBygYLLJFfbbjnOxn1Ii4QyBabDj1sJ7k6dP6L13ja9VovumOjMgFfs83kBzSot4H9G2",
+                    From = "2021-08-09T05:40:52.000000Z",
+                    To = "2022-02-04T13:27:41.000000Z",
+                    Page = 3166,
+                    PerPage = 185,
+                    ShopId = "5e7a6a52-e2af-48e0-9839-f147fe8d0d77",
+                    CustomerId = "168946bc-2354-46ed-b145-f1e17b934e40",
+                    CustomerName = "DH0runisLVA8D7RtvLwRN8QmXijHIyMGxrgTxrmP2c2b7AqdqrRaU4tsNqOUthYSxSa5qYfKcdpEzIZoGgQ8JT7nM2XSRS8qzeJVaY",
+                    TerminalId = "1e976d00-3695-4575-bc61-411cfc392bbb",
+                    TransactionId = "2",
+                    OrganizationCode = "8h----6-SEv--I7f5-U2--f",
+                    PrivateMoneyId = "360352e4-81e0-4d47-811b-6debf0e91354",
+                    IsModified = false,
+                    Types = new string[]{"cashback"},
+                    Description = "ZEgx5wET5OvQdZofRUOUAciXVcpzKCMcrOD6Emk2wkp2iXzqZDQWG9JIPYO9QhKjYAAaW",
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

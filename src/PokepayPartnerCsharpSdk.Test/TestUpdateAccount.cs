@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "553fd4da-7231-4218-aeb3-2d714f66622b"
+                    "f687016b-d0b3-46f2-8833-e8985291851f"
                 );
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "553fd4da-7231-4218-aeb3-2d714f66622b"
+                    "f687016b-d0b3-46f2-8833-e8985291851f"
                 ) {
-                    CanTransferTopup = false,
+                    CanTransferTopup = true,
                 };
                 Response.AccountDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,7 +57,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "553fd4da-7231-4218-aeb3-2d714f66622b"
+                    "f687016b-d0b3-46f2-8833-e8985291851f"
                 ) {
                     Status = "pre-closed",
                     CanTransferTopup = true,
@@ -75,9 +75,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateAccount request = new Request.UpdateAccount(
-                    "553fd4da-7231-4218-aeb3-2d714f66622b"
+                    "f687016b-d0b3-46f2-8833-e8985291851f"
                 ) {
-                    IsSuspended = false,
+                    IsSuspended = true,
                     Status = "active",
                     CanTransferTopup = false,
                 };

@@ -36,6 +36,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public System.Nullable<int> MaxPointAmount { get; set; }
         public System.Nullable<int> MaxTotalPointAmount { get; set; }
         public object ApplicableAccountMetadata { get; set; }
+        public object ApplicableTransactionMetadata { get; set; }
         public System.Nullable<int> BudgetCapsAmount { get; set; }
 #else
         #nullable enable
@@ -86,6 +87,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public int? MaxTotalPointAmount { get; set; }
         #nullable enable
         public object? ApplicableAccountMetadata { get; set; }
+        #nullable enable
+        public object? ApplicableTransactionMetadata { get; set; }
         #nullable enable
         public int? BudgetCapsAmount { get; set; }
 #endif

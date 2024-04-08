@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CancelCashtray request = new Request.CancelCashtray(
-                    "b3773803-92d6-4480-8386-dd0bb7f66b74"
+                    "aaf6a586-88af-4705-b315-e668c4144e0c"
                 );
                 Response.Cashtray response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

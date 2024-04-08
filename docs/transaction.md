@@ -6,7 +6,7 @@ CPMトークンの現在の状態を取得します。CPMトークンの有効�
 
 ```csharp
 Request.GetCpmToken request = new Request.GetCpmToken(
-    "PKvTH4Qb4HK1DE5zpHipft" // CPMトークン
+    "07369wBiPR32MXZafz3jff" // CPMトークン
 );
 Response.CpmToken response = await request.Send(client);
 ```
@@ -34,6 +34,7 @@ CPM取引時にエンドユーザーが店舗に提示するバーコードを�
 を返します
 
 
+
 ---
 
 
@@ -43,15 +44,15 @@ CPM取引時にエンドユーザーが店舗に提示するバーコードを�
 
 ```csharp
 Request.ListTransactions request = new Request.ListTransactions() {
-    From = "2021-10-20T16:32:19.000000+09:00",  // 開始日時
-    To = "2021-02-01T08:09:55.000000+09:00",  // 終了日時
+    From = "2021-04-02T07:32:00.000000Z",  // 開始日時
+    To = "2022-07-30T13:45:34.000000Z",  // 終了日時
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // エンドユーザーID
     CustomerName = "太郎",  // エンドユーザー名
     TerminalId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 端末ID
-    TransactionId = "uuU",  // 取引ID
+    TransactionId = "8l",  // 取引ID
     OrganizationCode = "pocketchange",  // 組織コード
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
     IsModified = false,  // キャンセルフラグ
@@ -290,6 +291,12 @@ Response.PaginatedTransaction response = await request.Send(client);
 [PaginatedTransaction](./responses.md#paginated-transaction)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|403|NULL|NULL|NULL|
+
+
 
 ---
 
@@ -304,10 +311,10 @@ Request.CreateTransaction request = new Request.CreateTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ) {
-    MoneyAmount = 3168,
-    PointAmount = 7952,
-    PointExpiresAt = "2022-10-25T15:57:47.000000+09:00",  // ポイント有効期限
-    Description = "4UG1MO97nrik73QyiaNKms0iFYGrWxxlKwOlCibtq2e0nqtXLNITG9Gffmmox8hwqx5x7",
+    MoneyAmount = 1949,
+    PointAmount = 3853,
+    PointExpiresAt = "2020-04-12T08:23:54.000000Z",  // ポイント有効期限
+    Description = "RnFdcWhSdaJfJ60D0H2T0aKhnL3FlnAD82QrpYaKuslNraOesyAiawWiyWkSV3bs4OkWhHFx3P67yxFmxWAZtUSoiVrIFnb7w6ZClkoqVajvuG5cGcBP5wA9GwSB8bfxMId7hFKERGvYa7vbD1cIywVpXocQ5N98CAVKuKRC5FLAIRiGKuI8CNBTqLCZ99AjVbK3l3",
 };
 Response.TransactionDetail response = await request.Send(client);
 ```
@@ -402,6 +409,47 @@ Response.TransactionDetail response = await request.Send(client);
 [TransactionDetail](./responses.md#transaction-detail)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|400|invalid_parameter_both_point_and_money_are_zero||One of 'money_amount' or 'point_amount' must be a positive (>0) number|
+|400|invalid_parameters|項目が無効です|Invalid parameters|
+|403|NULL|NULL|NULL|
+|410|transaction_canceled|取引がキャンセルされました|Transaction was canceled|
+|422|customer_user_not_found||The customer user is not found|
+|422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
+|422|private_money_not_found||Private money not found|
+|422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
+|422|transaction_has_done|取引は完了しており、キャンセルすることはできません|Transaction has been copmpleted and cannot be canceled|
+|422|account_restricted|特定のアカウントの支払いに制限されています|The account is restricted to pay for a specific account|
+|422|account_balance_not_enough|口座残高が不足してます|The account balance is not enough|
+|422|c2c_transfer_not_allowed|このマネーではユーザ間マネー譲渡は利用できません|Customer to customer transfer is not available for this money|
+|422|account_transfer_limit_exceeded|取引金額が上限を超えました|Too much amount to transfer|
+|422|account_balance_exceeded|口座残高が上限を超えました|The account balance exceeded the limit|
+|422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
+|422|account_total_topup_limit_range|期間内での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|account_total_topup_limit_entire_period|全期間での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|coupon_unavailable_shop|このクーポンはこの店舗では使用できません。|This coupon is unavailable for this shop.|
+|422|coupon_already_used|このクーポンは既に使用済みです。|This coupon is already used.|
+|422|coupon_not_received|このクーポンは受け取られていません。|This coupon is not received.|
+|422|coupon_not_sent|このウォレットに対して配信されていないクーポンです。|This coupon is not sent to this account yet.|
+|422|coupon_amount_not_enough|このクーポンを使用するには支払い額が足りません。|The payment amount not enough to use this coupon.|
+|422|coupon_not_payment|クーポンは支払いにのみ使用できます。|Coupons can only be used for payment.|
+|422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
+|422|account_suspended|アカウントは停止されています|The account is suspended|
+|422|account_closed|アカウントは退会しています|The account is closed|
+|422|customer_account_not_found||The customer account is not found|
+|422|shop_account_not_found||The shop account is not found|
+|422|account_currency_mismatch|アカウント間で通貨が異なっています|Currency mismatch between accounts|
+|422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
+|422|account_not_accessible|アカウントにアクセスできません|The account is not accessible by this user|
+|422|terminal_is_invalidated|端末は無効化されています|The terminal is already invalidated|
+|422|same_account_transaction|同じアカウントに送信しています|Sending to the same account|
+|422|transaction_invalid_done_at|取引完了日が無効です|Transaction completion date is invalid|
+|422|transaction_invalid_amount|取引金額が数値ではないか、受け入れられない桁数です|Transaction amount is not a number or cannot be accepted for this currency|
+|503|temporarily_unavailable||Service Unavailable|
+
+
 
 ---
 
@@ -419,11 +467,11 @@ Request.ListTransactionsV2 request = new Request.ListTransactionsV2() {
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // エンドユーザーID
     CustomerName = "太郎",  // エンドユーザー名
     Description = "店頭QRコードによる支払い",  // 取引説明文
-    TransactionId = "fQZGPMXFo",  // 取引ID
-    IsModified = true,  // キャンセルフラグ
+    TransactionId = "Ne",  // 取引ID
+    IsModified = false,  // キャンセルフラグ
     Types = new string[]{"topup", "payment"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
-    From = "2021-02-27T22:52:38.000000+09:00",  // 開始日時
-    To = "2022-10-05T17:16:15.000000+09:00",  // 終了日時
+    From = "2021-11-10T11:36:05.000000Z",  // 開始日時
+    To = "2021-11-29T15:30:34.000000Z",  // 終了日時
     NextPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 次ページへ遷移する際に起点となるtransactionのID
     PrevPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 前ページへ遷移する際に起点となるtransactionのID
     PerPage = 50,  // 1ページ分の取引数
@@ -688,6 +736,12 @@ prev_page_cursor_idのtransaction自体は前のページには含まれませ�
 [PaginatedTransactionV2](./responses.md#paginated-transaction-v2)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+
+
 
 ---
 
@@ -703,9 +757,9 @@ Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
     BearPointShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント支払時の負担店舗ID
-    MoneyAmount = 3976,  // マネー額
-    PointAmount = 3055,  // ポイント額
-    PointExpiresAt = "2020-06-16T08:58:49.000000+09:00",  // ポイント有効期限
+    MoneyAmount = 2243,  // マネー額
+    PointAmount = 9043,  // ポイント額
+    PointExpiresAt = "2021-06-23T16:01:51.000000Z",  // ポイント有効期限
     Description = "初夏のチャージキャンペーン",  // 取引履歴に表示する説明文
     Metadata = "{\"key\":\"value\"}",  // 取引メタデータ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
@@ -865,6 +919,46 @@ Response.TransactionDetail response = await request.Send(client);
 [TransactionDetail](./responses.md#transaction-detail)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|400|invalid_parameter_both_point_and_money_are_zero||One of 'money_amount' or 'point_amount' must be a positive (>0) number|
+|400|invalid_parameters|項目が無効です|Invalid parameters|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+|410|transaction_canceled|取引がキャンセルされました|Transaction was canceled|
+|422|invalid_metadata|メタデータの形式が不正です|Invalid metadata format|
+|422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
+|422|transaction_has_done|取引は完了しており、キャンセルすることはできません|Transaction has been copmpleted and cannot be canceled|
+|422|account_restricted|特定のアカウントの支払いに制限されています|The account is restricted to pay for a specific account|
+|422|account_balance_not_enough|口座残高が不足してます|The account balance is not enough|
+|422|c2c_transfer_not_allowed|このマネーではユーザ間マネー譲渡は利用できません|Customer to customer transfer is not available for this money|
+|422|account_transfer_limit_exceeded|取引金額が上限を超えました|Too much amount to transfer|
+|422|account_balance_exceeded|口座残高が上限を超えました|The account balance exceeded the limit|
+|422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
+|422|account_total_topup_limit_range|期間内での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|account_total_topup_limit_entire_period|全期間での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|coupon_unavailable_shop|このクーポンはこの店舗では使用できません。|This coupon is unavailable for this shop.|
+|422|coupon_already_used|このクーポンは既に使用済みです。|This coupon is already used.|
+|422|coupon_not_received|このクーポンは受け取られていません。|This coupon is not received.|
+|422|coupon_not_sent|このウォレットに対して配信されていないクーポンです。|This coupon is not sent to this account yet.|
+|422|coupon_amount_not_enough|このクーポンを使用するには支払い額が足りません。|The payment amount not enough to use this coupon.|
+|422|coupon_not_payment|クーポンは支払いにのみ使用できます。|Coupons can only be used for payment.|
+|422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
+|422|account_suspended|アカウントは停止されています|The account is suspended|
+|422|account_closed|アカウントは退会しています|The account is closed|
+|422|account_currency_mismatch|アカウント間で通貨が異なっています|Currency mismatch between accounts|
+|422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
+|422|account_not_accessible|アカウントにアクセスできません|The account is not accessible by this user|
+|422|terminal_is_invalidated|端末は無効化されています|The terminal is already invalidated|
+|422|same_account_transaction|同じアカウントに送信しています|Sending to the same account|
+|422|transaction_invalid_done_at|取引完了日が無効です|Transaction completion date is invalid|
+|422|transaction_invalid_amount|取引金額が数値ではないか、受け入れられない桁数です|Transaction amount is not a number or cannot be accepted for this currency|
+|422|customer_account_not_found||The customer account is not found|
+|422|shop_account_not_found||The shop account is not found|
+|422|private_money_not_found||Private money not found|
+|503|temporarily_unavailable||Service Unavailable|
+
+
 
 ---
 
@@ -880,11 +974,11 @@ Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // エンドユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    8478 // 支払い額
+    4138, // 支払い額
+    new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}} // 商品情報データ
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
     Metadata = "{\"key\":\"value\"}",  // 取引メタデータ
-    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}},  // 商品情報データ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
 Response.TransactionDetail response = await request.Send(client);
@@ -987,6 +1081,7 @@ Response.TransactionDetail response = await request.Send(client);
 - `name`: 商品名。256字以下の文字列
 - `unit_price`: 商品単価。0以上の数値
 - `price`: 全体の金額(例: 商品単価 × 個数)。0以上の数値
+- `quantity`: 商品の個数。この値が指定された場合、priceから算出される個数よりも優先されます。
 - `is_discounted`: 賞味期限が近いなどの理由で商品が値引きされているかどうかのフラグ。boolean
 - `other`: その他商品に関する情報。JSONオブジェクトで指定します。
 
@@ -1021,6 +1116,45 @@ Response.TransactionDetail response = await request.Send(client);
 [TransactionDetail](./responses.md#transaction-detail)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|400|invalid_parameters|項目が無効です|Invalid parameters|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+|410|transaction_canceled|取引がキャンセルされました|Transaction was canceled|
+|422|invalid_metadata|メタデータの形式が不正です|Invalid metadata format|
+|422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
+|422|transaction_has_done|取引は完了しており、キャンセルすることはできません|Transaction has been copmpleted and cannot be canceled|
+|422|account_restricted|特定のアカウントの支払いに制限されています|The account is restricted to pay for a specific account|
+|422|account_balance_not_enough|口座残高が不足してます|The account balance is not enough|
+|422|c2c_transfer_not_allowed|このマネーではユーザ間マネー譲渡は利用できません|Customer to customer transfer is not available for this money|
+|422|account_transfer_limit_exceeded|取引金額が上限を超えました|Too much amount to transfer|
+|422|account_balance_exceeded|口座残高が上限を超えました|The account balance exceeded the limit|
+|422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
+|422|account_total_topup_limit_range|期間内での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|account_total_topup_limit_entire_period|全期間での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|coupon_unavailable_shop|このクーポンはこの店舗では使用できません。|This coupon is unavailable for this shop.|
+|422|coupon_already_used|このクーポンは既に使用済みです。|This coupon is already used.|
+|422|coupon_not_received|このクーポンは受け取られていません。|This coupon is not received.|
+|422|coupon_not_sent|このウォレットに対して配信されていないクーポンです。|This coupon is not sent to this account yet.|
+|422|coupon_amount_not_enough|このクーポンを使用するには支払い額が足りません。|The payment amount not enough to use this coupon.|
+|422|coupon_not_payment|クーポンは支払いにのみ使用できます。|Coupons can only be used for payment.|
+|422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
+|422|account_suspended|アカウントは停止されています|The account is suspended|
+|422|account_closed|アカウントは退会しています|The account is closed|
+|422|account_currency_mismatch|アカウント間で通貨が異なっています|Currency mismatch between accounts|
+|422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
+|422|account_not_accessible|アカウントにアクセスできません|The account is not accessible by this user|
+|422|terminal_is_invalidated|端末は無効化されています|The terminal is already invalidated|
+|422|same_account_transaction|同じアカウントに送信しています|Sending to the same account|
+|422|transaction_invalid_done_at|取引完了日が無効です|Transaction completion date is invalid|
+|422|transaction_invalid_amount|取引金額が数値ではないか、受け入れられない桁数です|Transaction amount is not a number or cannot be accepted for this currency|
+|422|customer_account_not_found||The customer account is not found|
+|422|shop_account_not_found||The shop account is not found|
+|422|private_money_not_found||Private money not found|
+|503|temporarily_unavailable||Service Unavailable|
+
+
 
 ---
 
@@ -1033,13 +1167,13 @@ CPMトークンに設定されたスコープの取引を作ることができ�
 
 ```csharp
 Request.CreateCpmTransaction request = new Request.CreateCpmTransaction(
-    "ZGxUJAAeHeUyg78eCpqwfb", // CPMトークン
+    "LJdEVZoJB0H5I2jNmYRtpC", // CPMトークン
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ID
-    4899.0 // 取引金額
+    9240.0, // 取引金額
+    new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}} // 商品情報データ
 ) {
     Description = "たい焼き(小倉)",  // 取引説明文
     Metadata = "{\"key\":\"value\"}",  // 店舗側メタデータ
-    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"is_discounted",false}, {"other","{}"}}},  // 商品情報データ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
 Response.TransactionDetail response = await request.Send(client);
@@ -1128,6 +1262,7 @@ Response.TransactionDetail response = await request.Send(client);
 - `name`: 商品名。256字以下の文字列
 - `unit_price`: 商品単価。0以上の数値
 - `price`: 全体の金額(例: 商品単価 × 個数)。0以上の数値
+- `quantity`: 商品の個数。この値が指定された場合、priceから算出される個数よりも優先されます。
 - `is_discounted`: 賞味期限が近いなどの理由で商品が値引きされているかどうかのフラグ。boolean
 - `other`: その他商品に関する情報。JSONオブジェクトで指定します。
 
@@ -1162,6 +1297,50 @@ Response.TransactionDetail response = await request.Send(client);
 [TransactionDetail](./responses.md#transaction-detail)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|400|invalid_parameters|項目が無効です|Invalid parameters|
+|403|cpm_unacceptable_amount|このCPMトークンに対して許可されていない金額です。|The amount is unacceptable for the CPM token|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+|410|transaction_canceled|取引がキャンセルされました|Transaction was canceled|
+|422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
+|422|private_money_not_found||Private money not found|
+|422|cpm_token_already_proceed|このCPMトークンは既に処理されています。|The CPM token is already proceed|
+|422|cpm_token_already_expired|このCPMトークンは既に失効しています。|The CPM token is already expired|
+|422|cpm_token_not_found|CPMトークンが見つかりませんでした。|The CPM token is not found.|
+|422|invalid_metadata|メタデータの形式が不正です|Invalid metadata format|
+|422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
+|422|transaction_has_done|取引は完了しており、キャンセルすることはできません|Transaction has been copmpleted and cannot be canceled|
+|422|account_restricted|特定のアカウントの支払いに制限されています|The account is restricted to pay for a specific account|
+|422|account_balance_not_enough|口座残高が不足してます|The account balance is not enough|
+|422|c2c_transfer_not_allowed|このマネーではユーザ間マネー譲渡は利用できません|Customer to customer transfer is not available for this money|
+|422|account_transfer_limit_exceeded|取引金額が上限を超えました|Too much amount to transfer|
+|422|account_balance_exceeded|口座残高が上限を超えました|The account balance exceeded the limit|
+|422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
+|422|account_total_topup_limit_range|期間内での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|account_total_topup_limit_entire_period|全期間での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|coupon_unavailable_shop|このクーポンはこの店舗では使用できません。|This coupon is unavailable for this shop.|
+|422|coupon_already_used|このクーポンは既に使用済みです。|This coupon is already used.|
+|422|coupon_not_received|このクーポンは受け取られていません。|This coupon is not received.|
+|422|coupon_not_sent|このウォレットに対して配信されていないクーポンです。|This coupon is not sent to this account yet.|
+|422|coupon_amount_not_enough|このクーポンを使用するには支払い額が足りません。|The payment amount not enough to use this coupon.|
+|422|coupon_not_payment|クーポンは支払いにのみ使用できます。|Coupons can only be used for payment.|
+|422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
+|422|account_suspended|アカウントは停止されています|The account is suspended|
+|422|account_closed|アカウントは退会しています|The account is closed|
+|422|customer_account_not_found||The customer account is not found|
+|422|shop_account_not_found||The shop account is not found|
+|422|account_currency_mismatch|アカウント間で通貨が異なっています|Currency mismatch between accounts|
+|422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
+|422|account_not_accessible|アカウントにアクセスできません|The account is not accessible by this user|
+|422|terminal_is_invalidated|端末は無効化されています|The terminal is already invalidated|
+|422|same_account_transaction|同じアカウントに送信しています|Sending to the same account|
+|422|transaction_invalid_done_at|取引完了日が無効です|Transaction completion date is invalid|
+|422|transaction_invalid_amount|取引金額が数値ではないか、受け入れられない桁数です|Transaction amount is not a number or cannot be accepted for this currency|
+|503|temporarily_unavailable||Service Unavailable|
+
+
 
 ---
 
@@ -1177,7 +1356,7 @@ Request.CreateTransferTransaction request = new Request.CreateTransferTransactio
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 送金元ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 受取ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    1735.0 // 送金額
+    9279.0 // 送金額
 ) {
     Metadata = "{\"key\":\"value\"}",  // 取引メタデータ
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
@@ -1295,6 +1474,46 @@ Response.TransactionDetail response = await request.Send(client);
 [TransactionDetail](./responses.md#transaction-detail)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|400|invalid_parameters|項目が無効です|Invalid parameters|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+|410|transaction_canceled|取引がキャンセルされました|Transaction was canceled|
+|422|customer_user_not_found||The customer user is not found|
+|422|private_money_not_found||Private money not found|
+|422|invalid_metadata|メタデータの形式が不正です|Invalid metadata format|
+|422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
+|422|transaction_has_done|取引は完了しており、キャンセルすることはできません|Transaction has been copmpleted and cannot be canceled|
+|422|account_restricted|特定のアカウントの支払いに制限されています|The account is restricted to pay for a specific account|
+|422|account_balance_not_enough|口座残高が不足してます|The account balance is not enough|
+|422|c2c_transfer_not_allowed|このマネーではユーザ間マネー譲渡は利用できません|Customer to customer transfer is not available for this money|
+|422|account_transfer_limit_exceeded|取引金額が上限を超えました|Too much amount to transfer|
+|422|account_balance_exceeded|口座残高が上限を超えました|The account balance exceeded the limit|
+|422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
+|422|account_total_topup_limit_range|期間内での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|account_total_topup_limit_entire_period|全期間での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|coupon_unavailable_shop|このクーポンはこの店舗では使用できません。|This coupon is unavailable for this shop.|
+|422|coupon_already_used|このクーポンは既に使用済みです。|This coupon is already used.|
+|422|coupon_not_received|このクーポンは受け取られていません。|This coupon is not received.|
+|422|coupon_not_sent|このウォレットに対して配信されていないクーポンです。|This coupon is not sent to this account yet.|
+|422|coupon_amount_not_enough|このクーポンを使用するには支払い額が足りません。|The payment amount not enough to use this coupon.|
+|422|coupon_not_payment|クーポンは支払いにのみ使用できます。|Coupons can only be used for payment.|
+|422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
+|422|account_suspended|アカウントは停止されています|The account is suspended|
+|422|account_closed|アカウントは退会しています|The account is closed|
+|422|customer_account_not_found||The customer account is not found|
+|422|shop_account_not_found||The shop account is not found|
+|422|account_currency_mismatch|アカウント間で通貨が異なっています|Currency mismatch between accounts|
+|422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
+|422|account_not_accessible|アカウントにアクセスできません|The account is not accessible by this user|
+|422|terminal_is_invalidated|端末は無効化されています|The terminal is already invalidated|
+|422|same_account_transaction|同じアカウントに送信しています|Sending to the same account|
+|422|transaction_invalid_done_at|取引完了日が無効です|Transaction completion date is invalid|
+|422|transaction_invalid_amount|取引金額が数値ではないか、受け入れられない桁数です|Transaction amount is not a number or cannot be accepted for this currency|
+|503|temporarily_unavailable||Service Unavailable|
+
+
 
 ---
 
@@ -1307,9 +1526,9 @@ Request.CreateExchangeTransaction request = new Request.CreateExchangeTransactio
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    4122
+    7381
 ) {
-    Description = "I8MUg6pkTJeF4LA5VGWmlO55tLRhXfPthFrTbvP",
+    Description = "zTj3A085y5hWQ3gdeDOWFExGORRYNLJdsZ6n3IGoF44i0499bTqwmusaHN4dAo0kcMwrj6lsuth9pSzmqVAxW3BZh2UFG0NdobuyCqKAyF8XBloHn7nUM7l934bPMQ7DIwF",
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
 Response.TransactionDetail response = await request.Send(client);
@@ -1395,6 +1614,44 @@ Response.TransactionDetail response = await request.Send(client);
 [TransactionDetail](./responses.md#transaction-detail)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|400|invalid_parameters|項目が無効です|Invalid parameters|
+|410|transaction_canceled|取引がキャンセルされました|Transaction was canceled|
+|422|account_not_found|アカウントが見つかりません|The account is not found|
+|422|transaction_restricted||Transaction is not allowed|
+|422|can_not_exchange_between_same_private_money|同じマネーとの交換はできません||
+|422|can_not_exchange_between_users|異なるユーザー間での交換は出来ません||
+|422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
+|422|account_currency_mismatch|アカウント間で通貨が異なっています|Currency mismatch between accounts|
+|422|account_not_accessible|アカウントにアクセスできません|The account is not accessible by this user|
+|422|terminal_is_invalidated|端末は無効化されています|The terminal is already invalidated|
+|422|same_account_transaction|同じアカウントに送信しています|Sending to the same account|
+|422|transaction_has_done|取引は完了しており、キャンセルすることはできません|Transaction has been copmpleted and cannot be canceled|
+|422|transaction_invalid_done_at|取引完了日が無効です|Transaction completion date is invalid|
+|422|transaction_invalid_amount|取引金額が数値ではないか、受け入れられない桁数です|Transaction amount is not a number or cannot be accepted for this currency|
+|422|account_restricted|特定のアカウントの支払いに制限されています|The account is restricted to pay for a specific account|
+|422|account_balance_not_enough|口座残高が不足してます|The account balance is not enough|
+|422|c2c_transfer_not_allowed|このマネーではユーザ間マネー譲渡は利用できません|Customer to customer transfer is not available for this money|
+|422|account_transfer_limit_exceeded|取引金額が上限を超えました|Too much amount to transfer|
+|422|account_balance_exceeded|口座残高が上限を超えました|The account balance exceeded the limit|
+|422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
+|422|account_total_topup_limit_range|期間内での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|account_total_topup_limit_entire_period|全期間での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|coupon_unavailable_shop|このクーポンはこの店舗では使用できません。|This coupon is unavailable for this shop.|
+|422|coupon_already_used|このクーポンは既に使用済みです。|This coupon is already used.|
+|422|coupon_not_received|このクーポンは受け取られていません。|This coupon is not received.|
+|422|coupon_not_sent|このウォレットに対して配信されていないクーポンです。|This coupon is not sent to this account yet.|
+|422|coupon_amount_not_enough|このクーポンを使用するには支払い額が足りません。|The payment amount not enough to use this coupon.|
+|422|coupon_not_payment|クーポンは支払いにのみ使用できます。|Coupons can only be used for payment.|
+|422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
+|422|account_suspended|アカウントは停止されています|The account is suspended|
+|422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
+|422|account_closed|アカウントは退会しています|The account is closed|
+|503|temporarily_unavailable||Service Unavailable|
+
+
 
 ---
 
@@ -1434,6 +1691,7 @@ Response.TransactionDetail response = await request.Send(client);
 を返します
 
 
+
 ---
 
 
@@ -1452,7 +1710,7 @@ Request.RefundTransaction request = new Request.RefundTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 取引ID
 ) {
     Description = "返品対応のため",  // 取引履歴に表示する返金事由
-    ReturningPointExpiresAt = "2023-04-10T10:02:04.000000+09:00",  // 返却ポイントの有効期限
+    ReturningPointExpiresAt = "2023-05-11T10:56:00.000000Z",  // 返却ポイントの有効期限
 };
 Response.TransactionDetail response = await request.Send(client);
 ```
@@ -1501,6 +1759,7 @@ Response.TransactionDetail response = await request.Send(client);
 を返します
 
 
+
 ---
 
 
@@ -1539,6 +1798,7 @@ Response.TransactionDetail response = await request.Send(client);
 を返します
 
 
+
 ---
 
 
@@ -1573,6 +1833,7 @@ Response.BulkTransaction response = await request.Send(client);
 成功したときは
 [BulkTransaction](./responses.md#bulk-transaction)
 を返します
+
 
 
 ---
@@ -1636,6 +1897,7 @@ Response.PaginatedBulkTransactionJob response = await request.Send(client);
 成功したときは
 [PaginatedBulkTransactionJob](./responses.md#paginated-bulk-transaction-job)
 を返します
+
 
 
 ---
@@ -1702,6 +1964,16 @@ Response.UserStatsOperation response = await request.Send(client);
 成功したときは
 [UserStatsOperation](./responses.md#user-stats-operation)
 を返します
+
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|400|invalid_parameters|項目が無効です|Invalid parameters|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+|422|invalid_promotional_operation_user|ユーザーの指定に不正な値が含まれています|Invalid user data is specified|
+|422|invalid_promotional_operation_status|不正な処理ステータスです|Invalid operation status is specified|
+|503|user_stats_operation_service_unavailable|一時的にユーザー統計サービスが利用不能です|User stats service is temporarily unavailable|
+
 
 
 ---

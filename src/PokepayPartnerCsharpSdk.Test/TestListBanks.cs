@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBanks request = new Request.ListBanks(
-                    "39c1c405-463f-433a-9221-c32d45af6670"
+                    "ea5fdab5-842f-485c-a2e6-34a79bdf9ccb"
                 );
                 Response.Banks response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBanks request = new Request.ListBanks(
-                    "39c1c405-463f-433a-9221-c32d45af6670"
+                    "ea5fdab5-842f-485c-a2e6-34a79bdf9ccb"
                 ) {
-                    PrivateMoneyId = "43eef62a-d011-4e5e-aff3-484e645e1e39",
+                    PrivateMoneyId = "dbf85487-ccd6-4486-b439-a15ddc57b52a",
                 };
                 Response.Banks response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

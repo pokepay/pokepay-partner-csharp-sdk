@@ -9,6 +9,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string Name { get; set; }
         public double UnitPrice { get; set; }
         public double Price { get; set; }
+        public int Quantity { get; set; }
         public bool IsDiscounted { get; set; }
         public string Other { get; set; }
 

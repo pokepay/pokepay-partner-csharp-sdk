@@ -2,6 +2,55 @@
 BankPayを用いた銀行からのチャージ取引などのAPIを提供しています。
 
 
+<a name="list-banks"></a>
+## ListBanks: 登録した銀行の一覧
+登録した銀行を一覧します
+
+```csharp
+Request.ListBanks request = new Request.ListBanks(
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // デバイスID
+) {
+    PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+};
+Response.Banks response = await request.Send(client);
+```
+
+
+
+### Parameters
+**`user_device_id`** 
+  
+
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+**`private_money_id`** 
+  
+
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+
+
+成功したときは
+[Banks](./responses.md#banks)
+を返します
+
+
+
+---
+
+
 <a name="create-bank"></a>
 ## CreateBank: 銀行口座の登録
 銀行口座の登録を始めるAPIです。レスポンスに含まれるredirect_urlをユーザーの端末で開き銀行を登録します。
@@ -17,7 +66,7 @@ Request.CreateBank request = new Request.CreateBank(
     "<Deep Link>", // コールバックURL
     "ポケペイタロウ" // ユーザーの氏名 (片仮名で指定)
 ) {
-    Email = "HNb57OPgys@rQCI.com",  // ユーザーのメールアドレス
+    Email = "x2jnlKrw0L@dNS4.com",  // ユーザーのメールアドレス
     Birthdate = "19901142",  // 生年月日
 };
 Response.BankRegisteringInfo response = await request.Send(client);
@@ -100,53 +149,6 @@ Response.BankRegisteringInfo response = await request.Send(client);
 を返します
 
 
----
-
-
-<a name="list-banks"></a>
-## ListBanks: 登録した銀行の一覧
-登録した銀行を一覧します
-
-```csharp
-Request.ListBanks request = new Request.ListBanks(
-    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // デバイスID
-) {
-    PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-};
-Response.Banks response = await request.Send(client);
-```
-
-
-
-### Parameters
-**`user_device_id`** 
-  
-
-
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
-
-**`private_money_id`** 
-  
-
-
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
-
-
-
-成功したときは
-[Banks](./responses.md#banks)
-を返します
-
 
 ---
 
@@ -159,7 +161,7 @@ Response.Banks response = await request.Send(client);
 Request.CreateBankTopupTransaction request = new Request.CreateBankTopupTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // デバイスID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    2895, // チャージ金額
+    8102, // チャージ金額
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 銀行ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // リクエストID
 );
@@ -229,6 +231,7 @@ Response.TransactionDetail response = await request.Send(client);
 成功したときは
 [TransactionDetail](./responses.md#transaction-detail)
 を返します
+
 
 
 ---
