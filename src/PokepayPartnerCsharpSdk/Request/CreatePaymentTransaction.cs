@@ -17,7 +17,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public int Amount { get; set; }
         public string Description { get; set; }
         public string Metadata { get; set; }
-        public Products Products { get; set; }
+        public object[] Products { get; set; }
         public string RequestId { get; set; }
 #else
         public string ShopId { get; set; }
@@ -28,13 +28,14 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? Description { get; set; }
         #nullable enable
         public string? Metadata { get; set; }
-        public Products Products { get; set; }
+        #nullable enable
+        public object[]? Products { get; set; }
         #nullable enable
         public string? RequestId { get; set; }
 #endif
 
-        public CreatePaymentTransaction(string shopId, string customerId, string privateMoneyId, int amount, Products products) =>
-            (ShopId, CustomerId, PrivateMoneyId, Amount, Products) = (shopId, customerId, privateMoneyId, amount, products);
+        public CreatePaymentTransaction(string shopId, string customerId, string privateMoneyId, int amount) =>
+            (ShopId, CustomerId, PrivateMoneyId, Amount) = (shopId, customerId, privateMoneyId, amount);
 
         private string path { get { return "/transactions" + "/payment"; } }
 

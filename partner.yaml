@@ -8,7 +8,7 @@ info:
   description: >-
     Partner APIs
   title:  Partner APIs
-  version: 0.0.0
+  version: 24.3.26
 
 tags:
   - name: Transaction

@@ -19,10 +19,10 @@ Cashtrayを作成します。
 Request.CreateCashtray request = new Request.CreateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ユーザーID
-    9997.0 // 金額
+    6869.0 // 金額
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 2427,  // 失効時間(秒)
+    ExpiresIn = 3655,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client);
 ```
@@ -102,6 +102,8 @@ Cashtrayが失効するまでの時間を秒単位で指定します(任意項�
 |---|---|---|---|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
 |422|account_not_found|アカウントが見つかりません|The account is not found|
+|422|account_transfer_limit_exceeded|取引金額が上限を超えました|Too much amount to transfer|
+|422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
 |422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
 
 
@@ -251,9 +253,9 @@ Cashtrayの内容を更新します。bodyパラメーターは全て省略可�
 Request.UpdateCashtray request = new Request.UpdateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // CashtrayのID
 ) {
-    Amount = 9018.0,  // 金額
+    Amount = 5236.0,  // 金額
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 3002,  // 失効時間(秒)
+    ExpiresIn = 6303,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client);
 ```

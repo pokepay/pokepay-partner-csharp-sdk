@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCashtray request = new Request.GetCashtray(
-                    "889cfd0f-1711-4dc9-901f-71072893803b"
+                    "8cb6134b-bc16-4dbc-b1dd-0989392e23bb"
                 );
                 Response.CashtrayWithResult response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
