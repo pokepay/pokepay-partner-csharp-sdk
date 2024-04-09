@@ -48,11 +48,6 @@ Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(cl
 [PaginatedOrganizationWorkerTaskWebhook](./responses.md#paginated-organization-worker-task-webhook)
 を返します
 
-### Error Responses
-|status|type|ja|en|
-|---|---|---|---|
-|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-
 
 
 ---
@@ -67,7 +62,7 @@ Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(cl
 ```csharp
 Request.CreateWebhook request = new Request.CreateWebhook(
     "bulk_shops", // タスク名
-    "Ds" // URL
+    "FE45d3P2" // URL
 );
 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 ```
@@ -106,12 +101,6 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 成功したときは
 [OrganizationWorkerTaskWebhook](./responses.md#organization-worker-task-webhook)
 を返します
-
-### Error Responses
-|status|type|ja|en|
-|---|---|---|---|
-|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-|409|organization_worker_task_finish_webhook_conflict|そのwebhookは既に登録されています|The webhook is already registered|
 
 
 
@@ -163,9 +152,9 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 Request.UpdateWebhook request = new Request.UpdateWebhook(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // Webhook ID
 ) {
-    Url = "yOnXTq",  // URL
+    Url = "Pz",  // URL
     IsActive = false,  // 有効/無効
-    Task = "process_user_stats_operation",  // タスク名
+    Task = "bulk_shops",  // タスク名
 };
 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 ```

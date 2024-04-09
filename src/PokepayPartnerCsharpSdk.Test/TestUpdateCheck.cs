@@ -96,7 +96,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.UpdateCheck request = new Request.UpdateCheck(
                     "ad7098b0-8589-4167-9ac1-af2aa6982850"
                 ) {
-                    PointExpiresAt = "2020-11-21T04:59:27.000000Z",
+                    PointExpiresAt = "2020-11-21T04:59:27.000000+09:00",
                     PointExpiresInDays = 1013,
                     BearPointAccount = "4f151408-3dc4-48c2-9b9c-6781efd7a710",
                     IsDisabled = true,
@@ -116,8 +116,8 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.UpdateCheck request = new Request.UpdateCheck(
                     "ad7098b0-8589-4167-9ac1-af2aa6982850"
                 ) {
-                    ExpiresAt = "2021-11-01T08:44:22.000000Z",
-                    PointExpiresAt = "2024-03-28T07:52:21.000000Z",
+                    ExpiresAt = "2021-11-01T08:44:22.000000+09:00",
+                    PointExpiresAt = "2024-03-28T07:52:21.000000+09:00",
                     PointExpiresInDays = 8198,
                     BearPointAccount = "3ad09d4e-6ed7-41d0-82c0-7bfbe6b8ea70",
                     IsDisabled = true,
@@ -138,8 +138,8 @@ namespace PokepayPartnerCsharpSdk.Test
                     "ad7098b0-8589-4167-9ac1-af2aa6982850"
                 ) {
                     UsageLimit = 2515,
-                    ExpiresAt = "2020-09-15T17:25:20.000000Z",
-                    PointExpiresAt = "2021-05-11T07:45:14.000000Z",
+                    ExpiresAt = "2020-09-15T17:25:20.000000+09:00",
+                    PointExpiresAt = "2021-05-11T07:45:14.000000+09:00",
                     PointExpiresInDays = 6226,
                     BearPointAccount = "360d72a7-cff4-4c65-a074-da84f3b42d26",
                     IsDisabled = true,
@@ -161,8 +161,8 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     IsOnetime = false,
                     UsageLimit = 2578,
-                    ExpiresAt = "2023-04-27T16:53:26.000000Z",
-                    PointExpiresAt = "2023-02-17T02:29:48.000000Z",
+                    ExpiresAt = "2023-04-27T16:53:26.000000+09:00",
+                    PointExpiresAt = "2023-02-17T02:29:48.000000+09:00",
                     PointExpiresInDays = 6966,
                     BearPointAccount = "90acf756-34b0-493c-8903-cb2286f701d5",
                     IsDisabled = false,
@@ -185,8 +185,8 @@ namespace PokepayPartnerCsharpSdk.Test
                     Description = "1H2quyHwM52367FRSK6ZN3dPGJYhssMJ1c81K9V4u",
                     IsOnetime = false,
                     UsageLimit = 3447,
-                    ExpiresAt = "2022-04-18T08:33:37.000000Z",
-                    PointExpiresAt = "2022-01-24T12:16:02.000000Z",
+                    ExpiresAt = "2022-04-18T08:33:37.000000+09:00",
+                    PointExpiresAt = "2022-01-24T12:16:02.000000+09:00",
                     PointExpiresInDays = 3767,
                     BearPointAccount = "e1f2f846-689c-4b60-998d-24ac3a4a995c",
                     IsDisabled = false,
@@ -210,8 +210,8 @@ namespace PokepayPartnerCsharpSdk.Test
                     Description = "MQEbIhSKLSxcJDAAH0jwIPbMhYlMMXruKsOetb8P3w3wpAlq46MRFhBa1KSFCImukjAtQPb0UOTifX7KrzTtAdseC51TTzGU05VTqLiAQDTT40IDYkIvu0sCcHMaDTHEOIiZjdOoQxmayWcgZvBQ",
                     IsOnetime = false,
                     UsageLimit = 7765,
-                    ExpiresAt = "2024-01-02T06:03:23.000000Z",
-                    PointExpiresAt = "2020-06-28T23:46:44.000000Z",
+                    ExpiresAt = "2024-01-02T06:03:23.000000+09:00",
+                    PointExpiresAt = "2020-06-28T23:46:44.000000+09:00",
                     PointExpiresInDays = 2604,
                     BearPointAccount = "9ca65ee9-643d-4248-9bf6-1a20cb39bc80",
                     IsDisabled = true,
@@ -236,8 +236,8 @@ namespace PokepayPartnerCsharpSdk.Test
                     Description = "f0xr0YedjAtAhk4Q5ZEYWHc6DIDKem3xaXPio",
                     IsOnetime = false,
                     UsageLimit = 7227,
-                    ExpiresAt = "2020-07-23T10:39:57.000000Z",
-                    PointExpiresAt = "2020-07-02T02:49:18.000000Z",
+                    ExpiresAt = "2020-07-23T10:39:57.000000+09:00",
+                    PointExpiresAt = "2020-07-02T02:49:18.000000+09:00",
                     PointExpiresInDays = 7920,
                     BearPointAccount = "a20db4b0-1889-4bf1-b978-6130784154e9",
                     IsDisabled = false,

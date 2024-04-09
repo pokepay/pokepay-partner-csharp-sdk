@@ -65,7 +65,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "03b55bbd-4b51-4d0a-a651-09f86bc0644b",
                     "3e4e52d2-8a22-4bf6-858b-12737d17e30e"
                 ) {
-                    PointExpiresAt = "2020-12-19T08:10:59.000000Z",
+                    PointExpiresAt = "2020-12-19T08:10:59.000000+09:00",
                     Description = "RslDBuoJSIFUrTRne91u8KmONYXCce6NgXmM6SU8mT9N7YdoyhvIOK96oQgvpt3OE4bGWfPwqWxwC3DU0ZYNIFrYHkTuOzrywGRNkAeSHinr7X7r9y8K62vZdczxzKDF7OzztIRdIBCYTSHrtKwDRbFJx9qY9kB8kVDqJMjy6r",
                 };
                 Response.TransactionDetail response = await request.Send(client);
@@ -86,7 +86,7 @@ namespace PokepayPartnerCsharpSdk.Test
                     "3e4e52d2-8a22-4bf6-858b-12737d17e30e"
                 ) {
                     PointAmount = 7732,
-                    PointExpiresAt = "2020-11-06T18:59:57.000000Z",
+                    PointExpiresAt = "2020-11-06T18:59:57.000000+09:00",
                     Description = "uMJ3q8UHdGY9c6av2inoQmoszzzj7gjncZRjG49ZyE9dB8fCGfTM2Oyolj4kfEe2uvMtiKxUivt9MIJ97msI3tBe6ti0SO07EXHC5hQ61pWDcVyEH0QvPCR5IiYZhX71qxxCDFjWtGssb86D9XZfo8j2fPJCGzVYdohDRxcepsSsd",
                 };
                 Response.TransactionDetail response = await request.Send(client);
@@ -108,7 +108,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     MoneyAmount = 3726,
                     PointAmount = 4261,
-                    PointExpiresAt = "2022-09-28T03:30:59.000000Z",
+                    PointExpiresAt = "2022-09-28T03:30:59.000000+09:00",
                     Description = "EcH6zAIM8ju98Xf3eDqYA5vYg7TRPpd99WNI7yrXSKnnTIb76zTEtm8AaIiuGx9L9HalOMU5vigXX7Icn5jXA5QxJPbbGkUILhTXtRtmknLVk7hQOvzRC9zFhAU2LnJOGL09rr",
                 };
                 Response.TransactionDetail response = await request.Send(client);

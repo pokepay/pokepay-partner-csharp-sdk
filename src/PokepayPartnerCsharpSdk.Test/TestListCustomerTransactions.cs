@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
-                    "05d4da0c-f8ac-43e9-a1a8-54df0786da2d"
+                    "26d06a0d-a9b9-4b4f-beb2-059cc9fc551c"
                 );
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
-                    "05d4da0c-f8ac-43e9-a1a8-54df0786da2d"
+                    "26d06a0d-a9b9-4b4f-beb2-059cc9fc551c"
                 ) {
-                    PerPage = 3721,
+                    PerPage = 5122,
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
-                    "05d4da0c-f8ac-43e9-a1a8-54df0786da2d"
+                    "26d06a0d-a9b9-4b4f-beb2-059cc9fc551c"
                 ) {
-                    Page = 1673,
-                    PerPage = 8569,
+                    Page = 5799,
+                    PerPage = 2453,
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
-                    "05d4da0c-f8ac-43e9-a1a8-54df0786da2d"
+                    "26d06a0d-a9b9-4b4f-beb2-059cc9fc551c"
                 ) {
-                    To = "2020-06-09T08:43:25.000000Z",
-                    Page = 2641,
-                    PerPage = 1403,
+                    To = "2022-04-26T16:16:13.000000+09:00",
+                    Page = 487,
+                    PerPage = 8812,
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
-                    "05d4da0c-f8ac-43e9-a1a8-54df0786da2d"
+                    "26d06a0d-a9b9-4b4f-beb2-059cc9fc551c"
                 ) {
-                    From = "2023-08-31T11:35:24.000000Z",
-                    To = "2021-11-27T00:17:30.000000Z",
-                    Page = 6128,
-                    PerPage = 9468,
+                    From = "2020-07-14T14:34:50.000000+09:00",
+                    To = "2023-05-11T00:31:45.000000+09:00",
+                    Page = 6745,
+                    PerPage = 953,
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,13 +114,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
-                    "05d4da0c-f8ac-43e9-a1a8-54df0786da2d"
+                    "26d06a0d-a9b9-4b4f-beb2-059cc9fc551c"
                 ) {
-                    IsModified = true,
-                    From = "2021-10-15T20:46:20.000000Z",
-                    To = "2023-11-14T17:02:46.000000Z",
-                    Page = 8406,
-                    PerPage = 1440,
+                    IsModified = false,
+                    From = "2024-01-20T10:38:15.000000+09:00",
+                    To = "2020-12-24T04:11:14.000000+09:00",
+                    Page = 1772,
+                    PerPage = 2425,
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -135,14 +135,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
-                    "05d4da0c-f8ac-43e9-a1a8-54df0786da2d"
+                    "26d06a0d-a9b9-4b4f-beb2-059cc9fc551c"
                 ) {
-                    Type = "transfer",
+                    Type = "expire",
                     IsModified = true,
-                    From = "2022-03-30T21:58:48.000000Z",
-                    To = "2024-01-29T17:38:21.000000Z",
-                    Page = 786,
-                    PerPage = 2848,
+                    From = "2021-02-13T04:32:34.000000+09:00",
+                    To = "2023-04-22T03:17:43.000000+09:00",
+                    Page = 1927,
+                    PerPage = 8887,
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -157,15 +157,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
-                    "05d4da0c-f8ac-43e9-a1a8-54df0786da2d"
+                    "26d06a0d-a9b9-4b4f-beb2-059cc9fc551c"
                 ) {
-                    ReceiverCustomerId = "476067c0-5180-472f-9748-fbe19e693314",
+                    ReceiverCustomerId = "54ab9fb6-55af-4469-9b47-636ae9de1cb1",
                     Type = "cashback",
                     IsModified = true,
-                    From = "2020-07-04T11:49:13.000000Z",
-                    To = "2020-10-22T23:48:51.000000Z",
-                    Page = 4783,
-                    PerPage = 8752,
+                    From = "2022-04-09T19:16:32.000000+09:00",
+                    To = "2020-01-17T21:38:30.000000+09:00",
+                    Page = 4141,
+                    PerPage = 1276,
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -180,16 +180,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
-                    "05d4da0c-f8ac-43e9-a1a8-54df0786da2d"
+                    "26d06a0d-a9b9-4b4f-beb2-059cc9fc551c"
                 ) {
-                    SenderCustomerId = "d2869b53-2e22-4d40-bc23-f9d272cd44e5",
-                    ReceiverCustomerId = "03a89a91-73ea-4831-99d4-32f7b9069362",
+                    SenderCustomerId = "b49877aa-e363-4ea5-b392-14b2f67f27bf",
+                    ReceiverCustomerId = "b564977a-558b-48e5-85d1-67053a715351",
                     Type = "exchange",
                     IsModified = false,
-                    From = "2020-01-13T05:00:34.000000Z",
-                    To = "2020-03-01T04:56:22.000000Z",
-                    Page = 5098,
-                    PerPage = 7841,
+                    From = "2021-01-04T01:35:51.000000+09:00",
+                    To = "2023-11-16T04:08:27.000000+09:00",
+                    Page = 7990,
+                    PerPage = 9650,
                 };
                 Response.PaginatedTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

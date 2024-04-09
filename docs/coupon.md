@@ -11,12 +11,12 @@ Couponは特定店舗で利用できるものや利用可能期間、配信条�
 Request.ListCoupons request = new Request.ListCoupons(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 対象クーポンのマネーID
 ) {
-    CouponId = "XWP",  // クーポンID
-    CouponName = "Nst4",  // クーポン名
-    IssuedShopName = "4xBM1t",  // 発行店舗名
-    AvailableShopName = "MMoOy",  // 利用可能店舗名
-    AvailableFrom = "2023-03-30T16:00:42.000000Z",  // 利用可能期間 (開始日時)
-    AvailableTo = "2023-12-05T20:58:25.000000Z",  // 利用可能期間 (終了日時)
+    CouponId = "x2jnlKrw0",  // クーポンID
+    CouponName = "dNS4VtkXCD",  // クーポン名
+    IssuedShopName = "t0L",  // 発行店舗名
+    AvailableShopName = "OE3Qg",  // 利用可能店舗名
+    AvailableFrom = "2021-02-12T04:03:43.000000+09:00",  // 利用可能期間 (開始日時)
+    AvailableTo = "2023-06-04T13:12:02.000000+09:00",  // 利用可能期間 (終了日時)
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取得数
 };
@@ -145,13 +145,6 @@ Response.PaginatedCoupons response = await request.Send(client);
 [PaginatedCoupons](./responses.md#paginated-coupons)
 を返します
 
-### Error Responses
-|status|type|ja|en|
-|---|---|---|---|
-|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-|422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
-|422|private_money_not_found||Private money not found|
-
 
 
 ---
@@ -164,25 +157,25 @@ Response.PaginatedCoupons response = await request.Send(client);
 ```csharp
 Request.CreateCoupon request = new Request.CreateCoupon(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "WcD5ADFBSPh7o2MC5sMNAQhF0HC",
-    "2022-11-04T16:57:14.000000Z",
-    "2023-02-19T10:51:37.000000Z",
+    "cszhfH09Y5OthVwPmvHXBFS5mnHJDaN7ByqCBViT8YJSc5gafw5E7JxTvjUc1aT5EbGp",
+    "2022-01-15T18:09:07.000000+09:00",
+    "2022-08-26T01:51:15.000000+09:00",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 発行元の店舗ID
 ) {
-    Description = "Dj4ZpJqp2buSHK5WKI86hTWo47qb9nSKNBR3LjzCdQo4GwTY7y2Am8ZcyGh3BczuQ1HmAT4U7cCHORIBupKF2LGLWlWRqEU1R3HVfumJrkxA1RBhkJnrKn6T4UBYf7XzEp3cMOeoQItbJApNFNbizZqSEKvNBsiLTmRsG1pcvzPfSNlMjgyCm3l36NNuyyweAXXanZiLS6lbj9JXoVWEOjNWcJ8Pq",
-    DiscountAmount = 7919,
-    DiscountPercentage = 8256.0,
-    DiscountUpperLimit = 4638,
-    DisplayStartsAt = "2020-04-05T02:04:40.000000Z",  // クーポンの掲載期間(開始日時)
-    DisplayEndsAt = "2020-10-01T23:49:47.000000Z",  // クーポンの掲載期間(終了日時)
-    IsDisabled = false,  // 無効化フラグ
-    IsHidden = true,  // クーポン一覧に掲載されるかどうか
-    IsPublic = true,  // アプリ配信なしで受け取れるかどうか
-    Code = "Dc",  // クーポン受け取りコード
-    UsageLimit = 3660,  // ユーザごとの利用可能回数(NULLの場合は無制限)
-    MinAmount = 8009,  // クーポン適用可能な最小取引額
-    IsShopSpecified = false,  // 特定店舗限定のクーポンかどうか
-    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
+    Description = "Qn8B7l65BYM",
+    DiscountAmount = 4227,
+    DiscountPercentage = 806.0,
+    DiscountUpperLimit = 1270,
+    DisplayStartsAt = "2020-02-09T15:09:11.000000+09:00",  // クーポンの掲載期間(開始日時)
+    DisplayEndsAt = "2023-11-04T13:46:54.000000+09:00",  // クーポンの掲載期間(終了日時)
+    IsDisabled = true,  // 無効化フラグ
+    IsHidden = false,  // クーポン一覧に掲載されるかどうか
+    IsPublic = false,  // アプリ配信なしで受け取れるかどうか
+    Code = "EwbRq7C0z",  // クーポン受け取りコード
+    UsageLimit = 1053,  // ユーザごとの利用可能回数(NULLの場合は無制限)
+    MinAmount = 7786,  // クーポン適用可能な最小取引額
+    IsShopSpecified = true,  // 特定店舗限定のクーポンかどうか
+    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
     StorageId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ストレージID
 };
 Response.CouponDetail response = await request.Send(client);
@@ -418,16 +411,6 @@ Storage APIでアップロードしたクーポン画像のStorage IDを指定�
 [CouponDetail](./responses.md#coupon-detail)
 を返します
 
-### Error Responses
-|status|type|ja|en|
-|---|---|---|---|
-|400|invalid_parameters|項目が無効です|Invalid parameters|
-|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-|404|partner_storage_not_found|指定したIDのデータは保存されていません|Not found by storage_id|
-|422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
-|422|private_money_not_found||Private money not found|
-|422|coupon_image_storage_conflict|クーポン画像のストレージIDは既に存在します|The coupon image storage_id is already exists|
-
 
 
 ---
@@ -480,23 +463,23 @@ UUIDv4フォーマットである必要があり、フォーマットが異な�
 Request.UpdateCoupon request = new Request.UpdateCoupon(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // クーポンID
 ) {
-    Name = "AJFpX3tMiPvkskrBs7cZNQht6pUXt6QkeG9pRp1c5EcN6nLJcb0NEcuMnzKSDbJDSeKRyRniwPaN0afN8mRVY0r2kLaY",
-    Description = "QQnNWq5gJk8ucSDE2uEYUD0C3IXLL4lH8T3KxBkSfET7NeTYdPy8UjYc9OlslQQZIq7zSOEeSzczj6ObIBdQwmJP2q6udBME6WRlyybO27figMsVRHKPW8EbdfuKdbyfcjYNDVx4A2ovqPMZA8irXJ9E6ZcMzkLyAqgwSoddiujWTgn11mpxaVIYgQo5GvBiHK",
-    DiscountAmount = 1536,
-    DiscountPercentage = 6647.0,
-    DiscountUpperLimit = 1791,
-    StartsAt = "2020-04-21T20:54:59.000000Z",
-    EndsAt = "2020-07-25T08:18:17.000000Z",
-    DisplayStartsAt = "2021-03-25T04:58:14.000000Z",  // クーポンの掲載期間(開始日時)
-    DisplayEndsAt = "2024-01-05T15:52:32.000000Z",  // クーポンの掲載期間(終了日時)
+    Name = "5JoEScisdzkhxnXFFT7CXS50vaovkRO",
+    Description = "QbPFa2Q0QZFPxPWcwwu3uh9fDL3S3N",
+    DiscountAmount = 2550,
+    DiscountPercentage = 8586.0,
+    DiscountUpperLimit = 2093,
+    StartsAt = "2021-01-29T13:48:50.000000+09:00",
+    EndsAt = "2022-04-03T12:59:15.000000+09:00",
+    DisplayStartsAt = "2021-06-14T03:00:40.000000+09:00",  // クーポンの掲載期間(開始日時)
+    DisplayEndsAt = "2022-07-07T12:43:02.000000+09:00",  // クーポンの掲載期間(終了日時)
     IsDisabled = false,  // 無効化フラグ
     IsHidden = false,  // クーポン一覧に掲載されるかどうか
-    IsPublic = false,  // アプリ配信なしで受け取れるかどうか
-    Code = "FE45d3P2",  // クーポン受け取りコード
-    UsageLimit = 5840,  // ユーザごとの利用可能回数(NULLの場合は無制限)
-    MinAmount = 3578,  // クーポン適用可能な最小取引額
+    IsPublic = true,  // アプリ配信なしで受け取れるかどうか
+    Code = "VO",  // クーポン受け取りコード
+    UsageLimit = 5609,  // ユーザごとの利用可能回数(NULLの場合は無制限)
+    MinAmount = 6829,  // クーポン適用可能な最小取引額
     IsShopSpecified = false,  // 特定店舗限定のクーポンかどうか
-    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
+    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
     StorageId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ストレージID
 };
 Response.CouponDetail response = await request.Send(client);

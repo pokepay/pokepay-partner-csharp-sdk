@@ -104,7 +104,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    CreatedTo = "2020-03-16T19:15:17.000000Z",
+                    CreatedTo = "2020-03-16T19:15:17.000000+09:00",
                     IssuerShopId = "f502dcf6-9aee-4325-a5af-1c77ca1cba62",
                     Description = "d4rNZJsCq7",
                     IsOnetime = false,
@@ -123,8 +123,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    CreatedFrom = "2020-01-22T06:25:49.000000Z",
-                    CreatedTo = "2020-10-06T06:24:16.000000Z",
+                    CreatedFrom = "2020-01-22T06:25:49.000000+09:00",
+                    CreatedTo = "2020-10-06T06:24:16.000000+09:00",
                     IssuerShopId = "ba8a1508-dfb7-4061-83a0-f9726dfada77",
                     Description = "2NKYH12xH",
                     IsOnetime = true,
@@ -143,9 +143,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    ExpiresTo = "2022-02-19T08:35:27.000000Z",
-                    CreatedFrom = "2021-08-15T09:13:42.000000Z",
-                    CreatedTo = "2023-10-19T16:42:25.000000Z",
+                    ExpiresTo = "2022-02-19T08:35:27.000000+09:00",
+                    CreatedFrom = "2021-08-15T09:13:42.000000+09:00",
+                    CreatedTo = "2023-10-19T16:42:25.000000+09:00",
                     IssuerShopId = "6f3fc2c9-4477-4213-942c-62c057d20078",
                     Description = "vxk",
                     IsOnetime = true,
@@ -164,10 +164,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    ExpiresFrom = "2022-04-09T10:57:33.000000Z",
-                    ExpiresTo = "2021-01-21T20:17:59.000000Z",
-                    CreatedFrom = "2024-01-21T15:48:46.000000Z",
-                    CreatedTo = "2021-01-02T23:52:54.000000Z",
+                    ExpiresFrom = "2022-04-09T10:57:33.000000+09:00",
+                    ExpiresTo = "2021-01-21T20:17:59.000000+09:00",
+                    CreatedFrom = "2024-01-21T15:48:46.000000+09:00",
+                    CreatedTo = "2021-01-02T23:52:54.000000+09:00",
                     IssuerShopId = "7367f459-8e42-4c7d-84d1-5fe958c47652",
                     Description = "yVTR",
                     IsOnetime = true,
@@ -187,10 +187,10 @@ namespace PokepayPartnerCsharpSdk.Test
             try {
                 Request.ListChecks request = new Request.ListChecks() {
                     OrganizationCode = "czNdwQ9LziqjK5MdQ1lZ",
-                    ExpiresFrom = "2021-12-11T12:27:57.000000Z",
-                    ExpiresTo = "2023-03-30T19:25:50.000000Z",
-                    CreatedFrom = "2022-10-18T18:39:55.000000Z",
-                    CreatedTo = "2021-03-07T21:43:35.000000Z",
+                    ExpiresFrom = "2021-12-11T12:27:57.000000+09:00",
+                    ExpiresTo = "2023-03-30T19:25:50.000000+09:00",
+                    CreatedFrom = "2022-10-18T18:39:55.000000+09:00",
+                    CreatedTo = "2021-03-07T21:43:35.000000+09:00",
                     IssuerShopId = "661adf80-6e58-4a56-82b9-c0c18253251c",
                     Description = "2ESq",
                     IsOnetime = true,
@@ -211,10 +211,10 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.ListChecks request = new Request.ListChecks() {
                     PrivateMoneyId = "932ec6c0-848e-4ed6-954b-42c077bd6eba",
                     OrganizationCode = "1GN9Jq",
-                    ExpiresFrom = "2022-09-08T05:18:03.000000Z",
-                    ExpiresTo = "2023-08-04T01:00:24.000000Z",
-                    CreatedFrom = "2020-11-07T01:30:52.000000Z",
-                    CreatedTo = "2023-05-08T07:12:05.000000Z",
+                    ExpiresFrom = "2022-09-08T05:18:03.000000+09:00",
+                    ExpiresTo = "2023-08-04T01:00:24.000000+09:00",
+                    CreatedFrom = "2020-11-07T01:30:52.000000+09:00",
+                    CreatedTo = "2023-05-08T07:12:05.000000+09:00",
                     IssuerShopId = "329f1bf6-2a79-439f-928a-0c903705051d",
                     Description = "A5j20",
                     IsOnetime = true,
@@ -236,10 +236,10 @@ namespace PokepayPartnerCsharpSdk.Test
                     PerPage = 6132,
                     PrivateMoneyId = "14118789-fbb4-43a9-9a19-073123317c07",
                     OrganizationCode = "pnjZ8xWKeN3WKGyHXCKDfS0",
-                    ExpiresFrom = "2023-09-29T07:06:08.000000Z",
-                    ExpiresTo = "2022-01-29T19:33:22.000000Z",
-                    CreatedFrom = "2023-12-09T06:55:43.000000Z",
-                    CreatedTo = "2021-08-21T04:38:03.000000Z",
+                    ExpiresFrom = "2023-09-29T07:06:08.000000+09:00",
+                    ExpiresTo = "2022-01-29T19:33:22.000000+09:00",
+                    CreatedFrom = "2023-12-09T06:55:43.000000+09:00",
+                    CreatedTo = "2021-08-21T04:38:03.000000+09:00",
                     IssuerShopId = "22019b92-0fec-40f8-8af4-c98a125420c3",
                     Description = "8sS34enF",
                     IsOnetime = true,
@@ -262,10 +262,10 @@ namespace PokepayPartnerCsharpSdk.Test
                     PerPage = 841,
                     PrivateMoneyId = "e3f3e62a-e5e8-41c9-8de2-12fb81470a74",
                     OrganizationCode = "E1tQOM",
-                    ExpiresFrom = "2023-03-26T11:24:36.000000Z",
-                    ExpiresTo = "2020-03-21T15:23:58.000000Z",
-                    CreatedFrom = "2021-08-14T22:15:16.000000Z",
-                    CreatedTo = "2021-10-15T14:33:16.000000Z",
+                    ExpiresFrom = "2023-03-26T11:24:36.000000+09:00",
+                    ExpiresTo = "2020-03-21T15:23:58.000000+09:00",
+                    CreatedFrom = "2021-08-14T22:15:16.000000+09:00",
+                    CreatedTo = "2021-10-15T14:33:16.000000+09:00",
                     IssuerShopId = "8cf982df-e1aa-450a-82d5-030cdf1dbddb",
                     Description = "hD0",
                     IsOnetime = true,

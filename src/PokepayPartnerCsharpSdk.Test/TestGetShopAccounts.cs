@@ -59,7 +59,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
                     "31ecb769-3144-4a83-95a2-b72406deb863"
                 ) {
-                    CreatedAtTo = "2020-05-06T02:02:55.000000Z",
+                    CreatedAtTo = "2020-05-06T02:02:55.000000+09:00",
                     IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -77,8 +77,8 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
                     "31ecb769-3144-4a83-95a2-b72406deb863"
                 ) {
-                    CreatedAtFrom = "2023-03-17T16:04:05.000000Z",
-                    CreatedAtTo = "2024-03-19T06:01:45.000000Z",
+                    CreatedAtFrom = "2023-03-17T16:04:05.000000+09:00",
+                    CreatedAtTo = "2024-03-19T06:01:45.000000+09:00",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -97,8 +97,8 @@ namespace PokepayPartnerCsharpSdk.Test
                     "31ecb769-3144-4a83-95a2-b72406deb863"
                 ) {
                     PerPage = 4823,
-                    CreatedAtFrom = "2023-07-22T08:29:37.000000Z",
-                    CreatedAtTo = "2020-07-29T13:51:14.000000Z",
+                    CreatedAtFrom = "2023-07-22T08:29:37.000000+09:00",
+                    CreatedAtTo = "2020-07-29T13:51:14.000000+09:00",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -118,8 +118,8 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     Page = 4360,
                     PerPage = 8484,
-                    CreatedAtFrom = "2022-04-08T21:42:45.000000Z",
-                    CreatedAtTo = "2023-03-08T17:36:02.000000Z",
+                    CreatedAtFrom = "2022-04-08T21:42:45.000000+09:00",
+                    CreatedAtTo = "2023-03-08T17:36:02.000000+09:00",
                     IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);

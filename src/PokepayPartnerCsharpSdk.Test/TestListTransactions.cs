@@ -284,7 +284,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    To = "2021-07-02T12:39:43.000000Z",
+                    To = "2021-07-02T12:39:43.000000+09:00",
                     Page = 3516,
                     PerPage = 7278,
                     ShopId = "af783fd9-07c7-4624-95c5-4b56bf820e7e",
@@ -311,8 +311,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListTransactions request = new Request.ListTransactions() {
-                    From = "2021-08-09T05:40:52.000000Z",
-                    To = "2022-02-04T13:27:41.000000Z",
+                    From = "2021-08-09T05:40:52.000000+09:00",
+                    To = "2022-02-04T13:27:41.000000+09:00",
                     Page = 3166,
                     PerPage = 185,
                     ShopId = "5e7a6a52-e2af-48e0-9839-f147fe8d0d77",

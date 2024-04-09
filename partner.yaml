@@ -1021,55 +1021,6 @@ components:
             例えば、キャンペーンによるポイント付与取引やキャンセル状況などの情報が含まれます。
             ポケペイ取引が存在しない場合はnullが設定されます。
 
-    Products:
-      type: array
-      items:
-        type: object
-        properties:
-          jan_code:
-            type: string
-            maxLength: 64
-          classification_code:
-            type: string
-            maxLength: 64
-          name:
-            type: string
-            maxLength: 256
-          unit_price:
-            type: number
-            minimum: 0
-          price:
-            type: number
-            minimum: 0
-          quantity:
-            type: integer
-            minimum: 1
-          is_discounted:
-            type: boolean
-          other:
-            type: string
-            format: json
-        example: |-
-          {"jan_code":"abc",
-           "name":"name1",
-           "unit_price":100,
-           "price": 100,
-           "quantity": 1,
-           "is_discounted": false,
-           "other":"{}"}
-      title: '商品情報データ'
-      description:  |-
-        一つの取引に含まれる商品情報データです。
-        以下の内容からなるJSONオブジェクトの配列で指定します。
-
-        - `jan_code`: JANコード。64字以下の文字列
-        - `name`: 商品名。256字以下の文字列
-        - `unit_price`: 商品単価。0以上の数値
-        - `price`: 全体の金額(例: 商品単価 × 個数)。0以上の数値
-        - `quantity`: 商品の個数。この値が指定された場合、priceから算出される個数よりも優先されます。
-        - `is_discounted`: 賞味期限が近いなどの理由で商品が値引きされているかどうかのフラグ。boolean
-        - `other`: その他商品に関する情報。JSONオブジェクトで指定します。
-
     Product:
       x-pokepay-schema-type: "response"
       properties:
@@ -3957,7 +3908,53 @@ paths:
                   example: |-
                     {"key":"value"}
                 products:
-                  $ref: '#/components/schemas/Products'
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      jan_code:
+                        type: string
+                        maxLength: 64
+                      classification_code:
+                        type: string
+                        maxLength: 64
+                      name:
+                        type: string
+                        maxLength: 256
+                      unit_price:
+                        type: number
+                        minimum: 0
+                      price:
+                        type: number
+                        minimum: 0
+                      quantity:
+                        type: integer
+                        minimum: 1
+                      is_discounted:
+                        type: boolean
+                      other:
+                        type: string
+                        format: json
+                    example: |-
+                      {"jan_code":"abc",
+                       "name":"name1",
+                       "unit_price":100,
+                       "price": 100,
+                       "quantity": 1,
+                       "is_discounted": false,
+                       "other":"{}"}
+                  title: '商品情報データ'
+                  description:  |-
+                    一つの取引に含まれる商品情報データです。
+                    以下の内容からなるJSONオブジェクトの配列で指定します。
+
+                    - `jan_code`: JANコード。64字以下の文字列
+                    - `name`: 商品名。256字以下の文字列
+                    - `unit_price`: 商品単価。0以上の数値
+                    - `price`: 全体の金額(例: 商品単価 × 個数)。0以上の数値
+                    - `quantity`: 商品の個数。この値が指定された場合、priceから算出される個数よりも優先されます。
+                    - `is_discounted`: 賞味期限が近いなどの理由で商品が値引きされているかどうかのフラグ。boolean
+                    - `other`: その他商品に関する情報。JSONオブジェクトで指定します。
                 request_id:
                   type: string
                   format: uuid
@@ -4043,7 +4040,53 @@ paths:
                   example: |-
                     {"key":"value"}
                 products:
-                  $ref: '#/components/schemas/Products'
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      jan_code:
+                        type: string
+                        maxLength: 64
+                      classification_code:
+                        type: string
+                        maxLength: 64
+                      name:
+                        type: string
+                        maxLength: 256
+                      unit_price:
+                        type: number
+                        minimum: 0
+                      price:
+                        type: number
+                        minimum: 0
+                      quantity:
+                        type: integer
+                        minimum: 1
+                      is_discounted:
+                        type: boolean
+                      other:
+                        type: string
+                        format: json
+                    example: |-
+                      {"jan_code":"abc",
+                       "name":"name1",
+                       "unit_price":100,
+                       "price": 100,
+                       "quantity": 1,
+                       "is_discounted": false,
+                       "other":"{}"}
+                  title: '商品情報データ'
+                  description:  |-
+                    一つの取引に含まれる商品情報データです。
+                    以下の内容からなるJSONオブジェクトの配列で指定します。
+
+                    - `jan_code`: JANコード。64字以下の文字列
+                    - `name`: 商品名。256字以下の文字列
+                    - `unit_price`: 商品単価。0以上の数値
+                    - `price`: 全体の金額(例: 商品単価 × 個数)。0以上の数値
+                    - `quantity`: 商品の個数。この値が指定された場合、priceから算出される個数よりも優先されます。
+                    - `is_discounted`: 賞味期限が近いなどの理由で商品が値引きされているかどうかのフラグ。boolean
+                    - `other`: その他商品に関する情報。JSONオブジェクトで指定します。
                 request_id:
                   type: string
                   format: uuid
@@ -4537,7 +4580,53 @@ paths:
                   example: |-
                     {"key":"value"}
                 products:
-                  $ref: '#/components/schemas/Products'
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      jan_code:
+                        type: string
+                        maxLength: 64
+                      classification_code:
+                        type: string
+                        maxLength: 64
+                      name:
+                        type: string
+                        maxLength: 256
+                      unit_price:
+                        type: number
+                        minimum: 0
+                      price:
+                        type: number
+                        minimum: 0
+                      quantity:
+                        type: integer
+                        minimum: 1
+                      is_discounted:
+                        type: boolean
+                      other:
+                        type: string
+                        format: json
+                    example: |-
+                      {"jan_code":"abc",
+                       "name":"name1",
+                       "unit_price":100,
+                       "price": 100,
+                       "quantity": 1,
+                       "is_discounted": false,
+                       "other":"{}"}
+                  title: '商品情報データ'
+                  description:  |-
+                    一つの取引に含まれる商品情報データです。
+                    以下の内容からなるJSONオブジェクトの配列で指定します。
+
+                    - `jan_code`: JANコード。64字以下の文字列
+                    - `name`: 商品名。256字以下の文字列
+                    - `unit_price`: 商品単価。0以上の数値
+                    - `price`: 全体の金額(例: 商品単価 × 個数)。0以上の数値
+                    - `quantity`: 商品の個数。この値が指定された場合、priceから算出される個数よりも優先されます。
+                    - `is_discounted`: 賞味期限が近いなどの理由で商品が値引きされているかどうかのフラグ。boolean
+                    - `other`: その他商品に関する情報。JSONオブジェクトで指定します。
                 request_id:
                   type: string
                   format: uuid

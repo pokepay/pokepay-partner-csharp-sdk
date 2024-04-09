@@ -59,12 +59,6 @@ Response.PaginatedPrivateMoneys response = await request.Send(client);
 [PaginatedPrivateMoneys](./responses.md#paginated-private-moneys)
 を返します
 
-### Error Responses
-|status|type|ja|en|
-|---|---|---|---|
-|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-|422|organization_not_found||Organization not found|
-
 
 
 ---
@@ -77,8 +71,8 @@ Response.PaginatedPrivateMoneys response = await request.Send(client);
 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    From = "2023-11-17T02:30:57.000000Z",  // 開始日時(toと同時に指定する必要有)
-    To = "2024-03-18T16:09:15.000000Z",  // 終了日時(fromと同時に指定する必要有)
+    From = "2020-09-01T07:38:37.000000+09:00",  // 開始日時(toと同時に指定する必要有)
+    To = "2024-03-21T02:25:01.000000+09:00",  // 終了日時(fromと同時に指定する必要有)
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
 };
@@ -162,8 +156,8 @@ Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Sen
 Request.GetPrivateMoneySummary request = new Request.GetPrivateMoneySummary(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    From = "2022-06-21T16:03:01.000000Z",  // 開始日時
-    To = "2023-09-16T21:12:29.000000Z",  // 終了日時
+    From = "2023-10-27T19:24:09.000000+09:00",  // 開始日時
+    To = "2020-01-28T06:46:15.000000+09:00",  // 終了日時
 };
 Response.PrivateMoneySummary response = await request.Send(client);
 ```

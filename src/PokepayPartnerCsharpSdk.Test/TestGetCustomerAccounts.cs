@@ -137,7 +137,7 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
                     "8fd6266d-a71c-4830-9cd3-391d4cc8aba3"
                 ) {
-                    CreatedAtTo = "2022-07-27T22:59:50.000000Z",
+                    CreatedAtTo = "2022-07-27T22:59:50.000000+09:00",
                     IsSuspended = true,
                     Status = "pre-closed",
                     ExternalId = "tuXgZDedIJqTHGgnOhGiwZBj5AvHdO2Atfc",
@@ -159,8 +159,8 @@ namespace PokepayPartnerCsharpSdk.Test
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
                     "8fd6266d-a71c-4830-9cd3-391d4cc8aba3"
                 ) {
-                    CreatedAtFrom = "2021-03-24T19:42:09.000000Z",
-                    CreatedAtTo = "2020-09-24T18:38:11.000000Z",
+                    CreatedAtFrom = "2021-03-24T19:42:09.000000+09:00",
+                    CreatedAtTo = "2020-09-24T18:38:11.000000+09:00",
                     IsSuspended = true,
                     Status = "active",
                     ExternalId = "PASw8jPQ0hMJ4nPgNJOUuVI3xkUSOX0vTgyFK1F",
@@ -183,8 +183,8 @@ namespace PokepayPartnerCsharpSdk.Test
                     "8fd6266d-a71c-4830-9cd3-391d4cc8aba3"
                 ) {
                     PerPage = 6435,
-                    CreatedAtFrom = "2022-12-18T13:21:30.000000Z",
-                    CreatedAtTo = "2022-10-28T02:45:21.000000Z",
+                    CreatedAtFrom = "2022-12-18T13:21:30.000000+09:00",
+                    CreatedAtTo = "2022-10-28T02:45:21.000000+09:00",
                     IsSuspended = true,
                     Status = "active",
                     ExternalId = "YeKIbZQuPYAKNLvTyMcIYl",
@@ -208,8 +208,8 @@ namespace PokepayPartnerCsharpSdk.Test
                 ) {
                     Page = 8687,
                     PerPage = 8494,
-                    CreatedAtFrom = "2024-02-11T20:15:48.000000Z",
-                    CreatedAtTo = "2023-10-06T20:45:00.000000Z",
+                    CreatedAtFrom = "2024-02-11T20:15:48.000000+09:00",
+                    CreatedAtTo = "2023-10-06T20:45:00.000000+09:00",
                     IsSuspended = true,
                     Status = "active",
                     ExternalId = "Yk",
