@@ -7,19 +7,19 @@
 
 ```csharp
 Request.ListBills request = new Request.ListBills() {
-    Page = 3989,  // ページ番号
-    PerPage = 3402,  // 1ページの表示数
-    BillId = "atpE7508L",  // 支払いQRコードのID
+    Page = 231,  // ページ番号
+    PerPage = 1828,  // 1ページの表示数
+    BillId = "h7IyYB",  // 支払いQRコードのID
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    OrganizationCode = "-1-XK--g-",  // 組織コード
+    OrganizationCode = "-k-----Yq2hrn5-RcDh",  // 組織コード
     Description = "test bill",  // 取引説明文
-    CreatedFrom = "2020-02-22T21:37:01.000000+09:00",  // 作成日時(起点)
-    CreatedTo = "2021-08-12T03:19:42.000000+09:00",  // 作成日時(終点)
+    CreatedFrom = "2021-08-04T01:59:13.000000Z",  // 作成日時(起点)
+    CreatedTo = "2023-02-25T23:26:35.000000Z",  // 作成日時(終点)
     ShopName = "bill test shop1",  // 店舗名
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
-    LowerLimitAmount = 2989,  // 金額の範囲によるフィルタ(下限)
-    UpperLimitAmount = 3813,  // 金額の範囲によるフィルタ(上限)
-    IsDisabled = false,  // 支払いQRコードが無効化されているかどうか
+    LowerLimitAmount = 5821,  // 金額の範囲によるフィルタ(下限)
+    UpperLimitAmount = 4653,  // 金額の範囲によるフィルタ(上限)
+    IsDisabled = true,  // 支払いQRコードが無効化されているかどうか
 };
 Response.PaginatedBills response = await request.Send(client);
 ```
@@ -194,6 +194,12 @@ Response.PaginatedBills response = await request.Send(client);
 [PaginatedBills](./responses.md#paginated-bills)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+
+
 
 ---
 
@@ -207,7 +213,7 @@ Request.CreateBill request = new Request.CreateBill(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 支払いマネーのマネーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 支払い先(受け取り人)の店舗ID
 ) {
-    Amount = 3055.0,  // 支払い額
+    Amount = 2631.0,  // 支払い額
     Description = "test bill",  // 説明文(アプリ上で取引の説明文として表示される)
 };
 Response.Bill response = await request.Send(client);
@@ -268,6 +274,18 @@ Response.Bill response = await request.Send(client);
 [Bill](./responses.md#bill)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+|422|shop_account_not_found||The shop account is not found|
+|422|private_money_not_found||Private money not found|
+|422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
+|422|account_closed|アカウントは退会しています|The account is closed|
+|422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
+|422|account_suspended|アカウントは停止されています|The account is suspended|
+
+
 
 ---
 
@@ -280,7 +298,7 @@ Response.Bill response = await request.Send(client);
 Request.UpdateBill request = new Request.UpdateBill(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 支払いQRコードのID
 ) {
-    Amount = 9988.0,  // 支払い額
+    Amount = 1596.0,  // 支払い額
     Description = "test bill",  // 説明文
     IsDisabled = true,  // 無効化されているかどうか
 };
@@ -343,6 +361,7 @@ Response.Bill response = await request.Send(client);
 成功したときは
 [Bill](./responses.md#bill)
 を返します
+
 
 
 ---

@@ -10,7 +10,7 @@ using PokepayPartnerCsharpSdk;
 
 namespace PokepayPartnerCsharpSdk.Test
 {
-    public class TestGetAccount
+    public class TestGetExternalTransactionByRequestId
     {
         private Client client;
 
@@ -21,13 +21,13 @@ namespace PokepayPartnerCsharpSdk.Test
         }
 
         [Test]
-        public async Task GetAccount0()
+        public async Task GetExternalTransactionByRequestId0()
         {
             try {
-                Request.GetAccount request = new Request.GetAccount(
-                    "e2f27231-d218-406e-b371-622b2afd45f7"
+                Request.GetExternalTransactionByRequestId request = new Request.GetExternalTransactionByRequestId(
+                    "c83d8702-6cc0-4a87-97c0-6287c6cb972a"
                 );
-                Response.AccountDetail response = await request.Send(client);
+                Response.ExternalTransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");

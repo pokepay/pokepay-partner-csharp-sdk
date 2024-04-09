@@ -8,8 +8,8 @@
 Request.GetAccountTransferSummary request = new Request.GetAccountTransferSummary(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    From = "2020-11-21T12:14:48.000000+09:00",  // 集計期間の開始時刻
-    To = "2024-01-29T03:18:51.000000+09:00",  // 集計期間の終了時刻
+    From = "2021-05-27T23:29:35.000000Z",  // 集計期間の開始時刻
+    To = "2020-08-03T23:00:14.000000Z",  // 集計期間の終了時刻
     TransferTypes = new string[]{"topup", "payment"},  // 取引明細種別 (複数指定可)
 };
 Response.AccountTransferSummary response = await request.Send(client);
@@ -115,6 +115,7 @@ Response.AccountTransferSummary response = await request.Send(client);
 を返します
 
 
+
 ---
 
 
@@ -123,19 +124,19 @@ Response.AccountTransferSummary response = await request.Send(client);
 
 ```csharp
 Request.ListTransfers request = new Request.ListTransfers() {
-    From = "2023-12-31T07:01:20.000000+09:00",
-    To = "2020-06-29T02:08:48.000000+09:00",
-    Page = 6859,
-    PerPage = 4421,
+    From = "2023-05-01T22:11:57.000000Z",
+    To = "2022-07-24T22:57:17.000000Z",
+    Page = 9433,
+    PerPage = 2504,
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    ShopName = "4TLAvvWwguBec41EmwzzFrgc709a7P9KtTHr3zG8NnPjRfIRrqy3FohrRiHbftN77E9sKP2LWTHQkvbYQTkmfSmGSFmTTeLGAy7h6m0YyagUC0Ij3N9K",
+    ShopName = "uPCrmdUDxKggDFfFvOJkxhc8IPvtQD4QxNm6tX3Guvbo2vDNfvQpElqxJKgNyOMeXS2rUoCJ5iHqorIswPc2cBsLEwskU0m8hSr1melepO9LnwIsUcSmvb4GOUqCz9cGDIhlPt52zP7YS2DWusWLcKpd2P335Nv6jp",
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    CustomerName = "7EVH4f0IDf80jI5hMMqGagepFcb0C3pMehBLw9uhZslxpk65zsLMOaWLvqiZty5Zp232IvDDPPtMusem1WSPOdAkWLCHhP7q7jyjEo8V3Di9DtzhzAGKUtsDdhPal5eEvQkTNVI1DbDv2ICSa1fLqeRzwnNnU8Hy7seU6TPp7YTcvCbm",
+    CustomerName = "CTg7cImjgcPmkAEumRe3ajMg8VGC0KZ",
     TransactionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    IsModified = false,
-    TransactionTypes = new string[]{"payment", "transfer", "topup"},
-    TransferTypes = new string[]{"transfer", "exchange", "cashback", "payment", "coupon", "campaign"},  // 取引明細の種類でフィルターします。
+    IsModified = true,
+    TransactionTypes = new string[]{"cashback", "expire", "payment"},
+    TransferTypes = new string[]{"topup", "exchange", "expire", "transfer", "campaign", "payment"},  // 取引明細の種類でフィルターします。
     Description = "店頭QRコードによる支払い",  // 取引詳細説明文
 };
 Response.PaginatedTransfers response = await request.Send(client);
@@ -352,6 +353,12 @@ Response.PaginatedTransfers response = await request.Send(client);
 [PaginatedTransfers](./responses.md#paginated-transfers)
 を返します
 
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|403|NULL|NULL|NULL|
+
+
 
 ---
 
@@ -362,20 +369,20 @@ Response.PaginatedTransfers response = await request.Send(client);
 ```csharp
 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
-    ShopName = "FzroFJfg0zCih9q",  // 店舗名
+    ShopName = "Gv2NsNRGCHkqW6b190X",  // 店舗名
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // エンドユーザーID
-    CustomerName = "Hu842U5SnXNqipKVsIIUjVYx3ZiMVPZEq0xgguEtAXJ6WozfUGo1oVRA1PV2JD5SjzUvS2Jlq6P89tC2Mi1PRe6ex8zQnoMXPxIs0d6X24reGHeQvAPqGMsA1rgfPu4olvC1KDDE1G2mGU9YeDH5Tysjz5v4HW6eqkSknjW",  // エンドユーザー名
+    CustomerName = "2yHeAyBqIIySMiYLD3kq3Znz8pepfEmpSiLZTFdERWScAwFtubDUWmymMiDwFFfcNNLAfTp6G3m2S11HDiNC2T6Z1NRFWi9xNJqHv5T",  // エンドユーザー名
     TransactionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 取引ID
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    IsModified = false,  // キャンセルフラグ
-    TransactionTypes = new string[]{"cashback", "expire", "exchange", "topup", "transfer"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
+    IsModified = true,  // キャンセルフラグ
+    TransactionTypes = new string[]{"payment", "cashback", "expire", "exchange", "transfer", "topup"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
     NextPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 次ページへ遷移する際に起点となるtransferのID
     PrevPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 前ページへ遷移する際に起点となるtransferのID
     PerPage = 50,  // 1ページ分の取引数
-    TransferTypes = new string[]{"expire", "coupon", "exchange", "campaign", "payment", "transfer"},  // 取引明細種別 (複数指定可)
+    TransferTypes = new string[]{"payment", "exchange", "expire", "cashback", "coupon"},  // 取引明細種別 (複数指定可)
     Description = "店頭QRコードによる支払い",  // 取引詳細説明文
-    From = "2021-10-04T05:26:43.000000+09:00",  // 開始日時
-    To = "2021-11-17T01:08:00.000000+09:00",  // 終了日時
+    From = "2020-05-16T00:13:53.000000Z",  // 開始日時
+    To = "2023-01-28T02:51:42.000000Z",  // 終了日時
 };
 Response.PaginatedTransfersV2 response = await request.Send(client);
 ```
@@ -669,6 +676,12 @@ prev_page_cursor_idのtransfer自体は前のページには含まれません�
 成功したときは
 [PaginatedTransfersV2](./responses.md#paginated-transfers-v2)
 を返します
+
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+
 
 
 ---

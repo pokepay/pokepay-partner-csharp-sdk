@@ -19,10 +19,10 @@ Cashtrayを作成します。
 Request.CreateCashtray request = new Request.CreateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ユーザーID
-    1381.0 // 金額
+    9997.0 // 金額
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 6443,  // 失効時間(秒)
+    ExpiresIn = 2427,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client);
 ```
@@ -96,6 +96,54 @@ Cashtrayが失効するまでの時間を秒単位で指定します(任意項�
 成功したときは
 [Cashtray](./responses.md#cashtray)
 を返します
+
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+|422|account_not_found|アカウントが見つかりません|The account is not found|
+|422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
+
+
+
+---
+
+
+<a name="cancel-cashtray"></a>
+## CancelCashtray: Cashtrayを無効化する
+Cashtrayを無効化します。
+
+これにより、 `GetCashtray` のレスポンス中の `canceled_at` に無効化時点での現在時刻が入るようになります。
+エンドユーザーが無効化されたQRコードを読み取ると `cashtray_already_canceled` エラーとなり、取引は失敗します。
+
+```csharp
+Request.CancelCashtray request = new Request.CancelCashtray(
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // CashtrayのID
+);
+Response.Cashtray response = await request.Send(client);
+```
+
+
+
+### Parameters
+**`cashtray_id`** 
+  
+
+無効化するCashtrayのIDです。
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+
+
+成功したときは
+[Cashtray](./responses.md#cashtray)
+を返します
+
 
 
 ---
@@ -191,44 +239,6 @@ Response.CashtrayWithResult response = await request.Send(client);
 を返します
 
 
----
-
-
-<a name="cancel-cashtray"></a>
-## CancelCashtray: Cashtrayを無効化する
-Cashtrayを無効化します。
-
-これにより、 `GetCashtray` のレスポンス中の `canceled_at` に無効化時点での現在時刻が入るようになります。
-エンドユーザーが無効化されたQRコードを読み取ると `cashtray_already_canceled` エラーとなり、取引は失敗します。
-
-```csharp
-Request.CancelCashtray request = new Request.CancelCashtray(
-    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // CashtrayのID
-);
-Response.Cashtray response = await request.Send(client);
-```
-
-
-
-### Parameters
-**`cashtray_id`** 
-  
-
-無効化するCashtrayのIDです。
-
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
-
-
-
-成功したときは
-[Cashtray](./responses.md#cashtray)
-を返します
-
 
 ---
 
@@ -241,9 +251,9 @@ Cashtrayの内容を更新します。bodyパラメーターは全て省略可�
 Request.UpdateCashtray request = new Request.UpdateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // CashtrayのID
 ) {
-    Amount = 5934.0,  // 金額
+    Amount = 9018.0,  // 金額
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 7614,  // 失効時間(秒)
+    ExpiresIn = 3002,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client);
 ```
@@ -305,6 +315,7 @@ Cashtrayが失効するまでの時間を秒で指定します(任意項目、�
 成功したときは
 [Cashtray](./responses.md#cashtray)
 を返します
+
 
 
 ---

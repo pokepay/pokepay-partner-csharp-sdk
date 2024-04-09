@@ -38,6 +38,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public System.Nullable<int> MaxTotalPointAmount { get; set; }
         public string DestPrivateMoneyId { get; set; }
         public object ApplicableAccountMetadata { get; set; }
+        public object ApplicableTransactionMetadata { get; set; }
         public System.Nullable<int> BudgetCapsAmount { get; set; }
 #else
         public string Name { get; set; }
@@ -88,6 +89,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? DestPrivateMoneyId { get; set; }
         #nullable enable
         public object? ApplicableAccountMetadata { get; set; }
+        #nullable enable
+        public object? ApplicableTransactionMetadata { get; set; }
         #nullable enable
         public int? BudgetCapsAmount { get; set; }
 #endif
