@@ -397,8 +397,8 @@ POST,/checks,400,invalid_parameter_both_point_and_money_are_zero,,One of 'money_
 ,,422,account_can_not_topup,"この店舗からはチャージできません",account can not topup
 ,,422,account_private_money_is_not_issued_by_organization,,The account's private money is not issued by this organization
 ,,422,shop_account_not_found,,The shop account is not found
-,,422,account_money_topup_transfer_limit_exceeded,"マネーチャージ金額が上限を超えました",Too much amount to money topup transfer
 ,,422,bear_point_account_not_found,"ポイントを負担する店舗アカウントが見つかりません",Bear point account not found.
+,,422,account_money_topup_transfer_limit_exceeded,"マネーチャージ金額が上限を超えました",Too much amount to money topup transfer
 GET,/checks/:uuid,403,unpermitted_admin_user,"この管理ユーザには権限がありません",Admin does not have permission
 ,,404,notfound,,Not found
 ,,422,account_private_money_is_not_issued_by_organization,,The account's private money is not issued by this organization
@@ -408,9 +408,9 @@ PATCH,/checks/:uuid,400,invalid_parameter_combination_usage_limit_and_is_onetime
 ,,400,invalid_parameter_both_point_and_money_are_zero,,One of 'money_amount' or 'point_amount' must be a positive (>0) number
 ,,403,unpermitted_admin_user,"この管理ユーザには権限がありません",Admin does not have permission
 ,,404,notfound,,Not found
-,,422,account_money_topup_transfer_limit_exceeded,"マネーチャージ金額が上限を超えました",Too much amount to money topup transfer
 ,,422,onetime_check_cannot_reenabled,"使用済みのワンタイムチャージQRコードは再度有効化できません",One-time check already used and disabled cannot be re-enabled
 ,,422,account_private_money_is_not_issued_by_organization,,The account's private money is not issued by this organization
+,,422,account_money_topup_transfer_limit_exceeded,"マネーチャージ金額が上限を超えました",Too much amount to money topup transfer
 GET,/users,403,unpermitted_admin_user,"この管理ユーザには権限がありません",Admin does not have permission
 POST,/users,400,user_invalid_email,"入力されたメールアドレスが間違っています。入力内容をご確認ください",
 ,,400,not_shop_admin_user_must_not_be_linked_to_any_shops,,Admin user who does not have shop-authority must not be linked to any shops
@@ -676,12 +676,16 @@ DELETE,/cashtrays/:uuid,403,unpermitted_admin_user,"この管理ユーザには�
 ,,422,shop_user_not_found,"店舗が見つかりません",The shop user is not found
 POST,/cashtrays,403,unpermitted_admin_user,"この管理ユーザには権限がありません",Admin does not have permission
 ,,422,account_not_found,"アカウントが見つかりません",The account is not found
+,,422,account_transfer_limit_exceeded,"取引金額が上限を超えました",Too much amount to transfer
+,,422,account_money_topup_transfer_limit_exceeded,"マネーチャージ金額が上限を超えました",Too much amount to money topup transfer
 ,,422,shop_user_not_found,"店舗が見つかりません",The shop user is not found
 PATCH,/cashtrays/:uuid,403,unpermitted_admin_user,"この管理ユーザには権限がありません",Admin does not have permission
 ,,404,notfound,,Not found
 ,,422,cashtray_already_proceed,"この決済QRコードは既に処理されています",Cashtray is already proceed
 ,,422,cashtray_expired,"この決済QRコードは有効期限が切れています",Cashtray is expired
 ,,422,cashtray_already_canceled,"この決済QRコードは既に無効化されています",Cashtray is already canceled
+,,422,account_transfer_limit_exceeded,"取引金額が上限を超えました",Too much amount to transfer
+,,422,account_money_topup_transfer_limit_exceeded,"マネーチャージ金額が上限を超えました",Too much amount to money topup transfer
 ,,422,shop_user_not_found,"店舗が見つかりません",The shop user is not found
 GET,/cpm/:cpm-token,403,unpermitted_admin_user,"この管理ユーザには権限がありません",Admin does not have permission
 ,,422,cpm_token_not_found,"CPMトークンが見つかりませんでした。",The CPM token is not found.
