@@ -16,7 +16,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public double Amount { get; set; }
         public string Description { get; set; }
         public string Metadata { get; set; }
-        public Products Products { get; set; }
+        public object[] Products { get; set; }
         public string RequestId { get; set; }
 #else
         public string CpmToken { get; set; }
@@ -26,13 +26,14 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? Description { get; set; }
         #nullable enable
         public string? Metadata { get; set; }
-        public Products Products { get; set; }
+        #nullable enable
+        public object[]? Products { get; set; }
         #nullable enable
         public string? RequestId { get; set; }
 #endif
 
-        public CreateCpmTransaction(string cpmToken, string shopId, double amount, Products products) =>
-            (CpmToken, ShopId, Amount, Products) = (cpmToken, shopId, amount, products);
+        public CreateCpmTransaction(string cpmToken, string shopId, double amount) =>
+            (CpmToken, ShopId, Amount) = (cpmToken, shopId, amount);
 
         private string path { get { return "/transactions" + "/cpm"; } }
 

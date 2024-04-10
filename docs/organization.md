@@ -9,8 +9,8 @@ Request.ListOrganizations request = new Request.ListOrganizations(
 ) {
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
-    Name = "MgTz",  // 組織名
-    Code = "xm",  // 組織コード
+    Name = "4",  // 組織名
+    Code = "10",  // 組織コード
 };
 Response.PaginatedOrganizations response = await request.Send(client);
 ```
@@ -100,15 +100,15 @@ Response.PaginatedOrganizations response = await request.Send(client);
 Request.CreateOrganization request = new Request.CreateOrganization(
     "ox-supermarket", // 新規組織コード
     "oxスーパー", // 新規組織名
-    new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}, // 加盟店組織で有効にするマネーIDの配列
-    "uCtm4tM4rQ@7TMW.com", // 発行体担当者メールアドレス
-    "wQQegAiqW5@Gh3E.com" // 新規組織担当者メールアドレス
+    new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}, // 加盟店組織で有効にするマネーIDの配列
+    "GLPQCeC7jS@6W3D.com", // 発行体担当者メールアドレス
+    "ftZcdyglmN@XEpp.com" // 新規組織担当者メールアドレス
 ) {
     BankName = "XYZ銀行",  // 銀行名
     BankCode = "1234",  // 銀行金融機関コード
     BankBranchName = "ABC支店",  // 銀行支店名
     BankBranchCode = "123",  // 銀行支店コード
-    BankAccountType = "other",  // 銀行口座種別 (普通=saving, 当座=current, その他=other)
+    BankAccountType = "current",  // 銀行口座種別 (普通=saving, 当座=current, その他=other)
     BankAccount = "1234567",  // 銀行口座番号
     BankAccountHolderName = "ﾌｸｻﾞﾜﾕｷﾁ",  // 口座名義人名
     ContactName = "佐藤清",  // 担当者名

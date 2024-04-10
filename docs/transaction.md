@@ -6,7 +6,7 @@ CPMトークンの現在の状態を取得します。CPMトークンの有効�
 
 ```csharp
 Request.GetCpmToken request = new Request.GetCpmToken(
-    "07369wBiPR32MXZafz3jff" // CPMトークン
+    "2Vt3kMgTzAxm3nuCtm4tM4" // CPMトークン
 );
 Response.CpmToken response = await request.Send(client);
 ```
@@ -44,18 +44,18 @@ CPM取引時にエンドユーザーが店舗に提示するバーコードを�
 
 ```csharp
 Request.ListTransactions request = new Request.ListTransactions() {
-    From = "2021-04-02T07:32:00.000000Z",  // 開始日時
-    To = "2022-07-30T13:45:34.000000Z",  // 終了日時
+    From = "2020-03-02T10:23:33.000000Z",  // 開始日時
+    To = "2022-04-21T10:38:47.000000Z",  // 終了日時
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // エンドユーザーID
     CustomerName = "太郎",  // エンドユーザー名
     TerminalId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 端末ID
-    TransactionId = "8l",  // 取引ID
+    TransactionId = "TMWwQQegA",  // 取引ID
     OrganizationCode = "pocketchange",  // 組織コード
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    IsModified = false,  // キャンセルフラグ
+    IsModified = true,  // キャンセルフラグ
     Types = new string[]{"topup", "payment"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
     Description = "店頭QRコードによる支払い",  // 取引説明文
 };
@@ -311,10 +311,10 @@ Request.CreateTransaction request = new Request.CreateTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ) {
-    MoneyAmount = 1949,
-    PointAmount = 3853,
-    PointExpiresAt = "2020-04-12T08:23:54.000000Z",  // ポイント有効期限
-    Description = "RnFdcWhSdaJfJ60D0H2T0aKhnL3FlnAD82QrpYaKuslNraOesyAiawWiyWkSV3bs4OkWhHFx3P67yxFmxWAZtUSoiVrIFnb7w6ZClkoqVajvuG5cGcBP5wA9GwSB8bfxMId7hFKERGvYa7vbD1cIywVpXocQ5N98CAVKuKRC5FLAIRiGKuI8CNBTqLCZ99AjVbK3l3",
+    MoneyAmount = 6249,
+    PointAmount = 9585,
+    PointExpiresAt = "2023-09-27T06:12:39.000000Z",  // ポイント有効期限
+    Description = "5Gh3EedIVkoAN4R",
 };
 Response.TransactionDetail response = await request.Send(client);
 ```
@@ -467,11 +467,11 @@ Request.ListTransactionsV2 request = new Request.ListTransactionsV2() {
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // エンドユーザーID
     CustomerName = "太郎",  // エンドユーザー名
     Description = "店頭QRコードによる支払い",  // 取引説明文
-    TransactionId = "Ne",  // 取引ID
-    IsModified = false,  // キャンセルフラグ
+    TransactionId = "6PB",  // 取引ID
+    IsModified = true,  // キャンセルフラグ
     Types = new string[]{"topup", "payment"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
-    From = "2021-11-10T11:36:05.000000Z",  // 開始日時
-    To = "2021-11-29T15:30:34.000000Z",  // 終了日時
+    From = "2024-03-12T09:24:55.000000Z",  // 開始日時
+    To = "2020-05-09T22:11:54.000000Z",  // 終了日時
     NextPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 次ページへ遷移する際に起点となるtransactionのID
     PrevPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 前ページへ遷移する際に起点となるtransactionのID
     PerPage = 50,  // 1ページ分の取引数
@@ -757,9 +757,9 @@ Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
     BearPointShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント支払時の負担店舗ID
-    MoneyAmount = 2243,  // マネー額
-    PointAmount = 9043,  // ポイント額
-    PointExpiresAt = "2021-06-23T16:01:51.000000Z",  // ポイント有効期限
+    MoneyAmount = 9307,  // マネー額
+    PointAmount = 2855,  // ポイント額
+    PointExpiresAt = "2020-03-08T01:49:37.000000Z",  // ポイント有効期限
     Description = "初夏のチャージキャンペーン",  // 取引履歴に表示する説明文
     Metadata = "{\"key\":\"value\"}",  // 取引メタデータ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
@@ -974,11 +974,11 @@ Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // エンドユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    4138, // 支払い額
-    new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}} // 商品情報データ
+    4544 // 支払い額
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
     Metadata = "{\"key\":\"value\"}",  // 取引メタデータ
+    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},  // 商品情報データ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
 Response.TransactionDetail response = await request.Send(client);
@@ -1167,13 +1167,13 @@ CPMトークンに設定されたスコープの取引を作ることができ�
 
 ```csharp
 Request.CreateCpmTransaction request = new Request.CreateCpmTransaction(
-    "LJdEVZoJB0H5I2jNmYRtpC", // CPMトークン
+    "bgbkQVRY8MuhwDykulFo5m", // CPMトークン
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ID
-    9240.0, // 取引金額
-    new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}} // 商品情報データ
+    8996.0 // 取引金額
 ) {
     Description = "たい焼き(小倉)",  // 取引説明文
     Metadata = "{\"key\":\"value\"}",  // 店舗側メタデータ
+    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},  // 商品情報データ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
 Response.TransactionDetail response = await request.Send(client);
@@ -1356,7 +1356,7 @@ Request.CreateTransferTransaction request = new Request.CreateTransferTransactio
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 送金元ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 受取ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    9279.0 // 送金額
+    7876.0 // 送金額
 ) {
     Metadata = "{\"key\":\"value\"}",  // 取引メタデータ
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
@@ -1526,9 +1526,9 @@ Request.CreateExchangeTransaction request = new Request.CreateExchangeTransactio
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    7381
+    9419
 ) {
-    Description = "zTj3A085y5hWQ3gdeDOWFExGORRYNLJdsZ6n3IGoF44i0499bTqwmusaHN4dAo0kcMwrj6lsuth9pSzmqVAxW3BZh2UFG0NdobuyCqKAyF8XBloHn7nUM7l934bPMQ7DIwF",
+    Description = "V3XaTOkFDFDXkJRYuzmNrD0IPFMYcPpoEqcZqYNWKYupHW3vkZPbupwOmpLyfcnvR24ekndSEuijqLz34cJjz9WzSXV2waIpnDEjnPuGDOLqsy43AtWyT6hyzJkPIxdv4Vr2ADhNnBQ2AhJrtrRhEmEhncAz9T8Jn6tKv842hmKtJWGe0W2JoBVxO",
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
 Response.TransactionDetail response = await request.Send(client);
@@ -1710,7 +1710,7 @@ Request.RefundTransaction request = new Request.RefundTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 取引ID
 ) {
     Description = "返品対応のため",  // 取引履歴に表示する返金事由
-    ReturningPointExpiresAt = "2023-05-11T10:56:00.000000Z",  // 返却ポイントの有効期限
+    ReturningPointExpiresAt = "2021-02-10T20:54:53.000000Z",  // 返却ポイントの有効期限
 };
 Response.TransactionDetail response = await request.Send(client);
 ```

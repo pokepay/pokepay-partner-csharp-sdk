@@ -13,18 +13,18 @@ QRコードを読み取る方法以外にも、このURLリンクを直接スマ
 
 ```csharp
 Request.ListChecks request = new Request.ListChecks() {
-    Page = 3076,  // ページ番号
+    Page = 2744,  // ページ番号
     PerPage = 50,  // 1ページの表示数
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    OrganizationCode = "sob31",  // 組織コード
-    ExpiresFrom = "2021-09-17T13:36:18.000000Z",  // 有効期限の期間によるフィルター(開始時点)
-    ExpiresTo = "2020-06-01T05:11:51.000000Z",  // 有効期限の期間によるフィルター(終了時点)
-    CreatedFrom = "2020-06-12T12:23:35.000000Z",  // 作成日時の期間によるフィルター(開始時点)
-    CreatedTo = "2021-10-30T18:42:50.000000Z",  // 作成日時の期間によるフィルター(終了時点)
+    OrganizationCode = "L4kFCWrbFq",  // 組織コード
+    ExpiresFrom = "2021-09-09T15:13:43.000000Z",  // 有効期限の期間によるフィルター(開始時点)
+    ExpiresTo = "2021-11-02T10:10:04.000000Z",  // 有効期限の期間によるフィルター(終了時点)
+    CreatedFrom = "2021-08-03T06:23:31.000000Z",  // 作成日時の期間によるフィルター(開始時点)
+    CreatedTo = "2023-09-18T07:29:12.000000Z",  // 作成日時の期間によるフィルター(終了時点)
     IssuerShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 発行店舗ID
-    Description = "FcTjCHIR",  // チャージQRコードの説明文
+    Description = "c",  // チャージQRコードの説明文
     IsOnetime = false,  // ワンタイムのチャージQRコードかどうか
-    IsDisabled = true,  // 無効化されたチャージQRコードかどうか
+    IsDisabled = false,  // 無効化されたチャージQRコードかどうか
 };
 Response.PaginatedChecks response = await request.Send(client);
 ```
@@ -220,13 +220,13 @@ Response.PaginatedChecks response = await request.Send(client);
 Request.CreateCheck request = new Request.CreateCheck(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 送金元の店舗アカウントID
 ) {
-    MoneyAmount = 7052.0,  // 付与マネー額
-    PointAmount = 2501.0,  // 付与ポイント額
+    MoneyAmount = 530.0,  // 付与マネー額
+    PointAmount = 8713.0,  // 付与ポイント額
     Description = "test check",  // 説明文(アプリ上で取引の説明文として表示される)
-    IsOnetime = false,  // ワンタイムかどうかのフラグ
-    UsageLimit = 5853,  // ワンタイムでない場合の最大読み取り回数
-    ExpiresAt = "2022-09-06T14:41:07.000000Z",  // チャージQRコード自体の失効日時
-    PointExpiresAt = "2020-09-18T12:05:39.000000Z",  // チャージQRコードによって付与されるポイント残高の有効期限
+    IsOnetime = true,  // ワンタイムかどうかのフラグ
+    UsageLimit = 318,  // ワンタイムでない場合の最大読み取り回数
+    ExpiresAt = "2020-05-18T06:49:05.000000Z",  // チャージQRコード自体の失効日時
+    PointExpiresAt = "2023-04-04T22:26:01.000000Z",  // チャージQRコードによって付与されるポイント残高の有効期限
     PointExpiresInDays = 60,  // チャージQRコードによって付与されるポイント残高の有効期限(相対日数指定)
     BearPointAccount = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント額を負担する店舗のウォレットID
 };
@@ -398,8 +398,8 @@ NULLに設定すると無制限に読み取り可能なチャージQRコード�
 |422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
 |422|account_private_money_is_not_issued_by_organization||The account's private money is not issued by this organization|
 |422|shop_account_not_found||The shop account is not found|
-|422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
 |422|bear_point_account_not_found|ポイントを負担する店舗アカウントが見つかりません|Bear point account not found.|
+|422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
 
 
 
@@ -449,13 +449,13 @@ Response.Check response = await request.Send(client);
 Request.UpdateCheck request = new Request.UpdateCheck(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // チャージQRコードのID
 ) {
-    MoneyAmount = 7719.0,  // 付与マネー額
-    PointAmount = 5023.0,  // 付与ポイント額
+    MoneyAmount = 6084.0,  // 付与マネー額
+    PointAmount = 7684.0,  // 付与ポイント額
     Description = "test check",  // チャージQRコードの説明文
     IsOnetime = true,  // ワンタイムかどうかのフラグ
-    UsageLimit = 3929,  // ワンタイムでない場合の最大読み取り回数
-    ExpiresAt = "2020-08-02T23:28:09.000000Z",  // チャージQRコード自体の失効日時
-    PointExpiresAt = "2020-10-22T18:15:03.000000Z",  // チャージQRコードによって付与されるポイント残高の有効期限
+    UsageLimit = 6450,  // ワンタイムでない場合の最大読み取り回数
+    ExpiresAt = "2022-06-07T12:39:06.000000Z",  // チャージQRコード自体の失効日時
+    PointExpiresAt = "2021-05-13T07:30:56.000000Z",  // チャージQRコードによって付与されるポイント残高の有効期限
     PointExpiresInDays = 60,  // チャージQRコードによって付与されるポイント残高の有効期限(相対日数指定)
     BearPointAccount = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント額を負担する店舗のウォレットID
     IsDisabled = true,  // 無効化されているかどうかのフラグ

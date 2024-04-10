@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "3fdc18e7-8428-434e-a9a8-85a7e19bbc54"
+                    "acf31cd3-6e0b-4acb-abb2-47b339f619cd"
                 );
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "3fdc18e7-8428-434e-a9a8-85a7e19bbc54"
+                    "acf31cd3-6e0b-4acb-abb2-47b339f619cd"
                 ) {
-                    Task = "bulk_shops",
+                    Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "3fdc18e7-8428-434e-a9a8-85a7e19bbc54"
+                    "acf31cd3-6e0b-4acb-abb2-47b339f619cd"
                 ) {
-                    IsActive = false,
-                    Task = "bulk_shops",
+                    IsActive = true,
+                    Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "3fdc18e7-8428-434e-a9a8-85a7e19bbc54"
+                    "acf31cd3-6e0b-4acb-abb2-47b339f619cd"
                 ) {
-                    Url = "wqhkpZV",
+                    Url = "m6Cln0nex",
                     IsActive = true,
-                    Task = "bulk_shops",
+                    Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

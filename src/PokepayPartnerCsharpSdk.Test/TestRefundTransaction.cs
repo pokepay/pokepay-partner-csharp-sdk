@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "e11a828b-aba8-4627-9805-fa5356585475"
+                    "2634458e-85bb-446e-a604-45b3d926b280"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "e11a828b-aba8-4627-9805-fa5356585475"
+                    "2634458e-85bb-446e-a604-45b3d926b280"
                 ) {
-                    ReturningPointExpiresAt = "2023-07-09T17:41:01.000000Z",
+                    ReturningPointExpiresAt = "2021-07-12T01:42:18.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "e11a828b-aba8-4627-9805-fa5356585475"
+                    "2634458e-85bb-446e-a604-45b3d926b280"
                 ) {
-                    Description = "06FE8juzeNINZktFZU0JpHpSrpNbF8O3WzYFSGY9",
-                    ReturningPointExpiresAt = "2022-10-20T18:08:46.000000Z",
+                    Description = "z76OYqLZhd2VmnwZ1YQAtf2GPfHYeeJWiJLn1TOWVNqKCYgaN6maSZWJn127yVjYZzSkjksojB4PnV9sBfF1BkHf1A87wLQ9bOIRS2WYI5ck8HRSP5FHw4UX4tGWi4N1WpwhPzDe8V1DYdcKn6nAl4cEX71br7jv7EDkwXN76HyKk1SGbd2fzw9n",
+                    ReturningPointExpiresAt = "2020-10-24T13:36:41.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
