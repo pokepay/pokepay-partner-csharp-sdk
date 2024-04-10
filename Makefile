@@ -18,7 +18,10 @@ ifndef API_KEY
 endif
 
 publish: check-publish-env build
-	dotnet nuget push src/PokepayPartnerCsharpSdk/bin/Release/pokepay-partner-csharp-sdk.$(RELEASE_VERSION).nupkg --api-key $(API_KEY) --source https://api.nuget.org/v3/index.json
+	CONFIGURATION=Release FRAMEWORK=net48 make build
+	CONFIGURATION=Release FRAMEWORK=net5.0 make build
+	dotnet pack --configuration Release src/PokepayPartnerCsharpSdk/PokepayPartnerCsharpSdk.csproj
+	dotnet nuget push src/PokepayPartnerCsharpSdk/bin/Release/pokepay-partner-csharp-sdk.$(RELEASE_VERSION).nupkg --api-key $(API_KEY) --source https://api.nuget.org/v3/index.json	
 
 clean:
 	dotnet clean src/PokepayPartnerCsharpSdk/PokepayPartnerCsharpSdk.csproj
