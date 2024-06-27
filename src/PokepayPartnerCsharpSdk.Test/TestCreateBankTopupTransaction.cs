@@ -25,11 +25,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBankTopupTransaction request = new Request.CreateBankTopupTransaction(
-                    "d5ad334e-9489-4b31-b1a5-bde4851ff77f",
-                    "02e1a069-d9a4-4c54-8950-1f19d585254d",
-                    9384,
-                    "2b325e79-2bfc-47a3-a61c-658a3c1808ec",
-                    "87b8caaf-ed24-47d0-b738-fbd858d3214a"
+                    "37b0c894-5dd5-4208-a03d-820dc1a0c983",
+                    "410d3c8c-f904-4310-a8cf-93c57b1abd64",
+                    3238,
+                    "1ae9cb6a-7816-488a-b0c6-587675980385",
+                    "c05e104b-a42d-4dfa-974c-91a4884b67cf"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
