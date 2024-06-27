@@ -7,19 +7,19 @@
 
 ```csharp
 Request.ListBills request = new Request.ListBills() {
-    Page = 7384,  // ページ番号
-    PerPage = 6138,  // 1ページの表示数
-    BillId = "T",  // 支払いQRコードのID
+    Page = 258,  // ページ番号
+    PerPage = 8721,  // 1ページの表示数
+    BillId = "7OnX",  // 支払いQRコードのID
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    OrganizationCode = "xs6VNjs2Mf2--N-VxoE9n6N1iQ3v",  // 組織コード
+    OrganizationCode = "J0Gd9t",  // 組織コード
     Description = "test bill",  // 取引説明文
-    CreatedFrom = "2024-02-06T00:24:19.000000Z",  // 作成日時(起点)
-    CreatedTo = "2020-07-28T20:51:25.000000Z",  // 作成日時(終点)
+    CreatedFrom = "2022-05-16T02:06:42.000000Z",  // 作成日時(起点)
+    CreatedTo = "2023-11-14T20:15:58.000000Z",  // 作成日時(終点)
     ShopName = "bill test shop1",  // 店舗名
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
-    LowerLimitAmount = 3980,  // 金額の範囲によるフィルタ(下限)
-    UpperLimitAmount = 6980,  // 金額の範囲によるフィルタ(上限)
-    IsDisabled = true,  // 支払いQRコードが無効化されているかどうか
+    LowerLimitAmount = 1377,  // 金額の範囲によるフィルタ(下限)
+    UpperLimitAmount = 9868,  // 金額の範囲によるフィルタ(上限)
+    IsDisabled = false,  // 支払いQRコードが無効化されているかどうか
 };
 Response.PaginatedBills response = await request.Send(client);
 ```
@@ -213,7 +213,7 @@ Request.CreateBill request = new Request.CreateBill(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 支払いマネーのマネーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 支払い先(受け取り人)の店舗ID
 ) {
-    Amount = 1684.0,  // 支払い額
+    Amount = 2255.0,  // 支払い額
     Description = "test bill",  // 説明文(アプリ上で取引の説明文として表示される)
 };
 Response.Bill response = await request.Send(client);
@@ -298,9 +298,9 @@ Response.Bill response = await request.Send(client);
 Request.UpdateBill request = new Request.UpdateBill(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 支払いQRコードのID
 ) {
-    Amount = 9656.0,  // 支払い額
+    Amount = 7115.0,  // 支払い額
     Description = "test bill",  // 説明文
-    IsDisabled = true,  // 無効化されているかどうか
+    IsDisabled = false,  // 無効化されているかどうか
 };
 Response.Bill response = await request.Send(client);
 ```

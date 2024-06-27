@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListOrganizations request = new Request.ListOrganizations(
-                    "2b735359-6eb4-4812-a1dc-0b37275f6e63"
+                    "a58e7b7e-4199-496a-bd36-ca20fc08f02e"
                 );
                 Response.PaginatedOrganizations response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListOrganizations request = new Request.ListOrganizations(
-                    "2b735359-6eb4-4812-a1dc-0b37275f6e63"
+                    "a58e7b7e-4199-496a-bd36-ca20fc08f02e"
                 ) {
-                    Code = "pIh03BvqB",
+                    Code = "3AIOV",
                 };
                 Response.PaginatedOrganizations response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListOrganizations request = new Request.ListOrganizations(
-                    "2b735359-6eb4-4812-a1dc-0b37275f6e63"
+                    "a58e7b7e-4199-496a-bd36-ca20fc08f02e"
                 ) {
-                    Name = "CzLjYHoO",
-                    Code = "8zE",
+                    Name = "akyq8Q",
+                    Code = "WKNric3MB",
                 };
                 Response.PaginatedOrganizations response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListOrganizations request = new Request.ListOrganizations(
-                    "2b735359-6eb4-4812-a1dc-0b37275f6e63"
+                    "a58e7b7e-4199-496a-bd36-ca20fc08f02e"
                 ) {
-                    PerPage = 43,
-                    Name = "65UlKt",
-                    Code = "MCe",
+                    PerPage = 3456,
+                    Name = "YW",
+                    Code = "Ktvn",
                 };
                 Response.PaginatedOrganizations response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListOrganizations request = new Request.ListOrganizations(
-                    "2b735359-6eb4-4812-a1dc-0b37275f6e63"
+                    "a58e7b7e-4199-496a-bd36-ca20fc08f02e"
                 ) {
-                    Page = 6222,
-                    PerPage = 922,
-                    Name = "UV",
-                    Code = "2",
+                    Page = 2556,
+                    PerPage = 3922,
+                    Name = "LloM94",
+                    Code = "TQ",
                 };
                 Response.PaginatedOrganizations response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

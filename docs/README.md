@@ -208,6 +208,7 @@ try {
 - [UpdateBill](./bill.md#update-bill): 支払いQRコードの更新
 
 ### Cashtray
+- [CreateTransactionWithCashtray](./cashtray.md#create-transaction-with-cashtray): CashtrayQRコードを読み取ることで取引する
 - [CreateCashtray](./cashtray.md#create-cashtray): Cashtrayを作る
 - [CancelCashtray](./cashtray.md#cancel-cashtray): Cashtrayを無効化する
 - [GetCashtray](./cashtray.md#get-cashtray): Cashtrayの情報を取得する
@@ -237,7 +238,6 @@ try {
 - [UpdateShop](./shop.md#update-shop): 店舗情報を更新する
 
 ### User
-- [GetUser](./user.md#get-user): 
 
 ### Account
 - [ListUserAccounts](./account.md#list-user-accounts): エンドユーザー、店舗ユーザーのウォレット一覧を表示する

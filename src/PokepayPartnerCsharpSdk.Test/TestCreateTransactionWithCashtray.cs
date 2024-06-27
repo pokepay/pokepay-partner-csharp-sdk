@@ -10,7 +10,7 @@ using PokepayPartnerCsharpSdk;
 
 namespace PokepayPartnerCsharpSdk.Test
 {
-    public class TestCreateCashtray
+    public class TestCreateTransactionWithCashtray
     {
         private Client client;
 
@@ -21,15 +21,14 @@ namespace PokepayPartnerCsharpSdk.Test
         }
 
         [Test]
-        public async Task CreateCashtray0()
+        public async Task CreateTransactionWithCashtray0()
         {
             try {
-                Request.CreateCashtray request = new Request.CreateCashtray(
-                    "a1081ce9-465c-484d-87f3-6fa835779397",
-                    "eaaa95ec-6d2e-4191-91e5-8d4caf5dd2fa",
-                    2516.0
+                Request.CreateTransactionWithCashtray request = new Request.CreateTransactionWithCashtray(
+                    "9b8bc8ea-2642-4892-b450-7926e53faa02",
+                    "ad0d2d6e-cb94-4ad6-b9f3-a69d6cf05921"
                 );
-                Response.Cashtray response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -38,17 +37,16 @@ namespace PokepayPartnerCsharpSdk.Test
         }
 
         [Test]
-        public async Task CreateCashtray1()
+        public async Task CreateTransactionWithCashtray1()
         {
             try {
-                Request.CreateCashtray request = new Request.CreateCashtray(
-                    "a1081ce9-465c-484d-87f3-6fa835779397",
-                    "eaaa95ec-6d2e-4191-91e5-8d4caf5dd2fa",
-                    2516.0
+                Request.CreateTransactionWithCashtray request = new Request.CreateTransactionWithCashtray(
+                    "9b8bc8ea-2642-4892-b450-7926e53faa02",
+                    "ad0d2d6e-cb94-4ad6-b9f3-a69d6cf05921"
                 ) {
-                    ExpiresIn = 8506,
+                    RequestId = "cbeecdc2-6e07-4584-a699-fa134476c9e6",
                 };
-                Response.Cashtray response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -57,18 +55,17 @@ namespace PokepayPartnerCsharpSdk.Test
         }
 
         [Test]
-        public async Task CreateCashtray2()
+        public async Task CreateTransactionWithCashtray2()
         {
             try {
-                Request.CreateCashtray request = new Request.CreateCashtray(
-                    "a1081ce9-465c-484d-87f3-6fa835779397",
-                    "eaaa95ec-6d2e-4191-91e5-8d4caf5dd2fa",
-                    2516.0
+                Request.CreateTransactionWithCashtray request = new Request.CreateTransactionWithCashtray(
+                    "9b8bc8ea-2642-4892-b450-7926e53faa02",
+                    "ad0d2d6e-cb94-4ad6-b9f3-a69d6cf05921"
                 ) {
-                    Description = "CP6boJkANEWZ0xko5rtXdkjCZ6KXkiMx1kHTVbpRx79qoFTViWGk7rsKgu2ihoMxDsfU3TC",
-                    ExpiresIn = 6066,
+                    Strategy = "point-preferred",
+                    RequestId = "2473442e-673f-4a46-a683-5eacbebf2731",
                 };
-                Response.Cashtray response = await request.Send(client);
+                Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");

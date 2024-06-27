@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateUserDevice request = new Request.CreateUserDevice(
-                    "2b484c8d-7ac3-4045-b735-e47e95bba404"
+                    "b0d9dcfe-e51d-4147-88ad-992f233a5b09"
                 );
                 Response.UserDevice response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateUserDevice request = new Request.CreateUserDevice(
-                    "2b484c8d-7ac3-4045-b735-e47e95bba404"
+                    "b0d9dcfe-e51d-4147-88ad-992f233a5b09"
                 ) {
                     Metadata = "{\"user_agent\": \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0\"}",
                 };

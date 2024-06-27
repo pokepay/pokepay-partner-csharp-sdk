@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "2634458e-85bb-446e-a604-45b3d926b280"
+                    "1ebbdc4c-99f8-4daf-8f14-3097be8d6000"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "2634458e-85bb-446e-a604-45b3d926b280"
+                    "1ebbdc4c-99f8-4daf-8f14-3097be8d6000"
                 ) {
-                    ReturningPointExpiresAt = "2021-07-12T01:42:18.000000Z",
+                    ReturningPointExpiresAt = "2021-09-24T10:18:32.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "2634458e-85bb-446e-a604-45b3d926b280"
+                    "1ebbdc4c-99f8-4daf-8f14-3097be8d6000"
                 ) {
-                    Description = "z76OYqLZhd2VmnwZ1YQAtf2GPfHYeeJWiJLn1TOWVNqKCYgaN6maSZWJn127yVjYZzSkjksojB4PnV9sBfF1BkHf1A87wLQ9bOIRS2WYI5ck8HRSP5FHw4UX4tGWi4N1WpwhPzDe8V1DYdcKn6nAl4cEX71br7jv7EDkwXN76HyKk1SGbd2fzw9n",
-                    ReturningPointExpiresAt = "2020-10-24T13:36:41.000000Z",
+                    Description = "6r1ViuOnspa8l8OxqMpLrB8ZQmhXHGSVgVcs",
+                    ReturningPointExpiresAt = "2021-09-09T17:31:59.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

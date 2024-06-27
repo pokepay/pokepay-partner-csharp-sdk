@@ -1,21 +1,4 @@
 # Responses
-<a name="admin-user-with-shops-and-private-moneys"></a>
-## AdminUserWithShopsAndPrivateMoneys
-* `Id (string)`: 
-* `Role (string)`: 
-* `Email (string)`: 
-* `Name (string)`: 
-* `IsActive (bool)`: 
-* `Organization (Organization)`: 
-* `Shops (User[])`: 
-* `PrivateMoneys (PrivateMoney[])`: 
-
-`organization`は [Organization](#organization) オブジェクトを返します。
-
-`shops`は [User](#user) オブジェクトの配列を返します。
-
-`private-moneys`は [PrivateMoney](#private-money) オブジェクトの配列を返します。
-
 <a name="account-with-user"></a>
 ## AccountWithUser
 * `Id (string)`: 

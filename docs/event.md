@@ -12,12 +12,13 @@ Request.CreateExternalTransaction request = new Request.CreateExternalTransactio
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // エンドユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    5317 // 取引額
+    5389 // 取引額
 ) {
     Description = "たい焼き(小倉)",  // 取引説明文
     Metadata = "{\"key\":\"value\"}",  // ポケペイ外部取引メタデータ
-    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},  // 商品情報データ
+    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},  // 商品情報データ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
+    DoneAt = "2023-12-22T04:30:39.000000Z",  // ポケペイ外部取引の実施時間
 };
 Response.ExternalTransactionDetail response = await request.Send(client);
 ```
@@ -146,6 +147,20 @@ Response.ExternalTransactionDetail response = await request.Send(client);
 }
 ```
 
+**`done_at`** 
+  
+
+ポケペイ外部取引が実際に起こった時間です。
+時間帯指定のポイント付与キャンペーンでの取引時間の計算に使われます。
+デフォルトではCreateExternalTransactionがリクエストされた時間になります。
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
 
 
 成功したときは
@@ -157,7 +172,6 @@ Response.ExternalTransactionDetail response = await request.Send(client);
 |---|---|---|---|
 |400|invalid_parameters|項目が無効です|Invalid parameters|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-|410|transaction_canceled|取引がキャンセルされました|Transaction was canceled|
 |422|customer_user_not_found||The customer user is not found|
 |422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
 |422|private_money_not_found||Private money not found|

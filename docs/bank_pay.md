@@ -66,7 +66,7 @@ Request.CreateBank request = new Request.CreateBank(
     "<Deep Link>", // コールバックURL
     "ポケペイタロウ" // ユーザーの氏名 (片仮名で指定)
 ) {
-    Email = "EeKe2EnvF9@kW30.com",  // ユーザーのメールアドレス
+    Email = "n8DwInc5YW@bNc2.com",  // ユーザーのメールアドレス
     Birthdate = "19901142",  // 生年月日
 };
 Response.BankRegisteringInfo response = await request.Send(client);
@@ -161,7 +161,7 @@ Response.BankRegisteringInfo response = await request.Send(client);
 Request.CreateBankTopupTransaction request = new Request.CreateBankTopupTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // デバイスID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    2810, // チャージ金額
+    3841, // チャージ金額
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 銀行ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // リクエストID
 );

@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.DeleteWebhook request = new Request.DeleteWebhook(
-                    "d8465433-6f93-489b-8440-fbbfbbe35ffc"
+                    "b121ed96-d591-4a81-a99e-1f588aa4f9c7"
                 );
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
