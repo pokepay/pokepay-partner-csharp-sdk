@@ -148,6 +148,10 @@ namespace PokepayPartnerCsharpSdk
         public async Task<string> Send(string path, HttpMethod method, object data)
         {
             var retryCount = 0;
+            string[] retriableMethod = {"GET", "PATCH"};
+            var isRetriableMethod = retriableMethod.Contains(method.ToString());
+            var hasRequestId = data.GetType().GetMethod("RequestId") != null;
+            var isRetriable = isRetriableMethod || hasRequestId;
             HttpResponseMessage response;
             while (true) {
               try {
@@ -177,7 +181,7 @@ namespace PokepayPartnerCsharpSdk
 
                 response = await HttpClient.SendAsync(request);
                 if ((int)response.StatusCode == 503) {
-                  if (retryCount < MaxRetries) {
+                  if (isRetriable && retryCount < MaxRetries) {
                     ++retryCount;
                     Thread.Sleep(3000);
                     continue;
@@ -186,7 +190,7 @@ namespace PokepayPartnerCsharpSdk
               }
               catch (OperationCanceledException ex) when (ex.InnerException is TimeoutException tex)
               {
-                  if (retryCount < MaxRetries) {
+                  if (isRetriable && retryCount < MaxRetries) {
                     ++retryCount;
                     continue;
                   }
