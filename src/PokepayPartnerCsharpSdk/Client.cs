@@ -148,8 +148,7 @@ namespace PokepayPartnerCsharpSdk
         public async Task<string> Send(string path, HttpMethod method, object data)
         {
             var retryCount = 0;
-            string[] retriableMethod = {"GET", "PATCH"};
-            var isRetriableMethod = retriableMethod.Contains(method.ToString());
+            var isRetriableMethod = method.ToString().Equals("GET");
             var hasRequestId = data.GetType().GetMethod("RequestId") != null;
             var isRetriable = isRetriableMethod || hasRequestId;
             HttpResponseMessage response;
