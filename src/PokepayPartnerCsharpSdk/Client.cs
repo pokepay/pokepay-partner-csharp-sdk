@@ -3,6 +3,7 @@ using System.IO;
 using System.Web;
 using System.Linq;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -79,6 +80,7 @@ namespace PokepayPartnerCsharpSdk
         private readonly Byte[] ClientSecret;
         private readonly string BaseUrl;
         private readonly RNGCryptoServiceProvider Rng;
+        private readonly int MaxRetries;
 
         public readonly HttpClient HttpClient;
         public readonly JsonSerializerOptions JsonOptions;
@@ -115,8 +117,14 @@ namespace PokepayPartnerCsharpSdk
                 throw new FormatException("invalid CLIENT_SECRET format");
             }
             BaseUrl = Config.GetValue("", "API_BASE_URL");
+            var timeout = Config.GetValue("", "TIMEOUT", "10");
             var cert = Config.GetValue("", "SSL_CERT_FILE");
             var key = Config.GetValue("", "SSL_KEY_FILE");
+            var maxRetries = Config.GetValue("", "MAX_RETRIES", "2");
+            if (Int32.TryParse(maxRetries, out int numMaxRetries)) {
+              MaxRetries = numMaxRetries;
+            }
+
             try
             {
                 HttpClient = Client.GetHttpClient(cert, key);
@@ -124,6 +132,11 @@ namespace PokepayPartnerCsharpSdk
             catch (Exception e)
             {
                 throw new InvalidOperationException("Invalid client certification configuration", e);
+            }
+            if (Int32.TryParse(timeout, out int numTimeout)) {
+              if (numTimeout != 0) {
+                HttpClient.Timeout = TimeSpan.FromSeconds(numTimeout);
+              }
             }
             Rng = new RNGCryptoServiceProvider();
             JsonOptions = new JsonSerializerOptions {
@@ -134,31 +147,56 @@ namespace PokepayPartnerCsharpSdk
 
         public async Task<string> Send(string path, HttpMethod method, object data)
         {
-            RequestBodyData requestBodyData = new RequestBodyData(
-                data,
-                DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
-                Guid.NewGuid().ToString());
+            var retryCount = 0;
+            var isRetriableMethod = method.ToString().Equals("GET");
+            var hasRequestId = data.GetType().GetMethod("RequestId") != null;
+            var isRetriable = isRetriableMethod || hasRequestId;
+            HttpResponseMessage response;
+            while (true) {
+              try {
+                RequestBodyData requestBodyData = new RequestBodyData(
+                    data,
+                    DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"),
+                    Guid.NewGuid().ToString());
 
-            string requestBodyString = JsonSerializer.Serialize(requestBodyData, JsonOptions);
+                string requestBodyString = JsonSerializer.Serialize(requestBodyData, JsonOptions);
 
-            // Console.WriteLine("*** ReqBody: {0}", requestBodyString);
+                // Console.WriteLine("*** ReqBody: {0}", requestBodyString);
 
-            string requestBodyEnc = Encrypter.EncryptData(requestBodyString, ClientSecret);
+                string requestBodyEnc = Encrypter.EncryptData(requestBodyString, ClientSecret);
 
-            SendBodyData sendBodyData = new SendBodyData(
-                method.ToString(),
-                requestBodyEnc,
-                ClientId);
+                SendBodyData sendBodyData = new SendBodyData(
+                    method.ToString(),
+                    requestBodyEnc,
+                    ClientId);
 
-            string sendBodyString = JsonSerializer.Serialize(sendBodyData, JsonOptions);
+                string sendBodyString = JsonSerializer.Serialize(sendBodyData, JsonOptions);
 
-            HttpRequestMessage request = new HttpRequestMessage {
-                Method = path.Equals("/ping") ? HttpMethod.Get : HttpMethod.Post, // pingの場合はサーバー側でbodyのrequest_methodを無視するのでGETを指定する必要がある
-                RequestUri = new Uri(BaseUrl + path),
-                Content = path.Equals("/ping") ? null : new StringContent(sendBodyString, System.Text.Encoding.UTF8, "application/json"),
-            };
+                HttpRequestMessage request = new HttpRequestMessage {
+                  Method = path.Equals("/ping") ? HttpMethod.Get : HttpMethod.Post, // pingの場合はサーバー側でbodyのrequest_methodを無視するのでGETを指定する必要がある
+                         RequestUri = new Uri(BaseUrl + path),
+                         Content = path.Equals("/ping") ? null : new StringContent(sendBodyString, System.Text.Encoding.UTF8, "application/json"),
+                };
 
-            HttpResponseMessage response = await HttpClient.SendAsync(request);
+                response = await HttpClient.SendAsync(request);
+                if ((int)response.StatusCode == 503) {
+                  if (isRetriable && retryCount < MaxRetries) {
+                    ++retryCount;
+                    Thread.Sleep(3000);
+                    continue;
+                  }
+                }
+              }
+              catch (OperationCanceledException ex) when (ex.InnerException is TimeoutException tex)
+              {
+                  if (isRetriable && retryCount < MaxRetries) {
+                    ++retryCount;
+                    continue;
+                  }
+                throw;
+              }
+              break;
+            }
             string responseString = await response.Content.ReadAsStringAsync();
 
             // Console.WriteLine("*** Status: {0}", response.StatusCode);
