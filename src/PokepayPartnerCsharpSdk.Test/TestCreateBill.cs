@@ -25,8 +25,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBill request = new Request.CreateBill(
-                    "9a5387ae-5073-455d-b2b6-f5c50f9210c4",
-                    "f41d19fb-7d26-4d80-abfa-9dc49d937f4c"
+                    "2199c46a-863e-4d27-bbb2-ca30d5cd05bc",
+                    "21fc2ff7-97f3-4789-b4a9-825a85cd0019"
                 );
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -41,10 +41,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBill request = new Request.CreateBill(
-                    "9a5387ae-5073-455d-b2b6-f5c50f9210c4",
-                    "f41d19fb-7d26-4d80-abfa-9dc49d937f4c"
+                    "2199c46a-863e-4d27-bbb2-ca30d5cd05bc",
+                    "21fc2ff7-97f3-4789-b4a9-825a85cd0019"
                 ) {
-                    Description = "nAr7NHvMDZLOk3Kn6N9IKA2DQ0UDl0RkGXqQRpkGArTGUPugetKJLdESdgB4DMlPhuAgx6J23S5a4KJH2dJnXOeAy8xYgmSSWd6nFdHza9f0TF30iljDxgSpyfoekUtY",
+                    Description = "pnjZ8xWKeN3WKGyHXCKDfS0S9olxtCG8sS34enFyHhIbteE1tQ",
                 };
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -59,11 +59,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBill request = new Request.CreateBill(
-                    "9a5387ae-5073-455d-b2b6-f5c50f9210c4",
-                    "f41d19fb-7d26-4d80-abfa-9dc49d937f4c"
+                    "2199c46a-863e-4d27-bbb2-ca30d5cd05bc",
+                    "21fc2ff7-97f3-4789-b4a9-825a85cd0019"
                 ) {
-                    Amount = 1581.0,
-                    Description = "6dyRqDXbojqilSXXfgL13rI1kMYSkzLYWcqyBEPqq6jXoMPoI5dYhtAEAC8MN1MIRbysguh0xXqdkQK8VG",
+                    Amount = 8710.0,
+                    Description = "OMttUhD0OiwEvovxL7L6kZ3KaNub1zwaCdHgj8ik3dmsSURUNaSg6OcHEmOeQFO3Ox8qDzSQ0YVNC6SfrLsEgbwDrafzykU4qQWwEl9RBh7JkqQ2DDr8e6Qf8fK7SBxethCuC",
                 };
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

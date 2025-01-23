@@ -25,12 +25,33 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBankTopupTransaction request = new Request.CreateBankTopupTransaction(
-                    "d5ad334e-9489-4b31-b1a5-bde4851ff77f",
-                    "02e1a069-d9a4-4c54-8950-1f19d585254d",
-                    9384,
-                    "2b325e79-2bfc-47a3-a61c-658a3c1808ec",
-                    "87b8caaf-ed24-47d0-b738-fbd858d3214a"
+                    "b3729cce-7315-4d5a-8106-1e7a55290b1b",
+                    "54267c6e-7072-4092-a3cc-b57df6945139",
+                    7593,
+                    "f93e8a03-da2e-40be-81d0-5863d7891913",
+                    "d44edba1-7415-4aa4-bfc4-d4a43f1f3581"
                 );
+                Response.TransactionDetail response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task CreateBankTopupTransaction1()
+        {
+            try {
+                Request.CreateBankTopupTransaction request = new Request.CreateBankTopupTransaction(
+                    "b3729cce-7315-4d5a-8106-1e7a55290b1b",
+                    "54267c6e-7072-4092-a3cc-b57df6945139",
+                    7593,
+                    "f93e8a03-da2e-40be-81d0-5863d7891913",
+                    "d44edba1-7415-4aa4-bfc4-d4a43f1f3581"
+                ) {
+                    ReceiverUserId = "1ce3ec8e-2868-4d23-9446-208f57bcf6d6",
+                };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {

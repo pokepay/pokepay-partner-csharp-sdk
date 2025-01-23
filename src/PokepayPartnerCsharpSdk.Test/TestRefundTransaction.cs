@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "2634458e-85bb-446e-a604-45b3d926b280"
+                    "54b5d2ed-4a73-42a8-bab3-8d854bf8814b"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "2634458e-85bb-446e-a604-45b3d926b280"
+                    "54b5d2ed-4a73-42a8-bab3-8d854bf8814b"
                 ) {
-                    ReturningPointExpiresAt = "2021-07-12T01:42:18.000000Z",
+                    ReturningPointExpiresAt = "2022-08-10T05:43:14.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "2634458e-85bb-446e-a604-45b3d926b280"
+                    "54b5d2ed-4a73-42a8-bab3-8d854bf8814b"
                 ) {
-                    Description = "z76OYqLZhd2VmnwZ1YQAtf2GPfHYeeJWiJLn1TOWVNqKCYgaN6maSZWJn127yVjYZzSkjksojB4PnV9sBfF1BkHf1A87wLQ9bOIRS2WYI5ck8HRSP5FHw4UX4tGWi4N1WpwhPzDe8V1DYdcKn6nAl4cEX71br7jv7EDkwXN76HyKk1SGbd2fzw9n",
-                    ReturningPointExpiresAt = "2020-10-24T13:36:41.000000Z",
+                    Description = "Oq6LmEP7tafjyhKgvwh227cUJMuQ1t83oitBAmKCKeNp7Z6KeHafoOKYuUs7zf9dIsiva1vYlz4sIXfB3ep9eHnNy54z9YZjsWtY1WGlubcf8poH65gFI1eD4xOb3KkBBLymzX1iKABzsalQh9et3",
+                    ReturningPointExpiresAt = "2024-11-15T20:26:35.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

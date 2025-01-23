@@ -6,11 +6,11 @@ CSVファイルから一括取引をします。
 
 ```csharp
 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-    "y2", // 一括取引タスク名
-    "m8", // 取引する情報のCSV
-    "ZcyGh3BczuQ1HmAT4U7cCHORIBupKF2LGLWl" // リクエストID
+    "mismihXWyqdhqoMR", // 一括取引タスク名
+    "oAdT5yP", // 取引する情報のCSV
+    "sPRTmUYdZdYDDGZDuZn0XgqQIqTu14tSh13q" // リクエストID
 ) {
-    Description = "WRqEU1R3HVfumJrkxA1RBhkJnrKn6T4UBYf7XzEp3cMOeoQItbJApNFNbizZqS",  // 一括取引の説明
+    Description = "ZDYdRTWbMgZiB4q5yXIKvcyeytZUeCOzn479Q7e7CQ6mogsi4OQ6jQwMdVQzET3CTZR3naadmHoO9",  // 一括取引の説明
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
 };
 Response.BulkTransaction response = await request.Send(client);
@@ -112,7 +112,7 @@ Response.BulkTransaction response = await request.Send(client);
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
 |403|organization_not_issuer|発行体以外に許可されていない操作です|Unpermitted operation except for issuer organizations.|
 |409|NULL|NULL|NULL|
-|422|private_money_not_found||Private money not found|
+|422|private_money_not_found|マネーが見つかりません|Private money not found|
 |422|bulk_transaction_invalid_csv_format|入力されたCSVデータに誤りがあります|Invalid csv format|
 
 

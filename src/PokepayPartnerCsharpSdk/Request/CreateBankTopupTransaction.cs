@@ -15,11 +15,14 @@ namespace PokepayPartnerCsharpSdk.Request
         public string PrivateMoneyId { get; set; }
         public int Amount { get; set; }
         public string BankId { get; set; }
+        public string ReceiverUserId { get; set; }
         public string RequestId { get; set; }
 #else
         public string PrivateMoneyId { get; set; }
         public int Amount { get; set; }
         public string BankId { get; set; }
+        #nullable enable
+        public string? ReceiverUserId { get; set; }
         public string RequestId { get; set; }
 #endif
 

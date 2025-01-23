@@ -12,12 +12,13 @@ Request.CreateExternalTransaction request = new Request.CreateExternalTransactio
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // エンドユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    5317 // 取引額
+    6295 // 取引額
 ) {
     Description = "たい焼き(小倉)",  // 取引説明文
     Metadata = "{\"key\":\"value\"}",  // ポケペイ外部取引メタデータ
     Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},  // 商品情報データ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
+    DoneAt = "2022-02-26T14:34:31.000000Z",  // ポケペイ外部取引の実施時間
 };
 Response.ExternalTransactionDetail response = await request.Send(client);
 ```
@@ -146,6 +147,20 @@ Response.ExternalTransactionDetail response = await request.Send(client);
 }
 ```
 
+**`done_at`** 
+  
+
+ポケペイ外部取引が実際に起こった時間です。
+時間帯指定のポイント付与キャンペーンでの取引時間の計算に使われます。
+デフォルトではCreateExternalTransactionがリクエストされた時間になります。
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
 
 
 成功したときは
@@ -157,13 +172,11 @@ Response.ExternalTransactionDetail response = await request.Send(client);
 |---|---|---|---|
 |400|invalid_parameters|項目が無効です|Invalid parameters|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-|410|transaction_canceled|取引がキャンセルされました|Transaction was canceled|
 |422|customer_user_not_found||The customer user is not found|
 |422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
-|422|private_money_not_found||Private money not found|
-|422|invalid_metadata|メタデータの形式が不正です|Invalid metadata format|
+|422|private_money_not_found|マネーが見つかりません|Private money not found|
 |422|customer_account_not_found||The customer account is not found|
-|422|shop_account_not_found||The shop account is not found|
+|422|shop_account_not_found|店舗アカウントが見つかりません|The shop account is not found|
 |422|account_suspended|アカウントは停止されています|The account is suspended|
 |422|account_closed|アカウントは退会しています|The account is closed|
 |422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
@@ -172,6 +185,7 @@ Response.ExternalTransactionDetail response = await request.Send(client);
 |422|account_not_accessible|アカウントにアクセスできません|The account is not accessible by this user|
 |422|terminal_is_invalidated|端末は無効化されています|The terminal is already invalidated|
 |422|same_account_transaction|同じアカウントに送信しています|Sending to the same account|
+|422|private_money_closed|このマネーは解約されています|This money was closed|
 |422|transaction_has_done|取引は完了しており、キャンセルすることはできません|Transaction has been copmpleted and cannot be canceled|
 |422|transaction_invalid_done_at|取引完了日が無効です|Transaction completion date is invalid|
 |422|transaction_invalid_amount|取引金額が数値ではないか、受け入れられない桁数です|Transaction amount is not a number or cannot be accepted for this currency|
@@ -181,8 +195,8 @@ Response.ExternalTransactionDetail response = await request.Send(client);
 |422|account_transfer_limit_exceeded|取引金額が上限を超えました|Too much amount to transfer|
 |422|account_balance_exceeded|口座残高が上限を超えました|The account balance exceeded the limit|
 |422|account_money_topup_transfer_limit_exceeded|マネーチャージ金額が上限を超えました|Too much amount to money topup transfer|
-|422|account_total_topup_limit_range|期間内での合計チャージ額上限に達しました|Entire period topup limit reached|
-|422|account_total_topup_limit_entire_period|全期間での合計チャージ額上限に達しました|Entire period topup limit reached|
+|422|account_total_topup_limit_range|合計チャージ額がマネーで指定された期間内での上限を超えています|The topup exceeds the total amount within the period defined by the money.|
+|422|account_total_topup_limit_entire_period|合計チャージ額がマネーで指定された期間内での上限を超えています|The topup exceeds the total amount defined by the money.|
 |422|coupon_unavailable_shop|このクーポンはこの店舗では使用できません。|This coupon is unavailable for this shop.|
 |422|coupon_already_used|このクーポンは既に使用済みです。|This coupon is already used.|
 |422|coupon_not_received|このクーポンは受け取られていません。|This coupon is not received.|
@@ -190,6 +204,8 @@ Response.ExternalTransactionDetail response = await request.Send(client);
 |422|coupon_amount_not_enough|このクーポンを使用するには支払い額が足りません。|The payment amount not enough to use this coupon.|
 |422|coupon_not_payment|クーポンは支払いにのみ使用できます。|Coupons can only be used for payment.|
 |422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
+|422|reserved_word_can_not_specify_to_metadata|取引メタデータに予約語は指定出来ません|Reserved word can not specify to metadata|
+|422|invalid_metadata|メタデータの形式が不正です|Invalid metadata format|
 |503|temporarily_unavailable||Service Unavailable|
 
 
