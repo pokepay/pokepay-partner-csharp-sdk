@@ -69,9 +69,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    Description = "MFu",
+                    Description = "8",
                     IsOnetime = true,
-                    IsDisabled = true,
+                    IsDisabled = false,
                 };
                 Response.PaginatedChecks response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -86,10 +86,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    IssuerShopId = "6d9c9d8c-24ed-43b2-9001-703ddd0eae48",
-                    Description = "Y5rxBRsFTy",
+                    IssuerShopId = "961ab7b4-daf0-47b4-9428-f0f552dc8ba1",
+                    Description = "NZau",
                     IsOnetime = false,
-                    IsDisabled = false,
+                    IsDisabled = true,
                 };
                 Response.PaginatedChecks response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -104,11 +104,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    CreatedTo = "2020-03-16T19:15:17.000000Z",
-                    IssuerShopId = "f502dcf6-9aee-4325-a5af-1c77ca1cba62",
-                    Description = "d4rNZJsCq7",
-                    IsOnetime = false,
-                    IsDisabled = false,
+                    CreatedTo = "2024-07-04T19:46:26.000000Z",
+                    IssuerShopId = "1b24d9be-60f0-4331-94b1-008eab5489e9",
+                    Description = "crfILo",
+                    IsOnetime = true,
+                    IsDisabled = true,
                 };
                 Response.PaginatedChecks response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -123,10 +123,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    CreatedFrom = "2020-01-22T06:25:49.000000Z",
-                    CreatedTo = "2020-10-06T06:24:16.000000Z",
-                    IssuerShopId = "ba8a1508-dfb7-4061-83a0-f9726dfada77",
-                    Description = "2NKYH12xH",
+                    CreatedFrom = "2025-01-18T10:15:20.000000Z",
+                    CreatedTo = "2024-07-17T10:53:11.000000Z",
+                    IssuerShopId = "017a04fb-26bf-4f9c-9a8b-11d0b08a685d",
+                    Description = "287JaoYb",
                     IsOnetime = true,
                     IsDisabled = false,
                 };
@@ -143,13 +143,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    ExpiresTo = "2022-02-19T08:35:27.000000Z",
-                    CreatedFrom = "2021-08-15T09:13:42.000000Z",
-                    CreatedTo = "2023-10-19T16:42:25.000000Z",
-                    IssuerShopId = "6f3fc2c9-4477-4213-942c-62c057d20078",
-                    Description = "vxk",
+                    ExpiresTo = "2020-04-22T20:45:39.000000Z",
+                    CreatedFrom = "2020-04-25T15:49:04.000000Z",
+                    CreatedTo = "2020-11-12T10:09:58.000000Z",
+                    IssuerShopId = "bb634523-69e0-4331-9746-7c6380cd7193",
+                    Description = "Yx",
                     IsOnetime = true,
-                    IsDisabled = true,
+                    IsDisabled = false,
                 };
                 Response.PaginatedChecks response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -164,12 +164,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    ExpiresFrom = "2022-04-09T10:57:33.000000Z",
-                    ExpiresTo = "2021-01-21T20:17:59.000000Z",
-                    CreatedFrom = "2024-01-21T15:48:46.000000Z",
-                    CreatedTo = "2021-01-02T23:52:54.000000Z",
-                    IssuerShopId = "7367f459-8e42-4c7d-84d1-5fe958c47652",
-                    Description = "yVTR",
+                    ExpiresFrom = "2023-01-15T12:33:00.000000Z",
+                    ExpiresTo = "2021-04-29T11:14:49.000000Z",
+                    CreatedFrom = "2024-09-17T11:10:47.000000Z",
+                    CreatedTo = "2021-02-14T00:09:23.000000Z",
+                    IssuerShopId = "43529fa7-7637-4992-9e4b-7d816ca05cb2",
+                    Description = "oQE",
                     IsOnetime = true,
                     IsDisabled = true,
                 };
@@ -186,15 +186,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    OrganizationCode = "czNdwQ9LziqjK5MdQ1lZ",
-                    ExpiresFrom = "2021-12-11T12:27:57.000000Z",
-                    ExpiresTo = "2023-03-30T19:25:50.000000Z",
-                    CreatedFrom = "2022-10-18T18:39:55.000000Z",
-                    CreatedTo = "2021-03-07T21:43:35.000000Z",
-                    IssuerShopId = "661adf80-6e58-4a56-82b9-c0c18253251c",
-                    Description = "2ESq",
+                    OrganizationCode = "mxqdvzxKVxdoit0n",
+                    ExpiresFrom = "2023-03-20T20:07:26.000000Z",
+                    ExpiresTo = "2023-09-11T23:49:55.000000Z",
+                    CreatedFrom = "2023-12-08T21:43:15.000000Z",
+                    CreatedTo = "2023-09-22T09:20:36.000000Z",
+                    IssuerShopId = "8607beeb-9f3f-4859-b061-6285b6191e36",
+                    Description = "9IRy9",
                     IsOnetime = true,
-                    IsDisabled = false,
+                    IsDisabled = true,
                 };
                 Response.PaginatedChecks response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -209,15 +209,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    PrivateMoneyId = "932ec6c0-848e-4ed6-954b-42c077bd6eba",
-                    OrganizationCode = "1GN9Jq",
-                    ExpiresFrom = "2022-09-08T05:18:03.000000Z",
-                    ExpiresTo = "2023-08-04T01:00:24.000000Z",
-                    CreatedFrom = "2020-11-07T01:30:52.000000Z",
-                    CreatedTo = "2023-05-08T07:12:05.000000Z",
-                    IssuerShopId = "329f1bf6-2a79-439f-928a-0c903705051d",
-                    Description = "A5j20",
-                    IsOnetime = true,
+                    PrivateMoneyId = "d8cb2007-6135-47c0-be75-0fcb07e82708",
+                    OrganizationCode = "Yj6aDVb3qDkr4zF",
+                    ExpiresFrom = "2021-12-19T15:34:12.000000Z",
+                    ExpiresTo = "2020-04-20T07:38:28.000000Z",
+                    CreatedFrom = "2021-09-27T13:41:10.000000Z",
+                    CreatedTo = "2021-04-27T06:58:11.000000Z",
+                    IssuerShopId = "3d3dada0-1cdd-4e37-95f4-09b46e4e81ce",
+                    Description = "9wkd",
+                    IsOnetime = false,
                     IsDisabled = false,
                 };
                 Response.PaginatedChecks response = await request.Send(client);
@@ -233,17 +233,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    PerPage = 6132,
-                    PrivateMoneyId = "14118789-fbb4-43a9-9a19-073123317c07",
-                    OrganizationCode = "pnjZ8xWKeN3WKGyHXCKDfS0",
-                    ExpiresFrom = "2023-09-29T07:06:08.000000Z",
-                    ExpiresTo = "2022-01-29T19:33:22.000000Z",
-                    CreatedFrom = "2023-12-09T06:55:43.000000Z",
-                    CreatedTo = "2021-08-21T04:38:03.000000Z",
-                    IssuerShopId = "22019b92-0fec-40f8-8af4-c98a125420c3",
-                    Description = "8sS34enF",
-                    IsOnetime = true,
-                    IsDisabled = true,
+                    PerPage = 6158,
+                    PrivateMoneyId = "d288eccf-ea05-46db-98f7-1ee90733c2fe",
+                    OrganizationCode = "DpfXuzoNbRpuKefj",
+                    ExpiresFrom = "2020-07-05T02:08:05.000000Z",
+                    ExpiresTo = "2021-12-01T17:11:21.000000Z",
+                    CreatedFrom = "2024-02-14T04:50:02.000000Z",
+                    CreatedTo = "2024-06-22T01:01:34.000000Z",
+                    IssuerShopId = "ee5814df-4258-4140-b258-6060ebc608ef",
+                    Description = "FzQcO5",
+                    IsOnetime = false,
+                    IsDisabled = false,
                 };
                 Response.PaginatedChecks response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -258,16 +258,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListChecks request = new Request.ListChecks() {
-                    Page = 7930,
-                    PerPage = 841,
-                    PrivateMoneyId = "e3f3e62a-e5e8-41c9-8de2-12fb81470a74",
-                    OrganizationCode = "E1tQOM",
-                    ExpiresFrom = "2023-03-26T11:24:36.000000Z",
-                    ExpiresTo = "2020-03-21T15:23:58.000000Z",
-                    CreatedFrom = "2021-08-14T22:15:16.000000Z",
-                    CreatedTo = "2021-10-15T14:33:16.000000Z",
-                    IssuerShopId = "8cf982df-e1aa-450a-82d5-030cdf1dbddb",
-                    Description = "hD0",
+                    Page = 9502,
+                    PerPage = 750,
+                    PrivateMoneyId = "cbb57764-f70d-4e96-a707-198e3d228b81",
+                    OrganizationCode = "m73I2kFchNQksZB6ByT3lV",
+                    ExpiresFrom = "2024-08-20T17:40:32.000000Z",
+                    ExpiresTo = "2022-03-17T04:08:50.000000Z",
+                    CreatedFrom = "2024-03-06T17:39:29.000000Z",
+                    CreatedTo = "2022-05-11T05:35:51.000000Z",
+                    IssuerShopId = "884d22cf-132c-4338-a002-edb2363e3eb3",
+                    Description = "WFeXCsA",
                     IsOnetime = true,
                     IsDisabled = false,
                 };

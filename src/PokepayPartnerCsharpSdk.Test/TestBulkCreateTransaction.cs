@@ -25,9 +25,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "SJ9o4hVc0u6tzaZ3sbYKC",
-                    "bmAlkaNJiO",
-                    "vuRswwQSmiJco3KwhjqpMqyENnnotJKNM2Dv"
+                    "PmIraGV",
+                    "sLJiqbQ3M",
+                    "QR9CltXlG6ahNcft22PrlsKWxGtQj4OhVmQA"
                 );
                 Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -42,11 +42,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "SJ9o4hVc0u6tzaZ3sbYKC",
-                    "bmAlkaNJiO",
-                    "vuRswwQSmiJco3KwhjqpMqyENnnotJKNM2Dv"
+                    "PmIraGV",
+                    "sLJiqbQ3M",
+                    "QR9CltXlG6ahNcft22PrlsKWxGtQj4OhVmQA"
                 ) {
-                    PrivateMoneyId = "703c377c-3ed1-428b-a827-9c18a076be05",
+                    PrivateMoneyId = "4596afe6-29dc-488b-933a-ef46009f180c",
                 };
                 Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -61,12 +61,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "SJ9o4hVc0u6tzaZ3sbYKC",
-                    "bmAlkaNJiO",
-                    "vuRswwQSmiJco3KwhjqpMqyENnnotJKNM2Dv"
+                    "PmIraGV",
+                    "sLJiqbQ3M",
+                    "QR9CltXlG6ahNcft22PrlsKWxGtQj4OhVmQA"
                 ) {
-                    Description = "u06FE8juzeNINZktFZU0JpHpSrpNbF8O3WzYFSGY9bWV5jbNBEz14f9BIpTXI2luGWaGy1CoCYoYmaLr1BLY",
-                    PrivateMoneyId = "db01c22d-6011-4ce4-a38d-62e775c56e73",
+                    Description = "vVt",
+                    PrivateMoneyId = "a2fc7652-475c-49b4-9546-bddd26017472",
                 };
                 Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

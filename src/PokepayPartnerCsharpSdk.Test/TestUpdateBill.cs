@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "825a4ce6-af48-4f92-92de-d87acb01778b"
+                    "2fcd3f0b-ddd3-4624-8d57-3c0712975c23"
                 );
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "825a4ce6-af48-4f92-92de-d87acb01778b"
+                    "2fcd3f0b-ddd3-4624-8d57-3c0712975c23"
                 ) {
                     IsDisabled = false,
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "825a4ce6-af48-4f92-92de-d87acb01778b"
+                    "2fcd3f0b-ddd3-4624-8d57-3c0712975c23"
                 ) {
-                    Description = "lBqoPAVuBC2EUluqb81O3ZagKE8LcCa8bz2nHShe5EoHVudmx1iMacSt3whWHQ5cbR62EyfrAyRxoXmZ8au8D4esSHy55WYfHfvN0QEBe9OUmuQoNyAxdh",
+                    Description = "D3agMTAvZtCmtviHLHOBHoLHZ5Hyso5u9Osjia9h3ovwp1QqOYhJfTJv94bnDyHKg7jf7TRBDusrb62imeaN035TYhQYVT6897JBIT98Ea3vOiHnJbC3RzxMsGY",
                     IsDisabled = true,
                 };
                 Response.Bill response = await request.Send(client);
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "825a4ce6-af48-4f92-92de-d87acb01778b"
+                    "2fcd3f0b-ddd3-4624-8d57-3c0712975c23"
                 ) {
-                    Amount = 2260.0,
-                    Description = "5YfaNVM2xjqlPxxy8RqwFWTQ1hvVt9bN2zIxNZx4eE9mHPjq6XCvYjxbcuNA5AOQHru6gAXocPu4UpOUbFxl1xg8SX1voG8Gydqo4fQ7D47J36mgyKf2pLnur36TYPgxIzfeirgwWnuJKugM3OQh2JHBnxbiEM0oFGnnvKX9mW4mLerHweV6yDq",
-                    IsDisabled = false,
+                    Amount = 1924.0,
+                    Description = "QVbbDGQ3KFvfr7wcTIqfZGa8VmM7LxaafZsEiZ4h1kUtLESZUqCMHUv6WI9WlLqAjFFVtovIA3w7if4YoZJ",
+                    IsDisabled = true,
                 };
                 Response.Bill response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

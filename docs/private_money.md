@@ -77,8 +77,8 @@ Response.PaginatedPrivateMoneys response = await request.Send(client);
 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    From = "2020-09-01T07:38:37.000000Z",  // 開始日時(toと同時に指定する必要有)
-    To = "2024-03-21T02:25:01.000000Z",  // 終了日時(fromと同時に指定する必要有)
+    From = "2024-04-03T10:48:47.000000Z",  // 開始日時(toと同時に指定する必要有)
+    To = "2023-06-20T13:53:59.000000Z",  // 終了日時(fromと同時に指定する必要有)
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
 };
@@ -162,8 +162,8 @@ Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Sen
 Request.GetPrivateMoneySummary request = new Request.GetPrivateMoneySummary(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    From = "2023-10-27T19:24:09.000000Z",  // 開始日時
-    To = "2020-01-28T06:46:15.000000Z",  // 終了日時
+    From = "2021-04-22T03:41:13.000000Z",  // 開始日時
+    To = "2021-08-14T09:16:00.000000Z",  // 終了日時
 };
 Response.PrivateMoneySummary response = await request.Send(client);
 ```

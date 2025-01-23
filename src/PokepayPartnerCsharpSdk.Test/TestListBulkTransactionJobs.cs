@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBulkTransactionJobs request = new Request.ListBulkTransactionJobs(
-                    "aceb8e81-b166-48f9-a12a-0ec707888f02"
+                    "a927da5f-aee4-40d1-8569-fef634511aaf"
                 );
                 Response.PaginatedBulkTransactionJob response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBulkTransactionJobs request = new Request.ListBulkTransactionJobs(
-                    "aceb8e81-b166-48f9-a12a-0ec707888f02"
+                    "a927da5f-aee4-40d1-8569-fef634511aaf"
                 ) {
-                    PerPage = 9888,
+                    PerPage = 4797,
                 };
                 Response.PaginatedBulkTransactionJob response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListBulkTransactionJobs request = new Request.ListBulkTransactionJobs(
-                    "aceb8e81-b166-48f9-a12a-0ec707888f02"
+                    "a927da5f-aee4-40d1-8569-fef634511aaf"
                 ) {
-                    Page = 4993,
-                    PerPage = 2511,
+                    Page = 8820,
+                    PerPage = 1515,
                 };
                 Response.PaginatedBulkTransactionJob response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

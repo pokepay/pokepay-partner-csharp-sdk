@@ -1,21 +1,4 @@
 # Responses
-<a name="admin-user-with-shops-and-private-moneys"></a>
-## AdminUserWithShopsAndPrivateMoneys
-* `Id (string)`: 
-* `Role (string)`: 
-* `Email (string)`: 
-* `Name (string)`: 
-* `IsActive (bool)`: 
-* `Organization (Organization)`: 
-* `Shops (User[])`: 
-* `PrivateMoneys (PrivateMoney[])`: 
-
-`organization`は [Organization](#organization) オブジェクトを返します。
-
-`shops`は [User](#user) オブジェクトの配列を返します。
-
-`private-moneys`は [PrivateMoney](#private-money) オブジェクトの配列を返します。
-
 <a name="account-with-user"></a>
 ## AccountWithUser
 * `Id (string)`: 
@@ -290,6 +273,9 @@
 
 `rows`は [Bank](#bank) オブジェクトの配列を返します。
 
+<a name="bank-deleted"></a>
+## BankDeleted
+
 <a name="paginated-transaction"></a>
 ## PaginatedTransaction
 * `Rows (Transaction[])`: 
@@ -309,6 +295,16 @@
 * `PrevPageCursorId (string)`: 
 
 `rows`は [Transaction](#transaction) オブジェクトの配列を返します。
+
+<a name="paginated-bill-transaction"></a>
+## PaginatedBillTransaction
+* `Rows (BillTransaction[])`: 
+* `PerPage (int)`: 
+* `Count (int)`: 
+* `NextPageCursorId (string)`: 
+* `PrevPageCursorId (string)`: 
+
+`rows`は [BillTransaction](#bill-transaction) オブジェクトの配列を返します。
 
 <a name="paginated-transfers"></a>
 ## PaginatedTransfers
@@ -505,6 +501,23 @@
 
 `pagination`は [Pagination](#pagination) オブジェクトを返します。
 
+<a name="seven-bank-atm-session"></a>
+## SevenBankATMSession
+* `QrInfo (string)`: 
+* `Account (AccountDetail)`: 
+* `Amount (int)`: 
+* `Transaction (Transaction)`: 
+* `SevenBankCustomerNumber (string)`: 
+* `AtmId (string)`: 
+* `AudiId (string)`: 
+* `IssuerCode (string)`: 
+* `IssuerName (string)`: 
+* `MoneyName (string)`: 
+
+`account`は [AccountDetail](#account-detail) オブジェクトを返します。
+
+`transaction`は [Transaction](#transaction) オブジェクトを返します。
+
 <a name="private-money"></a>
 ## PrivateMoney
 * `Id (string)`: マネーID
@@ -656,6 +669,15 @@
 * `AccountName (string)`: 
 
 `private_money`は [PrivateMoney](#private-money) オブジェクトを返します。
+
+<a name="bill-transaction"></a>
+## BillTransaction
+* `Transaction (Transaction)`: 
+* `Bill (Bill)`: 
+
+`transaction`は [Transaction](#transaction) オブジェクトを返します。
+
+`bill`は [Bill](#bill) オブジェクトを返します。
 
 <a name="account-balance"></a>
 ## AccountBalance
