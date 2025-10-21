@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "31ecb769-3144-4a83-95a2-b72406deb863"
+                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
                 );
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "31ecb769-3144-4a83-95a2-b72406deb863"
+                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
                 ) {
                     IsSuspended = false,
                 };
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "31ecb769-3144-4a83-95a2-b72406deb863"
+                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
                 ) {
-                    CreatedAtTo = "2020-05-06T02:02:55.000000Z",
-                    IsSuspended = true,
+                    CreatedAtTo = "2024-07-25T03:44:04.000000Z",
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "31ecb769-3144-4a83-95a2-b72406deb863"
+                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
                 ) {
-                    CreatedAtFrom = "2023-03-17T16:04:05.000000Z",
-                    CreatedAtTo = "2024-03-19T06:01:45.000000Z",
+                    CreatedAtFrom = "2023-03-19T21:52:50.000000Z",
+                    CreatedAtTo = "2021-05-16T14:27:26.000000Z",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "31ecb769-3144-4a83-95a2-b72406deb863"
+                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
                 ) {
-                    PerPage = 4823,
-                    CreatedAtFrom = "2023-07-22T08:29:37.000000Z",
-                    CreatedAtTo = "2020-07-29T13:51:14.000000Z",
-                    IsSuspended = false,
+                    PerPage = 2991,
+                    CreatedAtFrom = "2021-03-14T12:40:20.000000Z",
+                    CreatedAtTo = "2023-05-24T08:19:28.000000Z",
+                    IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,13 +114,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "31ecb769-3144-4a83-95a2-b72406deb863"
+                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
                 ) {
-                    Page = 4360,
-                    PerPage = 8484,
-                    CreatedAtFrom = "2022-04-08T21:42:45.000000Z",
-                    CreatedAtTo = "2023-03-08T17:36:02.000000Z",
-                    IsSuspended = true,
+                    Page = 4106,
+                    PerPage = 2378,
+                    CreatedAtFrom = "2020-07-23T05:33:11.000000Z",
+                    CreatedAtTo = "2023-07-26T19:28:22.000000Z",
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

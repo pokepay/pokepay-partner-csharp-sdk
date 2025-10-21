@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetAccountTransferSummary request = new Request.GetAccountTransferSummary(
-                    "0de2a38c-c7bc-4b5d-be03-229e54b13590"
+                    "d79ada44-2554-41d3-a753-5725590e9c63"
                 );
                 Response.AccountTransferSummary response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetAccountTransferSummary request = new Request.GetAccountTransferSummary(
-                    "0de2a38c-c7bc-4b5d-be03-229e54b13590"
+                    "d79ada44-2554-41d3-a753-5725590e9c63"
                 ) {
-                    TransferTypes = new string[]{"use-coupon", "topup", "refund-payment", "refund-exchange-outflow"},
+                    TransferTypes = new string[]{"exchange-outflow", "exchange-inflow", "refund-topup", "use-coupon", "refund-coupon", "payment", "refund-campaign", "campaign-topup", "refund-exchange-outflow"},
                 };
                 Response.AccountTransferSummary response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetAccountTransferSummary request = new Request.GetAccountTransferSummary(
-                    "0de2a38c-c7bc-4b5d-be03-229e54b13590"
+                    "d79ada44-2554-41d3-a753-5725590e9c63"
                 ) {
-                    To = "2021-11-24T19:26:35.000000Z",
-                    TransferTypes = new string[]{"refund-campaign", "campaign-topup"},
+                    To = "2022-08-23T05:52:55.000000Z",
+                    TransferTypes = new string[]{"exchange-outflow", "use-coupon", "refund-payment", "topup", "payment", "exchange-inflow", "refund-exchange-outflow"},
                 };
                 Response.AccountTransferSummary response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetAccountTransferSummary request = new Request.GetAccountTransferSummary(
-                    "0de2a38c-c7bc-4b5d-be03-229e54b13590"
+                    "d79ada44-2554-41d3-a753-5725590e9c63"
                 ) {
-                    From = "2022-12-02T02:52:24.000000Z",
-                    To = "2024-02-07T22:36:01.000000Z",
-                    TransferTypes = new string[]{"refund-payment", "refund-exchange-inflow", "refund-coupon", "exchange-inflow"},
+                    From = "2024-08-01T20:42:17.000000Z",
+                    To = "2022-12-23T22:37:41.000000Z",
+                    TransferTypes = new string[]{"refund-campaign", "refund-payment", "use-coupon", "refund-exchange-outflow", "exchange-inflow", "refund-topup"},
                 };
                 Response.AccountTransferSummary response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

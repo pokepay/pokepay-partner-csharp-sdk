@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "acf31cd3-6e0b-4acb-abb2-47b339f619cd"
+                    "f841fa09-5b89-4dbb-907b-391f2295a7e0"
                 );
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "acf31cd3-6e0b-4acb-abb2-47b339f619cd"
+                    "f841fa09-5b89-4dbb-907b-391f2295a7e0"
                 ) {
-                    Task = "process_user_stats_operation",
+                    Task = "bulk_shops",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "acf31cd3-6e0b-4acb-abb2-47b339f619cd"
+                    "f841fa09-5b89-4dbb-907b-391f2295a7e0"
                 ) {
-                    IsActive = true,
+                    IsActive = false,
                     Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "acf31cd3-6e0b-4acb-abb2-47b339f619cd"
+                    "f841fa09-5b89-4dbb-907b-391f2295a7e0"
                 ) {
-                    Url = "m6Cln0nex",
-                    IsActive = true,
-                    Task = "process_user_stats_operation",
+                    Url = "m3HE",
+                    IsActive = false,
+                    Task = "bulk_shops",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

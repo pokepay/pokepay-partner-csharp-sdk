@@ -28,8 +28,8 @@ namespace PokepayPartnerCsharpSdk.Test
             string[] private_money_ids = new string[]{
                 "4b138a4c-8944-4f98-a5c4-96d3c1c415eb"
             };
-            string issuer_admin_user_email = Util.RandomString(6) + "@pokepay-tests.jp";
-            string member_admin_user_email = Util.RandomString(6) + "@pokepay-tests.jp";
+            string issuer_admin_user_email = "blackhole@pokepay.jp";
+            string member_admin_user_email = "blackhole@pokepay.jp";
             Response.Organization response = await new Request.CreateOrganization(
                 code,
                 name,
@@ -49,8 +49,8 @@ namespace PokepayPartnerCsharpSdk.Test
             string[] private_money_ids = new string[]{
                 "4b138a4c-8944-4f98-a5c4-96d3c1c415eb"
             };
-            string issuer_admin_user_email = Util.RandomString(6) + "@pokepay-tests.jp";
-            string member_admin_user_email = Util.RandomString(6) + "@pokepay-tests.jp";
+            string issuer_admin_user_email = "blackhole@pokepay.jp";
+            string member_admin_user_email = "blackhole@pokepay.jp";
             string bank_code = "1234";
             string bank_name = Util.RandomString(4) + "銀行";
             string bank_branch_code = "123";

@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
-                    "7d5c2b5b-43f9-4a5f-97c7-ebbfeb9ae161"
+                    "86e1558d-113e-4ea6-8a48-226ea0c2dcab"
                 );
                 Response.AccountWithUser response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
-                    "7d5c2b5b-43f9-4a5f-97c7-ebbfeb9ae161"
+                    "86e1558d-113e-4ea6-8a48-226ea0c2dcab"
                 ) {
                     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
-                    "7d5c2b5b-43f9-4a5f-97c7-ebbfeb9ae161"
+                    "86e1558d-113e-4ea6-8a48-226ea0c2dcab"
                 ) {
-                    ExternalId = "N9eZjSIQORsTn19Lt83IRfp6apsZzwHUgb2q",
+                    ExternalId = "hBw4No1YXyGaN9eZjSIQORsTn19Lt83IRfp6apsZzwHUgb2qq",
                     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountWithUser response = await request.Send(client);
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
-                    "7d5c2b5b-43f9-4a5f-97c7-ebbfeb9ae161"
+                    "86e1558d-113e-4ea6-8a48-226ea0c2dcab"
                 ) {
-                    AccountName = "rLtRpMZnFJMuPuuYDxHZdnikAchiJbVP3ZTnJxIJTqpbj9hQa29LtqbzIUCtrgI5GH6wQi2f3OojTDEk0fitYgKzfXu0N7ZPQ6Ey6Tu3BU56A0DovC2AWlgsj8AO1bqHH9NHpqZwH1tkpyNDcuWxfr4xKRRC5UPfddKJfLPJmxAhDpkltxfpGBgKzLBWMCYifXDXPCbHnT3R8fCd8115VzfSNwUPij0JCeKaErwIngTct5VctC",
-                    ExternalId = "ahSG576Yk",
+                    AccountName = "rLtRpMZnFJMuPuuYDxHZdnikAchiJbVP3ZTnJxIJTqpbj9hQa29LtqbzIUCtrgI5GH6wQi2f3OojTDEk0fitYgKzfXu0N7ZPQ6Ey6Tu3BU56A0DovC2AWlgsj8AO1bqHH9NHpqZwH1tkpyNDcuWxfr4xKRRC5UPfd",
+                    ExternalId = "KJfLPJmxAhDpkltxfpGBgKzLBWMCYifXDXPCb",
                     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountWithUser response = await request.Send(client);
@@ -94,11 +94,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
-                    "7d5c2b5b-43f9-4a5f-97c7-ebbfeb9ae161"
+                    "86e1558d-113e-4ea6-8a48-226ea0c2dcab"
                 ) {
                     Status = "pre-closed",
-                    AccountName = "67hNuqsd2aOEu5ugI0fcKmGRUw7sMhCFW8ODbHkZSUPXBsmObvn",
-                    ExternalId = "UjDTSSciw",
+                    AccountName = "nT3R8fCd8115VzfSNwUPij0JCeKaErwIngTct5VctC8ahSG576Yk267hNuqsd2aOEu5ugI0fc",
+                    ExternalId = "KmGRUw7sMhCFW8ODbHkZSUPXBsmObvnHUj",
                     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",
                 };
                 Response.AccountWithUser response = await request.Send(client);

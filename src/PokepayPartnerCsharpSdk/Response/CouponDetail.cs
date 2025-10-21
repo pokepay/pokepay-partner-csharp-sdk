@@ -27,6 +27,8 @@ namespace PokepayPartnerCsharpSdk.Response
         public string CouponImage { get; set; }
         public User[] AvailableShops { get; set; }
         public PrivateMoney PrivateMoney { get; set; }
+        public int NumRecipientsCap { get; set; }
+        public int NumRecipients { get; set; }
 
         [JsonConstructor]
         public CouponDetail(string id, string name, User issuedShop, string description, string startsAt, string endsAt, string displayStartsAt, string displayEndsAt, bool isShopSpecified, bool isHidden, bool isPublic, bool isDisabled, string token, User[] availableShops, PrivateMoney privateMoney) =>

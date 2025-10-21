@@ -31,6 +31,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public System.Nullable<bool> IsShopSpecified { get; set; }
         public string[] AvailableShopIds { get; set; }
         public string StorageId { get; set; }
+        public System.Nullable<int> NumRecipientsCap { get; set; }
 #else
         public string PrivateMoneyId { get; set; }
         public string Name { get; set; }
@@ -67,6 +68,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string[]? AvailableShopIds { get; set; }
         #nullable enable
         public string? StorageId { get; set; }
+        #nullable enable
+        public int? NumRecipientsCap { get; set; }
 #endif
 
         public CreateCoupon(string privateMoneyId, string name, string startsAt, string endsAt, string issuedShopId) =>

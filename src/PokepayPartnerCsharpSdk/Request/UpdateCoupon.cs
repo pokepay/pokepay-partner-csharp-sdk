@@ -30,6 +30,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public System.Nullable<bool> IsShopSpecified { get; set; }
         public string[] AvailableShopIds { get; set; }
         public string StorageId { get; set; }
+        public System.Nullable<int> NumRecipientsCap { get; set; }
 #else
         #nullable enable
         public string? Name { get; set; }
@@ -67,6 +68,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string[]? AvailableShopIds { get; set; }
         #nullable enable
         public string? StorageId { get; set; }
+        #nullable enable
+        public int? NumRecipientsCap { get; set; }
 #endif
 
         public UpdateCoupon(string couponId) =>

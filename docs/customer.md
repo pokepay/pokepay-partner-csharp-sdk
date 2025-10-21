@@ -8,7 +8,7 @@
 Request.DeleteAccount request = new Request.DeleteAccount(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    Cashback = false,  // 返金有無
+    Cashback = true,  // 返金有無
 };
 Response.AccountDeleted response = await request.Send(client);
 ```
@@ -105,9 +105,9 @@ Response.AccountDetail response = await request.Send(client);
 Request.UpdateAccount request = new Request.UpdateAccount(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    IsSuspended = true,  // ウォレットが凍結されているかどうか
-    Status = "suspended",  // ウォレット状態
-    CanTransferTopup = false,  // チャージ可能かどうか
+    IsSuspended = false,  // ウォレットが凍結されているかどうか
+    Status = "pre-closed",  // ウォレット状態
+    CanTransferTopup = true,  // チャージ可能かどうか
 };
 Response.AccountDetail response = await request.Send(client);
 ```
@@ -186,10 +186,10 @@ Response.AccountDetail response = await request.Send(client);
 Request.ListAccountBalances request = new Request.ListAccountBalances(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    Page = 6497,  // ページ番号
-    PerPage = 6466,  // 1ページ分の取引数
-    ExpiresAtFrom = "2021-03-29T13:19:12.000000Z",  // 有効期限の期間によるフィルター(開始時点)
-    ExpiresAtTo = "2021-05-16T03:24:38.000000Z",  // 有効期限の期間によるフィルター(終了時点)
+    Page = 2003,  // ページ番号
+    PerPage = 218,  // 1ページ分の取引数
+    ExpiresAtFrom = "2020-04-23T19:55:16.000000Z",  // 有効期限の期間によるフィルター(開始時点)
+    ExpiresAtTo = "2021-11-13T10:17:12.000000Z",  // 有効期限の期間によるフィルター(終了時点)
     Direction = "asc",  // 有効期限によるソート順序
 };
 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -294,11 +294,11 @@ Response.PaginatedAccountBalance response = await request.Send(client);
 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    Page = 2277,  // ページ番号
-    PerPage = 1898,  // 1ページ分の取引数
-    ExpiresAtFrom = "2023-04-23T17:13:03.000000Z",  // 有効期限の期間によるフィルター(開始時点)
-    ExpiresAtTo = "2022-12-12T10:24:10.000000Z",  // 有効期限の期間によるフィルター(終了時点)
-    Direction = "asc",  // 有効期限によるソート順序
+    Page = 2070,  // ページ番号
+    PerPage = 4985,  // 1ページ分の取引数
+    ExpiresAtFrom = "2022-12-16T00:54:18.000000Z",  // 有効期限の期間によるフィルター(開始時点)
+    ExpiresAtTo = "2020-02-16T15:07:23.000000Z",  // 有効期限の期間によるフィルター(終了時点)
+    Direction = "desc",  // 有効期限によるソート順序
 };
 Response.PaginatedAccountBalance response = await request.Send(client);
 ```
@@ -403,8 +403,8 @@ Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
     Status = "pre-closed",  // ウォレット状態
-    AccountName = "dqAuTxyB0A3WX2EcUb892",  // アカウント名
-    ExternalId = "z3Nv10xFyFeM64iLpLDhctAZixWvzCjvZGuuLmpXAGJ",  // 外部ID
+    AccountName = "DOO7AdxANDE2ea2N2bsCqxQkk2AG5TTqX05IlCZ5tUdSwXVRIVCn",  // アカウント名
+    ExternalId = "Zj6NtOwX2FI8Wr1369uaTF42abkgSmtEHAWzKVmwmqN4a",  // 外部ID
     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",  // ウォレットに付加するメタデータ
 };
 Response.AccountWithUser response = await request.Send(client);
@@ -513,15 +513,15 @@ Response.AccountWithUser response = await request.Send(client);
 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    Page = 1014,  // ページ番号
-    PerPage = 7219,  // 1ページ分のウォレット数
-    CreatedAtFrom = "2020-06-18T18:57:29.000000Z",  // ウォレット作成日によるフィルター(開始時点)
-    CreatedAtTo = "2022-05-19T03:42:55.000000Z",  // ウォレット作成日によるフィルター(終了時点)
+    Page = 5625,  // ページ番号
+    PerPage = 1538,  // 1ページ分のウォレット数
+    CreatedAtFrom = "2020-03-29T07:08:16.000000Z",  // ウォレット作成日によるフィルター(開始時点)
+    CreatedAtTo = "2022-01-22T06:46:56.000000Z",  // ウォレット作成日によるフィルター(終了時点)
     IsSuspended = false,  // ウォレットが凍結状態かどうかでフィルターする
-    Status = "active",  // ウォレット状態
-    ExternalId = "aAAkUgzb5zEsMYGbxzOIV2r2JtDEGxgzX",  // 外部ID
-    Tel = "087-600118",  // エンドユーザーの電話番号
-    Email = "qEwnOjzBjM@dE2Z.com",  // エンドユーザーのメールアドレス
+    Status = "suspended",  // ウォレット状態
+    ExternalId = "1Fha0o1JxRbdO7sJMkOiIt9zNKCX0VzisX",  // 外部ID
+    Tel = "09-5914-8380",  // エンドユーザーの電話番号
+    Email = "IsW57odiOH@hS8D.com",  // エンドユーザーのメールアドレス
 };
 Response.PaginatedAccountWithUsers response = await request.Send(client);
 ```
@@ -664,7 +664,7 @@ Response.PaginatedAccountWithUsers response = await request.Send(client);
 |status|type|ja|en|
 |---|---|---|---|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-|422|private_money_not_found||Private money not found|
+|422|private_money_not_found|マネーが見つかりません|Private money not found|
 
 
 
@@ -684,7 +684,7 @@ Request.CreateCustomerAccount request = new Request.CreateCustomerAccount(
 ) {
     UserName = "ポケペイ太郎",  // ユーザー名
     AccountName = "ポケペイ太郎のアカウント",  // アカウント名
-    ExternalId = "qC6g1ENWOPFMuygZod8nuff2bwE3RDjoGhPLmonz",  // 外部ID
+    ExternalId = "fAQRFK6oTTeP8tTTuInowX2TMHi",  // 外部ID
 };
 Response.AccountWithUser response = await request.Send(client);
 ```
@@ -752,8 +752,8 @@ PAPIクライアントシステムから利用するPokepayユーザーのIDで�
 |status|type|ja|en|
 |---|---|---|---|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-|422|user_not_found||The user is not found|
-|422|private_money_not_found||Private money not found|
+|422|user_not_found|ユーザーが見つかりません|The user is not found|
+|422|private_money_not_found|マネーが見つかりません|Private money not found|
 |422|invalid_metadata|メタデータの形式が不正です|Invalid metadata format|
 |422|user_attributes_external_id_not_match|ユーザー属性情報の外部IDが一致しません|Not match external id of user attributes|
 |422|user_attributes_not_found|ユーザー属性情報が存在しません|Not found the user attrubtes|
@@ -773,10 +773,10 @@ PAPIクライアントシステムから利用するPokepayユーザーのIDで�
 Request.GetShopAccounts request = new Request.GetShopAccounts(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    Page = 7320,  // ページ番号
-    PerPage = 8993,  // 1ページ分のウォレット数
-    CreatedAtFrom = "2023-04-19T18:25:51.000000Z",  // ウォレット作成日によるフィルター(開始時点)
-    CreatedAtTo = "2020-03-30T19:22:03.000000Z",  // ウォレット作成日によるフィルター(終了時点)
+    Page = 51,  // ページ番号
+    PerPage = 5879,  // 1ページ分のウォレット数
+    CreatedAtFrom = "2021-12-10T09:49:28.000000Z",  // ウォレット作成日によるフィルター(開始時点)
+    CreatedAtTo = "2022-10-07T07:15:26.000000Z",  // ウォレット作成日によるフィルター(終了時点)
     IsSuspended = false,  // ウォレットが凍結状態かどうかでフィルターする
 };
 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -868,7 +868,7 @@ Response.PaginatedAccountWithUsers response = await request.Send(client);
 |status|type|ja|en|
 |---|---|---|---|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
-|422|private_money_not_found||Private money not found|
+|422|private_money_not_found|マネーが見つかりません|Private money not found|
 
 
 
@@ -885,10 +885,10 @@ Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
 ) {
     SenderCustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 送金エンドユーザーID
     ReceiverCustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 受取エンドユーザーID
-    Type = "topup",  // 取引種別
-    IsModified = false,  // キャンセル済みかどうか
-    From = "2023-10-25T01:26:40.000000Z",  // 開始日時
-    To = "2022-05-07T07:54:42.000000Z",  // 終了日時
+    Type = "transfer",  // 取引種別
+    IsModified = true,  // キャンセル済みかどうか
+    From = "2024-01-11T22:13:29.000000Z",  // 開始日時
+    To = "2024-07-11T23:34:13.000000Z",  // 終了日時
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
 };
@@ -1051,7 +1051,8 @@ falseを指定するとキャンセルされていない取引のみ一覧に表
 |---|---|---|---|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
 |422|customer_user_not_found||The customer user is not found|
-|422|private_money_not_found||Private money not found|
+|422|private_money_not_found|マネーが見つかりません|Private money not found|
+|503|temporarily_unavailable||Service Unavailable|
 
 
 
