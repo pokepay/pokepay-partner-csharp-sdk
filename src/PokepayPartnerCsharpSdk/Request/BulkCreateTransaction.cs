@@ -16,6 +16,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string Content { get; set; }
         public string RequestId { get; set; }
         public string PrivateMoneyId { get; set; }
+        public string CallbackUrl { get; set; }
 #else
         public string Name { get; set; }
         #nullable enable
@@ -24,6 +25,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string RequestId { get; set; }
         #nullable enable
         public string? PrivateMoneyId { get; set; }
+        #nullable enable
+        public string? CallbackUrl { get; set; }
 #endif
 
         public BulkCreateTransaction(string name, string content, string requestId) =>

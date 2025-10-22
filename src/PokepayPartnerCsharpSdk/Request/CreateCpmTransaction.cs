@@ -18,6 +18,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string Metadata { get; set; }
         public object[] Products { get; set; }
         public string RequestId { get; set; }
+        public string Strategy { get; set; }
 #else
         public string CpmToken { get; set; }
         public string ShopId { get; set; }
@@ -30,6 +31,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public object[]? Products { get; set; }
         #nullable enable
         public string? RequestId { get; set; }
+        #nullable enable
+        public string? Strategy { get; set; }
 #endif
 
         public CreateCpmTransaction(string cpmToken, string shopId, double amount) =>

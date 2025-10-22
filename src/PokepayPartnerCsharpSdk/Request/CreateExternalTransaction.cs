@@ -19,6 +19,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public string Metadata { get; set; }
         public object[] Products { get; set; }
         public string RequestId { get; set; }
+        public string DoneAt { get; set; }
 #else
         public string ShopId { get; set; }
         public string CustomerId { get; set; }
@@ -32,6 +33,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public object[]? Products { get; set; }
         #nullable enable
         public string? RequestId { get; set; }
+        #nullable enable
+        public string? DoneAt { get; set; }
 #endif
 
         public CreateExternalTransaction(string shopId, string customerId, string privateMoneyId, int amount) =>

@@ -2,6 +2,54 @@
 BankPayを用いた銀行からのチャージ取引などのAPIを提供しています。
 
 
+<a name="delete-bank"></a>
+## DeleteBank: 銀行口座の削除
+銀行口座を削除します
+
+```csharp
+Request.DeleteBank request = new Request.DeleteBank(
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // デバイスID
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+);
+Response.BankDeleted response = await request.Send(client);
+```
+
+
+
+### Parameters
+**`user_device_id`** 
+  
+
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+**`bank_id`** 
+  
+
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+
+
+成功したときは
+[BankDeleted](./responses.md#bank-deleted)
+を返します
+
+
+
+---
+
+
 <a name="list-banks"></a>
 ## ListBanks: 登録した銀行の一覧
 登録した銀行を一覧します
@@ -66,7 +114,7 @@ Request.CreateBank request = new Request.CreateBank(
     "<Deep Link>", // コールバックURL
     "ポケペイタロウ" // ユーザーの氏名 (片仮名で指定)
 ) {
-    Email = "EeKe2EnvF9@kW30.com",  // ユーザーのメールアドレス
+    Email = "Wh5QfKEnNv@Za51.com",  // ユーザーのメールアドレス
     Birthdate = "19901142",  // 生年月日
 };
 Response.BankRegisteringInfo response = await request.Send(client);
@@ -161,10 +209,12 @@ Response.BankRegisteringInfo response = await request.Send(client);
 Request.CreateBankTopupTransaction request = new Request.CreateBankTopupTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // デバイスID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    2810, // チャージ金額
+    6979, // チャージ金額
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 銀行ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // リクエストID
-);
+) {
+    ReceiverUserId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 受け取りユーザーID (デフォルトは自身)
+};
 Response.TransactionDetail response = await request.Send(client);
 ```
 
@@ -205,6 +255,17 @@ Response.TransactionDetail response = await request.Send(client);
 ```
 
 **`bank_id`** 
+  
+
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+**`receiver_user_id`** 
   
 
 

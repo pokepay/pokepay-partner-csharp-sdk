@@ -178,6 +178,7 @@ try {
 - [ListTransactions](./transaction.md#list-transactions): 【廃止】取引履歴を取得する
 - [CreateTransaction](./transaction.md#create-transaction): 【廃止】チャージする
 - [ListTransactionsV2](./transaction.md#list-transactions-v2): 取引履歴を取得する
+- [ListBillTransactions](./transaction.md#list-bill-transactions): 支払い取引履歴を取得する
 - [CreateTopupTransaction](./transaction.md#create-topup-transaction): チャージする
 - [CreatePaymentTransaction](./transaction.md#create-payment-transaction): 支払いする
 - [CreateCpmTransaction](./transaction.md#create-cpm-transaction): CPMトークンによる取引作成
@@ -189,6 +190,7 @@ try {
 - [GetBulkTransaction](./transaction.md#get-bulk-transaction): バルク取引ジョブの実行状況を取得する
 - [ListBulkTransactionJobs](./transaction.md#list-bulk-transaction-jobs): バルク取引ジョブの詳細情報一覧を取得する
 - [RequestUserStats](./transaction.md#request-user-stats): 指定期間内の顧客が行った取引の統計情報をCSVでダウンロードする
+- [TerminateUserStats](./transaction.md#terminate-user-stats): RequestUserStatsのタスクを強制終了する
 
 ### Transfer
 - [GetAccountTransferSummary](./transfer.md#get-account-transfer-summary): 
@@ -205,9 +207,12 @@ try {
 ### Bill
 - [ListBills](./bill.md#list-bills): 支払いQRコード一覧を表示する
 - [CreateBill](./bill.md#create-bill): 支払いQRコードの発行
+- [GetBill](./bill.md#get-bill): 支払いQRコードの表示
 - [UpdateBill](./bill.md#update-bill): 支払いQRコードの更新
+- [CreatePaymentTransactionWithBill](./bill.md#create-payment-transaction-with-bill): 支払いQRコードを読み取ることで支払いをする
 
 ### Cashtray
+- [CreateTransactionWithCashtray](./cashtray.md#create-transaction-with-cashtray): CashtrayQRコードを読み取ることで取引する
 - [CreateCashtray](./cashtray.md#create-cashtray): Cashtrayを作る
 - [CancelCashtray](./cashtray.md#cancel-cashtray): Cashtrayを無効化する
 - [GetCashtray](./cashtray.md#get-cashtray): Cashtrayの情報を取得する
@@ -237,7 +242,6 @@ try {
 - [UpdateShop](./shop.md#update-shop): 店舗情報を更新する
 
 ### User
-- [GetUser](./user.md#get-user): 
 
 ### Account
 - [ListUserAccounts](./account.md#list-user-accounts): エンドユーザー、店舗ユーザーのウォレット一覧を表示する
@@ -280,7 +284,11 @@ try {
 - [ActivateUserDevice](./user_device.md#activate-user-device): デバイスの有効化
 
 ### BankPay
+- [DeleteBank](./bank_pay.md#delete-bank): 銀行口座の削除
 - [ListBanks](./bank_pay.md#list-banks): 登録した銀行の一覧
 - [CreateBank](./bank_pay.md#create-bank): 銀行口座の登録
 - [CreateBankTopupTransaction](./bank_pay.md#create-bank-topup-transaction): 銀行からのチャージ
+
+### SevenBankATMSession
+- [GetSevenBankATMSession](./seven_bank_atm_session.md#get-seven-bank-atm-session): セブン銀行ATMセッションの取得
 

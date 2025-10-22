@@ -11,12 +11,12 @@ Couponは特定店舗で利用できるものや利用可能期間、配信条�
 Request.ListCoupons request = new Request.ListCoupons(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 対象クーポンのマネーID
 ) {
-    CouponId = "x2jnlKrw0",  // クーポンID
-    CouponName = "dNS4VtkXCD",  // クーポン名
-    IssuedShopName = "t0L",  // 発行店舗名
-    AvailableShopName = "OE3Qg",  // 利用可能店舗名
-    AvailableFrom = "2021-02-12T04:03:43.000000Z",  // 利用可能期間 (開始日時)
-    AvailableTo = "2023-06-04T13:12:02.000000Z",  // 利用可能期間 (終了日時)
+    CouponId = "jZJEl7",  // クーポンID
+    CouponName = "6aHeFVmJS",  // クーポン名
+    IssuedShopName = "Kr",  // 発行店舗名
+    AvailableShopName = "NDUQhJ",  // 利用可能店舗名
+    AvailableFrom = "2022-05-05T13:17:26.000000Z",  // 利用可能期間 (開始日時)
+    AvailableTo = "2023-01-20T11:27:27.000000Z",  // 利用可能期間 (終了日時)
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取得数
 };
@@ -150,7 +150,7 @@ Response.PaginatedCoupons response = await request.Send(client);
 |---|---|---|---|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
 |422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
-|422|private_money_not_found||Private money not found|
+|422|private_money_not_found|マネーが見つかりません|Private money not found|
 
 
 
@@ -164,26 +164,27 @@ Response.PaginatedCoupons response = await request.Send(client);
 ```csharp
 Request.CreateCoupon request = new Request.CreateCoupon(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "cszhfH09Y5OthVwPmvHXBFS5mnHJDaN7ByqCBViT8YJSc5gafw5E7JxTvjUc1aT5EbGp",
-    "2022-01-15T18:09:07.000000Z",
-    "2022-08-26T01:51:15.000000Z",
+    "q76RxAuxSVrnur4Ju4ayidm5BuCe0yTSEIanUYTV2eUYLa0Qhqw2R1myjYzFL4j0HTXKtxMi6tvMf7G",
+    "2020-05-30T21:40:50.000000Z",
+    "2021-08-17T20:39:38.000000Z",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 発行元の店舗ID
 ) {
-    Description = "Qn8B7l65BYM",
-    DiscountAmount = 4227,
-    DiscountPercentage = 806.0,
-    DiscountUpperLimit = 1270,
-    DisplayStartsAt = "2020-02-09T15:09:11.000000Z",  // クーポンの掲載期間(開始日時)
-    DisplayEndsAt = "2023-11-04T13:46:54.000000Z",  // クーポンの掲載期間(終了日時)
-    IsDisabled = true,  // 無効化フラグ
+    Description = "KVOo81owGN6i0XTT33lqYdKQ0h3ghVZk7eOE9tcwx8MOKl5MRsa1MFEYPOVzvPSXDUkbgX2oBshUtXGZ9lfp9TwgYPOmismihXWyqdhqoMR6oAdT5yPsPR",
+    DiscountAmount = 7043,
+    DiscountPercentage = 1161.0,
+    DiscountUpperLimit = 4333,
+    DisplayStartsAt = "2021-01-12T01:53:39.000000Z",  // クーポンの掲載期間(開始日時)
+    DisplayEndsAt = "2024-02-18T20:37:38.000000Z",  // クーポンの掲載期間(終了日時)
+    IsDisabled = false,  // 無効化フラグ
     IsHidden = false,  // クーポン一覧に掲載されるかどうか
     IsPublic = false,  // アプリ配信なしで受け取れるかどうか
-    Code = "EwbRq7C0z",  // クーポン受け取りコード
-    UsageLimit = 1053,  // ユーザごとの利用可能回数(NULLの場合は無制限)
-    MinAmount = 7786,  // クーポン適用可能な最小取引額
+    Code = "dZdYDDGZDu",  // クーポン受け取りコード
+    UsageLimit = 7549,  // ユーザごとの利用可能回数(NULLの場合は無制限)
+    MinAmount = 7770,  // クーポン適用可能な最小取引額
     IsShopSpecified = true,  // 特定店舗限定のクーポンかどうか
-    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
+    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
     StorageId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ストレージID
+    NumRecipientsCap = 6800,  // クーポンを受け取ることができるユーザ数上限
 };
 Response.CouponDetail response = await request.Send(client);
 ```
@@ -412,6 +413,17 @@ Storage APIでアップロードしたクーポン画像のStorage IDを指定�
 }
 ```
 
+**`num_recipients_cap`** 
+  
+
+
+```json
+{
+  "type": "integer",
+  "minimum": 1
+}
+```
+
 
 
 成功したときは
@@ -425,7 +437,7 @@ Storage APIでアップロードしたクーポン画像のStorage IDを指定�
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
 |404|partner_storage_not_found|指定したIDのデータは保存されていません|Not found by storage_id|
 |422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
-|422|private_money_not_found||Private money not found|
+|422|private_money_not_found|マネーが見つかりません|Private money not found|
 |422|coupon_image_storage_conflict|クーポン画像のストレージIDは既に存在します|The coupon image storage_id is already exists|
 
 
@@ -480,24 +492,25 @@ UUIDv4フォーマットである必要があり、フォーマットが異な�
 Request.UpdateCoupon request = new Request.UpdateCoupon(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // クーポンID
 ) {
-    Name = "5JoEScisdzkhxnXFFT7CXS50vaovkRO",
-    Description = "QbPFa2Q0QZFPxPWcwwu3uh9fDL3S3N",
-    DiscountAmount = 2550,
-    DiscountPercentage = 8586.0,
-    DiscountUpperLimit = 2093,
-    StartsAt = "2021-01-29T13:48:50.000000Z",
-    EndsAt = "2022-04-03T12:59:15.000000Z",
-    DisplayStartsAt = "2021-06-14T03:00:40.000000Z",  // クーポンの掲載期間(開始日時)
-    DisplayEndsAt = "2022-07-07T12:43:02.000000Z",  // クーポンの掲載期間(終了日時)
-    IsDisabled = false,  // 無効化フラグ
+    Name = "0XgqQIqTu14tSh13qLZDYdRTWbMgZiB4q5y",
+    Description = "IKvcyeytZUeCOzn479Q7e7CQ6mogsi4OQ6jQwMdVQzET3CTZR3naadmHoO937wRncWgLEMvwuXtyGneCNJhR9grzs",
+    DiscountAmount = 2757,
+    DiscountPercentage = 2132.0,
+    DiscountUpperLimit = 7431,
+    StartsAt = "2022-06-15T08:32:57.000000Z",
+    EndsAt = "2023-05-19T05:05:23.000000Z",
+    DisplayStartsAt = "2025-09-16T08:41:03.000000Z",  // クーポンの掲載期間(開始日時)
+    DisplayEndsAt = "2022-05-27T01:03:04.000000Z",  // クーポンの掲載期間(終了日時)
+    IsDisabled = true,  // 無効化フラグ
     IsHidden = false,  // クーポン一覧に掲載されるかどうか
-    IsPublic = true,  // アプリ配信なしで受け取れるかどうか
-    Code = "VO",  // クーポン受け取りコード
-    UsageLimit = 5609,  // ユーザごとの利用可能回数(NULLの場合は無制限)
-    MinAmount = 6829,  // クーポン適用可能な最小取引額
+    IsPublic = false,  // アプリ配信なしで受け取れるかどうか
+    Code = "iGJ",  // クーポン受け取りコード
+    UsageLimit = 2994,  // ユーザごとの利用可能回数(NULLの場合は無制限)
+    MinAmount = 8507,  // クーポン適用可能な最小取引額
     IsShopSpecified = false,  // 特定店舗限定のクーポンかどうか
     AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
     StorageId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ストレージID
+    NumRecipientsCap = 346,  // クーポンを受け取ることができるユーザ数上限
 };
 Response.CouponDetail response = await request.Send(client);
 ```
@@ -714,6 +727,17 @@ Storage APIでアップロードしたクーポン画像のStorage IDを指定�
 {
   "type": "string",
   "format": "uuid"
+}
+```
+
+**`num_recipients_cap`** 
+  
+
+
+```json
+{
+  "type": "integer",
+  "minimum": 1
 }
 ```
 

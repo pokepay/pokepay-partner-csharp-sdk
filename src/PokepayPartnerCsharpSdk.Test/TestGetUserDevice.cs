@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetUserDevice request = new Request.GetUserDevice(
-                    "750c1c12-f9b8-4633-bcca-f33284d572d7"
+                    "91154a53-3dac-46fb-8292-098475886a71"
                 );
                 Response.UserDevice response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
