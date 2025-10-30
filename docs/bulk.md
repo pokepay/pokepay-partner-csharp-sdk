@@ -6,13 +6,13 @@ CSVファイルから一括取引をします。
 
 ```csharp
 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-    "ADg0EGo2tY0BvAArU4c3H", // 一括取引タスク名
-    "cr3rYtMZs", // 取引する情報のCSV
-    "1YhEQlphw1DkmThPoIdPA7X1r8JTPyIk7mw8" // リクエストID
+    "Q2vG7By91KC", // 一括取引タスク名
+    "2x", // 取引する情報のCSV
+    "kwbMvROWfUAhh6XnZz0yJYgRGAM6oTzljbZY" // リクエストID
 ) {
-    Description = "2VAIRkHcNMgqN77",  // 一括取引の説明
+    Description = "S9b6qmrSFaDiVxdn1z0TuA7dLQ8GnuuGnm3um0ZKYlqHYAPfacx4ba4pxXiFCicQd3QQrdtpp5IlW8KnTaroT8w3801ZxeZpTa0FFkkUFLVCDKp9TvCsVFg3Dy6t9FV",  // 一括取引の説明
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    CallbackUrl = "QwuiGtQ",  // コールバックURL
+    CallbackUrl = "vRBKOl2",  // コールバックURL
 };
 Response.BulkTransaction response = await request.Send(client);
 ```

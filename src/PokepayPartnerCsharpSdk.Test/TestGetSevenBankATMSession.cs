@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetSevenBankAtmSession request = new Request.GetSevenBankAtmSession(
-                    "QWOO"
+                    "3XyCF"
                 );
                 Response.SevenBankATMSession response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
