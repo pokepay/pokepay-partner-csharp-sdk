@@ -8,8 +8,8 @@
 Request.ListUserAccounts request = new Request.ListUserAccounts(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ユーザーID
 ) {
-    Page = 4726,  // ページ番号
-    PerPage = 1440,  // 1ページ分の取引数
+    Page = 1301,  // ページ番号
+    PerPage = 5987,  // 1ページ分の取引数
 };
 Response.PaginatedAccountDetails response = await request.Send(client);
 ```
@@ -75,8 +75,8 @@ Request.CreateUserAccount request = new Request.CreateUserAccount(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    Name = "bJ1KgmPImdwaTBcNwqaqeRCH16a6zzUqrHdosHdbmLywqukvEUDGTtuu5mLHhGQ9yekqoyNLKN2h7BNq3rRMob2yqEgXsKX0DNjA5Llo",  // ウォレット名
-    ExternalId = "LW2Z",  // 外部ID
+    Name = "MxYByLz0xsJRhRVsB9HjzBAZfWzO75yHWR5FLMa9CO3GmqQepv7doxpRjgZI2VSDvLJkkZMMdEANfWVavAje3PJg4zkA5dwRQrAEDCEBzCTk0pNAGkxkj3y6QjLE9oTv9S3Zg4O5dK9OBTn3gY0HIwJr5Xn6R9PIw5eC52tvIBnMyMg4CnT2dj7ORUTt4jEgn4792da7QYy7V605lzcBixerwgOsZo2yFQXiifPwyEPkMTjwK",  // ウォレット名
+    ExternalId = "UmBamQcUvvHD25XYGaGoRmlkWpVKSQYACWhdJgT5oXIA",  // 外部ID
     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",  // ウォレットに付加するメタデータ
 };
 Response.AccountDetail response = await request.Send(client);

@@ -263,6 +263,10 @@ components:
         token:
           type: string
           title: 支払いQRコードを解析したときに出てくるURL
+        created_at:
+          type: string
+          format: date-time
+          title: 支払いQRコードの作成日時
     Check:
       x-pokepay-schema-type: "response"
       properties:

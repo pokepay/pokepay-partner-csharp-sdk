@@ -14,16 +14,16 @@ QRコードを読み取る方法以外にも、このURLリンクを直接スマ
 
 ```csharp
 Request.ListChecks request = new Request.ListChecks() {
-    Page = 2416,  // ページ番号
+    Page = 426,  // ページ番号
     PerPage = 50,  // 1ページの表示数
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    OrganizationCode = "ukDxII",  // 組織コード
-    ExpiresFrom = "2023-07-07T00:56:47.000000Z",  // 有効期限の期間によるフィルター(開始時点)
-    ExpiresTo = "2021-03-25T09:39:05.000000Z",  // 有効期限の期間によるフィルター(終了時点)
-    CreatedFrom = "2022-12-23T09:30:43.000000Z",  // 作成日時の期間によるフィルター(開始時点)
-    CreatedTo = "2025-09-02T13:53:39.000000Z",  // 作成日時の期間によるフィルター(終了時点)
+    OrganizationCode = "bdyJqmh3WRfGT9d54NzUibZax1gbEq",  // 組織コード
+    ExpiresFrom = "2023-08-03T17:05:56.000000Z",  // 有効期限の期間によるフィルター(開始時点)
+    ExpiresTo = "2025-03-27T00:49:42.000000Z",  // 有効期限の期間によるフィルター(終了時点)
+    CreatedFrom = "2023-02-11T15:05:32.000000Z",  // 作成日時の期間によるフィルター(開始時点)
+    CreatedTo = "2020-04-09T07:25:47.000000Z",  // 作成日時の期間によるフィルター(終了時点)
     IssuerShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 発行店舗ID
-    Description = "Cgt",  // チャージQRコードの説明文
+    Description = "HNUjZJEl7",  // チャージQRコードの説明文
     IsOnetime = true,  // ワンタイムのチャージQRコードかどうか
     IsDisabled = false,  // 無効化されたチャージQRコードかどうか
 };
@@ -222,13 +222,13 @@ Response.PaginatedChecks response = await request.Send(client);
 Request.CreateCheck request = new Request.CreateCheck(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 送金元の店舗アカウントID
 ) {
-    MoneyAmount = 2194.0,  // 付与マネー額
-    PointAmount = 6441.0,  // 付与ポイント額
+    MoneyAmount = 4406.0,  // 付与マネー額
+    PointAmount = 5192.0,  // 付与ポイント額
     Description = "test check",  // 説明文(アプリ上で取引の説明文として表示される)
     IsOnetime = false,  // ワンタイムかどうかのフラグ
-    UsageLimit = 1246,  // ワンタイムでない場合の最大読み取り回数
-    ExpiresAt = "2023-05-04T20:17:56.000000Z",  // チャージQRコード自体の失効日時
-    PointExpiresAt = "2023-11-14T13:33:40.000000Z",  // チャージQRコードによって付与されるポイント残高の有効期限
+    UsageLimit = 4054,  // ワンタイムでない場合の最大読み取り回数
+    ExpiresAt = "2023-03-22T06:33:55.000000Z",  // チャージQRコード自体の失効日時
+    PointExpiresAt = "2024-01-01T01:56:17.000000Z",  // チャージQRコードによって付与されるポイント残高の有効期限
     PointExpiresInDays = 60,  // チャージQRコードによって付与されるポイント残高の有効期限(相対日数指定)
     BearPointAccount = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント額を負担する店舗のウォレットID
 };
@@ -451,13 +451,13 @@ Response.Check response = await request.Send(client);
 Request.UpdateCheck request = new Request.UpdateCheck(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // チャージQRコードのID
 ) {
-    MoneyAmount = 3729.0,  // 付与マネー額
-    PointAmount = 2052.0,  // 付与ポイント額
+    MoneyAmount = 4811.0,  // 付与マネー額
+    PointAmount = 6317.0,  // 付与ポイント額
     Description = "test check",  // チャージQRコードの説明文
-    IsOnetime = false,  // ワンタイムかどうかのフラグ
-    UsageLimit = 3569,  // ワンタイムでない場合の最大読み取り回数
-    ExpiresAt = "2025-07-18T15:05:53.000000Z",  // チャージQRコード自体の失効日時
-    PointExpiresAt = "2021-04-29T02:14:40.000000Z",  // チャージQRコードによって付与されるポイント残高の有効期限
+    IsOnetime = true,  // ワンタイムかどうかのフラグ
+    UsageLimit = 1979,  // ワンタイムでない場合の最大読み取り回数
+    ExpiresAt = "2021-07-04T21:56:22.000000Z",  // チャージQRコード自体の失効日時
+    PointExpiresAt = "2021-10-24T20:08:36.000000Z",  // チャージQRコードによって付与されるポイント残高の有効期限
     PointExpiresInDays = 60,  // チャージQRコードによって付与されるポイント残高の有効期限(相対日数指定)
     BearPointAccount = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント額を負担する店舗のウォレットID
     IsDisabled = true,  // 無効化されているかどうかのフラグ

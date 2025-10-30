@@ -10,9 +10,9 @@
 Request.ListCampaigns request = new Request.ListCampaigns(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    IsOngoing = true,  // 現在適用可能なキャンペーンかどうか
-    AvailableFrom = "2023-02-05T04:17:52.000000Z",  // 指定された日時以降に適用可能期間が含まれているか
-    AvailableTo = "2020-10-01T17:26:30.000000Z",  // 指定された日時以前に適用可能期間が含まれているか
+    IsOngoing = false,  // 現在適用可能なキャンペーンかどうか
+    AvailableFrom = "2020-09-11T01:04:34.000000Z",  // 指定された日時以降に適用可能期間が含まれているか
+    AvailableTo = "2020-03-18T12:42:42.000000Z",  // 指定された日時以前に適用可能期間が含まれているか
     Page = 1,  // ページ番号
     PerPage = 20,  // 1ページ分の取得数
 };
@@ -124,37 +124,37 @@ Response.PaginatedCampaigns response = await request.Send(client);
 
 ```csharp
 Request.CreateCampaign request = new Request.CreateCampaign(
-    "Skfz0ZAYuHKEr", // キャンペーン名
+    "I5NM6J7EhkzGk22yYle2ZOPXJOiEYcNwwBKhoxCdqw8SDS6L7O6ohLm8HBuYz7E9ZuYBAHz0vH45u4SHdXpfYeqMtcfd8wxcygIW1kAzyAHjkW0eFslSf8NaBTyV6GBT8tDHI0zWcr0sMpkdiHOOwl5xIQiAP4UplfuFU", // キャンペーン名
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    "2021-04-12T02:21:17.000000Z", // キャンペーン開始日時
-    "2020-03-05T16:54:43.000000Z", // キャンペーン終了日時
-    2749, // キャンペーンの適用優先度
+    "2024-12-13T12:02:05.000000Z", // キャンペーン開始日時
+    "2023-12-19T05:21:31.000000Z", // キャンペーン終了日時
+    3201, // キャンペーンの適用優先度
     "payment" // イベント種別
 ) {
     BearPointShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント負担先店舗ID
-    Description = "9ga8rAwXpAiqwTxt1HL4wWzmkMDA4SVfWD13Zj3L9DQPYajb0tVdWEdtL2ujHbA770c9iXi2Q1VWdznJovLhT0BrHHw3tEdBOJZocfpIFBg2EP1IMpzVlOR0ZjHbJ4pIYeH1mIjK91BovJNiyan2Rg9xEgMUhIRyB0Lq7z8Ljil9JSMA7rA7mkLLt",  // キャンペーンの説明文
-    Status = "disabled",  // キャンペーン作成時の状態
-    PointExpiresAt = "2023-08-25T14:25:02.000000Z",  // ポイント有効期限(絶対日時指定)
-    PointExpiresInDays = 1306,  // ポイント有効期限(相対日数指定)
+    Description = "c0JqyEbk4xV1ElwOVpwOgCs3REJLXlOpH9qH3TntlxmPSv0sqeMHVeJGZnQaE4lp3S7TMyfZKpPybiZ1Lwce18e7Eq5OqWuTabdRaaHOyfGqVUncXzhjskeGyZ",  // キャンペーンの説明文
+    Status = "enabled",  // キャンペーン作成時の状態
+    PointExpiresAt = "2020-07-16T02:33:06.000000Z",  // ポイント有効期限(絶対日時指定)
+    PointExpiresInDays = 7622,  // ポイント有効期限(相対日数指定)
     IsExclusive = false,  // キャンペーンの重複設定
     Subject = "all",  // ポイント付与の対象金額の種別
-    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},  // 取引金額ベースのポイント付与ルール
-    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},  // 商品情報ベースのポイント付与ルール
-    BlacklistedProductRules = new object[]{new Dictionary<string, object>(){{"product_code","4912345678904"}, {"classification_code","c123"}}},  // 商品情報ベースのキャンペーンで除外対象にする商品リスト
-    ApplicableDaysOfWeek = new int[]{3, 1},  // キャンペーンを適用する曜日 (複数指定)
+    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},  // 取引金額ベースのポイント付与ルール
+    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},  // 商品情報ベースのポイント付与ルール
+    BlacklistedProductRules = new object[]{new Dictionary<string, object>(){{"product_code","4912345678904"}, {"classification_code","c123"}}, new Dictionary<string, object>(){{"product_code","4912345678904"}, {"classification_code","c123"}}},  // 商品情報ベースのキャンペーンで除外対象にする商品リスト
+    ApplicableDaysOfWeek = new int[]{5, 0},  // キャンペーンを適用する曜日 (複数指定)
     ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},  // キャンペーンを適用する時間帯 (複数指定)
     ApplicableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // キャンペーン適用対象となる店舗IDのリスト
-    BlacklistedShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // キャンペーン適用対象外となる店舗IDのリスト(ブラックリスト方式)
-    MinimumNumberOfProducts = 9380,  // キャンペーンを適用する1会計内の商品個数の下限
-    MinimumNumberOfAmount = 5151,  // キャンペーンを適用する1会計内の商品総額の下限
-    MinimumNumberForCombinationPurchase = 4416,  // 複数種類の商品を同時購入するときの商品種別数の下限
-    ExistInEachProductGroups = false,  // 複数の商品グループにつき1種類以上の商品購入によって発火するキャンペーンの指定フラグ
-    MaxPointAmount = 4701,  // キャンペーンによって付与されるポイントの上限
-    MaxTotalPointAmount = 128,  // キャンペーンによって付与されるの1人当たりの累計ポイントの上限
+    BlacklistedShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // キャンペーン適用対象外となる店舗IDのリスト(ブラックリスト方式)
+    MinimumNumberOfProducts = 4727,  // キャンペーンを適用する1会計内の商品個数の下限
+    MinimumNumberOfAmount = 9661,  // キャンペーンを適用する1会計内の商品総額の下限
+    MinimumNumberForCombinationPurchase = 2805,  // 複数種類の商品を同時購入するときの商品種別数の下限
+    ExistInEachProductGroups = true,  // 複数の商品グループにつき1種類以上の商品購入によって発火するキャンペーンの指定フラグ
+    MaxPointAmount = 3993,  // キャンペーンによって付与されるポイントの上限
+    MaxTotalPointAmount = 5275,  // キャンペーンによって付与されるの1人当たりの累計ポイントの上限
     DestPrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント付与先となるマネーID
     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},  // ウォレットに紐付くメタデータが特定の値を持つときにのみ発火するキャンペーンを登録します。
     ApplicableTransactionMetadata = new Dictionary<string, object>(){{"key","rank"}, {"value","bronze"}},  // 取引時に指定するメタデータが特定の値を持つときにのみ発火するキャンペーンを登録します。
-    BudgetCapsAmount = 2029551080,  // キャンペーン予算上限
+    BudgetCapsAmount = 1317625559,  // キャンペーン予算上限
 };
 Response.Campaign response = await request.Send(client);
 ```
@@ -946,33 +946,33 @@ Response.Campaign response = await request.Send(client);
 Request.UpdateCampaign request = new Request.UpdateCampaign(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // キャンペーンID
 ) {
-    Name = "QjODYIDOJbPEulQIvNSkQALktsxpQNr6y6a28m0nRuldHpSuEUpdPie9qQ2GFfC0at9jn8DwInc5YWbNc2E2NkkIcBn5byBGxSlhAbqrppUqGdxMolEMce2oIWkzh6xh3kO5wXHuEli1N",  // キャンペーン名
-    StartsAt = "2023-11-21T12:20:34.000000Z",  // キャンペーン開始日時
-    EndsAt = "2021-08-31T13:44:37.000000Z",  // キャンペーン終了日時
-    Priority = 2272,  // キャンペーンの適用優先度
-    Event = "topup",  // イベント種別
-    Description = "VyTrbdyJqmh3WRf",  // キャンペーンの説明文
-    Status = "disabled",  // キャンペーン作成時の状態
-    PointExpiresAt = "2025-08-20T09:56:36.000000Z",  // ポイント有効期限(絶対日時指定)
-    PointExpiresInDays = 1039,  // ポイント有効期限(相対日数指定)
-    IsExclusive = false,  // キャンペーンの重複設定
+    Name = "8aTPDqMKbxS0Vs3OlIrdnx7rU9Fte9Z959oBy13mtel3d8TfJ3Ol39ScasZnA58jo0hnztlMdM7BVfn4iFYyJJXfrDUn2Z5dTBMhYMOaLFSQqsldJHk",  // キャンペーン名
+    StartsAt = "2021-08-22T05:48:01.000000Z",  // キャンペーン開始日時
+    EndsAt = "2021-07-21T07:10:52.000000Z",  // キャンペーン終了日時
+    Priority = 643,  // キャンペーンの適用優先度
+    Event = "external-transaction",  // イベント種別
+    Description = "l4cpZ7fJl29A3O6y0fQnXOgwkIth5yMWiTVYzb9YasuIp7v4EzACicWq4Ul0bBBFnJwjrPufrwL5Z4qM5cyeftMbZhJuNsCdqVbAgLZQKQXblhvdQVC38rMOaKHSf5ht",  // キャンペーンの説明文
+    Status = "enabled",  // キャンペーン作成時の状態
+    PointExpiresAt = "2021-10-19T23:36:16.000000Z",  // ポイント有効期限(絶対日時指定)
+    PointExpiresInDays = 7162,  // ポイント有効期限(相対日数指定)
+    IsExclusive = true,  // キャンペーンの重複設定
     Subject = "all",  // ポイント付与の対象金額の種別
-    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},  // 取引金額ベースのポイント付与ルール
-    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},  // 商品情報ベースのポイント付与ルール
+    AmountBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"subject_more_than_or_equal",1000}, {"subject_less_than",5000}}},  // 取引金額ベースのポイント付与ルール
+    ProductBasedPointRules = new object[]{new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}, new Dictionary<string, object>(){{"point_amount",5}, {"point_amount_unit","percent"}, {"product_code","4912345678904"}, {"is_multiply_by_count",true}, {"required_count",2}}},  // 商品情報ベースのポイント付与ルール
     BlacklistedProductRules = new object[]{new Dictionary<string, object>(){{"product_code","4912345678904"}, {"classification_code","c123"}}},  // 商品情報ベースのキャンペーンで除外対象にする商品リスト
-    ApplicableDaysOfWeek = new int[]{2, 4},  // キャンペーンを適用する曜日 (複数指定)
-    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}, new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},  // キャンペーンを適用する時間帯 (複数指定)
-    ApplicableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // キャンペーン適用対象となる店舗IDのリスト
+    ApplicableDaysOfWeek = new int[]{0, 0},  // キャンペーンを適用する曜日 (複数指定)
+    ApplicableTimeRanges = new object[]{new Dictionary<string, object>(){{"from","12:00"}, {"to","23:59"}}},  // キャンペーンを適用する時間帯 (複数指定)
+    ApplicableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // キャンペーン適用対象となる店舗IDのリスト
     BlacklistedShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // キャンペーン適用対象外となる店舗IDのリスト(ブラックリスト方式)
-    MinimumNumberOfProducts = 7254,  // キャンペーンを適用する1会計内の商品個数の下限
-    MinimumNumberOfAmount = 6122,  // キャンペーンを適用する1会計内の商品総額の下限
-    MinimumNumberForCombinationPurchase = 4515,  // 複数種類の商品を同時購入するときの商品種別数の下限
+    MinimumNumberOfProducts = 9315,  // キャンペーンを適用する1会計内の商品個数の下限
+    MinimumNumberOfAmount = 5807,  // キャンペーンを適用する1会計内の商品総額の下限
+    MinimumNumberForCombinationPurchase = 3325,  // 複数種類の商品を同時購入するときの商品種別数の下限
     ExistInEachProductGroups = false,  // 複数の商品グループにつき1種類以上の商品購入によって発火するキャンペーンの指定フラグ
-    MaxPointAmount = 603,  // キャンペーンによって付与されるポイントの上限
-    MaxTotalPointAmount = 3042,  // キャンペーンによって付与されるの1人当たりの累計ポイントの上限
+    MaxPointAmount = 3112,  // キャンペーンによって付与されるポイントの上限
+    MaxTotalPointAmount = 8928,  // キャンペーンによって付与されるの1人当たりの累計ポイントの上限
     ApplicableAccountMetadata = new Dictionary<string, object>(){{"key","sex"}, {"value","male"}},  // ウォレットに紐付くメタデータが特定の値を持つときにのみ発火するキャンペーンを登録します。
     ApplicableTransactionMetadata = new Dictionary<string, object>(){{"key","rank"}, {"value","bronze"}},  // 取引時に指定するメタデータが特定の値を持つときにのみ発火するキャンペーンを登録します。
-    BudgetCapsAmount = 2065217277,  // キャンペーン予算上限
+    BudgetCapsAmount = 76523843,  // キャンペーン予算上限
 };
 Response.Campaign response = await request.Send(client);
 ```

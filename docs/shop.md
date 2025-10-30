@@ -8,12 +8,12 @@ Request.ListShops request = new Request.ListShops() {
     OrganizationCode = "pocketchange",  // 組織コード
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
     Name = "oxスーパー三田店",  // 店舗名
-    PostalCode = "8736096",  // 店舗の郵便番号
+    PostalCode = "5621744",  // 店舗の郵便番号
     Address = "東京都港区芝...",  // 店舗の住所
-    Tel = "01-391609",  // 店舗の電話番号
-    Email = "POKUqkrXtA@eLmE.com",  // 店舗のメールアドレス
-    ExternalId = "qX5bwDROtzb2hizqeaC",  // 店舗の外部ID
-    WithDisabled = false,  // 無効な店舗を含める
+    Tel = "06-5043-231",  // 店舗の電話番号
+    Email = "admHoO937w@RncW.com",  // 店舗のメールアドレス
+    ExternalId = "EMvwuXtyGneCN",  // 店舗の外部ID
+    WithDisabled = true,  // 無効な店舗を含める
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
 };
@@ -193,11 +193,11 @@ Response.PaginatedShops response = await request.Send(client);
 Request.CreateShop request = new Request.CreateShop(
     "oxスーパー三田店" // 店舗名
 ) {
-    ShopPostalCode = "9117416",  // 店舗の郵便番号
+    ShopPostalCode = "829-2391",  // 店舗の郵便番号
     ShopAddress = "東京都港区芝...",  // 店舗の住所
-    ShopTel = "044-35957764",  // 店舗の電話番号
-    ShopEmail = "NOCeiOWbpo@uk4V.com",  // 店舗のメールアドレス
-    ShopExternalId = "aYSYsKX6oU3L46cfTNsJ74",  // 店舗の外部ID
+    ShopTel = "0547-3812953",  // 店舗の電話番号
+    ShopEmail = "GJ2iqEYWh5@QfKE.com",  // 店舗のメールアドレス
+    ShopExternalId = "vZa51B6RuNHWw3k",  // 店舗の外部ID
     OrganizationCode = "ox-supermarket",  // 組織コード
 };
 Response.User response = await request.Send(client);
@@ -314,14 +314,14 @@ Response.User response = await request.Send(client);
 Request.CreateShopV2 request = new Request.CreateShopV2(
     "oxスーパー三田店" // 店舗名
 ) {
-    PostalCode = "6489275",  // 店舗の郵便番号
+    PostalCode = "5969439",  // 店舗の郵便番号
     Address = "東京都港区芝...",  // 店舗の住所
-    Tel = "0592-9155-275",  // 店舗の電話番号
-    Email = "r1OnryKkdp@mMzm.com",  // 店舗のメールアドレス
-    ExternalId = "TgipjScgSj",  // 店舗の外部ID
+    Tel = "0787-57-0570",  // 店舗の電話番号
+    Email = "EoXRZP9Tuo@6ihk.com",  // 店舗のメールアドレス
+    ExternalId = "tNpmjVgJl2arb",  // 店舗の外部ID
     OrganizationCode = "ox-supermarket",  // 組織コード
-    PrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗で有効にするマネーIDの配列
-    CanTopupPrivateMoneyIds = new string[]{},  // 店舗でチャージ可能にするマネーIDの配列
+    PrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗で有効にするマネーIDの配列
+    CanTopupPrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗でチャージ可能にするマネーIDの配列
 };
 Response.ShopWithAccounts response = await request.Send(client);
 ```
@@ -519,14 +519,14 @@ Request.UpdateShop request = new Request.UpdateShop(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 店舗ユーザーID
 ) {
     Name = "oxスーパー三田店",  // 店舗名
-    PostalCode = "566-9409",  // 店舗の郵便番号
+    PostalCode = "8839590",  // 店舗の郵便番号
     Address = "東京都港区芝...",  // 店舗の住所
-    Tel = "0239557-9242",  // 店舗の電話番号
-    Email = "vMOLUpWvpk@faBw.com",  // 店舗のメールアドレス
-    ExternalId = "HA",  // 店舗の外部ID
+    Tel = "07-6276-194",  // 店舗の電話番号
+    Email = "zlm9ILQGKV@JoUC.com",  // 店舗のメールアドレス
+    ExternalId = "Y35cdkgvsbAYCbaEHjTH",  // 店舗の外部ID
     PrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗で有効にするマネーIDの配列
-    CanTopupPrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗でチャージ可能にするマネーIDの配列
-    Status = "active",  // 店舗の状態
+    CanTopupPrivateMoneyIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 店舗でチャージ可能にするマネーIDの配列
+    Status = "disabled",  // 店舗の状態
 };
 Response.ShopWithAccounts response = await request.Send(client);
 ```
