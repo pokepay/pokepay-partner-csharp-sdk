@@ -43,6 +43,7 @@
 * `Account (AccountWithUser)`: 支払いQRコード発行ウォレット
 * `IsDisabled (bool)`: 無効化されているかどうか
 * `Token (string)`: 支払いQRコードを解析したときに出てくるURL
+* `CreatedAt (string)`: 支払いQRコードの作成日時
 
 `account`は [AccountWithUser](#account-with-user) オブジェクトを返します。
 

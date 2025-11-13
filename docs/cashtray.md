@@ -19,7 +19,7 @@ Request.CreateTransactionWithCashtray request = new Request.CreateTransactionWit
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // Cashtray用QRコードのID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // エンドユーザーのID
 ) {
-    Strategy = "money-only",  // 支払い時の残高消費方式
+    Strategy = "point-preferred",  // 支払い時の残高消費方式
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
 Response.TransactionDetail response = await request.Send(client);
@@ -172,10 +172,10 @@ Cashtrayを作成します。
 Request.CreateCashtray request = new Request.CreateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ユーザーID
-    5357.0 // 金額
+    1406.0 // 金額
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 5070,  // 失効時間(秒)
+    ExpiresIn = 7526,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client);
 ```
@@ -404,9 +404,9 @@ Cashtrayの内容を更新します。bodyパラメーターは全て省略可�
 Request.UpdateCashtray request = new Request.UpdateCashtray(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // CashtrayのID
 ) {
-    Amount = 2019.0,  // 金額
+    Amount = 551.0,  // 金額
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
-    ExpiresIn = 3470,  // 失効時間(秒)
+    ExpiresIn = 3458,  // 失効時間(秒)
 };
 Response.Cashtray response = await request.Send(client);
 ```

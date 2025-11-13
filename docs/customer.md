@@ -8,7 +8,7 @@
 Request.DeleteAccount request = new Request.DeleteAccount(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    Cashback = true,  // 返金有無
+    Cashback = false,  // 返金有無
 };
 Response.AccountDeleted response = await request.Send(client);
 ```
@@ -186,11 +186,11 @@ Response.AccountDetail response = await request.Send(client);
 Request.ListAccountBalances request = new Request.ListAccountBalances(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    Page = 2003,  // ページ番号
-    PerPage = 218,  // 1ページ分の取引数
-    ExpiresAtFrom = "2020-04-23T19:55:16.000000Z",  // 有効期限の期間によるフィルター(開始時点)
-    ExpiresAtTo = "2021-11-13T10:17:12.000000Z",  // 有効期限の期間によるフィルター(終了時点)
-    Direction = "asc",  // 有効期限によるソート順序
+    Page = 5067,  // ページ番号
+    PerPage = 2883,  // 1ページ分の取引数
+    ExpiresAtFrom = "2021-03-02T06:27:25.000000Z",  // 有効期限の期間によるフィルター(開始時点)
+    ExpiresAtTo = "2025-08-08T00:33:16.000000Z",  // 有効期限の期間によるフィルター(終了時点)
+    Direction = "desc",  // 有効期限によるソート順序
 };
 Response.PaginatedAccountBalance response = await request.Send(client);
 ```
@@ -294,10 +294,10 @@ Response.PaginatedAccountBalance response = await request.Send(client);
 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    Page = 2070,  // ページ番号
-    PerPage = 4985,  // 1ページ分の取引数
-    ExpiresAtFrom = "2022-12-16T00:54:18.000000Z",  // 有効期限の期間によるフィルター(開始時点)
-    ExpiresAtTo = "2020-02-16T15:07:23.000000Z",  // 有効期限の期間によるフィルター(終了時点)
+    Page = 4256,  // ページ番号
+    PerPage = 8823,  // 1ページ分の取引数
+    ExpiresAtFrom = "2022-10-06T18:46:56.000000Z",  // 有効期限の期間によるフィルター(開始時点)
+    ExpiresAtTo = "2020-04-05T05:34:40.000000Z",  // 有効期限の期間によるフィルター(終了時点)
     Direction = "desc",  // 有効期限によるソート順序
 };
 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -403,8 +403,8 @@ Request.UpdateCustomerAccount request = new Request.UpdateCustomerAccount(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
     Status = "pre-closed",  // ウォレット状態
-    AccountName = "DOO7AdxANDE2ea2N2bsCqxQkk2AG5TTqX05IlCZ5tUdSwXVRIVCn",  // アカウント名
-    ExternalId = "Zj6NtOwX2FI8Wr1369uaTF42abkgSmtEHAWzKVmwmqN4a",  // 外部ID
+    AccountName = "aBwAHAugbJ1KgmPImdwaTBcNwqaqeRCH16a6zzUqrHdosHdbmLywqukvEUDGTtuu5mLHhGQ9yekqoyNLKN2h7BNq3rRMob2yqEgXsKX0DNjA5LloLW2ZGwTADg0EGo2tY0BvA",  // アカウント名
+    ExternalId = "rU",  // 外部ID
     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",  // ウォレットに付加するメタデータ
 };
 Response.AccountWithUser response = await request.Send(client);
@@ -513,15 +513,15 @@ Response.AccountWithUser response = await request.Send(client);
 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    Page = 5625,  // ページ番号
-    PerPage = 1538,  // 1ページ分のウォレット数
-    CreatedAtFrom = "2020-03-29T07:08:16.000000Z",  // ウォレット作成日によるフィルター(開始時点)
-    CreatedAtTo = "2022-01-22T06:46:56.000000Z",  // ウォレット作成日によるフィルター(終了時点)
+    Page = 7072,  // ページ番号
+    PerPage = 6189,  // 1ページ分のウォレット数
+    CreatedAtFrom = "2023-05-24T09:13:31.000000Z",  // ウォレット作成日によるフィルター(開始時点)
+    CreatedAtTo = "2024-07-31T03:38:19.000000Z",  // ウォレット作成日によるフィルター(終了時点)
     IsSuspended = false,  // ウォレットが凍結状態かどうかでフィルターする
-    Status = "suspended",  // ウォレット状態
-    ExternalId = "1Fha0o1JxRbdO7sJMkOiIt9zNKCX0VzisX",  // 外部ID
-    Tel = "09-5914-8380",  // エンドユーザーの電話番号
-    Email = "IsW57odiOH@hS8D.com",  // エンドユーザーのメールアドレス
+    Status = "active",  // ウォレット状態
+    ExternalId = "3Hcr3rYtMZs1YhEQlphw1DkmThPoIdPA7X1r",  // 外部ID
+    Tel = "084-39-757",  // エンドユーザーの電話番号
+    Email = "82VAIRkHcN@MgqN.com",  // エンドユーザーのメールアドレス
 };
 Response.PaginatedAccountWithUsers response = await request.Send(client);
 ```
@@ -684,7 +684,7 @@ Request.CreateCustomerAccount request = new Request.CreateCustomerAccount(
 ) {
     UserName = "ポケペイ太郎",  // ユーザー名
     AccountName = "ポケペイ太郎のアカウント",  // アカウント名
-    ExternalId = "fAQRFK6oTTeP8tTTuInowX2TMHi",  // 外部ID
+    ExternalId = "QwuiGtQ",  // 外部ID
 };
 Response.AccountWithUser response = await request.Send(client);
 ```
@@ -773,11 +773,11 @@ PAPIクライアントシステムから利用するPokepayユーザーのIDで�
 Request.GetShopAccounts request = new Request.GetShopAccounts(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    Page = 51,  // ページ番号
-    PerPage = 5879,  // 1ページ分のウォレット数
-    CreatedAtFrom = "2021-12-10T09:49:28.000000Z",  // ウォレット作成日によるフィルター(開始時点)
-    CreatedAtTo = "2022-10-07T07:15:26.000000Z",  // ウォレット作成日によるフィルター(終了時点)
-    IsSuspended = false,  // ウォレットが凍結状態かどうかでフィルターする
+    Page = 6752,  // ページ番号
+    PerPage = 8280,  // 1ページ分のウォレット数
+    CreatedAtFrom = "2021-04-22T20:28:15.000000Z",  // ウォレット作成日によるフィルター(開始時点)
+    CreatedAtTo = "2023-02-05T04:17:52.000000Z",  // ウォレット作成日によるフィルター(終了時点)
+    IsSuspended = true,  // ウォレットが凍結状態かどうかでフィルターする
 };
 Response.PaginatedAccountWithUsers response = await request.Send(client);
 ```
@@ -885,10 +885,10 @@ Request.ListCustomerTransactions request = new Request.ListCustomerTransactions(
 ) {
     SenderCustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 送金エンドユーザーID
     ReceiverCustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 受取エンドユーザーID
-    Type = "transfer",  // 取引種別
-    IsModified = true,  // キャンセル済みかどうか
-    From = "2024-01-11T22:13:29.000000Z",  // 開始日時
-    To = "2024-07-11T23:34:13.000000Z",  // 終了日時
+    Type = "cashback",  // 取引種別
+    IsModified = false,  // キャンセル済みかどうか
+    From = "2023-02-24T02:39:56.000000Z",  // 開始日時
+    To = "2020-03-12T19:10:07.000000Z",  // 終了日時
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
 };

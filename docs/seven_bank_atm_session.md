@@ -8,7 +8,7 @@
 
 ```csharp
 Request.GetSevenBankAtmSession request = new Request.GetSevenBankAtmSession(
-    "RuNHWw3" // QRコードの情報
+    "K5" // QRコードの情報
 );
 Response.SevenBankATMSession response = await request.Send(client);
 ```

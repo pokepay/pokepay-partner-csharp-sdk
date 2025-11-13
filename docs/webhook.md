@@ -67,7 +67,7 @@ Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(cl
 ```csharp
 Request.CreateWebhook request = new Request.CreateWebhook(
     "bulk_shops", // タスク名
-    "gb" // URL
+    "m7k" // URL
 );
 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 ```
@@ -163,8 +163,8 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 Request.UpdateWebhook request = new Request.UpdateWebhook(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // Webhook ID
 ) {
-    Url = "qwtEhH",  // URL
-    IsActive = true,  // 有効/無効
+    Url = "1iTzlm9",  // URL
+    IsActive = false,  // 有効/無効
     Task = "process_user_stats_operation",  // タスク名
 };
 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);

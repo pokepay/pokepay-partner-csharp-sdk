@@ -7,18 +7,18 @@
 
 ```csharp
 Request.ListBills request = new Request.ListBills() {
-    Page = 1986,  // ページ番号
-    PerPage = 5507,  // 1ページの表示数
-    BillId = "0",  // 支払いQRコードのID
+    Page = 278,  // ページ番号
+    PerPage = 2846,  // 1ページの表示数
+    BillId = "QztiuU",  // 支払いQRコードのID
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    OrganizationCode = "0G-9-k0tge",  // 組織コード
+    OrganizationCode = "9-6-8--I5lfg-W-",  // 組織コード
     Description = "test bill",  // 取引説明文
-    CreatedFrom = "2024-03-07T06:54:23.000000Z",  // 作成日時(起点)
-    CreatedTo = "2022-09-23T02:34:23.000000Z",  // 作成日時(終点)
+    CreatedFrom = "2025-06-23T00:54:17.000000Z",  // 作成日時(起点)
+    CreatedTo = "2021-03-03T15:53:24.000000Z",  // 作成日時(終点)
     ShopName = "bill test shop1",  // 店舗名
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
-    LowerLimitAmount = 331,  // 金額の範囲によるフィルタ(下限)
-    UpperLimitAmount = 2939,  // 金額の範囲によるフィルタ(上限)
+    LowerLimitAmount = 425,  // 金額の範囲によるフィルタ(下限)
+    UpperLimitAmount = 426,  // 金額の範囲によるフィルタ(上限)
     IsDisabled = true,  // 支払いQRコードが無効化されているかどうか
 };
 Response.PaginatedBills response = await request.Send(client);
@@ -213,7 +213,7 @@ Request.CreateBill request = new Request.CreateBill(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 支払いマネーのマネーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 支払い先(受け取り人)の店舗ID
 ) {
-    Amount = 1051.0,  // 支払い額
+    Amount = 5875.0,  // 支払い額
     Description = "test bill",  // 説明文(アプリ上で取引の説明文として表示される)
 };
 Response.Bill response = await request.Send(client);
@@ -338,9 +338,9 @@ Response.Bill response = await request.Send(client);
 Request.UpdateBill request = new Request.UpdateBill(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 支払いQRコードのID
 ) {
-    Amount = 7291.0,  // 支払い額
+    Amount = 9062.0,  // 支払い額
     Description = "test bill",  // 説明文
-    IsDisabled = true,  // 無効化されているかどうか
+    IsDisabled = false,  // 無効化されているかどうか
 };
 Response.Bill response = await request.Send(client);
 ```
