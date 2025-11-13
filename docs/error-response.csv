@@ -659,7 +659,8 @@ GET,/private-moneys/:uuid/clearings,403,unpermitted_admin_user,"この管理ユ�
 GET,/private-moneys/:uuid/organization-summaries,400,invalid_parameters,"項目が無効です",Invalid parameters
 ,,403,,,
 ,,404,,,
-POST,/private-moneys,400,invalid_parameters,"項目が無効です",Invalid parameters
+POST,/private-moneys,400,credit_card_monthly_cap_less_than_daily_cap,"クレジットカードの1か月間のチャージ額上限は1日あたりチャージ上限額以上である必要があります",Credit card's monthly topup cap is less than its daily cap.
+,,400,invalid_parameters,"項目が無効です",Invalid parameters
 ,,403,,,
 ,,409,private_money_conflict,"このマネーは既に登録されています。",The money is already used
 ,,422,organization_not_found,,Organization not found

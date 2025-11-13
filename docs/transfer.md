@@ -8,8 +8,8 @@
 Request.GetAccountTransferSummary request = new Request.GetAccountTransferSummary(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    From = "2024-02-05T08:55:22.000000Z",  // 集計期間の開始時刻
-    To = "2025-02-15T17:07:45.000000Z",  // 集計期間の終了時刻
+    From = "2020-02-06T03:22:39.000000Z",  // 集計期間の開始時刻
+    To = "2021-04-24T01:39:18.000000Z",  // 集計期間の終了時刻
     TransferTypes = new string[]{"topup", "payment"},  // 取引明細種別 (複数指定可)
 };
 Response.AccountTransferSummary response = await request.Send(client);
@@ -124,19 +124,19 @@ Response.AccountTransferSummary response = await request.Send(client);
 
 ```csharp
 Request.ListTransfers request = new Request.ListTransfers() {
-    From = "2023-12-09T18:23:06.000000Z",
-    To = "2024-08-19T04:12:34.000000Z",
-    Page = 9843,
-    PerPage = 9557,
+    From = "2021-08-15T22:48:20.000000Z",
+    To = "2022-08-23T09:26:10.000000Z",
+    Page = 4136,
+    PerPage = 2402,
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    ShopName = "tUJQmh0gNd3qkWY4lVW5zCUF3zWzIdrHm6OsiyHBxsWBtx4G7cLViMByCBNzcDCX5bbsPzVUGeD2BWp2XUNEsAtEjlivj0NhalsavWYZduuXynvh05rJdAnnKPkjJzRbGyuQYyb8948tP6VkRaNaNdjmk2wkclkjGIdrGdF8qpLKYfd3JbJX5QcdKyJ1DmsToKu4w1tRUaP7awM87Mt7bWysOyzqkBrGaMjb",
+    ShopName = "bkgSmtEHAWzKVmwmqN4ax1Q1Fha0o1JxRbdO7sJMkOiIt9zNKCX0VzisXLLiEpULitiIsW57odiOHhS8DsZfAQRFK6oTTeP8tTTuInowX2TMHi2vDKbmu86aUF4jypKaAY4yQaiw0",
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    CustomerName = "sugqjEeek3DeIDBfKsRBbYLkU2TfJXzuBqGFPReFsmxaxT8Xwuc649dznjsqwxML0aHpiMuFL917lUTrE8EACTMWkW53gnqE0TT1OD00WYy85d5RKAlbrPQ0st0t7yJcv8GqBqgGEHafl1jNP9k7uydClg9A7an27PrVxBqiE9YWo8xjmz",
+    CustomerName = "JpUpNfjrUKaU",
     TransactionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    IsModified = true,
-    TransactionTypes = new string[]{"payment", "topup", "transfer", "expire"},
-    TransferTypes = new string[]{"expire", "campaign", "cashback", "exchange", "payment", "topup", "transfer", "coupon"},  // 取引明細の種類でフィルターします。
+    IsModified = false,
+    TransactionTypes = new string[]{"expire"},
+    TransferTypes = new string[]{"expire"},  // 取引明細の種類でフィルターします。
     Description = "店頭QRコードによる支払い",  // 取引詳細説明文
 };
 Response.PaginatedTransfers response = await request.Send(client);
@@ -370,20 +370,20 @@ Response.PaginatedTransfers response = await request.Send(client);
 ```csharp
 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
-    ShopName = "nAXyFjLag3gPPvlq0FFntKGY10p27NPGQTd",  // 店舗名
+    ShopName = "cfOgZgC",  // 店舗名
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // エンドユーザーID
-    CustomerName = "XKNGuLNgDO4Ma1ptA22IkyjkgPuZUMAq2NjJocNYKTrm2m1ssPqyT3XyCFCrR8uZnH",  // エンドユーザー名
+    CustomerName = "vnz9vdHX3zI21M9POKUqkrXtAeLmERqX5bwDROtzb2hizqeaC",  // エンドユーザー名
     TransactionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 取引ID
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    IsModified = true,  // キャンセルフラグ
-    TransactionTypes = new string[]{"topup", "exchange", "cashback", "transfer", "expire", "payment"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
+    IsModified = false,  // キャンセルフラグ
+    TransactionTypes = new string[]{"payment", "transfer", "expire", "cashback", "exchange"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
     NextPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 次ページへ遷移する際に起点となるtransferのID
     PrevPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 前ページへ遷移する際に起点となるtransferのID
     PerPage = 50,  // 1ページ分の取引数
-    TransferTypes = new string[]{"payment", "coupon", "campaign", "expire", "transfer"},  // 取引明細種別 (複数指定可)
+    TransferTypes = new string[]{"cashback", "topup", "payment", "coupon", "exchange"},  // 取引明細種別 (複数指定可)
     Description = "店頭QRコードによる支払い",  // 取引詳細説明文
-    From = "2020-09-09T00:36:59.000000Z",  // 開始日時
-    To = "2020-04-20T10:09:59.000000Z",  // 終了日時
+    From = "2024-12-19T09:51:48.000000Z",  // 開始日時
+    To = "2024-01-15T06:04:47.000000Z",  // 終了日時
 };
 Response.PaginatedTransfersV2 response = await request.Send(client);
 ```

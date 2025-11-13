@@ -25,8 +25,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateWebhook request = new Request.CreateWebhook(
-                    "process_user_stats_operation",
-                    "e3TZFNm"
+                    "bulk_shops",
+                    "N"
                 );
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
