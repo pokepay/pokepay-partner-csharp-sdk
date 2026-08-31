@@ -1,4 +1,10 @@
 # Transfer
+送金取引明細を表すデータです。
+マネー(Private Money)のウォレット間の送金記録を取得します。
+取引(Transaction)は複数の送金明細(Transfer)で構成されています。
+送金明細には送金元・送金先のアカウント情報、マネー額、ポイント額などが含まれます。
+取引種別として、payment, topup, campaign-topup, transfer, exchange, refund-payment, refund-topup, cashback, expire等があります。
+
 
 <a name="get-account-transfer-summary"></a>
 ## GetAccountTransferSummary: 
@@ -8,8 +14,8 @@
 Request.GetAccountTransferSummary request = new Request.GetAccountTransferSummary(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ウォレットID
 ) {
-    From = "2024-02-05T08:55:22.000000Z",  // 集計期間の開始時刻
-    To = "2025-02-15T17:07:45.000000Z",  // 集計期間の終了時刻
+    From = "2021-11-05T09:00:53.000000Z",  // 集計期間の開始時刻
+    To = "2020-10-05T11:23:18.000000Z",  // 集計期間の終了時刻
     TransferTypes = new string[]{"topup", "payment"},  // 取引明細種別 (複数指定可)
 };
 Response.AccountTransferSummary response = await request.Send(client);
@@ -18,12 +24,13 @@ Response.AccountTransferSummary response = await request.Send(client);
 
 
 ### Parameters
-**`account_id`** 
-  
-
+#### `account_id`
 ウォレットIDです。
 
 ここで指定したウォレットIDの取引明細レベルでの集計を取得します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -32,20 +39,12 @@ Response.AccountTransferSummary response = await request.Send(client);
 }
 ```
 
-**`from`** 
-  
+</details>
 
+#### `from`
 
-```json
-{
-  "type": "string",
-  "format": "date-time"
-}
-```
-
-**`to`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -54,9 +53,23 @@ Response.AccountTransferSummary response = await request.Send(client);
 }
 ```
 
-**`transfer_types`** 
-  
+</details>
 
+#### `to`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
+</details>
+
+#### `transfer_types`
 取引明細の種別でフィルターします。
 以下の種別を指定できます。
 
@@ -85,6 +98,9 @@ Response.AccountTransferSummary response = await request.Send(client);
 - refund-exchange-outflow
   交換による他マネーへの流出取引に対するキャンセル取引
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "array",
@@ -108,6 +124,8 @@ Response.AccountTransferSummary response = await request.Send(client);
 }
 ```
 
+</details>
+
 
 
 成功したときは
@@ -124,19 +142,19 @@ Response.AccountTransferSummary response = await request.Send(client);
 
 ```csharp
 Request.ListTransfers request = new Request.ListTransfers() {
-    From = "2023-12-09T18:23:06.000000Z",
-    To = "2024-08-19T04:12:34.000000Z",
-    Page = 9843,
-    PerPage = 9557,
+    From = "2020-05-15T01:57:55.000000Z",
+    To = "2024-08-26T01:04:42.000000Z",
+    Page = 4463,
+    PerPage = 4754,
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    ShopName = "tUJQmh0gNd3qkWY4lVW5zCUF3zWzIdrHm6OsiyHBxsWBtx4G7cLViMByCBNzcDCX5bbsPzVUGeD2BWp2XUNEsAtEjlivj0NhalsavWYZduuXynvh05rJdAnnKPkjJzRbGyuQYyb8948tP6VkRaNaNdjmk2wkclkjGIdrGdF8qpLKYfd3JbJX5QcdKyJ1DmsToKu4w1tRUaP7awM87Mt7bWysOyzqkBrGaMjb",
+    ShopName = "xsvgPufRhkZSIPkBFVSotgyldVmaPxxkTqOmFrFIeeAGW6tZ8ccBHHSscpO2n832d6dquF6eiZ3Dd6WSyHdflPLxXMNqqALPwoGWvHelnhCvdyO5hkKi9O2P9jiZ6u3x2WBzZJZ5a5g6qUYzSlCDa2sGdGVrQ24o4nKCzYGzzQTWE3lYOg9rxxthyfXlSvfosPd1dV4",
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    CustomerName = "sugqjEeek3DeIDBfKsRBbYLkU2TfJXzuBqGFPReFsmxaxT8Xwuc649dznjsqwxML0aHpiMuFL917lUTrE8EACTMWkW53gnqE0TT1OD00WYy85d5RKAlbrPQ0st0t7yJcv8GqBqgGEHafl1jNP9k7uydClg9A7an27PrVxBqiE9YWo8xjmz",
+    CustomerName = "mUaevGo2T7nnwUuCJVK5LAGSeliWWE3p7BNebn72rKlC8xS0lGxuRh661U82b0yeYo5zfOAgdSLVNb11hZJnWEH9hNdPtUfATWqt0PIkhoWI2jo5XiCGDGRUSQL1ViXus5xn7MbZoA7GyvC5m86vU4CTunlo9FHcvhpXn1f9WUvYvDDo3G7amxcKXWGa0ExI5eaGTZJemJSksAElb4iAlQjM0mI6tueKzKdA8G45Yd1ntlQmTFdCRQoNs8we7",
     TransactionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    IsModified = true,
-    TransactionTypes = new string[]{"payment", "topup", "transfer", "expire"},
-    TransferTypes = new string[]{"expire", "campaign", "cashback", "exchange", "payment", "topup", "transfer", "coupon"},  // 取引明細の種類でフィルターします。
+    IsModified = false,
+    TransactionTypes = new string[]{"cashback", "expire", "transfer", "payment"},
+    TransferTypes = new string[]{"coupon", "campaign", "topup", "expire"},  // 取引明細の種類でフィルターします。
     Description = "店頭QRコードによる支払い",  // 取引詳細説明文
 };
 Response.PaginatedTransfers response = await request.Send(client);
@@ -145,20 +163,10 @@ Response.PaginatedTransfers response = await request.Send(client);
 
 
 ### Parameters
-**`from`** 
-  
+#### `from`
 
-
-```json
-{
-  "type": "string",
-  "format": "date-time"
-}
-```
-
-**`to`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -167,9 +175,26 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`page`** 
-  
+</details>
 
+#### `to`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
+</details>
+
+#### `page`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -178,9 +203,12 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -189,9 +217,12 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`shop_id`** 
-  
+</details>
 
+#### `shop_id`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -200,9 +231,12 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`shop_name`** 
-  
+</details>
 
+#### `shop_name`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -211,9 +245,12 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`customer_id`** 
-  
+</details>
 
+#### `customer_id`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -222,9 +259,12 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`customer_name`** 
-  
+</details>
 
+#### `customer_name`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -233,20 +273,12 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`transaction_id`** 
-  
+</details>
 
+#### `transaction_id`
 
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
-
-**`private_money_id`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -255,9 +287,26 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`is_modified`** 
-  
+</details>
 
+#### `private_money_id`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+#### `is_modified`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -265,9 +314,12 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`transaction_types`** 
-  
+</details>
 
+#### `transaction_types`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -286,9 +338,9 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`transfer_types`** 
-  
+</details>
 
+#### `transfer_types`
 取引明細の種類でフィルターします。
 
 以下の種類を指定できます。
@@ -314,6 +366,9 @@ Response.PaginatedTransfers response = await request.Send(client);
 7. expire
 退会時失効取引
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "array",
@@ -333,12 +388,15 @@ Response.PaginatedTransfers response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
 取引詳細を指定の取引詳細説明文でフィルターします。
 
 取引詳細説明文が完全一致する取引のみ抽出されます。取引詳細説明文は最大200文字で記録されています。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -346,6 +404,8 @@ Response.PaginatedTransfers response = await request.Send(client);
   "maxLength": 200
 }
 ```
+
+</details>
 
 
 
@@ -370,20 +430,20 @@ Response.PaginatedTransfers response = await request.Send(client);
 ```csharp
 Request.ListTransfersV2 request = new Request.ListTransfersV2() {
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
-    ShopName = "nAXyFjLag3gPPvlq0FFntKGY10p27NPGQTd",  // 店舗名
+    ShopName = "ROuetQ8zFdMo0VY4tUGROiwu8g5jegd2t",  // 店舗名
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // エンドユーザーID
-    CustomerName = "XKNGuLNgDO4Ma1ptA22IkyjkgPuZUMAq2NjJocNYKTrm2m1ssPqyT3XyCFCrR8uZnH",  // エンドユーザー名
+    CustomerName = "c5SvOZdXc2AVLuF8gaKQ0OEhkP9BLs49M6H6epGVtu0HPhsCKuI2bJUyIRN5hatVHvQNYn4X1Qj8JOhaftsXxsjd7rD3p3viKfIPkJsUNb1al7E8GagWKQ4TM4OBBdmAKiwkVMeGwc0telVu2tN3qF3OiiOujRzWy8Mcj6VHKbsKvxKRJtbZ6K76VuMMSh2Ha6k65",  // エンドユーザー名
     TransactionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 取引ID
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
-    IsModified = true,  // キャンセルフラグ
-    TransactionTypes = new string[]{"topup", "exchange", "cashback", "transfer", "expire", "payment"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
+    IsModified = false,  // キャンセルフラグ
+    TransactionTypes = new string[]{"cashback", "topup", "expire", "payment", "transfer"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
     NextPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 次ページへ遷移する際に起点となるtransferのID
     PrevPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 前ページへ遷移する際に起点となるtransferのID
     PerPage = 50,  // 1ページ分の取引数
-    TransferTypes = new string[]{"payment", "coupon", "campaign", "expire", "transfer"},  // 取引明細種別 (複数指定可)
+    TransferTypes = new string[]{"expire", "exchange", "cashback", "coupon", "transfer", "topup", "campaign", "payment"},  // 取引明細種別 (複数指定可)
     Description = "店頭QRコードによる支払い",  // 取引詳細説明文
-    From = "2020-09-09T00:36:59.000000Z",  // 開始日時
-    To = "2020-04-20T10:09:59.000000Z",  // 終了日時
+    From = "2026-06-29T09:49:14.000000Z",  // 開始日時
+    To = "2025-11-03T19:04:44.000000Z",  // 終了日時
 };
 Response.PaginatedTransfersV2 response = await request.Send(client);
 ```
@@ -391,13 +451,14 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 
 
 ### Parameters
-**`shop_id`** 
-  
-
+#### `shop_id`
 店舗IDです。
 
 フィルターとして使われ、指定された店舗での取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -405,13 +466,16 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 }
 ```
 
-**`shop_name`** 
-  
+</details>
 
+#### `shop_name`
 店舗名です。
 
 フィルターとして使われ、入力された名前に部分一致する店舗での取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -419,13 +483,16 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 }
 ```
 
-**`customer_id`** 
-  
+</details>
 
+#### `customer_id`
 エンドユーザーIDです。
 
 フィルターとして使われ、指定されたエンドユーザーの取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -433,12 +500,15 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 }
 ```
 
-**`customer_name`** 
-  
+</details>
 
+#### `customer_name`
 エンドユーザー名です。
 
 フィルターとして使われ、入力された名前に部分一致するエンドユーザーでの取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -447,13 +517,16 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 }
 ```
 
-**`transaction_id`** 
-  
+</details>
 
+#### `transaction_id`
 取引IDです。
 
 フィルターとして使われ、指定された取引IDに部分一致(前方一致)する取引のみが一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -461,13 +534,16 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 }
 ```
 
-**`private_money_id`** 
-  
+</details>
 
+#### `private_money_id`
 マネーIDです。
 
 指定したマネーでの取引が一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -475,13 +551,16 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 }
 ```
 
-**`is_modified`** 
-  
+</details>
 
+#### `is_modified`
 キャンセルフラグです。
 
 これにtrueを指定するとキャンセルされた取引のみ一覧に表示されます。
 デフォルト値はfalseで、キャンセルの有無にかかわらず一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -489,9 +568,9 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 }
 ```
 
-**`transaction_types`** 
-  
+</details>
 
+#### `transaction_types`
 取引の種類でフィルターします。
 
 以下の種類を指定できます。
@@ -518,6 +597,9 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 6. expire
    退会時失効取引
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "array",
@@ -535,14 +617,17 @@ Response.PaginatedTransfersV2 response = await request.Send(client);
 }
 ```
 
-**`next_page_cursor_id`** 
-  
+</details>
 
+#### `next_page_cursor_id`
 次ページへ遷移する際に起点となるtransferのID(前ページの末尾要素のID)です。
 本APIのレスポンスにもnext_page_cursor_idが含まれており、これがnull値の場合は最後のページであることを意味します。
 UUIDである場合は次のページが存在することを意味し、このnext_page_cursor_idをリクエストパラメータに含めることで次ページに遷移します。
 
 next_page_cursor_idのtransfer自体は次のページには含まれません。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -551,9 +636,9 @@ next_page_cursor_idのtransfer自体は次のページには含まれません�
 }
 ```
 
-**`prev_page_cursor_id`** 
-  
+</details>
 
+#### `prev_page_cursor_id`
 前ページへ遷移する際に起点となるtransferのID(次ページの先頭要素のID)です。
 
 本APIのレスポンスにもprev_page_cursor_idが含まれており、これがnull値の場合は先頭のページであることを意味します。
@@ -561,6 +646,9 @@ UUIDである場合は前のページが存在することを意味し、このp
 
 prev_page_cursor_idのtransfer自体は前のページには含まれません。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -568,12 +656,15 @@ prev_page_cursor_idのtransfer自体は前のページには含まれません�
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
 1ページ分の取引数です。
 
 デフォルト値は50です。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -583,9 +674,9 @@ prev_page_cursor_idのtransfer自体は前のページには含まれません�
 }
 ```
 
-**`transfer_types`** 
-  
+</details>
 
+#### `transfer_types`
 取引明細の種類でフィルターします。
 
 以下の種類を指定できます。
@@ -611,6 +702,9 @@ prev_page_cursor_idのtransfer自体は前のページには含まれません�
 7. expire
 退会時失効取引
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "array",
@@ -630,12 +724,15 @@ prev_page_cursor_idのtransfer自体は前のページには含まれません�
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
 取引詳細を指定の取引詳細説明文でフィルターします。
 
 取引詳細説明文が完全一致する取引のみ抽出されます。取引詳細説明文は最大200文字で記録されています。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -644,13 +741,16 @@ prev_page_cursor_idのtransfer自体は前のページには含まれません�
 }
 ```
 
-**`from`** 
-  
+</details>
 
+#### `from`
 抽出期間の開始日時です。
 
 フィルターとして使われ、開始日時以降に発生した取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -658,19 +758,24 @@ prev_page_cursor_idのtransfer自体は前のページには含まれません�
 }
 ```
 
-**`to`** 
-  
+</details>
 
+#### `to`
 抽出期間の終了日時です。
 
 フィルターとして使われ、終了日時以前に発生した取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
   "format": "date-time"
 }
 ```
+
+</details>
 
 
 

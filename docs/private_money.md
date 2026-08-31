@@ -1,4 +1,10 @@
 # Private Money
+Pokepay上で発行する電子マネーを表すデータです。
+電子マネーは１つの発行体(Organization)によって発行されます。
+電子マネーはCustomerやMerchantが所有するウォレット間を送金されます。
+電子マネー残高はユーザが有償で購入するマネーと無償で付与されるポイントの2種類のバリューで構成され、
+それぞれ有効期限決定ロジックは電子マネーの設定に依存します。
+
 
 <a name="get-private-moneys"></a>
 ## GetPrivateMoneys: マネー一覧を取得する
@@ -18,10 +24,11 @@ Response.PaginatedPrivateMoneys response = await request.Send(client);
 
 
 ### Parameters
-**`organization_code`** 
-  
-
+#### `organization_code`
 パートナーキーの管理者が発行体組織に属している場合、発行マネーのうち、この組織コードで指定した決済加盟店組織が加盟しているマネーの一覧を返します。決済加盟店組織の管理者は自組織以外を指定することはできません。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -31,9 +38,26 @@ Response.PaginatedPrivateMoneys response = await request.Send(client);
 }
 ```
 
-**`page`** 
-  
+</details>
 
+#### `page`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "integer",
+  "minimum": 1
+}
+```
+
+</details>
+
+#### `per_page`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -42,16 +66,7 @@ Response.PaginatedPrivateMoneys response = await request.Send(client);
 }
 ```
 
-**`per_page`** 
-  
-
-
-```json
-{
-  "type": "integer",
-  "minimum": 1
-}
-```
+</details>
 
 
 
@@ -77,8 +92,8 @@ Response.PaginatedPrivateMoneys response = await request.Send(client);
 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    From = "2024-06-29T23:26:02.000000Z",  // 開始日時(toと同時に指定する必要有)
-    To = "2020-09-03T09:26:31.000000Z",  // 終了日時(fromと同時に指定する必要有)
+    From = "2024-08-04T13:52:59.000000Z",  // 開始日時(toと同時に指定する必要有)
+    To = "2021-06-13T17:13:32.000000Z",  // 終了日時(fromと同時に指定する必要有)
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
 };
@@ -89,9 +104,10 @@ Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Sen
 
 
 ### Parameters
-**`private_money_id`** 
-  
+#### `private_money_id`
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -100,20 +116,12 @@ Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Sen
 }
 ```
 
-**`from`** 
-  
+</details>
 
+#### `from`
 
-```json
-{
-  "type": "string",
-  "format": "date-time"
-}
-```
-
-**`to`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -122,9 +130,26 @@ Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Sen
 }
 ```
 
-**`page`** 
-  
+</details>
 
+#### `to`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
+</details>
+
+#### `page`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -133,9 +158,12 @@ Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Sen
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -143,6 +171,8 @@ Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Sen
   "minimum": 1
 }
 ```
+
+</details>
 
 
 
@@ -162,8 +192,8 @@ Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Sen
 Request.GetPrivateMoneySummary request = new Request.GetPrivateMoneySummary(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    From = "2020-09-06T02:48:23.000000Z",  // 開始日時
-    To = "2020-07-05T08:24:28.000000Z",  // 終了日時
+    From = "2025-12-05T09:12:09.000000Z",  // 開始日時
+    To = "2026-07-15T20:22:28.000000Z",  // 終了日時
 };
 Response.PrivateMoneySummary response = await request.Send(client);
 ```
@@ -171,9 +201,10 @@ Response.PrivateMoneySummary response = await request.Send(client);
 
 
 ### Parameters
-**`private_money_id`** 
-  
+#### `private_money_id`
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -182,9 +213,26 @@ Response.PrivateMoneySummary response = await request.Send(client);
 }
 ```
 
-**`from`** 
-  
+</details>
 
+#### `from`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
+</details>
+
+#### `to`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -193,16 +241,7 @@ Response.PrivateMoneySummary response = await request.Send(client);
 }
 ```
 
-**`to`** 
-  
-
-
-```json
-{
-  "type": "string",
-  "format": "date-time"
-}
-```
+</details>
 
 
 

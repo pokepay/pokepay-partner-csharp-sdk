@@ -1,7 +1,6 @@
 # BankPay
 BankPayを用いた銀行からのチャージ取引などのAPIを提供しています。
 
-
 <a name="delete-bank"></a>
 ## DeleteBank: 銀行口座の削除
 銀行口座を削除します
@@ -17,9 +16,24 @@ Response.BankDeleted response = await request.Send(client);
 
 
 ### Parameters
-**`user_device_id`** 
-  
+#### `user_device_id`
 
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+#### `bank_id`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -28,16 +42,7 @@ Response.BankDeleted response = await request.Send(client);
 }
 ```
 
-**`bank_id`** 
-  
-
-
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
+</details>
 
 
 
@@ -66,9 +71,24 @@ Response.Banks response = await request.Send(client);
 
 
 ### Parameters
-**`user_device_id`** 
-  
+#### `user_device_id`
 
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+#### `private_money_id`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -77,16 +97,7 @@ Response.Banks response = await request.Send(client);
 }
 ```
 
-**`private_money_id`** 
-  
-
-
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
+</details>
 
 
 
@@ -106,7 +117,6 @@ Response.Banks response = await request.Send(client);
 ユーザーが銀行口座の登録に成功すると、callback_urlにリクエストが行われます。
 アプリの場合はDeep Linkを使うことを想定しています。
 
-
 ```csharp
 Request.CreateBank request = new Request.CreateBank(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // デバイスID
@@ -114,7 +124,7 @@ Request.CreateBank request = new Request.CreateBank(
     "<Deep Link>", // コールバックURL
     "ポケペイタロウ" // ユーザーの氏名 (片仮名で指定)
 ) {
-    Email = "Wh5QfKEnNv@Za51.com",  // ユーザーのメールアドレス
+    Email = "T8anSF4797@Isvv.com",  // ユーザーのメールアドレス
     Birthdate = "19901142",  // 生年月日
 };
 Response.BankRegisteringInfo response = await request.Send(client);
@@ -123,20 +133,10 @@ Response.BankRegisteringInfo response = await request.Send(client);
 
 
 ### Parameters
-**`user_device_id`** 
-  
+#### `user_device_id`
 
-
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
-
-**`private_money_id`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -145,9 +145,26 @@ Response.BankRegisteringInfo response = await request.Send(client);
 }
 ```
 
-**`callback_url`** 
-  
+</details>
 
+#### `private_money_id`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+#### `callback_url`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -156,9 +173,12 @@ Response.BankRegisteringInfo response = await request.Send(client);
 }
 ```
 
-**`kana`** 
-  
+</details>
 
+#### `kana`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -167,9 +187,12 @@ Response.BankRegisteringInfo response = await request.Send(client);
 }
 ```
 
-**`email`** 
-  
+</details>
 
+#### `email`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -179,9 +202,12 @@ Response.BankRegisteringInfo response = await request.Send(client);
 }
 ```
 
-**`birthdate`** 
-  
+</details>
 
+#### `birthdate`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -189,6 +215,8 @@ Response.BankRegisteringInfo response = await request.Send(client);
   "maxLength": 8
 }
 ```
+
+</details>
 
 
 
@@ -209,7 +237,7 @@ Response.BankRegisteringInfo response = await request.Send(client);
 Request.CreateBankTopupTransaction request = new Request.CreateBankTopupTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // デバイスID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    6979, // チャージ金額
+    6699, // チャージ金額
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 銀行ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // リクエストID
 ) {
@@ -221,20 +249,10 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`user_device_id`** 
-  
+#### `user_device_id`
 
-
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
-
-**`private_money_id`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -243,9 +261,26 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`amount`** 
-  
+</details>
 
+#### `private_money_id`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+#### `amount`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -254,20 +289,12 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`bank_id`** 
-  
+</details>
 
+#### `bank_id`
 
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
-
-**`receiver_user_id`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -276,9 +303,12 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`request_id`** 
-  
+</details>
 
+#### `receiver_user_id`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -286,6 +316,22 @@ Response.TransactionDetail response = await request.Send(client);
   "format": "uuid"
 }
 ```
+
+</details>
+
+#### `request_id`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
 
 
 

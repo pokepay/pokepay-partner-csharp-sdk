@@ -3,7 +3,6 @@ Webhookは特定のワーカータスクでの処理が完了した事を通知�
 WebHookにはURLとタスク名、有効化されているかを設定することが出来ます。
 通知はタスク完了時、事前に設定したURLにPOSTリクエストを行います。
 
-
 <a name="list-webhooks"></a>
 ## ListWebhooks: 作成したWebhookの一覧を返す
 
@@ -18,11 +17,12 @@ Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(cl
 
 
 ### Parameters
-**`page`** 
-  
-
+#### `page`
 取得したいページ番号です。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
@@ -30,17 +30,22 @@ Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(cl
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
 1ページ分の取得数です。デフォルトでは 50 になっています。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
   "minimum": 1
 }
 ```
+
+</details>
 
 
 
@@ -66,8 +71,8 @@ Response.PaginatedOrganizationWorkerTaskWebhook response = await request.Send(cl
 
 ```csharp
 Request.CreateWebhook request = new Request.CreateWebhook(
-    "bulk_shops", // タスク名
-    "gb" // URL
+    "process_user_stats_operation", // タスク名
+    "1nu1YMp" // URL
 );
 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 ```
@@ -75,10 +80,11 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 
 
 ### Parameters
-**`task`** 
-  
-
+#### `task`
 ワーカータスク名を指定します
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -90,16 +96,21 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 }
 ```
 
-**`url`** 
-  
+</details>
 
+#### `url`
 通知先のURLを指定します
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
   "type": "string"
 }
 ```
+
+</details>
 
 
 
@@ -132,10 +143,11 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 
 
 ### Parameters
-**`webhook_id`** 
-  
-
+#### `webhook_id`
 削除するWebhookのIDです。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -143,6 +155,8 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -163,9 +177,9 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 Request.UpdateWebhook request = new Request.UpdateWebhook(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // Webhook ID
 ) {
-    Url = "qwtEhH",  // URL
+    Url = "ChC",  // URL
     IsActive = true,  // 有効/無効
-    Task = "process_user_stats_operation",  // タスク名
+    Task = "bulk_shops",  // タスク名
 };
 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 ```
@@ -173,10 +187,11 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 
 
 ### Parameters
-**`webhook_id`** 
-  
-
+#### `webhook_id`
 更新するWebhookのIDです。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -185,10 +200,13 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 }
 ```
 
-**`url`** 
-  
+</details>
 
+#### `url`
 変更するURLを指定します
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -196,10 +214,13 @@ Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
 }
 ```
 
-**`is_active`** 
-  
+</details>
 
+#### `is_active`
 trueならWebhookによる通知が有効になり、falseなら無効になります
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -207,10 +228,13 @@ trueならWebhookによる通知が有効になり、falseなら無効になり�
 }
 ```
 
-**`task`** 
-  
+</details>
 
+#### `task`
 指定したタスクが終了したときにWebhookによる通知がされます
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -221,6 +245,8 @@ trueならWebhookによる通知が有効になり、falseなら無効になり�
   ]
 }
 ```
+
+</details>
 
 
 
