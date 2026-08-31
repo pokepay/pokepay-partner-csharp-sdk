@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountBalances request = new Request.ListAccountBalances(
-                    "0adcc451-9f5b-4fe8-8803-fd1118c34c95"
+                    "d5604b93-65ee-41d4-b3d2-ab9edcaac0bf"
                 );
                 Response.PaginatedAccountBalance response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountBalances request = new Request.ListAccountBalances(
-                    "0adcc451-9f5b-4fe8-8803-fd1118c34c95"
+                    "d5604b93-65ee-41d4-b3d2-ab9edcaac0bf"
                 ) {
-                    Direction = "desc",
+                    Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountBalances request = new Request.ListAccountBalances(
-                    "0adcc451-9f5b-4fe8-8803-fd1118c34c95"
+                    "d5604b93-65ee-41d4-b3d2-ab9edcaac0bf"
                 ) {
-                    ExpiresAtTo = "2020-10-07T18:59:38.000000Z",
-                    Direction = "desc",
+                    ExpiresAtTo = "2024-07-17T16:43:47.000000Z",
+                    Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountBalances request = new Request.ListAccountBalances(
-                    "0adcc451-9f5b-4fe8-8803-fd1118c34c95"
+                    "d5604b93-65ee-41d4-b3d2-ab9edcaac0bf"
                 ) {
-                    ExpiresAtFrom = "2020-09-07T21:25:03.000000Z",
-                    ExpiresAtTo = "2024-10-02T20:33:17.000000Z",
+                    ExpiresAtFrom = "2021-04-06T08:41:06.000000Z",
+                    ExpiresAtTo = "2023-06-02T11:51:13.000000Z",
                     Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -94,11 +94,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountBalances request = new Request.ListAccountBalances(
-                    "0adcc451-9f5b-4fe8-8803-fd1118c34c95"
+                    "d5604b93-65ee-41d4-b3d2-ab9edcaac0bf"
                 ) {
-                    PerPage = 5374,
-                    ExpiresAtFrom = "2021-01-13T03:58:59.000000Z",
-                    ExpiresAtTo = "2024-09-16T05:40:45.000000Z",
+                    PerPage = 4634,
+                    ExpiresAtFrom = "2024-01-18T23:56:06.000000Z",
+                    ExpiresAtTo = "2021-12-10T18:32:08.000000Z",
                     Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -114,12 +114,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountBalances request = new Request.ListAccountBalances(
-                    "0adcc451-9f5b-4fe8-8803-fd1118c34c95"
+                    "d5604b93-65ee-41d4-b3d2-ab9edcaac0bf"
                 ) {
-                    Page = 9044,
-                    PerPage = 3584,
-                    ExpiresAtFrom = "2024-10-29T10:47:52.000000Z",
-                    ExpiresAtTo = "2022-05-05T20:55:29.000000Z",
+                    Page = 5372,
+                    PerPage = 1503,
+                    ExpiresAtFrom = "2021-10-12T09:36:01.000000Z",
+                    ExpiresAtTo = "2023-11-12T04:37:14.000000Z",
                     Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);

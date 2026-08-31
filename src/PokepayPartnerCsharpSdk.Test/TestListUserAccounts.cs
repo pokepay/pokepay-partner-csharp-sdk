@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListUserAccounts request = new Request.ListUserAccounts(
-                    "f7badafa-54a1-4511-b337-e4aa1c1fe652"
+                    "580852da-986e-4146-8a04-b74de803cf9c"
                 );
                 Response.PaginatedAccountDetails response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListUserAccounts request = new Request.ListUserAccounts(
-                    "f7badafa-54a1-4511-b337-e4aa1c1fe652"
+                    "580852da-986e-4146-8a04-b74de803cf9c"
                 ) {
-                    PerPage = 5145,
+                    PerPage = 6774,
                 };
                 Response.PaginatedAccountDetails response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListUserAccounts request = new Request.ListUserAccounts(
-                    "f7badafa-54a1-4511-b337-e4aa1c1fe652"
+                    "580852da-986e-4146-8a04-b74de803cf9c"
                 ) {
-                    Page = 7996,
-                    PerPage = 3122,
+                    Page = 4049,
+                    PerPage = 405,
                 };
                 Response.PaginatedAccountDetails response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

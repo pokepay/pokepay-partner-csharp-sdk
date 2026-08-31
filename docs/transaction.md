@@ -1,4 +1,15 @@
 # Transaction
+取引を表すデータです。
+マネー(Private Money)のウォレット間の送金を記録し、キャンセルなどで状態が更新されることがあります。
+取引種類として以下が存在します。
+
+- topup: チャージ。Merchant => Customer送金
+- payment: 支払い。Customer => Merchant送金
+- transfer: 個人間譲渡。Customer => Customer送金
+- exchange: マネー間交換。１ユーザのウォレット間の送金（交換）
+- expire: 退会時失効。退会時の払戻を伴わない残高失効履歴
+- cashback: 退会時払戻。退会時の払戻金額履歴
+
 
 <a name="get-cpm-token"></a>
 ## GetCpmToken: CPMトークンの状態取得
@@ -6,7 +17,7 @@ CPMトークンの現在の状態を取得します。CPMトークンの有効�
 
 ```csharp
 Request.GetCpmToken request = new Request.GetCpmToken(
-    "42l0o0g8SXRzZ3pUKHHeXu" // CPMトークン
+    "8uJqFVIWZBtq3jnfd5KTcW" // CPMトークン
 );
 Response.CpmToken response = await request.Send(client);
 ```
@@ -14,10 +25,11 @@ Response.CpmToken response = await request.Send(client);
 
 
 ### Parameters
-**`cpm_token`** 
-  
-
+#### `cpm_token`
 CPM取引時にエンドユーザーが店舗に提示するバーコードを解析して得られる22桁の文字列です。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -26,6 +38,8 @@ CPM取引時にエンドユーザーが店舗に提示するバーコードを�
   "maxLength": 22
 }
 ```
+
+</details>
 
 
 
@@ -44,15 +58,15 @@ CPM取引時にエンドユーザーが店舗に提示するバーコードを�
 
 ```csharp
 Request.ListTransactions request = new Request.ListTransactions() {
-    From = "2021-03-07T03:04:59.000000Z",  // 開始日時
-    To = "2024-07-26T19:16:05.000000Z",  // 終了日時
+    From = "2024-05-17T09:05:05.000000Z",  // 開始日時
+    To = "2022-04-28T00:42:09.000000Z",  // 終了日時
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取引数
     ShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 店舗ID
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // エンドユーザーID
     CustomerName = "太郎",  // エンドユーザー名
     TerminalId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 端末ID
-    TransactionId = "g12Ygg3A",  // 取引ID
+    TransactionId = "OYe9k",  // 取引ID
     OrganizationCode = "pocketchange",  // 組織コード
     PrivateMoneyId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // マネーID
     IsModified = false,  // キャンセルフラグ
@@ -65,13 +79,14 @@ Response.PaginatedTransaction response = await request.Send(client);
 
 
 ### Parameters
-**`from`** 
-  
-
+#### `from`
 抽出期間の開始日時です。
 
 フィルターとして使われ、開始日時以降に発生した取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -79,13 +94,16 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`to`** 
-  
+</details>
 
+#### `to`
 抽出期間の終了日時です。
 
 フィルターとして使われ、終了日時以前に発生した取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -93,11 +111,14 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`page`** 
-  
+</details>
 
+#### `page`
 取得したいページ番号です。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
@@ -105,11 +126,14 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
 1ページ分の取引数です。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
@@ -117,13 +141,16 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`shop_id`** 
-  
+</details>
 
+#### `shop_id`
 店舗IDです。
 
 フィルターとして使われ、指定された店舗での取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -131,13 +158,16 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`customer_id`** 
-  
+</details>
 
+#### `customer_id`
 エンドユーザーIDです。
 
 フィルターとして使われ、指定されたエンドユーザーでの取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -145,12 +175,15 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`customer_name`** 
-  
+</details>
 
+#### `customer_name`
 エンドユーザー名です。
 
 フィルターとして使われ、入力された名前に部分一致するエンドユーザーでの取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -159,12 +192,15 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`terminal_id`** 
-  
+</details>
 
+#### `terminal_id`
 端末IDです。
 
 フィルターとして使われ、指定された端末での取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -173,12 +209,15 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`transaction_id`** 
-  
+</details>
 
+#### `transaction_id`
 取引IDです。
 
 フィルターとして使われ、指定された取引IDに部分一致(前方一致)する取引のみが一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -186,12 +225,15 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`organization_code`** 
-  
+</details>
 
+#### `organization_code`
 組織コードです。
 
 フィルターとして使われ、指定された組織での取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -201,12 +243,15 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`private_money_id`** 
-  
+</details>
 
+#### `private_money_id`
 マネーIDです。
 
 フィルターとして使われ、指定したマネーでの取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -215,13 +260,16 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`is_modified`** 
-  
+</details>
 
+#### `is_modified`
 キャンセルフラグです。
 
 これにtrueを指定するとキャンセルされた取引のみ一覧に表示されます。
 デフォルト値はfalseで、キャンセルの有無にかかわらず一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -229,9 +277,9 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`types`** 
-  
+</details>
 
+#### `types`
 取引の種類でフィルターします。
 
 以下の種類を指定できます。
@@ -254,6 +302,9 @@ Response.PaginatedTransaction response = await request.Send(client);
 6. expire
    退会時失効取引
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "array",
@@ -271,12 +322,15 @@ Response.PaginatedTransaction response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
 取引を指定の取引説明文でフィルターします。
 
 取引説明文が完全一致する取引のみ抽出されます。取引説明文は最大200文字で記録されています。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -284,6 +338,8 @@ Response.PaginatedTransaction response = await request.Send(client);
   "maxLength": 200
 }
 ```
+
+</details>
 
 
 
@@ -312,10 +368,10 @@ Request.CreateTransaction request = new Request.CreateTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ) {
-    MoneyAmount = 2235,
-    PointAmount = 6100,
-    PointExpiresAt = "2023-07-21T00:03:27.000000Z",  // ポイント有効期限
-    Description = "yINKyRmJ3gWCDcmsuvkMrJePtGFhv4aIw1aGtGR3fEQezBo8XnXONHGXDMcl8tuhVdB5KkP8PHvZEmmcBKkGsr9sdEDTBkey7pr4d2jpaf36YY6mrG9",
+    MoneyAmount = 6138,
+    PointAmount = 1135,
+    PointExpiresAt = "2024-03-31T15:43:42.000000Z",  // ポイント有効期限
+    Description = "yRuU9Z8Q2HvADi2W3bSFZd8xGhm9VbcZgOZ4yYRMkHKY2yx9gLKmBFLvqK55BnlHTaFsTxQXtMZL6XWgDmeak1eoliBFeYUr35I7ta0sw71srL0z9GEG3PXvn",
 };
 Response.TransactionDetail response = await request.Send(client);
 ```
@@ -323,20 +379,10 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`shop_id`** 
-  
+#### `shop_id`
 
-
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
-
-**`customer_id`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -345,9 +391,12 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`private_money_id`** 
-  
+</details>
 
+#### `customer_id`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -356,9 +405,26 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`money_amount`** 
-  
+</details>
 
+#### `private_money_id`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+#### `money_amount`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -368,9 +434,12 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`point_amount`** 
-  
+</details>
 
+#### `point_amount`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -380,11 +449,14 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`point_expires_at`** 
-  
+</details>
 
+#### `point_expires_at`
 ポイントをチャージした場合の、付与されるポイントの有効期限です。
 省略した場合はマネーに設定された有効期限と同じものがポイントの有効期限となります。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -393,9 +465,12 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -403,6 +478,8 @@ Response.TransactionDetail response = await request.Send(client);
   "maxLength": 200
 }
 ```
+
+</details>
 
 
 
@@ -419,7 +496,9 @@ Response.TransactionDetail response = await request.Send(client);
 |422|customer_user_not_found||The customer user is not found|
 |422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
 |422|private_money_not_found|マネーが見つかりません|Private money not found|
+|422|credit_session_money_topup_requires_credit_card|オーソリチャージ用マネーではクレジットカードによるチャージのみ許可されています|Credit card is required for topup on credit-session enabled money|
 |422|cannot_topup_during_cvs_authorization_pending|コンビニ決済の予約中はチャージできません|You cannot topup your account while a convenience store payment is pending.|
+|422|credit_session_not_found|オーソリセッションが見つかりません|Credit session not found|
 |422|not_applicable_transaction_type_for_account_topup_quota|チャージ取引以外の取引種別ではチャージ可能枠を使用できません|Account topup quota is not applicable to transaction types other than topup.|
 |422|private_money_topup_quota_not_available|このマネーにはチャージ可能枠の設定がありません|Topup quota is not available with this private money.|
 |422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
@@ -448,7 +527,7 @@ Response.TransactionDetail response = await request.Send(client);
 |422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
 |422|account_suspended|アカウントは停止されています|The account is suspended|
 |422|account_closed|アカウントは退会しています|The account is closed|
-|422|customer_account_not_found||The customer account is not found|
+|422|customer_account_not_found|ユーザアカウントが見つかりません|The customer account is not found|
 |422|shop_account_not_found|店舗アカウントが見つかりません|The shop account is not found|
 |422|account_currency_mismatch|アカウント間で通貨が異なっています|Currency mismatch between accounts|
 |422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
@@ -458,6 +537,93 @@ Response.TransactionDetail response = await request.Send(client);
 |422|transaction_invalid_done_at|取引完了日が無効です|Transaction completion date is invalid|
 |422|transaction_invalid_amount|取引金額が数値ではないか、受け入れられない桁数です|Transaction amount is not a number or cannot be accepted for this currency|
 |503|temporarily_unavailable||Service Unavailable|
+
+
+
+---
+
+
+<a name="create-transaction-group"></a>
+## CreateTransactionGroup: トランザクショングループを作成する
+複数の取引を1つのグループとして管理できるようにします。
+
+```csharp
+Request.CreateTransactionGroup request = new Request.CreateTransactionGroup(
+    "l3BKAcPvm" // 作成するトランザクショングループの名称です。
+);
+Response.TransactionGroup response = await request.Send(client);
+```
+
+
+
+### Parameters
+#### `name`
+作成するトランザクショングループの名称です。
+"pokepay" で始まる文字列は予約済みのため使用できません。
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "maxLength": 64
+}
+```
+
+</details>
+
+
+
+成功したときは
+[TransactionGroup](./responses.md#transaction-group)
+を返します
+
+### Error Responses
+|status|type|ja|en|
+|---|---|---|---|
+|403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
+|422|transaction_group_name_reserved|指定されたトランザクショングループ名は使用できません|Transaction group name is reserved|
+
+
+
+---
+
+
+<a name="show-transaction-group"></a>
+## ShowTransactionGroup: トランザクショングループを取得する
+指定したトランザクショングループの詳細を返します。
+
+```csharp
+Request.ShowTransactionGroup request = new Request.ShowTransactionGroup(
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 取得したいトランザクショングループID
+);
+Response.TransactionGroup response = await request.Send(client);
+```
+
+
+
+### Parameters
+#### `uuid`
+取得したいトランザクショングループID
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+
+
+成功したときは
+[TransactionGroup](./responses.md#transaction-group)
+を返します
 
 
 
@@ -477,11 +643,11 @@ Request.ListTransactionsV2 request = new Request.ListTransactionsV2() {
     CustomerId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // エンドユーザーID
     CustomerName = "太郎",  // エンドユーザー名
     Description = "店頭QRコードによる支払い",  // 取引説明文
-    TransactionId = "2ztoKUUUx5",  // 取引ID
-    IsModified = true,  // キャンセルフラグ
+    TransactionId = "Pfih5KNNj",  // 取引ID
+    IsModified = false,  // キャンセルフラグ
     Types = new string[]{"topup", "payment"},  // 取引種別 (複数指定可)、チャージ=topup、支払い=payment
-    From = "2020-09-26T06:56:20.000000Z",  // 開始日時
-    To = "2024-10-16T20:48:49.000000Z",  // 終了日時
+    From = "2021-05-09T13:41:55.000000Z",  // 開始日時
+    To = "2022-05-23T15:37:57.000000Z",  // 終了日時
     NextPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 次ページへ遷移する際に起点となるtransactionのID
     PrevPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 前ページへ遷移する際に起点となるtransactionのID
     PerPage = 50,  // 1ページ分の取引数
@@ -492,12 +658,13 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 
 
 ### Parameters
-**`private_money_id`** 
-  
-
+#### `private_money_id`
 マネーIDです。
 
 指定したマネーでの取引が一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -506,12 +673,15 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`organization_code`** 
-  
+</details>
 
+#### `organization_code`
 組織コードです。
 
 フィルターとして使われ、指定された組織の店舗での取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -521,13 +691,16 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`shop_id`** 
-  
+</details>
 
+#### `shop_id`
 店舗IDです。
 
 フィルターとして使われ、指定された店舗での取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -535,13 +708,16 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`terminal_id`** 
-  
+</details>
 
+#### `terminal_id`
 端末IDです。
 
 フィルターとして使われ、指定された端末での取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -549,13 +725,16 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`customer_id`** 
-  
+</details>
 
+#### `customer_id`
 エンドユーザーIDです。
 
 フィルターとして使われ、指定されたエンドユーザーの取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -563,12 +742,15 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`customer_name`** 
-  
+</details>
 
+#### `customer_name`
 エンドユーザー名です。
 
 フィルターとして使われ、入力された名前に部分一致するエンドユーザーでの取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -577,12 +759,15 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
 取引を指定の取引説明文でフィルターします。
 
 取引説明文が完全一致する取引のみ抽出されます。取引説明文は最大200文字で記録されています。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -591,12 +776,15 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`transaction_id`** 
-  
+</details>
 
+#### `transaction_id`
 取引IDです。
 
 フィルターとして使われ、指定された取引IDに部分一致(前方一致)する取引のみが一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -604,13 +792,16 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`is_modified`** 
-  
+</details>
 
+#### `is_modified`
 キャンセルフラグです。
 
 これにtrueを指定するとキャンセルされた取引のみ一覧に表示されます。
 デフォルト値はfalseで、キャンセルの有無にかかわらず一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -618,9 +809,9 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`types`** 
-  
+</details>
 
+#### `types`
 取引の種類でフィルターします。
 
 以下の種類を指定できます。
@@ -647,6 +838,9 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 6. expire
    退会時失効取引
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "array",
@@ -664,13 +858,16 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`from`** 
-  
+</details>
 
+#### `from`
 抽出期間の開始日時です。
 
 フィルターとして使われ、開始日時以降に発生した取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -678,13 +875,16 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`to`** 
-  
+</details>
 
+#### `to`
 抽出期間の終了日時です。
 
 フィルターとして使われ、終了日時以前に発生した取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -692,14 +892,17 @@ Response.PaginatedTransactionV2 response = await request.Send(client);
 }
 ```
 
-**`next_page_cursor_id`** 
-  
+</details>
 
+#### `next_page_cursor_id`
 次ページへ遷移する際に起点となるtransactionのID(前ページの末尾要素のID)です。
 本APIのレスポンスにもnext_page_cursor_idが含まれており、これがnull値の場合は最後のページであることを意味します。
 UUIDである場合は次のページが存在することを意味し、このnext_page_cursor_idをリクエストパラメータに含めることで次ページに遷移します。
 
 next_page_cursor_idのtransaction自体は次のページには含まれません。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -708,9 +911,9 @@ next_page_cursor_idのtransaction自体は次のページには含まれませ�
 }
 ```
 
-**`prev_page_cursor_id`** 
-  
+</details>
 
+#### `prev_page_cursor_id`
 前ページへ遷移する際に起点となるtransactionのID(次ページの先頭要素のID)です。
 
 本APIのレスポンスにもprev_page_cursor_idが含まれており、これがnull値の場合は先頭のページであることを意味します。
@@ -718,6 +921,9 @@ UUIDである場合は前のページが存在することを意味し、このp
 
 prev_page_cursor_idのtransaction自体は前のページには含まれません。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -725,12 +931,15 @@ prev_page_cursor_idのtransaction自体は前のページには含まれませ�
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
 1ページ分の取引数です。
 
 デフォルト値は50です。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -739,6 +948,8 @@ prev_page_cursor_idのtransaction自体は前のページには含まれませ�
   "maximum": 1000
 }
 ```
+
+</details>
 
 
 
@@ -773,8 +984,8 @@ Request.ListBillTransactions request = new Request.ListBillTransactions() {
     TransactionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 取引ID
     BillId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 支払いQRコードのID
     IsModified = true,  // キャンセルフラグ
-    From = "2023-07-27T00:18:27.000000Z",  // 開始日時
-    To = "2021-09-21T20:47:11.000000Z",  // 終了日時
+    From = "2026-08-22T06:40:18.000000Z",  // 開始日時
+    To = "2020-06-09T14:55:32.000000Z",  // 終了日時
     NextPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 次ページへ遷移する際に起点となるtransactionのID
     PrevPageCursorId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // 前ページへ遷移する際に起点となるtransactionのID
     PerPage = 50,  // 1ページ分の取引数
@@ -785,12 +996,13 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 
 
 ### Parameters
-**`private_money_id`** 
-  
-
+#### `private_money_id`
 マネーIDです。
 
 指定したマネーでの取引が一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -799,12 +1011,15 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`organization_code`** 
-  
+</details>
 
+#### `organization_code`
 組織コードです。
 
 フィルターとして使われ、指定された組織の店舗での取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -814,13 +1029,16 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`shop_id`** 
-  
+</details>
 
+#### `shop_id`
 店舗IDです。
 
 フィルターとして使われ、指定された店舗での取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -828,13 +1046,16 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`customer_id`** 
-  
+</details>
 
+#### `customer_id`
 エンドユーザーIDです。
 
 フィルターとして使われ、指定されたエンドユーザーの取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -842,12 +1063,15 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`customer_name`** 
-  
+</details>
 
+#### `customer_name`
 エンドユーザー名です。
 
 フィルターとして使われ、入力された名前に部分一致するエンドユーザーでの取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -856,11 +1080,14 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`terminal_id`** 
-  
+</details>
 
+#### `terminal_id`
 エンドユーザーの端末IDです。
 フィルターとして使われ、指定された端末での取引のみ一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -869,12 +1096,15 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
 取引を指定の取引説明文でフィルターします。
 
 取引説明文が完全一致する取引のみ抽出されます。取引説明文は最大200文字で記録されています。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -883,13 +1113,16 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`transaction_id`** 
-  
+</details>
 
+#### `transaction_id`
 取引IDです。
 
 フィルターとして使われ、指定された取引IDに部分一致(前方一致)する取引のみが一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -897,13 +1130,16 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`bill_id`** 
-  
+</details>
 
+#### `bill_id`
 支払いQRコードのIDです。
 
 フィルターとして使われ、指定された支払いQRコードIDに部分一致(前方一致)する取引のみが一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -911,13 +1147,16 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`is_modified`** 
-  
+</details>
 
+#### `is_modified`
 キャンセルフラグです。
 
 これにtrueを指定するとキャンセルされた取引のみ一覧に表示されます。
 デフォルト値はfalseで、キャンセルの有無にかかわらず一覧に表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -925,13 +1164,16 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`from`** 
-  
+</details>
 
+#### `from`
 抽出期間の開始日時です。
 
 フィルターとして使われ、開始日時以降に発生した取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -939,13 +1181,16 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`to`** 
-  
+</details>
 
+#### `to`
 抽出期間の終了日時です。
 
 フィルターとして使われ、終了日時以前に発生した取引のみ一覧に表示されます。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -953,14 +1198,17 @@ Response.PaginatedBillTransaction response = await request.Send(client);
 }
 ```
 
-**`next_page_cursor_id`** 
-  
+</details>
 
+#### `next_page_cursor_id`
 次ページへ遷移する際に起点となるtransactionのID(前ページの末尾要素のID)です。
 本APIのレスポンスにもnext_page_cursor_idが含まれており、これがnull値の場合は最後のページであることを意味します。
 UUIDである場合は次のページが存在することを意味し、このnext_page_cursor_idをリクエストパラメータに含めることで次ページに遷移します。
 
 next_page_cursor_idのtransaction自体は次のページには含まれません。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -969,9 +1217,9 @@ next_page_cursor_idのtransaction自体は次のページには含まれませ�
 }
 ```
 
-**`prev_page_cursor_id`** 
-  
+</details>
 
+#### `prev_page_cursor_id`
 前ページへ遷移する際に起点となるtransactionのID(次ページの先頭要素のID)です。
 
 本APIのレスポンスにもprev_page_cursor_idが含まれており、これがnull値の場合は先頭のページであることを意味します。
@@ -979,6 +1227,9 @@ UUIDである場合は前のページが存在することを意味し、このp
 
 prev_page_cursor_idのtransaction自体は前のページには含まれません。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -986,12 +1237,15 @@ prev_page_cursor_idのtransaction自体は前のページには含まれませ�
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
 1ページ分の取引数です。
 
 デフォルト値は50です。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1000,6 +1254,8 @@ prev_page_cursor_idのtransaction自体は前のページには含まれませ�
   "maximum": 1000
 }
 ```
+
+</details>
 
 
 
@@ -1029,9 +1285,9 @@ Request.CreateTopupTransaction request = new Request.CreateTopupTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
     BearPointShopId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ポイント支払時の負担店舗ID
-    MoneyAmount = 5560,  // マネー額
-    PointAmount = 3653,  // ポイント額
-    PointExpiresAt = "2021-09-12T17:44:07.000000Z",  // ポイント有効期限
+    MoneyAmount = 8702,  // マネー額
+    PointAmount = 8654,  // ポイント額
+    PointExpiresAt = "2023-11-15T07:37:28.000000Z",  // ポイント有効期限
     Description = "初夏のチャージキャンペーン",  // 取引履歴に表示する説明文
     Metadata = "{\"key\":\"value\"}",  // 取引メタデータ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
@@ -1042,13 +1298,14 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`shop_id`** 
-  
-
+#### `shop_id`
 店舗IDです。
 
 送金元の店舗を指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1056,13 +1313,16 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`customer_id`** 
-  
+</details>
 
+#### `customer_id`
 エンドユーザーIDです。
 
 送金先のエンドユーザーを指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1070,13 +1330,16 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`private_money_id`** 
-  
+</details>
 
+#### `private_money_id`
 マネーIDです。
 
 マネーを指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1084,13 +1347,16 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`bear_point_shop_id`** 
-  
+</details>
 
+#### `bear_point_shop_id`
 ポイント支払時の負担店舗IDです。
 
 ポイント支払い時に実際お金を負担する店舗を指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1098,14 +1364,17 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`money_amount`** 
-  
+</details>
 
+#### `money_amount`
 マネー額です。
 
 送金するマネー額を指定します。
 デフォルト値は0で、money_amountとpoint_amountの両方が0のときにはinvalid_parameter_both_point_and_money_are_zero(エラーコード400)が返ります。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
@@ -1113,14 +1382,17 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`point_amount`** 
-  
+</details>
 
+#### `point_amount`
 ポイント額です。
 
 送金するポイント額を指定します。
 デフォルト値は0で、money_amountとpoint_amountの両方が0のときにはinvalid_parameter_both_point_and_money_are_zero(エラーコード400)が返ります。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
@@ -1128,11 +1400,14 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`point_expires_at`** 
-  
+</details>
 
+#### `point_expires_at`
 ポイントをチャージした場合の、付与されるポイントの有効期限です。
 省略した場合はマネーに設定された有効期限と同じものがポイントの有効期限となります。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1141,12 +1416,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
 取引説明文です。
 
 任意入力で、取引履歴に表示される説明文です。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1155,12 +1433,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`metadata`** 
-  
+</details>
 
+#### `metadata`
 取引作成時に指定されるメタデータです。
 
 任意入力で、全てのkeyとvalueが文字列であるようなフラットな構造のJSON文字列で指定します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1169,9 +1450,9 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`request_id`** 
-  
+</details>
 
+#### `request_id`
 取引作成APIの羃等性を担保するためのリクエスト固有のIDです。
 
 取引作成APIで結果が受け取れなかったなどの理由で再試行する際に、二重に取引が作られてしまうことを防ぐために、クライアント側から指定されます。指定は任意で、UUID V4フォーマットでランダム生成した文字列です。リクエストIDは一定期間で削除されます。
@@ -1179,12 +1460,17 @@ Response.TransactionDetail response = await request.Send(client);
 リクエストIDを指定したとき、まだそのリクエストIDに対する取引がない場合、新規に取引が作られレスポンスとして返されます。もしそのリクエストIDに対する取引が既にある場合、既存の取引がレスポンスとして返されます。
 既に存在する、別のユーザによる取引とリクエストIDが衝突した場合、request_id_conflictが返ります。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -1199,7 +1485,9 @@ Response.TransactionDetail response = await request.Send(client);
 |400|invalid_parameters|項目が無効です|Invalid parameters|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
 |422|coupon_not_found|クーポンが見つかりませんでした。|The coupon is not found.|
+|422|credit_session_money_topup_requires_credit_card|オーソリチャージ用マネーではクレジットカードによるチャージのみ許可されています|Credit card is required for topup on credit-session enabled money|
 |422|cannot_topup_during_cvs_authorization_pending|コンビニ決済の予約中はチャージできません|You cannot topup your account while a convenience store payment is pending.|
+|422|credit_session_not_found|オーソリセッションが見つかりません|Credit session not found|
 |422|not_applicable_transaction_type_for_account_topup_quota|チャージ取引以外の取引種別ではチャージ可能枠を使用できません|Account topup quota is not applicable to transaction types other than topup.|
 |422|private_money_topup_quota_not_available|このマネーにはチャージ可能枠の設定がありません|Topup quota is not available with this private money.|
 |422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
@@ -1237,7 +1525,7 @@ Response.TransactionDetail response = await request.Send(client);
 |422|request_id_conflict|このリクエストIDは他の取引ですでに使用されています。お手数ですが、別のリクエストIDで最初からやり直してください。|The request_id is already used by another transaction. Try again with new request id|
 |422|reserved_word_can_not_specify_to_metadata|取引メタデータに予約語は指定出来ません|Reserved word can not specify to metadata|
 |422|invalid_metadata|メタデータの形式が不正です|Invalid metadata format|
-|422|customer_account_not_found||The customer account is not found|
+|422|customer_account_not_found|ユーザアカウントが見つかりません|The customer account is not found|
 |422|shop_account_not_found|店舗アカウントが見つかりません|The shop account is not found|
 |422|private_money_not_found|マネーが見つかりません|Private money not found|
 |503|temporarily_unavailable||Service Unavailable|
@@ -1252,13 +1540,12 @@ Response.TransactionDetail response = await request.Send(client);
 支払取引を作成します。
 支払い時には、エンドユーザーの残高のうち、ポイント残高から優先的に消費されます。
 
-
 ```csharp
 Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // エンドユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    5930 // 支払い額
+    126 // 支払い額
 ) {
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
     Metadata = "{\"key\":\"value\"}",  // 取引メタデータ
@@ -1273,13 +1560,14 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`shop_id`** 
-  
-
+#### `shop_id`
 店舗IDです。
 
 送金先の店舗を指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1287,13 +1575,16 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`customer_id`** 
-  
+</details>
 
+#### `customer_id`
 エンドユーザーIDです。
 
 送金元のエンドユーザーを指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1301,13 +1592,16 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`private_money_id`** 
-  
+</details>
 
+#### `private_money_id`
 マネーIDです。
 
 マネーを指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1315,12 +1609,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`amount`** 
-  
+</details>
 
+#### `amount`
 マネー額です。
 
 送金するマネー額を指定します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1329,12 +1626,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
 取引説明文です。
 
 任意入力で、取引履歴に表示される説明文です。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1343,12 +1643,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`metadata`** 
-  
+</details>
 
+#### `metadata`
 取引作成時に指定されるメタデータです。
 
 任意入力で、全てのkeyとvalueが文字列であるようなフラットな構造のJSON文字列で指定します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1357,9 +1660,9 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`products`** 
-  
+</details>
 
+#### `products`
 一つの取引に含まれる商品情報データです。
 以下の内容からなるJSONオブジェクトの配列で指定します。
 
@@ -1371,6 +1674,9 @@ Response.TransactionDetail response = await request.Send(client);
 - `is_discounted`: 賞味期限が近いなどの理由で商品が値引きされているかどうかのフラグ。boolean
 - `other`: その他商品に関する情報。JSONオブジェクトで指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "array",
@@ -1380,15 +1686,18 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`request_id`** 
-  
+</details>
 
+#### `request_id`
 取引作成APIの羃等性を担保するためのリクエスト固有のIDです。
 
 取引作成APIで結果が受け取れなかったなどの理由で再試行する際に、二重に取引が作られてしまうことを防ぐために、クライアント側から指定されます。指定は任意で、UUID V4フォーマットでランダム生成した文字列です。リクエストIDは一定期間で削除されます。
 
 リクエストIDを指定したとき、まだそのリクエストIDに対する取引がない場合、新規に取引が作られレスポンスとして返されます。もしそのリクエストIDに対する取引が既にある場合、既存の取引がレスポンスとして返されます。
 既に存在する、別のユーザによる取引とリクエストIDが衝突した場合、request_id_conflictが返ります。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1397,9 +1706,9 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`strategy`** 
-  
+</details>
 
+#### `strategy`
 支払い時に残高がどのように消費されるかを指定します。
 デフォルトでは point-preferred (ポイント優先)が採用されます。
 
@@ -1407,6 +1716,9 @@ Response.TransactionDetail response = await request.Send(client);
 - money-only: マネー残高のみから消費され、ポイント残高は使われません
 
 マネー設定でポイント残高のみの利用に設定されている場合(display_money_and_point が point-only の場合)、 strategy の指定に関わらずポイント優先になります。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1418,10 +1730,13 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`coupon_id`** 
-  
+</details>
 
+#### `coupon_id`
 支払いに対して適用するクーポンのIDを指定します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1429,6 +1744,8 @@ Response.TransactionDetail response = await request.Send(client);
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -1441,7 +1758,9 @@ Response.TransactionDetail response = await request.Send(client);
 |---|---|---|---|
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
 |422|coupon_not_found|クーポンが見つかりませんでした。|The coupon is not found.|
+|422|credit_session_money_topup_requires_credit_card|オーソリチャージ用マネーではクレジットカードによるチャージのみ許可されています|Credit card is required for topup on credit-session enabled money|
 |422|cannot_topup_during_cvs_authorization_pending|コンビニ決済の予約中はチャージできません|You cannot topup your account while a convenience store payment is pending.|
+|422|credit_session_not_found|オーソリセッションが見つかりません|Credit session not found|
 |422|not_applicable_transaction_type_for_account_topup_quota|チャージ取引以外の取引種別ではチャージ可能枠を使用できません|Account topup quota is not applicable to transaction types other than topup.|
 |422|private_money_topup_quota_not_available|このマネーにはチャージ可能枠の設定がありません|Topup quota is not available with this private money.|
 |422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
@@ -1479,7 +1798,7 @@ Response.TransactionDetail response = await request.Send(client);
 |422|request_id_conflict|このリクエストIDは他の取引ですでに使用されています。お手数ですが、別のリクエストIDで最初からやり直してください。|The request_id is already used by another transaction. Try again with new request id|
 |422|reserved_word_can_not_specify_to_metadata|取引メタデータに予約語は指定出来ません|Reserved word can not specify to metadata|
 |422|invalid_metadata|メタデータの形式が不正です|Invalid metadata format|
-|422|customer_account_not_found||The customer account is not found|
+|422|customer_account_not_found|ユーザアカウントが見つかりません|The customer account is not found|
 |422|shop_account_not_found|店舗アカウントが見つかりません|The shop account is not found|
 |422|private_money_not_found|マネーが見つかりません|Private money not found|
 |503|temporarily_unavailable||Service Unavailable|
@@ -1494,16 +1813,15 @@ Response.TransactionDetail response = await request.Send(client);
 CPMトークンにより取引を作成します。
 CPMトークンに設定されたスコープの取引を作ることができます。
 
-
 ```csharp
 Request.CreateCpmTransaction request = new Request.CreateCpmTransaction(
-    "noe60dnWTCVmm3x115QsBZ", // CPMトークン
+    "Uca7AszKQRtnK9OFQAZk8l", // CPMトークン
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 店舗ID
-    7606.0 // 取引金額
+    960.0 // 取引金額
 ) {
     Description = "たい焼き(小倉)",  // 取引説明文
     Metadata = "{\"key\":\"value\"}",  // 店舗側メタデータ
-    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},  // 商品情報データ
+    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},  // 商品情報データ
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
     Strategy = "point-preferred",  // 支払い時の残高消費方式
 };
@@ -1513,12 +1831,13 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`cpm_token`** 
-  
-
+#### `cpm_token`
 エンドユーザーによって作られ、アプリなどに表示され、店舗に対して提示される22桁の文字列です。
 
 エンドユーザーによって許可された取引のスコープを持っています。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1528,12 +1847,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`shop_id`** 
-  
+</details>
 
+#### `shop_id`
 店舗IDです。
 
 支払いやチャージを行う店舗を指定します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1542,12 +1864,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`amount`** 
-  
+</details>
 
+#### `amount`
 取引金額を指定します。
 
 正の値を与えるとチャージになり、負の値を与えると支払いとなります。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1555,12 +1880,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
 取引説明文です。
 
 エンドユーザーアプリの取引履歴などに表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1569,12 +1897,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`metadata`** 
-  
+</details>
 
+#### `metadata`
 取引作成時に店舗側から指定されるメタデータです。
 
 任意入力で、全てのkeyとvalueが文字列であるようなフラットな構造のJSON文字列で指定します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1583,9 +1914,9 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`products`** 
-  
+</details>
 
+#### `products`
 一つの取引に含まれる商品情報データです。
 以下の内容からなるJSONオブジェクトの配列で指定します。
 
@@ -1597,6 +1928,9 @@ Response.TransactionDetail response = await request.Send(client);
 - `is_discounted`: 賞味期限が近いなどの理由で商品が値引きされているかどうかのフラグ。boolean
 - `other`: その他商品に関する情報。JSONオブジェクトで指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "array",
@@ -1606,15 +1940,18 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`request_id`** 
-  
+</details>
 
+#### `request_id`
 取引作成APIの羃等性を担保するためのリクエスト固有のIDです。
 
 取引作成APIで結果が受け取れなかったなどの理由で再試行する際に、二重に取引が作られてしまうことを防ぐために、クライアント側から指定されます。指定は任意で、UUID V4フォーマットでランダム生成した文字列です。リクエストIDは一定期間で削除されます。
 
 リクエストIDを指定したとき、まだそのリクエストIDに対する取引がない場合、新規に取引が作られレスポンスとして返されます。もしそのリクエストIDに対する取引が既にある場合、既存の取引がレスポンスとして返されます。
 既に存在する、別のユーザによる取引とリクエストIDが衝突した場合、request_id_conflictが返ります。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1623,16 +1960,18 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`strategy`** 
-  
+</details>
 
+#### `strategy`
 支払い時に残高がどのように消費されるかを指定します。
-デフォルトでは point-preferred (ポイント優先)が採用されます。
+エンドユーザーがCPMトークン作成時に指定した残高消費方式と一致するか、どちらか一方のみが指定されている必要があります。
+両方が指定されていて値が異なる場合、cpm_token_strategy_conflictが返ります。
 
-- point-preferred: ポイント残高が優先的に消費され、ポイントがなくなり次第マネー残高から消費されていきます(デフォルト動作)
+- point-preferred: ポイント残高が優先的に消費され、ポイントがなくなり次第マネー残高から消費されていきます
 - money-only: マネー残高のみから消費され、ポイント残高は使われません
 
-マネー設定でポイント残高のみの利用に設定されている場合(display_money_and_point が point-only の場合)、 strategy の指定に関わらずポイント優先になります。
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1643,6 +1982,8 @@ Response.TransactionDetail response = await request.Send(client);
   ]
 }
 ```
+
+</details>
 
 
 
@@ -1657,11 +1998,14 @@ Response.TransactionDetail response = await request.Send(client);
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
 |422|shop_user_not_found|店舗が見つかりません|The shop user is not found|
 |422|private_money_not_found|マネーが見つかりません|Private money not found|
+|422|cpm_token_strategy_conflict|CPMトークンに設定された支払い方式と異なる支払い方式が指定されました。|The strategy conflicts with the one set in the CPM token|
 |422|cpm_token_already_proceed|このCPMトークンは既に処理されています。|The CPM token is already proceed|
 |422|cpm_token_already_expired|このCPMトークンは既に失効しています。|The CPM token is already expired|
 |422|cpm_token_not_found|CPMトークンが見つかりませんでした。|The CPM token is not found.|
 |422|coupon_not_found|クーポンが見つかりませんでした。|The coupon is not found.|
+|422|credit_session_money_topup_requires_credit_card|オーソリチャージ用マネーではクレジットカードによるチャージのみ許可されています|Credit card is required for topup on credit-session enabled money|
 |422|cannot_topup_during_cvs_authorization_pending|コンビニ決済の予約中はチャージできません|You cannot topup your account while a convenience store payment is pending.|
+|422|credit_session_not_found|オーソリセッションが見つかりません|Credit session not found|
 |422|not_applicable_transaction_type_for_account_topup_quota|チャージ取引以外の取引種別ではチャージ可能枠を使用できません|Account topup quota is not applicable to transaction types other than topup.|
 |422|private_money_topup_quota_not_available|このマネーにはチャージ可能枠の設定がありません|Topup quota is not available with this private money.|
 |422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
@@ -1689,7 +2033,7 @@ Response.TransactionDetail response = await request.Send(client);
 |422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
 |422|account_suspended|アカウントは停止されています|The account is suspended|
 |422|account_closed|アカウントは退会しています|The account is closed|
-|422|customer_account_not_found||The customer account is not found|
+|422|customer_account_not_found|ユーザアカウントが見つかりません|The customer account is not found|
 |422|shop_account_not_found|店舗アカウントが見つかりません|The shop account is not found|
 |422|account_currency_mismatch|アカウント間で通貨が異なっています|Currency mismatch between accounts|
 |422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
@@ -1713,13 +2057,12 @@ Response.TransactionDetail response = await request.Send(client);
 エンドユーザー間での送金取引(個人間送金)を作成します。
 個人間送金で送れるのはマネーのみで、ポイントを送ることはできません。送金元のマネー残高のうち、有効期限が最も遠いものから順に送金されます。
 
-
 ```csharp
 Request.CreateTransferTransaction request = new Request.CreateTransferTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 送金元ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 受取ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // マネーID
-    8988.0 // 送金額
+    1686.0 // 送金額
 ) {
     Metadata = "{\"key\":\"value\"}",  // 取引メタデータ
     Description = "たい焼き(小倉)",  // 取引履歴に表示する説明文
@@ -1731,13 +2074,14 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`sender_id`** 
-  
-
+#### `sender_id`
 エンドユーザーIDです。
 
 送金元のエンドユーザー(送り主)を指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1745,13 +2089,16 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`receiver_id`** 
-  
+</details>
 
+#### `receiver_id`
 エンドユーザーIDです。
 
 送金先のエンドユーザー(受け取り人)を指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1759,13 +2106,16 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`private_money_id`** 
-  
+</details>
 
+#### `private_money_id`
 マネーIDです。
 
 マネーを指定します。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -1773,12 +2123,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`amount`** 
-  
+</details>
 
+#### `amount`
 マネー額です。
 
 送金するマネー額を指定します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1787,12 +2140,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`metadata`** 
-  
+</details>
 
+#### `metadata`
 取引作成時に指定されるメタデータです。
 
 任意入力で、全てのkeyとvalueが文字列であるようなフラットな構造のJSON文字列で指定します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1801,12 +2157,15 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
 取引説明文です。
 
 任意入力で、取引履歴に表示される説明文です。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1815,9 +2174,9 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`request_id`** 
-  
+</details>
 
+#### `request_id`
 取引作成APIの羃等性を担保するためのリクエスト固有のIDです。
 
 取引作成APIで結果が受け取れなかったなどの理由で再試行する際に、二重に取引が作られてしまうことを防ぐために、クライアント側から指定されます。指定は任意で、UUID V4フォーマットでランダム生成した文字列です。リクエストIDは一定期間で削除されます。
@@ -1825,12 +2184,17 @@ Response.TransactionDetail response = await request.Send(client);
 リクエストIDを指定したとき、まだそのリクエストIDに対する取引がない場合、新規に取引が作られレスポンスとして返されます。もしそのリクエストIDに対する取引が既にある場合、既存の取引がレスポンスとして返されます。
 既に存在する、別のユーザによる取引とリクエストIDが衝突した場合、request_id_conflictが返ります。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -1845,7 +2209,9 @@ Response.TransactionDetail response = await request.Send(client);
 |422|customer_user_not_found||The customer user is not found|
 |422|private_money_not_found|マネーが見つかりません|Private money not found|
 |422|coupon_not_found|クーポンが見つかりませんでした。|The coupon is not found.|
+|422|credit_session_money_topup_requires_credit_card|オーソリチャージ用マネーではクレジットカードによるチャージのみ許可されています|Credit card is required for topup on credit-session enabled money|
 |422|cannot_topup_during_cvs_authorization_pending|コンビニ決済の予約中はチャージできません|You cannot topup your account while a convenience store payment is pending.|
+|422|credit_session_not_found|オーソリセッションが見つかりません|Credit session not found|
 |422|not_applicable_transaction_type_for_account_topup_quota|チャージ取引以外の取引種別ではチャージ可能枠を使用できません|Account topup quota is not applicable to transaction types other than topup.|
 |422|private_money_topup_quota_not_available|このマネーにはチャージ可能枠の設定がありません|Topup quota is not available with this private money.|
 |422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
@@ -1873,7 +2239,7 @@ Response.TransactionDetail response = await request.Send(client);
 |422|coupon_unavailable|このクーポンは使用できません。|This coupon is unavailable.|
 |422|account_suspended|アカウントは停止されています|The account is suspended|
 |422|account_closed|アカウントは退会しています|The account is closed|
-|422|customer_account_not_found||The customer account is not found|
+|422|customer_account_not_found|ユーザアカウントが見つかりません|The customer account is not found|
 |422|shop_account_not_found|店舗アカウントが見つかりません|The shop account is not found|
 |422|account_currency_mismatch|アカウント間で通貨が異なっています|Currency mismatch between accounts|
 |422|account_pre_closed|アカウントは退会準備中です|The account is pre-closed|
@@ -1900,9 +2266,9 @@ Request.CreateExchangeTransaction request = new Request.CreateExchangeTransactio
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    5915
+    7048
 ) {
-    Description = "CGgqZsePkl6iY0bdXM6",
+    Description = "zl04cFD8UrQW71JWWTZgcCuDt4bOl52Y9Vo2q3PiHBjRUpdSYSIHe7WRd8QgrTh5gg3jBLh2J3dK297uJriMdLcWHclyy16UsYQYNNbAndnytowLyNOYLTsHdNmWw",
     RequestId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // リクエストID
 };
 Response.TransactionDetail response = await request.Send(client);
@@ -1911,20 +2277,10 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`user_id`** 
-  
+#### `user_id`
 
-
-```json
-{
-  "type": "string",
-  "format": "uuid"
-}
-```
-
-**`sender_private_money_id`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1933,9 +2289,12 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`receiver_private_money_id`** 
-  
+</details>
 
+#### `sender_private_money_id`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1944,9 +2303,26 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`amount`** 
-  
+</details>
 
+#### `receiver_private_money_id`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+#### `amount`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1955,9 +2331,12 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -1966,9 +2345,9 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`request_id`** 
-  
+</details>
 
+#### `request_id`
 取引作成APIの羃等性を担保するためのリクエスト固有のIDです。
 
 取引作成APIで結果が受け取れなかったなどの理由で再試行する際に、二重に取引が作られてしまうことを防ぐために、クライアント側から指定されます。指定は任意で、UUID V4フォーマットでランダム生成した文字列です。リクエストIDは一定期間で削除されます。
@@ -1976,12 +2355,17 @@ Response.TransactionDetail response = await request.Send(client);
 リクエストIDを指定したとき、まだそのリクエストIDに対する取引がない場合、新規に取引が作られレスポンスとして返されます。もしそのリクエストIDに対する取引が既にある場合、既存の取引がレスポンスとして返されます。
 既に存在する、別のユーザによる取引とリクエストIDが衝突した場合、request_id_conflictが返ります。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -1996,7 +2380,9 @@ Response.TransactionDetail response = await request.Send(client);
 |422|transaction_restricted||Transaction is not allowed|
 |422|can_not_exchange_between_same_private_money|同じマネーとの交換はできません||
 |422|can_not_exchange_between_users|異なるユーザー間での交換は出来ません||
+|422|credit_session_money_topup_requires_credit_card|オーソリチャージ用マネーではクレジットカードによるチャージのみ許可されています|Credit card is required for topup on credit-session enabled money|
 |422|cannot_topup_during_cvs_authorization_pending|コンビニ決済の予約中はチャージできません|You cannot topup your account while a convenience store payment is pending.|
+|422|credit_session_not_found|オーソリセッションが見つかりません|Credit session not found|
 |422|not_applicable_transaction_type_for_account_topup_quota|チャージ取引以外の取引種別ではチャージ可能枠を使用できません|Account topup quota is not applicable to transaction types other than topup.|
 |422|private_money_topup_quota_not_available|このマネーにはチャージ可能枠の設定がありません|Topup quota is not available with this private money.|
 |422|account_can_not_topup|この店舗からはチャージできません|account can not topup|
@@ -2054,12 +2440,13 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`transaction_id`** 
-  
-
+#### `transaction_id`
 取引IDです。
 
 フィルターとして使われ、指定した取引IDの取引を取得します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -2067,6 +2454,8 @@ Response.TransactionDetail response = await request.Send(client);
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -2094,7 +2483,7 @@ Request.RefundTransaction request = new Request.RefundTransaction(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 取引ID
 ) {
     Description = "返品対応のため",  // 取引履歴に表示する返金事由
-    ReturningPointExpiresAt = "2023-12-15T01:56:30.000000Z",  // 返却ポイントの有効期限
+    ReturningPointExpiresAt = "2025-06-11T19:42:40.000000Z",  // 返却ポイントの有効期限
 };
 Response.TransactionDetail response = await request.Send(client);
 ```
@@ -2102,9 +2491,10 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`transaction_id`** 
-  
+#### `transaction_id`
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -2113,9 +2503,12 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -2124,10 +2517,13 @@ Response.TransactionDetail response = await request.Send(client);
 }
 ```
 
-**`returning_point_expires_at`** 
-  
+</details>
 
+#### `returning_point_expires_at`
 ポイント支払いを含む支払い取引をキャンセルする際にユーザへ返却されるポイントの有効期限です。デフォルトでは未指定です。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -2135,6 +2531,8 @@ Response.TransactionDetail response = await request.Send(client);
   "format": "date-time"
 }
 ```
+
+</details>
 
 
 
@@ -2161,12 +2559,13 @@ Response.TransactionDetail response = await request.Send(client);
 
 
 ### Parameters
-**`request_id`** 
-  
-
+#### `request_id`
 取引作成時にクライアントが生成し指定するリクエストIDです。
 
 リクエストIDに対応する取引が存在すればその取引を返し、無ければNotFound(404)を返します。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -2174,6 +2573,8 @@ Response.TransactionDetail response = await request.Send(client);
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -2199,11 +2600,12 @@ Response.BulkTransaction response = await request.Send(client);
 
 
 ### Parameters
-**`bulk_transaction_id`** 
-  
-
+#### `bulk_transaction_id`
 バルク取引ジョブIDです。
 バルク取引ジョブ登録時にレスポンスに含まれます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -2211,6 +2613,8 @@ Response.BulkTransaction response = await request.Send(client);
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -2239,11 +2643,12 @@ Response.PaginatedBulkTransactionJob response = await request.Send(client);
 
 
 ### Parameters
-**`bulk_transaction_id`** 
-  
-
+#### `bulk_transaction_id`
 バルク取引ジョブIDです。
 バルク取引ジョブ登録時にレスポンスに含まれます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -2252,11 +2657,14 @@ Response.PaginatedBulkTransactionJob response = await request.Send(client);
 }
 ```
 
-**`page`** 
-  
+</details>
 
+#### `page`
 取得したいページ番号です。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
@@ -2264,22 +2672,103 @@ Response.PaginatedBulkTransactionJob response = await request.Send(client);
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
 1ページ分の取得数です。デフォルトでは 50 になっています。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
   "minimum": 1
 }
 ```
+
+</details>
 
 
 
 成功したときは
 [PaginatedBulkTransactionJob](./responses.md#paginated-bulk-transaction-job)
+を返します
+
+
+
+---
+
+
+<a name="cancel-bulk-transaction"></a>
+## CancelBulkTransaction: バルク取引をキャンセルする
+
+```csharp
+Request.CancelBulkTransaction request = new Request.CancelBulkTransaction(
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // バルク取引ジョブID
+);
+Response.BulkTransaction response = await request.Send(client);
+```
+
+
+
+### Parameters
+#### `bulk_transaction_id`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+
+
+成功したときは
+[BulkTransaction](./responses.md#bulk-transaction)
+を返します
+
+
+
+---
+
+
+<a name="resume-bulk-transaction"></a>
+## ResumeBulkTransaction: バルク取引を再開する
+
+```csharp
+Request.ResumeBulkTransaction request = new Request.ResumeBulkTransaction(
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // バルク取引ジョブID
+);
+Response.BulkTransaction response = await request.Send(client);
+```
+
+
+
+### Parameters
+#### `bulk_transaction_id`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "uuid"
+}
+```
+
+</details>
+
+
+
+成功したときは
+[BulkTransaction](./responses.md#bulk-transaction)
 を返します
 
 
@@ -2317,12 +2806,13 @@ Response.UserStatsOperation response = await request.Send(client);
 
 
 ### Parameters
-**`from`** 
-  
-
+#### `from`
 集計する期間の開始時刻をISO8601形式で指定します。
 時刻は現在時刻、及び `to` で指定する時刻以前である必要があります。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -2330,18 +2820,23 @@ Response.UserStatsOperation response = await request.Send(client);
 }
 ```
 
-**`to`** 
-  
+</details>
 
+#### `to`
 集計する期間の終了時刻をISO8601形式で指定します。
 時刻は現在時刻、及び `from` で指定する時刻の間である必要があります。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
   "format": "date-time"
 }
 ```
+
+</details>
 
 
 
@@ -2356,7 +2851,6 @@ Response.UserStatsOperation response = await request.Send(client);
 |403|unpermitted_admin_user|この管理ユーザには権限がありません|Admin does not have permission|
 |422|invalid_promotional_operation_user|ユーザーの指定に不正な値が含まれています|Invalid user data is specified|
 |422|invalid_promotional_operation_status|不正な処理ステータスです|Invalid operation status is specified|
-|503|user_stats_operation_service_unavailable|一時的にユーザー統計サービスが利用不能です|User stats service is temporarily unavailable|
 
 
 
@@ -2384,11 +2878,12 @@ Response.UserStatsOperation response = await request.Send(client);
 
 
 ### Parameters
-**`operation_id`** 
-  
-
+#### `operation_id`
 強制終了対象の集計タスクIDです。
 必須パラメータであり、指定されたタスクIDが存在しない場合は `user_stats_operation_not_found`エラー(422)が返ります。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -2396,6 +2891,8 @@ Response.UserStatsOperation response = await request.Send(client);
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 

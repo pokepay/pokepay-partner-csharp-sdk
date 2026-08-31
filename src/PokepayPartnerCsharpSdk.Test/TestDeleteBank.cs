@@ -25,8 +25,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.DeleteBank request = new Request.DeleteBank(
-                    "3ff64769-4489-4cd3-b7ac-1009a695830c",
-                    "36dfe143-ccc5-4bc2-83b0-c24b60350cdd"
+                    "6130a7ee-5330-4939-b5be-6bd432c567e2",
+                    "4f68e29e-6781-44ae-aaa6-0296b168c77e"
                 );
                 Response.BankDeleted response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

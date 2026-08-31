@@ -25,10 +25,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBank request = new Request.CreateBank(
-                    "3da5f089-2705-47a8-a04c-d9cbfa171677",
-                    "f7595202-f76f-4d31-958b-74e494b87550",
-                    "33Js1Kuu0UegnQjK5K12MWvCvA9DjpAvmSouPF8sEd3lBtNl0JB2dKxVrlXLEonC1KsoREeh2RXqHgFOF3b7VdwEdOPGXSe9OOoep5LkQDV7qJw1By6uFHkBHhurHoZlcvR7Q0TdgtR89zH4BRb4LxjYp1VFXi65IWH287FkS1AdoZmrqVFQp8fp9IpDGNT32XXjSeAsfsowmrnytFnDNPErJC0T6j8TSBN1GRIxfJ3UG",
-                    "UM2jHDzbRjTfUU5d5AtOip"
+                    "505465f4-79c1-4727-a3da-4f1b21a783d3",
+                    "c7c5e36b-c165-42f2-aefd-5d8cd93e2ea3",
+                    "bwN5IYLm99wEVRQ8sJxsInHOegu4ueAVfQ8nRhLcha2zRRyQlj7s7IqXcFdC0ufgYUkqe3kskveA2n2lBOE9H5VVR8QU7QjrIemlNkbreYYQh0DpuFWTXBEy8Kcs0g4RtCJckJnkv8b3lOd0jZSZisKJGtLxfbPFfaIRWKNMj5dtiKnG8zX8t",
+                    "Wqvm0QmTuUJdqTxvEdTrlIk"
                 );
                 Response.BankRegisteringInfo response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -43,12 +43,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBank request = new Request.CreateBank(
-                    "3da5f089-2705-47a8-a04c-d9cbfa171677",
-                    "f7595202-f76f-4d31-958b-74e494b87550",
-                    "33Js1Kuu0UegnQjK5K12MWvCvA9DjpAvmSouPF8sEd3lBtNl0JB2dKxVrlXLEonC1KsoREeh2RXqHgFOF3b7VdwEdOPGXSe9OOoep5LkQDV7qJw1By6uFHkBHhurHoZlcvR7Q0TdgtR89zH4BRb4LxjYp1VFXi65IWH287FkS1AdoZmrqVFQp8fp9IpDGNT32XXjSeAsfsowmrnytFnDNPErJC0T6j8TSBN1GRIxfJ3UG",
-                    "UM2jHDzbRjTfUU5d5AtOip"
+                    "505465f4-79c1-4727-a3da-4f1b21a783d3",
+                    "c7c5e36b-c165-42f2-aefd-5d8cd93e2ea3",
+                    "bwN5IYLm99wEVRQ8sJxsInHOegu4ueAVfQ8nRhLcha2zRRyQlj7s7IqXcFdC0ufgYUkqe3kskveA2n2lBOE9H5VVR8QU7QjrIemlNkbreYYQh0DpuFWTXBEy8Kcs0g4RtCJckJnkv8b3lOd0jZSZisKJGtLxfbPFfaIRWKNMj5dtiKnG8zX8t",
+                    "Wqvm0QmTuUJdqTxvEdTrlIk"
                 ) {
-                    Birthdate = "E6L0lEe",
+                    Birthdate = "Gk",
                 };
                 Response.BankRegisteringInfo response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -63,13 +63,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBank request = new Request.CreateBank(
-                    "3da5f089-2705-47a8-a04c-d9cbfa171677",
-                    "f7595202-f76f-4d31-958b-74e494b87550",
-                    "33Js1Kuu0UegnQjK5K12MWvCvA9DjpAvmSouPF8sEd3lBtNl0JB2dKxVrlXLEonC1KsoREeh2RXqHgFOF3b7VdwEdOPGXSe9OOoep5LkQDV7qJw1By6uFHkBHhurHoZlcvR7Q0TdgtR89zH4BRb4LxjYp1VFXi65IWH287FkS1AdoZmrqVFQp8fp9IpDGNT32XXjSeAsfsowmrnytFnDNPErJC0T6j8TSBN1GRIxfJ3UG",
-                    "UM2jHDzbRjTfUU5d5AtOip"
+                    "505465f4-79c1-4727-a3da-4f1b21a783d3",
+                    "c7c5e36b-c165-42f2-aefd-5d8cd93e2ea3",
+                    "bwN5IYLm99wEVRQ8sJxsInHOegu4ueAVfQ8nRhLcha2zRRyQlj7s7IqXcFdC0ufgYUkqe3kskveA2n2lBOE9H5VVR8QU7QjrIemlNkbreYYQh0DpuFWTXBEy8Kcs0g4RtCJckJnkv8b3lOd0jZSZisKJGtLxfbPFfaIRWKNMj5dtiKnG8zX8t",
+                    "Wqvm0QmTuUJdqTxvEdTrlIk"
                 ) {
-                    Email = "YXxSLgJV1G@wAOq.com",
-                    Birthdate = "c8zzT",
+                    Email = "GEpBmPu4Hk@qOfX.com",
+                    Birthdate = "Ekl5C8",
                 };
                 Response.BankRegisteringInfo response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -1,4 +1,11 @@
 # Account
+ウォレットを表すデータです。
+CustomerもMerchantも所有し、ウォレット間の送金は取引として記録されます。
+Customerのウォレットはマネー残高(有償バリュー)、ポイント残高(無償バリュー)の2種類の残高をもちます。
+また有効期限別で金額管理しており、有効期限はチャージ時のコンテキストによって決定されます。
+ユーザはマネー別に複数のウォレットを保有することが可能です。
+ただし１マネー１ウォレットのみであり、同一マネーのウォレットを複数所有することはできません。
+
 
 <a name="list-user-accounts"></a>
 ## ListUserAccounts: エンドユーザー、店舗ユーザーのウォレット一覧を表示する
@@ -8,8 +15,8 @@
 Request.ListUserAccounts request = new Request.ListUserAccounts(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ユーザーID
 ) {
-    Page = 4726,  // ページ番号
-    PerPage = 1440,  // 1ページ分の取引数
+    Page = 7544,  // ページ番号
+    PerPage = 2252,  // 1ページ分の取引数
 };
 Response.PaginatedAccountDetails response = await request.Send(client);
 ```
@@ -17,12 +24,13 @@ Response.PaginatedAccountDetails response = await request.Send(client);
 
 
 ### Parameters
-**`user_id`** 
-  
-
+#### `user_id`
 ユーザーIDです。
 
 指定したユーザーIDのウォレット一覧を取得します。パートナーキーと紐づく組織が発行しているマネーのウォレットのみが表示されます。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -31,11 +39,14 @@ Response.PaginatedAccountDetails response = await request.Send(client);
 }
 ```
 
-**`page`** 
-  
+</details>
 
+#### `page`
 取得したいページ番号です。デフォルト値は1です。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
@@ -43,17 +54,22 @@ Response.PaginatedAccountDetails response = await request.Send(client);
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
 1ページ当たりのウォレット数です。デフォルト値は50です。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
   "minimum": 1
 }
 ```
+
+</details>
 
 
 
@@ -75,8 +91,8 @@ Request.CreateUserAccount request = new Request.CreateUserAccount(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // ユーザーID
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // マネーID
 ) {
-    Name = "bJ1KgmPImdwaTBcNwqaqeRCH16a6zzUqrHdosHdbmLywqukvEUDGTtuu5mLHhGQ9yekqoyNLKN2h7BNq3rRMob2yqEgXsKX0DNjA5Llo",  // ウォレット名
-    ExternalId = "LW2Z",  // 外部ID
+    Name = "kYmgigiRBecjiYHAY2JzBXAH8kMOdWqNTIGASpUbYQp5bqa8tWD6s9Q6iiZbOooVKgu1qds6qgsoONFz6uyU0wrmFTsH1jox1nE7Xd1LHtA5BVDLAJt8tqoldYOWGhpaRKD1ENaiTkaXYFCXi0fdqXvmGys8YOpBu2KczD6BTCHnjtvnDM8G6PBmZyIjoWRfxfaml9V53r3s2",  // ウォレット名
+    ExternalId = "bgJInEjXNNDJsFK9WBlSOaEAClE0qaCOj2fSXpFKUlotqu2axS",  // 外部ID
     Metadata = "{\"key1\":\"foo\",\"key2\":\"bar\"}",  // ウォレットに付加するメタデータ
 };
 Response.AccountDetail response = await request.Send(client);
@@ -85,10 +101,11 @@ Response.AccountDetail response = await request.Send(client);
 
 
 ### Parameters
-**`user_id`** 
-  
-
+#### `user_id`
 ユーザーIDです。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -97,13 +114,16 @@ Response.AccountDetail response = await request.Send(client);
 }
 ```
 
-**`private_money_id`** 
-  
+</details>
 
+#### `private_money_id`
 マネーIDです。
 
 作成するウォレットのマネーを指定します。このパラメータは必須です。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "string",
@@ -111,9 +131,12 @@ Response.AccountDetail response = await request.Send(client);
 }
 ```
 
-**`name`** 
-  
+</details>
 
+#### `name`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -122,9 +145,12 @@ Response.AccountDetail response = await request.Send(client);
 }
 ```
 
-**`external_id`** 
-  
+</details>
 
+#### `external_id`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -133,14 +159,17 @@ Response.AccountDetail response = await request.Send(client);
 }
 ```
 
-**`metadata`** 
-  
+</details>
 
+#### `metadata`
 ウォレットに付加するメタデータをJSON文字列で指定します。
 指定できるJSON文字列には以下のような制約があります。
 - フラットな構造のJSONを文字列化したものであること。
 - keyは最大32文字の文字列(同じkeyを複数指定することはできません)
 - valueには128文字以下の文字列が指定できます
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -148,6 +177,8 @@ Response.AccountDetail response = await request.Send(client);
   "format": "json"
 }
 ```
+
+</details>
 
 
 

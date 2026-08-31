@@ -3,7 +3,6 @@ UserDeviceはユーザー毎のデバイスを管理します。
 あるユーザーが使っている端末を区別する必要がある場合に用いられます。
 これが必要な理由はBank Payを用いたチャージを行う場合は端末を区別できることが要件としてあるためです。
 
-
 <a name="create-user-device"></a>
 ## CreateUserDevice: ユーザーのデバイス登録
 ユーザーのデバイスを新規に登録します
@@ -20,9 +19,10 @@ Response.UserDevice response = await request.Send(client);
 
 
 ### Parameters
-**`user_id`** 
-  
+#### `user_id`
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -31,12 +31,14 @@ Response.UserDevice response = await request.Send(client);
 }
 ```
 
-**`metadata`** 
-  
+</details>
 
+#### `metadata`
 ユーザーのデバイス用の情報をメタデータを保持するために用います。
 例: 端末の固有情報やブラウザのUser-Agent
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -44,6 +46,8 @@ Response.UserDevice response = await request.Send(client);
   "format": "json"
 }
 ```
+
+</details>
 
 
 
@@ -76,9 +80,10 @@ Response.UserDevice response = await request.Send(client);
 
 
 ### Parameters
-**`user_device_id`** 
-  
+#### `user_device_id`
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -86,6 +91,8 @@ Response.UserDevice response = await request.Send(client);
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -102,7 +109,6 @@ Response.UserDevice response = await request.Send(client);
 ## ActivateUserDevice: デバイスの有効化
 指定のデバイスを有効化し、それ以外の同一ユーザーのデバイスを無効化します。
 
-
 ```csharp
 Request.ActivateUserDevice request = new Request.ActivateUserDevice(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // ユーザーデバイスID
@@ -113,9 +119,10 @@ Response.UserDevice response = await request.Send(client);
 
 
 ### Parameters
-**`user_device_id`** 
-  
+#### `user_device_id`
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -123,6 +130,8 @@ Response.UserDevice response = await request.Send(client);
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
