@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
+                    "4c4df09a-c8ea-4602-b592-3b442f0ec08d"
                 );
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
+                    "4c4df09a-c8ea-4602-b592-3b442f0ec08d"
                 ) {
-                    IsSuspended = false,
+                    IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
+                    "4c4df09a-c8ea-4602-b592-3b442f0ec08d"
                 ) {
-                    CreatedAtTo = "2024-07-25T03:44:04.000000Z",
-                    IsSuspended = false,
+                    CreatedAtTo = "2026-05-14T15:53:20.000000Z",
+                    IsSuspended = true,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
+                    "4c4df09a-c8ea-4602-b592-3b442f0ec08d"
                 ) {
-                    CreatedAtFrom = "2023-03-19T21:52:50.000000Z",
-                    CreatedAtTo = "2021-05-16T14:27:26.000000Z",
+                    CreatedAtFrom = "2025-06-12T01:11:15.000000Z",
+                    CreatedAtTo = "2023-05-08T13:24:13.000000Z",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
+                    "4c4df09a-c8ea-4602-b592-3b442f0ec08d"
                 ) {
-                    PerPage = 2991,
-                    CreatedAtFrom = "2021-03-14T12:40:20.000000Z",
-                    CreatedAtTo = "2023-05-24T08:19:28.000000Z",
-                    IsSuspended = true,
+                    PerPage = 644,
+                    CreatedAtFrom = "2021-12-12T13:57:58.000000Z",
+                    CreatedAtTo = "2020-05-21T00:15:54.000000Z",
+                    IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,12 +114,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetShopAccounts request = new Request.GetShopAccounts(
-                    "a6714648-ca18-4c6a-9ecb-b1f97ca44a38"
+                    "4c4df09a-c8ea-4602-b592-3b442f0ec08d"
                 ) {
-                    Page = 4106,
-                    PerPage = 2378,
-                    CreatedAtFrom = "2020-07-23T05:33:11.000000Z",
-                    CreatedAtTo = "2023-07-26T19:28:22.000000Z",
+                    Page = 7075,
+                    PerPage = 5144,
+                    CreatedAtFrom = "2026-07-04T12:00:10.000000Z",
+                    CreatedAtTo = "2022-11-05T06:14:30.000000Z",
                     IsSuspended = false,
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);

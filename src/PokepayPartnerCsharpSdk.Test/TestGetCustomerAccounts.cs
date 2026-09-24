@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 );
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 ) {
-                    Email = "cm0Sp2RluF@OAxJ.com",
+                    Email = "2pUTWzADND@e87o.com",
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 ) {
-                    Tel = "07-0551-2657",
-                    Email = "TcJlnsa7zu@y1tu.com",
+                    Tel = "045226365",
+                    Email = "Usk6umIdkj@ysmB.com",
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 ) {
-                    ExternalId = "dw",
-                    Tel = "071-69745487",
-                    Email = "fKkMLwrBpO@RQ9L.com",
+                    ExternalId = "oCy1Ud1e5PrxfXmPZX1VlVfqe",
+                    Tel = "060032739459",
+                    Email = "e0pY47yGoA@wg28.com",
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 ) {
                     Status = "suspended",
-                    ExternalId = "lnKRmCd4n",
-                    Tel = "045-981479",
-                    Email = "qpn3W7S36l@34SS.com",
+                    ExternalId = "Msl4sq96mAewFZHEg2RF0uEHwK5Jbwu9JRSn5a7ymUxn4mfv",
+                    Tel = "07693552",
+                    Email = "86BZW4IWD5@GZy4.com",
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,13 +114,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 ) {
-                    IsSuspended = false,
-                    Status = "active",
-                    ExternalId = "W72gqSjd8QPzbjt0rt7UmerReZGbvGgvA",
-                    Tel = "09215911045",
-                    Email = "P1AnQALadF@sAzg.com",
+                    IsSuspended = true,
+                    Status = "pre-closed",
+                    ExternalId = "5w0ovSrq2HjQnZoVWhOdLDSpe9mEjTApY38vZyrfHaX2ePxiTI",
+                    Tel = "063937-3077",
+                    Email = "Q3onqPmyIz@FPAF.com",
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -135,14 +135,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 ) {
-                    CreatedAtTo = "2022-07-27T22:59:50.000000Z",
-                    IsSuspended = true,
-                    Status = "pre-closed",
-                    ExternalId = "tuXgZDedIJqTHGgnOhGiwZBj5AvHdO2Atfc",
-                    Tel = "0129-664-818",
-                    Email = "3sP8V6IT9V@FC5b.com",
+                    CreatedAtTo = "2020-01-16T21:59:19.000000Z",
+                    IsSuspended = false,
+                    Status = "suspended",
+                    ExternalId = "HME8Dl",
+                    Tel = "030565-274",
+                    Email = "Wsj7MinGr0@IGEe.com",
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -157,15 +157,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 ) {
-                    CreatedAtFrom = "2021-03-24T19:42:09.000000Z",
-                    CreatedAtTo = "2020-09-24T18:38:11.000000Z",
-                    IsSuspended = true,
-                    Status = "active",
-                    ExternalId = "PASw8jPQ0hMJ4nPgNJOUuVI3xkUSOX0vTgyFK1F",
-                    Tel = "002-97-992",
-                    Email = "exAarzlUll@rgsQ.com",
+                    CreatedAtFrom = "2022-02-07T10:39:08.000000Z",
+                    CreatedAtTo = "2022-06-22T20:03:06.000000Z",
+                    IsSuspended = false,
+                    Status = "suspended",
+                    ExternalId = "5ms0HjwVmUqLVvuFmzvx3MioePO7gkONNAjBCYm",
+                    Tel = "047-459078",
+                    Email = "jITuRCVadP@y2Bb.com",
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -180,16 +180,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 ) {
-                    PerPage = 6435,
-                    CreatedAtFrom = "2022-12-18T13:21:30.000000Z",
-                    CreatedAtTo = "2025-06-21T23:46:25.000000Z",
-                    IsSuspended = false,
+                    PerPage = 3778,
+                    CreatedAtFrom = "2024-10-15T16:45:19.000000Z",
+                    CreatedAtTo = "2025-11-30T08:24:53.000000Z",
+                    IsSuspended = true,
                     Status = "pre-closed",
-                    ExternalId = "U",
-                    Tel = "070-062-041",
-                    Email = "uPYAKNLvTy@McIY.com",
+                    ExternalId = "tCT3aJmzxxuQUVBryDZD3LHlYNS3c0MUvvhZyFdp",
+                    Tel = "0023702-587",
+                    Email = "3GCZjYfwcS@TcjO.com",
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -204,17 +204,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCustomerAccounts request = new Request.GetCustomerAccounts(
-                    "e981839f-7730-40a4-9991-3f49bc7c0625"
+                    "ac4bc52d-4086-4db8-8bea-b2653c87a7ab"
                 ) {
-                    Page = 5613,
-                    PerPage = 8339,
-                    CreatedAtFrom = "2025-02-04T14:45:59.000000Z",
-                    CreatedAtTo = "2022-04-16T16:37:32.000000Z",
-                    IsSuspended = false,
-                    Status = "suspended",
-                    ExternalId = "Sz5j",
-                    Tel = "084-00934",
-                    Email = "Pyt1wTnktL@8AYk.com",
+                    Page = 4415,
+                    PerPage = 3746,
+                    CreatedAtFrom = "2023-07-19T08:17:13.000000Z",
+                    CreatedAtTo = "2023-01-07T06:16:44.000000Z",
+                    IsSuspended = true,
+                    Status = "active",
+                    ExternalId = "y0KR",
+                    Tel = "00525065-039",
+                    Email = "DVyQoaELlr@Jk6M.com",
                 };
                 Response.PaginatedAccountWithUsers response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "f841fa09-5b89-4dbb-907b-391f2295a7e0"
+                    "ca399bcd-b969-4338-9e11-a7b184bed223"
                 );
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "f841fa09-5b89-4dbb-907b-391f2295a7e0"
+                    "ca399bcd-b969-4338-9e11-a7b184bed223"
                 ) {
                     Task = "bulk_shops",
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "f841fa09-5b89-4dbb-907b-391f2295a7e0"
+                    "ca399bcd-b969-4338-9e11-a7b184bed223"
                 ) {
-                    IsActive = false,
+                    IsActive = true,
                     Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateWebhook request = new Request.UpdateWebhook(
-                    "f841fa09-5b89-4dbb-907b-391f2295a7e0"
+                    "ca399bcd-b969-4338-9e11-a7b184bed223"
                 ) {
-                    Url = "m3HE",
-                    IsActive = false,
-                    Task = "bulk_shops",
+                    Url = "IvFF2aV",
+                    IsActive = true,
+                    Task = "process_user_stats_operation",
                 };
                 Response.OrganizationWorkerTaskWebhook response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
