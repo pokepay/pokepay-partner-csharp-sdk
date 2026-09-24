@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "a4a782a4-76f9-4936-a8d1-35b63e8bbb60"
+                    "154960a2-ce1f-44d3-ad4e-01f7bc94c80f"
                 );
                 Response.PaginatedAccountBalance response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,7 +40,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "a4a782a4-76f9-4936-a8d1-35b63e8bbb60"
+                    "154960a2-ce1f-44d3-ad4e-01f7bc94c80f"
                 ) {
                     Direction = "desc",
                 };
@@ -57,9 +57,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "a4a782a4-76f9-4936-a8d1-35b63e8bbb60"
+                    "154960a2-ce1f-44d3-ad4e-01f7bc94c80f"
                 ) {
-                    ExpiresAtTo = "2020-10-21T06:08:14.000000Z",
+                    ExpiresAtTo = "2020-05-12T06:39:28.000000Z",
                     Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "a4a782a4-76f9-4936-a8d1-35b63e8bbb60"
+                    "154960a2-ce1f-44d3-ad4e-01f7bc94c80f"
                 ) {
-                    ExpiresAtFrom = "2024-05-06T22:47:15.000000Z",
-                    ExpiresAtTo = "2021-02-10T04:23:33.000000Z",
+                    ExpiresAtFrom = "2021-08-10T22:28:30.000000Z",
+                    ExpiresAtTo = "2022-01-02T23:11:37.000000Z",
                     Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -94,11 +94,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "a4a782a4-76f9-4936-a8d1-35b63e8bbb60"
+                    "154960a2-ce1f-44d3-ad4e-01f7bc94c80f"
                 ) {
-                    PerPage = 9269,
-                    ExpiresAtFrom = "2022-07-27T12:24:37.000000Z",
-                    ExpiresAtTo = "2020-03-19T18:01:03.000000Z",
+                    PerPage = 4714,
+                    ExpiresAtFrom = "2020-04-19T21:07:10.000000Z",
+                    ExpiresAtTo = "2026-08-14T18:22:19.000000Z",
                     Direction = "desc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);
@@ -114,12 +114,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListAccountExpiredBalances request = new Request.ListAccountExpiredBalances(
-                    "a4a782a4-76f9-4936-a8d1-35b63e8bbb60"
+                    "154960a2-ce1f-44d3-ad4e-01f7bc94c80f"
                 ) {
-                    Page = 6531,
-                    PerPage = 2579,
-                    ExpiresAtFrom = "2023-10-07T04:30:21.000000Z",
-                    ExpiresAtTo = "2023-04-20T20:38:29.000000Z",
+                    Page = 3051,
+                    PerPage = 9993,
+                    ExpiresAtFrom = "2020-01-17T10:42:07.000000Z",
+                    ExpiresAtTo = "2024-08-16T11:50:48.000000Z",
                     Direction = "asc",
                 };
                 Response.PaginatedAccountBalance response = await request.Send(client);

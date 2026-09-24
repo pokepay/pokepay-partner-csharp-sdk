@@ -25,9 +25,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "8zwWTQtwhgEUQrpqVtFI20RqU",
-                    "84w",
-                    "WVej7KjR7PO79YOuc2btzI2HvKaIy1dRKuzO"
+                    "2E4bXnTsrAuXzcUztcj",
+                    "pDcIzv",
+                    "8TjKb1dIcQKtgPEpt9Ynsu0LI4T70lQwB453"
                 );
                 Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -42,11 +42,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "8zwWTQtwhgEUQrpqVtFI20RqU",
-                    "84w",
-                    "WVej7KjR7PO79YOuc2btzI2HvKaIy1dRKuzO"
+                    "2E4bXnTsrAuXzcUztcj",
+                    "pDcIzv",
+                    "8TjKb1dIcQKtgPEpt9Ynsu0LI4T70lQwB453"
                 ) {
-                    CallbackUrl = "L",
+                    CallbackUrl = "https://YpOK96Eo.example.com",
                 };
                 Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -61,12 +61,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "8zwWTQtwhgEUQrpqVtFI20RqU",
-                    "84w",
-                    "WVej7KjR7PO79YOuc2btzI2HvKaIy1dRKuzO"
+                    "2E4bXnTsrAuXzcUztcj",
+                    "pDcIzv",
+                    "8TjKb1dIcQKtgPEpt9Ynsu0LI4T70lQwB453"
                 ) {
-                    PrivateMoneyId = "75eada7d-140e-4d98-a0bd-73a8e125323a",
-                    CallbackUrl = "BSZr2",
+                    PrivateMoneyId = "23ac1ca6-8bc6-4fc7-b8d6-771b0485304a",
+                    CallbackUrl = "https://NTeRlFM4.example.com",
                 };
                 Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -81,13 +81,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.BulkCreateTransaction request = new Request.BulkCreateTransaction(
-                    "8zwWTQtwhgEUQrpqVtFI20RqU",
-                    "84w",
-                    "WVej7KjR7PO79YOuc2btzI2HvKaIy1dRKuzO"
+                    "2E4bXnTsrAuXzcUztcj",
+                    "pDcIzv",
+                    "8TjKb1dIcQKtgPEpt9Ynsu0LI4T70lQwB453"
                 ) {
-                    Description = "20xtZpZdQ9ssluYJHAlylPpV6xWxt7f2oLFlgp2lLhVbHghg4lZSVxXqYiDQPFv2xIXmI4PlPvyiodipyOhBLvJd18F7msVCl",
-                    PrivateMoneyId = "c2881e59-c991-4d49-9ab6-29113a312142",
-                    CallbackUrl = "4Z",
+                    Description = "w2YneFRtau24yc1kusN7qW2yhhPFbHNPhRgnqYnUlh4JbOrMj5jFwrAdcz57ZOWsDr0Djt9M12BOno1AcjM96oftC",
+                    PrivateMoneyId = "105528b7-6b6d-4cc8-95e8-c969390d64a0",
+                    CallbackUrl = "https://SDgXKvVy.example.com",
                 };
                 Response.BulkTransaction response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

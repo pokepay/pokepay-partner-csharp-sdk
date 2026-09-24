@@ -8,6 +8,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string Id { get; set; }
         public string Name { get; set; }
         public User[] ApplicableShops { get; set; }
+        public CampaignShopLabel[] ApplicableShopLabels { get; set; }
         public bool IsExclusive { get; set; }
         public string StartsAt { get; set; }
         public string EndsAt { get; set; }
