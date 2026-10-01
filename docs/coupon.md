@@ -1,6 +1,9 @@
 # Coupon
-Couponは支払い時に指定し、支払い処理の前にCouponに指定の方法で値引き処理を行います。
-Couponは特定店舗で利用できるものや利用可能期間、配信条件などを設定できます。
+割引クーポンを表すデータです。
+クーポンをユーザが明示的に利用することによって支払い決済時の割引(固定金額 or 割引率)が適用されます。
+クーポンは支払い時に指定し、支払い処理の前にクーポンに指定の方法で値引き処理を行います。
+クーポン原資を負担する発行店舗を設定したり、配布先を指定することも可能です。
+また、特定店舗で利用できるものや利用可能期間、配信条件などを設定できます。
 
 
 <a name="list-coupons"></a>
@@ -11,12 +14,12 @@ Couponは特定店舗で利用できるものや利用可能期間、配信条�
 Request.ListCoupons request = new Request.ListCoupons(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 対象クーポンのマネーID
 ) {
-    CouponId = "jZJEl7",  // クーポンID
-    CouponName = "6aHeFVmJS",  // クーポン名
-    IssuedShopName = "Kr",  // 発行店舗名
-    AvailableShopName = "NDUQhJ",  // 利用可能店舗名
-    AvailableFrom = "2022-05-05T13:17:26.000000Z",  // 利用可能期間 (開始日時)
-    AvailableTo = "2023-01-20T11:27:27.000000Z",  // 利用可能期間 (終了日時)
+    CouponId = "nhx5",  // クーポンID
+    CouponName = "1AwtpZI",  // クーポン名
+    IssuedShopName = "6uv80k2",  // 発行店舗名
+    AvailableShopName = "ZHBR50",  // 利用可能店舗名
+    AvailableFrom = "2024-01-07T09:44:19.000000Z",  // 利用可能期間 (開始日時)
+    AvailableTo = "2022-12-22T07:16:24.000000Z",  // 利用可能期間 (終了日時)
     Page = 1,  // ページ番号
     PerPage = 50,  // 1ページ分の取得数
 };
@@ -26,12 +29,12 @@ Response.PaginatedCoupons response = await request.Send(client);
 
 
 ### Parameters
-**`private_money_id`** 
-  
-
+#### `private_money_id`
 対象クーポンのマネーIDです(必須項目)。
 存在しないマネーIDを指定した場合はprivate_money_not_foundエラー(422)が返ります。
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -40,12 +43,14 @@ Response.PaginatedCoupons response = await request.Send(client);
 }
 ```
 
-**`coupon_id`** 
-  
+</details>
 
+#### `coupon_id`
 指定されたクーポンIDで結果をフィルターします。
 部分一致(前方一致)します。
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -53,11 +58,13 @@ Response.PaginatedCoupons response = await request.Send(client);
 }
 ```
 
-**`coupon_name`** 
-  
+</details>
 
+#### `coupon_name`
 指定されたクーポン名で結果をフィルターします。
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -65,11 +72,13 @@ Response.PaginatedCoupons response = await request.Send(client);
 }
 ```
 
-**`issued_shop_name`** 
-  
+</details>
 
+#### `issued_shop_name`
 指定された発行店舗で結果をフィルターします。
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -77,11 +86,13 @@ Response.PaginatedCoupons response = await request.Send(client);
 }
 ```
 
-**`available_shop_name`** 
-  
+</details>
 
+#### `available_shop_name`
 指定された利用可能店舗で結果をフィルターします。
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -89,11 +100,13 @@ Response.PaginatedCoupons response = await request.Send(client);
 }
 ```
 
-**`available_from`** 
-  
+</details>
 
+#### `available_from`
 利用可能期間でフィルターします。フィルターの開始日時をISO8601形式で指定します。
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -102,11 +115,13 @@ Response.PaginatedCoupons response = await request.Send(client);
 }
 ```
 
-**`available_to`** 
-  
+</details>
 
+#### `available_to`
 利用可能期間でフィルターします。フィルターの終了日時をISO8601形式で指定します。
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -115,11 +130,14 @@ Response.PaginatedCoupons response = await request.Send(client);
 }
 ```
 
-**`page`** 
-  
+</details>
 
+#### `page`
 取得したいページ番号です。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
@@ -127,17 +145,22 @@ Response.PaginatedCoupons response = await request.Send(client);
 }
 ```
 
-**`per_page`** 
-  
+</details>
 
+#### `per_page`
 1ページ分の取得数です。デフォルトでは 50 になっています。
 
+<details>
+<summary>スキーマ</summary>
+
 ```json
 {
   "type": "integer",
   "minimum": 1
 }
 ```
+
+</details>
 
 
 
@@ -164,27 +187,27 @@ Response.PaginatedCoupons response = await request.Send(client);
 ```csharp
 Request.CreateCoupon request = new Request.CreateCoupon(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "q76RxAuxSVrnur4Ju4ayidm5BuCe0yTSEIanUYTV2eUYLa0Qhqw2R1myjYzFL4j0HTXKtxMi6tvMf7G",
-    "2020-05-30T21:40:50.000000Z",
-    "2021-08-17T20:39:38.000000Z",
+    "hGa26QKgCzW91ijqwGz4iwxLvGQu8AItYv5ALjIimTwKA5k60bA481CWCvSZBvCgqCd3bRt5kX2boQlLinyfuc6vmm92pmKFDO4dzrTnN2hnl6jClpe10uHCcb",
+    "2021-02-17T10:44:59.000000Z",
+    "2024-05-06T04:56:24.000000Z",
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // 発行元の店舗ID
 ) {
-    Description = "KVOo81owGN6i0XTT33lqYdKQ0h3ghVZk7eOE9tcwx8MOKl5MRsa1MFEYPOVzvPSXDUkbgX2oBshUtXGZ9lfp9TwgYPOmismihXWyqdhqoMR6oAdT5yPsPR",
-    DiscountAmount = 7043,
-    DiscountPercentage = 1161.0,
-    DiscountUpperLimit = 4333,
-    DisplayStartsAt = "2021-01-12T01:53:39.000000Z",  // クーポンの掲載期間(開始日時)
-    DisplayEndsAt = "2024-02-18T20:37:38.000000Z",  // クーポンの掲載期間(終了日時)
+    Description = "raKIE5JV72jwXeLc5ziCQvgnEPrwn8MGASAuLD3WLJqm2LErGcclueraXSCDvzDuhvkKIoa3xl900hkmeYLn1AjsWrIn7wWX9Rc7bgZ9BG44UnK5kugEbv8t3i1UGnc40madwkN30KxIK4R69fUEBg5VG6fY3BMw3LzyuQr74JtjTjvnySfqw4U7H9TvwAB8eScBfn1Rj6bF7qwsumEcO5tiAsH",
+    DiscountAmount = 5197,
+    DiscountPercentage = 9923.0,
+    DiscountUpperLimit = 3126,
+    DisplayStartsAt = "2025-12-29T14:37:02.000000Z",  // クーポンの掲載期間(開始日時)
+    DisplayEndsAt = "2022-08-04T10:35:30.000000Z",  // クーポンの掲載期間(終了日時)
     IsDisabled = false,  // 無効化フラグ
-    IsHidden = false,  // クーポン一覧に掲載されるかどうか
-    IsPublic = false,  // アプリ配信なしで受け取れるかどうか
-    Code = "dZdYDDGZDu",  // クーポン受け取りコード
-    UsageLimit = 7549,  // ユーザごとの利用可能回数(NULLの場合は無制限)
-    MinAmount = 7770,  // クーポン適用可能な最小取引額
+    IsHidden = true,  // クーポン一覧に掲載されるかどうか
+    IsPublic = true,  // アプリ配信なしで受け取れるかどうか
+    Code = "A",  // クーポン受け取りコード
+    UsageLimit = 7376,  // ユーザごとの利用可能回数(NULLの場合は無制限)
+    MinAmount = 7078,  // クーポン適用可能な最小取引額
     IsShopSpecified = true,  // 特定店舗限定のクーポンかどうか
-    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
+    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
     StorageId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ストレージID
-    NumRecipientsCap = 6800,  // クーポンを受け取ることができるユーザ数上限
+    NumRecipientsCap = 291,  // クーポンを受け取ることができるユーザ数上限
 };
 Response.CouponDetail response = await request.Send(client);
 ```
@@ -193,9 +216,10 @@ Response.CouponDetail response = await request.Send(client);
 
 
 ### Parameters
-**`private_money_id`** 
-  
+#### `private_money_id`
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -204,9 +228,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`name`** 
-  
+</details>
 
+#### `name`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -215,9 +242,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -226,9 +256,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`discount_amount`** 
-  
+</details>
 
+#### `discount_amount`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -237,9 +270,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`discount_percentage`** 
-  
+</details>
 
+#### `discount_percentage`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -248,9 +284,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`discount_upper_limit`** 
-  
+</details>
 
+#### `discount_upper_limit`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -259,20 +298,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`starts_at`** 
-  
+</details>
 
+#### `starts_at`
 
-```json
-{
-  "type": "string",
-  "format": "date-time"
-}
-```
-
-**`ends_at`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -281,20 +312,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`display_starts_at`** 
-  
+</details>
 
+#### `ends_at`
 
-```json
-{
-  "type": "string",
-  "format": "date-time"
-}
-```
-
-**`display_ends_at`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -303,9 +326,40 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`is_disabled`** 
-  
+</details>
 
+#### `display_starts_at`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
+</details>
+
+#### `display_ends_at`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
+</details>
+
+#### `is_disabled`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -313,12 +367,14 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`is_hidden`** 
-  
+</details>
 
+#### `is_hidden`
 アプリに表示されるクーポン一覧に掲載されるかどうか。
 主に一時的に掲載から外したいときに用いられる。そのためis_publicの設定よりも優先される。
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -326,9 +382,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`is_public`** 
-  
+</details>
 
+#### `is_public`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -336,9 +395,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`code`** 
-  
+</details>
 
+#### `code`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -346,19 +408,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`usage_limit`** 
-  
+</details>
 
+#### `usage_limit`
 
-```json
-{
-  "type": "integer"
-}
-```
-
-**`min_amount`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -366,9 +421,25 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`issued_shop_id`** 
-  
+</details>
 
+#### `min_amount`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "integer"
+}
+```
+
+</details>
+
+#### `issued_shop_id`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -377,9 +448,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`is_shop_specified`** 
-  
+</details>
 
+#### `is_shop_specified`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -387,9 +461,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`available_shop_ids`** 
-  
+</details>
 
+#### `available_shop_ids`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -401,10 +478,13 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`storage_id`** 
-  
+</details>
 
+#### `storage_id`
 Storage APIでアップロードしたクーポン画像のStorage IDを指定します
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -413,9 +493,12 @@ Storage APIでアップロードしたクーポン画像のStorage IDを指定�
 }
 ```
 
-**`num_recipients_cap`** 
-  
+</details>
 
+#### `num_recipients_cap`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -423,6 +506,8 @@ Storage APIでアップロードしたクーポン画像のStorage IDを指定�
   "minimum": 1
 }
 ```
+
+</details>
 
 
 
@@ -459,12 +544,13 @@ Response.CouponDetail response = await request.Send(client);
 
 
 ### Parameters
-**`coupon_id`** 
-  
-
+#### `coupon_id`
 取得するクーポンのIDです。
 UUIDv4フォーマットである必要があり、フォーマットが異なる場合は InvalidParametersエラー(400)が返ります。
 指定したIDのクーポンが存在しない場合はCouponNotFoundエラー(422)が返ります。
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -472,6 +558,8 @@ UUIDv4フォーマットである必要があり、フォーマットが異な�
   "format": "uuid"
 }
 ```
+
+</details>
 
 
 
@@ -492,25 +580,25 @@ UUIDv4フォーマットである必要があり、フォーマットが異な�
 Request.UpdateCoupon request = new Request.UpdateCoupon(
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" // クーポンID
 ) {
-    Name = "0XgqQIqTu14tSh13qLZDYdRTWbMgZiB4q5y",
-    Description = "IKvcyeytZUeCOzn479Q7e7CQ6mogsi4OQ6jQwMdVQzET3CTZR3naadmHoO937wRncWgLEMvwuXtyGneCNJhR9grzs",
-    DiscountAmount = 2757,
-    DiscountPercentage = 2132.0,
-    DiscountUpperLimit = 7431,
-    StartsAt = "2022-06-15T08:32:57.000000Z",
-    EndsAt = "2023-05-19T05:05:23.000000Z",
-    DisplayStartsAt = "2025-09-16T08:41:03.000000Z",  // クーポンの掲載期間(開始日時)
-    DisplayEndsAt = "2022-05-27T01:03:04.000000Z",  // クーポンの掲載期間(終了日時)
-    IsDisabled = true,  // 無効化フラグ
-    IsHidden = false,  // クーポン一覧に掲載されるかどうか
+    Name = "Ct8CHPFNDEoS5JXEhny5IMhsG4v0CQldqzxJ6XAxr",
+    Description = "Ug5QJXjIdY8iZkaSGkcJKeradqBxAYjByUEnMrrxLZOgOaoYWcJG86z8KVqUt2uzq",
+    DiscountAmount = 3847,
+    DiscountPercentage = 2703.0,
+    DiscountUpperLimit = 9118,
+    StartsAt = "2026-03-12T13:26:37.000000Z",
+    EndsAt = "2023-10-29T09:57:22.000000Z",
+    DisplayStartsAt = "2021-06-04T13:53:55.000000Z",  // クーポンの掲載期間(開始日時)
+    DisplayEndsAt = "2021-03-22T12:31:41.000000Z",  // クーポンの掲載期間(終了日時)
+    IsDisabled = false,  // 無効化フラグ
+    IsHidden = true,  // クーポン一覧に掲載されるかどうか
     IsPublic = false,  // アプリ配信なしで受け取れるかどうか
-    Code = "iGJ",  // クーポン受け取りコード
-    UsageLimit = 2994,  // ユーザごとの利用可能回数(NULLの場合は無制限)
-    MinAmount = 8507,  // クーポン適用可能な最小取引額
-    IsShopSpecified = false,  // 特定店舗限定のクーポンかどうか
-    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
+    Code = "YKRp5jW",  // クーポン受け取りコード
+    UsageLimit = 229,  // ユーザごとの利用可能回数(NULLの場合は無制限)
+    MinAmount = 7594,  // クーポン適用可能な最小取引額
+    IsShopSpecified = true,  // 特定店舗限定のクーポンかどうか
+    AvailableShopIds = new string[]{"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"},  // 利用可能店舗リスト
     StorageId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",  // ストレージID
-    NumRecipientsCap = 346,  // クーポンを受け取ることができるユーザ数上限
+    NumRecipientsCap = 9331,  // クーポンを受け取ることができるユーザ数上限
 };
 Response.CouponDetail response = await request.Send(client);
 ```
@@ -521,9 +609,10 @@ Response.CouponDetail response = await request.Send(client);
 
 
 ### Parameters
-**`coupon_id`** 
-  
+#### `coupon_id`
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -532,9 +621,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`name`** 
-  
+</details>
 
+#### `name`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -543,9 +635,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`description`** 
-  
+</details>
 
+#### `description`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -554,9 +649,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`discount_amount`** 
-  
+</details>
 
+#### `discount_amount`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -565,9 +663,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`discount_percentage`** 
-  
+</details>
 
+#### `discount_percentage`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -576,9 +677,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`discount_upper_limit`** 
-  
+</details>
 
+#### `discount_upper_limit`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -587,20 +691,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`starts_at`** 
-  
+</details>
 
+#### `starts_at`
 
-```json
-{
-  "type": "string",
-  "format": "date-time"
-}
-```
-
-**`ends_at`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -609,20 +705,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`display_starts_at`** 
-  
+</details>
 
+#### `ends_at`
 
-```json
-{
-  "type": "string",
-  "format": "date-time"
-}
-```
-
-**`display_ends_at`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -631,9 +719,40 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`is_disabled`** 
-  
+</details>
 
+#### `display_starts_at`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
+</details>
+
+#### `display_ends_at`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "string",
+  "format": "date-time"
+}
+```
+
+</details>
+
+#### `is_disabled`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -641,12 +760,14 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`is_hidden`** 
-  
+</details>
 
+#### `is_hidden`
 アプリに表示されるクーポン一覧に掲載されるかどうか。
 主に一時的に掲載から外したいときに用いられる。そのためis_publicの設定よりも優先される。
 
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -654,9 +775,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`is_public`** 
-  
+</details>
 
+#### `is_public`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -664,9 +788,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`code`** 
-  
+</details>
 
+#### `code`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -674,19 +801,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`usage_limit`** 
-  
+</details>
 
+#### `usage_limit`
 
-```json
-{
-  "type": "integer"
-}
-```
-
-**`min_amount`** 
-  
-
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -694,9 +814,25 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`is_shop_specified`** 
-  
+</details>
 
+#### `min_amount`
+
+<details>
+<summary>スキーマ</summary>
+
+```json
+{
+  "type": "integer"
+}
+```
+
+</details>
+
+#### `is_shop_specified`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -704,9 +840,12 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`available_shop_ids`** 
-  
+</details>
 
+#### `available_shop_ids`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -718,10 +857,13 @@ Response.CouponDetail response = await request.Send(client);
 }
 ```
 
-**`storage_id`** 
-  
+</details>
 
+#### `storage_id`
 Storage APIでアップロードしたクーポン画像のStorage IDを指定します
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -730,9 +872,12 @@ Storage APIでアップロードしたクーポン画像のStorage IDを指定�
 }
 ```
 
-**`num_recipients_cap`** 
-  
+</details>
 
+#### `num_recipients_cap`
+
+<details>
+<summary>スキーマ</summary>
 
 ```json
 {
@@ -740,6 +885,8 @@ Storage APIでアップロードしたクーポン画像のStorage IDを指定�
   "minimum": 1
 }
 ```
+
+</details>
 
 
 

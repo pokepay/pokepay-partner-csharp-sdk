@@ -62,11 +62,11 @@ namespace PokepayPartnerCsharpSdk.Test
                 "4b138a4c-8944-4f98-a5c4-96d3c1c415eb",
                 100
             ).Send(client);
-            Response.Bill bill = await new Request.CreateBill(
+            Response.BillWithAdditionalPrivateMoneys bill = await new Request.CreateBill(
                 "4b138a4c-8944-4f98-a5c4-96d3c1c415eb",
                 shop.Id
             ).Send(client);
-            Response.Bill bill_updated = await new Request.UpdateBill(
+            Response.BillWithAdditionalPrivateMoneys bill_updated = await new Request.UpdateBill(
                 bill.Id
             ) {
 
