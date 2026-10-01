@@ -18,6 +18,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public System.Nullable<bool> IsOnetime { get; set; }
         public System.Nullable<int> UsageLimit { get; set; }
         public string ExpiresAt { get; set; }
+        public string StartsAt { get; set; }
         public string PointExpiresAt { get; set; }
         public System.Nullable<int> PointExpiresInDays { get; set; }
         public string BearPointAccount { get; set; }
@@ -35,6 +36,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public int? UsageLimit { get; set; }
         #nullable enable
         public string? ExpiresAt { get; set; }
+        #nullable enable
+        public string? StartsAt { get; set; }
         #nullable enable
         public string? PointExpiresAt { get; set; }
         #nullable enable

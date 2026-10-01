@@ -30,6 +30,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public int[] ApplicableDaysOfWeek { get; set; }
         public object[] ApplicableTimeRanges { get; set; }
         public string[] ApplicableShopIds { get; set; }
+        public string[] ApplicableShopLabelIds { get; set; }
         public string[] BlacklistedShopIds { get; set; }
         public System.Nullable<int> MinimumNumberOfProducts { get; set; }
         public System.Nullable<int> MinimumNumberOfAmount { get; set; }
@@ -74,6 +75,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public object[]? ApplicableTimeRanges { get; set; }
         #nullable enable
         public string[]? ApplicableShopIds { get; set; }
+        #nullable enable
+        public string[]? ApplicableShopLabelIds { get; set; }
         #nullable enable
         public string[]? BlacklistedShopIds { get; set; }
         #nullable enable

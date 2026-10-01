@@ -25,9 +25,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCashtray request = new Request.CreateCashtray(
-                    "7c6ab6c0-0844-4b18-888f-53c54776f2bc",
-                    "f65dabd6-35be-43a6-a601-c82787ab55dc",
-                    1225.0
+                    "30c9de75-1688-4f7b-b125-6e179d2d3666",
+                    "d5e683e7-575c-45af-981d-a8be1655865d",
+                    2090.0
                 );
                 Response.Cashtray response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -42,11 +42,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCashtray request = new Request.CreateCashtray(
-                    "7c6ab6c0-0844-4b18-888f-53c54776f2bc",
-                    "f65dabd6-35be-43a6-a601-c82787ab55dc",
-                    1225.0
+                    "30c9de75-1688-4f7b-b125-6e179d2d3666",
+                    "d5e683e7-575c-45af-981d-a8be1655865d",
+                    2090.0
                 ) {
-                    ExpiresIn = 5673,
+                    ExpiresIn = 2256,
                 };
                 Response.Cashtray response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -61,12 +61,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateCashtray request = new Request.CreateCashtray(
-                    "7c6ab6c0-0844-4b18-888f-53c54776f2bc",
-                    "f65dabd6-35be-43a6-a601-c82787ab55dc",
-                    1225.0
+                    "30c9de75-1688-4f7b-b125-6e179d2d3666",
+                    "d5e683e7-575c-45af-981d-a8be1655865d",
+                    2090.0
                 ) {
-                    Description = "BtEOMP2U7IkYygmkkDxd3MzpkzvPsPo2vcZvKaf470Dw5YI6SeAOBDBgRAgmjxZGGCqaBwJ9iXjXSEfbkdsvlfnd1NOUEcUOGTeYua5DveJsn8lhIUcgIkY0oNU4ZtZZObHmdr0N6vylnlZRhGDMxuj8A7eDOAWeoDpeF6vcSyg1N9plx7jjHK1E1PUQiuV",
-                    ExpiresIn = 3968,
+                    Description = "nVnbOf1mceXbMKgmiS2lNCj0coTfFCchnpKAXXDxQv4bOJ9FCs7r9SIiPLZxhYcpGO5FAV5Tmz4fnzfWLRafbjHHiTlinfVLWJIyGq0eGZ3LjtgQn48RP8UioFkI4pFJl8a49K0SiRVrDmJ5TPkLuNgnu18c0Kn6PzJQm77hC3byYhnk9L6y5R4kNH",
+                    ExpiresIn = 3539,
                 };
                 Response.Cashtray response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
