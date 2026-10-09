@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCheck request = new Request.GetCheck(
-                    "588f723f-b8d0-4356-a138-15ece3046a56"
+                    "76d0ef9b-5818-4b57-8f7e-ba9b5516c97c"
                 );
                 Response.Check response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

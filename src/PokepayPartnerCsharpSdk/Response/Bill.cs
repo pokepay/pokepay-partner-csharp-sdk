@@ -13,9 +13,10 @@ namespace PokepayPartnerCsharpSdk.Response
         public AccountWithUser Account { get; set; }
         public bool IsDisabled { get; set; }
         public string Token { get; set; }
+        public string CreatedAt { get; set; }
 
         [JsonConstructor]
-        public Bill(string id, string description, AccountWithUser account, bool isDisabled, string token) =>
-            (Id, Description, Account, IsDisabled, Token) = (id, description, account, isDisabled, token);
+        public Bill(string id, string description, AccountWithUser account, bool isDisabled, string token, string createdAt) =>
+            (Id, Description, Account, IsDisabled, Token, CreatedAt) = (id, description, account, isDisabled, token, createdAt);
     }
 }
