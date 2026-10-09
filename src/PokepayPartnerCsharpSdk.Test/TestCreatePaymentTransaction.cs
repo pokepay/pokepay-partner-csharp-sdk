@@ -25,10 +25,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
-                    "3bd2bd97-7274-44ff-bd6d-83c0d0d273b9",
-                    "aaad21b8-b033-48eb-b3c4-50643863fc4b",
-                    "65ec8a2b-d6e6-4d62-8390-f8a82864c239",
-                    1078
+                    "a25c5d17-55fb-4757-97fd-af235b378848",
+                    "71285854-fa61-4252-abdd-05982c5d4137",
+                    "a5602371-f8aa-4c00-b8fc-7e8dd8c09ce9",
+                    4808
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -43,12 +43,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
-                    "3bd2bd97-7274-44ff-bd6d-83c0d0d273b9",
-                    "aaad21b8-b033-48eb-b3c4-50643863fc4b",
-                    "65ec8a2b-d6e6-4d62-8390-f8a82864c239",
-                    1078
+                    "a25c5d17-55fb-4757-97fd-af235b378848",
+                    "71285854-fa61-4252-abdd-05982c5d4137",
+                    "a5602371-f8aa-4c00-b8fc-7e8dd8c09ce9",
+                    4808
                 ) {
-                    CouponId = "1ea67a44-f240-435f-a98f-457c537aea1d",
+                    CouponId = "ac43ea8c-ea6f-46ae-9400-617cc99f27f6",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -63,13 +63,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
-                    "3bd2bd97-7274-44ff-bd6d-83c0d0d273b9",
-                    "aaad21b8-b033-48eb-b3c4-50643863fc4b",
-                    "65ec8a2b-d6e6-4d62-8390-f8a82864c239",
-                    1078
+                    "a25c5d17-55fb-4757-97fd-af235b378848",
+                    "71285854-fa61-4252-abdd-05982c5d4137",
+                    "a5602371-f8aa-4c00-b8fc-7e8dd8c09ce9",
+                    4808
                 ) {
                     Strategy = "point-preferred",
-                    CouponId = "d35331c2-123f-4aa5-8d88-18f6d85a6380",
+                    CouponId = "967ea154-38d7-4c17-af50-414ed07e4662",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -84,14 +84,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
-                    "3bd2bd97-7274-44ff-bd6d-83c0d0d273b9",
-                    "aaad21b8-b033-48eb-b3c4-50643863fc4b",
-                    "65ec8a2b-d6e6-4d62-8390-f8a82864c239",
-                    1078
+                    "a25c5d17-55fb-4757-97fd-af235b378848",
+                    "71285854-fa61-4252-abdd-05982c5d4137",
+                    "a5602371-f8aa-4c00-b8fc-7e8dd8c09ce9",
+                    4808
                 ) {
-                    RequestId = "076747f5-d9c3-4930-9cd1-df54bd7f365f",
-                    Strategy = "point-preferred",
-                    CouponId = "c58d1de6-ffbc-4fa2-9740-a278051eb982",
+                    RequestId = "8d08ab43-f855-4c58-b3ba-f7579803e39c",
+                    Strategy = "money-only",
+                    CouponId = "dc82ca8f-fc76-4c7d-9530-42ec64ea0a6e",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -106,15 +106,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
-                    "3bd2bd97-7274-44ff-bd6d-83c0d0d273b9",
-                    "aaad21b8-b033-48eb-b3c4-50643863fc4b",
-                    "65ec8a2b-d6e6-4d62-8390-f8a82864c239",
-                    1078
+                    "a25c5d17-55fb-4757-97fd-af235b378848",
+                    "71285854-fa61-4252-abdd-05982c5d4137",
+                    "a5602371-f8aa-4c00-b8fc-7e8dd8c09ce9",
+                    4808
                 ) {
-                    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},
-                    RequestId = "10b6a96c-a5b2-45bb-9a9a-9a5a842f42a0",
-                    Strategy = "point-preferred",
-                    CouponId = "3c4b07bc-196a-4299-b93f-1ed1cb0b8d8d",
+                    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},
+                    RequestId = "e699fabd-7659-4c25-bfd7-f637136c7cdb",
+                    Strategy = "money-only",
+                    CouponId = "67e65e57-d7de-40f5-acf8-e14a434df60d",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -129,16 +129,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
-                    "3bd2bd97-7274-44ff-bd6d-83c0d0d273b9",
-                    "aaad21b8-b033-48eb-b3c4-50643863fc4b",
-                    "65ec8a2b-d6e6-4d62-8390-f8a82864c239",
-                    1078
+                    "a25c5d17-55fb-4757-97fd-af235b378848",
+                    "71285854-fa61-4252-abdd-05982c5d4137",
+                    "a5602371-f8aa-4c00-b8fc-7e8dd8c09ce9",
+                    4808
                 ) {
                     Metadata = "{\"key\":\"value\"}",
                     Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},
-                    RequestId = "c8cc079d-7f65-4720-8f1e-090f9aeee731",
-                    Strategy = "point-preferred",
-                    CouponId = "c9734f2b-5a39-4d3f-8b68-039964f5b446",
+                    RequestId = "8b5b9e65-d196-4f6a-bc45-6407db70a31d",
+                    Strategy = "money-only",
+                    CouponId = "c4e892ad-f3ac-46d8-a986-3f65455eabfd",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -153,17 +153,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransaction request = new Request.CreatePaymentTransaction(
-                    "3bd2bd97-7274-44ff-bd6d-83c0d0d273b9",
-                    "aaad21b8-b033-48eb-b3c4-50643863fc4b",
-                    "65ec8a2b-d6e6-4d62-8390-f8a82864c239",
-                    1078
+                    "a25c5d17-55fb-4757-97fd-af235b378848",
+                    "71285854-fa61-4252-abdd-05982c5d4137",
+                    "a5602371-f8aa-4c00-b8fc-7e8dd8c09ce9",
+                    4808
                 ) {
-                    Description = "xiVRAQ6FFjz1wnjIRjO9MofqJJncHBCR1qP1zId4mLJCzHpOgkhaasWI8ELqJwRA62Ghe0ne6pcNR1V7JprfFD47gNL9WM6cSeojzOZZrLxO3x6r1ViuOnspa8l8OxqMpLrB8ZQmhXHGS",
+                    Description = "mEzy22TP2wtSY9IoDSrJUA2sSTBsOwjVmr0bTbO79fqhITnnz7WaCAiQd9B8sle88sl7rSWKN9oQjHsNX48VkSyiuzE1L2wv36YuE4jwp0IiR44I5KLiOrRKq3qxtTGifN6KrraD5uojwDmQdLNOKHIlD",
                     Metadata = "{\"key\":\"value\"}",
-                    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},
-                    RequestId = "8f05ec2d-a656-4d17-a7d6-e927e10b503b",
-                    Strategy = "money-only",
-                    CouponId = "02099884-2de3-46f3-b30f-eb4f88c39551",
+                    Products = new object[]{new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}, new Dictionary<string, object>(){{"jan_code","abc"}, {"name","name1"}, {"unit_price",100}, {"price",100}, {"quantity",1}, {"is_discounted",false}, {"other","{}"}}},
+                    RequestId = "a43f7169-fee1-4ea4-a3a9-74bc7a40624f",
+                    Strategy = "point-preferred",
+                    CouponId = "77bbccad-91be-4487-b7c0-672306a95238",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

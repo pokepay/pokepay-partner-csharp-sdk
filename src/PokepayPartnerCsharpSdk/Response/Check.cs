@@ -15,6 +15,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public bool IsOnetime { get; set; }
         public bool IsDisabled { get; set; }
         public string ExpiresAt { get; set; }
+        public string StartsAt { get; set; }
         public string LastUsedAt { get; set; }
         public PrivateMoney PrivateMoney { get; set; }
         public int UsageLimit { get; set; }
@@ -22,6 +23,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string PointExpiresAt { get; set; }
         public int PointExpiresInDays { get; set; }
         public string Token { get; set; }
+        public string SerialCode { get; set; }
 
         [JsonConstructor]
         public Check(string id, string createdAt, double amount, double moneyAmount, double pointAmount, string description, User user, bool isOnetime, bool isDisabled, string expiresAt, PrivateMoney privateMoney, string token) =>

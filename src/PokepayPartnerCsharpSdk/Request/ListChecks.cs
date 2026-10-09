@@ -17,6 +17,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string OrganizationCode { get; set; }
         public string ExpiresFrom { get; set; }
         public string ExpiresTo { get; set; }
+        public string StartsFrom { get; set; }
+        public string StartsTo { get; set; }
         public string CreatedFrom { get; set; }
         public string CreatedTo { get; set; }
         public string IssuerShopId { get; set; }
@@ -36,6 +38,10 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? ExpiresFrom { get; set; }
         #nullable enable
         public string? ExpiresTo { get; set; }
+        #nullable enable
+        public string? StartsFrom { get; set; }
+        #nullable enable
+        public string? StartsTo { get; set; }
         #nullable enable
         public string? CreatedFrom { get; set; }
         #nullable enable
