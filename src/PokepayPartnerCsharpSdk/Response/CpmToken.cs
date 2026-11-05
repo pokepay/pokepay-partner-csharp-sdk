@@ -13,6 +13,8 @@ namespace PokepayPartnerCsharpSdk.Response
         public string[] Scopes { get; set; }
         public string ExpiresAt { get; set; }
         public string Metadata { get; set; }
+        public string Strategy { get; set; }
+        public string CouponId { get; set; }
 
         [JsonConstructor]
         public CpmToken(string token, AccountDetail account, string[] scopes, string expiresAt, string metadata) =>

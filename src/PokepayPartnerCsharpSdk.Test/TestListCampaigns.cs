@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "7ffc57dc-0aac-461e-9a16-7e94e74d21a7"
+                    "34a783d2-a4d1-49e7-911a-37e5d652f426"
                 );
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "7ffc57dc-0aac-461e-9a16-7e94e74d21a7"
+                    "34a783d2-a4d1-49e7-911a-37e5d652f426"
                 ) {
-                    PerPage = 48,
+                    PerPage = 34,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "7ffc57dc-0aac-461e-9a16-7e94e74d21a7"
+                    "34a783d2-a4d1-49e7-911a-37e5d652f426"
                 ) {
-                    Page = 2839,
-                    PerPage = 34,
+                    Page = 2916,
+                    PerPage = 6,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "7ffc57dc-0aac-461e-9a16-7e94e74d21a7"
+                    "34a783d2-a4d1-49e7-911a-37e5d652f426"
                 ) {
-                    AvailableTo = "2023-01-03T16:21:24.000000Z",
-                    Page = 6621,
-                    PerPage = 23,
+                    AvailableTo = "2022-05-28T08:07:56.000000Z",
+                    Page = 340,
+                    PerPage = 20,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "7ffc57dc-0aac-461e-9a16-7e94e74d21a7"
+                    "34a783d2-a4d1-49e7-911a-37e5d652f426"
                 ) {
-                    AvailableFrom = "2023-08-15T08:17:07.000000Z",
-                    AvailableTo = "2024-11-27T08:40:33.000000Z",
-                    Page = 3440,
-                    PerPage = 13,
+                    AvailableFrom = "2026-07-31T09:41:41.000000Z",
+                    AvailableTo = "2024-10-26T22:58:24.000000Z",
+                    Page = 2574,
+                    PerPage = 27,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,13 +114,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCampaigns request = new Request.ListCampaigns(
-                    "7ffc57dc-0aac-461e-9a16-7e94e74d21a7"
+                    "34a783d2-a4d1-49e7-911a-37e5d652f426"
                 ) {
                     IsOngoing = true,
-                    AvailableFrom = "2023-01-31T09:01:01.000000Z",
-                    AvailableTo = "2022-10-02T08:15:52.000000Z",
-                    Page = 4017,
-                    PerPage = 25,
+                    AvailableFrom = "2024-07-14T18:51:04.000000Z",
+                    AvailableTo = "2026-02-26T09:42:00.000000Z",
+                    Page = 9092,
+                    PerPage = 32,
                 };
                 Response.PaginatedCampaigns response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

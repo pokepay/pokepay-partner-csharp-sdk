@@ -25,8 +25,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransactionWithBill request = new Request.CreatePaymentTransactionWithBill(
-                    "03f6104d-06e4-4248-b15a-224ce7192092",
-                    "5cf0f56c-b000-4b76-b0b1-e186782db0bd"
+                    "0696dadd-89d1-4677-b44f-a9ed32b4544a",
+                    "54af57f3-f39c-4258-9caf-9886fcc19e72"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -41,8 +41,8 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransactionWithBill request = new Request.CreatePaymentTransactionWithBill(
-                    "03f6104d-06e4-4248-b15a-224ce7192092",
-                    "5cf0f56c-b000-4b76-b0b1-e186782db0bd"
+                    "0696dadd-89d1-4677-b44f-a9ed32b4544a",
+                    "54af57f3-f39c-4258-9caf-9886fcc19e72"
                 ) {
                     Strategy = "money-only",
                 };
@@ -59,11 +59,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransactionWithBill request = new Request.CreatePaymentTransactionWithBill(
-                    "03f6104d-06e4-4248-b15a-224ce7192092",
-                    "5cf0f56c-b000-4b76-b0b1-e186782db0bd"
+                    "0696dadd-89d1-4677-b44f-a9ed32b4544a",
+                    "54af57f3-f39c-4258-9caf-9886fcc19e72"
                 ) {
-                    RequestId = "42b8b147-1196-4ea0-b182-68cf1063889f",
-                    Strategy = "point-preferred",
+                    RequestId = "b0a1dc41-095e-4da7-a747-4f08e3d906ec",
+                    Strategy = "money-only",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -78,12 +78,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreatePaymentTransactionWithBill request = new Request.CreatePaymentTransactionWithBill(
-                    "03f6104d-06e4-4248-b15a-224ce7192092",
-                    "5cf0f56c-b000-4b76-b0b1-e186782db0bd"
+                    "0696dadd-89d1-4677-b44f-a9ed32b4544a",
+                    "54af57f3-f39c-4258-9caf-9886fcc19e72"
                 ) {
                     Metadata = "{\"key\":\"value\"}",
-                    RequestId = "811a5d15-e4a7-4b98-9f8a-70256162186e",
-                    Strategy = "point-preferred",
+                    RequestId = "18a3d0a2-fe92-4fc5-8205-bb194fad4716",
+                    Strategy = "money-only",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

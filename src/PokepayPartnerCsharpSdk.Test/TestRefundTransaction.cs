@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "a10018c1-5477-48e9-9ee4-0073c832b9cb"
+                    "ed53ba9f-4f3d-4ec8-9ec9-49ec624c16c4"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "a10018c1-5477-48e9-9ee4-0073c832b9cb"
+                    "ed53ba9f-4f3d-4ec8-9ec9-49ec624c16c4"
                 ) {
-                    ReturningPointExpiresAt = "2020-03-16T06:40:13.000000Z",
+                    ReturningPointExpiresAt = "2025-06-25T02:01:40.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.RefundTransaction request = new Request.RefundTransaction(
-                    "a10018c1-5477-48e9-9ee4-0073c832b9cb"
+                    "ed53ba9f-4f3d-4ec8-9ec9-49ec624c16c4"
                 ) {
-                    Description = "ZphpLhv7NIoqmlJpzKOYIsRtFF9xx8GHcZXN3Xa70o7nFXURkj",
-                    ReturningPointExpiresAt = "2022-11-10T16:01:07.000000Z",
+                    Description = "aOh78QfhNbZ3YfGhlbqaOElvScjtjkG1WEjltqaYkhp7caXjUtBcNe9XyY4wthFo0glXBErIUB1p7aPMzXnAdDrY96Gn0OAQ9xSN0zfKx7",
+                    ReturningPointExpiresAt = "2020-09-03T12:35:02.000000Z",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

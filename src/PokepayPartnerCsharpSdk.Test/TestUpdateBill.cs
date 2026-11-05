@@ -25,9 +25,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "3c2117e4-758e-4eb4-b2ce-015a80c60b4a"
+                    "02e740da-988b-41d0-9d37-63b26298e2aa"
                 );
-                Response.Bill response = await request.Send(client);
+                Response.BillWithAdditionalPrivateMoneys response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -40,11 +40,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "3c2117e4-758e-4eb4-b2ce-015a80c60b4a"
+                    "02e740da-988b-41d0-9d37-63b26298e2aa"
                 ) {
-                    IsDisabled = false,
+                    AdditionalPrivateMoneyIds = new string[]{"a638a8b7-802a-4d83-bf0c-91fea1c57406", "6b7b4bca-60aa-43e1-9aef-0e590eb0fa1f", "a1b2011f-e49a-479d-80e2-1138669ae089", "3094cbf3-a10a-4af0-b623-69e081864331", "be8fc617-5946-4c63-9361-1e11098a0559", "7db900f8-e1b8-4c63-bc29-82b70c4f72e3", "621c8933-9fa7-4637-929e-ec4be8b77d81", "6ca05cb2-e9c2-4da4-af25-4f8499da23ac", "914e0e51-79c5-4b1c-86ef-f2ed00fce9f8"},
                 };
-                Response.Bill response = await request.Send(client);
+                Response.BillWithAdditionalPrivateMoneys response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -57,12 +57,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "3c2117e4-758e-4eb4-b2ce-015a80c60b4a"
+                    "02e740da-988b-41d0-9d37-63b26298e2aa"
                 ) {
-                    Description = "q7m7arw2NKYH12xHXaAOFqIwxrvxkxwVYBDQiRCyVTR3czNdwQ9LziqjK5MdQ1lZMyARXVB9A32ESqVUKE1GN9JqLEvyRdA5j20ws4Z1pnjZ8xWKeN3WKGyHXCKDfS0S9olxtCG8sS34enFyHhIbteE1tQOMttUhD0OiwEvovxL7L6kZ3KaNub1zwaCdHgj8ik3d",
-                    IsDisabled = true,
+                    IsDisabled = false,
+                    AdditionalPrivateMoneyIds = new string[]{"04c2c0e4-ee76-4c1c-aefa-23874afee603", "4df550f8-50cb-42bc-8f7d-2ed6f203f65e"},
                 };
-                Response.Bill response = await request.Send(client);
+                Response.BillWithAdditionalPrivateMoneys response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
@@ -75,13 +75,33 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateBill request = new Request.UpdateBill(
-                    "3c2117e4-758e-4eb4-b2ce-015a80c60b4a"
+                    "02e740da-988b-41d0-9d37-63b26298e2aa"
                 ) {
-                    Amount = 3443.0,
-                    Description = "SURUNaSg6OcHEm",
+                    Description = "xdoit0nsRdkY0a6T9IRy95uKnYj6aDVb3qDkr4zFWttvA7t4NS9wkdOXwioDpfXuzoNbRpuKefj9znX2XonFzQcO5QEOmdgUm73I2kFchNQksZB6ByT3lVRQ7O823WFeXCsAD",
                     IsDisabled = false,
+                    AdditionalPrivateMoneyIds = new string[]{"83d3e1aa-c05c-4e66-b62a-6f65ff338f57", "3651128d-617b-4576-b527-ab0bc0080c40", "01f62a9d-2753-4b1a-a5ac-4cf43f2ce74a", "00fb1511-064c-468c-a92a-1b40513502f5", "50fa615d-03a3-4d1d-9fda-86e396228292", "786c319b-e1bf-44c2-a22c-120ede48deb6", "aa2435bf-5174-4f64-aae3-64f766002be9"},
                 };
-                Response.Bill response = await request.Send(client);
+                Response.BillWithAdditionalPrivateMoneys response = await request.Send(client);
+                Assert.NotNull(response, "Shouldn't be null at least");
+            } catch (HttpRequestException e) {
+                Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
+                Assert.True((int) e.Data["StatusCode"] >= 300, "Should be larger than 300");
+            }
+        }
+
+        [Test]
+        public async Task UpdateBill4()
+        {
+            try {
+                Request.UpdateBill request = new Request.UpdateBill(
+                    "02e740da-988b-41d0-9d37-63b26298e2aa"
+                ) {
+                    Amount = 5522.0,
+                    Description = "byPvTHbjOWbqqVGNOP2f7Fmc6XS",
+                    IsDisabled = true,
+                    AdditionalPrivateMoneyIds = new string[]{"92a4482e-b14d-4910-bbb3-08871cfea9d9", "f02bdeb5-3c58-4efc-bf5f-395001e21003", "5f50c0f8-69fd-4dee-aaa4-dbbfcb5b60af", "3d56ee2a-12c6-44e8-a6eb-a8666316a59f", "d592ffd9-2bab-4867-b6c1-1242b5baca78", "451e5ad2-d106-4a5b-abe8-42ead37b6ad6", "adfabd04-26ab-46b7-b285-ea2f770a7ba9", "b398f708-a0d8-4a6d-8a60-27b6990ba246", "a47f16b6-79ef-4592-ae94-575f42c14f68"},
+                };
+                Response.BillWithAdditionalPrivateMoneys response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");

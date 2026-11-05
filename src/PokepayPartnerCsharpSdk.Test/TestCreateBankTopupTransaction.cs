@@ -25,11 +25,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBankTopupTransaction request = new Request.CreateBankTopupTransaction(
-                    "88842b5b-6a50-404a-9b45-2a3f8188a366",
-                    "694712fb-010b-4192-8d04-e17f5d7d4ba7",
-                    5666,
-                    "907267cd-9962-458d-a761-ec4b9c3c815b",
-                    "85224492-8704-41c9-853f-f72ea1ddab80"
+                    "5e5fe23a-7cd6-47b6-aac7-4bb8749931b0",
+                    "ee7663b7-a4ea-411f-aeb4-39e96b888c81",
+                    6577,
+                    "c4763c79-1f78-4c15-8466-46d3975a788e",
+                    "1ab93cff-f6da-4ffb-9454-fede894d7bec"
                 );
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -44,13 +44,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.CreateBankTopupTransaction request = new Request.CreateBankTopupTransaction(
-                    "88842b5b-6a50-404a-9b45-2a3f8188a366",
-                    "694712fb-010b-4192-8d04-e17f5d7d4ba7",
-                    5666,
-                    "907267cd-9962-458d-a761-ec4b9c3c815b",
-                    "85224492-8704-41c9-853f-f72ea1ddab80"
+                    "5e5fe23a-7cd6-47b6-aac7-4bb8749931b0",
+                    "ee7663b7-a4ea-411f-aeb4-39e96b888c81",
+                    6577,
+                    "c4763c79-1f78-4c15-8466-46d3975a788e",
+                    "1ab93cff-f6da-4ffb-9454-fede894d7bec"
                 ) {
-                    ReceiverUserId = "c98b0e95-3668-47af-a521-fdbac22ba88c",
+                    ReceiverUserId = "0dd259a5-a4e9-4559-b3fd-e7a909b43842",
                 };
                 Response.TransactionDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
