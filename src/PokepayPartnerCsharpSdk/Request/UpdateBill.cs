@@ -15,6 +15,7 @@ namespace PokepayPartnerCsharpSdk.Request
         public System.Nullable<double> Amount { get; set; }
         public string Description { get; set; }
         public System.Nullable<bool> IsDisabled { get; set; }
+        public string[] AdditionalPrivateMoneyIds { get; set; }
 #else
         #nullable enable
         public double? Amount { get; set; }
@@ -22,6 +23,8 @@ namespace PokepayPartnerCsharpSdk.Request
         public string? Description { get; set; }
         #nullable enable
         public bool? IsDisabled { get; set; }
+        #nullable enable
+        public string[]? AdditionalPrivateMoneyIds { get; set; }
 #endif
 
         public UpdateBill(string billId) =>
@@ -32,15 +35,15 @@ namespace PokepayPartnerCsharpSdk.Request
         private static readonly HttpMethod method = new HttpMethod("PATCH");
 
 #if NETFRAMEWORK
-        public async Task<Bill> Send(Client client) {
+        public async Task<BillWithAdditionalPrivateMoneys> Send(Client client) {
                 string res = await client.Send(path, UpdateBill.method, this);
-                return JsonSerializer.Deserialize<Bill>(res, client.JsonOptions);
+                return JsonSerializer.Deserialize<BillWithAdditionalPrivateMoneys>(res, client.JsonOptions);
         }
 #else
 #nullable enable
-        public async Task<Bill?> Send(Client client) {
+        public async Task<BillWithAdditionalPrivateMoneys?> Send(Client client) {
                 string res = await client.Send(path, UpdateBill.method, this);
-                return JsonSerializer.Deserialize<Bill>(res, client.JsonOptions);
+                return JsonSerializer.Deserialize<BillWithAdditionalPrivateMoneys>(res, client.JsonOptions);
         }
 #endif
     }

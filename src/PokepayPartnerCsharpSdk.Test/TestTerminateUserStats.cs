@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.TerminateUserStats request = new Request.TerminateUserStats(
-                    "ef4b8c0f-6d33-4acd-8777-7e8c8c5da122"
+                    "601beedb-b03d-4e19-a67f-fc765214fe9b"
                 );
                 Response.UserStatsOperation response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

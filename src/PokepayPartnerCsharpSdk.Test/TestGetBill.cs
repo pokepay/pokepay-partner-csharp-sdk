@@ -25,9 +25,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetBill request = new Request.GetBill(
-                    "26289aee-1325-4265-af77-ba62cbcd9e59"
+                    "eda02500-664e-4e38-97fb-26bf47759f9c"
                 );
-                Response.Bill response = await request.Send(client);
+                Response.BillWithAdditionalPrivateMoneys response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
             } catch (HttpRequestException e) {
                 Assert.AreNotEqual((int) e.Data["StatusCode"], (int) HttpStatusCode.BadRequest, "Shouldn't be BadRequest");
