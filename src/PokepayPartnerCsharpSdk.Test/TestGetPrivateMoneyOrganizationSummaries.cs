@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
-                    "5cc3d9e0-b990-4b5f-b4c2-00ef99c743a2"
+                    "58d34f38-cbe7-494b-a477-83ba9d43c561"
                 );
                 Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
-                    "5cc3d9e0-b990-4b5f-b4c2-00ef99c743a2"
+                    "58d34f38-cbe7-494b-a477-83ba9d43c561"
                 ) {
-                    Page = 3575,
+                    Page = 9992,
                 };
                 Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
-                    "5cc3d9e0-b990-4b5f-b4c2-00ef99c743a2"
+                    "58d34f38-cbe7-494b-a477-83ba9d43c561"
                 ) {
-                    PerPage = 786,
-                    Page = 9388,
+                    PerPage = 7919,
+                    Page = 1759,
                 };
                 Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,10 +75,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
-                    "5cc3d9e0-b990-4b5f-b4c2-00ef99c743a2"
+                    "58d34f38-cbe7-494b-a477-83ba9d43c561"
                 ) {
-                    From = "2021-07-08T02:56:08.000000Z",
-                    To = "2023-06-06T23:02:57.000000Z",
+                    From = "2024-07-13T16:14:47.000000Z",
+                    To = "2025-06-26T23:11:28.000000Z",
                 };
                 Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -93,11 +93,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
-                    "5cc3d9e0-b990-4b5f-b4c2-00ef99c743a2"
+                    "58d34f38-cbe7-494b-a477-83ba9d43c561"
                 ) {
-                    From = "2023-06-27T10:38:34.000000Z",
-                    To = "2022-11-02T13:31:55.000000Z",
-                    Page = 2674,
+                    From = "2023-10-19T11:23:47.000000Z",
+                    To = "2026-06-07T02:10:17.000000Z",
+                    Page = 4641,
                 };
                 Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -112,12 +112,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetPrivateMoneyOrganizationSummaries request = new Request.GetPrivateMoneyOrganizationSummaries(
-                    "5cc3d9e0-b990-4b5f-b4c2-00ef99c743a2"
+                    "58d34f38-cbe7-494b-a477-83ba9d43c561"
                 ) {
-                    From = "2025-05-13T01:22:33.000000Z",
-                    To = "2022-12-20T19:43:54.000000Z",
-                    PerPage = 3692,
-                    Page = 7864,
+                    From = "2022-11-05T11:01:31.000000Z",
+                    To = "2020-03-29T18:31:13.000000Z",
+                    PerPage = 9629,
+                    Page = 8935,
                 };
                 Response.PaginatedPrivateMoneyOrganizationSummaries response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -23,15 +23,15 @@ namespace PokepayPartnerCsharpSdk.Request
         private static readonly HttpMethod method = new HttpMethod("GET");
 
 #if NETFRAMEWORK
-        public async Task<Bill> Send(Client client) {
+        public async Task<BillWithAdditionalPrivateMoneys> Send(Client client) {
                 string res = await client.Send(path, GetBill.method, this);
-                return JsonSerializer.Deserialize<Bill>(res, client.JsonOptions);
+                return JsonSerializer.Deserialize<BillWithAdditionalPrivateMoneys>(res, client.JsonOptions);
         }
 #else
 #nullable enable
-        public async Task<Bill?> Send(Client client) {
+        public async Task<BillWithAdditionalPrivateMoneys?> Send(Client client) {
                 string res = await client.Send(path, GetBill.method, this);
-                return JsonSerializer.Deserialize<Bill>(res, client.JsonOptions);
+                return JsonSerializer.Deserialize<BillWithAdditionalPrivateMoneys>(res, client.JsonOptions);
         }
 #endif
     }

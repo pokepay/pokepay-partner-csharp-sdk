@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.GetCoupon request = new Request.GetCoupon(
-                    "0cf6e693-1468-4c06-b6ba-a13212640169"
+                    "6987ee1e-f507-45f5-b5cb-18b67c3e612d"
                 );
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

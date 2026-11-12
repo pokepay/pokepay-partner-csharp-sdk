@@ -25,7 +25,7 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCoupons request = new Request.ListCoupons(
-                    "13f2066e-51c2-49c8-8cdf-203ee0ae3b92"
+                    "6a1cedfd-e81a-4a09-9f5b-2543358e793c"
                 );
                 Response.PaginatedCoupons response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -40,9 +40,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCoupons request = new Request.ListCoupons(
-                    "13f2066e-51c2-49c8-8cdf-203ee0ae3b92"
+                    "6a1cedfd-e81a-4a09-9f5b-2543358e793c"
                 ) {
-                    PerPage = 4071,
+                    PerPage = 5742,
                 };
                 Response.PaginatedCoupons response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -57,10 +57,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCoupons request = new Request.ListCoupons(
-                    "13f2066e-51c2-49c8-8cdf-203ee0ae3b92"
+                    "6a1cedfd-e81a-4a09-9f5b-2543358e793c"
                 ) {
-                    Page = 7255,
-                    PerPage = 5285,
+                    Page = 9525,
+                    PerPage = 5572,
                 };
                 Response.PaginatedCoupons response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -75,11 +75,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCoupons request = new Request.ListCoupons(
-                    "13f2066e-51c2-49c8-8cdf-203ee0ae3b92"
+                    "6a1cedfd-e81a-4a09-9f5b-2543358e793c"
                 ) {
-                    AvailableTo = "2022-04-08T05:33:18.000000Z",
-                    Page = 5728,
-                    PerPage = 1040,
+                    AvailableTo = "2024-07-29T17:40:05.000000Z",
+                    Page = 2237,
+                    PerPage = 1327,
                 };
                 Response.PaginatedCoupons response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -94,12 +94,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCoupons request = new Request.ListCoupons(
-                    "13f2066e-51c2-49c8-8cdf-203ee0ae3b92"
+                    "6a1cedfd-e81a-4a09-9f5b-2543358e793c"
                 ) {
-                    AvailableFrom = "2020-02-11T17:35:09.000000Z",
-                    AvailableTo = "2021-09-01T00:43:32.000000Z",
-                    Page = 8136,
-                    PerPage = 7926,
+                    AvailableFrom = "2021-10-03T22:34:50.000000Z",
+                    AvailableTo = "2023-02-15T02:39:49.000000Z",
+                    Page = 1922,
+                    PerPage = 6263,
                 };
                 Response.PaginatedCoupons response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -114,13 +114,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCoupons request = new Request.ListCoupons(
-                    "13f2066e-51c2-49c8-8cdf-203ee0ae3b92"
+                    "6a1cedfd-e81a-4a09-9f5b-2543358e793c"
                 ) {
-                    AvailableShopName = "vyE",
-                    AvailableFrom = "2020-02-21T07:58:15.000000Z",
-                    AvailableTo = "2021-09-22T01:13:16.000000Z",
-                    Page = 6307,
-                    PerPage = 4159,
+                    AvailableShopName = "iyaRPbQ",
+                    AvailableFrom = "2024-09-11T02:46:27.000000Z",
+                    AvailableTo = "2023-03-28T14:38:44.000000Z",
+                    Page = 9761,
+                    PerPage = 8332,
                 };
                 Response.PaginatedCoupons response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -135,14 +135,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCoupons request = new Request.ListCoupons(
-                    "13f2066e-51c2-49c8-8cdf-203ee0ae3b92"
+                    "6a1cedfd-e81a-4a09-9f5b-2543358e793c"
                 ) {
-                    IssuedShopName = "ASr9",
-                    AvailableShopName = "OsPHz4Zd6u",
-                    AvailableFrom = "2025-10-13T09:23:31.000000Z",
-                    AvailableTo = "2020-06-05T00:51:10.000000Z",
-                    Page = 2066,
-                    PerPage = 4519,
+                    IssuedShopName = "CSz",
+                    AvailableShopName = "35Rx",
+                    AvailableFrom = "2021-02-15T14:53:10.000000Z",
+                    AvailableTo = "2024-09-09T22:51:09.000000Z",
+                    Page = 72,
+                    PerPage = 9278,
                 };
                 Response.PaginatedCoupons response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -157,15 +157,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCoupons request = new Request.ListCoupons(
-                    "13f2066e-51c2-49c8-8cdf-203ee0ae3b92"
+                    "6a1cedfd-e81a-4a09-9f5b-2543358e793c"
                 ) {
-                    CouponName = "hCBvnC8wC",
-                    IssuedShopName = "Dn",
-                    AvailableShopName = "5TxePG",
-                    AvailableFrom = "2020-09-06T07:33:47.000000Z",
-                    AvailableTo = "2024-05-15T18:09:01.000000Z",
-                    Page = 9382,
-                    PerPage = 1215,
+                    CouponName = "rM7sDhsRo",
+                    IssuedShopName = "5EZ",
+                    AvailableShopName = "BgB",
+                    AvailableFrom = "2022-05-08T22:51:26.000000Z",
+                    AvailableTo = "2025-09-21T07:25:11.000000Z",
+                    Page = 9088,
+                    PerPage = 357,
                 };
                 Response.PaginatedCoupons response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -180,16 +180,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.ListCoupons request = new Request.ListCoupons(
-                    "13f2066e-51c2-49c8-8cdf-203ee0ae3b92"
+                    "6a1cedfd-e81a-4a09-9f5b-2543358e793c"
                 ) {
-                    CouponId = "c",
-                    CouponName = "zq0vbsf",
-                    IssuedShopName = "AwCBSEw",
-                    AvailableShopName = "Rfx0D",
-                    AvailableFrom = "2023-09-24T18:22:51.000000Z",
-                    AvailableTo = "2023-04-09T02:08:58.000000Z",
-                    Page = 8931,
-                    PerPage = 3248,
+                    CouponId = "pXW",
+                    CouponName = "vXZA",
+                    IssuedShopName = "IGmx",
+                    AvailableShopName = "3OdV3od",
+                    AvailableFrom = "2021-01-23T16:06:46.000000Z",
+                    AvailableTo = "2022-11-03T04:30:36.000000Z",
+                    Page = 4224,
+                    PerPage = 8304,
                 };
                 Response.PaginatedCoupons response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

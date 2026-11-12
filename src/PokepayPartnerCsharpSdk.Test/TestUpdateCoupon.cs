@@ -25,9 +25,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 5191,
+                    DiscountAmount = 7744,
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -42,10 +42,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 2959,
-                    Name = "fIfeAIGZfO7OrSr8B2QPQ9Y2Rpsj0heI",
+                    DiscountAmount = 4034,
+                    Name = "GY71PucWuEB8iBjiFIbSubHrvAi7K4jyfS9dg15S1q6jH34UfMTbaogiuk2Hs0mRi4FH4wAH9Jfj7o054MsL4b1",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -60,11 +60,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 9777,
-                    Description = "cWBx1T31cQtfbPCATbfETgM8KooCtS8z1fc4bmpdjKCTfj1GK9RSuRp80JIGIfZb0zQJuIdXR7obZEoGLvyrYRSePLUjWmS1Vfe4rF1Hr4pu5zkebHCqAbvDaj08T6AqfU9VC96cIIeErItINWil5tFd5fwAxEmAXCuaDk4OeOYMd636fXlQmJ9z2bnV3FEVOMMOncgSgfpnmC2KuXyRgGfUfNENrDu8T1J2YZjgzjmCRB6Bb",
-                    Name = "dWS6JCIu",
+                    DiscountAmount = 1437,
+                    Description = "FFK6iXZLbDkWhxmVZQrN7vHF2MDKVtEIQupvmKHRwHKhrE1cew1CNfgi7sglFQ4wI7YctoKArmP",
+                    Name = "X6ICAqae4Gsnk7CCks4Hk5SfM8qCg753Xc8sxEuuaOPh40uyY7zIQa1dLLxrHG1",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -79,12 +79,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 2989,
-                    DiscountUpperLimit = 6293,
-                    Description = "5OFNrZXER72QaNrZpzYfcTDxwidoKxhgH4IlA44068ievlutMBS788il7UEqSzLy9xJxJq4hHbOAXXYVgVjKzFhmxuYV64qe5o2B2OlLXdk5kJbuw4YuJbyUdwtweakDyg0TFsZujDlCiTABlfIhphFt9MZHKK4Bljx7sJ424DF7dkePprAJuqXJLC9DlGjqYc53kHtf9cD7bpNKlOmIqFEpEzlkbZXsHeK96",
-                    Name = "7zZjofXop8q4Bfps6VchHwOSBaSPaNKxM4bPYPan8UYIRAISeS032nbwP9uwXrTBWthKP8SFB1epaCsenfT",
+                    DiscountAmount = 1713,
+                    DiscountUpperLimit = 9089,
+                    Description = "w1vq47MweLd7PEXecikrpiqy8sfzPeC95z6SUSQpi9Wzm3lpy1cb2RHdUOA0t8u9bgfw5lRkS6OP4v7xcpJRU1gAPOZCWBu1LN9FJ0cnlAGNGxl68QC9Lc8",
+                    Name = "mXM6C7FzY",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -99,13 +99,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 9558,
-                    StartsAt = "2025-03-15T18:20:56.000000Z",
-                    DiscountUpperLimit = 8218,
-                    Description = "MgJI5wZ1cKhV863o3fLMEPLjDOHvTYhO06QE7ACXnugqJAsKtBEhfGR87GnzBbDtq5K3lfoJShMC6uD2oZ5QpD7GXwDffXUtXBf9of2MaByNhkorzLzXS7sax7iYOPlAj5UlMDxo6iDarlMDzJC7wMAkFYNemkzZpvDvog0lglLv2T90aOF7qLZJG6mWFW8mYG8iBpA9wK7FerKmMDJDN9kjnEAtWkM10yTZC3mt5NbCfjtxFXhJHy",
-                    Name = "Zxe38yvM1SEczLfO3bcMSuKdq3FslGbkH",
+                    DiscountAmount = 8255,
+                    StartsAt = "2022-11-12T16:57:13.000000Z",
+                    DiscountUpperLimit = 8767,
+                    Description = "Ibzm3gXQmkrBpe2Ig2RcyGTEKbRkheq6QL08QyyZhWxWZXOgJUUSaNEWIfPAbzyBHOjNPS",
+                    Name = "cM2HIOB9HTAlispEbZ0nm2AG9fUViptAmbz3OlMcIwPiDhPvFVPSC9IO8Vx",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -120,14 +120,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 7687,
-                    EndsAt = "2024-05-09T02:17:10.000000Z",
-                    StartsAt = "2022-02-20T18:19:01.000000Z",
-                    DiscountUpperLimit = 958,
-                    Description = "hxbbT2umORVj1yDfkPqeu7VGzhCxzDjEPJsArCV0qEvJPpVoq77PuYo1FVSdDE8cTf3i5qFGBCHYpL8ODBvwgaMAc0JPVvhl1tkrYQHQhhRs2PIaofbMQ1Wyxx6iPX8wNVpCNUyiEzApKM66ZkEOto1oTpzcZyDOIWVw",
-                    Name = "oFQcmGYbDKlivyrCrMwSNsOLmKdqXCCeTbwp9jz",
+                    DiscountAmount = 4392,
+                    EndsAt = "2023-04-18T07:46:41.000000Z",
+                    StartsAt = "2021-05-21T21:25:26.000000Z",
+                    DiscountUpperLimit = 6773,
+                    Description = "9a6CuuEqXlxnf5GR396SeNDqXXKEJV0JkE3TjLaqeZOsjEI7E22Wl6YSAD7vVGJBWjZfkSD8toOPMhnrU8KE3wpUrjUs8sizjd1z2FtADy5Q3C5jNeYsU9MpL2cFyrblmxyYFjVJ1ksDCEql83astJ4f63IhsEWYCV1aJM8EwjAmRBWR0",
+                    Name = "6oBZVp6NIn0X9ZNmVTX8mLedIikedmC30IadhoI72wGGaOUhWf0bdfCQE42KbdvTX1CfA4ud9qfvPOSoxFI1UweO2XRdO2hY0pCC8FQpyDi",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -142,15 +142,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 65,
-                    DisplayStartsAt = "2021-06-03T04:32:45.000000Z",
-                    EndsAt = "2021-06-18T15:44:43.000000Z",
-                    StartsAt = "2020-03-03T13:28:57.000000Z",
-                    DiscountUpperLimit = 4325,
-                    Description = "ybVqp1YrzurkqIAwcJ63x2Wplk",
-                    Name = "qrFdjX6CETl764u1bEUuZsZXEigsXHGq2ofRToY5BXgCj",
+                    DiscountAmount = 7854,
+                    DisplayStartsAt = "2020-10-26T22:07:58.000000Z",
+                    EndsAt = "2025-02-18T20:07:30.000000Z",
+                    StartsAt = "2022-09-14T19:32:52.000000Z",
+                    DiscountUpperLimit = 8835,
+                    Description = "n6ST7vY9DrqkrzPV",
+                    Name = "8XVdQkJOO2v1m3AEScwYzlsFCHOKfiqVfddqZXHyl9FtM3B",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -165,16 +165,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 3785,
-                    DisplayEndsAt = "2024-11-13T20:09:29.000000Z",
-                    DisplayStartsAt = "2020-12-08T07:46:34.000000Z",
-                    EndsAt = "2022-05-18T05:31:53.000000Z",
-                    StartsAt = "2020-05-07T19:52:35.000000Z",
-                    DiscountUpperLimit = 8590,
-                    Description = "XmOEMtSXxzZokGYkRiArikW",
-                    Name = "ZSvWA49o8HQUEwyp",
+                    DiscountAmount = 317,
+                    DisplayEndsAt = "2025-03-14T04:09:42.000000Z",
+                    DisplayStartsAt = "2020-09-17T22:17:06.000000Z",
+                    EndsAt = "2026-07-22T22:54:20.000000Z",
+                    StartsAt = "2021-05-07T13:34:02.000000Z",
+                    DiscountUpperLimit = 3783,
+                    Description = "RFalUDm4QOG36z0pAjeCTeiy225IXwhDEUvB4npxY9ubMTI7cGyil",
+                    Name = "tc03UjxERdVoe6HFhJgKELPhJZ4V6jG807jn4ij0yxfSZTliY3BcoO0R3ofHxO79PyMPuNxlOm9TssUDzbSN",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -189,17 +189,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 6721,
-                    IsDisabled = true,
-                    DisplayEndsAt = "2021-06-25T15:59:22.000000Z",
-                    DisplayStartsAt = "2023-01-31T02:27:56.000000Z",
-                    EndsAt = "2023-03-07T17:36:27.000000Z",
-                    StartsAt = "2024-01-19T13:32:35.000000Z",
-                    DiscountUpperLimit = 6150,
-                    Description = "gSDOAS6m6W4ycEKeHr4636lRXTr2iPpZt0j1CI3l6J30qBjXV2f99mPOolq1eiW9RuNHXLsbYmrfHwiW6AehvKLu9jSykyDMxjQhXvqsNkUwpnxOJbMzTMi5NaDqvIkEgkU1iGJo4Veu1nD62pEennAfXO8IbuWWi93UYO",
-                    Name = "WoEzm8A2AGl9yivXZBxfQ6TXMiAoASOIgsAFMRnA6RqJv3Yoi1HNQ6SUUxfHdkFZrSjoj4E906hjOODSKfXhRhf12fH18u3lWSr6bxBxhq8hzLJKGl7pegu99iL",
+                    DiscountAmount = 2489,
+                    IsDisabled = false,
+                    DisplayEndsAt = "2024-03-30T00:32:12.000000Z",
+                    DisplayStartsAt = "2023-08-28T23:32:47.000000Z",
+                    EndsAt = "2024-11-13T15:07:48.000000Z",
+                    StartsAt = "2024-03-22T23:50:44.000000Z",
+                    DiscountUpperLimit = 8616,
+                    Description = "qaXE9oVV6dzFzoMTL1nMwdKXWkN1V7WK5N3KEyrv8oYx3uFnGQ6ZUj",
+                    Name = "vuDzL1kINhlYHLw7eGbmo6z2mwFW2G7CePrEb6qc1vzC0TUXZ7gJxmZbR4QIZxkVF44SiHUuKLea6KXKMTxnuRpjgiKiTeKThsCVHvt0Fegc",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -214,18 +214,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 8236,
-                    IsHidden = false,
+                    DiscountAmount = 4829,
+                    IsHidden = true,
                     IsDisabled = true,
-                    DisplayEndsAt = "2022-02-18T15:51:40.000000Z",
-                    DisplayStartsAt = "2023-05-25T13:25:27.000000Z",
-                    EndsAt = "2022-12-25T17:05:32.000000Z",
-                    StartsAt = "2025-10-19T18:16:29.000000Z",
-                    DiscountUpperLimit = 8163,
-                    Description = "eRH09p3Djf3UXXM3TuFXvJTrk8Ursx5VM8uakcEIyxQz7D46SGfEdpD0URVkFLTmlxp8SI9cXescrmSD5nkp7THGlyH3t2HB4wHFbCGx0Xzqx2wtaKpu1qdmiKn22F3ctIsxTTV24W3iMjgCaf4v1F7zb24",
-                    Name = "TvVYyzGoNYLIXxqonkMGqX",
+                    DisplayEndsAt = "2020-09-15T12:26:45.000000Z",
+                    DisplayStartsAt = "2021-04-23T11:27:35.000000Z",
+                    EndsAt = "2022-06-11T01:14:16.000000Z",
+                    StartsAt = "2020-11-17T08:29:14.000000Z",
+                    DiscountUpperLimit = 4174,
+                    Description = "hoP3dbXW7imuFIarDCIG12cWukEiPRDcMrsI69et7tZGcxsWh3x4WMFG9JtXGOrRTCDsNsdOxykdQVM02fdP8dPWgv17gnjksnVKZ2Yg2XW7z7bqKh4VDMi81vkZfIvFF2aVGBrt4d4BQcmvC7IyShbMWHW8OrxkYJbesefuwz6QVslbgmox4sylqaj0m4NHRO5ZxO4O",
+                    Name = "NjLEysHxuDJHz86s8rMyDwBbVQMVNIv43CsGJ1N1Ty1LpoGWtPPI",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -240,19 +240,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 6892,
-                    IsPublic = true,
+                    DiscountAmount = 5882,
+                    IsPublic = false,
                     IsHidden = true,
                     IsDisabled = true,
-                    DisplayEndsAt = "2025-05-06T23:59:55.000000Z",
-                    DisplayStartsAt = "2023-09-26T04:04:26.000000Z",
-                    EndsAt = "2024-12-23T14:16:50.000000Z",
-                    StartsAt = "2022-03-19T23:37:53.000000Z",
-                    DiscountUpperLimit = 6391,
-                    Description = "p9nn9cv0p2uygmHKqGnnOeMtFto3ZtBMyDD0JldWFE85",
-                    Name = "jbUaTENhmx5ChLqBvfWnrg6wEB880lMBDEtofOwuX4DmXscPUoeV1XH78h5Guqwmdx9H0OP7RXsy9p5y2A7XdzXIFXZ",
+                    DisplayEndsAt = "2025-01-20T07:34:39.000000Z",
+                    DisplayStartsAt = "2024-06-18T02:44:43.000000Z",
+                    EndsAt = "2025-05-21T21:18:47.000000Z",
+                    StartsAt = "2023-01-31T20:45:10.000000Z",
+                    DiscountUpperLimit = 9420,
+                    Description = "bliCnClJEf5Qg177zO5rbJQyEpgsB3u1k6p1M3AaDCD8U2M3hy0vfxtwSmqJp6yKARh5ZRW3Kxq9vutz",
+                    Name = "MeQNT",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -267,20 +267,20 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 5390,
-                    Code = "bjsii",
+                    DiscountAmount = 3674,
+                    Code = "uVlFab",
                     IsPublic = false,
                     IsHidden = true,
-                    IsDisabled = false,
-                    DisplayEndsAt = "2023-03-01T21:18:37.000000Z",
-                    DisplayStartsAt = "2023-06-05T01:45:34.000000Z",
-                    EndsAt = "2020-12-20T19:43:37.000000Z",
-                    StartsAt = "2025-02-15T19:31:27.000000Z",
-                    DiscountUpperLimit = 5528,
-                    Description = "XZ0lFTg0",
-                    Name = "buQwKeaQ4HWfPuDn8vtLGTKy9baAXpUrNxQgJv2d",
+                    IsDisabled = true,
+                    DisplayEndsAt = "2026-09-14T22:50:12.000000Z",
+                    DisplayStartsAt = "2026-08-11T06:43:36.000000Z",
+                    EndsAt = "2026-07-03T09:36:04.000000Z",
+                    StartsAt = "2026-04-20T21:26:48.000000Z",
+                    DiscountUpperLimit = 8515,
+                    Description = "qRikwgbBJfMhTrHTPQaRFRzLrLpSH0GqkthOAKJR8VBFpRQxxKQexm5F4TlRS3PsnDMFQKcrRJGtyzouTG0fNi1SBzVwDCpwO7mzwiIebwBbgsjluVjYrLryI60OsM6yKVZ1jPy1npNVd9AFxrpWfPQQvIa1xbdNYJvyC",
+                    Name = "ZXCjbARIpuKvOzHCuCdyUUls75UdwXdZij",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -295,21 +295,21 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 7857,
-                    UsageLimit = 6890,
-                    Code = "Dvx",
-                    IsPublic = true,
-                    IsHidden = false,
-                    IsDisabled = true,
-                    DisplayEndsAt = "2022-05-13T20:18:21.000000Z",
-                    DisplayStartsAt = "2022-03-07T15:34:04.000000Z",
-                    EndsAt = "2021-01-27T16:37:18.000000Z",
-                    StartsAt = "2021-05-18T05:10:41.000000Z",
-                    DiscountUpperLimit = 9448,
-                    Description = "M2eopmIlmvqzqnGOYbg6rdqjemTbEPE7it6nxw8VlzyCNbz8zcALV0qfahEqSWpbWk8lIjmXf3crokuVBQQlsA8T5nZUMuDqspHuPmGiUoPteza9Foxx3GETJuunMNM7JUVu7YgDI0zSm6",
-                    Name = "cU49za1QJALcpDZJ7YKoaGZqFQRMYj7eI0OiTgfPr68fP2A8RCqV",
+                    DiscountAmount = 8596,
+                    UsageLimit = 1013,
+                    Code = "TLMB27QQHu",
+                    IsPublic = false,
+                    IsHidden = true,
+                    IsDisabled = false,
+                    DisplayEndsAt = "2021-12-22T00:41:50.000000Z",
+                    DisplayStartsAt = "2024-03-02T03:28:52.000000Z",
+                    EndsAt = "2021-02-23T02:01:20.000000Z",
+                    StartsAt = "2023-04-23T16:23:23.000000Z",
+                    DiscountUpperLimit = 2476,
+                    Description = "PKSLh839k28z03zy6Qc9GYSlX2n5lak1n33o382bj7JojzlN4lU5sMlhBuyia62bkzzlqIc0ydT6mqiA8RNdj3UyTqHUrIwecpoFXApISgLQUaMJL6dBoxy3dS4rnSGnuDl1WGraodKKbLrRBGbYLtxgB5z5qrK2mXuD0UWS",
+                    Name = "9ldTa29xEBfE4jaoCgaw81ksIPXpJoHnKZwzgtMuSjmXprQOJIDMtkxUA3CwMowYwsohy6o54EyGXhKAybq9i",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -324,22 +324,22 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 9225,
-                    MinAmount = 5907,
-                    UsageLimit = 7530,
-                    Code = "MZulltZtjg",
+                    DiscountAmount = 1972,
+                    MinAmount = 8200,
+                    UsageLimit = 716,
+                    Code = "00ec",
                     IsPublic = false,
-                    IsHidden = false,
+                    IsHidden = true,
                     IsDisabled = true,
-                    DisplayEndsAt = "2022-02-19T06:13:26.000000Z",
-                    DisplayStartsAt = "2021-09-15T03:46:42.000000Z",
-                    EndsAt = "2022-05-18T07:31:16.000000Z",
-                    StartsAt = "2020-03-07T16:49:15.000000Z",
-                    DiscountUpperLimit = 1459,
-                    Description = "QgsidEuf2NvBHeZX8hYKnrzJWptMhyWUi64YZ",
-                    Name = "GeyCSFHt3mcrCB8tq8q2IVY2UPxEK8mwHnigIC2xteLEmOps6u4P22rjT4dupTBgLrwJlYmSqD3jh0KtoQaeaW3v7wYe7b9HTOa",
+                    DisplayEndsAt = "2024-07-30T05:50:59.000000Z",
+                    DisplayStartsAt = "2025-06-27T08:20:54.000000Z",
+                    EndsAt = "2026-02-21T04:29:42.000000Z",
+                    StartsAt = "2024-03-07T17:01:27.000000Z",
+                    DiscountUpperLimit = 4538,
+                    Description = "zcLUKbT5feGtXeOgCjHXo5HdhOmdyoXuDdYfk0Kl5lQobWMeUrTL0yrW2IFnoVrabBtuZMnnkajdAwZKazac8bckasxqrpu0M7pIUsW64iTD7nd9oi4jTu3F0HRYKCBEMlkDUnah6fkhvDARp5vX7MupP6FVnb6JjAKYX8HzepSQlFXs1g1p8h9cEw94TVm3QEXbRfQ4MBKBqC3S2iDFnRE3SwskPWs7mGvsLBFz2ikalm",
+                    Name = "5QIcpZb2q5YnZ6axCoTTIbjOEPBaRli2lUAMJ7CyG5TMfzs",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -354,23 +354,23 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 7829,
-                    IsShopSpecified = true,
-                    MinAmount = 4727,
-                    UsageLimit = 428,
-                    Code = "mOJ",
+                    DiscountAmount = 2217,
+                    IsShopSpecified = false,
+                    MinAmount = 2603,
+                    UsageLimit = 5057,
+                    Code = "C",
                     IsPublic = true,
                     IsHidden = true,
                     IsDisabled = true,
-                    DisplayEndsAt = "2020-07-14T04:13:02.000000Z",
-                    DisplayStartsAt = "2020-01-21T11:29:07.000000Z",
-                    EndsAt = "2023-08-16T09:10:21.000000Z",
-                    StartsAt = "2021-02-28T20:31:09.000000Z",
-                    DiscountUpperLimit = 7154,
-                    Description = "gVZwJO2xNcltqUbvpNyoJI0vqJ8n0oUjQYsKaRMsrJUacY2rYQO4gmGHCfbUV5BkcqYiSNlDYC6MEWefziiHI3EykNpjwCPjAkzyY2kmUe2JJ53U3N6F0e26pbO3HttlG4eyiatMI7VF3dtugJSz1Q3vovXNsgFsW05W19aXuGVVRQlUVJv9CZ2ZsBhmJBENJ2Jp2YLnPueitIaB8AWaFb8JKCZbl1FLUJSG0fudQ9bvTSzM",
-                    Name = "BL1Qigyh82R8yfv5oZ1A8LucSTZwJytxSEpRfXYxFxMDsqe8NITOunWJGeGMfsCgwJoSsvq0p2vMuqT6yOdp5xmnGGOh83wDY3YT1DlU5jqThl0v0LlAw1sxsypK",
+                    DisplayEndsAt = "2022-05-02T18:57:27.000000Z",
+                    DisplayStartsAt = "2025-07-16T22:24:31.000000Z",
+                    EndsAt = "2022-12-10T14:45:42.000000Z",
+                    StartsAt = "2020-05-08T05:09:55.000000Z",
+                    DiscountUpperLimit = 1282,
+                    Description = "Gei6FNa5iNHS8ae3s1VgKjc7Q8j7Z0SWMLPnzw7xhca7VuCPQn3tgDKKsPg1tK8tF9sjwQnBp1nMIeAnY6Xeri5tCJDZsGcVm09iZYX0jHs0ds3Y41lK02B8JXAbkOFKS",
+                    Name = "aiDX11U4V4mzkiQ9KgdufJCOqQoqEQic9b7rjANNhMIW5uX0nomeRn6xi8YDAJH7HJXNF3Oy8",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -385,24 +385,24 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 4754,
-                    AvailableShopIds = new string[]{"7d1e645f-8497-48d0-94c0-043c92beb3d5"},
-                    IsShopSpecified = true,
-                    MinAmount = 4,
-                    UsageLimit = 9533,
-                    Code = "h1",
-                    IsPublic = false,
+                    DiscountAmount = 9430,
+                    AvailableShopIds = new string[]{"f2d4940b-fc90-4813-a868-6dcbbc809a60", "b01cd0f9-c65c-4c7b-8c2e-62c74d61d8af", "6dd5bb9f-74f6-4f79-a523-fb725b82339a", "06920ebc-8d07-48ed-9c69-23921b087b62", "c7c4b16f-4288-471c-8f6a-e18c1452494b", "4010d5e8-66d6-4702-9049-5876cb547c7a", "0da07500-d931-43c9-b1c8-5ff69f1eef63", "cb8ad396-3be2-4def-ac79-aa0ac7d24353"},
+                    IsShopSpecified = false,
+                    MinAmount = 7708,
+                    UsageLimit = 8933,
+                    Code = "AcLtwR11",
+                    IsPublic = true,
                     IsHidden = true,
-                    IsDisabled = false,
-                    DisplayEndsAt = "2023-10-18T22:04:27.000000Z",
-                    DisplayStartsAt = "2020-06-25T04:58:35.000000Z",
-                    EndsAt = "2020-07-02T22:32:01.000000Z",
-                    StartsAt = "2020-06-17T11:07:30.000000Z",
-                    DiscountUpperLimit = 9150,
-                    Description = "x9kbbfwykuboyLPrrY2btuxHx9YophvSLqEzRt6XTR3oDpLSuhWGSp4IuNXEvAYv341undTljbWPhfpiwPMjupC65xVDnAJbsKD6b895iftqbY67Ut2zsAKH6lKT6gJXbaEKAddoUM0CRdaSDeoQ9lXXELG9oQdgpEse81VvpXr3HeuSevupI3Lg6cydG4CQY3zROLCcC3cDzGwCmJXH",
-                    Name = "iF5C2",
+                    IsDisabled = true,
+                    DisplayEndsAt = "2020-09-25T21:11:39.000000Z",
+                    DisplayStartsAt = "2025-08-28T00:54:28.000000Z",
+                    EndsAt = "2021-02-21T06:58:46.000000Z",
+                    StartsAt = "2022-07-29T15:00:35.000000Z",
+                    DiscountUpperLimit = 8385,
+                    Description = "Jrx0pv2XvsLcCeEcDmfq2CKw2F1KvbCjTFkaD9SEmE89oiZ9sjCAHNKHbkDV7xD9UgYkUYCn38T5jddntLP9wvyYD1qoSVwF6tpYAPGi6YnBQDM8MlLw6WNmhQ1XbNNNiRTERN1SPoqCbHjtLPWoEeyLYkaItEzRnlzKYkySdT2Gi04uqdwqTzZvD1PwMG5sUToLzAoDfdSJfprAXytppmaGjNfTvZeWlNcmFKOSukrPpaSteC08CcbsYxt96g",
+                    Name = "v0VcOEBgxJasez0E3N0w4tVAdgt1xX1dSRHXsAmJyubVIv51Dnx9WEjtPQeVvIzNJybaWd5nDKgnWgGOF388caTufq1V8gMtPEUm5qxAkXQdgm",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -417,25 +417,25 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 9717,
-                    StorageId = "52b1e4fc-def0-4c67-b048-ac5ea5b94670",
-                    AvailableShopIds = new string[]{"87b4b7b0-21a7-4f7d-85d5-b5438701e8db", "3d95741f-9140-445b-9729-26c21dbc8e65", "6ad79143-d344-4727-9e81-c8927bb7f194", "64cac04c-4259-446e-8536-26bb1ea692c8", "d7d5149b-6469-4d86-9689-7492a75eb858", "507e816f-1f40-4ca1-875b-c01ececb7cb0", "1a0bb43c-d539-4e69-a8f2-628818f7201c", "23e318d2-21ea-490b-b4e1-67e5aa91563e", "8679d6ea-ded7-40cd-b92b-62c5d201af04"},
+                    DiscountAmount = 7516,
+                    StorageId = "6c0d40c1-9636-4a4f-9395-ba78e2f1f034",
+                    AvailableShopIds = new string[]{"3db36628-ac43-437b-b25e-a7c05ee5dbb6", "719889b0-3342-4ba9-8f33-8a4bb460e2fc", "926c852f-e293-473f-b434-0ae16712c23b", "bbd02383-9130-47b1-b6df-28331f38046b", "adcc6242-7f0a-4679-924d-397b4a203a5d"},
                     IsShopSpecified = true,
-                    MinAmount = 4475,
-                    UsageLimit = 4774,
-                    Code = "3X",
+                    MinAmount = 7399,
+                    UsageLimit = 4915,
+                    Code = "LG1",
                     IsPublic = false,
                     IsHidden = false,
                     IsDisabled = false,
-                    DisplayEndsAt = "2024-07-15T02:38:58.000000Z",
-                    DisplayStartsAt = "2022-03-23T10:34:39.000000Z",
-                    EndsAt = "2020-07-26T08:52:20.000000Z",
-                    StartsAt = "2020-11-20T12:43:36.000000Z",
-                    DiscountUpperLimit = 1824,
-                    Description = "BJJ5t6h3IPcBKQDcagEkitF8iACEva8PGaDArnv6F3HhJclpvEl0kBLWjkC",
-                    Name = "0Mj5I3Hqz506kx1IdZKDkCNCl989Inr9h5bKrK2A0mcFTtdvdsEkzDVoxJr0lAnMovtOnbZ68JstsOcxw5P",
+                    DisplayEndsAt = "2025-04-23T16:12:07.000000Z",
+                    DisplayStartsAt = "2024-09-18T11:32:12.000000Z",
+                    EndsAt = "2025-03-08T02:52:41.000000Z",
+                    StartsAt = "2025-01-29T22:30:04.000000Z",
+                    DiscountUpperLimit = 2087,
+                    Description = "qXLUpztzpGIdluCdFeopAnKzAxtAmMd124CMe44VQ69lqvNuxrP4SroQtmwf2SR0athJ6w5HZkze23HnekgXpUMEHxZW0Tc6eMEIuVp5eKpdv05iSfHRA4",
+                    Name = "MJeTWEJu4ZLaQXIwC",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -450,26 +450,26 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 9660,
-                    NumRecipientsCap = 9968,
-                    StorageId = "be1efd61-d474-44be-a346-e09c35cac798",
-                    AvailableShopIds = new string[]{"f3956cd4-a7d5-4fb5-9740-48a769426835"},
-                    IsShopSpecified = false,
-                    MinAmount = 9100,
-                    UsageLimit = 9837,
-                    Code = "YIqjF",
+                    DiscountAmount = 8292,
+                    NumRecipientsCap = 8122,
+                    StorageId = "5d54910c-80e9-4a90-bb57-b82ac57051aa",
+                    AvailableShopIds = new string[]{"f9e1961c-3239-475e-9784-fa2cce08d00b", "b0e42737-8e90-4dad-b35f-d33d26c1f8e8", "6960abf1-5e12-450f-9246-d6c06154b314", "9dd36bb2-a0ad-4d69-910e-9a14c7bfeda5", "86dc655e-c41d-48fb-9bbc-cac4997751ca", "6f28f9e7-6370-42bf-b31a-b7da6800c298", "3f790557-9e02-4383-8d2d-bfb8f810d953", "35ef21a4-93f0-4544-926e-ffa7748165b1"},
+                    IsShopSpecified = true,
+                    MinAmount = 6873,
+                    UsageLimit = 9757,
+                    Code = "fYX3JU",
                     IsPublic = false,
                     IsHidden = true,
-                    IsDisabled = false,
-                    DisplayEndsAt = "2025-07-03T10:01:08.000000Z",
-                    DisplayStartsAt = "2024-06-06T09:10:54.000000Z",
-                    EndsAt = "2020-11-12T09:01:13.000000Z",
-                    StartsAt = "2022-10-10T02:03:17.000000Z",
-                    DiscountUpperLimit = 1031,
-                    Description = "VX7m2aCCypluKCuWAlkVHsDkHFJvihW5VcQOv2mc2ISnCuuu6HEZICTUsFd55cysKpzPw06buTFvYo4vEubGw6jVHah2jNyPqoWcQPdnYsCcbQIY2KFXsspdkpVkTBJa3OTrsXs88kJNoIZ",
-                    Name = "azm0l",
+                    IsDisabled = true,
+                    DisplayEndsAt = "2022-08-27T22:59:16.000000Z",
+                    DisplayStartsAt = "2022-10-18T18:10:03.000000Z",
+                    EndsAt = "2024-01-27T12:46:16.000000Z",
+                    StartsAt = "2021-06-09T03:25:05.000000Z",
+                    DiscountUpperLimit = 225,
+                    Description = "rpojFdIy8Lev3F8En8XgQCp5V2i4zKRrop8yq1iTaMXh9J32aBIrleFDh2AVDnVQPI4cS2rMsWBfreBRQpW9vUd58fde96uK1qpkeDgc6Hbo3o2wSmfRoo5OKt3yV5Bzt1djpGomL7u0oZNCkYK3XxpWAlchemsnykqWhGOYpMimrLQy1efJIm6",
+                    Name = "p2nFeDatBkmx",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -484,10 +484,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 5847,
-                    DiscountPercentage = 7376.0,
+                    DiscountAmount = 2378,
+                    DiscountPercentage = 2645.0,
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -502,11 +502,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 9484,
-                    DiscountPercentage = 806.0,
-                    Name = "Z7efHVp4Du6bqVzq0H9hNDIpWOGRlL4QDCIWrLzYwdZH6RYisLngmui2yyfAvCUPPfC6gPSyCFjnlF5wS89FXtStGksu",
+                    DiscountAmount = 7866,
+                    DiscountPercentage = 5244.0,
+                    Name = "fJ8iWJ5x76ilzTFGw7NqxtlVIVfYnX2Qn7EnOChsUwktnh8VjRFve7MdNMBgFvJyEEmkecVySQ3ucJUKFqVhyrEcw3WNc5",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -521,12 +521,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 5578,
-                    DiscountPercentage = 3283.0,
-                    Description = "3uI6YbNMb4YSuPWKo7xO0kav9UABs7zcSSckrHrP7zrKa6Deu24AbEENpv2mR4vcFbZYPGyrsGLqJFlRMGfDCisIe5qHDsMdG7wb",
-                    Name = "KEpXzySqqc4sXPad6xuwUqi64YRTYtsOeEN9XbwlgwBy5OkIYkbdAf4PBqh2Y5zV0C85Vn4l2htJKp8EeWwIb",
+                    DiscountAmount = 5245,
+                    DiscountPercentage = 200.0,
+                    Description = "iI2Hhl1Ojg",
+                    Name = "6fFukYqihBSq8D0896GNWlaYQ8akcWxDZkhOozkzesx2mnek2LIVGGp8Vx16M91diHUGfol8Mhj42rW",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -541,13 +541,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 1052,
-                    DiscountPercentage = 8852.0,
-                    DiscountUpperLimit = 2773,
-                    Description = "73CECtq6YH4jk",
-                    Name = "jZI7iaSuegvmESb5ZkkQma0HXRKUqv4lzkwZFtSWx4aRECgS2Rzs2ylIq5ZtrGXVCQUhbREfojZVoiIjURbvF5c",
+                    DiscountAmount = 1804,
+                    DiscountPercentage = 219.0,
+                    DiscountUpperLimit = 8698,
+                    Description = "Wjzvhmx48Q4mMZZBBUosSdONTSqEGwk1DyPJJ9VhetNR8hTecHZnx73cRhZIXdPCHq2mv2UAXAtqrIkbL0z4gSPzn4HTeyJUPoxQJ9n1IVWSFIGUqJ4N6z6sZDMXDGqemkORDDzJGZ9TM0TySjAlVWDrjsx0UNdOCeykFyfPkq8IYlCnIEfVjy",
+                    Name = "hIzv",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -562,14 +562,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 3061,
-                    DiscountPercentage = 6265.0,
-                    StartsAt = "2023-04-03T14:06:46.000000Z",
-                    DiscountUpperLimit = 7489,
-                    Description = "tbiunsY6SNRraYwc8QDfAEfV4F8XUQw7FOCvHUkEBp2LxsthHBe9",
-                    Name = "WUoT5QLe9Yg2CBY3rucfBues6uHoyn0kY9tu08AkjC0WPKbQvYow9FaOH3zD7SQmRuyNCM",
+                    DiscountAmount = 2547,
+                    DiscountPercentage = 7415.0,
+                    StartsAt = "2024-02-12T16:15:29.000000Z",
+                    DiscountUpperLimit = 4381,
+                    Description = "fx06lwewFlBxBPgZymInLxkpSlp0CcXJpCFZzCR1WWP7a67366cHWhkYkA6trhbS9trPinjNzKWZdpxUSeeatx6TLoIfkctcu3TkkDZexmMtTyt289kas1F7Tkqoaqe1JDLI1WZ64tiSollupgL4JictCeDSHD3C2YnEIi9qrFhH",
+                    Name = "4UChBktVJM6Ehoat5RskjtjMRgfY9KAojiVjkWGZfXbhOFvNY55OwkPTEUz8oSFQeGoSG3k81y4L7o3GM3UKBX",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -584,15 +584,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 4234,
-                    DiscountPercentage = 8072.0,
-                    EndsAt = "2020-12-11T20:02:56.000000Z",
-                    StartsAt = "2020-06-04T03:34:31.000000Z",
-                    DiscountUpperLimit = 5452,
-                    Description = "UAKK4AYXStTHGYGCT6FSvry2ciGzpWdg5yn158N5eaT1YQUtPEMBFK5RCvbOFISTKPBIbnB4IlVfzKQeAZtwqv4AGYkQ5YWzuO0mrMzlLTVYxU13omHKmdh2ng7xlmB0D7qlClsr3peE1RPsdDZEoaT5osfv5Au45ikmQzjXEIrL5tEVsPccciqGzpCuGxgjotbAnDFm6nBFTBcp5MgKi6djde9q9Gx06zspIhW3",
-                    Name = "gmaN6JcrvmX5G7cBGoNqTURH3hLLIVR7YcRrTeQOsLdvK2PUyIdpshyxjFJxJ7Fc",
+                    DiscountAmount = 5908,
+                    DiscountPercentage = 8269.0,
+                    EndsAt = "2021-04-16T18:55:43.000000Z",
+                    StartsAt = "2024-09-05T12:00:10.000000Z",
+                    DiscountUpperLimit = 286,
+                    Description = "oycpsy4LyLZFxRuuFLA4Ui8k1KypnJ8Uw7M1CvtXboHcAQ9ViIsvWqws3eBMzyIUtiNxNhmRynGWfznERPtN3LViJS1dpiuu6JWeysJ5UR27acols8OLFNhYvqrdgeoTKVw3QKHsut3xFubILPZVISKCKpUoBc7VjLNhPbQNBNhem8RljnuLcC94xG8sb1tOVm7p5XAwHfSXk3eOR6TecHTnhwvZs",
+                    Name = "sT85OfQ8lzdmqxGSg8e3RhOb5BMcQPLOIjmc8VMDMHWqGdZh4akYykFCJxLZHGXI2AIAE5",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -607,16 +607,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 7786,
-                    DiscountPercentage = 2743.0,
-                    DisplayStartsAt = "2023-01-05T11:43:30.000000Z",
-                    EndsAt = "2021-05-05T12:10:12.000000Z",
-                    StartsAt = "2025-04-03T03:29:47.000000Z",
-                    DiscountUpperLimit = 3204,
-                    Description = "WRFS5iP8DHnWS95dKYCDWjMDqXUFGoRA4XvfiL62Wv2vl8qJa",
-                    Name = "fcwBDpLTRN1a0lar5cvmWk6HP3Edv56q9t5VGuIJJqB",
+                    DiscountAmount = 9270,
+                    DiscountPercentage = 9159.0,
+                    DisplayStartsAt = "2024-02-28T00:44:06.000000Z",
+                    EndsAt = "2024-11-09T00:31:34.000000Z",
+                    StartsAt = "2021-09-27T03:00:00.000000Z",
+                    DiscountUpperLimit = 7111,
+                    Description = "7kmQ3kNPt7OvjdgkL3FTfLMcm3icBM39ZlgHnODxDuHCOV9jJuZqWToSer58JP7CddvYZG2P4sGsjZKQxe7fKpax0Uc45ft1nisEBoOyK7IWRvWeQ7WqJw3BcrA0ZJmOfUMnfydDiDxugYD9evfD1PJtdO3SdiMuiIPxXLPGXeapZ447jeLeg5dXfz8LlL819MpDMdbxSiedHtUdWqjwNZ6SqXcjRYXWjjppT0r9xvCuvBOfsidrDI9V",
+                    Name = "lsfxLxW5axZvNGABU1Kq4dKF1bCFldqrEeXCX83UsZSPbix6",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -631,17 +631,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 4787,
-                    DiscountPercentage = 9704.0,
-                    DisplayEndsAt = "2024-11-06T09:28:35.000000Z",
-                    DisplayStartsAt = "2021-09-21T01:39:02.000000Z",
-                    EndsAt = "2021-05-16T12:10:49.000000Z",
-                    StartsAt = "2020-09-26T16:36:18.000000Z",
-                    DiscountUpperLimit = 5991,
-                    Description = "ljp1y8KOJgfu4WFT3sPLKGiMRgfz5jiMdvRW63Z9043h9SU3fTD5o4Kn6TQ5PsH9YtmnNiOZyV9",
-                    Name = "AO3DnB1YRES4xlc6449ibwy8gDnWqdIP3eIh1PycrJFKeRKa6OogwkyZYeik5qw",
+                    DiscountAmount = 7710,
+                    DiscountPercentage = 8497.0,
+                    DisplayEndsAt = "2020-04-02T14:34:02.000000Z",
+                    DisplayStartsAt = "2025-06-29T05:05:07.000000Z",
+                    EndsAt = "2026-01-30T01:39:45.000000Z",
+                    StartsAt = "2024-02-19T03:01:22.000000Z",
+                    DiscountUpperLimit = 557,
+                    Description = "ly7V",
+                    Name = "1xEBLXcDk2ABcz8aQVQ46LRceMuSvImd",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -656,18 +656,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 1521,
-                    DiscountPercentage = 8322.0,
-                    IsDisabled = true,
-                    DisplayEndsAt = "2024-05-22T09:39:34.000000Z",
-                    DisplayStartsAt = "2023-02-20T07:50:39.000000Z",
-                    EndsAt = "2021-11-06T05:25:24.000000Z",
-                    StartsAt = "2024-01-15T17:14:37.000000Z",
-                    DiscountUpperLimit = 311,
-                    Description = "lJwoEqJ4uimGtF4vDevDABoV1497oKjyplKXUyjuZoAdZaiUShsjoKemD9IJVji3EhQ10nakJ4Xx7BosawhL51XW0ltZ8tyB",
-                    Name = "dUl09HCPEoMCgQwCdLCVxkfS7LC09h1a33P4feIw8rNkq1IJcIVXzbXoLITUciADNRcm8cr7h7uvpVmJgh2hspBOtxaFVpQwu69vaYb020lVhpK1uj",
+                    DiscountAmount = 1564,
+                    DiscountPercentage = 8160.0,
+                    IsDisabled = false,
+                    DisplayEndsAt = "2024-12-14T02:59:45.000000Z",
+                    DisplayStartsAt = "2021-09-25T16:13:56.000000Z",
+                    EndsAt = "2020-09-16T00:56:09.000000Z",
+                    StartsAt = "2024-04-16T03:37:21.000000Z",
+                    DiscountUpperLimit = 2178,
+                    Description = "y3aEus7kZPbP6pY7uTyJAbvra0dcpr2XBaxBtLUqtpR4s1JU0lVQ2OypewcGn6EYrIoiJUtnz4tPDjzGeH1vMI9teS2D85S1UHA16vfzALVhDfzoJqhsy99eYUXwCEgrx3b6fZBGl5iNgWbOvie519sB5ATfDwJwr3eQ20YGcyYu0bMGv3vztYfqlx",
+                    Name = "sbOENjEAJX3lDTAofzZK4Rxx8sLYfBb6BjvrBrNNM0rEDhKG45tzzgCXrxrouPH3hhI04AO4rgTAhQAt0OqjGLP0DBUnGxElSvEGfkoczpVf2XfhCesDbLNG0um3Y",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -682,19 +682,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 9787,
-                    DiscountPercentage = 7230.0,
+                    DiscountAmount = 3247,
+                    DiscountPercentage = 216.0,
                     IsHidden = false,
-                    IsDisabled = true,
-                    DisplayEndsAt = "2023-06-19T03:23:05.000000Z",
-                    DisplayStartsAt = "2020-07-07T01:57:51.000000Z",
-                    EndsAt = "2024-05-16T10:33:04.000000Z",
-                    StartsAt = "2023-07-26T19:44:29.000000Z",
-                    DiscountUpperLimit = 4905,
-                    Description = "4SIGQ",
-                    Name = "IPmfa5YJsZSIV5H0hKFZRjFJsBJwxE5ymHkkfvwj75uGxXyxLiKvyAHQ0Cmh0GR2iNpQgbrTS2HEffP70DHCUohTMu269OO6DIw88je3Px2M",
+                    IsDisabled = false,
+                    DisplayEndsAt = "2021-03-22T01:04:42.000000Z",
+                    DisplayStartsAt = "2021-02-22T03:37:49.000000Z",
+                    EndsAt = "2020-09-06T08:17:56.000000Z",
+                    StartsAt = "2022-07-26T09:48:21.000000Z",
+                    DiscountUpperLimit = 8831,
+                    Description = "6SkSSSI0RCCs8xN6z62EIsVi251R9OVM6dJXfTSVkQAgLF0UCGkzWfvHQLNpl08zkirPvpqWe6LFMxqHgshQQxZyXH54xcjjzE4jf3bC1uhrBdvXqhm8jwzIEhcNYML2OSzpp2xgjGNFVHJxj8ajHmdLScmLSMjxtIdUuX8NpagwVisjQjWa0Ga7Mr0dbte93IwLTuppNmEhXnyUDrs0YSyLNNnFCcwr1avxTo",
+                    Name = "BT4VEV6evoILJv7tTWIqRKgT33Bi9tzz6Ttxk7d6FPiA0lsYPm9uy3bOLitkN0KHj5fbn2v2B0UJuNrXCxgjdk6CWO",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -709,20 +709,20 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 1206,
-                    DiscountPercentage = 1982.0,
+                    DiscountAmount = 2539,
+                    DiscountPercentage = 1239.0,
                     IsPublic = false,
                     IsHidden = true,
                     IsDisabled = true,
-                    DisplayEndsAt = "2021-03-10T06:17:16.000000Z",
-                    DisplayStartsAt = "2022-08-21T02:08:58.000000Z",
-                    EndsAt = "2022-06-17T07:43:27.000000Z",
-                    StartsAt = "2024-06-01T14:24:44.000000Z",
-                    DiscountUpperLimit = 7392,
-                    Description = "XsAZIDxFXqpctZUoXMEwvfZIhfCcdWRRWKB",
-                    Name = "AMRk3KT9aHDvn680BNVo61whu52VEWHzeXnCqnnjKe2ZokcQxt9okwN5c4Mkgq5YYKEEntoCEiLAHJ2sW9FitjutUJJsIkCXGENUTkzcX2ykkKJlN",
+                    DisplayEndsAt = "2021-06-18T16:48:32.000000Z",
+                    DisplayStartsAt = "2020-09-19T08:48:10.000000Z",
+                    EndsAt = "2022-11-05T01:51:44.000000Z",
+                    StartsAt = "2024-02-23T08:42:41.000000Z",
+                    DiscountUpperLimit = 3217,
+                    Description = "Lot3toFslAl38fcibrdPRjjy3jeyeKg5ECx1SgJEpSlopBJNy3qmiwYmDuOlcchHpAG2gwwi3nOK6tJxpePLFHBs9kILByZGqDqm9YAgnobRajraam0rBpkfu82G",
+                    Name = "Do8PtRb5vVt3TqmZrxia2ui6VWr3guQRAw5Cq4lwbs5G5iUu21d4ST7CuEydnlBtSyriuS9M5GXcqFt6wV9qfsP61uE",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -737,21 +737,21 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 5297,
-                    DiscountPercentage = 6148.0,
-                    Code = "7",
-                    IsPublic = true,
-                    IsHidden = false,
+                    DiscountAmount = 2691,
+                    DiscountPercentage = 4233.0,
+                    Code = "wZUrs",
+                    IsPublic = false,
+                    IsHidden = true,
                     IsDisabled = true,
-                    DisplayEndsAt = "2021-07-26T23:35:43.000000Z",
-                    DisplayStartsAt = "2021-10-08T15:00:59.000000Z",
-                    EndsAt = "2024-12-24T12:38:57.000000Z",
-                    StartsAt = "2021-11-17T02:26:49.000000Z",
-                    DiscountUpperLimit = 4779,
-                    Description = "UpqdHMS0BnQNQ8yntRPdiO7nDWAmmXsETvex6EwUtMqxtCSMEZWLR3IYMZqZQp71KYV2dqAhSRH0jBaTj6CKr7da3Hc5MrDSrYQmTFD8MK4LhwIRladKEnUCUBMTsHjSLXQWZdqZHXOS9NchMxuvMOV5p",
-                    Name = "0ThIcNVnpd1n04FvafoOT5XflXygJfyBJl1nws6Ne3S7kdpHli9FCf9vj51iwXi5vVkai7",
+                    DisplayEndsAt = "2025-07-08T04:13:57.000000Z",
+                    DisplayStartsAt = "2022-04-14T20:38:06.000000Z",
+                    EndsAt = "2020-07-15T03:13:18.000000Z",
+                    StartsAt = "2024-07-03T10:12:21.000000Z",
+                    DiscountUpperLimit = 7248,
+                    Description = "rurgTCGgpfTuJZDkeCAQBkolLroUrTRKy1uTbc45m4YwxjxtGbA05zcwQ8eNnH7AYfIcNt7NKHBDT4zItl3ZAd6IFhkcz8jRzOJNYNTmAx0cRygrFZ66y9EQQUqakXyxFnuW2T4m1VyTa1OoANMT3g8KQuzrvKESksiTJQTVnHiOfPR4wy7f2LYwmiQU5GGwM5",
+                    Name = "OvuPRHuaWsubCugQ2sjreB3py6MReMgsNKNI6WrDerxdbupVy8ATO6",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -766,22 +766,22 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 7337,
-                    DiscountPercentage = 5225.0,
-                    UsageLimit = 6756,
-                    Code = "PllBkchJ2",
+                    DiscountAmount = 6380,
+                    DiscountPercentage = 5123.0,
+                    UsageLimit = 9245,
+                    Code = "exkb2",
                     IsPublic = false,
-                    IsHidden = false,
+                    IsHidden = true,
                     IsDisabled = false,
-                    DisplayEndsAt = "2022-11-24T10:34:52.000000Z",
-                    DisplayStartsAt = "2024-03-27T03:41:02.000000Z",
-                    EndsAt = "2022-05-18T02:33:58.000000Z",
-                    StartsAt = "2022-08-16T16:50:10.000000Z",
-                    DiscountUpperLimit = 1515,
-                    Description = "uEPtWGn6U1tknXv7iBjpuz8kXfTQVtq7nYSMGg6A5q48d0VvhbqvZRxaI0AVDH5phIrM988xOpACBuWehCLI5Ithzpo1sbw0fi8Tfl4MiezYuuDN5NO2HkiJUlQ4dKg",
-                    Name = "R3uo3pyHQKCLEzAV2HW0T6wtgFowhjkpuax7inTCKJlAlkDX0z9k4WtlP60t1pGDC",
+                    DisplayEndsAt = "2022-12-25T06:55:33.000000Z",
+                    DisplayStartsAt = "2022-08-18T19:59:47.000000Z",
+                    EndsAt = "2024-01-24T13:45:19.000000Z",
+                    StartsAt = "2022-04-28T18:38:49.000000Z",
+                    DiscountUpperLimit = 4448,
+                    Description = "ZDBIqGu38r7vCoqpH5QhZu1k2tSxqrr7YJPVhda0ziWsQtZ",
+                    Name = "Rc6cmsvPcY7yThlkSXuhO9OLfbw29j7FyeDINdaRXM95lPwMwz9IKIn6wEZkPRJyErXa70KC1ZDBuFoL3t7T5TQkGNyZe8GBabvL25GC",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -796,23 +796,23 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 4546,
-                    DiscountPercentage = 5247.0,
-                    MinAmount = 8318,
-                    UsageLimit = 9783,
-                    Code = "pLioRLUy",
+                    DiscountAmount = 2971,
+                    DiscountPercentage = 3844.0,
+                    MinAmount = 2774,
+                    UsageLimit = 8325,
+                    Code = "wr2eoj",
                     IsPublic = true,
                     IsHidden = true,
-                    IsDisabled = true,
-                    DisplayEndsAt = "2025-04-26T10:38:54.000000Z",
-                    DisplayStartsAt = "2024-07-06T05:16:12.000000Z",
-                    EndsAt = "2025-05-27T01:42:49.000000Z",
-                    StartsAt = "2025-01-23T16:53:43.000000Z",
-                    DiscountUpperLimit = 8890,
-                    Description = "wp3jBXylmnzTDYQPTQEhEDpiIl88uXhFr9tzNaCFLhrW7Qg63LOoyDRk2frbKYDtHXRSpeSviFk4W1qsOLMcNwe8KEeqmGGreSt4nt1ybC0Ywm3a7y1jkUDzYlQVbUnnRBBQRDsGnvgO2bodBPeKpRFsQIEwGMkEBFs4OKb",
-                    Name = "pkXgOJ3P1nM9riB",
+                    IsDisabled = false,
+                    DisplayEndsAt = "2021-07-08T15:49:30.000000Z",
+                    DisplayStartsAt = "2023-12-02T18:35:58.000000Z",
+                    EndsAt = "2026-05-25T22:49:35.000000Z",
+                    StartsAt = "2022-06-16T14:00:01.000000Z",
+                    DiscountUpperLimit = 9745,
+                    Description = "OXkEpypH",
+                    Name = "4JrghAf67UGzd",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -827,24 +827,24 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 5607,
-                    DiscountPercentage = 5677.0,
-                    IsShopSpecified = true,
-                    MinAmount = 2079,
-                    UsageLimit = 893,
-                    Code = "W8sR",
+                    DiscountAmount = 6876,
+                    DiscountPercentage = 6034.0,
+                    IsShopSpecified = false,
+                    MinAmount = 8692,
+                    UsageLimit = 1050,
+                    Code = "gboYq99",
                     IsPublic = false,
-                    IsHidden = true,
+                    IsHidden = false,
                     IsDisabled = false,
-                    DisplayEndsAt = "2020-01-16T08:50:48.000000Z",
-                    DisplayStartsAt = "2021-07-18T22:52:03.000000Z",
-                    EndsAt = "2022-05-23T01:44:24.000000Z",
-                    StartsAt = "2021-09-20T23:01:12.000000Z",
-                    DiscountUpperLimit = 7485,
-                    Description = "JkSJHuUfzU3cxqLSG8S4aP0CNMNfb6VowWUVfzovzP7VL5ebcijLtVhmlM6kBu7DCNg4aU7BlWsNECFWA4hHlvtcjGtIPad",
-                    Name = "KiVX8t6IuP7AfSh1iSdnomWlXA8y2vwAsTNYaeLyV7CWdrmk7DRyx2nAdRh4U2Gnj6HilrfsKlPIExrXeCFO",
+                    DisplayEndsAt = "2024-05-03T05:44:30.000000Z",
+                    DisplayStartsAt = "2024-09-22T07:42:50.000000Z",
+                    EndsAt = "2022-04-22T02:46:39.000000Z",
+                    StartsAt = "2021-09-14T02:53:55.000000Z",
+                    DiscountUpperLimit = 6989,
+                    Description = "Q97NziA5jLyP8dpSqy8Td0RORSjyvxfkjlz1SjQKzzKh9mzyFG6lnGeQBDP",
+                    Name = "uxJ6IIDy8VE7WwBdF0msuDaOhM5oqV2xleoqU08aoK4SSRQxNI",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -859,25 +859,25 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 4341,
-                    DiscountPercentage = 9397.0,
-                    AvailableShopIds = new string[]{"0a769ecb-5ef8-4b07-b256-460ce79cb334"},
+                    DiscountAmount = 574,
+                    DiscountPercentage = 5300.0,
+                    AvailableShopIds = new string[]{"a468c3c8-fd2b-49d9-9a02-5909e292afad", "11b13916-72e1-41b4-a9ec-4cbbb2c95c4c", "59f396ff-9238-42f6-ac79-61d440647935", "8e8ddff6-15b2-48a3-ab0b-4be651b4e31c", "51fd3c88-1d57-4818-9a69-4c3b8abf0dce"},
                     IsShopSpecified = false,
-                    MinAmount = 1853,
-                    UsageLimit = 4765,
-                    Code = "hz7DzBywK",
+                    MinAmount = 431,
+                    UsageLimit = 6798,
+                    Code = "Hj",
                     IsPublic = false,
-                    IsHidden = false,
+                    IsHidden = true,
                     IsDisabled = false,
-                    DisplayEndsAt = "2020-12-23T07:17:39.000000Z",
-                    DisplayStartsAt = "2023-05-27T13:45:13.000000Z",
-                    EndsAt = "2023-07-24T19:55:02.000000Z",
-                    StartsAt = "2020-07-26T01:22:08.000000Z",
-                    DiscountUpperLimit = 2478,
-                    Description = "lN0S7L0N0uBH",
-                    Name = "0xIlmI7crwjgiJmBq8x2BMoiejWmPY8qwKCFWRUhTWJtrSHM5KvGCx3jvLeQXqJ7fOtRApW564YK0LvLN69VHlYJhXH6cUQL7XLfiXA0zUZ",
+                    DisplayEndsAt = "2022-11-11T12:54:31.000000Z",
+                    DisplayStartsAt = "2025-09-19T16:37:24.000000Z",
+                    EndsAt = "2021-08-01T23:54:43.000000Z",
+                    StartsAt = "2020-11-30T05:13:39.000000Z",
+                    DiscountUpperLimit = 8938,
+                    Description = "TLI9kXm3rfByXFrnlgeqVtAvQ0rVDYOMHbm3FgLktaUhgEFTnEcwpkpUTSKxUsOoZPlM9KHj0LscW1P81Qy90jmz1sBL2rdIxI95Aq016ZjJCH7wtIwkByOxgZ1CmhlD7BVFzYE678HYgrDW8XfB04cuHe8uQqeJWnp68s54o",
+                    Name = "N3JT7TlfvcjHRgsbjroXcf1fxLB1yf5dH6gwvhweVkrWRctnJ2TSLmfSkWFb6oLKvNkr7xERwVYEzuAq",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -892,26 +892,26 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 4865,
-                    DiscountPercentage = 3785.0,
-                    StorageId = "a0643614-6009-49e9-818c-732cbc1e8ddd",
-                    AvailableShopIds = new string[]{"1b48da90-f25d-40cb-9921-57bac6836b5e", "ce0ca253-9180-42bf-a004-7e40ec1d6565", "3e9543d7-79d5-4f9b-8db9-1afa2b924336", "381edcec-9126-46dd-bb41-a1e2627bd3af", "abaf04c4-a587-43b3-8e11-23f7946c6b70", "f4d1cec6-9e2e-4dec-ad2a-af40659fc7af"},
-                    IsShopSpecified = false,
-                    MinAmount = 9333,
-                    UsageLimit = 5571,
-                    Code = "RGaBKUJdH",
+                    DiscountAmount = 3134,
+                    DiscountPercentage = 1875.0,
+                    StorageId = "1290d032-65d9-4071-b55a-8c782f25b237",
+                    AvailableShopIds = new string[]{"0268f86c-5638-4855-b79e-60106e6ad462", "7693c69e-ce36-4564-be6a-a7e204a1aad1", "559a8b89-40c0-41c5-acaf-397cfaa4e9ab"},
+                    IsShopSpecified = true,
+                    MinAmount = 4131,
+                    UsageLimit = 3459,
+                    Code = "EVuuBukUK",
                     IsPublic = false,
-                    IsHidden = false,
-                    IsDisabled = true,
-                    DisplayEndsAt = "2024-12-16T19:52:57.000000Z",
-                    DisplayStartsAt = "2025-08-07T10:53:04.000000Z",
-                    EndsAt = "2021-07-02T20:11:18.000000Z",
-                    StartsAt = "2023-06-04T18:51:09.000000Z",
-                    DiscountUpperLimit = 2052,
-                    Description = "kwaxRbmzAo5vzrqC43kvR5VzS4JSx7Qk5qYm8EJV1By6vGk0FuWZ3ptkSyNBcc9paWacdvlF8sKq6M8TMch0t9MLsXgvG8EYKbsPpBkO0z5h9VDX3NEhsO0rjGagOIQ6x9sSfu0zX8zdCniT7rbp4RdF8jzLLX07kGwmRZR89QJDyeQCnprhi7qh3K",
-                    Name = "4T37Wi9g9nZZhOiq9TM1kLnMOaPoayQ1SL4LwXctk2uyuazqzFpngLk90ZBFe71DIECbUavopCer6amUq",
+                    IsHidden = true,
+                    IsDisabled = false,
+                    DisplayEndsAt = "2023-08-05T22:16:11.000000Z",
+                    DisplayStartsAt = "2022-07-06T16:59:28.000000Z",
+                    EndsAt = "2022-10-26T11:17:53.000000Z",
+                    StartsAt = "2025-03-19T02:24:33.000000Z",
+                    DiscountUpperLimit = 70,
+                    Description = "t",
+                    Name = "oO5CUO2HA5dwLtiNF6M5qahAMFoXb9rmaZQXIsaxB2CgIcPvFHqcQFB1JdewR9buGPpBiWlh4drGbWvDfmVaNvPs9iu3XzEN",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -926,27 +926,27 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountAmount = 87,
-                    DiscountPercentage = 6633.0,
-                    NumRecipientsCap = 5390,
-                    StorageId = "d8b35c69-767f-45b2-81fe-6a8c0494b975",
-                    AvailableShopIds = new string[]{"18dacd56-d1f2-4f9e-bcdb-c0edbff05b85", "33a6089f-0b54-463a-aa90-019fe4cea2ba", "72bc67fe-c66b-4f69-9c94-710fec1a4136", "2fdefc9a-29f0-4394-b17b-37cf8f83beb0", "36b9825d-4682-4428-a6b8-6440d4e6899d"},
+                    DiscountAmount = 3941,
+                    DiscountPercentage = 9678.0,
+                    NumRecipientsCap = 1150,
+                    StorageId = "5d4b97ce-1968-47d7-820e-9a50fbac926a",
+                    AvailableShopIds = new string[]{"2d7d5ab9-dad0-4eb6-a272-26c07abc152b", "1d98c58b-c1c1-4365-984c-2501f4ff7909", "1aeb5522-4329-467b-a7d7-76569ec2d08b", "abaeb960-234b-4f69-82de-598221ba7da9", "80b72ac0-0cbd-4ca7-9b61-897e4d37b316", "a5d533cd-be58-431e-a9c1-9bc2694aec8c", "ba910943-0a22-4e7a-aeac-ec6b8091cb6f", "94e3f0e0-7eec-4d9d-8c14-9b5a952ee090", "544562bc-4fc6-41a5-b058-043c2ba88cd6"},
                     IsShopSpecified = false,
-                    MinAmount = 8604,
-                    UsageLimit = 7662,
-                    Code = "t",
-                    IsPublic = false,
+                    MinAmount = 4013,
+                    UsageLimit = 6212,
+                    Code = "umc3",
+                    IsPublic = true,
                     IsHidden = true,
                     IsDisabled = false,
-                    DisplayEndsAt = "2022-11-11T22:42:51.000000Z",
-                    DisplayStartsAt = "2024-08-10T15:04:53.000000Z",
-                    EndsAt = "2020-03-19T08:19:47.000000Z",
-                    StartsAt = "2021-10-31T03:13:22.000000Z",
-                    DiscountUpperLimit = 413,
-                    Description = "mpnnbeCg4xumOoxK0oT4F795unttA065Yr03Qzj1SYSblk7QSMdkkKPrtzfsCSKaR3OFn1WKJz5hhBZBCZgSERTDaoK9IqITw9RXh5VLaBXSS3EzsrMpj8GBIyJaRyweuGKy2nXN4UBPwGQ9mhvxLr7QQxCiR4LJ0VAGQ0LknXBVXV6IePzMvb8rIAKhBAUImOpB9NJd0FGb0jOdIa2VbV1E7pIBf60ZOpXb0uUTjEz",
-                    Name = "rW5FEq6VpVqu1DpFd0JaBsPBEjjxsN82R5bV74h6MclFLskpVJhF8OvhWGp3gTZC60RTw4fZ8zWBqSC3vDIMcnooU2vsEkhFzbMP7H4x70jy8CyXSjsNQfhm4JdiSR",
+                    DisplayEndsAt = "2023-03-14T09:43:15.000000Z",
+                    DisplayStartsAt = "2023-02-04T20:40:13.000000Z",
+                    EndsAt = "2026-07-16T19:47:21.000000Z",
+                    StartsAt = "2020-02-20T11:02:36.000000Z",
+                    DiscountUpperLimit = 1603,
+                    Description = "Ivwae0oDTZVM9Vn0NHWZb8ZS9tjcczZ4Gwb0PhYqZgpZBJnGwbDDjtejOhy5TEcMRzowrgDb6GM4mHTaOBMMolvbDp36ZS9Ve1qo3bvmXucCaFZQN2ap2j3Mr8o8HkBWUUKfQKZC3BSMS3hsgpJcOAd6ocE4mBLmKXcPupi77r56oXCNc3dwl2FKTZG70JMbSmw5RMuvJN6cdbvg50QHlnDydR",
+                    Name = "68KboUvDsNqKoorksWBQ398rR59EiVvlwAljCUfIeXX8HLaAA7O7c9AzboPOcXU3N4H4mDJiKqsHB9PJplqhMYaIBcQj7mL59HnlNHLuA0aOdVg",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -961,9 +961,9 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 5291.0,
+                    DiscountPercentage = 4202.0,
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -978,10 +978,10 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 529.0,
-                    Name = "0sAxVpKo9Pr8tnCR4b3VVcnR7ySaTJSLXaRbjFaOCY9HY0faJMcRsZ3tfn14pqdpY2gOVzxC2AMFcqtkzhdfPK",
+                    DiscountPercentage = 2270.0,
+                    Name = "K1GxL1yIWWOf6",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -996,11 +996,11 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 7913.0,
-                    Description = "9SERDVnpaYhOvVB8b8Y5rPTIoQafvlfkuyBchbjOVFfaAmwoPiUeFs2qGGZk77FXigkPx1NC7bcdhHDyq2BmegmNcooOzsV0UAnFDq2j42XbKSjWX0mczdG92I",
-                    Name = "3EQWa6MviKhzgN1WE1E9QE8I1WOtKGTOoDsggK2zVvIrNmjPyMt7JZTknlcSLOAfgHki7iEUUEZsYB8I8w6YX9AjYRSoiU",
+                    DiscountPercentage = 4374.0,
+                    Description = "dacFLJTT1b61igwFwXc9Xw81AcLgJ7HUPLZ2JY3PzdziozZN0eUlnWAmEdaqY8pJTyG58WWoVkTIofZ63ZHIa2ZaoOg0V0uaqelttkE7ehROL4XrOdkUWUyHCGGZhBjhjuTKoJ3qmoFsOI4faRjWQ8gKOhK9uTt59dHqyzQZgDiWvj8etzcFhDXwcbaPJFYUtWSDUUOzA6JdRqRnPGGmxcvLiruhnUYA2evPNgfEtt9VoXY",
+                    Name = "8Zbi4bO3aVrBDzVdWXtFy5mPY7A1qrS8dHstlQr",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1015,12 +1015,12 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 8352.0,
-                    DiscountUpperLimit = 49,
-                    Description = "BYQYTGkBMdZ9gxwOlUDOeBSRiyqeameMaY0bgN8gTUkelv3hkGmk4iWQZAVafOlabiOcEnloh2DXft8ZR3ZIT5H8aSOl3MDXnG9yHqEAThwDuq1zewsMIx1hpzHiKxcCexEPrWNcD1BCJ2Q7A3yxMyBqU",
-                    Name = "SnmfmyMf158jbodxUJxcIS6QwIFvAWCZsB1EYOxuNXsb8K4XyQ60l6nZCLpElUd6iH1X66E0nqBBGmKnZ6uDIn3iuFQr",
+                    DiscountPercentage = 7524.0,
+                    DiscountUpperLimit = 474,
+                    Description = "nteTqjTP7dz4M",
+                    Name = "DySQpvknUff9KCWQcYJFvGq64qVmrZJcpFiWZH",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1035,13 +1035,13 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 3358.0,
-                    StartsAt = "2025-10-03T17:12:31.000000Z",
-                    DiscountUpperLimit = 2535,
-                    Description = "eXzyNXNrNkeWa9hWsLSo6RhlRrNdmMatyDW12s5SKsd",
-                    Name = "6fYHa9pHdUJ2NkpD9XRln1g4q1AmzenaBAIYsPX5BEVEkSwN7",
+                    DiscountPercentage = 2761.0,
+                    StartsAt = "2021-11-16T04:05:57.000000Z",
+                    DiscountUpperLimit = 5762,
+                    Description = "QdHdvs4v2aUitPGe5J3m0ryc2OEvFX8WzzwH3wIxddmLq7zZNIbWwSHwKCgXCSNnukUNKPot1qoYiOk2cFGGn09uTba138P32btAcZSker4bwN5IYLm99wEVRQ8sJxsInHOegu4ueAVfQ8nRhLcha2zRRyQlj7s7IqXcFdC0ufgYUkqe3kskveA2n2lBOE9H5VVR8QU7QjrIemlNkbreYYQh0DpuFWTXBEy8Kcs",
+                    Name = "0g4RtCJckJnkv8b3lOd0jZSZisKJGtLxfbPFfaIRWKNMj5dtiKnG8zX8tvWqvm0Qm",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1056,14 +1056,14 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 9222.0,
-                    EndsAt = "2024-03-29T09:12:12.000000Z",
-                    StartsAt = "2025-02-22T17:04:55.000000Z",
-                    DiscountUpperLimit = 3413,
-                    Description = "MqNeIWxDQ5mYkDBp76iPlz0WyF7I2Snzg812cd0lMhCHFE2kwBpeHriIaXxYmUfeD23BKTCZPKhRk3w9r2MS5qnBpeG29hBWbNKIGuo",
-                    Name = "WD3BHeU5bcdtREmG3PoPoUnVURoRDP0303M0EUzCR0XC7UBINwESq7hPy7a3F5MBC2C7VfANu3p62KDWO8TDrLXiDq8ZM4HpSJ7ezaoKVM6PG4nVxadlDXYh8F",
+                    DiscountPercentage = 5460.0,
+                    EndsAt = "2024-03-31T10:50:29.000000Z",
+                    StartsAt = "2026-02-23T14:10:29.000000Z",
+                    DiscountUpperLimit = 5834,
+                    Description = "qTxvEdTrlIkQGkGEpBmPu4HkqOfXEkl5C8v6PzPZ7WYdNdFH0K2AD1TKPyYWlsuXOaIHvkZ0hBxHL8DiEhh2VnZoTnDJVFMsrvforwTxS8CU7xfi8Z8k0xTZqtjlnCMFHx8TKGI2xE1BuKUao6Z6xonfMjSwz5WZMumkxzfJ30tPK0gRaUMP2gDk6hqbkZIVaXAnNHVk2JXX3zMOLBJZia176ashqVZtOtkEa",
+                    Name = "R1q9tiLg6",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1078,15 +1078,15 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 4275.0,
-                    DisplayStartsAt = "2024-07-11T08:06:02.000000Z",
-                    EndsAt = "2022-04-29T07:33:44.000000Z",
-                    StartsAt = "2022-05-04T16:07:17.000000Z",
-                    DiscountUpperLimit = 2343,
-                    Description = "Rw62VEObOlMsiJRl1b2ESaJKCDCVaIjvXY9buv1PGDaqpxNAcB7XJ2PMH0HA7mMCxlziaJ1nphI9ySRxw6pdyrj7YEb5B",
-                    Name = "bPwZWptKeWMAfjTzhjO10bQwyTU6ZUhrOp80a47LYIcD579HHiydYwYbStQsIHShYuqMOfry8h",
+                    DiscountPercentage = 2952.0,
+                    DisplayStartsAt = "2025-03-24T08:50:46.000000Z",
+                    EndsAt = "2025-05-23T06:47:22.000000Z",
+                    StartsAt = "2022-08-28T16:19:05.000000Z",
+                    DiscountUpperLimit = 1776,
+                    Description = "rLRU7zHjv8AVBjeNyLKs5OWxHdcCIY8xfr6CL909VJsJvEEnV3jRZx4bL3mKFhR8vX2cSSl7ObxLVY39aP4hWiGuhuMVGxVP",
+                    Name = "acjrslMZj02ZSvIS4FqKIGpu0MDWpiDvc0yH6ElFsXXAu1ggrDUCau2gnuJ4JjDHOBMd26S3mihK7Gc9ouBdfj9baUMO0QAZUEFS2Bt",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1101,16 +1101,16 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 2805.0,
-                    DisplayEndsAt = "2021-03-12T11:16:47.000000Z",
-                    DisplayStartsAt = "2021-02-27T23:24:59.000000Z",
-                    EndsAt = "2022-01-29T11:45:16.000000Z",
-                    StartsAt = "2022-01-23T16:36:38.000000Z",
-                    DiscountUpperLimit = 993,
-                    Description = "un9q8fRCMt2pzYekawpUouvYHKlj0GUL0Fcnz7fEngR6pF3m54VmwYrgFgT3RyUt1Kexb2ZIYN08OgDDQYpUk9QvTpwbva3X3fUufQzzx2hzebS68SpNEGkfmS3U",
-                    Name = "yy5Zn41VzLKU",
+                    DiscountPercentage = 1516.0,
+                    DisplayEndsAt = "2020-10-11T06:12:34.000000Z",
+                    DisplayStartsAt = "2025-06-21T15:22:38.000000Z",
+                    EndsAt = "2022-04-23T19:53:36.000000Z",
+                    StartsAt = "2024-02-25T06:42:17.000000Z",
+                    DiscountUpperLimit = 1750,
+                    Description = "U2y1HqZTEweuiw2lLR54hFs",
+                    Name = "TWRshdiadwR5IXzLVIyr3tVtLqZwSGR9AtSD9cOcCV2121oVkjkAmAursWmY8lU",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1125,17 +1125,17 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 4327.0,
-                    IsDisabled = false,
-                    DisplayEndsAt = "2025-01-26T18:14:28.000000Z",
-                    DisplayStartsAt = "2021-11-01T01:00:35.000000Z",
-                    EndsAt = "2024-03-14T15:40:44.000000Z",
-                    StartsAt = "2023-09-11T09:25:58.000000Z",
-                    DiscountUpperLimit = 877,
-                    Description = "YNfeeKoLdFE8Hmt9R8Bv1AJsBz3l6W699PQnfTErfIkmiU4i2bFcYt3zvnnQAgg6WKGNaTc3A08bOic61u1yVQPNCQEFIkbwhO9RJiR7mxn7kYGzShazSiZH6DDfNqfsVRi3zxzsVzVJLxpF9uCjOUSNMH9fWh27PiOpr3HMMXsb4Lh4b0",
-                    Name = "ko8iE0P3Cu0AOaTlKzyVFYYoK00acoGlEqYYGWZUMgU5LJ8nedbEkL6VCbZlYCZFu0YjXrvi",
+                    DiscountPercentage = 9699.0,
+                    IsDisabled = true,
+                    DisplayEndsAt = "2022-10-09T16:11:19.000000Z",
+                    DisplayStartsAt = "2021-01-15T22:03:03.000000Z",
+                    EndsAt = "2023-03-18T05:01:13.000000Z",
+                    StartsAt = "2020-03-06T17:52:31.000000Z",
+                    DiscountUpperLimit = 3654,
+                    Description = "FH8OBO0gTOPvALkgMJawdwCaYZ0f5A4WuoS1IAZgM9FDFzPlCr68wDPzP1uu5pUlr0e255o067YSY4rtLpQIhTsQtfNlHNUlxPCHvPHeZ4gCJRD87F5OLspmSpFUbvNXpSViDBWfAPmGsH08E",
+                    Name = "BxCdTJypI42Inu56V",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1150,18 +1150,18 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 5611.0,
-                    IsHidden = true,
-                    IsDisabled = false,
-                    DisplayEndsAt = "2020-03-19T23:32:39.000000Z",
-                    DisplayStartsAt = "2024-10-06T12:38:09.000000Z",
-                    EndsAt = "2022-09-24T21:02:35.000000Z",
-                    StartsAt = "2023-08-15T00:57:48.000000Z",
-                    DiscountUpperLimit = 3397,
-                    Description = "blaTUskxDWTi4syFdijXYZ6Fkp0v2rObj5KP7CaX5R9O7hnOQMfDj4u8or1Z5ajnFBytvfCWU5lvasIan6Df8qsq2k3ETquM3SQujWFDE153B",
-                    Name = "47G8gAIFr9zY1ABG4Q6S1AZ81ee9F1zaeUGprRtPpZgZzOhvmvIjVKe7aM7QiN4LuTtB8ZF5mN9clYyKl8cUsYw8CW8rHVcmWZsjKlFT0f7did2pSfVDNNjekhaUaqN",
+                    DiscountPercentage = 3947.0,
+                    IsHidden = false,
+                    IsDisabled = true,
+                    DisplayEndsAt = "2023-12-14T07:30:01.000000Z",
+                    DisplayStartsAt = "2021-09-28T08:52:21.000000Z",
+                    EndsAt = "2024-01-12T11:36:41.000000Z",
+                    StartsAt = "2024-02-17T14:41:33.000000Z",
+                    DiscountUpperLimit = 9813,
+                    Description = "lWSa6lZGo7PhTYTGs3X1TO4wzYkyXyy6lwP0N21ySbpkemDM3awKQy2zT4JKnzi5L8cpHHMwXcAIRcjNLk0u",
+                    Name = "NWeNHUqo3XU",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1176,19 +1176,19 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 2454.0,
+                    DiscountPercentage = 8206.0,
                     IsPublic = true,
                     IsHidden = false,
                     IsDisabled = false,
-                    DisplayEndsAt = "2021-05-27T02:24:29.000000Z",
-                    DisplayStartsAt = "2022-06-05T21:53:19.000000Z",
-                    EndsAt = "2021-10-06T18:48:18.000000Z",
-                    StartsAt = "2022-06-08T21:26:17.000000Z",
-                    DiscountUpperLimit = 8156,
-                    Description = "pQcwkQvvHfTZTUiaSBniTvgiFcfFWfXoobW27D2zSsjxSJQCC2TKE3m70u0i2E7e3WCog3HknLhb4mGHjaX24jJAlJFQ82MhyQQoipgFNSux0jeobdQD1VXjUggH7qMtHhSfZdXUyjb1NxKa8yAWf3eI4rn2GKxT8MfsHveV88627AlMJYf8MI0c",
-                    Name = "9iCp3raZonaiDazAfoVN5",
+                    DisplayEndsAt = "2025-05-29T02:08:47.000000Z",
+                    DisplayStartsAt = "2026-07-13T04:38:53.000000Z",
+                    EndsAt = "2022-10-17T02:39:15.000000Z",
+                    StartsAt = "2020-09-14T13:36:19.000000Z",
+                    DiscountUpperLimit = 2994,
+                    Description = "VsZS4Lj4GkDI0oXRDtBJxvb11fmeXANYMff4lfRrFSD2GU0U0YSAX1Q89ssC5bpXwoj13v0TL4xfkZtGKmcVmh1Ev4M51rbMFUU1jVlGa8RcO6wCBU9Eja3cVhwcSD6iDQwph5TUTM16YqrHAO8roW5GeUYrGDCf0i4xR1YeuarVLqK",
+                    Name = "aajZ45lMb2EdpxyfZWbcSeQSSC89X69cCxk1lmjrE2LQn8WVW3m44epc5OJWLmTr626o4XX2rICXAhNDPHxc5nbxE6",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1203,20 +1203,20 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 9690.0,
-                    Code = "NoMx",
+                    DiscountPercentage = 4452.0,
+                    Code = "OS7",
                     IsPublic = false,
                     IsHidden = true,
                     IsDisabled = false,
-                    DisplayEndsAt = "2024-07-22T04:00:05.000000Z",
-                    DisplayStartsAt = "2024-09-09T00:24:29.000000Z",
-                    EndsAt = "2022-11-01T08:32:49.000000Z",
-                    StartsAt = "2025-04-11T06:51:52.000000Z",
-                    DiscountUpperLimit = 7789,
-                    Description = "7gWIlidcsFhnnSlOPQSKVW980GqQVfPuvUPiEFV6mDyiAjmPC8FhIFplNkUQpOFZAAuAkdYYYV8q02r77ePIgPu4dPH7ImSF7bIQ97lNoNEqqi11P4GN23Eb6NlDd7BTwpYu4Valw5xiI",
-                    Name = "7Q1Cipp2CPMRifbrHbdPk0z0U5np6zSSSsJChBCfGVrTTzFEA3cEkuniAENmbJtM74yoK3yNaov",
+                    DisplayEndsAt = "2021-07-27T09:42:54.000000Z",
+                    DisplayStartsAt = "2023-11-09T19:56:12.000000Z",
+                    EndsAt = "2023-11-26T00:32:13.000000Z",
+                    StartsAt = "2021-07-06T01:16:34.000000Z",
+                    DiscountUpperLimit = 1409,
+                    Description = "FRrdV1gQxduyB3Z9uLKn8CBvuRo159rPRsnfNPsYuS9nBNol3v7lVyt80jIUhEuqcVn523Q4baN0pPcQtGvFKDcSo8tIJSa9PEebkW1DkF2wmIfJ50Imwzo4spi93QyENqmwOx8YnV9T8kaR9yxVki0Ybh350uvTmXJ3taiP6zrMBCvrTp2KPzJXVVtSjH7KpG4W7WMlwVoyitMfaSwwyI0wlFPTcSqX1OcJJC",
+                    Name = "H4abwAvDfIYbVEzwXEzeX76CubBULZ7mvZavHGIwQGFD3y3WQcOQ77GqTbykQNeXwfkirPrCHC6oGX762VWlOvBKRDnWwJ1RB1Xf0sJSNdUIy9UNP",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1231,21 +1231,21 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 9096.0,
-                    UsageLimit = 6807,
-                    Code = "7ur",
-                    IsPublic = true,
-                    IsHidden = false,
+                    DiscountPercentage = 3781.0,
+                    UsageLimit = 5263,
+                    Code = "n",
+                    IsPublic = false,
+                    IsHidden = true,
                     IsDisabled = true,
-                    DisplayEndsAt = "2022-04-17T18:05:04.000000Z",
-                    DisplayStartsAt = "2024-03-13T18:05:35.000000Z",
-                    EndsAt = "2025-06-17T21:06:54.000000Z",
-                    StartsAt = "2020-01-11T02:40:09.000000Z",
-                    DiscountUpperLimit = 7908,
-                    Description = "GWEfVzKMwihh3UCJATPnnGfbSAjt8y1LpRX9w3aEMSDM7H6DKpMVCMs6AqPF1N4VGIihJYcZH1yqyLKdrb7VdvBferrdPPsgFTBp21GVpuNthlN8cTNxtClPPAh3ydu7juMaO7kqGjaASQkqyw2Q45pim16jWY8Li2yJuAILC",
-                    Name = "9WmiQzTAP0hsvYk94ECXfwyrT6FNWSeiPJDkaNGUUFy3",
+                    DisplayEndsAt = "2025-07-03T14:17:48.000000Z",
+                    DisplayStartsAt = "2022-08-10T11:09:24.000000Z",
+                    EndsAt = "2022-07-10T18:29:44.000000Z",
+                    StartsAt = "2024-01-25T17:42:49.000000Z",
+                    DiscountUpperLimit = 7863,
+                    Description = "PVOwf2KxYZgpwkatfDXh6wjcpgPghclYC1sotThNzacMPGRW9XLUFYLKH2dLAXy2",
+                    Name = "lAkroUr6KjPvdUwWdZh0L8qNK4Tq0PqVhzCkKROCStDoZvAY3OKa5oCE4xLFobA9UOrBeN520IjUnvAonmJrl0Qqm11RMoDMOSwDGwLJ7XtGOGgKQ",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1260,22 +1260,22 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 5047.0,
-                    MinAmount = 998,
-                    UsageLimit = 4629,
-                    Code = "BCxguWk",
-                    IsPublic = true,
-                    IsHidden = false,
+                    DiscountPercentage = 3336.0,
+                    MinAmount = 5436,
+                    UsageLimit = 806,
+                    Code = "zAg5",
+                    IsPublic = false,
+                    IsHidden = true,
                     IsDisabled = false,
-                    DisplayEndsAt = "2022-07-26T05:01:57.000000Z",
-                    DisplayStartsAt = "2024-10-17T08:27:13.000000Z",
-                    EndsAt = "2021-11-29T10:45:39.000000Z",
-                    StartsAt = "2021-02-19T18:45:38.000000Z",
-                    DiscountUpperLimit = 6763,
-                    Description = "ajD",
-                    Name = "hky1e9MUM8ZY9eEBDTjFI",
+                    DisplayEndsAt = "2025-12-04T11:58:35.000000Z",
+                    DisplayStartsAt = "2022-10-11T01:16:30.000000Z",
+                    EndsAt = "2026-09-02T23:49:17.000000Z",
+                    StartsAt = "2020-01-22T14:02:31.000000Z",
+                    DiscountUpperLimit = 4650,
+                    Description = "gdQyyCPmcszk1DSduCpdgUz5UizzupfDUVzOTa3MaAaf4kTfREjRbk7TIk1gephK43IsijpvrzedeO1cdtY9cqUS5AzQzHd",
+                    Name = "GL1guEaRrfiOPX45f7SdsQcMHW7he8Z1qLepuyyE02MG8yUNtUKfprHpGaVcCOEeWb7TQI3q8qsl",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1290,23 +1290,23 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 2180.0,
-                    IsShopSpecified = false,
-                    MinAmount = 2232,
-                    UsageLimit = 7151,
-                    Code = "Rpg",
+                    DiscountPercentage = 9589.0,
+                    IsShopSpecified = true,
+                    MinAmount = 8056,
+                    UsageLimit = 838,
+                    Code = "n4fR",
                     IsPublic = false,
                     IsHidden = true,
-                    IsDisabled = false,
-                    DisplayEndsAt = "2020-07-12T03:31:37.000000Z",
-                    DisplayStartsAt = "2021-01-26T06:13:40.000000Z",
-                    EndsAt = "2020-10-05T17:19:27.000000Z",
-                    StartsAt = "2025-02-18T19:46:55.000000Z",
-                    DiscountUpperLimit = 3433,
-                    Description = "EO",
-                    Name = "fsuO3LMtzPm5pmHiztzTLcjSeNyveotr1SbLY9f9RM3h2SXQaAm6iMSYVoPQWfV62UhTGJS1L9KLOsA2Q2Z23Mwd98ip",
+                    IsDisabled = true,
+                    DisplayEndsAt = "2022-08-08T05:05:44.000000Z",
+                    DisplayStartsAt = "2025-12-29T23:02:42.000000Z",
+                    EndsAt = "2021-03-02T10:35:02.000000Z",
+                    StartsAt = "2022-03-10T20:31:40.000000Z",
+                    DiscountUpperLimit = 9883,
+                    Description = "fp3vRJLnSgiLPjnc4kQ0HdyTor536XOfVM3XXOQ3tGi0CJH7VMgkZVkFMaOxCQ0Il4LS1H9Rmh1BhIW8NFmlvrlMvNLwEsnbNKTS2h75GF8UpjoAlQvJzCU8IgWIQfnPgb4T4DEkgPLD0xZMd",
+                    Name = "yjnHtiPzKYB9uBkIh8qvqswUq9MIMd1v50tEiK5VU8URPZftDXY7iH",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1321,24 +1321,24 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 3466.0,
-                    AvailableShopIds = new string[]{"62eed9fe-95fe-47e4-8154-e9d5e5d1bd60", "5c325251-94dd-4bad-83d8-4d5fee45c5d0", "9ff85ae3-b293-4201-8c3a-24da675603f4", "b981f20a-c75f-4c08-91bb-6bccbd0f2440", "64694688-8444-42da-b60c-c9fdb1307af4", "d3fd19b1-5064-4237-8e19-79e818a4d353", "19fcd933-4b74-4e49-9b10-d57d563f5062"},
-                    IsShopSpecified = true,
-                    MinAmount = 7962,
-                    UsageLimit = 647,
-                    Code = "aQ9UqJHQ",
+                    DiscountPercentage = 3129.0,
+                    AvailableShopIds = new string[]{"fa0cebdd-aa9f-4235-8fac-94328f029a1a", "6c36d2b1-f1ac-40af-baba-a89e32f57d3f"},
+                    IsShopSpecified = false,
+                    MinAmount = 7500,
+                    UsageLimit = 4665,
+                    Code = "CZDgOHv8cc",
                     IsPublic = false,
                     IsHidden = true,
                     IsDisabled = false,
-                    DisplayEndsAt = "2025-05-14T23:11:58.000000Z",
-                    DisplayStartsAt = "2020-11-29T07:09:26.000000Z",
-                    EndsAt = "2022-09-25T23:17:33.000000Z",
-                    StartsAt = "2024-04-23T20:32:45.000000Z",
-                    DiscountUpperLimit = 1494,
-                    Description = "ia7WMZwo",
-                    Name = "ONY9mYcjUD3BWfN3hpObBbd0WPCuqh90wnUEefdvvGn56xgqcINC0MaOVTzOYUS4YiFzadS1dG4VhCAXdvLcusNkP92lEHAtBr5uMSg7mI2h9L5UgNjF9pGXPoR6V6E",
+                    DisplayEndsAt = "2023-03-23T08:18:09.000000Z",
+                    DisplayStartsAt = "2022-08-16T01:07:07.000000Z",
+                    EndsAt = "2021-05-04T08:15:40.000000Z",
+                    StartsAt = "2026-01-19T02:38:38.000000Z",
+                    DiscountUpperLimit = 7707,
+                    Description = "aXWInrPmgciqGxhGUs6ZnMyMQoClDSK7KRPQ6M6EMYtB6Ep2GnDZJdtjBh5VRBTfV5MJhYQTBRBM7G8j00YInJitv9WP6kwxoiXMMFgIG6MJKNbnVLomjuJJQI4",
+                    Name = "ykecPid861BWO2utY6ykCTVCcIXTPlbcMZgCJ9BjKA9LvljTLcW71b8cClVacDr5l3x4FVfYiLUL8Bb8dzaB45kELqQHfqMF0cAfS47CSQOovJ8c1i3feNO1qJBn",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1353,25 +1353,25 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 7831.0,
-                    StorageId = "f0a19948-2039-436f-bfc7-7e1dae8f83b2",
-                    AvailableShopIds = new string[]{"be8dabbd-ee38-4420-9d21-266dbef8874a", "3a37c0ff-b477-47e7-b710-aa983b3fbcb4", "0cefe8f4-694a-4364-a179-18ca93a29f10", "f4741535-ffcc-41ec-a162-aa5c2c2dad32", "579de8db-46fc-425e-b9e7-d8e65ce4bad5", "3a32312b-22a4-432a-9136-5a68c6817854"},
-                    IsShopSpecified = false,
-                    MinAmount = 1019,
-                    UsageLimit = 2769,
-                    Code = "06Gh",
-                    IsPublic = false,
+                    DiscountPercentage = 8688.0,
+                    StorageId = "703edb5d-3270-4c33-9c1f-5f9fdeed04fd",
+                    AvailableShopIds = new string[]{"cbe44d2a-409d-4d89-b912-b27dc6f45005", "7c79bf5e-4090-474b-85ea-9d5ada66b6fe", "5e996cd0-486a-4bd4-8173-74a9e1ac09a5", "84883eb6-ee9d-4fb5-a912-7f0cff96c399", "d896885d-1071-4616-897a-7aced0ecdea4"},
+                    IsShopSpecified = true,
+                    MinAmount = 8433,
+                    UsageLimit = 7444,
+                    Code = "MvOUP7lDJ3",
+                    IsPublic = true,
                     IsHidden = false,
                     IsDisabled = true,
-                    DisplayEndsAt = "2023-03-05T08:05:14.000000Z",
-                    DisplayStartsAt = "2020-09-16T00:52:28.000000Z",
-                    EndsAt = "2020-04-01T14:54:34.000000Z",
-                    StartsAt = "2022-06-29T03:57:31.000000Z",
-                    DiscountUpperLimit = 5115,
-                    Description = "Dmfb2965KcWooPsLAa0LofoeILq2j1JbokM11iel9SifEKQQKEl5jTOYEn550ChTMJy5Ri4zQipR66DYXbWwtCBK4yI7b7ruIn1DQefV0LKmn0D6u1aqXUgLXLPq2aRw08aQ0rfHosccmXhG1yeE5aq4GKVSCfP0aoPIG5NuiBMU7rfLf6FhpORYw57l88LjJn33RIRSO",
-                    Name = "lXSQfzzTwn3Dxt4Xew7YzDaZ1J9OdsQM2IVUV93tsgTE0JEew3ek7732woVpaWAn4e207OnXy1NWRJfp7ZK3WimQaowti0F0S2aIOKkN5iwpVU",
+                    DisplayEndsAt = "2024-08-26T11:53:55.000000Z",
+                    DisplayStartsAt = "2020-05-21T23:02:33.000000Z",
+                    EndsAt = "2023-01-05T09:12:36.000000Z",
+                    StartsAt = "2026-03-19T13:50:59.000000Z",
+                    DiscountUpperLimit = 7117,
+                    Description = "XHu4UsQsifzmvmEGKnmcQWOqm2bxZSUNMN2LXvZ3UB0bY6L3973iqLKkGFIZmfuXhD9mm06njf2aXb7PnD9gNpMDYfCPceKjPow2YL1adnoZFEUP94ii4uT2NJ6DSRSGMdhjjWzKEnHt1GlWmv2y5j3kpGt0e4jNi92dahlnnkKHVszp",
+                    Name = "YHPkZF0J60lUnUwRinT2la9EMVbGBQcWz4",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");
@@ -1386,26 +1386,26 @@ namespace PokepayPartnerCsharpSdk.Test
         {
             try {
                 Request.UpdateCoupon request = new Request.UpdateCoupon(
-                    "896e091b-3a3c-47eb-910b-20ac3cf00f1f"
+                    "81b2e75f-688a-4247-8003-d0e40716aa3c"
                 ) {
-                    DiscountPercentage = 4806.0,
-                    NumRecipientsCap = 7844,
-                    StorageId = "6e493dd5-42b1-4261-aced-1eeb4d641be4",
-                    AvailableShopIds = new string[]{"78aff4c6-df42-498a-94da-17c209adccf9", "5b0c4a73-bb83-482f-86e7-1194247e4021"},
+                    DiscountPercentage = 2117.0,
+                    NumRecipientsCap = 825,
+                    StorageId = "cfed6ce6-1d55-4c5a-9c17-93872a5ec81b",
+                    AvailableShopIds = new string[]{"3fe9ad87-78ee-49d7-8b0f-61e35e1db521"},
                     IsShopSpecified = true,
-                    MinAmount = 3838,
-                    UsageLimit = 932,
-                    Code = "8TiyAaF4",
+                    MinAmount = 5610,
+                    UsageLimit = 961,
+                    Code = "k",
                     IsPublic = false,
                     IsHidden = true,
                     IsDisabled = false,
-                    DisplayEndsAt = "2022-02-23T18:07:17.000000Z",
-                    DisplayStartsAt = "2022-08-31T01:53:10.000000Z",
-                    EndsAt = "2024-09-18T01:37:23.000000Z",
-                    StartsAt = "2022-01-12T20:27:08.000000Z",
-                    DiscountUpperLimit = 3521,
-                    Description = "bqyi68iyJ302sQl233vCftoqwC5tymvF1K23X2uYu46",
-                    Name = "ypSW9PxtiaID1SUCfz9yEelMoF9a26c2RLHz",
+                    DisplayEndsAt = "2024-02-19T05:15:31.000000Z",
+                    DisplayStartsAt = "2024-03-24T03:20:57.000000Z",
+                    EndsAt = "2026-05-07T03:33:03.000000Z",
+                    StartsAt = "2023-07-17T20:42:27.000000Z",
+                    DiscountUpperLimit = 9937,
+                    Description = "adAG14rJr7OIiIwKYtNBzp8nODkJL8EIU81Vy5zPsQOGlQlr06Jl9JLWCZ8neyUVmWBR3xve7r3YSLXQYTyvYaaI2qvRlrSNIrRDPa1eyCiQOxDTwWc9gws9XAU",
+                    Name = "rux74v2ITxjA0Pgz",
                 };
                 Response.CouponDetail response = await request.Send(client);
                 Assert.NotNull(response, "Shouldn't be null at least");

@@ -8,7 +8,9 @@ namespace PokepayPartnerCsharpSdk.Response
         public string Id { get; set; }
         public string Name { get; set; }
         public User[] ApplicableShops { get; set; }
+        public CampaignShopLabel[] ApplicableShopLabels { get; set; }
         public bool IsExclusive { get; set; }
+        public bool IsLocked { get; set; }
         public string StartsAt { get; set; }
         public string EndsAt { get; set; }
         public string PointExpiresAt { get; set; }
@@ -27,7 +29,7 @@ namespace PokepayPartnerCsharpSdk.Response
         public string BudgetCurrentTime { get; set; }
 
         [JsonConstructor]
-        public Campaign(string id, string name, bool isExclusive, string startsAt, string endsAt, int priority, string description, User bearPointShop, PrivateMoney privateMoney, PrivateMoney destPrivateMoney, string pointCalculationRule, string pointCalculationRuleObject, string status) =>
-            (Id, Name, IsExclusive, StartsAt, EndsAt, Priority, Description, BearPointShop, PrivateMoney, DestPrivateMoney, PointCalculationRule, PointCalculationRuleObject, Status) = (id, name, isExclusive, startsAt, endsAt, priority, description, bearPointShop, privateMoney, destPrivateMoney, pointCalculationRule, pointCalculationRuleObject, status);
+        public Campaign(string id, string name, bool isExclusive, bool isLocked, string startsAt, string endsAt, int priority, string description, User bearPointShop, PrivateMoney privateMoney, PrivateMoney destPrivateMoney, string pointCalculationRule, string pointCalculationRuleObject, string status) =>
+            (Id, Name, IsExclusive, IsLocked, StartsAt, EndsAt, Priority, Description, BearPointShop, PrivateMoney, DestPrivateMoney, PointCalculationRule, PointCalculationRuleObject, Status) = (id, name, isExclusive, isLocked, startsAt, endsAt, priority, description, bearPointShop, privateMoney, destPrivateMoney, pointCalculationRule, pointCalculationRuleObject, status);
     }
 }
